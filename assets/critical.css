@@ -148,7 +148,7 @@ select,
  * touch the viewport edges on small screens.
  */
 .shopify-section {
-  --content-width: min(var(--page-width), calc(100% - var(--page-margin) * 2));
+  max-width: var(--page-width);
   width: 100%;
   padding-left: var(--page-margin);
   padding-right: var(--page-margin);
