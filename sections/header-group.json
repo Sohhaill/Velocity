@@ -15,6 +15,7 @@
       "type": "header",
       "settings": {
         "section_color_scheme": "scheme_2",
+        "header_width_type": "container_width",
         "header_width_desktop": 1200,
         "header_width_mobile": 1000,
         "header_sticky": true,
@@ -22,8 +23,7 @@
         "show_wishlist_icon": false,
         "show_account_icon": true,
         "show_search_icon": false,
-        "show_cart_icon": false,
-        "customer_account_menu": "customer-account-main-menu"
+        "show_cart_icon": false
       }
     }
   },
