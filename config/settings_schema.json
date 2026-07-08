@@ -245,16 +245,7 @@
   {
     "name": "t:general.layout",
     "settings": [
-      {
-        "type": "range",
-        "id": "content_max_page_width",
-        "label": "Content page width",
-        "min": 100,
-        "max": 2000,
-        "step": 10,
-        "unit": "px",
-        "default": 1200
-      },
+     
       {
         "type": "range",
         "id": "min_page_margin",
