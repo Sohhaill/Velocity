@@ -1,10 +1,21 @@
-
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "type_heading_font": "system_ui_n4",
     "font_size_mobile_h1": 32,
     "container_max_width": 1200,
     "container_margin": 30,
+    "scheme_2_heading_color": "#000000",
+    "scheme_2_subheading_color": "#000000",
+    "scheme_2_body_color": "#000000",
     "content_for_index": []
   }
 }
