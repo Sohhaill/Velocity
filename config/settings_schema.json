@@ -245,7 +245,15 @@
   {
     "name": "t:general.layout",
     "settings": [
-     
+     {
+        "type": "range",
+        "id": "theme_page_width",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "unit": "px"
+        
+      },
       {
         "type": "range",
         "id": "min_page_margin",
