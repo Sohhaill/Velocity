@@ -112,6 +112,10 @@
       "scheme_1": "Scheme 1",
       "scheme_2": "Scheme 2"
     },
+    "header_width_type": {
+      "container_width": "Container width",
+      "full_width": "Full width"
+    },
     "size": {
       "large": "Large",
       "small": "Small"
