@@ -1,0 +1,31 @@
+<script>
+  function openHeaderDrawer() {
+    var drawer = document.getElementById('header-drawer');
+    if (!drawer) return;
+    drawer.classList.add('header__drawer--open');
+    drawer.setAttribute('aria-hidden', 'false');
+    document.documentElement.classList.add('header-drawer-open');
+  }
+
+  function closeHeaderDrawer() {
+    var drawer = document.getElementById('header-drawer');
+    if (!drawer) return;
+    drawer.classList.remove('header__drawer--open');
+    drawer.setAttribute('aria-hidden', 'true');
+    document.documentElement.classList.remove('header-drawer-open');
+  }
+
+  document.addEventListener('click', function(event) {
+    var drawer = document.getElementById('header-drawer');
+    if (!drawer || !drawer.classList.contains('header__drawer--open')) return;
+    if (event.target.closest('.header__drawer-panel')) return;
+    if (event.target.closest('.header__toggle')) return;
+    closeHeaderDrawer();
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeHeaderDrawer();
+    }
+  });
+</script>
