@@ -141,7 +141,7 @@ select,
 
 /** Section layout utilities */
 
-.shopify-section {
+.container-width {
   width: 100%;
   max-width: var(--container-width);
   padding-left: var(--container-margin);
