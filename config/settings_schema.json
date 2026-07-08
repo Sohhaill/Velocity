@@ -248,7 +248,7 @@
       {
         "type": "range",
         "id": "content_max_page_width",
-        "label": "page_width",
+        "label": "Content page width",
         "min": 100,
         "max": 2000,
         "step": 10,
