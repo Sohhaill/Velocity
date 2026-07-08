@@ -85,6 +85,7 @@
     "container_margin": "Container margin",
     "color_scheme": "Color scheme",
     "show_payment_icons": "Show payment icons",
+    "header_width_type": "Header width",
     "text_style": "Text style",
     "text": "Text"
   },
