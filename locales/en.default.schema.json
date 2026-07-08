@@ -74,10 +74,7 @@
       "horizontal": "Horizontal",
       "vertical": "Vertical"
     },
-    "page_width": {
-      "narrow": "Narrow",
-      "wide": "Wide"
-    },
+    
     "size": {
       "large": "Large",
       "small": "Small"
