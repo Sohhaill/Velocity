@@ -27,12 +27,6 @@
         "label": "t:labels.body_font"
       },
       {
-        "type": "font_picker",
-        "id": "type_button_font",
-        "default": "inter_n4",
-        "label": "t:labels.button_font"
-      },
-      {
         "type": "header",
         "content": "Desktop Font Sizes"
       },
@@ -245,7 +239,22 @@
   {
     "name": "t:general.layout",
     "settings": [
-    
+      {
+        "type": "select",
+        "id": "max_page_width",
+        "label": "t:labels.page_width",
+        "options": [
+          {
+            "value": "90rem",
+            "label": "t:options.page_width.narrow"
+          },
+          {
+            "value": "110rem",
+            "label": "t:options.page_width.wide"
+          }
+        ],
+        "default": "90rem"
+      },
       {
         "type": "range",
         "id": "min_page_margin",
@@ -255,16 +264,6 @@
         "unit": "px",
         "label": "t:labels.page_margin",
         "default": 20
-      },
-       {
-        "type": "range",
-        "id": "theme_page_width",
-        "min": 10,
-        "max": 100,
-        "step": 1,
-        "unit": "px",
-        "label": "page width",
-        "default": 1200
       }
     ]
   },
