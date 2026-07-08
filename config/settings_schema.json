@@ -245,7 +245,7 @@
         "label": "t:labels.max_width",
         "min": 100,
         "max": 2000,
-        "step": 10,
+        "step": 20,
         "unit": "px",
         "default": 1200
       },
@@ -255,7 +255,7 @@
         "label": "t:labels.container_margin",
         "min": 0,
         "max": 200,
-        "step": 1,
+        "step": 2,
         "unit": "px",
         "default": 20
       }
