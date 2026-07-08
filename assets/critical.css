@@ -16,7 +16,7 @@ body {
 html:has(dialog[scroll-lock][open], details[scroll-lock][open]) {
   overflow: hidden;
 }
-a.header__icon svg{
+.header__inner svg{
   width: 24px;
   height: 24px;
 }
@@ -130,7 +130,7 @@ select,
 }
 
 @media screen and (max-width: 749px) {
-  a.header__icon svg{
+  .header__inner svg{
     width: 20px;
     height: 20px;
   }
