@@ -46,6 +46,9 @@
     "body_text": "Base text",
     "button": "Button",
     "button_font": "Button font",
+    "body": "Body",
+    "heading": "Heading",
+    "subheading": "Subheading",
     "button_background": "Button background",
     "button_text": "Button text",
     "button_hover_background": "Button hover background",
@@ -72,6 +75,7 @@
     "page_margin": "Page margin",
     "max_width": "Max width",
     "container_margin": "Container margin",
+    "color_scheme": "Color scheme",
     "show_payment_icons": "Show payment icons",
     "text_style": "Text style",
     "text": "Text"
