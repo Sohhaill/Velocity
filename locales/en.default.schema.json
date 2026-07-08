@@ -11,8 +11,6 @@
     "collection_card": "Collection card",
     "collections_grid": "Collections grid",
     "colors": "Colors",
-    "scheme_1": "Color scheme 1",
-    "scheme_2": "Color scheme 2",
     "column": "Column",
     "content": "Content",
     "custom_section": "Custom section",
@@ -78,7 +76,10 @@
       "horizontal": "Horizontal",
       "vertical": "Vertical"
     },
-    
+    "color_scheme": {
+      "scheme_1": "Scheme 1",
+      "scheme_2": "Scheme 2"
+    },
     "size": {
       "large": "Large",
       "small": "Small"
