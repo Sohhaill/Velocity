@@ -1,11 +1,9 @@
-<header class="header{% if section.settings.header_sticky %} header--sticky{% endif %}{% if section.settings.header_width_type == 'full_width' %} header--full-width{% else %} header--container-width{% endif %}"
-  style="--header-max-width: {{ section.settings.header_width_desktop | default: 1200 }}px; --header-max-width-mobile: {{ section.settings.header_width_mobile | default: 1000 }}px;"
->
+<header class="header{% if section.settings.header_sticky %} header--sticky{% endif %}{% if section.settings.header_width_type == 'full_width' %} header--full-width{% else %} header--container-width{% endif %}">
   <div class="header__inner">
     <div class="header__brand">
       <a class="header__brand-link" href="{{ routes.root_url }}">
         {% if section.settings.logo %}
-          {{ section.settings.logo | image_url: width: 280 | image_tag: alt: shop.name }}
+          {{ section.settings.logo | image_url: width: section.settings.logo_width_desktop | default: 280 | image_tag: alt: shop.name }}
         {% else %}
           <span class="header__brand-text">{{ shop.name }}</span>
         {% endif %}
@@ -49,9 +47,9 @@
       {% endif %}
 
       {% if section.settings.show_account_icon and shop.customer_accounts_enabled %}
-        <shopify-account menu="{{ section.settings.customer_account_menu }}" class="header__icon" aria-label="{{ 'header.account_icon' | t }}">
+        <a class="header__icon" href="{{ routes.account_login_url }}" aria-label="{{ 'header.account_icon' | t }}">
           {{ 'icon-account.svg' | inline_asset_content }}
-        </shopify-account>
+        </a>
       {% endif %}
 
       {% if section.settings.show_search_icon %}
@@ -76,7 +74,7 @@
       <div class="header__drawer-top">
         <a class="header__drawer-brand" href="{{ routes.root_url }}">
           {% if section.settings.logo %}
-            {{ section.settings.logo | image_url: width: 260 | image_tag: alt: shop.name }}
+            {{ section.settings.logo | image_url: width: section.settings.logo_width_mobile | default: 180 | image_tag: alt: shop.name }}
           {% else %}
             <span class="header__brand-text">{{ shop.name }}</span>
           {% endif %}
@@ -115,10 +113,10 @@
           </a>
         {% endif %}
         {% if section.settings.show_account_icon and shop.customer_accounts_enabled %}
-          <shopify-account menu="{{ section.settings.customer_account_menu }}" class="header__drawer-icon">
+          <a class="header__drawer-icon" href="{{ routes.account_login_url }}">
             {{ 'icon-account.svg' | inline_asset_content }}
             <span>{{ 'header.account_icon' | t }}</span>
-          </shopify-account>
+          </a>
         {% endif %}
         {% if section.settings.show_search_icon %}
           <a class="header__drawer-icon" href="{{ routes.search_url }}">
@@ -275,29 +273,39 @@
   }
 
   .header__drawer {
-    display: none;
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.45);
     align-items: flex-start;
-    justify-content: flex-end;
+    justify-content: flex-start;
     padding: 1rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-default);
   }
 
   .header__drawer--open {
-    display: flex;
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .header__drawer-panel {
-    width: min(320px, 100%);
+    width: 95%;
+    max-width: 95%;
+    height: 100%;
     background: var(--color-background);
     color: var(--color-foreground);
-    box-shadow: -2px 0 24px rgba(0, 0, 0, 0.16);
+    box-shadow: 2px 0 24px rgba(0, 0, 0, 0.16);
     border-radius: 1rem;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    max-height: 100%;
+    transform: translateX(-100%);
+    transition: transform var(--transition-default);
+  }
+
+  .header__drawer--open .header__drawer-panel {
+    transform: translateX(0);
   }
 
   .header__drawer-top {
@@ -421,23 +429,23 @@
     },
     {
       "type": "range",
-      "id": "header_width_desktop",
-      "label": "t:labels.header_width_desktop",
-      "min": 400,
-      "max": 2000,
-      "step": 20,
+      "id": "logo_width_desktop",
+      "label": "t:labels.logo_width_desktop",
+      "min": 80,
+      "max": 400,
+      "step": 10,
       "unit": "px",
-      "default": 1200
+      "default": 280
     },
     {
       "type": "range",
-      "id": "header_width_mobile",
-      "label": "t:labels.header_width_mobile",
-      "min": 280,
-      "max": 1000,
+      "id": "logo_width_mobile",
+      "label": "t:labels.logo_width_mobile",
+      "min": 60,
+      "max": 300,
       "step": 10,
       "unit": "px",
-      "default": 1000
+      "default": 180
     },
     {
       "type": "checkbox",
