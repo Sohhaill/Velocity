@@ -11,6 +11,8 @@
   "current": {
     "type_heading_font": "system_ui_n4",
     "font_size_mobile_h1": 32,
+    "max_page_width": "90rem",
+    "min_page_margin": 31,
     "content_for_index": []
   }
 }
