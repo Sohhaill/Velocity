@@ -13,10 +13,14 @@
   "sections": {
     "header": {
       "type": "header",
-      "settings": {}
+      "settings": {
+        "section_color_scheme": "scheme_2",
+        "menu": "",
+        "customer_account_menu": "customer-account-main-menu"
+      }
     }
   },
   "order": [
     "header"
-  ],
+  ]
 }
