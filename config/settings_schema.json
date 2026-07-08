@@ -246,14 +246,20 @@
     "name": "t:general.layout",
     "settings": [
       {
-        "type": "range",
+        "type": "select",
         "id": "max_page_width",
         "label": "t:labels.page_width",
-        "min": 100,
-        "max": 2000,
-        "step": 10,
-        "unit": "px",
-        "default": 1200
+        "options": [
+          {
+            "value": "90rem",
+            "label": "t:options.page_width.narrow"
+          },
+          {
+            "value": "110rem",
+            "label": "t:options.page_width.wide"
+          }
+        ],
+        "default": "90rem"
       },
       {
         "type": "range",
