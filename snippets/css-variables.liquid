@@ -51,7 +51,12 @@
     --font-size-mobile-field: {{ settings.font_size_mobile_field }}px;
     --line-height-heading: 1.1;
     --line-height-base: 1.6;
-    --page-width: {{ settings.max_page_width }}px;
+    {% comment %} Support both numeric (px) and string values (e.g., '90rem') {% endcomment %}
+    {% if settings.max_page_width contains 'rem' or settings.max_page_width contains '%' or settings.max_page_width contains 'em' %}
+      --page-width: {{ settings.max_page_width }};
+    {% else %}
+      --page-width: {{ settings.max_page_width }}px;
+    {% endif %}
     --page-margin: {{ settings.min_page_margin }}px;
     --color-background: {{ settings.background_color }};
     --color-foreground: {{ settings.foreground_color }};
