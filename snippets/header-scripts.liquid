@@ -28,4 +28,25 @@
       closeHeaderDrawer();
     }
   });
+
+  // Drawer submenu accordion
+  document.querySelectorAll('.header__drawer-submenu-toggle').forEach(function(toggle) {
+    toggle.addEventListener('click', function() {
+      var item = toggle.closest('.header__drawer-item');
+      var submenu = item.querySelector('.header__drawer-submenu');
+      if (!item || !submenu) return;
+
+      var isOpen = item.classList.contains('header__drawer-item--open');
+
+      if (isOpen) {
+        submenu.style.maxHeight = '0px';
+        item.classList.remove('header__drawer-item--open');
+        toggle.setAttribute('aria-expanded', 'false');
+      } else {
+        submenu.style.maxHeight = submenu.scrollHeight + 'px';
+        item.classList.add('header__drawer-item--open');
+        toggle.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
 </script>
