@@ -1,4 +1,12 @@
-
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "header",
   "name": "t:general.header",
@@ -8,14 +16,14 @@
       "settings": {
         "section_color_scheme": "scheme_2",
         "header_width_type": "container_width",
-        "header_width_desktop": 1200,
-        "header_width_mobile": 1000,
+        "logo_width_desktop": 280,
+        "logo_width_mobile": 180,
         "header_sticky": true,
         "menu": "main-menu",
-        "show_wishlist_icon": false,
+        "show_wishlist_icon": true,
         "show_account_icon": true,
-        "show_search_icon": false,
-        "show_cart_icon": false
+        "show_search_icon": true,
+        "show_cart_icon": true
       }
     }
   },
