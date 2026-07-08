@@ -89,6 +89,7 @@ h6 {
   font-family: var(--font-heading--family);
   font-weight: var(--font-heading--weight);
   line-height: var(--line-height-heading);
+  color: var(--color-heading);
 }
 
 h1 { font-size: var(--font-size-h1); }
@@ -103,6 +104,16 @@ button,
   font-family: var(--font-button--family);
   font-size: var(--font-size-button);
   font-weight: var(--font-button--weight);
+  background-color: var(--button-background);
+  color: var(--button-foreground);
+  border: none;
+  cursor: pointer;
+}
+
+button:hover,
+.button:hover {
+  background-color: var(--button-hover-background);
+  color: var(--button-hover-foreground);
 }
 
 input,
@@ -110,6 +121,9 @@ textarea,
 select,
 .field__input {
   font-size: var(--font-size-field);
+  background-color: var(--input-background);
+  color: var(--input-foreground);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (max-width: 749px) {

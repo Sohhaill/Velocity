@@ -11,6 +11,8 @@
     "collection_card": "Collection card",
     "collections_grid": "Collections grid",
     "colors": "Colors",
+    "scheme_1": "Color scheme 1",
+    "scheme_2": "Color scheme 2",
     "column": "Column",
     "content": "Content",
     "custom_section": "Custom section",
@@ -85,6 +87,14 @@
       "title": "Title",
       "subtitle": "Subtitle",
       "normal": "Normal text"
-    }
+    },
+    "subtext": "Subtext",
+    "heading": "Heading",
+    "button_background": "Button background",
+    "button_text": "Button text",
+    "button_hover_background": "Button hover background",
+    "button_hover_text": "Button hover text",
+    "input_text": "Input text",
+    "input_background": "Input background"
   }
 }
