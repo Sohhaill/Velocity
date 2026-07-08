@@ -1,4 +1,4 @@
-<header class="header{% if section.settings.header_sticky %} header--sticky{% endif %}"
+<header class="header{% if section.settings.header_sticky %} header--sticky{% endif %}{% if section.settings.header_width_type == 'full_width' %} header--full-width{% else %} header--container-width{% endif %}"
   style="--header-max-width: {{ section.settings.header_width_desktop | default: 1200 }}px; --header-max-width-mobile: {{ section.settings.header_width_mobile | default: 1000 }}px;"
 >
   <div class="header__inner">
@@ -158,9 +158,16 @@
     justify-content: space-between;
     gap: 1rem;
     width: 100%;
-    max-width: var(--header-max-width);
     margin: 0 auto;
     padding: 0 1rem;
+  }
+
+  .header--container-width .header__inner {
+    max-width: var(--header-max-width);
+  }
+
+  .header--full-width .header__inner {
+    max-width: 100%;
   }
 
   .header__brand-link,
@@ -403,6 +410,16 @@
       "label": "t:labels.logo"
     },
     {
+      "type": "select",
+      "id": "header_width_type",
+      "label": "t:labels.header_width_type",
+      "default": "container_width",
+      "options": [
+        { "value": "container_width", "label": "t:options.header_width_type.container_width" },
+        { "value": "full_width", "label": "t:options.header_width_type.full_width" }
+      ]
+    },
+    {
       "type": "range",
       "id": "header_width_desktop",
       "label": "t:labels.header_width_desktop",
@@ -456,12 +473,6 @@
       "id": "show_cart_icon",
       "label": "t:labels.cart_icon",
       "default": false
-    },
-    {
-      "type": "link_list",
-      "id": "customer_account_menu",
-      "label": "t:labels.customer_account_menu",
-      "default": "customer-account-main-menu"
     }
   ]
 }
