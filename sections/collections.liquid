@@ -5,10 +5,11 @@
   https://shopify.dev/docs/storefronts/themes/architecture/templates/collection
 {% endcomment %}
 
-<h1>{{ 'collections.title' | t }}</h1>
+<div class="section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}">
+  <h1>{{ 'collections.title' | t }}</h1>
 
-<div
-  class="collections {{ section.settings.grid_item_width }}"
+  <div
+    class="collections {{ section.settings.grid_item_width }}"
   style="--grid-gap: {{ section.settings.grid_gap }}px"
 >
   {% for collection in collections %}
@@ -57,6 +58,16 @@
 {
   "name": "t:general.collections_grid",
   "settings": [
+    {
+      "type": "select",
+      "id": "section_color_scheme",
+      "label": "t:labels.color_scheme",
+      "default": "scheme_1",
+      "options": [
+        { "value": "scheme_1", "label": "t:options.color_scheme.scheme_1" },
+        { "value": "scheme_2", "label": "t:options.color_scheme.scheme_2" }
+      ]
+    },
     {
       "type": "select",
       "id": "grid_item_width",

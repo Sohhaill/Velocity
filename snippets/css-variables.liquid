@@ -53,6 +53,35 @@
     --line-height-base: 1.6;
     --container-width: {{ settings.container_max_width }}px;
     --container-margin: {{ settings.container_margin }}px;
+    --scheme1-background: {{ settings.scheme_1_background_color }};
+    --scheme1-heading: {{ settings.scheme_1_heading_color }};
+    --scheme1-subheading: {{ settings.scheme_1_subheading_color }};
+    --scheme1-body: {{ settings.scheme_1_body_color }};
+    --scheme1-button-background: {{ settings.scheme_1_button_background_color }};
+    --scheme1-button-foreground: {{ settings.scheme_1_button_text_color }};
+    --scheme1-button-hover-background: {{ settings.scheme_1_button_hover_background_color }};
+    --scheme1-button-hover-foreground: {{ settings.scheme_1_button_hover_text_color }};
+    --scheme1-input-background: {{ settings.scheme_1_input_background_color }};
+    --scheme1-input-foreground: {{ settings.scheme_1_input_text_color }};
+    --scheme2-background: {{ settings.scheme_2_background_color }};
+    --scheme2-heading: {{ settings.scheme_2_heading_color }};
+    --scheme2-subheading: {{ settings.scheme_2_subheading_color }};
+    --scheme2-body: {{ settings.scheme_2_body_color }};
+    --scheme2-button-background: {{ settings.scheme_2_button_background_color }};
+    --scheme2-button-foreground: {{ settings.scheme_2_button_text_color }};
+    --scheme2-button-hover-background: {{ settings.scheme_2_button_hover_background_color }};
+    --scheme2-button-hover-foreground: {{ settings.scheme_2_button_hover_text_color }};
+    --scheme2-input-background: {{ settings.scheme_2_input_background_color }};
+    --scheme2-input-foreground: {{ settings.scheme_2_input_text_color }};
+    --color-background: var(--scheme1-background);
+    --color-foreground: var(--scheme1-body);
+    --color-heading: var(--scheme1-heading);
+    --button-background: var(--scheme1-button-background);
+    --button-foreground: var(--scheme1-button-foreground);
+    --button-hover-background: var(--scheme1-button-hover-background);
+    --button-hover-foreground: var(--scheme1-button-hover-foreground);
+    --input-background: var(--scheme1-input-background);
+    --input-foreground: var(--scheme1-input-foreground);
     --style-border-radius-inputs: {{ settings.input_corner_radius }}px;
   }
 {% endstyle %}

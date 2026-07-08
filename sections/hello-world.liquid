@@ -2,7 +2,8 @@
   Welcome to Shopify theme development!
 {% endcomment %}
 
-<div class="welcome full-width container-width">
+<div class="section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}">
+  <div class="welcome full-width container-width">
   <div class="welcome-content">
     <div>
       <h1>Hello, World!</h1>
@@ -128,12 +129,24 @@
     padding: 3px 10px 5px;
     text-decoration: none;
   }
+</div>
 {% endstylesheet %}
 
 {% schema %}
 {
   "name": "Hello World",
-  "settings": [],
+  "settings": [
+    {
+      "type": "select",
+      "id": "section_color_scheme",
+      "label": "t:labels.color_scheme",
+      "default": "scheme_1",
+      "options": [
+        { "value": "scheme_1", "label": "t:options.color_scheme.scheme_1" },
+        { "value": "scheme_2", "label": "t:options.color_scheme.scheme_2" }
+      ]
+    }
+  ],
   "presets": [
     {
       "name": "Hello World Template",

@@ -163,3 +163,30 @@ select,
   box-sizing: border-box;
   margin: auto;
 }
+  .section-color-scheme--scheme_1 {
+    --color-background: var(--scheme1-background);
+    --color-foreground: var(--scheme1-body);
+    --color-heading: var(--scheme1-heading);
+    --button-background: var(--scheme1-button-background);
+    --button-foreground: var(--scheme1-button-foreground);
+    --button-hover-background: var(--scheme1-button-hover-background);
+    --button-hover-foreground: var(--scheme1-button-hover-foreground);
+    --input-background: var(--scheme1-input-background);
+    --input-foreground: var(--scheme1-input-foreground);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  .section-color-scheme--scheme_2 {
+    --color-background: var(--scheme2-background);
+    --color-foreground: var(--scheme2-body);
+    --color-heading: var(--scheme2-heading);
+    --button-background: var(--scheme2-button-background);
+    --button-foreground: var(--scheme2-button-foreground);
+    --button-hover-background: var(--scheme2-button-hover-background);
+    --button-hover-foreground: var(--scheme2-button-hover-foreground);
+    --input-background: var(--scheme2-input-background);
+    --input-foreground: var(--scheme2-input-foreground);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }

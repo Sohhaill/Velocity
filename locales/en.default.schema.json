@@ -1,5 +1,9 @@
 
 {
+  "colors": {
+    "scheme_1": "Color scheme 1",
+    "scheme_2": "Color scheme 2"
+  },
   "general": {
     "404": "Not found",
     "article": "Article",
@@ -42,6 +46,12 @@
     "body_text": "Base text",
     "button": "Button",
     "button_font": "Button font",
+    "button_background": "Button background",
+    "button_text": "Button text",
+    "button_hover_background": "Button hover background",
+    "button_hover_text": "Button hover text",
+    "input_text": "Input text",
+    "input_background": "Input background",
     "field": "Field",
     "foreground": "Foreground",
     "grid_gap": "Grid spacing",

@@ -1,4 +1,4 @@
-<div class="custom-section full-width">
+<div class="custom-section full-width section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}">
   {% if section.settings.background_image %}
     <div class="custom-section__background">
       {{ section.settings.background_image | image_url: width: 2000 | image_tag }}
@@ -45,6 +45,16 @@
   "name": "t:general.custom_section",
   "blocks": [{ "type": "@theme" }],
   "settings": [
+    {
+      "type": "select",
+      "id": "section_color_scheme",
+      "label": "t:labels.color_scheme",
+      "default": "scheme_1",
+      "options": [
+        { "value": "scheme_1", "label": "t:options.color_scheme.scheme_1" },
+        { "value": "scheme_2", "label": "t:options.color_scheme.scheme_2" }
+      ]
+    },
     {
       "type": "image_picker",
       "id": "background_image",
