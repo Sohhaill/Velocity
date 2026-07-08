@@ -246,7 +246,7 @@
     "name": "t:general.layout",
     "settings": [
       {
-        "type": "select",
+        "type": "range",
         "id": "max_page_width",
         "label": "t:labels.page_width",
         "min": 100,
