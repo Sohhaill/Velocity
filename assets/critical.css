@@ -110,6 +110,31 @@ select,
   font-size: var(--font-size-field);
 }
 
+@media screen and (max-width: 749px) {
+  body {
+    font-size: var(--font-size-mobile-base);
+  }
+
+  h1 { font-size: var(--font-size-mobile-h1); }
+  h2 { font-size: var(--font-size-mobile-h2); }
+  h3 { font-size: var(--font-size-mobile-h3); }
+  h4 { font-size: var(--font-size-mobile-h4); }
+  h5 { font-size: var(--font-size-mobile-h5); }
+  h6 { font-size: var(--font-size-mobile-h6); }
+
+  button,
+  .button {
+    font-size: var(--font-size-mobile-button);
+  }
+
+  input,
+  textarea,
+  select,
+  .field__input {
+    font-size: var(--font-size-mobile-field);
+  }
+}
+
 /** Section layout utilities */
 
 /**
