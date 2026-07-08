@@ -48,6 +48,7 @@
     "body_font": "Body font",
     "body_text": "Base text",
     "button": "Button",
+    "button_font": "Button font",
     "field": "Field",
     "foreground": "Foreground",
     "grid_gap": "Grid spacing",

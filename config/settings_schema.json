@@ -27,6 +27,12 @@
         "label": "t:labels.body_font"
       },
       {
+        "type": "font_picker",
+        "id": "type_button_font",
+        "default": "inter_n4",
+        "label": "t:labels.button_font"
+      },
+      {
         "type": "header",
         "content": "Desktop Font Sizes"
       },

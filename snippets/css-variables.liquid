@@ -2,6 +2,7 @@
   {% # Loads all font variants with display: swap %}
   {% assign heading_font = settings.type_heading_font %}
   {% assign body_font = settings.type_body_font %}
+  {% assign button_font = settings.type_button_font %}
 
   {{ heading_font | font_face: font_display: 'swap' }}
   {{ heading_font | font_modify: 'weight', 'bold' | font_face: font_display: 'swap' }}
@@ -13,6 +14,11 @@
   {{ body_font | font_modify: 'weight', 'bold' | font_modify: 'style', 'italic' | font_face: font_display: 'swap' }}
   {{ body_font | font_modify: 'style', 'italic' | font_face: font_display: 'swap' }}
 
+  {{ button_font | font_face: font_display: 'swap' }}
+  {{ button_font | font_modify: 'weight', 'bold' | font_face: font_display: 'swap' }}
+  {{ button_font | font_modify: 'weight', 'bold' | font_modify: 'style', 'italic' | font_face: font_display: 'swap' }}
+  {{ button_font | font_modify: 'style', 'italic' | font_face: font_display: 'swap' }}
+
   :root {
     --font-heading--family: {{ heading_font.family }}, {{ heading_font.fallback_families }};
     --font-heading--style: {{ heading_font.style }};
@@ -20,6 +26,9 @@
     --font-body--family: {{ body_font.family }}, {{ body_font.fallback_families }};
     --font-body--style: {{ body_font.style }};
     --font-body--weight: {{ body_font.weight }};
+    --font-button--family: {{ button_font.family }}, {{ button_font.fallback_families }};
+    --font-button--style: {{ button_font.style }};
+    --font-button--weight: {{ button_font.weight }};
     --font-size-h1: {{ settings.font_size_h1 }}px;
     --font-size-h2: {{ settings.font_size_h2 }}px;
     --font-size-h3: {{ settings.font_size_h3 }}px;

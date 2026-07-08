@@ -100,7 +100,9 @@ h6 { font-size: var(--font-size-h6); }
 
 button,
 .button {
+  font-family: var(--font-button--family);
   font-size: var(--font-size-button);
+  font-weight: var(--font-button--weight);
 }
 
 input,
@@ -124,7 +126,9 @@ select,
 
   button,
   .button {
+    font-family: var(--font-button--family);
     font-size: var(--font-size-mobile-button);
+    font-weight: var(--font-button--weight);
   }
 
   input,
