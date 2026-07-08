@@ -262,7 +262,7 @@
         "max": 100,
         "step": 1,
         "unit": "px",
-        "label": "t:labels.page_margin",
+        "label": "t:labels.page_margind",
         "default": 20
       }
     ]
