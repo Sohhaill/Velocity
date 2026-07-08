@@ -237,7 +237,7 @@
     ]
   },
   {
-    "name": "t:general.layout",
+    "name": "t:general.layouts",
     "settings": [
       {
         "type": "select",
