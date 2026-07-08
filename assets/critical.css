@@ -141,34 +141,9 @@ select,
 
 /** Section layout utilities */
 
-/*
- * Layout uses a numeric `--page-width` (from theme settings) to constrain
- * content while keeping the section itself full-bleed. The section adds
- * horizontal padding using the `--page-margin` value so content doesn't
- * touch the viewport edges on small screens.
- */
-.shopify-section {
-  max-width: var(--page-width);
+.container-width {
   width: 100%;
-  padding-left: var(--page-margin);
-  padding-right: var(--page-margin);
+  padding-left: var(--container-margin);
+  padding-right: var(--container-margin);
   box-sizing: border-box;
-  position: relative;
-}
-
-/* Constrain direct children to the content width and center them. */
-.shopify-section > * {
-  max-width: var(--content-width);
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Allow explicit full-width children to span the viewport edge-to-edge. */
-.shopify-section > .full-width {
-  max-width: none;
-  margin-left: calc(var(--page-margin) * -1);
-  margin-right: calc(var(--page-margin) * -1);
-  width: calc(100% + var(--page-margin) * 2);
 }

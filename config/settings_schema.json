@@ -237,32 +237,26 @@
     ]
   },
   {
-    "name": "t:general.layouts",
+    "name": "t:general.container_width",
     "settings": [
       {
-        "type": "select",
-        "id": "max_page_width",
-        "label": "t:labels.page_width",
-        "options": [
-          {
-            "value": "90rem",
-            "label": "t:options.page_width.narrow"
-          },
-          {
-            "value": "110rem",
-            "label": "t:options.page_width.wide"
-          }
-        ],
-        "default": "90rem"
+        "type": "range",
+        "id": "container_max_width",
+        "label": "t:labels.max_width",
+        "min": 100,
+        "max": 2000,
+        "step": 10,
+        "unit": "px",
+        "default": 1200
       },
       {
         "type": "range",
-        "id": "min_page_margin",
-        "min": 10,
-        "max": 100,
+        "id": "container_margin",
+        "label": "t:labels.container_margin",
+        "min": 0,
+        "max": 200,
         "step": 1,
         "unit": "px",
-        "label": "t:labels.page_margind",
         "default": 20
       }
     ]

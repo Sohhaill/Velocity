@@ -19,6 +19,7 @@
     "group": "Group",
     "header": "Header",
     "layout": "Layout",
+    "container_width": "Container width",
     "main": "Main",
     "page": "Page",
     "password": "Password",
@@ -60,6 +61,8 @@
     "padding": "Padding",
     "page_margin": "Page margin",
     "page_width": "Page width",
+    "max_width": "Max width",
+    "container_margin": "Container margin",
     "show_payment_icons": "Show payment icons",
     "text_style": "Text style",
     "text": "Text"
