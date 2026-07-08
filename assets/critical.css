@@ -73,9 +73,41 @@ p:empty {
 
 /** Theme styles below */
 body {
-  font-family: var(--font-primary--family);
+  font-family: var(--font-body--family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
   background-color: var(--color-background);
   color: var(--color-foreground);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading--family);
+  font-weight: var(--font-heading--weight);
+  line-height: var(--line-height-heading);
+}
+
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+h4 { font-size: var(--font-size-h4); }
+h5 { font-size: var(--font-size-h5); }
+h6 { font-size: var(--font-size-h6); }
+
+button,
+.button {
+  font-size: var(--font-size-button);
+}
+
+input,
+textarea,
+select,
+.field__input {
+  font-size: var(--font-size-field);
 }
 
 /** Section layout utilities */
