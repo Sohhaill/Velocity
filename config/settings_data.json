@@ -8,5 +8,8 @@
  * ------------------------------------------------------------
  */
 {
-  "current": {}
+  "current": {
+    "type_heading_font": "system_ui_n4",
+    "content_for_index": []
+  }
 }
