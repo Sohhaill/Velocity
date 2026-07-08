@@ -247,7 +247,7 @@
     "settings": [
       {
         "type": "range",
-        "id": "max_page_width",
+        "id": "content_max_page_width",
         "label": "page_width",
         "min": 100,
         "max": 2000,
