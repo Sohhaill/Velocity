@@ -11,12 +11,14 @@
   "sections": {
     "main": {
       "type": "hello-world",
+      "disabled": true,
       "settings": {
         "section_color_scheme": "scheme_2"
       }
     },
     "collections_DqxwGg": {
       "type": "collections",
+      "disabled": true,
       "name": "t:general.collections_grid",
       "settings": {
         "section_color_scheme": "scheme_1",
