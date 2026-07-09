@@ -9,7 +9,7 @@
       {% if section.settings.logo %}
       <a class="footer__logo-link" href="{{ routes.root_url }}">
         {{ section.settings.logo | image_url: width: section.settings.logo_width_desktop | image_tag: class:
-        'footer__logo', alt: shop.name }}
+        'footer__logo', alt: shop.name, loading: 'lazy', style: '--footer-logo-width-desktop: ' | append: section.settings.logo_width_desktop | append: 'px; --footer-logo-width-mobile: ' | append: section.settings.logo_width_mobile | append: 'px;' }}
       </a>
       {% endif %}
 
@@ -97,9 +97,12 @@
       {% case block.type %}
       {% when 'menu' %}
       {% if block.settings.menu != blank %}
-      <div class="footer__block footer__block--{{ block.settings.width }}" {{ block.shopify_attributes }}>
+      <div class="footer__block footer__block--{{ block.settings.width }}{% if block.settings.open_by_default %} footer__block--open{% endif %}" {{ block.shopify_attributes }}>
         {% if block.settings.heading != blank %}
-        <h4 class="footer__block-heading">{{ block.settings.heading }}</h4>
+        <button class="footer__block-heading" type="button" data-footer-menu-toggle aria-expanded="{% if block.settings.open_by_default %}true{% else %}false{% endif %}">
+          <span>{{ block.settings.heading }}</span>
+          <span class="footer__block-icon" aria-hidden="true"></span>
+        </button>
         {% endif %}
         <ul class="footer__menu-list">
           {% for link in block.settings.menu.links %}
@@ -191,6 +194,7 @@ flex: 0 0 260px;
 display: block;
 height: auto;
 max-width: 100%;
+width: min(var(--footer-logo-width-desktop), 100%);
 }
 
 .footer__socials {
@@ -259,9 +263,15 @@ flex: 1 1 100%;
 }
 
 .footer__block-heading {
-margin: 0 0 1.1rem;
+margin: 0;
 position: relative;
-padding-bottom: 0.6rem;
+padding: 0 2rem 0.6rem 0;
+width: 100%;
+border: 0;
+background: transparent;
+color: inherit;
+text-align: left;
+cursor: pointer;
 }
 
 .footer__block-heading::after {
@@ -275,11 +285,46 @@ background: var(--button-background);
 
 }
 
+.footer__block-icon {
+position: absolute;
+right: 0;
+top: 0.15rem;
+width: 1rem;
+height: 1rem;
+transition: transform 0.25s ease;
+}
+
+.footer__block-icon::before,
+.footer__block-icon::after {
+content: "";
+position: absolute;
+left: 50%;
+top: 50%;
+background: currentColor;
+transform: translate(-50%, -50%);
+}
+
+.footer__block-icon::before {
+width: 1rem;
+height: 2px;
+}
+
+.footer__block-icon::after {
+width: 2px;
+height: 1rem;
+}
+
 .footer__menu-list,
 .footer__bottom-menu {
 list-style: none;
 margin: 0;
 padding: 0;
+}
+
+.footer__menu-list {
+overflow: hidden;
+max-height: 0;
+transition: max-height 0.3s ease;
 }
 
 .footer__menu-list li + li,
@@ -394,6 +439,27 @@ flex: 1 1 auto;
 
 .footer__brand-column {
 text-align: center;
+}
+
+.footer__logo {
+width: min(var(--footer-logo-width-mobile), 100%);
+}
+
+.footer__block-heading {
+padding-bottom: 0;
+padding-right: 2rem;
+}
+
+.footer__block-heading::after {
+display: none;
+}
+
+.footer__block--open .footer__menu-list {
+max-height: 1000px;
+}
+
+.footer__block--open .footer__block-icon {
+transform: rotate(45deg);
 }
 
 .footer__socials {
