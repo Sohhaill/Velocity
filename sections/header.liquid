@@ -14,52 +14,22 @@
       </a>
     </div>
 
-
+   
 
     <nav class="header__nav" aria-label="{{ 'header.menu' | t }}">
       {% if section.settings.menu.links and section.settings.menu.links.size > 0 %}
         <ul class="header__menu-list">
           {% for link in section.settings.menu.links %}
-            {% assign has_children = false %}
-            {% if link.links and link.links.size > 0 %}{% assign has_children = true %}{% endif %}
-            <li class="header__menu-item{% if has_children %} header__menu-item--has-children{% endif %}">
-              <a href="{{ link.url }}" class="header__menu-link"{% if has_children %} aria-haspopup="true" aria-expanded="false"{% endif %}>
-                <span>{{ link.title }}</span>
-                {% if has_children %}
-                  <span class="header__caret header__caret--down" aria-hidden="true">
-                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </span>
-                {% endif %}
-              </a>
-
-              {% if has_children %}
-                <ul class="header__submenu">
+            <li class="header__menu-item{% if link.links and link.links.size > 0 %} header__menu-item--has-children{% endif %}">
+              <a href="{{ link.url }}">{{ link.title }}</a>
+              {% if link.links and link.links.size > 0 %}
+                <button class="header__submenu-toggle" type="button" aria-expanded="false" aria-controls="submenu-{{ forloop.index0 }}">
+                  {{ 'header.open_submenu' | t }}
+                </button>
+                <ul id="submenu-{{ forloop.index0 }}" class="header__submenu">
                   {% for child in link.links %}
-                    {% assign has_grandchildren = false %}
-                    {% if child.links and child.links.size > 0 %}{% assign has_grandchildren = true %}{% endif %}
-                    <li class="header__submenu-item{% if has_grandchildren %} header__submenu-item--has-children{% endif %}">
-                      <a href="{{ child.url }}" class="header__submenu-link"{% if has_grandchildren %} aria-haspopup="true" aria-expanded="false"{% endif %}>
-                        <span>{{ child.title }}</span>
-                        {% if has_grandchildren %}
-                          <span class="header__caret header__caret--forward" aria-hidden="true">
-                            <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M1 1L5 5L1 9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                          </span>
-                        {% endif %}
-                      </a>
-
-                      {% if has_grandchildren %}
-                        <ul class="header__submenu header__submenu--flyout">
-                          {% for grandchild in child.links %}
-                            <li class="header__submenu-item">
-                              <a href="{{ grandchild.url }}" class="header__submenu-link">{{ grandchild.title }}</a>
-                            </li>
-                          {% endfor %}
-                        </ul>
-                      {% endif %}
+                    <li class="header__submenu-item">
+                      <a href="{{ child.url }}">{{ child.title }}</a>
                     </li>
                   {% endfor %}
                 </ul>
@@ -115,16 +85,14 @@
         </button>
       </div>
 
-      <nav class="header__drawer-nav" aria-label="{{ 'header.menu' | t }}">
+      <nav class="header__drawer-nav" aria-label="{{ 't:labels.menu' | t }}">
         {% if section.settings.menu.links and section.settings.menu.links.size > 0 %}
           <ul class="header__drawer-menu">
             {% for link in section.settings.menu.links %}
-              {% assign has_children = false %}
-              {% if link.links and link.links.size > 0 %}{% assign has_children = true %}{% endif %}
-              <li class="header__drawer-item{% if has_children %} header__drawer-item--has-children{% endif %}">
+              <li class="header__drawer-item{% if link.links and link.links.size > 0 %} header__drawer-item--has-children{% endif %}">
                 <div class="header__drawer-item-top">
                   <a href="{{ link.url }}">{{ link.title }}</a>
-                  {% if has_children %}
+                  {% if link.links and link.links.size > 0 %}
                     <button class="header__drawer-submenu-toggle" type="button" aria-expanded="false" aria-controls="drawer-submenu-{{ forloop.index0 }}">
                       <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -133,43 +101,14 @@
                     </button>
                   {% endif %}
                 </div>
-
-                {% if has_children %}
-                  <div id="drawer-submenu-{{ forloop.index0 }}" class="header__drawer-submenu">
-                    <ul class="header__drawer-submenu-inner">
-                      {% for child in link.links %}
-                        {% assign has_grandchildren = false %}
-                        {% if child.links and child.links.size > 0 %}{% assign has_grandchildren = true %}{% endif %}
-
-                        {% if has_grandchildren %}
-                          <li class="header__drawer-subitem header__drawer-subitem--has-children">
-                            <div class="header__drawer-item-top header__drawer-item-top--level2">
-                              <a href="{{ child.url }}">{{ child.title }}</a>
-                              <button class="header__drawer-submenu-toggle" type="button" aria-expanded="false" aria-controls="drawer-submenu-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}">
-                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <span class="visually-hidden">{{ 'header.open_submenu' | t }}</span>
-                              </button>
-                            </div>
-                            <div id="drawer-submenu-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}" class="header__drawer-submenu header__drawer-submenu--level3">
-                              <ul class="header__drawer-submenu-inner">
-                                {% for grandchild in child.links %}
-                                  <li>
-                                    <a href="{{ grandchild.url }}">{{ grandchild.title }}</a>
-                                  </li>
-                                {% endfor %}
-                              </ul>
-                            </div>
-                          </li>
-                        {% else %}
-                          <li class="header__drawer-subitem">
-                            <a href="{{ child.url }}">{{ child.title }}</a>
-                          </li>
-                        {% endif %}
-                      {% endfor %}
-                    </ul>
-                  </div>
+                {% if link.links and link.links.size > 0 %}
+                  <ul id="drawer-submenu-{{ forloop.index0 }}" class="header__drawer-submenu">
+                    {% for child in link.links %}
+                      <li>
+                        <a href="{{ child.url }}">{{ child.title }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
                 {% endif %}
               </li>
             {% endfor %}
@@ -178,105 +117,28 @@
       </nav>
 
       <div class="header__drawer-icons">
-
+       
         {% if section.settings.show_account_icon and shop.customer_accounts_enabled %}
           <a class="header__drawer-icon" href="{{ routes.account_login_url }}">
             {{ 'icon-account.svg' | inline_asset_content }}
             <span>{{ 'header.account_icon' | t }}</span>
           </a>
         {% endif %}
-
-
+        
+        
       </div>
     </div>
   </div>
 
   {% render 'header-scripts' %}
-
-  <script>
-    (function () {
-      var headerRoot = document.currentScript.closest('.header');
-      if (!headerRoot) return;
-
-      /* ---------------------------------------------------------------
-         MOBILE DRAWER: nested accordions, works for unlimited depth.
-         One delegated click listener handles every toggle button,
-         no height math needed (grid-template-rows animates itself,
-         see the stylesheet for `.header__drawer-submenu`).
-      --------------------------------------------------------------- */
-      var drawer = headerRoot.querySelector('#header-drawer');
-      if (drawer) {
-        drawer.addEventListener('click', function (e) {
-          var btn = e.target.closest('.header__drawer-submenu-toggle');
-          if (!btn) return;
-          var li = btn.closest('li');
-          if (!li) return;
-          var expanded = btn.getAttribute('aria-expanded') === 'true';
-          btn.setAttribute('aria-expanded', String(!expanded));
-          li.classList.toggle('header__drawer-item--open', !expanded);
-        });
-      }
-
-      /* ---------------------------------------------------------------
-         DESKTOP: hover/focus flyouts with a short "grace period" before
-         closing, so moving the mouse from the link into the dropdown
-         (or from a level-2 item into its level-3 flyout) doesn't cause
-         it to vanish instantly.
-      --------------------------------------------------------------- */
-      var CLOSE_DELAY = 300; // ms - tweak if it still feels too fast/slow
-
-      var desktopItems = headerRoot.querySelectorAll(
-        '.header__nav .header__menu-item--has-children, .header__nav .header__submenu-item--has-children'
-      );
-
-      desktopItems.forEach(function (item) {
-        var closeTimer = null;
-        var trigger = item.querySelector(':scope > a');
-        var flyout = item.querySelector(':scope > .header__submenu');
-
-        function open() {
-          clearTimeout(closeTimer);
-          item.classList.add('is-open');
-          if (trigger) trigger.setAttribute('aria-expanded', 'true');
-          positionFlyout();
-        }
-
-        function closeSoon() {
-          clearTimeout(closeTimer);
-          closeTimer = setTimeout(function () {
-            item.classList.remove('is-open');
-            if (trigger) trigger.setAttribute('aria-expanded', 'false');
-          }, CLOSE_DELAY);
-        }
-
-        // If a third-level flyout would overflow the right edge of the
-        // viewport, flip it to open toward the left instead.
-        function positionFlyout() {
-          if (!flyout || !flyout.classList.contains('header__submenu--flyout')) return;
-          flyout.classList.remove('header__submenu--flyout-left');
-          var rect = flyout.getBoundingClientRect();
-          if (rect.right > window.innerWidth) {
-            flyout.classList.add('header__submenu--flyout-left');
-          }
-        }
-
-        item.addEventListener('mouseenter', open);
-        item.addEventListener('mouseleave', closeSoon);
-        item.addEventListener('focusin', open);
-        item.addEventListener('focusout', function (e) {
-          if (!item.contains(e.relatedTarget)) closeSoon();
-        });
-      });
-    })();
-  </script>
 </header>
 
 {% stylesheet %}
   #shopify-section-{{ section.id }} {
-    /* Drawer / accordion transition (a bit slower, matches the slide-in panel) */
+    /* Single global transition variable for this section.
+       Change ONLY this line to update every animated transition
+       in the header, drawer, and submenus at once. */
     --transition-default: 0.45s cubic-bezier(0.65, 0, 0.35, 1);
-    /* Desktop dropdown / flyout transition (snappier, for hover UI) */
-    --transition-menu: 0.2s ease;
   }
 
   .header {
@@ -348,44 +210,20 @@
     position: relative;
   }
 
-  .header__menu-link,
-  .header__submenu-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
+  .header__menu-item a {
     color: inherit;
     text-decoration: none;
   }
 
-  /* Caret / chevron icons */
-  .header__caret {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 0;
+  .header__submenu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    margin-left: 0.25rem;
   }
 
-  .header__caret--down svg {
-    transition: transform var(--transition-menu);
-  }
-
-  .header__menu-item.is-open > .header__menu-link .header__caret--down svg {
-    transform: rotate(180deg);
-  }
-
-  .header__caret--forward svg {
-    transition: transform var(--transition-menu);
-  }
-
-  .header__submenu-item.is-open > .header__submenu-link .header__caret--forward svg {
-    transform: translateX(2px);
-  }
-
-  /* ---------------------------------------------------------------
-     Desktop dropdown / flyout submenus
-     Opacity + transform + delayed visibility gives a smooth fade
-     instead of the old instant show/hide.
-  --------------------------------------------------------------- */
   .header__submenu {
     position: absolute;
     top: 100%;
@@ -397,69 +235,19 @@
     margin: 0.5rem 0 0;
     padding: 0.5rem 0;
     min-width: 220px;
-    z-index: 60;
-
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(6px);
-    transition: opacity var(--transition-menu), transform var(--transition-menu), visibility 0s linear var(--transition-menu);
+    display: none;
   }
 
-  .header__menu-item.is-open > .header__submenu,
+  .header__menu-item:hover > .header__submenu,
   .header__menu-item:focus-within > .header__submenu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    transition: opacity var(--transition-menu), transform var(--transition-menu), visibility 0s linear 0s;
-  }
-
-  .header__submenu-item {
-    position: relative;
-  }
-
-  /* Third level: flyout that opens to the right of its parent item */
-  .header__submenu--flyout {
-    top: -0.5rem;
-    left: 100%;
-    margin: 0 0 0 0.5rem;
-    transform: translateX(6px);
-  }
-
-  .header__submenu--flyout.header__submenu--flyout-left {
-    left: auto;
-    right: 100%;
-    margin: 0 0.5rem 0 0;
-  }
-
-  .header__submenu-item.is-open > .header__submenu--flyout,
-  .header__submenu-item:focus-within > .header__submenu--flyout {
-    transform: translateX(0);
-  }
-
-  .header__submenu--flyout.header__submenu--flyout-left.header__submenu {
-    transform: translateX(-6px);
-  }
-
-  .header__submenu-item.is-open > .header__submenu--flyout.header__submenu--flyout-left,
-  .header__submenu-item:focus-within > .header__submenu--flyout.header__submenu--flyout-left {
-    transform: translateX(0);
+    display: block;
   }
 
   .header__submenu-item a {
+    display: block;
+    padding: 0.5rem 1rem;
     color: inherit;
     text-decoration: none;
-  }
-
-  .header__submenu-item .header__submenu-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.75rem;
-    padding: 0.5rem 1rem;
-  }
-
-  .header__submenu-item--has-children > .header__submenu-link {
-    padding-right: 0.75rem;
   }
 
   .header__icons {
@@ -549,20 +337,8 @@
     padding: 0;
   }
 
-  .header__drawer-item,
-  .header__drawer-subitem {
+  .header__drawer-item {
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  }
-
-  .header__drawer-subitem {
-    border-bottom-color: rgba(0, 0, 0, 0.04);
-  }
-
-  .header__drawer-subitem > a {
-    display: block;
-    padding: 0.75rem 1rem 0.75rem 2rem;
-    color: inherit;
-    text-decoration: none;
   }
 
   .header__drawer-item-top {
@@ -580,25 +356,17 @@
     text-decoration: none;
   }
 
-  .header__drawer-item-top--level2 > a {
-    padding: 0.75rem 1rem 0.75rem 2rem;
-    font-size: 0.92rem;
-    opacity: 0.9;
-  }
-
   .header__drawer-submenu-toggle {
  border: none;
     background: transparent;
     color: inherit;
+    width: 100%;
     cursor: pointer;
     padding: 0.9rem 1rem;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
   }
 .header__drawer-submenu-toggle:hover{
   background: unset;
@@ -608,47 +376,25 @@
     transition: transform var(--transition-default);
   }
 
-  .header__drawer-item--open > .header__drawer-item-top .header__drawer-submenu-toggle svg,
-  .header__drawer-item--open > .header__drawer-item-top--level2 .header__drawer-submenu-toggle svg {
+  .header__drawer-item--open .header__drawer-submenu-toggle svg {
     transform: rotate(180deg);
   }
 
-  /* ---------------------------------------------------------------
-     Nested accordion submenus (mobile drawer).
-     grid-template-rows: 0fr -> 1fr animates height without any JS
-     measuring, and it keeps working correctly no matter how many
-     levels are nested inside one another.
-  --------------------------------------------------------------- */
+  /* Accordion submenu: animated with JS-measured max-height, using the same transition variable */
   .header__drawer-submenu {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows var(--transition-default);
-  }
-
-  .header__drawer-item--open > .header__drawer-submenu {
-    grid-template-rows: 1fr;
-  }
-
-  .header__drawer-submenu-inner {
     list-style: none;
     margin: 0;
     padding: 0;
+    max-height: 0;
     overflow: hidden;
-    min-height: 0;
+    transition: max-height var(--transition-default);
   }
 
-  .header__drawer-submenu-inner > li > a {
+  .header__drawer-submenu li a {
     display: block;
     padding: 0.75rem 1rem 0.75rem 2rem;
     color: inherit;
     text-decoration: none;
-  }
-
-  /* extra indent for third-level leaf links */
-  .header__drawer-submenu .header__drawer-submenu-inner > li > a {
-    padding-left: 3rem;
-    font-size: 0.9rem;
-    opacity: 0.85;
   }
 
   .header__drawer-icons {
@@ -698,6 +444,11 @@
 
     .header__toggle {
       display: inline-flex;
+    }
+
+    .header__menu-item:hover > .header__submenu,
+    .header__menu-item:focus-within > .header__submenu {
+      display: none;
     }
   }
 {% endstylesheet %}
