@@ -29,20 +29,11 @@
             "width": "33",
             "menu": "main-menu"
           }
-        },
-        "menu_7KXPFA": {
-          "type": "menu",
-          "settings": {
-            "heading": "Main",
-            "width": "33",
-            "menu": "main-menu"
-          }
         }
       },
       "block_order": [
         "menu_X7Jt7j",
-        "menu_6KFWBc",
-        "menu_7KXPFA"
+        "menu_6KFWBc"
       ],
       "settings": {
         "section_color_scheme": "scheme_1",
