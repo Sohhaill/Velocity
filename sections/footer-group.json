@@ -13,11 +13,34 @@
   "sections": {
     "footer": {
       "type": "footer",
-      "disabled": true,
+      "blocks": {
+        "menu_X7Jt7j": {
+          "type": "menu",
+          "settings": {
+            "heading": "Main",
+            "width": "33",
+            "menu": "main-menu"
+          }
+        },
+        "menu_6KFWBc": {
+          "type": "menu",
+          "settings": {
+            "heading": "Main",
+            "width": "33",
+            "menu": "main-menu"
+          }
+        }
+      },
+      "block_order": [
+        "menu_X7Jt7j",
+        "menu_6KFWBc"
+      ],
       "settings": {
         "section_color_scheme": "scheme_1",
-        "menu": "",
-        "show_payment_icons": true
+        "logo": "shopify://shop_images/snowboard_wax.png",
+        "logo_width_desktop": 220,
+        "logo_width_mobile": 160,
+        "bottom_menu": ""
       }
     }
   },
