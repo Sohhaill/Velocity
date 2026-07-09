@@ -74,6 +74,8 @@
     "menu": "Menu",
     "customer_account_menu": "Customer account menu",
     "logo": "Logo",
+    "logo_width_desktop": "Logo width (desktop)",
+    "logo_width_mobile": "Logo width (mobile)",
     "header_width_desktop": "Header width (desktop)",
     "header_width_mobile": "Header width (mobile)",
     "header_sticky": "Sticky header",

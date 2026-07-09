@@ -128,7 +128,10 @@ select,
   color: var(--input-foreground);
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
-
+.header--full-width, .full-width{
+  padding-left: var(--container-margin);
+    padding-right: var(--container-margin);
+}
 @media screen and (max-width: 767px) {
     
  .hide-mobile {
