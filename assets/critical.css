@@ -129,7 +129,11 @@ select,
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 767px) {
+    
+  .hide-mobile{
+    display: none;
+  }
   .header svg{
     width: 15px;
     height: 15px;

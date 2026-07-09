@@ -48,7 +48,7 @@
       {% endif %}
 
       {% if section.settings.show_account_icon and shop.customer_accounts_enabled %}
-        <a class="header__icon" href="{{ routes.account_login_url }}" aria-label="{{ 'header.account_icon' | t }}">
+        <a class="header__icon hide-mobile" href="{{ routes.account_login_url }}" aria-label="{{ 'header.account_icon' | t }}">
           {{ 'icon-account.svg' | inline_asset_content }}
         </a>
       {% endif %}
@@ -438,7 +438,7 @@
     }
 
     .header__nav,
-    .header__icons {
+     {
       display: none;
     }
 
