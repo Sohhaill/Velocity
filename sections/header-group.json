@@ -15,7 +15,7 @@
       "type": "header",
       "settings": {
         "section_color_scheme": "scheme_2",
-        "header_width_type": "full_width",
+        "header_width_type": "container_width",
         "logo_width_desktop": 280,
         "logo_width_mobile": 180,
         "header_sticky": true,
