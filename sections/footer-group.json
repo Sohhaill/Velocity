@@ -13,7 +13,9 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "disabled": true,
       "settings": {
+        "section_color_scheme": "scheme_1",
         "menu": "",
         "show_payment_icons": true
       }
