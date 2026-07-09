@@ -131,8 +131,8 @@ select,
 
 @media screen and (max-width: 767px) {
     
-  .hide-mobile{
-    display: none;
+ .hide-mobile {
+    display: none !important;
   }
   .header svg{
     width: 15px;
