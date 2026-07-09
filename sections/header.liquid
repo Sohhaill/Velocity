@@ -20,21 +20,7 @@
       {% if section.settings.menu.links and section.settings.menu.links.size > 0 %}
         <ul class="header__menu-list">
           {% for link in section.settings.menu.links %}
-            <li class="header__menu-item{% if link.links and link.links.size > 0 %} header__menu-item--has-children{% endif %}">
-              <a href="{{ link.url }}">{{ link.title }}</a>
-              {% if link.links and link.links.size > 0 %}
-                <button class="header__submenu-toggle" type="button" aria-expanded="false" aria-controls="submenu-{{ forloop.index0 }}">
-                  {{ 'header.open_submenu' | t }}
-                </button>
-                <ul id="submenu-{{ forloop.index0 }}" class="header__submenu">
-                  {% for child in link.links %}
-                    <li class="header__submenu-item">
-                      <a href="{{ child.url }}">{{ child.title }}</a>
-                    </li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
-            </li>
+            {% render 'header-menu-item', link: link, mode: 'desktop', parent_id: 'desktop-', depth: 0 %}
           {% endfor %}
         </ul>
       {% endif %}
@@ -89,28 +75,7 @@
         {% if section.settings.menu.links and section.settings.menu.links.size > 0 %}
           <ul class="header__drawer-menu">
             {% for link in section.settings.menu.links %}
-              <li class="header__drawer-item{% if link.links and link.links.size > 0 %} header__drawer-item--has-children{% endif %}">
-                <div class="header__drawer-item-top">
-                  <a href="{{ link.url }}">{{ link.title }}</a>
-                  {% if link.links and link.links.size > 0 %}
-                    <button class="header__drawer-submenu-toggle" type="button" aria-expanded="false" aria-controls="drawer-submenu-{{ forloop.index0 }}">
-                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                      <span class="visually-hidden">{{ 'header.open_submenu' | t }}</span>
-                    </button>
-                  {% endif %}
-                </div>
-                {% if link.links and link.links.size > 0 %}
-                  <ul id="drawer-submenu-{{ forloop.index0 }}" class="header__drawer-submenu">
-                    {% for child in link.links %}
-                      <li>
-                        <a href="{{ child.url }}">{{ child.title }}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                {% endif %}
-              </li>
+              {% render 'header-menu-item', link: link, mode: 'drawer', parent_id: 'drawer-', depth: 0 %}
             {% endfor %}
           </ul>
         {% endif %}
@@ -210,18 +175,28 @@
     position: relative;
   }
 
-  .header__menu-item a {
+  .header__menu-link {
     color: inherit;
     text-decoration: none;
   }
 
+  .header__menu-link-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
   .header__submenu-toggle {
-    display: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
     border: none;
     background: transparent;
     color: inherit;
     cursor: pointer;
-    margin-left: 0.25rem;
+    padding: 0;
   }
 
   .header__submenu {
@@ -232,22 +207,54 @@
     border: 1px solid rgba(0, 0, 0, 0.08);
     box-shadow: 0 10px 18px rgba(0, 0, 0, 0.08);
     list-style: none;
-    margin: 0.5rem 0 0;
+    margin: 0.65rem 0 0;
     padding: 0.5rem 0;
     min-width: 220px;
-    display: none;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity var(--transition-default), transform var(--transition-default), visibility 0s linear 0.35s;
+    z-index: 20;
   }
 
   .header__menu-item:hover > .header__submenu,
   .header__menu-item:focus-within > .header__submenu {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition-delay: 0s;
   }
 
-  .header__submenu-item a {
-    display: block;
+  .header__submenu--depth-0 {
+    left: 0;
+    top: 100%;
+  }
+
+  .header__submenu--depth-1,
+  .header__submenu--depth-2,
+  .header__submenu--depth-3,
+  .header__submenu--depth-4 {
+    top: 0;
+    left: calc(100% + 0.5rem);
+    margin-top: 0;
+  }
+
+  .header__submenu .header__menu-item {
+    position: relative;
+  }
+
+  .header__submenu .header__menu-link-wrap {
+    width: 100%;
+    justify-content: space-between;
     padding: 0.5rem 1rem;
-    color: inherit;
-    text-decoration: none;
+  }
+
+  .header__submenu .header__menu-link {
+    display: block;
+    flex: 1;
   }
 
   .header__icons {
@@ -345,7 +352,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-        position: relative;
+    position: relative;
   }
 
   .header__drawer-item-top > a {
@@ -357,21 +364,22 @@
   }
 
   .header__drawer-submenu-toggle {
- border: none;
+    border: none;
     background: transparent;
     color: inherit;
-    width: 100%;
     cursor: pointer;
     padding: 0.9rem 1rem;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    position: absolute;
+    flex: 0 0 auto;
   }
-.header__drawer-submenu-toggle:hover{
-  background: unset;
-  color: unset;
-}
+
+  .header__drawer-submenu-toggle:hover {
+    background: unset;
+    color: unset;
+  }
+
   .header__drawer-submenu-toggle svg {
     transition: transform var(--transition-default);
   }
@@ -390,11 +398,17 @@
     transition: max-height var(--transition-default);
   }
 
-  .header__drawer-submenu li a {
+  .header__drawer-submenu li .header__drawer-item-top > a {
     display: block;
     padding: 0.75rem 1rem 0.75rem 2rem;
-    color: inherit;
-    text-decoration: none;
+  }
+
+  .header__drawer-submenu .header__drawer-submenu li .header__drawer-item-top > a {
+    padding-left: 3rem;
+  }
+
+  .header__drawer-submenu .header__drawer-submenu .header__drawer-submenu li .header__drawer-item-top > a {
+    padding-left: 4rem;
   }
 
   .header__drawer-icons {
@@ -446,8 +460,7 @@
       display: inline-flex;
     }
 
-    .header__menu-item:hover > .header__submenu,
-    .header__menu-item:focus-within > .header__submenu {
+    .header__submenu {
       display: none;
     }
   }
