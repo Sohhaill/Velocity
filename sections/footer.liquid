@@ -2,6 +2,7 @@
 {% if section.settings.footer_width_type == 'full_width' %}
 {% assign footer_width_class = 'full-width' %}
 {% endif %}
+{% assign footer_logo_styles = '--footer-logo-width-desktop: ' | append: section.settings.logo_width_desktop | append: 'px; --footer-logo-width-mobile: ' | append: section.settings.logo_width_mobile | append: 'px;' %}
 
 <footer class="footer section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }} ">
   <div class="footer__top {{ footer_width_class }}">
@@ -9,7 +10,7 @@
       {% if section.settings.logo %}
       <a class="footer__logo-link" href="{{ routes.root_url }}">
         {{ section.settings.logo | image_url: width: section.settings.logo_width_desktop | image_tag: class:
-        'footer__logo', alt: shop.name, loading: 'lazy', style: '--footer-logo-width-desktop: ' | append: section.settings.logo_width_desktop | append: 'px; --footer-logo-width-mobile: ' | append: section.settings.logo_width_mobile | append: 'px;' }}
+        'footer__logo', alt: shop.name, loading: 'lazy', style: footer_logo_styles }}
       </a>
       {% endif %}
 
@@ -168,6 +169,24 @@
     </div>
   </div>
 </footer>
+
+{% javascript %}
+document.addEventListener('DOMContentLoaded', () => {
+  const desktopQuery = window.matchMedia('(min-width: 861px)');
+
+  document.querySelectorAll('.footer__block').forEach((block) => {
+    const toggle = block.querySelector('[data-footer-menu-toggle]');
+    if (!toggle) return;
+
+    toggle.addEventListener('click', () => {
+      if (desktopQuery.matches) return;
+
+      const isOpen = block.classList.toggle('footer__block--open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+});
+{% endjavascript %}
 
 {% stylesheet %}
 .footer {
@@ -421,6 +440,21 @@ gap: 0 1.25rem;
 margin-top: 0;
 }
 
+@media (min-width: 861px) {
+.footer__block-heading {
+pointer-events: none;
+}
+
+.footer__block-icon {
+display: none;
+}
+
+.footer__menu-list {
+max-height: none;
+overflow: visible;
+}
+}
+
 @media (max-width: 860px) {
 .footer__top,
 .footer__bottom,
@@ -448,6 +482,7 @@ width: min(var(--footer-logo-width-mobile), 100%);
 .footer__block-heading {
 padding-bottom: 0;
 padding-right: 2rem;
+pointer-events: auto;
 }
 
 .footer__block-heading::after {
@@ -522,6 +557,16 @@ width: 100%;
 "default": 220
 },
 {
+"type": "range",
+"id": "logo_width_mobile",
+"label": "t:labels.logo_width_mobile",
+"min": 60,
+"max": 260,
+"step": 10,
+"unit": "px",
+"default": 160
+},
+{
 "type": "link_list",
 "id": "bottom_menu",
 "label": "Bottom menu"
@@ -536,6 +581,12 @@ width: 100%;
 "type": "text",
 "id": "heading",
 "label": "Heading"
+},
+{
+"type": "checkbox",
+"id": "open_by_default",
+"label": "Open by default",
+"default": false
 },
 {
 "type": "select",
