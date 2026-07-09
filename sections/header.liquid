@@ -359,6 +359,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+        position: relative;
   }
 
   .header__drawer-item-top > a {
@@ -370,16 +371,21 @@
   }
 
   .header__drawer-submenu-toggle {
-    border: none;
+ border: none;
     background: transparent;
     color: inherit;
+    width: 100%;
     cursor: pointer;
     padding: 0.9rem 1rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    position: absolute;
   }
-
+.header__drawer-submenu-toggle:hover{
+  background: unset;
+  color: unset;
+}
   .header__drawer-submenu-toggle svg {
     transition: transform var(--transition-default);
   }
