@@ -9,7 +9,8 @@
  */
 {
   "current": {
-    "type_heading_font": "system_ui_n7",
+    "type_heading_font": "montserrat_n7",
+    "type_button_font": "inter_n5",
     "font_size_body_text": 14,
     "font_size_mobile_h1": 32,
     "font_size_mobile_body_text": 12,
@@ -33,6 +34,8 @@
     "scheme_2_heading_color": "#FFFFFF",
     "scheme_2_subheading_color": "#FFFFFF",
     "scheme_2_body_color": "#FFFFFF",
+    "scheme_2_button_background_color": "#00E5FF",
+    "scheme_2_button_text_color": "#111111",
     "content_for_index": []
   }
 }
