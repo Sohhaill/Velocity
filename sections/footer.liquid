@@ -180,14 +180,15 @@
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.08);
-    color: inherit;
+    background: var(--button-background);
+    color: var(--button-foreground);
     transition: background-color 0.25s ease, transform 0.25s ease;
   }
 
   .footer__social-button:hover,
   .footer__social-button:focus-visible {
-    background: rgba(255, 255, 255, 0.18);
+    background: var(--button-hover-background);
+    color: var(--button-hover-foreground);
     transform: translateY(-5px);
   }
 
@@ -287,8 +288,8 @@
     min-width: 160px;
     padding: 0.75rem 1rem;
     border-radius: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid color-mix(in srgb, var(--button-background) 24%, transparent);
+    background: var(--input-background);
     color: inherit;
     box-sizing: border-box;
   }
@@ -297,16 +298,17 @@
     flex: 0 0 auto;
     padding: 0.75rem 1.5rem;
     border-radius: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    background: rgba(255, 255, 255, 0.08);
-    color: inherit;
+    border: 1px solid transparent;
+    background: var(--button-background);
+    color: var(--button-foreground);
     cursor: pointer;
     transition: background-color 0.25s ease, transform 0.25s ease;
   }
 
   .footer__subscribe button:hover,
   .footer__subscribe button:focus-visible {
-    background: rgba(255, 255, 255, 0.18);
+    background: var(--button-hover-background);
+    color: var(--button-hover-foreground);
     transform: translateY(-1px);
   }
 
