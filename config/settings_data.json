@@ -15,9 +15,9 @@
     "font_size_mobile_body_text": 12,
     "container_max_width": 1200,
     "container_margin": 16,
-    "scheme_2_heading_color": "#000000",
-    "scheme_2_subheading_color": "#000000",
-    "scheme_2_body_color": "#000000",
+    "scheme_2_heading_color": "#FFFFFF",
+    "scheme_2_subheading_color": "#FFFFFF",
+    "scheme_2_body_color": "#FFFFFF",
     "content_for_index": []
   }
 }
