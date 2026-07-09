@@ -12,10 +12,11 @@
   {% assign has_children = true %}
 {% endif %}
 
-{% assign submenu_id = parent_id | append: forloop.index0 %}
+{% assign submenu_id = parent_id | append: index %}
+{% assign child_parent_id = submenu_id | append: '-' %}
 
 {% if mode == 'drawer' %}
-  <li class="header__drawer-item{% if has_children %} header__drawer-item--has-children{% endif %}" data-depth="{{ depth }}">
+  <li class="header__drawer-item{% if has_children %} header__drawer-item--has-children{% endif %}" data-depth="{{ depth }}" style="--drawer-depth: {{ depth }}">
     <div class="header__drawer-item-top">
       <a href="{{ link.url }}">{{ link.title }}</a>
       {% if has_children %}
@@ -37,7 +38,7 @@
     {% if has_children %}
       <ul id="{{ submenu_id }}" class="header__drawer-submenu" data-depth="{{ depth }}">
         {% for child in link.links %}
-          {% render 'header-menu-item', link: child, mode: 'drawer', parent_id: submenu_id | append: '-', depth: depth | plus: 1 %}
+          {% render 'header-menu-item', link: child, mode: 'drawer', parent_id: child_parent_id, depth: depth | plus: 1, index: forloop.index0 %}
         {% endfor %}
       </ul>
     {% endif %}
@@ -65,7 +66,7 @@
     {% if has_children %}
       <ul id="{{ submenu_id }}" class="header__submenu header__submenu--depth-{{ depth }}" data-depth="{{ depth }}">
         {% for child in link.links %}
-          {% render 'header-menu-item', link: child, mode: 'desktop', parent_id: submenu_id | append: '-', depth: depth | plus: 1 %}
+          {% render 'header-menu-item', link: child, mode: 'desktop', parent_id: child_parent_id, depth: depth | plus: 1, index: forloop.index0 %}
         {% endfor %}
       </ul>
     {% endif %}

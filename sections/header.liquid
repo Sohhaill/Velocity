@@ -20,7 +20,7 @@
       {% if section.settings.menu.links and section.settings.menu.links.size > 0 %}
         <ul class="header__menu-list">
           {% for link in section.settings.menu.links %}
-            {% render 'header-menu-item', link: link, mode: 'desktop', parent_id: 'desktop-', depth: 0 %}
+            {% render 'header-menu-item', link: link, mode: 'desktop', parent_id: 'desktop-', depth: 0, index: forloop.index0 %}
           {% endfor %}
         </ul>
       {% endif %}
@@ -75,7 +75,7 @@
         {% if section.settings.menu.links and section.settings.menu.links.size > 0 %}
           <ul class="header__drawer-menu">
             {% for link in section.settings.menu.links %}
-              {% render 'header-menu-item', link: link, mode: 'drawer', parent_id: 'drawer-', depth: 0 %}
+              {% render 'header-menu-item', link: link, mode: 'drawer', parent_id: 'drawer-', depth: 0, index: forloop.index0 %}
             {% endfor %}
           </ul>
         {% endif %}
@@ -400,15 +400,11 @@
 
   .header__drawer-submenu li .header__drawer-item-top > a {
     display: block;
-    padding: 0.75rem 1rem 0.75rem 2rem;
+    padding: 0.75rem 1rem 0.75rem calc(2rem + (var(--drawer-depth, 0) * 1rem));
   }
 
-  .header__drawer-submenu .header__drawer-submenu li .header__drawer-item-top > a {
-    padding-left: 3rem;
-  }
-
-  .header__drawer-submenu .header__drawer-submenu .header__drawer-submenu li .header__drawer-item-top > a {
-    padding-left: 4rem;
+  .header__drawer-submenu li .header__drawer-submenu-toggle {
+    padding-right: 1rem;
   }
 
   .header__drawer-icons {
