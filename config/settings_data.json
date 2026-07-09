@@ -12,6 +12,7 @@
     "type_heading_font": "system_ui_n4",
     "font_size_body_text": 14,
     "font_size_mobile_h1": 32,
+    "font_size_mobile_body_text": 12,
     "container_max_width": 1200,
     "container_margin": 16,
     "scheme_2_heading_color": "#000000",
