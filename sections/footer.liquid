@@ -1,531 +1,571 @@
 {% assign footer_width_class = 'container-width' %}
 {% if section.settings.footer_width_type == 'full_width' %}
-  {% assign footer_width_class = 'full-width' %}
+{% assign footer_width_class = 'full-width' %}
 {% endif %}
 
 <footer class="footer section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }} ">
   <div class="footer__top {{ footer_width_class }}">
     <div class="footer__brand-column">
       {% if section.settings.logo %}
-        <a class="footer__logo-link" href="{{ routes.root_url }}">
-          {{ section.settings.logo | image_url: width: section.settings.logo_width_desktop | image_tag: class: 'footer__logo footer__logo--desktop', alt: shop.name }}
-          {% if section.settings.logo_mobile %}
-            {{ section.settings.logo_mobile | image_url: width: section.settings.logo_width_mobile | image_tag: class: 'footer__logo footer__logo--mobile', alt: shop.name }}
-          {% else %}
-            <span class="footer__logo-spacer footer__logo--mobile"></span>
-          {% endif %}
-        </a>
+      <a class="footer__logo-link" href="{{ routes.root_url }}">
+        {{ section.settings.logo | image_url: width: section.settings.logo_width_desktop | image_tag: class:
+        'footer__logo footer__logo--desktop', alt: shop.name }}
+        {% if section.settings.logo_mobile %}
+        {{ section.settings.logo_mobile | image_url: width: section.settings.logo_width_mobile | image_tag: class:
+        'footer__logo footer__logo--mobile', alt: shop.name }}
+        {% else %}
+        <span class="footer__logo-spacer footer__logo--mobile"></span>
+        {% endif %}
+      </a>
       {% endif %}
 
       <div class="footer__socials">
+        
         {% if settings.footer_facebook_url != blank %}
-          <a class="footer__social-button" href="{{ settings.footer_facebook_url }}" target="_blank" rel="noopener" aria-label="Facebook">
-           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" preserveAspectRatio="xMidYMid" width="14.906" height="32" viewBox="0 0 14.906 32">
-    <path d="M14.874,11.167 L14.262,14.207 C14.062,15.208 13.100,15.992 12.072,15.992 L10.000,15.992 L10.000,30.000 C10.000,31.104 9.159,32.000 8.049,32.000 L5.030,32.000 C3.920,32.000 3.017,31.102 3.017,29.999 L3.017,15.992 L2.011,15.992 C0.901,15.992 -0.002,15.095 -0.002,13.991 L-0.002,10.990 C-0.002,9.887 0.901,8.989 2.011,8.989 L3.017,8.989 L3.017,6.003 C3.017,2.716 5.693,0.041 8.994,0.013 C9.015,0.012 9.033,0.001 9.055,0.001 L13.081,0.001 C13.636,0.001 14.000,0.448 14.000,1.000 L14.000,6.000 C14.000,6.553 13.636,7.004 13.081,7.004 L10.061,7.004 L10.060,8.989 L13.079,8.989 C13.645,8.989 14.167,9.228 14.509,9.644 C14.852,10.059 14.985,10.615 14.874,11.167 ZM9.092,10.990 C9.078,10.991 9.067,10.998 9.053,10.998 L9.053,10.998 C8.497,10.997 8.046,10.549 8.047,9.997 L8.047,9.990 C8.047,9.990 8.047,9.990 8.047,9.990 C8.047,9.990 8.047,9.990 8.047,9.990 L8.049,6.003 C8.049,5.450 8.499,5.003 9.055,5.003 L12.074,5.003 L12.074,2.002 L9.094,2.002 C9.077,2.002 9.063,2.011 9.045,2.011 C6.831,2.011 5.030,3.802 5.030,6.003 L5.030,10.005 C5.030,10.558 4.579,11.006 4.023,11.006 C3.996,11.006 3.973,10.992 3.946,10.990 L2.011,10.990 L2.011,13.991 L4.023,13.991 C4.579,13.991 5.030,14.439 5.030,14.992 C5.030,15.044 5.008,15.088 5.000,15.138 L5.000,30.000 L8.049,29.999 L8.049,15.002 C8.049,14.998 8.047,14.995 8.047,14.992 C8.047,14.439 8.497,13.991 9.053,13.991 L12.072,13.991 C12.145,13.991 12.275,13.886 12.288,13.816 L12.857,10.990 L9.092,10.990 Z"/>
-</svg>
-</a>
+            <h4 class="footer__block-heading">Follow Us</h4>
+        <a class="footer__social-button" href="{{ settings.footer_facebook_url }}" target="_blank" rel="noopener"
+          aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" preserveAspectRatio="xMidYMid" width="14.906"
+            height="32" viewBox="0 0 14.906 32">
+            <path
+              d="M14.874,11.167 L14.262,14.207 C14.062,15.208 13.100,15.992 12.072,15.992 L10.000,15.992 L10.000,30.000 C10.000,31.104 9.159,32.000 8.049,32.000 L5.030,32.000 C3.920,32.000 3.017,31.102 3.017,29.999 L3.017,15.992 L2.011,15.992 C0.901,15.992 -0.002,15.095 -0.002,13.991 L-0.002,10.990 C-0.002,9.887 0.901,8.989 2.011,8.989 L3.017,8.989 L3.017,6.003 C3.017,2.716 5.693,0.041 8.994,0.013 C9.015,0.012 9.033,0.001 9.055,0.001 L13.081,0.001 C13.636,0.001 14.000,0.448 14.000,1.000 L14.000,6.000 C14.000,6.553 13.636,7.004 13.081,7.004 L10.061,7.004 L10.060,8.989 L13.079,8.989 C13.645,8.989 14.167,9.228 14.509,9.644 C14.852,10.059 14.985,10.615 14.874,11.167 ZM9.092,10.990 C9.078,10.991 9.067,10.998 9.053,10.998 L9.053,10.998 C8.497,10.997 8.046,10.549 8.047,9.997 L8.047,9.990 C8.047,9.990 8.047,9.990 8.047,9.990 C8.047,9.990 8.047,9.990 8.047,9.990 L8.049,6.003 C8.049,5.450 8.499,5.003 9.055,5.003 L12.074,5.003 L12.074,2.002 L9.094,2.002 C9.077,2.002 9.063,2.011 9.045,2.011 C6.831,2.011 5.030,3.802 5.030,6.003 L5.030,10.005 C5.030,10.558 4.579,11.006 4.023,11.006 C3.996,11.006 3.973,10.992 3.946,10.990 L2.011,10.990 L2.011,13.991 L4.023,13.991 C4.579,13.991 5.030,14.439 5.030,14.992 C5.030,15.044 5.008,15.088 5.000,15.138 L5.000,30.000 L8.049,29.999 L8.049,15.002 C8.049,14.998 8.047,14.995 8.047,14.992 C8.047,14.439 8.497,13.991 9.053,13.991 L12.072,13.991 C12.145,13.991 12.275,13.886 12.288,13.816 L12.857,10.990 L9.092,10.990 Z" />
+          </svg>
+        </a>
         {% endif %}
         {% if settings.footer_instagram_url != blank %}
-          <a class="footer__social-button" href="{{ settings.footer_instagram_url }}" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="currentColor"/>
-<path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" fill="currentColor"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" fill="currentColor"/>
-</svg> </a>
+        <a class="footer__social-button" href="{{ settings.footer_instagram_url }}" target="_blank" rel="noopener"
+          aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
+              fill="currentColor" />
+            <path
+              d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z"
+              fill="currentColor" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z"
+              fill="currentColor" />
+          </svg> </a>
         {% endif %}
         {% if settings.footer_youtube_url != blank %}
-          <a class="footer__social-button" href="{{ settings.footer_youtube_url }}" target="_blank" rel="noopener" aria-label="YouTube">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800px" height="800px" viewBox="0 0 192 192" class="style-scope yt-icon" preserveAspectRatio="xMidYMid" style="display:block">
+        <a class="footer__social-button" href="{{ settings.footer_youtube_url }}" target="_blank" rel="noopener"
+          aria-label="YouTube">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800px"
+            height="800px" viewBox="0 0 192 192" class="style-scope yt-icon" preserveAspectRatio="xMidYMid"
+            style="display:block">
 
-<defs>
+            <defs>
 
-<linearGradient id="a">
+              <linearGradient id="a">
 
-<stop offset="0" style="stop-color:#000000;stop-opacity:1"/>
+                <stop offset="0" style="stop-color:#000000;stop-opacity:1" />
 
-<stop offset="1" style="stop-color:#000000;stop-opacity:0"/>
+                <stop offset="1" style="stop-color:#000000;stop-opacity:0" />
 
-</linearGradient>
+              </linearGradient>
 
-<linearGradient xlink:href="#a" id="b" x1="2.004" x2="21.998" y1="12" y2="12" gradientTransform="matrix(1.02105 0 0 1.00561 -.247 -.067)" gradientUnits="userSpaceOnUse"/>
+              <linearGradient xlink:href="#a" id="b" x1="2.004" x2="21.998" y1="12" y2="12"
+                gradientTransform="matrix(1.02105 0 0 1.00561 -.247 -.067)" gradientUnits="userSpaceOnUse" />
 
-</defs>
+            </defs>
 
-<g class="style-scope yt-icon" style="fill:url(#b);fill-opacity:1;stroke-width:1.01331" transform="matrix(7.83738 0 0 6.96095 1.899 12.469)">
+            <g class="style-scope yt-icon" style="fill:url(#b);fill-opacity:1;stroke-width:1.01331"
+              transform="matrix(7.83738 0 0 6.96095 1.899 12.469)">
 
-<path fill="red" d="M21.39 13.19v-.22c-.01-.86-.5-5-.78-5.74-.32-.85-.76-1.5-1.31-1.91-.9-.67-1.66-.82-2.6-.84h-.02c-.4 0-3.01.32-5.2.62-2.2.3-4.95.7-5.6.94-.9.33-1.62.77-2.19 1.33-1.05 1.04-1.18 2.11-1.04 3.51.1 1.09.69 5.37 1.02 6.35.45 1.32 1.33 2.12 2.47 2.24.28.03.55.05.82.05 1 0 1.8-.21 2.72-.46 1.45-.39 3.25-.87 6.97-.87h.11c.91 0 3.14-.2 4.16-2.07.52-1 .49-2.21.47-2.93z" class="style-scope yt-icon" style="fill:none;fill-opacity:1;stroke:currentColor ;stroke-width:1.62466;stroke-dasharray:none;stroke-opacity:1"/>
+              <path fill="red"
+                d="M21.39 13.19v-.22c-.01-.86-.5-5-.78-5.74-.32-.85-.76-1.5-1.31-1.91-.9-.67-1.66-.82-2.6-.84h-.02c-.4 0-3.01.32-5.2.62-2.2.3-4.95.7-5.6.94-.9.33-1.62.77-2.19 1.33-1.05 1.04-1.18 2.11-1.04 3.51.1 1.09.69 5.37 1.02 6.35.45 1.32 1.33 2.12 2.47 2.24.28.03.55.05.82.05 1 0 1.8-.21 2.72-.46 1.45-.39 3.25-.87 6.97-.87h.11c.91 0 3.14-.2 4.16-2.07.52-1 .49-2.21.47-2.93z"
+                class="style-scope yt-icon"
+                style="fill:none;fill-opacity:1;stroke:currentColor ;stroke-width:1.62466;stroke-dasharray:none;stroke-opacity:1" />
 
-<path fill="currentColor" d="M11.59 14.76c-.48.36-.8.45-1.01.45a.54.54 0 0 1-.3-.08c-.34-.18-.42-.61-.5-1.2l-.01-.1c-.04-.31-.26-2.1-.38-3.16l-.09-.73c-.04-.28-.1-.75.24-1 .32-.23.75-.09.96-.03.53.17 3.6 1.23 4.59 1.73.21.09.67.28.68.83.01.5-.38.74-.53.82z" class="style-scope yt-icon" style="fill:none;fill-opacity:1;stroke:currentColor ;stroke-width:1.62466;stroke-dasharray:none;stroke-opacity:1"/>
+              <path fill="currentColor"
+                d="M11.59 14.76c-.48.36-.8.45-1.01.45a.54.54 0 0 1-.3-.08c-.34-.18-.42-.61-.5-1.2l-.01-.1c-.04-.31-.26-2.1-.38-3.16l-.09-.73c-.04-.28-.1-.75.24-1 .32-.23.75-.09.96-.03.53.17 3.6 1.23 4.59 1.73.21.09.67.28.68.83.01.5-.38.74-.53.82z"
+                class="style-scope yt-icon"
+                style="fill:none;fill-opacity:1;stroke:currentColor ;stroke-width:1.62466;stroke-dasharray:none;stroke-opacity:1" />
 
-</g>
+            </g>
 
-</svg> </a>
+          </svg> </a>
         {% endif %}
         {% if settings.footer_twitter_url != blank %}
-          <a class="footer__social-button" href="{{ settings.footer_twitter_url }}" target="_blank" rel="noopener" aria-label="Twitter">
-           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
-  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
-</svg></a>
+        <a class="footer__social-button" href="{{ settings.footer_twitter_url }}" target="_blank" rel="noopener"
+          aria-label="Twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x"
+            viewBox="0 0 16 16">
+            <path
+              d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+          </svg></a>
         {% endif %}
       </div>
     </div>
 
     <div class="footer__blocks">
       {% for block in section.blocks %}
-        {% case block.type %}
-          {% when 'menu' %}
-            {% if block.settings.menu != blank %}
-              <div class="footer__block footer__block--{{ block.settings.width }}" {{ block.shopify_attributes }}>
-                {% if block.settings.heading != blank %}
-                  <h4 class="footer__block-heading">{{ block.settings.heading }}</h4>
-                {% endif %}
-                <ul class="footer__menu-list">
-                  {% for link in block.settings.menu.links %}
-                    <li>
-                      <a href="{{ link.url }}">{{ link.title }}</a>
-                    </li>
-                  {% endfor %}
-                </ul>
-              </div>
-            {% endif %}
-          {% when 'subscribe' %}
-            <div class="footer__block footer__block--{{ block.settings.width }}" {{ block.shopify_attributes }}>
-              {% if block.settings.heading != blank %}
-                <h4 class="footer__block-heading">{{ block.settings.heading }}</h4>
-              {% endif %}
-              {% form 'customer', class: 'footer__subscribe' %}
-                <input type="hidden" name="contact[tags]" value="newsletter">
-                <input type="email" name="contact[email]" required placeholder="{{ block.settings.placeholder | default: 'Enter your email' | escape }}">
-                <button type="submit">{{ block.settings.button_label | default: 'Subscribe' }}</button>
-              {% endform %}
-            </div>
-        {% endcase %}
+      {% case block.type %}
+      {% when 'menu' %}
+      {% if block.settings.menu != blank %}
+      <div class="footer__block footer__block--{{ block.settings.width }}" {{ block.shopify_attributes }}>
+        {% if block.settings.heading != blank %}
+        <h4 class="footer__block-heading">{{ block.settings.heading }}</h4>
+        {% endif %}
+        <ul class="footer__menu-list">
+          {% for link in block.settings.menu.links %}
+          <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+      {% when 'subscribe' %}
+      <div class="footer__block footer__block--{{ block.settings.width }}" {{ block.shopify_attributes }}>
+        {% if block.settings.heading != blank %}
+        <h4 class="footer__block-heading">{{ block.settings.heading }}</h4>
+        {% endif %}
+        {% form 'customer', class: 'footer__subscribe' %}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <input type="email" name="contact[email]" required
+          placeholder="{{ block.settings.placeholder | default: 'Enter your email' | escape }}">
+        <button type="submit">{{ block.settings.button_label | default: 'Subscribe' }}</button>
+        {% endform %}
+      </div>
+      {% endcase %}
       {% endfor %}
     </div>
   </div>
 
   <div class="footer__bottom container-width">
     <div class="footer__bottom-left">
-      {% if settings.footer_payment_icon_1 != blank or settings.footer_payment_icon_2 != blank or settings.footer_payment_icon_3 != blank or settings.footer_payment_icon_4 != blank or settings.footer_payment_icon_5 != blank or settings.footer_payment_icon_6 != blank or settings.footer_payment_icon_7 != blank or settings.footer_payment_icon_8 != blank %}
-        <div class="footer__payment">
-          {% if settings.footer_payment_icon_1 != blank %}<img src="{{ settings.footer_payment_icon_1 | image_url }}" alt="Payment icon 1">{% endif %}
-          {% if settings.footer_payment_icon_2 != blank %}<img src="{{ settings.footer_payment_icon_2 | image_url }}" alt="Payment icon 2">{% endif %}
-          {% if settings.footer_payment_icon_3 != blank %}<img src="{{ settings.footer_payment_icon_3 | image_url }}" alt="Payment icon 3">{% endif %}
-          {% if settings.footer_payment_icon_4 != blank %}<img src="{{ settings.footer_payment_icon_4 | image_url }}" alt="Payment icon 4">{% endif %}
-          {% if settings.footer_payment_icon_5 != blank %}<img src="{{ settings.footer_payment_icon_5 | image_url }}" alt="Payment icon 5">{% endif %}
-          {% if settings.footer_payment_icon_6 != blank %}<img src="{{ settings.footer_payment_icon_6 | image_url }}" alt="Payment icon 6">{% endif %}
-          {% if settings.footer_payment_icon_7 != blank %}<img src="{{ settings.footer_payment_icon_7 | image_url }}" alt="Payment icon 7">{% endif %}
-          {% if settings.footer_payment_icon_8 != blank %}<img src="{{ settings.footer_payment_icon_8 | image_url }}" alt="Payment icon 8">{% endif %}
-        </div>
+      {% if settings.footer_payment_icon_1 != blank or settings.footer_payment_icon_2 != blank or
+      settings.footer_payment_icon_3 != blank or settings.footer_payment_icon_4 != blank or
+      settings.footer_payment_icon_5 != blank or settings.footer_payment_icon_6 != blank or
+      settings.footer_payment_icon_7 != blank or settings.footer_payment_icon_8 != blank %}
+      <div class="footer__payment">
+        {% if settings.footer_payment_icon_1 != blank %}<img src="{{ settings.footer_payment_icon_1 | image_url }}"
+          alt="Payment icon 1">{% endif %}
+        {% if settings.footer_payment_icon_2 != blank %}<img src="{{ settings.footer_payment_icon_2 | image_url }}"
+          alt="Payment icon 2">{% endif %}
+        {% if settings.footer_payment_icon_3 != blank %}<img src="{{ settings.footer_payment_icon_3 | image_url }}"
+          alt="Payment icon 3">{% endif %}
+        {% if settings.footer_payment_icon_4 != blank %}<img src="{{ settings.footer_payment_icon_4 | image_url }}"
+          alt="Payment icon 4">{% endif %}
+        {% if settings.footer_payment_icon_5 != blank %}<img src="{{ settings.footer_payment_icon_5 | image_url }}"
+          alt="Payment icon 5">{% endif %}
+        {% if settings.footer_payment_icon_6 != blank %}<img src="{{ settings.footer_payment_icon_6 | image_url }}"
+          alt="Payment icon 6">{% endif %}
+        {% if settings.footer_payment_icon_7 != blank %}<img src="{{ settings.footer_payment_icon_7 | image_url }}"
+          alt="Payment icon 7">{% endif %}
+        {% if settings.footer_payment_icon_8 != blank %}<img src="{{ settings.footer_payment_icon_8 | image_url }}"
+          alt="Payment icon 8">{% endif %}
+      </div>
       {% endif %}
     </div>
     <div class="footer__bottom-right">
       {% if section.settings.bottom_menu != blank %}
-        <ul class="footer__bottom-menu">
-          {% for link in linklists[section.settings.bottom_menu].links %}
-            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
-        </ul>
+      <ul class="footer__bottom-menu">
+        {% for link in linklists[section.settings.bottom_menu].links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
       {% endif %}
     </div>
   </div>
 </footer>
 
 {% stylesheet %}
-  .footer {
-    padding: 3rem 0 1.5rem;
-    position: relative;
-  }
+.footer {
+padding: 3rem 0 1.5rem;
+position: relative;
+}
 
-  .footer__top,
-  .footer__bottom {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-  }
+.footer__top,
+.footer__bottom {
+display: flex;
+justify-content: space-between;
+gap: 2rem;
+}
 
-  .footer__top {
-    padding-bottom: 2.5rem;
-  }
+.footer__top {
+padding-bottom: 2.5rem;
+}
 
-  .footer__brand-column {
-    flex: 0 0 260px;
-  }
+.footer__brand-column {
+flex: 0 0 260px;
+}
 
-  .footer__logo {
-    display: block;
-    height: auto;
-    max-width: 100%;
-  }
+.footer__logo {
+display: block;
+height: auto;
+max-width: 100%;
+}
 
-  .footer__logo--mobile {
-    display: none;
-  }
+.footer__logo--mobile {
+display: none;
+}
 
-  .footer__logo-spacer {
-    display: none;
-  }
+.footer__logo-spacer {
+display: none;
+}
 
-  .footer__socials {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-top: 1.25rem;
-  }
+.footer__socials {
+display: flex;
+flex-wrap: wrap;
+gap: 0.75rem;
+margin-top: 1.25rem;
+}
 
-  .footer__social-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 999px;
-    background: var(--button-background);
-    color: var(--button-foreground);
-    transition: background-color 0.25s ease, transform 0.25s ease;
-  }
+.footer__social-button {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+width: 2.5rem;
+height: 2.5rem;
+border-radius: 999px;
+background: var(--button-background);
+color: var(--button-foreground);
+transition: background-color 0.25s ease, transform 0.25s ease;
+}
 
-  .footer__social-button:hover,
-  .footer__social-button:focus-visible {
-    background: var(--button-hover-background);
-    color: var(--button-hover-foreground);
-    transform: translateY(-5px);
-  }
+.footer__social-button:hover,
+.footer__social-button:focus-visible {
+background: var(--button-hover-background);
+color: var(--button-hover-foreground);
+transform: translateY(-5px);
+}
 
-  .footer__social-button svg {
-    width: 1.5rem;
-    height: 1.5rem;
-    fill: currentColor;
-  }
+.footer__social-button svg {
+width: 1.5rem;
+height: 1.5rem;
+fill: currentColor;
+}
 
-  .footer__blocks {
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1;
-    gap: 1.5rem 2rem;
-  }
+.footer__blocks {
+display: flex;
+flex-wrap: wrap;
+flex: 1;
+gap: 1.5rem 2rem;
+}
 
-  .footer__block {
-    box-sizing: border-box;
-    max-width: 100%;
-    min-width: 180px;
-  }
+.footer__block {
+box-sizing: border-box;
+max-width: 100%;
+min-width: 180px;
+}
 
-  .footer__block--20 {
-    flex: 1 1 calc(20% - 1.6rem);
-  }
+.footer__block--20 {
+flex: 1 1 calc(20% - 1.6rem);
+}
 
-  .footer__block--25 {
-    flex: 1 1 calc(25% - 1.5rem);
-  }
+.footer__block--25 {
+flex: 1 1 calc(25% - 1.5rem);
+}
 
-  .footer__block--33 {
-    flex: 1 1 calc(33.333% - 1.34rem);
-  }
+.footer__block--33 {
+flex: 1 1 calc(33.333% - 1.34rem);
+}
 
-  .footer__block--50 {
-    flex: 1 1 calc(50% - 1rem);
-  }
+.footer__block--50 {
+flex: 1 1 calc(50% - 1rem);
+}
 
-  .footer__block--100 {
-    flex: 1 1 100%;
-  }
+.footer__block--100 {
+flex: 1 1 100%;
+}
 
-  .footer__block-heading {
-    margin: 0 0 1.1rem;
-    position: relative;
-    padding-bottom: 0.6rem;
-  }
+.footer__block-heading {
+margin: 0 0 1.1rem;
+position: relative;
+padding-bottom: 0.6rem;
+}
 
-  .footer__block-heading::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 2rem;
-    height: 2px;
-    background: currentColor;
-    opacity: 0.35;
-  }
+.footer__block-heading::after {
+content: "";
+position: absolute;
+left: 0;
+bottom: 0;
+width: 2rem;
+height: 2px;
+background: currentColor;
+opacity: 0.35;
+}
 
-  .footer__menu-list,
-  .footer__bottom-menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+.footer__menu-list,
+.footer__bottom-menu {
+list-style: none;
+margin: 0;
+padding: 0;
+}
 
-  .footer__menu-list li + li,
-  .footer__bottom-menu li + li {
-    margin-top: 0.65rem;
-  }
+.footer__menu-list li + li,
+.footer__bottom-menu li + li {
+margin-top: 0.65rem;
+}
 
-  .footer__menu-list a,
-  .footer__bottom-menu a {
-    color: inherit;
-    text-decoration: none;
-    display: inline-block;
-    opacity: 0.8;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-  }
+.footer__menu-list a,
+.footer__bottom-menu a {
+color: inherit;
+text-decoration: none;
+display: inline-block;
+opacity: 0.8;
+transition: opacity 0.2s ease, transform 0.2s ease;
+}
 
-  .footer__menu-list a:hover,
-  .footer__menu-list a:focus-visible,
-  .footer__bottom-menu a:hover,
-  .footer__bottom-menu a:focus-visible {
-    opacity: 1;
-    transform: translateX(5px);
-  }
+.footer__menu-list a:hover,
+.footer__menu-list a:focus-visible,
+.footer__bottom-menu a:hover,
+.footer__bottom-menu a:focus-visible {
+opacity: 1;
+transform: translateX(5px);
+}
 
-  .footer__subscribe {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
+.footer__subscribe {
+display: flex;
+flex-wrap: wrap;
+gap: 0.75rem;
+}
 
-  .footer__subscribe input {
-    flex: 1 1 auto;
-    min-width: 160px;
-    padding: 0.75rem 1rem;
-    border-radius: 6px;
-    border: 1px solid color-mix(in srgb, var(--button-background) 24%, transparent);
-    background: var(--input-background);
-    color: inherit;
-    box-sizing: border-box;
-  }
+.footer__subscribe input {
+flex: 1 1 auto;
+min-width: 160px;
+padding: 0.75rem 1rem;
+border-radius: 6px;
+border: 1px solid color-mix(in srgb, var(--button-background) 24%, transparent);
+background: var(--input-background);
+color: inherit;
+box-sizing: border-box;
+}
 
-  .footer__subscribe button {
-    flex: 0 0 auto;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    border: 1px solid transparent;
-    background: var(--button-background);
-    color: var(--button-foreground);
-    cursor: pointer;
-    transition: background-color 0.25s ease, transform 0.25s ease;
-  }
+.footer__subscribe button {
+flex: 0 0 auto;
+padding: 0.75rem 1.5rem;
+border-radius: 6px;
+border: 1px solid transparent;
+background: var(--button-background);
+color: var(--button-foreground);
+cursor: pointer;
+transition: background-color 0.25s ease, transform 0.25s ease;
+}
 
-  .footer__subscribe button:hover,
-  .footer__subscribe button:focus-visible {
-    background: var(--button-hover-background);
-    color: var(--button-hover-foreground);
-    transform: translateY(-1px);
-  }
+.footer__subscribe button:hover,
+.footer__subscribe button:focus-visible {
+background: var(--button-hover-background);
+color: var(--button-hover-foreground);
+transform: translateY(-1px);
+}
 
-  .footer__bottom {
-    margin-top: 2.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    align-items: center;
-    flex-wrap: wrap;
-  }
+.footer__bottom {
+margin-top: 2.5rem;
+padding-top: 1.5rem;
+border-top: 1px solid rgba(255, 255, 255, 0.1);
+align-items: center;
+flex-wrap: wrap;
+}
 
-  .footer__payment {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    flex-wrap: wrap;
-  }
+.footer__payment {
+display: flex;
+align-items: center;
+gap: 0.6rem;
+flex-wrap: wrap;
+}
 
-  .footer__payment img {
-    height: 24px;
-    width: auto;
-    display: block;
-    opacity: 0.85;
-    transition: opacity 0.2s ease;
-  }
+.footer__payment img {
+height: 24px;
+width: auto;
+display: block;
+opacity: 0.85;
+transition: opacity 0.2s ease;
+}
 
-  .footer__payment img:hover {
-    opacity: 1;
-  }
+.footer__payment img:hover {
+opacity: 1;
+}
 
-  .footer__bottom-menu {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0 1.25rem;
-  }
+.footer__bottom-menu {
+display: flex;
+flex-wrap: wrap;
+gap: 0 1.25rem;
+}
 
-  .footer__bottom-menu li + li {
-    margin-top: 0;
-  }
+.footer__bottom-menu li + li {
+margin-top: 0;
+}
 
-  @media (max-width: 860px) {
-    .footer__top,
-    .footer__bottom,
-    .footer__blocks {
-      flex-direction: column;
-    }
+@media (max-width: 860px) {
+.footer__top,
+.footer__bottom,
+.footer__blocks {
+flex-direction: column;
+}
 
-    .footer__block--20,
-    .footer__block--25,
-    .footer__block--33,
-    .footer__block--50,
-    .footer__block--100,
-    .footer__brand-column {
-      flex: 1 1 auto;
-    }
+.footer__block--20,
+.footer__block--25,
+.footer__block--33,
+.footer__block--50,
+.footer__block--100,
+.footer__brand-column {
+flex: 1 1 auto;
+}
 
-    .footer__logo--desktop {
-      display: none;
-    }
+.footer__logo--desktop {
+display: none;
+}
 
-    .footer__logo--mobile,
-    .footer__logo-spacer {
-      display: block;
-    }
+.footer__logo--mobile,
+.footer__logo-spacer {
+display: block;
+}
 
-    .footer__brand-column {
-      text-align: center;
-    }
+.footer__brand-column {
+text-align: center;
+}
 
-    .footer__socials {
-      justify-content: center;
-    }
+.footer__socials {
+justify-content: center;
+}
 
-    .footer__bottom {
-      flex-direction: column;
-      text-align: center;
-      gap: 1.25rem;
-    }
+.footer__bottom {
+flex-direction: column;
+text-align: center;
+gap: 1.25rem;
+}
 
-    .footer__subscribe {
-      flex-direction: column;
-    }
+.footer__subscribe {
+flex-direction: column;
+}
 
-    .footer__subscribe button {
-      width: 100%;
-    }
-  }
+.footer__subscribe button {
+width: 100%;
+}
+}
 {% endstylesheet %}
 
 {% schema %}
 {
-  "name": "t:general.footer",
-  "settings": [
-    {
-      "type": "select",
-      "id": "section_color_scheme",
-      "label": "t:labels.color_scheme",
-      "default": "scheme_1",
-      "options": [
-        { "value": "scheme_1", "label": "t:options.color_scheme.scheme_1" },
-        { "value": "scheme_2", "label": "t:options.color_scheme.scheme_2" }
-      ]
-    },
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "t:labels.logo"
-    },
-    {
-      "type": "image_picker",
-      "id": "logo_mobile",
-      "label": "Logo mobile"
-    },
-    {
-      "type": "select",
-      "id": "footer_width_type",
-      "label": "Footer width",
-      "default": "container_width",
-      "options": [
-        { "value": "container_width", "label": "Container width" },
-        { "value": "full_width", "label": "Full width" }
-      ]
-    },
-    {
-      "type": "range",
-      "id": "logo_width_desktop",
-      "label": "t:labels.logo_width_desktop",
-      "min": 80,
-      "max": 400,
-      "step": 10,
-      "unit": "px",
-      "default": 220
-    },
-    {
-      "type": "range",
-      "id": "logo_width_mobile",
-      "label": "t:labels.logo_width_mobile",
-      "min": 60,
-      "max": 260,
-      "step": 10,
-      "unit": "px",
-      "default": 160
-    },
-    {
-      "type": "link_list",
-      "id": "bottom_menu",
-      "label": "Bottom menu"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "menu",
-      "name": "Menu column",
-      "settings": [
-        {
-          "type": "text",
-          "id": "heading",
-          "label": "Heading"
-        },
-        {
-          "type": "select",
-          "id": "width",
-          "label": "Width",
-          "default": "33",
-          "options": [
-            { "value": "20", "label": "20%" },
-            { "value": "25", "label": "25%" },
-            { "value": "33", "label": "33%" },
-            { "value": "50", "label": "50%" },
-            { "value": "100", "label": "100%" }
-          ]
-        },
-        {
-          "type": "link_list",
-          "id": "menu",
-          "label": "Menu"
-        }
-      ]
-    },
-    {
-      "type": "subscribe",
-      "name": "Subscribe block",
-      "settings": [
-        {
-          "type": "text",
-          "id": "heading",
-          "label": "Heading",
-          "default": "Subscribe"
-        },
-        {
-          "type": "select",
-          "id": "width",
-          "label": "Width",
-          "default": "33",
-          "options": [
-            { "value": "20", "label": "20%" },
-            { "value": "25", "label": "25%" },
-            { "value": "33", "label": "33%" },
-            { "value": "50", "label": "50%" },
-            { "value": "100", "label": "100%" }
-          ]
-        },
-        {
-          "type": "text",
-          "id": "placeholder",
-          "label": "Email placeholder",
-          "default": "Enter your email"
-        },
-        {
-          "type": "text",
-          "id": "button_label",
-          "label": "Button label",
-          "default": "Subscribe"
-        }
-      ]
-    }
-  ],
-  "max_blocks": 4
+"name": "t:general.footer",
+"settings": [
+{
+"type": "select",
+"id": "section_color_scheme",
+"label": "t:labels.color_scheme",
+"default": "scheme_1",
+"options": [
+{ "value": "scheme_1", "label": "t:options.color_scheme.scheme_1" },
+{ "value": "scheme_2", "label": "t:options.color_scheme.scheme_2" }
+]
+},
+{
+"type": "image_picker",
+"id": "logo",
+"label": "t:labels.logo"
+},
+{
+"type": "image_picker",
+"id": "logo_mobile",
+"label": "Logo mobile"
+},
+{
+"type": "select",
+"id": "footer_width_type",
+"label": "Footer width",
+"default": "container_width",
+"options": [
+{ "value": "container_width", "label": "Container width" },
+{ "value": "full_width", "label": "Full width" }
+]
+},
+{
+"type": "range",
+"id": "logo_width_desktop",
+"label": "t:labels.logo_width_desktop",
+"min": 80,
+"max": 400,
+"step": 10,
+"unit": "px",
+"default": 220
+},
+{
+"type": "range",
+"id": "logo_width_mobile",
+"label": "t:labels.logo_width_mobile",
+"min": 60,
+"max": 260,
+"step": 10,
+"unit": "px",
+"default": 160
+},
+{
+"type": "link_list",
+"id": "bottom_menu",
+"label": "Bottom menu"
+}
+],
+"blocks": [
+{
+"type": "menu",
+"name": "Menu column",
+"settings": [
+{
+"type": "text",
+"id": "heading",
+"label": "Heading"
+},
+{
+"type": "select",
+"id": "width",
+"label": "Width",
+"default": "33",
+"options": [
+{ "value": "20", "label": "20%" },
+{ "value": "25", "label": "25%" },
+{ "value": "33", "label": "33%" },
+{ "value": "50", "label": "50%" },
+{ "value": "100", "label": "100%" }
+]
+},
+{
+"type": "link_list",
+"id": "menu",
+"label": "Menu"
+}
+]
+},
+{
+"type": "subscribe",
+"name": "Subscribe block",
+"settings": [
+{
+"type": "text",
+"id": "heading",
+"label": "Heading",
+"default": "Subscribe"
+},
+{
+"type": "select",
+"id": "width",
+"label": "Width",
+"default": "33",
+"options": [
+{ "value": "20", "label": "20%" },
+{ "value": "25", "label": "25%" },
+{ "value": "33", "label": "33%" },
+{ "value": "50", "label": "50%" },
+{ "value": "100", "label": "100%" }
+]
+},
+{
+"type": "text",
+"id": "placeholder",
+"label": "Email placeholder",
+"default": "Enter your email"
+},
+{
+"type": "text",
+"id": "button_label",
+"label": "Button label",
+"default": "Subscribe"
+}
+]
+}
+],
+"max_blocks": 4
 }
 {% endschema %}
