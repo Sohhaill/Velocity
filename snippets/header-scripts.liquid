@@ -30,33 +30,21 @@
   });
 
   // Drawer submenu accordion
-  function getOpenAncestors(item) {
-  var ancestors = [];
-  var current = item;
-  while (current) {
-    ancestors.push(current);
-    current = current.parentElement ? current.parentElement.closest('.header__drawer-item--open') : null;
+  function updateDrawerSubmenuHeight(item) {
+    var submenu = item ? item.querySelector(':scope > .header__drawer-submenu') : null;
+    if (!item || !submenu) return;
+
+    if (item.classList.contains('header__drawer-item--open')) {
+      submenu.style.maxHeight = submenu.scrollHeight + 'px';
+    } else {
+      submenu.style.maxHeight = '0px';
+    }
+
+    var parentItem = item.parentElement ? item.parentElement.closest('.header__drawer-item--open') : null;
+    if (parentItem) {
+      updateDrawerSubmenuHeight(parentItem);
+    }
   }
-  return ancestors;
-}
-
-function updateDrawerSubmenuHeight(item) {
-  if (!item) return;
-  var ancestors = getOpenAncestors(item);
-
-  requestAnimationFrame(function() {
-    ancestors.forEach(function(ancestorItem) {
-      var submenu = ancestorItem.querySelector(':scope > .header__drawer-submenu');
-      if (!submenu) return;
-
-      if (ancestorItem.classList.contains('header__drawer-item--open')) {
-        submenu.style.maxHeight = submenu.scrollHeight + 'px';
-      } else {
-        submenu.style.maxHeight = '0px';
-      }
-    });
-  });
-}
 
   function closeDrawerItem(item) {
     if (!item) return;
