@@ -4,9 +4,9 @@
   @param {string} color_scheme - The color scheme suffix to apply
 {% enddoc %}
 
-<div id="search-popup" class="search-popup section-color-scheme--{{ color_scheme | default: 'scheme_1' }}" aria-hidden="true">
+<div id="search-popup" class="search-popup" aria-hidden="true">
   <div class="search-popup__overlay" data-search-popup-close></div>
-  <div class="search-popup__panel" role="dialog" aria-modal="true" aria-label="{{ 'header.search_icon' | t }}">
+  <div class="search-popup__panel section-color-scheme--{{ color_scheme | default: 'scheme_1' }}" role="dialog" aria-modal="true" aria-label="{{ 'header.search_icon' | t }}">
     <button class="search-popup__close" type="button" aria-label="{{ 'header.close_menu' | t }}" data-search-popup-close>
       {{ 'icon-close.svg' | inline_asset_content }}
     </button>

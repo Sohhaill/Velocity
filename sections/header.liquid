@@ -339,6 +339,7 @@ display: flex;
 justify-content: center;
 align-items: flex-start;
 padding: 4rem 1rem 1rem;
+background: transparent !important;
 opacity: 0;
 pointer-events: none;
 transition: opacity var(--transition-default);
@@ -354,16 +355,16 @@ pointer-events: auto;
 position: absolute;
 inset: 0;
 background: rgba(0, 0, 0, 0.72);
+z-index: 0;
 }
 
 .search-popup__panel {
 position: relative;
+z-index: 1;
 width: min(100%, 720px);
 max-height: calc(100vh - 5rem);
 overflow: auto;
 padding: 1rem;
-background: var(--color-background);
-color: var(--color-foreground);
 box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
 transform: translateY(16px);
 transition: transform var(--transition-default);

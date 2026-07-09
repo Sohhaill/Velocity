@@ -363,12 +363,12 @@
       {
         "type": "product",
         "id": "search_popup_top_pick_product_1",
-        "label": "Top pick product 1"
+        "label": "Top pick product"
       },
       {
         "type": "product",
         "id": "search_popup_top_pick_product_2",
-        "label": "Top pick product 2"
+        "label": "Top pick product"
       }
     ]
   },
