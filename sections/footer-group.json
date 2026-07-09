@@ -51,7 +51,7 @@
         "footer_width_type": "container_width",
         "logo_width_desktop": 220,
         "logo_width_mobile": 160,
-        "bottom_menu": ""
+        "bottom_menu": "main-menu"
       }
     }
   },
