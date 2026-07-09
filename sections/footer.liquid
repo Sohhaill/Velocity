@@ -312,7 +312,7 @@ right: 0;
 top: 0.15rem;
 width: 1rem;
 height: 1rem;
-transition: transform 0.35s ease;
+transition: transform 0.25s ease;
 }
 
 .footer__block-icon::before,
@@ -323,7 +323,6 @@ left: 50%;
 top: 50%;
 background: currentColor;
 transform: translate(-50%, -50%);
-transition: transform 0.35s ease, opacity 0.25s ease;
 }
 
 .footer__block-icon::before {
@@ -346,8 +345,7 @@ padding: 0;
 .footer__menu-list {
 overflow: hidden;
 max-height: 0;
-opacity: 0;
-transition: max-height 0.35s ease, opacity 0.25s ease;
+transition: max-height 0.3s ease;
 }
 
 .footer__menu-list li + li,
@@ -495,16 +493,10 @@ display: none;
 
 .footer__block--open .footer__menu-list {
 max-height: 1000px;
-opacity: 1;
 }
 
 .footer__block--open .footer__block-icon {
-transform: rotate(90deg);
-}
-
-.footer__block--open .footer__block-icon::after {
-opacity: 0;
-transform: translate(-50%, -50%) scaleY(0.2);
+transform: rotate(45deg);
 }
 
 .footer__socials {
