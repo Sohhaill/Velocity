@@ -101,12 +101,16 @@
         <h3 class="search-popup__heading">{{ settings.search_popup_top_pick_heading | default: 'Top picks for you' }}</h3>
         <div class="search-popup__products">
           {% if settings.search_popup_top_pick_product_1 != blank %}
+            {% assign top_pick_product_1_has_second_image = false %}
+            {% if settings.search_popup_top_pick_product_1.images.size > 1 %}
+              {% assign top_pick_product_1_has_second_image = true %}
+            {% endif %}
             <a class="search-popup__product" href="{{ settings.search_popup_top_pick_product_1.url }}">
-              <span class="search-popup__product-media">
+              <span class="search-popup__product-media{% if top_pick_product_1_has_second_image %} search-popup__product-media--has-hover{% endif %}">
                 {% if settings.search_popup_top_pick_product_1.featured_image %}
                   {{ settings.search_popup_top_pick_product_1.featured_image | image_url: width: 700 | image_tag: class: 'search-popup__product-image search-popup__product-image--primary', alt: settings.search_popup_top_pick_product_1.title }}
                 {% endif %}
-                {% if settings.search_popup_top_pick_product_1.images.size > 1 %}
+                {% if top_pick_product_1_has_second_image %}
                   {{ settings.search_popup_top_pick_product_1.images[1] | image_url: width: 700 | image_tag: class: 'search-popup__product-image search-popup__product-image--secondary', alt: settings.search_popup_top_pick_product_1.title }}
                 {% endif %}
               </span>
@@ -115,12 +119,16 @@
           {% endif %}
 
           {% if settings.search_popup_top_pick_product_2 != blank %}
+            {% assign top_pick_product_2_has_second_image = false %}
+            {% if settings.search_popup_top_pick_product_2.images.size > 1 %}
+              {% assign top_pick_product_2_has_second_image = true %}
+            {% endif %}
             <a class="search-popup__product" href="{{ settings.search_popup_top_pick_product_2.url }}">
-              <span class="search-popup__product-media">
+              <span class="search-popup__product-media{% if top_pick_product_2_has_second_image %} search-popup__product-media--has-hover{% endif %}">
                 {% if settings.search_popup_top_pick_product_2.featured_image %}
                   {{ settings.search_popup_top_pick_product_2.featured_image | image_url: width: 700 | image_tag: class: 'search-popup__product-image search-popup__product-image--primary', alt: settings.search_popup_top_pick_product_2.title }}
                 {% endif %}
-                {% if settings.search_popup_top_pick_product_2.images.size > 1 %}
+                {% if top_pick_product_2_has_second_image %}
                   {{ settings.search_popup_top_pick_product_2.images[1] | image_url: width: 700 | image_tag: class: 'search-popup__product-image search-popup__product-image--secondary', alt: settings.search_popup_top_pick_product_2.title }}
                 {% endif %}
               </span>
