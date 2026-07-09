@@ -212,14 +212,19 @@ position: relative;
         opacity: 0.8;
             transition: all 0.25s ease;
   }
-  .header__menu-item{
+  .header__menu-item, .header__icon{
      transition: all 0.25s ease;
   }
 .header__menu-item:hover{
-  opacity: 1;
+
       transform: translateY(-5px);
 }
-
+.header__menu-item:hover a.header__menu-link{
+  opacity: 1;
+}
+.header__icon:hover{
+        transform: translateY(-5px);
+}
   .header__toggle svg,
   .header__icon svg,
   .header__submenu-toggle svg,
