@@ -1,4 +1,9 @@
-<footer class="footer section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}">
+{% assign footer_width_class = 'container-width' %}
+{% if section.settings.footer_width_type == 'full_width' %}
+  {% assign footer_width_class = 'full-width' %}
+{% endif %}
+
+<footer class="footer section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }} {{ footer_width_class }}">
   <div class="footer__top container-width">
     <div class="footer__brand-column">
       {% if section.settings.logo %}
@@ -101,6 +106,11 @@
   .footer {
     padding: 3rem 0 1.5rem;
     position: relative;
+  }
+
+  .footer.full-width {
+    width: 100%;
+    max-width: 100%;
   }
 
   .footer__top,
@@ -386,6 +396,16 @@
       "type": "image_picker",
       "id": "logo_mobile",
       "label": "Logo mobile"
+    },
+    {
+      "type": "select",
+      "id": "footer_width_type",
+      "label": "Footer width",
+      "default": "container_width",
+      "options": [
+        { "value": "container_width", "label": "Container width" },
+        { "value": "full_width", "label": "Full width" }
+      ]
     },
     {
       "type": "range",
