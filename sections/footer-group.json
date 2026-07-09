@@ -29,21 +29,11 @@
             "width": "25",
             "menu": "main-menu"
           }
-        },
-        "subscribe_pQKceB": {
-          "type": "subscribe",
-          "settings": {
-            "heading": "Subscribe",
-            "width": "33",
-            "placeholder": "Enter your email",
-            "button_label": "Subscribe"
-          }
         }
       },
       "block_order": [
         "menu_X7Jt7j",
-        "menu_6KFWBc",
-        "subscribe_pQKceB"
+        "menu_6KFWBc"
       ],
       "settings": {
         "section_color_scheme": "scheme_2",
