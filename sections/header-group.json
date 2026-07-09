@@ -23,6 +23,7 @@
         "show_wishlist_icon": true,
         "show_account_icon": true,
         "show_search_icon": true,
+        "search_popup_color_scheme": "scheme_2",
         "show_cart_icon": true
       }
     }
