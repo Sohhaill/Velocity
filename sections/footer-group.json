@@ -13,6 +13,19 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "menu_X7Jt7j": {
+          "type": "menu",
+          "settings": {
+            "heading": "",
+            "width": "33",
+            "menu": ""
+          }
+        }
+      },
+      "block_order": [
+        "menu_X7Jt7j"
+      ],
       "settings": {
         "section_color_scheme": "scheme_1",
         "logo_width_desktop": 220,
