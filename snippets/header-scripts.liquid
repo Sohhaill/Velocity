@@ -15,6 +15,31 @@
     document.documentElement.classList.remove('header-drawer-open');
   }
 
+  function openSearchPopup() {
+    var popup = document.getElementById('search-popup');
+    var input = document.getElementById('search-popup-input');
+    if (!popup) return;
+
+    popup.classList.add('search-popup--open');
+    popup.setAttribute('aria-hidden', 'false');
+    document.documentElement.classList.add('search-popup-open');
+
+    if (input) {
+      window.setTimeout(function() {
+        input.focus();
+      }, 0);
+    }
+  }
+
+  function closeSearchPopup() {
+    var popup = document.getElementById('search-popup');
+    if (!popup) return;
+
+    popup.classList.remove('search-popup--open');
+    popup.setAttribute('aria-hidden', 'true');
+    document.documentElement.classList.remove('search-popup-open');
+  }
+
   document.addEventListener('click', function(event) {
     var drawer = document.getElementById('header-drawer');
     if (!drawer || !drawer.classList.contains('header__drawer--open')) return;
@@ -26,7 +51,14 @@
   document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
       closeHeaderDrawer();
+      closeSearchPopup();
     }
+  });
+
+  document.querySelectorAll('[data-search-popup-close]').forEach(function(toggle) {
+    toggle.addEventListener('click', function() {
+      closeSearchPopup();
+    });
   });
 
   // Drawer submenu accordion

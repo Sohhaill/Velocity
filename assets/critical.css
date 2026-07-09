@@ -135,8 +135,8 @@ select,
     display: none !important;
   }
   .header svg{
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
   }
   body {
     font-size: var(--font-size-mobile-base);

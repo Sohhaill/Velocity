@@ -46,9 +46,9 @@
       {% endif %}
 
       {% if section.settings.show_search_icon %}
-      <a class="header__icon" href="{{ routes.search_url }}" aria-label="{{ 'header.search_icon' | t }}">
+      <button class="header__icon" type="button" aria-label="{{ 'header.search_icon' | t }}" onclick="openSearchPopup()">
         {{ 'icon-search.svg' | inline_asset_content }}
-      </a>
+      </button>
       {% endif %}
 
       {% if section.settings.show_cart_icon %}
@@ -105,6 +105,7 @@
   </div>
 
   {% render 'header-scripts' %}
+  {% render 'search-popup', color_scheme: section.settings.search_popup_color_scheme %}
 </header>
 </div>
 
@@ -303,13 +304,17 @@ flex: 1;
 .header__icons {
 display: flex;
 align-items: center;
-gap: 0.75rem;
+gap: 0.55rem;
 }
 
 .header__icon {
 display: inline-flex;
 align-items: center;
 justify-content: center;
+border: none;
+background: transparent;
+padding: 0;
+cursor: pointer;
 color: inherit;
 text-decoration: none;
 position: relative;
@@ -325,6 +330,147 @@ border-radius: 999px;
 padding: 0 0.35rem;
 font-size: 0.65rem;
 line-height: 1;
+}
+
+.search-popup {
+position: fixed;
+inset: 0;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+padding: 4rem 1rem 1rem;
+opacity: 0;
+pointer-events: none;
+transition: opacity var(--transition-default);
+z-index: 200;
+}
+
+.search-popup--open {
+opacity: 1;
+pointer-events: auto;
+}
+
+.search-popup__overlay {
+position: absolute;
+inset: 0;
+background: rgba(0, 0, 0, 0.72);
+}
+
+.search-popup__panel {
+position: relative;
+width: min(100%, 720px);
+max-height: calc(100vh - 5rem);
+overflow: auto;
+padding: 1rem;
+background: var(--color-background);
+color: var(--color-foreground);
+box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+transform: translateY(16px);
+transition: transform var(--transition-default);
+}
+
+.search-popup--open .search-popup__panel {
+transform: translateY(0);
+}
+
+.search-popup__close {
+display: inline-flex;
+margin-left: auto;
+border: none;
+background: transparent;
+color: inherit;
+padding: 0;
+}
+
+.search-popup__form {
+display: flex;
+align-items: center;
+gap: 0.75rem;
+border: 1px solid rgba(255, 255, 255, 0.15);
+padding: 1rem;
+margin-top: 0.75rem;
+}
+
+.search-popup__submit {
+border: none;
+background: transparent;
+color: inherit;
+padding: 0;
+display: inline-flex;
+}
+
+.search-popup__input {
+flex: 1;
+border: none;
+background: transparent;
+color: inherit;
+outline: none;
+font: inherit;
+}
+
+.search-popup__group {
+margin-top: 1.25rem;
+}
+
+.search-popup__heading {
+margin: 0 0 0.75rem;
+font-size: 1rem;
+}
+
+.search-popup__chips {
+display: flex;
+flex-wrap: wrap;
+gap: 0.75rem;
+}
+
+.search-popup__chip {
+display: inline-flex;
+align-items: center;
+gap: 0.5rem;
+padding: 0.65rem 0.9rem;
+background: rgba(255, 255, 255, 0.08);
+color: inherit;
+text-decoration: none;
+}
+
+.search-popup__products {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 1rem;
+}
+
+.search-popup__product {
+color: inherit;
+text-decoration: none;
+}
+
+.search-popup__product-media {
+position: relative;
+display: block;
+aspect-ratio: 1 / 1;
+overflow: hidden;
+background: rgba(255, 255, 255, 0.05);
+}
+
+.search-popup__product-image {
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: opacity var(--transition-default);
+}
+
+.search-popup__product-image--secondary {
+opacity: 0;
+}
+
+.search-popup__product:hover .search-popup__product-image--secondary {
+opacity: 1;
+}
+
+.search-popup__product:hover .search-popup__product-image--primary {
+opacity: 0;
 }
 
 /* Drawer overlay */
@@ -579,17 +725,27 @@ display: none;
 "label": "t:labels.account_icon",
 "default": true
 },
-{
-"type": "checkbox",
-"id": "show_search_icon",
-"label": "t:labels.search_icon",
-"default": false
-},
-{
-"type": "checkbox",
-"id": "show_cart_icon",
-"label": "t:labels.cart_icon",
-"default": false
+    {
+      "type": "checkbox",
+      "id": "show_search_icon",
+      "label": "t:labels.search_icon",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "search_popup_color_scheme",
+      "label": "Search popup color scheme",
+      "default": "scheme_1",
+      "options": [
+        { "value": "scheme_1", "label": "t:options.color_scheme.scheme_1" },
+        { "value": "scheme_2", "label": "t:options.color_scheme.scheme_2" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cart_icon",
+      "label": "t:labels.cart_icon",
+      "default": false
 }
 ]
 }

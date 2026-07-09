@@ -268,6 +268,111 @@
     ]
   },
   {
+    "name": "Search Popup",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "text",
+        "id": "search_popup_placeholder",
+        "label": "Search placeholder",
+        "default": "Search products, brands, and more"
+      },
+      {
+        "type": "text",
+        "id": "search_popup_recent_heading",
+        "label": "Recent searches heading",
+        "default": "Recent Searches"
+      },
+      {
+        "type": "text",
+        "id": "search_popup_popular_heading",
+        "label": "Popular brands heading",
+        "default": "Popular Brands"
+      },
+      {
+        "type": "text",
+        "id": "search_popup_top_pick_heading",
+        "label": "Top picks heading",
+        "default": "Top picks for you"
+      },
+      {
+        "type": "header",
+        "content": "Recent searches"
+      },
+      {
+        "type": "text",
+        "id": "search_popup_recent_search_1",
+        "label": "Recent search 1"
+      },
+      {
+        "type": "text",
+        "id": "search_popup_recent_search_2",
+        "label": "Recent search 2"
+      },
+      {
+        "type": "text",
+        "id": "search_popup_recent_search_3",
+        "label": "Recent search 3"
+      },
+      {
+        "type": "text",
+        "id": "search_popup_recent_search_4",
+        "label": "Recent search 4"
+      },
+      {
+        "type": "text",
+        "id": "search_popup_recent_search_5",
+        "label": "Recent search 5"
+      },
+      {
+        "type": "header",
+        "content": "Popular brands"
+      },
+      {
+        "type": "text",
+        "id": "search_popup_popular_brand_1",
+        "label": "Popular brand 1"
+      },
+      {
+        "type": "text",
+        "id": "search_popup_popular_brand_2",
+        "label": "Popular brand 2"
+      },
+      {
+        "type": "text",
+        "id": "search_popup_popular_brand_3",
+        "label": "Popular brand 3"
+      },
+      {
+        "type": "text",
+        "id": "search_popup_popular_brand_4",
+        "label": "Popular brand 4"
+      },
+      {
+        "type": "text",
+        "id": "search_popup_popular_brand_5",
+        "label": "Popular brand 5"
+      },
+      {
+        "type": "header",
+        "content": "Top picks"
+      },
+      {
+        "type": "product",
+        "id": "search_popup_top_pick_product_1",
+        "label": "Top pick product 1"
+      },
+      {
+        "type": "product",
+        "id": "search_popup_top_pick_product_2",
+        "label": "Top pick product 2"
+      }
+    ]
+  },
+  {
     "name": "t:general.colors",
     "settings": [
       {

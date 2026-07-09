@@ -1,0 +1,134 @@
+{% doc %}
+  Renders the header search popup overlay using theme settings.
+
+  @param {string} color_scheme - The color scheme suffix to apply
+{% enddoc %}
+
+<div id="search-popup" class="search-popup section-color-scheme--{{ color_scheme | default: 'scheme_1' }}" aria-hidden="true">
+  <div class="search-popup__overlay" data-search-popup-close></div>
+  <div class="search-popup__panel" role="dialog" aria-modal="true" aria-label="{{ 'header.search_icon' | t }}">
+    <button class="search-popup__close" type="button" aria-label="{{ 'header.close_menu' | t }}" data-search-popup-close>
+      {{ 'icon-close.svg' | inline_asset_content }}
+    </button>
+
+    <form class="search-popup__form" action="{{ routes.search_url }}" method="get" role="search">
+      <button class="search-popup__submit" type="submit" aria-label="{{ 'header.search_icon' | t }}">
+        {{ 'icon-search.svg' | inline_asset_content }}
+      </button>
+      <input
+        id="search-popup-input"
+        class="search-popup__input"
+        type="search"
+        name="q"
+        placeholder="{{ settings.search_popup_placeholder | default: 'Search products, brands, and more' | escape }}"
+        autocomplete="off"
+      >
+    </form>
+
+    {% if settings.search_popup_recent_search_1 != blank
+      or settings.search_popup_recent_search_2 != blank
+      or settings.search_popup_recent_search_3 != blank
+      or settings.search_popup_recent_search_4 != blank
+      or settings.search_popup_recent_search_5 != blank
+    %}
+      <div class="search-popup__group">
+        <h3 class="search-popup__heading">{{ settings.search_popup_recent_heading | default: 'Recent Searches' }}</h3>
+        <div class="search-popup__chips">
+          {% if settings.search_popup_recent_search_1 != blank %}
+            <a class="search-popup__chip" href="{{ routes.search_url }}?q={{ settings.search_popup_recent_search_1 | url_encode }}">{{ settings.search_popup_recent_search_1 }}</a>
+          {% endif %}
+          {% if settings.search_popup_recent_search_2 != blank %}
+            <a class="search-popup__chip" href="{{ routes.search_url }}?q={{ settings.search_popup_recent_search_2 | url_encode }}">{{ settings.search_popup_recent_search_2 }}</a>
+          {% endif %}
+          {% if settings.search_popup_recent_search_3 != blank %}
+            <a class="search-popup__chip" href="{{ routes.search_url }}?q={{ settings.search_popup_recent_search_3 | url_encode }}">{{ settings.search_popup_recent_search_3 }}</a>
+          {% endif %}
+          {% if settings.search_popup_recent_search_4 != blank %}
+            <a class="search-popup__chip" href="{{ routes.search_url }}?q={{ settings.search_popup_recent_search_4 | url_encode }}">{{ settings.search_popup_recent_search_4 }}</a>
+          {% endif %}
+          {% if settings.search_popup_recent_search_5 != blank %}
+            <a class="search-popup__chip" href="{{ routes.search_url }}?q={{ settings.search_popup_recent_search_5 | url_encode }}">{{ settings.search_popup_recent_search_5 }}</a>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if settings.search_popup_popular_brand_1 != blank
+      or settings.search_popup_popular_brand_2 != blank
+      or settings.search_popup_popular_brand_3 != blank
+      or settings.search_popup_popular_brand_4 != blank
+      or settings.search_popup_popular_brand_5 != blank
+    %}
+      <div class="search-popup__group">
+        <h3 class="search-popup__heading">{{ settings.search_popup_popular_heading | default: 'Popular Brands' }}</h3>
+        <div class="search-popup__chips">
+          {% if settings.search_popup_popular_brand_1 != blank %}
+            <a class="search-popup__chip search-popup__chip--brand" href="{{ routes.search_url }}?q={{ settings.search_popup_popular_brand_1 | url_encode }}">
+              <span class="search-popup__chip-icon">☆</span>
+              {{ settings.search_popup_popular_brand_1 }}
+            </a>
+          {% endif %}
+          {% if settings.search_popup_popular_brand_2 != blank %}
+            <a class="search-popup__chip search-popup__chip--brand" href="{{ routes.search_url }}?q={{ settings.search_popup_popular_brand_2 | url_encode }}">
+              <span class="search-popup__chip-icon">☆</span>
+              {{ settings.search_popup_popular_brand_2 }}
+            </a>
+          {% endif %}
+          {% if settings.search_popup_popular_brand_3 != blank %}
+            <a class="search-popup__chip search-popup__chip--brand" href="{{ routes.search_url }}?q={{ settings.search_popup_popular_brand_3 | url_encode }}">
+              <span class="search-popup__chip-icon">☆</span>
+              {{ settings.search_popup_popular_brand_3 }}
+            </a>
+          {% endif %}
+          {% if settings.search_popup_popular_brand_4 != blank %}
+            <a class="search-popup__chip search-popup__chip--brand" href="{{ routes.search_url }}?q={{ settings.search_popup_popular_brand_4 | url_encode }}">
+              <span class="search-popup__chip-icon">☆</span>
+              {{ settings.search_popup_popular_brand_4 }}
+            </a>
+          {% endif %}
+          {% if settings.search_popup_popular_brand_5 != blank %}
+            <a class="search-popup__chip search-popup__chip--brand" href="{{ routes.search_url }}?q={{ settings.search_popup_popular_brand_5 | url_encode }}">
+              <span class="search-popup__chip-icon">☆</span>
+              {{ settings.search_popup_popular_brand_5 }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if settings.search_popup_top_pick_heading != blank or settings.search_popup_top_pick_product_1 != blank or settings.search_popup_top_pick_product_2 != blank %}
+      <div class="search-popup__group">
+        <h3 class="search-popup__heading">{{ settings.search_popup_top_pick_heading | default: 'Top picks for you' }}</h3>
+        <div class="search-popup__products">
+          {% if settings.search_popup_top_pick_product_1 != blank %}
+            <a class="search-popup__product" href="{{ settings.search_popup_top_pick_product_1.url }}">
+              <span class="search-popup__product-media">
+                {% if settings.search_popup_top_pick_product_1.featured_image %}
+                  {{ settings.search_popup_top_pick_product_1.featured_image | image_url: width: 700 | image_tag: class: 'search-popup__product-image search-popup__product-image--primary', alt: settings.search_popup_top_pick_product_1.title }}
+                {% endif %}
+                {% if settings.search_popup_top_pick_product_1.images.size > 1 %}
+                  {{ settings.search_popup_top_pick_product_1.images[1] | image_url: width: 700 | image_tag: class: 'search-popup__product-image search-popup__product-image--secondary', alt: settings.search_popup_top_pick_product_1.title }}
+                {% endif %}
+              </span>
+              <span class="search-popup__product-title">{{ settings.search_popup_top_pick_product_1.title }}</span>
+            </a>
+          {% endif %}
+
+          {% if settings.search_popup_top_pick_product_2 != blank %}
+            <a class="search-popup__product" href="{{ settings.search_popup_top_pick_product_2.url }}">
+              <span class="search-popup__product-media">
+                {% if settings.search_popup_top_pick_product_2.featured_image %}
+                  {{ settings.search_popup_top_pick_product_2.featured_image | image_url: width: 700 | image_tag: class: 'search-popup__product-image search-popup__product-image--primary', alt: settings.search_popup_top_pick_product_2.title }}
+                {% endif %}
+                {% if settings.search_popup_top_pick_product_2.images.size > 1 %}
+                  {{ settings.search_popup_top_pick_product_2.images[1] | image_url: width: 700 | image_tag: class: 'search-popup__product-image search-popup__product-image--secondary', alt: settings.search_popup_top_pick_product_2.title }}
+                {% endif %}
+              </span>
+              <span class="search-popup__product-title">{{ settings.search_popup_top_pick_product_2.title }}</span>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
