@@ -373,6 +373,79 @@
     ]
   },
   {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Social"
+      },
+      {
+        "type": "url",
+        "id": "footer_facebook_url",
+        "label": "Facebook URL"
+      },
+      {
+        "type": "url",
+        "id": "footer_instagram_url",
+        "label": "Instagram URL"
+      },
+      {
+        "type": "url",
+        "id": "footer_youtube_url",
+        "label": "YouTube URL"
+      },
+      {
+        "type": "url",
+        "id": "footer_twitter_url",
+        "label": "Twitter URL"
+      },
+      {
+        "type": "header",
+        "content": "Payment icons"
+      },
+      {
+        "type": "image_picker",
+        "id": "footer_payment_icon_1",
+        "label": "Payment icon 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "footer_payment_icon_2",
+        "label": "Payment icon 2"
+      },
+      {
+        "type": "image_picker",
+        "id": "footer_payment_icon_3",
+        "label": "Payment icon 3"
+      },
+      {
+        "type": "image_picker",
+        "id": "footer_payment_icon_4",
+        "label": "Payment icon 4"
+      },
+      {
+        "type": "image_picker",
+        "id": "footer_payment_icon_5",
+        "label": "Payment icon 5"
+      },
+      {
+        "type": "image_picker",
+        "id": "footer_payment_icon_6",
+        "label": "Payment icon 6"
+      },
+      {
+        "type": "image_picker",
+        "id": "footer_payment_icon_7",
+        "label": "Payment icon 7"
+      },
+      {
+        "type": "image_picker",
+        "id": "footer_payment_icon_8",
+        "label": "Payment icon 8"
+      }
+    ]
+  },
+  {
     "name": "t:general.colors",
     "settings": [
       {

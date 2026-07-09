@@ -1,39 +1,241 @@
-<footer class="section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}">
-  <div class="footer__copyright">
-    &copy;
-    {{ 'now' | date: '%Y' }}
-    {{ shop.name | link_to: routes.root_url }}, {{ powered_by_link }}
-  </div>
+<footer class="footer section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}">
+  <div class="footer__top container-width">
+    <div class="footer__brand-column">
+      {% if section.settings.logo %}
+        <a class="footer__logo-link" href="{{ routes.root_url }}">
+          {{ section.settings.logo | image_url: width: section.settings.logo_width_desktop | image_tag: class: 'footer__logo footer__logo--desktop', alt: shop.name }}
+          {% if section.settings.logo_mobile %}
+            {{ section.settings.logo_mobile | image_url: width: section.settings.logo_width_mobile | image_tag: class: 'footer__logo footer__logo--mobile', alt: shop.name }}
+          {% else %}
+            <span class="footer__logo-spacer footer__logo--mobile"></span>
+          {% endif %}
+        </a>
+      {% endif %}
 
-  <div class="footer__links">
-    {% for link in section.settings.menu.links %}
-      {{ link.title | link_to: link.url }}
-    {% endfor %}
-  </div>
+      <div class="footer__socials">
+        {% if settings.footer_facebook_url != blank %}
+          <a class="footer__social-button" href="{{ settings.footer_facebook_url }}" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M14 9h2V6h-2c-2.2 0-4 1.8-4 4v2H8v3h2v6h3v-6h2.4l.6-3H13v-2c0-.6.4-1 1-1Z"/></svg>
+          </a>
+        {% endif %}
+        {% if settings.footer_instagram_url != blank %}
+          <a class="footer__social-button" href="{{ settings.footer_instagram_url }}" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.8"/><circle cx="16.5" cy="7.5" r="1.1" fill="currentColor"/></svg>
+          </a>
+        {% endif %}
+        {% if settings.footer_youtube_url != blank %}
+          <a class="footer__social-button" href="{{ settings.footer_youtube_url }}" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="6.5" width="18" height="11" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M10 10.5L15 12L10 13.5V10.5Z" fill="currentColor"/></svg>
+          </a>
+        {% endif %}
+        {% if settings.footer_twitter_url != blank %}
+          <a class="footer__social-button" href="{{ settings.footer_twitter_url }}" target="_blank" rel="noopener" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.4 7.4c.01.16.01.32.01.49 0 4.98-3.79 10.72-10.72 10.72A10.66 10.66 0 0 1 2 16.9a7.59 7.59 0 0 0 5.59-1.56 3.77 3.77 0 0 1-3.52-2.62c.56.1 1.15.06 1.7-.06A3.76 3.76 0 0 1 2.76 8.96v-.05c.52.29 1.12.46 1.76.48A3.77 3.77 0 0 1 3.37 4.3a10.68 10.68 0 0 0 7.75 3.93 3.76 3.76 0 0 1 6.4-3.43 7.56 7.56 0 0 0 2.4-.92 3.8 3.8 0 0 1-1.65 2.08 7.5 7.5 0 0 0 2.17-.6 8.13 8.13 0 0 1-2.04 2.14Z" fill="currentColor"/></svg>
+          </a>
+        {% endif %}
+      </div>
+    </div>
 
-  <div class="footer__payment">
-    {% if section.settings.show_payment_icons %}
-      {% for type in shop.enabled_payment_types %}
-        {{ type | payment_type_svg_tag }}
+    <div class="footer__blocks">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'menu' %}
+            {% if block.settings.menu != blank %}
+              <div class="footer__block footer__block--{{ block.settings.width }}" {{ block.shopify_attributes }}>
+                {% if block.settings.heading != blank %}
+                  <h3 class="footer__block-heading">{{ block.settings.heading }}</h3>
+                {% endif %}
+                <ul class="footer__menu-list">
+                  {% for link in block.settings.menu.links %}
+                    <li>
+                      <a href="{{ link.url }}">{{ link.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+          {% when 'subscribe' %}
+            <div class="footer__block footer__block--{{ block.settings.width }}" {{ block.shopify_attributes }}>
+              {% if block.settings.heading != blank %}
+                <h3 class="footer__block-heading">{{ block.settings.heading }}</h3>
+              {% endif %}
+              {% form 'customer', class: 'footer__subscribe' %}
+                <input type="hidden" name="contact[tags]" value="newsletter">
+                <input type="email" name="contact[email]" required placeholder="{{ block.settings.placeholder | default: 'Enter your email' | escape }}">
+                <button type="submit">{{ block.settings.button_label | default: 'Subscribe' }}</button>
+              {% endform %}
+            </div>
+        {% endcase %}
       {% endfor %}
-    {% endif %}
+    </div>
+  </div>
+
+  <div class="footer__bottom container-width">
+    <div class="footer__bottom-left">
+      {% if settings.footer_payment_icon_1 != blank or settings.footer_payment_icon_2 != blank or settings.footer_payment_icon_3 != blank or settings.footer_payment_icon_4 != blank or settings.footer_payment_icon_5 != blank or settings.footer_payment_icon_6 != blank or settings.footer_payment_icon_7 != blank or settings.footer_payment_icon_8 != blank %}
+        <div class="footer__payment">
+          {% if settings.footer_payment_icon_1 != blank %}<img src="{{ settings.footer_payment_icon_1 | image_url }}" alt="Payment icon 1">{% endif %}
+          {% if settings.footer_payment_icon_2 != blank %}<img src="{{ settings.footer_payment_icon_2 | image_url }}" alt="Payment icon 2">{% endif %}
+          {% if settings.footer_payment_icon_3 != blank %}<img src="{{ settings.footer_payment_icon_3 | image_url }}" alt="Payment icon 3">{% endif %}
+          {% if settings.footer_payment_icon_4 != blank %}<img src="{{ settings.footer_payment_icon_4 | image_url }}" alt="Payment icon 4">{% endif %}
+          {% if settings.footer_payment_icon_5 != blank %}<img src="{{ settings.footer_payment_icon_5 | image_url }}" alt="Payment icon 5">{% endif %}
+          {% if settings.footer_payment_icon_6 != blank %}<img src="{{ settings.footer_payment_icon_6 | image_url }}" alt="Payment icon 6">{% endif %}
+          {% if settings.footer_payment_icon_7 != blank %}<img src="{{ settings.footer_payment_icon_7 | image_url }}" alt="Payment icon 7">{% endif %}
+          {% if settings.footer_payment_icon_8 != blank %}<img src="{{ settings.footer_payment_icon_8 | image_url }}" alt="Payment icon 8">{% endif %}
+        </div>
+      {% endif %}
+    </div>
+    <div class="footer__bottom-right">
+      {% if section.settings.bottom_menu != blank %}
+        <ul class="footer__bottom-menu">
+          {% for link in linklists[section.settings.bottom_menu].links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
   </div>
 </footer>
 
 {% stylesheet %}
-  footer {
+  .footer {
+    padding: 3rem 0 1.5rem;
+  }
+
+  .footer__top,
+  .footer__bottom {
     display: flex;
     justify-content: space-between;
-    margin-top: 2rem;
+    gap: 2rem;
   }
-  footer a {
-    text-decoration: none;
-    color: var(--color-foreground);
+
+  .footer__brand-column {
+    flex: 0 0 260px;
   }
-  footer .footer__links,
-  footer .footer__payment {
+
+  .footer__logo {
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .footer__logo--mobile {
+    display: none;
+  }
+
+  .footer__logo-spacer {
+    display: none;
+  }
+
+  .footer__socials {
     display: flex;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .footer__social-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: inherit;
+  }
+
+  .footer__social-button svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    fill: currentColor;
+    stroke: currentColor;
+  }
+
+  .footer__blocks {
+    display: flex;
+    flex: 1;
+    gap: 1.5rem;
+  }
+
+  .footer__block {
+    min-width: 0;
+  }
+
+  .footer__block--25 {
+    flex: 0 0 25%;
+  }
+
+  .footer__block--33 {
+    flex: 0 0 33.333%;
+  }
+
+  .footer__block-heading {
+    margin: 0 0 1rem;
+  }
+
+  .footer__menu-list,
+  .footer__bottom-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer__menu-list li + li,
+  .footer__bottom-menu li + li {
+    margin-top: 0.5rem;
+  }
+
+  .footer__menu-list a,
+  .footer__bottom-menu a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .footer__subscribe {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .footer__subscribe input {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .footer__payment {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .footer__payment img {
+    height: 24px;
+    width: auto;
+    display: block;
+  }
+
+  @media (max-width: 860px) {
+    .footer__top,
+    .footer__bottom,
+    .footer__blocks {
+      flex-direction: column;
+    }
+
+    .footer__block--25,
+    .footer__block--33,
+    .footer__brand-column {
+      flex: 1 1 auto;
+    }
+
+    .footer__logo--desktop {
+      display: none;
+    }
+
+    .footer__logo--mobile,
+    .footer__logo-spacer {
+      display: block;
+    }
   }
 {% endstylesheet %}
 
@@ -52,16 +254,103 @@
       ]
     },
     {
-      "type": "link_list",
-      "id": "menu",
-      "label": "t:labels.menu"
+      "type": "image_picker",
+      "id": "logo",
+      "label": "t:labels.logo"
     },
     {
-      "type": "checkbox",
-      "id": "show_payment_icons",
-      "label": "t:labels.show_payment_icons",
-      "default": true
+      "type": "image_picker",
+      "id": "logo_mobile",
+      "label": "Logo mobile"
+    },
+    {
+      "type": "range",
+      "id": "logo_width_desktop",
+      "label": "t:labels.logo_width_desktop",
+      "min": 80,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "default": 220
+    },
+    {
+      "type": "range",
+      "id": "logo_width_mobile",
+      "label": "t:labels.logo_width_mobile",
+      "min": 60,
+      "max": 260,
+      "step": 10,
+      "unit": "px",
+      "default": 160
+    },
+    {
+      "type": "link_list",
+      "id": "bottom_menu",
+      "label": "Bottom menu"
     }
-  ]
+  ],
+  "blocks": [
+    {
+      "type": "menu",
+      "name": "Menu column",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "Width",
+          "default": "33",
+          "options": [
+            { "value": "25", "label": "25%" },
+            { "value": "33", "label": "33%" }
+          ]
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        }
+      ]
+    },
+    {
+      "type": "subscribe",
+      "name": "Subscribe block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Subscribe"
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "Width",
+          "default": "33",
+          "options": [
+            { "value": "25", "label": "25%" },
+            { "value": "33", "label": "33%" }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "placeholder",
+          "label": "Email placeholder",
+          "default": "Enter your email"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Subscribe"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4
 }
 {% endschema %}
