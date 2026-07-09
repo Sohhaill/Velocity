@@ -13,11 +13,11 @@
   "sections": {
     "footer": {
       "type": "footer",
-      "disabled": true,
       "settings": {
         "section_color_scheme": "scheme_1",
-        "menu": "",
-        "show_payment_icons": true
+        "logo_width_desktop": 220,
+        "logo_width_mobile": 160,
+        "bottom_menu": ""
       }
     }
   },
