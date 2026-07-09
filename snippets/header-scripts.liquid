@@ -31,7 +31,7 @@
 
   // Drawer submenu accordion
   function updateDrawerSubmenuHeight(item) {
-    var submenu = item ? item.children[1] : null;
+    var submenu = item ? item.querySelector(':scope > .header__drawer-submenu') : null;
     if (!item || !submenu) return;
 
     if (item.classList.contains('header__drawer-item--open')) {
@@ -50,9 +50,8 @@
     if (!item) return;
 
     item.classList.remove('header__drawer-item--open');
-    var topRow = item.children[0];
-    var toggle = topRow ? topRow.querySelector('.header__drawer-submenu-toggle') : null;
-    var submenu = item.children[1];
+    var toggle = item.querySelector(':scope > .header__drawer-item-top .header__drawer-submenu-toggle');
+    var submenu = item.querySelector(':scope > .header__drawer-submenu');
 
     if (toggle) {
       toggle.setAttribute('aria-expanded', 'false');
@@ -64,9 +63,8 @@
 
     item.querySelectorAll('.header__drawer-item--open').forEach(function(childOpenItem) {
       childOpenItem.classList.remove('header__drawer-item--open');
-      var childTopRow = childOpenItem.children[0];
-      var childToggle = childTopRow ? childTopRow.querySelector('.header__drawer-submenu-toggle') : null;
-      var childSubmenu = childOpenItem.children[1];
+      var childToggle = childOpenItem.querySelector(':scope > .header__drawer-item-top .header__drawer-submenu-toggle');
+      var childSubmenu = childOpenItem.querySelector(':scope > .header__drawer-submenu');
       if (childToggle) childToggle.setAttribute('aria-expanded', 'false');
       if (childSubmenu) childSubmenu.style.maxHeight = '0px';
     });
@@ -75,7 +73,7 @@
   document.querySelectorAll('.header__drawer-submenu-toggle').forEach(function(toggle) {
     toggle.addEventListener('click', function() {
       var item = toggle.closest('.header__drawer-item');
-      var submenu = item ? item.children[1] : null;
+      var submenu = item ? item.querySelector(':scope > .header__drawer-submenu') : null;
       if (!item || !submenu) return;
 
       var isOpen = item.classList.contains('header__drawer-item--open');
@@ -86,10 +84,7 @@
         item.classList.add('header__drawer-item--open');
         toggle.setAttribute('aria-expanded', 'true');
         submenu.style.maxHeight = submenu.scrollHeight + 'px';
-        var parentItem = item.parentElement ? item.parentElement.closest('.header__drawer-item--open') : null;
-        if (parentItem) {
-          updateDrawerSubmenuHeight(parentItem);
-        }
+        updateDrawerSubmenuHeight(item.parentElement ? item.parentElement.closest('.header__drawer-item--open') : null);
       }
     });
   });
