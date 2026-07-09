@@ -9,26 +9,53 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "hello-world",
-      "disabled": true,
+    "multiple_image_text_k7WWD4": {
+      "type": "multiple-image-text",
+      "blocks": {
+        "image_text_card_zDDEm7": {
+          "type": "image_text_card",
+          "settings": {
+            "eyebrow": "",
+            "title": "Add your title",
+            "subtitle": "Add a supporting subtitle",
+            "description": "Describe this item in a sentence or two, highlighting what makes it worth a closer look.",
+            "benefit_1": "First key benefit",
+            "benefit_2": "Second key benefit",
+            "benefit_3": "Third key benefit",
+            "benefit_4": "",
+            "benefit_5": "",
+            "button_label": "Learn More",
+            "button_url": ""
+          }
+        },
+        "image_text_card_Ww9gVG": {
+          "type": "image_text_card",
+          "settings": {
+            "eyebrow": "",
+            "title": "Add another title",
+            "subtitle": "Add another subtitle",
+            "description": "Describe this second item, giving shoppers a reason to keep scrolling.",
+            "benefit_1": "First key benefit",
+            "benefit_2": "Second key benefit",
+            "benefit_3": "",
+            "benefit_4": "",
+            "benefit_5": "",
+            "button_label": "Learn More",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_text_card_zDDEm7",
+        "image_text_card_Ww9gVG"
+      ],
+      "name": "Multiple Image with Text",
       "settings": {
-        "section_color_scheme": "scheme_2"
-      }
-    },
-    "collections_DqxwGg": {
-      "type": "collections",
-      "disabled": true,
-      "name": "t:general.collections_grid",
-      "settings": {
-        "section_color_scheme": "scheme_1",
-        "grid_item_width": "collections--full",
-        "grid_gap": 10
+        "section_color_scheme": "scheme_1"
       }
     }
   },
   "order": [
-    "main",
-    "collections_DqxwGg"
+    "multiple_image_text_k7WWD4"
   ]
 }
