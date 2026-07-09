@@ -15,9 +15,10 @@
       "type": "header",
       "settings": {
         "section_color_scheme": "scheme_2",
+        "logo": "shopify://shop_images/download.webp",
         "header_width_type": "container_width",
-        "logo_width_desktop": 280,
-        "logo_width_mobile": 180,
+        "logo_width_desktop": 170,
+        "logo_width_mobile": 90,
         "header_sticky": true,
         "menu": "main-menu",
         "show_wishlist_icon": true,
