@@ -1,5 +1,9 @@
 <header class="header{% if section.settings.header_sticky %} header--sticky{% endif %}{% if section.settings.header_width_type == 'full_width' %} header--full-width{% else %} container-width{% endif %}">
   <div class="header__inner">
+     <button class="header__toggle" type="button" aria-expanded="false" aria-controls="header-drawer" onclick="openHeaderDrawer()">
+      {{ 'icon-hamburger.svg' | inline_asset_content }}
+      <span class="visually-hidden">{{ 'header.open_menu' | t }}</span>
+    </button>
     <div class="header__brand">
       <a class="header__brand-link" href="{{ routes.root_url }}">
         {% if section.settings.logo %}
@@ -10,10 +14,7 @@
       </a>
     </div>
 
-    <button class="header__toggle" type="button" aria-expanded="false" aria-controls="header-drawer" onclick="openHeaderDrawer()">
-      {{ 'icon-hamburger.svg' | inline_asset_content }}
-      <span class="visually-hidden">{{ 'header.open_menu' | t }}</span>
-    </button>
+   
 
     <nav class="header__nav" aria-label="{{ 'header.menu' | t }}">
       {% if section.settings.menu.links and section.settings.menu.links.size > 0 %}
@@ -116,30 +117,15 @@
       </nav>
 
       <div class="header__drawer-icons">
-        {% if section.settings.show_wishlist_icon %}
-          <a class="header__drawer-icon" href="/pages/wishlist">
-            {{ 'icon-wishlist.svg' | inline_asset_content }}
-            <span>{{ 'header.wishlist_icon' | t }}</span>
-          </a>
-        {% endif %}
+       
         {% if section.settings.show_account_icon and shop.customer_accounts_enabled %}
           <a class="header__drawer-icon" href="{{ routes.account_login_url }}">
             {{ 'icon-account.svg' | inline_asset_content }}
             <span>{{ 'header.account_icon' | t }}</span>
           </a>
         {% endif %}
-        {% if section.settings.show_search_icon %}
-          <a class="header__drawer-icon" href="{{ routes.search_url }}">
-            {{ 'icon-search.svg' | inline_asset_content }}
-            <span>{{ 'header.search_icon' | t }}</span>
-          </a>
-        {% endif %}
-        {% if section.settings.show_cart_icon %}
-          <a class="header__drawer-icon" href="{{ routes.cart_url }}">
-            {{ 'icon-cart.svg' | inline_asset_content }}
-            <span>{{ 'header.cart_icon' | t }}</span>
-          </a>
-        {% endif %}
+        
+        
       </div>
     </div>
   </div>

@@ -131,8 +131,8 @@ select,
 
 @media screen and (max-width: 749px) {
   .header svg{
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
   }
   body {
     font-size: var(--font-size-mobile-base);
