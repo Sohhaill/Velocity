@@ -384,9 +384,9 @@
     transition: transform var(--transition-default);
   }
 
-  .header__drawer-item--open .header__drawer-submenu-toggle svg {
-    transform: rotate(180deg);
-  }
+  .header__drawer-submenu-toggle[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
 
   /* Accordion submenu: animated with JS-measured max-height, using the same transition variable */
   .header__drawer-submenu {
