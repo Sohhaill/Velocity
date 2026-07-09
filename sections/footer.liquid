@@ -135,7 +135,17 @@
 
   <div class="footer__bottom container-width">
     <div class="footer__bottom-left">
-      {% if settings.footer_payment_icon_1 != blank or settings.footer_payment_icon_2 != blank or
+       {% if section.settings.bottom_menu != blank %}
+      <ul class="footer__bottom-menu">
+        {% for link in linklists[section.settings.bottom_menu].links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      
+    </div>
+    <div class="footer__bottom-right">
+     {% if settings.footer_payment_icon_1 != blank or settings.footer_payment_icon_2 != blank or
       settings.footer_payment_icon_3 != blank or settings.footer_payment_icon_4 != blank or
       settings.footer_payment_icon_5 != blank or settings.footer_payment_icon_6 != blank or
       settings.footer_payment_icon_7 != blank or settings.footer_payment_icon_8 != blank %}
@@ -157,15 +167,6 @@
         {% if settings.footer_payment_icon_8 != blank %}<img src="{{ settings.footer_payment_icon_8 | image_url }}"
           alt="Payment icon 8">{% endif %}
       </div>
-      {% endif %}
-    </div>
-    <div class="footer__bottom-right">
-      {% if section.settings.bottom_menu != blank %}
-      <ul class="footer__bottom-menu">
-        {% for link in linklists[section.settings.bottom_menu].links %}
-        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-        {% endfor %}
-      </ul>
       {% endif %}
     </div>
   </div>
@@ -363,7 +364,7 @@ flex-wrap: wrap;
 .footer__payment {
 display: flex;
 align-items: center;
-gap: 0.6rem;
+gap: 0.4rem;
 flex-wrap: wrap;
 }
 
