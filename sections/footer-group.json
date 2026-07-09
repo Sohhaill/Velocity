@@ -18,6 +18,7 @@
           "type": "menu",
           "settings": {
             "heading": "Main",
+            "open_by_default": false,
             "width": "25",
             "menu": "main-menu"
           }
@@ -26,6 +27,7 @@
           "type": "menu",
           "settings": {
             "heading": "Main",
+            "open_by_default": false,
             "width": "25",
             "menu": "main-menu"
           }
@@ -34,6 +36,7 @@
           "type": "menu",
           "settings": {
             "heading": "Main",
+            "open_by_default": false,
             "width": "25",
             "menu": "main-menu"
           }
@@ -49,7 +52,7 @@
         "logo": "shopify://shop_images/download.webp",
         "footer_width_type": "container_width",
         "logo_width_desktop": 220,
-        "logo_width_mobile": 160,
+        "logo_width_mobile": 200,
         "bottom_menu": "main-menu"
       }
     }
