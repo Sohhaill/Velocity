@@ -15,6 +15,7 @@
         "image_text_card_zDDEm7": {
           "type": "image_text_card",
           "settings": {
+            "image": "shopify://shop_images/ChatGPTImageJun20_2026_09_58_56PM_1.webp",
             "eyebrow": "",
             "title": "Add your title",
             "subtitle": "Add a supporting subtitle",
@@ -31,6 +32,7 @@
         "image_text_card_Ww9gVG": {
           "type": "image_text_card",
           "settings": {
+            "image": "shopify://shop_images/ChatGPTImageJun20_2026_09_59_04PM.webp",
             "eyebrow": "",
             "title": "Add another title",
             "subtitle": "Add another subtitle",
