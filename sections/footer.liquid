@@ -1,4 +1,7 @@
 <footer class="footer section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}">
+  <div class="footer__wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path fill="currentColor" d="M0,32L60,48C120,64,240,96,360,96C480,96,600,64,720,69.3C840,75,960,117,1080,117.3C1200,117,1320,75,1380,53.3L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+  </div>
   <div class="footer__top container-width">
     <div class="footer__brand-column">
       {% if section.settings.logo %}
@@ -100,6 +103,24 @@
 {% stylesheet %}
   .footer {
     padding: 3rem 0 1.5rem;
+    position: relative;
+  }
+
+  .footer__wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    transform: translateY(-99%);
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .footer__wave svg {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 
   .footer__top,
@@ -107,6 +128,10 @@
     display: flex;
     justify-content: space-between;
     gap: 2rem;
+  }
+
+  .footer__top {
+    padding-bottom: 2.5rem;
   }
 
   .footer__brand-column {
@@ -131,7 +156,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
-    margin-top: 1rem;
+    margin-top: 1.25rem;
   }
 
   .footer__social-button {
@@ -143,6 +168,13 @@
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.08);
     color: inherit;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+  }
+
+  .footer__social-button:hover,
+  .footer__social-button:focus-visible {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-2px);
   }
 
   .footer__social-button svg {
@@ -154,24 +186,52 @@
 
   .footer__blocks {
     display: flex;
+    flex-wrap: wrap;
     flex: 1;
-    gap: 1.5rem;
+    gap: 1.5rem 2rem;
   }
 
   .footer__block {
-    min-width: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 180px;
+  }
+
+  .footer__block--20 {
+    flex: 1 1 calc(20% - 1.6rem);
   }
 
   .footer__block--25 {
-    flex: 0 0 25%;
+    flex: 1 1 calc(25% - 1.5rem);
   }
 
   .footer__block--33 {
-    flex: 0 0 33.333%;
+    flex: 1 1 calc(33.333% - 1.34rem);
+  }
+
+  .footer__block--50 {
+    flex: 1 1 calc(50% - 1rem);
+  }
+
+  .footer__block--100 {
+    flex: 1 1 100%;
   }
 
   .footer__block-heading {
-    margin: 0 0 1rem;
+    margin: 0 0 1.1rem;
+    position: relative;
+    padding-bottom: 0.6rem;
+  }
+
+  .footer__block-heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 2rem;
+    height: 2px;
+    background: currentColor;
+    opacity: 0.35;
   }
 
   .footer__menu-list,
@@ -183,29 +243,72 @@
 
   .footer__menu-list li + li,
   .footer__bottom-menu li + li {
-    margin-top: 0.5rem;
+    margin-top: 0.65rem;
   }
 
   .footer__menu-list a,
   .footer__bottom-menu a {
     color: inherit;
     text-decoration: none;
+    display: inline-block;
+    opacity: 0.8;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .footer__menu-list a:hover,
+  .footer__menu-list a:focus-visible,
+  .footer__bottom-menu a:hover,
+  .footer__bottom-menu a:focus-visible {
+    opacity: 1;
+    transform: translateX(3px);
   }
 
   .footer__subscribe {
     display: flex;
+    flex-wrap: wrap;
     gap: 0.75rem;
   }
 
   .footer__subscribe input {
-    flex: 1;
-    min-width: 0;
+    flex: 1 1 auto;
+    min-width: 160px;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.04);
+    color: inherit;
+    box-sizing: border-box;
+  }
+
+  .footer__subscribe button {
+    flex: 0 0 auto;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.08);
+    color: inherit;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+  }
+
+  .footer__subscribe button:hover,
+  .footer__subscribe button:focus-visible {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-1px);
+  }
+
+  .footer__bottom {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    align-items: center;
+    flex-wrap: wrap;
   }
 
   .footer__payment {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.6rem;
     flex-wrap: wrap;
   }
 
@@ -213,6 +316,22 @@
     height: 24px;
     width: auto;
     display: block;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+  }
+
+  .footer__payment img:hover {
+    opacity: 1;
+  }
+
+  .footer__bottom-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1.25rem;
+  }
+
+  .footer__bottom-menu li + li {
+    margin-top: 0;
   }
 
   @media (max-width: 860px) {
@@ -222,8 +341,11 @@
       flex-direction: column;
     }
 
+    .footer__block--20,
     .footer__block--25,
     .footer__block--33,
+    .footer__block--50,
+    .footer__block--100,
     .footer__brand-column {
       flex: 1 1 auto;
     }
@@ -235,6 +357,28 @@
     .footer__logo--mobile,
     .footer__logo-spacer {
       display: block;
+    }
+
+    .footer__brand-column {
+      text-align: center;
+    }
+
+    .footer__socials {
+      justify-content: center;
+    }
+
+    .footer__bottom {
+      flex-direction: column;
+      text-align: center;
+      gap: 1.25rem;
+    }
+
+    .footer__subscribe {
+      flex-direction: column;
+    }
+
+    .footer__subscribe button {
+      width: 100%;
     }
   }
 {% endstylesheet %}
@@ -305,8 +449,11 @@
           "label": "Width",
           "default": "33",
           "options": [
+            { "value": "20", "label": "20%" },
             { "value": "25", "label": "25%" },
-            { "value": "33", "label": "33%" }
+            { "value": "33", "label": "33%" },
+            { "value": "50", "label": "50%" },
+            { "value": "100", "label": "100%" }
           ]
         },
         {
@@ -332,8 +479,11 @@
           "label": "Width",
           "default": "33",
           "options": [
+            { "value": "20", "label": "20%" },
             { "value": "25", "label": "25%" },
-            { "value": "33", "label": "33%" }
+            { "value": "33", "label": "33%" },
+            { "value": "50", "label": "50%" },
+            { "value": "100", "label": "100%" }
           ]
         },
         {
