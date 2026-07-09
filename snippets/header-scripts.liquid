@@ -30,12 +30,12 @@
   });
 
   // Drawer submenu accordion
-function updateDrawerSubmenuHeight(item) {
+  function updateDrawerSubmenuHeight(item) {
     var submenu = item ? item.querySelector(':scope > .header__drawer-submenu') : null;
     if (!item || !submenu) return;
 
     if (item.classList.contains('header__drawer-item--open')) {
-      submenu.style.maxHeight = submenu.scrollHeight + 'px';
+      submenu.style.maxHeight = '100%';
     } else {
       submenu.style.maxHeight = '0px';
     }
