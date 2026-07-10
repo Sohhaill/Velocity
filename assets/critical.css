@@ -16,7 +16,7 @@ body {
 html:has(dialog[scroll-lock][open], details[scroll-lock][open]) {
   overflow: hidden;
 }
-.header svg{
+.header svg {
   width: 24px;
   height: 24px;
 }
@@ -95,12 +95,24 @@ h6 {
   color: var(--color-heading);
 }
 
-h1 { font-size: var(--font-size-h1); }
-h2 { font-size: var(--font-size-h2); }
-h3 { font-size: var(--font-size-h3); }
-h4 { font-size: var(--font-size-h4); }
-h5 { font-size: var(--font-size-h5); }
-h6 { font-size: var(--font-size-h6); }
+h1 {
+  font-size: var(--font-size-h1);
+}
+h2 {
+  font-size: var(--font-size-h2);
+}
+h3 {
+  font-size: var(--font-size-h3);
+}
+h4 {
+  font-size: var(--font-size-h4);
+}
+h5 {
+  font-size: var(--font-size-h5);
+}
+h6 {
+  font-size: var(--font-size-h6);
+}
 
 button,
 .button {
@@ -118,7 +130,7 @@ button:hover,
   background-color: var(--button-hover-background);
   color: var(--button-hover-foreground);
 }
-.shopify-section-group-footer-group{
+.shopify-section-group-footer-group {
   margin-top: auto !important;
 }
 input,
@@ -130,16 +142,16 @@ select,
   color: var(--input-foreground);
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.header--full-width, .full-width{
+.header--full-width,
+.full-width {
   padding-left: var(--container-margin);
-    padding-right: var(--container-margin);
+  padding-right: var(--container-margin);
 }
 @media screen and (max-width: 767px) {
-    
- .hide-mobile {
+  .hide-mobile {
     display: none !important;
   }
-  .header svg{
+  .header svg {
     width: 18px;
     height: 18px;
   }
@@ -147,12 +159,24 @@ select,
     font-size: var(--font-size-mobile-base);
   }
 
-  h1 { font-size: var(--font-size-mobile-h1); }
-  h2 { font-size: var(--font-size-mobile-h2); }
-  h3 { font-size: var(--font-size-mobile-h3); }
-  h4 { font-size: var(--font-size-mobile-h4); }
-  h5 { font-size: var(--font-size-mobile-h5); }
-  h6 { font-size: var(--font-size-mobile-h6); }
+  h1 {
+    font-size: var(--font-size-mobile-h1);
+  }
+  h2 {
+    font-size: var(--font-size-mobile-h2);
+  }
+  h3 {
+    font-size: var(--font-size-mobile-h3);
+  }
+  h4 {
+    font-size: var(--font-size-mobile-h4);
+  }
+  h5 {
+    font-size: var(--font-size-mobile-h5);
+  }
+  h6 {
+    font-size: var(--font-size-mobile-h6);
+  }
 
   button,
   .button {
@@ -179,30 +203,57 @@ select,
   box-sizing: border-box;
   margin: auto;
 }
-  .section-color-scheme--scheme_1 {
-    --color-background: var(--scheme1-background);
-    --color-foreground: var(--scheme1-body);
-    --color-heading: var(--scheme1-heading);
-    --button-background: var(--scheme1-button-background);
-    --button-foreground: var(--scheme1-button-foreground);
-    --button-hover-background: var(--scheme1-button-hover-background);
-    --button-hover-foreground: var(--scheme1-button-hover-foreground);
-    --input-background: var(--scheme1-input-background);
-    --input-foreground: var(--scheme1-input-foreground);
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-  }
+.section-color-scheme--scheme_1 {
+  --color-background: var(--scheme1-background);
+  --color-foreground: var(--scheme1-body);
+  --color-heading: var(--scheme1-heading);
+  --button-background: var(--scheme1-button-background);
+  --button-foreground: var(--scheme1-button-foreground);
+  --button-hover-background: var(--scheme1-button-hover-background);
+  --button-hover-foreground: var(--scheme1-button-hover-foreground);
+  --input-background: var(--scheme1-input-background);
+  --input-foreground: var(--scheme1-input-foreground);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
 
-  .section-color-scheme--scheme_2 {
-    --color-background: var(--scheme2-background);
-    --color-foreground: var(--scheme2-body);
-    --color-heading: var(--scheme2-heading);
-    --button-background: var(--scheme2-button-background);
-    --button-foreground: var(--scheme2-button-foreground);
-    --button-hover-background: var(--scheme2-button-hover-background);
-    --button-hover-foreground: var(--scheme2-button-hover-foreground);
-    --input-background: var(--scheme2-input-background);
-    --input-foreground: var(--scheme2-input-foreground);
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-  }
+.section-color-scheme--scheme_2 {
+  --color-background: var(--scheme2-background);
+  --color-foreground: var(--scheme2-body);
+  --color-heading: var(--scheme2-heading);
+  --button-background: var(--scheme2-button-background);
+  --button-foreground: var(--scheme2-button-foreground);
+  --button-hover-background: var(--scheme2-button-hover-background);
+  --button-hover-foreground: var(--scheme2-button-hover-foreground);
+  --input-background: var(--scheme2-input-background);
+  --input-foreground: var(--scheme2-input-foreground);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+.section-color-scheme--scheme_3 {
+  --color-background: var(--scheme3-background);
+  --color-foreground: var(--scheme3-body);
+  --color-heading: var(--scheme3-heading);
+  --button-background: var(--scheme3-button-background);
+  --button-foreground: var(--scheme3-button-foreground);
+  --button-hover-background: var(--scheme3-button-hover-background);
+  --button-hover-foreground: var(--scheme3-button-hover-foreground);
+  --input-background: var(--scheme3-input-background);
+  --input-foreground: var(--scheme3-input-foreground);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+.section-color-scheme--scheme_4 {
+  --color-background: var(--scheme4-background);
+  --color-foreground: var(--scheme4-body);
+  --color-heading: var(--scheme4-heading);
+  --button-background: var(--scheme4-button-background);
+  --button-foreground: var(--scheme4-button-foreground);
+  --button-hover-background: var(--scheme4-button-hover-background);
+  --button-hover-foreground: var(--scheme4-button-hover-foreground);
+  --input-background: var(--scheme4-input-background);
+  --input-foreground: var(--scheme4-input-foreground);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}

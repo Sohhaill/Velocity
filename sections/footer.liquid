@@ -2,7 +2,8 @@
 {% if section.settings.footer_width_type == 'full_width' %}
 {% assign footer_width_class = 'full-width' %}
 {% endif %}
-{% assign footer_logo_styles = '--footer-logo-width-desktop: ' | append: section.settings.logo_width_desktop | append: 'px; --footer-logo-width-mobile: ' | append: section.settings.logo_width_mobile | append: 'px;' %}
+{% assign footer_logo_styles = '--footer-logo-width-desktop: ' | append: section.settings.logo_width_desktop | append:
+'px; --footer-logo-width-mobile: ' | append: section.settings.logo_width_mobile | append: 'px;' %}
 
 <footer class="footer section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }} ">
   <div class="footer__top {{ footer_width_class }}">
@@ -15,9 +16,9 @@
       {% endif %}
 
       <div class="footer__socials">
-        
+
         {% if settings.footer_facebook_url != blank %}
-          
+
         <a class="footer__social-button" href="{{ settings.footer_facebook_url }}" target="_blank" rel="noopener"
           aria-label="Facebook">
           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" preserveAspectRatio="xMidYMid" width="14.906"
@@ -98,9 +99,12 @@
       {% case block.type %}
       {% when 'menu' %}
       {% if block.settings.menu != blank %}
-      <div class="footer__block footer__block--{{ block.settings.width }}{% if block.settings.open_by_default %} footer__block--open{% endif %}" {{ block.shopify_attributes }}>
+      <div
+        class="footer__block footer__block--{{ block.settings.width }}{% if block.settings.open_by_default %} footer__block--open{% endif %}"
+        {{ block.shopify_attributes }}>
         {% if block.settings.heading != blank %}
-        <button class="footer__block-heading" type="button" data-footer-menu-toggle aria-expanded="{% if block.settings.open_by_default %}true{% else %}false{% endif %}">
+        <button class="footer__block-heading" type="button" data-footer-menu-toggle
+          aria-expanded="{% if block.settings.open_by_default %}true{% else %}false{% endif %}">
           <span>{{ block.settings.heading }}</span>
           <span class="footer__block-icon" aria-hidden="true"></span>
         </button>
@@ -133,17 +137,17 @@
 
   <div class="footer__bottom container-width">
     <div class="footer__bottom-left">
-       {% if section.settings.bottom_menu != blank %}
+      {% if section.settings.bottom_menu != blank %}
       <ul class="footer__bottom-menu">
         {% for link in linklists[section.settings.bottom_menu].links %}
         <li><a href="{{ link.url }}">{{ link.title }}</a></li>
         {% endfor %}
       </ul>
       {% endif %}
-      
+
     </div>
     <div class="footer__bottom-right">
-     {% if settings.footer_payment_icon_1 != blank or settings.footer_payment_icon_2 != blank or
+      {% if settings.footer_payment_icon_1 != blank or settings.footer_payment_icon_2 != blank or
       settings.footer_payment_icon_3 != blank or settings.footer_payment_icon_4 != blank or
       settings.footer_payment_icon_5 != blank or settings.footer_payment_icon_6 != blank or
       settings.footer_payment_icon_7 != blank or settings.footer_payment_icon_8 != blank %}
@@ -172,19 +176,19 @@
 
 {% javascript %}
 document.addEventListener('DOMContentLoaded', () => {
-  const desktopQuery = window.matchMedia('(min-width: 861px)');
+const desktopQuery = window.matchMedia('(min-width: 861px)');
 
-  document.querySelectorAll('.footer__block').forEach((block) => {
-    const toggle = block.querySelector('[data-footer-menu-toggle]');
-    if (!toggle) return;
+document.querySelectorAll('.footer__block').forEach((block) => {
+const toggle = block.querySelector('[data-footer-menu-toggle]');
+if (!toggle) return;
 
-    toggle.addEventListener('click', () => {
-      if (desktopQuery.matches) return;
+toggle.addEventListener('click', () => {
+if (desktopQuery.matches) return;
 
-      const isOpen = block.classList.toggle('footer__block--open');
-      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-  });
+const isOpen = block.classList.toggle('footer__block--open');
+toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+});
+});
 });
 {% endjavascript %}
 
@@ -209,8 +213,8 @@ padding-bottom: 2.5rem;
 flex: 0 0 25%;
 }
 .footer__block-heading:hover{
-  background: unset !important;
-  color: unset !important;
+background: unset !important;
+color: unset !important;
 }
 .footer__logo {
 display: block;
@@ -284,7 +288,7 @@ flex: 1 1 calc(50% - 1rem);
 flex: 1 1 100%;
 }
 ul.footer__menu-list {
-    margin-top: 1em;
+margin-top: 1em;
 }
 .footer__block-heading {
 margin: 0;
@@ -482,7 +486,7 @@ text-align: center;
 
 .footer__logo {
 width: min(var(--footer-logo-width-mobile), 100%);
-        margin: auto;
+margin: auto;
 }
 
 .footer__block-heading {
@@ -511,7 +515,7 @@ justify-content: center;
 flex-direction: column;
 text-align: center;
 gap: 1.25rem;
-        margin: unset;
+margin: unset;
 }
 
 .footer__subscribe {
@@ -535,14 +539,16 @@ width: 100%;
 "default": "scheme_1",
 "options": [
 { "value": "scheme_1", "label": "t:options.color_scheme.scheme_1" },
-{ "value": "scheme_2", "label": "t:options.color_scheme.scheme_2" }
+{ "value": "scheme_2", "label": "t:options.color_scheme.scheme_2" },
+{ "value": "scheme_3", "label": "t:options.color_scheme.scheme_3" },
+{ "value": "scheme_4", "label": "t:options.color_scheme.scheme_4" }
 ]
 },
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "t:labels.logo"
-    },
+{
+"type": "image_picker",
+"id": "logo",
+"label": "t:labels.logo"
+},
 {
 "type": "select",
 "id": "footer_width_type",
