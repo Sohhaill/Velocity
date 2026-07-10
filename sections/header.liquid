@@ -110,7 +110,6 @@
     {% render 'header-scripts' %}
     {% render 'search-popup', color_scheme: section.settings.search_popup_color_scheme %}
   </header>
-  <div class="header__spacer" aria-hidden="true"></div>
 </div>
 
 {% stylesheet %}
@@ -130,22 +129,14 @@ padding-bottom: 20px;
 }
 
 .header--sticky {
-position: relative;
-z-index: 50;
-}
-
-.header--sticky .header--fixed {
-position: fixed;
+position: -webkit-sticky;
+position: sticky;
 top: 0;
 left: 0;
 right: 0;
-width: 100%;
 z-index: 1000;
-}
-
-.header__spacer {
-height: 0;
 width: 100%;
+align-self: stretch;
 }
 
 .header__inner {

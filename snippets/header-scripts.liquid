@@ -1,39 +1,4 @@
-{% doc %}
-  Handles header drawer toggles, search popup toggles, and the fixed-on-scroll header fallback.
-
-  @example
-  {% render 'header-scripts' %}
-{% enddoc %}
-
 <script>
-  (function() {
-    var headerSection = document.querySelector('.header--sticky');
-    var header = headerSection ? headerSection.querySelector('.header') : null;
-    var spacer = headerSection ? headerSection.querySelector('.header__spacer') : null;
-    var isFixed = false;
-
-    if (!header || !spacer) return;
-
-    function syncHeaderSpacer() {
-      spacer.style.height = isFixed ? header.offsetHeight + 'px' : '0px';
-    }
-
-    function syncHeaderState() {
-      var shouldFix = window.scrollY > 0;
-
-      if (shouldFix !== isFixed) {
-        isFixed = shouldFix;
-        header.classList.toggle('header--fixed', shouldFix);
-      }
-
-      syncHeaderSpacer();
-    }
-
-    window.addEventListener('scroll', syncHeaderState, { passive: true });
-    window.addEventListener('resize', syncHeaderState);
-    syncHeaderState();
-  })();
-
   function openHeaderDrawer() {
     var drawer = document.getElementById('header-drawer');
     if (!drawer) return;
