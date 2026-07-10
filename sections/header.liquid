@@ -562,13 +562,14 @@ align-items: flex-start;
 justify-content: flex-start;
 opacity: 0;
 pointer-events: none;
-transition: opacity var(--transition-default);
+transition: opacity 0.3s ease;
 z-index: 100;
 }
 
 .header__drawer--open {
 opacity: 1;
 pointer-events: auto;
+transition: opacity 0.35s ease;
 }
 
 /* Drawer panel: full height, slides in from the left */
@@ -583,11 +584,12 @@ overflow-y: auto;
 display: flex;
 flex-direction: column;
 transform: translateX(-100%);
-transition: transform var(--transition-default);
+transition: transform 0.4s cubic-bezier(0.7, 0, 0.84, 0);
 }
 
 .header__drawer--open .header__drawer-panel {
 transform: translateX(0);
+transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
 }
 
 .header__drawer-top {
