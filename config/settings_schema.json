@@ -477,6 +477,10 @@
         "label": "t:labels.body"
       },
       {
+        "type": "header",
+        "content": "t:colors.filled_button"
+      },
+      {
         "type": "color",
         "id": "scheme_1_button_background_color",
         "default": "#111111",
@@ -567,6 +571,10 @@
         "id": "scheme_2_body_color",
         "default": "#FFFFFF",
         "label": "t:labels.body"
+      },
+      {
+        "type": "header",
+        "content": "t:colors.filled_button"
       },
       {
         "type": "color",
@@ -671,6 +679,10 @@
         "label": "t:labels.body"
       },
       {
+        "type": "header",
+        "content": "t:colors.filled_button"
+      },
+      {
         "type": "color",
         "id": "scheme_3_button_background_color",
         "default": "#111111",
@@ -761,6 +773,10 @@
         "id": "scheme_4_body_color",
         "default": "#FFFFFF",
         "label": "t:labels.body"
+      },
+      {
+        "type": "header",
+        "content": "t:colors.filled_button"
       },
       {
         "type": "color",
