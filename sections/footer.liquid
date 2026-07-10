@@ -136,7 +136,7 @@
   </div>
 
   <div class="footer__bottom">
-    <div class="container-width" >
+    <div class="container-width bottom-inner" >
     <div class="footer__bottom-left">
       {% if section.settings.bottom_menu != blank %}
       <ul class="footer__bottom-menu">
@@ -418,9 +418,7 @@ transform: translateY(-1px);
 .footer__bottom {
 margin-top: 2.5rem;
 padding-top: 1.5rem;
-border-top: 1px solid rgba(255, 255, 255, 0.1);
-align-items: center;
-flex-wrap: wrap;
+
 }
 
 .footer__payment {
@@ -520,7 +518,11 @@ text-align: center;
 gap: 1.25rem;
 margin: unset;
 }
-
+.bottom-inner{
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+align-items: center;
+flex-wrap: wrap;
+}
 .footer__subscribe {
 flex-direction: column;
 }
