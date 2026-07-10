@@ -15,7 +15,8 @@
     "scheme_1": "Color scheme 1",
     "scheme_2": "Color scheme 2",
     "scheme_3": "Color scheme 3",
-    "scheme_4": "Color scheme 4"
+    "scheme_4": "Color scheme 4",
+     "outline_button": "Outline button"
   },
   "general": {
     "404": "Not found",
@@ -62,10 +63,14 @@
     "body": "Body",
     "heading": "Heading",
     "subheading": "Subheading",
-    "button_background": "Button background",
-    "button_text": "Button text",
-    "button_hover_background": "Button hover background",
-    "button_hover_text": "Button hover text",
+    "filled_button_background": "Background",
+    "filled_button_text": "Text",
+    "filled_button_hover_background": "Hover background",
+    "filled_button_hover_text": "Hover text",
+    "outline_button_border": "Border",
+    "outline_button_text": "Text",
+    "outline_button_hover_border": "Hover border",
+    "outline_button_hover_text": "Hover text",
     "input_text": "Input text",
     "input_background": "Input background",
     "field": "Field",
