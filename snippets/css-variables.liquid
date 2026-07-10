@@ -1,88 +1,88 @@
 {% style %}
-  {% # Loads all font variants with display: swap %}
-  {% assign heading_font = settings.type_heading_font %}
-  {% assign body_font = settings.type_body_font %}
-  {% assign button_font = settings.type_button_font %}
+{% # Loads all font variants with display: swap %}
+{% assign heading_font = settings.type_heading_font %}
+{% assign body_font = settings.type_body_font %}
+{% assign button_font = settings.type_button_font %}
 
-  {{ heading_font | font_face: font_display: 'swap' }}
-  {{ heading_font | font_modify: 'weight', 'bold' | font_face: font_display: 'swap' }}
-  {{ heading_font | font_modify: 'weight', 'bold' | font_modify: 'style', 'italic' | font_face: font_display: 'swap' }}
-  {{ heading_font | font_modify: 'style', 'italic' | font_face: font_display: 'swap' }}
+{{ heading_font | font_face: font_display: 'swap' }}
+{{ heading_font | font_modify: 'weight', 'bold' | font_face: font_display: 'swap' }}
+{{ heading_font | font_modify: 'weight', 'bold' | font_modify: 'style', 'italic' | font_face: font_display: 'swap' }}
+{{ heading_font | font_modify: 'style', 'italic' | font_face: font_display: 'swap' }}
 
-  {{ body_font | font_face: font_display: 'swap' }}
-  {{ body_font | font_modify: 'weight', 'bold' | font_face: font_display: 'swap' }}
-  {{ body_font | font_modify: 'weight', 'bold' | font_modify: 'style', 'italic' | font_face: font_display: 'swap' }}
-  {{ body_font | font_modify: 'style', 'italic' | font_face: font_display: 'swap' }}
+{{ body_font | font_face: font_display: 'swap' }}
+{{ body_font | font_modify: 'weight', 'bold' | font_face: font_display: 'swap' }}
+{{ body_font | font_modify: 'weight', 'bold' | font_modify: 'style', 'italic' | font_face: font_display: 'swap' }}
+{{ body_font | font_modify: 'style', 'italic' | font_face: font_display: 'swap' }}
 
-  {{ button_font | font_face: font_display: 'swap' }}
-  {{ button_font | font_modify: 'weight', 'bold' | font_face: font_display: 'swap' }}
-  {{ button_font | font_modify: 'weight', 'bold' | font_modify: 'style', 'italic' | font_face: font_display: 'swap' }}
-  {{ button_font | font_modify: 'style', 'italic' | font_face: font_display: 'swap' }}
+{{ button_font | font_face: font_display: 'swap' }}
+{{ button_font | font_modify: 'weight', 'bold' | font_face: font_display: 'swap' }}
+{{ button_font | font_modify: 'weight', 'bold' | font_modify: 'style', 'italic' | font_face: font_display: 'swap' }}
+{{ button_font | font_modify: 'style', 'italic' | font_face: font_display: 'swap' }}
 
-  :root {
-    --font-heading--family: {{ heading_font.family }}, {{ heading_font.fallback_families }};
-    --font-heading--style: {{ heading_font.style }};
-    --font-heading--weight: {{ heading_font.weight }};
-    --font-body--family: {{ body_font.family }}, {{ body_font.fallback_families }};
-    --font-body--style: {{ body_font.style }};
-    --font-body--weight: {{ body_font.weight }};
-    --font-button--family: {{ button_font.family }}, {{ button_font.fallback_families }};
-    --font-button--style: {{ button_font.style }};
-    --font-button--weight: {{ button_font.weight }};
-    --font-size-h1: {{ settings.font_size_h1 }}px;
-    --font-size-h2: {{ settings.font_size_h2 }}px;
-    --font-size-h3: {{ settings.font_size_h3 }}px;
-    --font-size-h4: {{ settings.font_size_h4 }}px;
-    --font-size-h5: {{ settings.font_size_h5 }}px;
-    --font-size-h6: {{ settings.font_size_h6 }}px;
-    --font-size-base: {{ settings.font_size_body_text }}px;
-    --font-size-button: {{ settings.font_size_button }}px;
-    --font-size-input: {{ settings.font_size_input }}px;
-    --font-size-field: {{ settings.font_size_field }}px;
-    --font-size-mobile-h1: {{ settings.font_size_mobile_h1 }}px;
-    --font-size-mobile-h2: {{ settings.font_size_mobile_h2 }}px;
-    --font-size-mobile-h3: {{ settings.font_size_mobile_h3 }}px;
-    --font-size-mobile-h4: {{ settings.font_size_mobile_h4 }}px;
-    --font-size-mobile-h5: {{ settings.font_size_mobile_h5 }}px;
-    --font-size-mobile-h6: {{ settings.font_size_mobile_h6 }}px;
-    --font-size-mobile-base: {{ settings.font_size_mobile_body_text }}px;
-    --font-size-mobile-button: {{ settings.font_size_mobile_button }}px;
-    --font-size-mobile-input: {{ settings.font_size_mobile_input }}px;
-    --font-size-mobile-field: {{ settings.font_size_mobile_field }}px;
-    --line-height-heading: 1.1;
-    --line-height-base: 1.6;
-    --container-width: {{ settings.container_max_width }}px;
-    --container-margin: {{ settings.container_margin }}px;
-    --transition-default: 0.25s ease;
-    --scheme1-background: {{ settings.scheme_1_background_color }};
-    --scheme1-heading: {{ settings.scheme_1_heading_color }};
-    --scheme1-subheading: {{ settings.scheme_1_subheading_color }};
-    --scheme1-body: {{ settings.scheme_1_body_color }};
-    --scheme1-button-background: {{ settings.scheme_1_button_background_color }};
-    --scheme1-button-foreground: {{ settings.scheme_1_button_text_color }};
-    --scheme1-button-hover-background: {{ settings.scheme_1_button_hover_background_color }};
-    --scheme1-button-hover-foreground: {{ settings.scheme_1_button_hover_text_color }};
-    --scheme1-input-background: {{ settings.scheme_1_input_background_color }};
-    --scheme1-input-foreground: {{ settings.scheme_1_input_text_color }};
-    --scheme2-background: {{ settings.scheme_2_background_color }};
-    --scheme2-heading: {{ settings.scheme_2_heading_color }};
-    --scheme2-subheading: {{ settings.scheme_2_subheading_color }};
-    --scheme2-body: {{ settings.scheme_2_body_color }};
-    --scheme2-button-background: {{ settings.scheme_2_button_background_color }};
-    --scheme2-button-foreground: {{ settings.scheme_2_button_text_color }};
-    --scheme2-button-hover-background: {{ settings.scheme_2_button_hover_background_color }};
-    --scheme2-button-hover-foreground: {{ settings.scheme_2_button_hover_text_color }};
-    --scheme2-input-background: {{ settings.scheme_2_input_background_color }};
-    --scheme2-input-foreground: {{ settings.scheme_2_input_text_color }};
-    --color-background: var(--scheme1-background);
-    --color-foreground: var(--scheme1-body);
-    --color-heading: var(--scheme1-heading);
-    --button-background: var(--scheme1-button-background);
-    --button-foreground: var(--scheme1-button-foreground);
-    --button-hover-background: var(--scheme1-button-hover-background);
-    --button-hover-foreground: var(--scheme1-button-hover-foreground);
-    --input-background: var(--scheme1-input-background);
-    --input-foreground: var(--scheme1-input-foreground);
-    --style-border-radius-inputs: {{ settings.input_corner_radius }}px;
-  }
+:root {
+--font-heading--family: {{ heading_font.family }}, {{ heading_font.fallback_families }};
+--font-heading--style: {{ heading_font.style }};
+--font-heading--weight: {{ heading_font.weight }};
+--font-body--family: {{ body_font.family }}, {{ body_font.fallback_families }};
+--font-body--style: {{ body_font.style }};
+--font-body--weight: {{ body_font.weight }};
+--font-button--family: {{ button_font.family }}, {{ button_font.fallback_families }};
+--font-button--style: {{ button_font.style }};
+--font-button--weight: {{ button_font.weight }};
+--font-size-h1: {{ settings.font_size_h1 }}px;
+--font-size-h2: {{ settings.font_size_h2 }}px;
+--font-size-h3: {{ settings.font_size_h3 }}px;
+--font-size-h4: {{ settings.font_size_h4 }}px;
+--font-size-h5: {{ settings.font_size_h5 }}px;
+--font-size-h6: {{ settings.font_size_h6 }}px;
+--font-size-base: {{ settings.font_size_body_text }}px;
+--font-size-button: {{ settings.font_size_button }}px;
+--font-size-input: {{ settings.font_size_input }}px;
+--font-size-field: {{ settings.font_size_field }}px;
+--font-size-mobile-h1: {{ settings.font_size_mobile_h1 }}px;
+--font-size-mobile-h2: {{ settings.font_size_mobile_h2 }}px;
+--font-size-mobile-h3: {{ settings.font_size_mobile_h3 }}px;
+--font-size-mobile-h4: {{ settings.font_size_mobile_h4 }}px;
+--font-size-mobile-h5: {{ settings.font_size_mobile_h5 }}px;
+--font-size-mobile-h6: {{ settings.font_size_mobile_h6 }}px;
+--font-size-mobile-base: {{ settings.font_size_mobile_body_text }}px;
+--font-size-mobile-button: {{ settings.font_size_mobile_button }}px;
+--font-size-mobile-input: {{ settings.font_size_mobile_input }}px;
+--font-size-mobile-field: {{ settings.font_size_mobile_field }}px;
+--line-height-heading: 1.1;
+--line-height-base: 1.6;
+--container-width: {{ settings.container_max_width }}px;
+--container-margin: {{ settings.container_margin }}px;
+--transition-default: 0.25s ease;
+--scheme1-background: {{ settings.scheme_1_background_color }};
+--scheme1-heading: {{ settings.scheme_1_heading_color }};
+--scheme1-subheading: {{ settings.scheme_1_subheading_color }};
+--scheme1-body: {{ settings.scheme_1_body_color }};
+--scheme1-button-background: {{ settings.scheme_1_button_background_color }};
+--scheme1-button-foreground: {{ settings.scheme_1_button_text_color }};
+--scheme1-button-hover-background: {{ settings.scheme_1_button_hover_background_color }};
+--scheme1-button-hover-foreground: {{ settings.scheme_1_button_hover_text_color }};
+--scheme1-input-background: {{ settings.scheme_1_input_background_color }};
+--scheme1-input-foreground: {{ settings.scheme_1_input_text_color }};
+--scheme2-background: {{ settings.scheme_2_background_color }};
+--scheme2-heading: {{ settings.scheme_2_heading_color }};
+--scheme2-subheading: {{ settings.scheme_2_subheading_color }};
+--scheme2-body: {{ settings.scheme_2_body_color }};
+--scheme2-button-background: {{ settings.scheme_2_button_background_color }};
+--scheme2-button-foreground: {{ settings.scheme_2_button_text_color }};
+--scheme2-button-hover-background: {{ settings.scheme_2_button_hover_background_color }};
+--scheme2-button-hover-foreground: {{ settings.scheme_2_button_hover_text_color }};
+--scheme2-input-background: {{ settings.scheme_2_input_background_color }};
+--scheme2-input-foreground: {{ settings.scheme_2_input_text_color }};
+--color-background: var(--scheme1-background);
+--color-foreground: var(--scheme1-body);
+--color-heading: var(--scheme1-heading);
+--button-background: var(--scheme1-button-background);
+--button-foreground: var(--scheme1-button-foreground);
+--button-hover-background: var(--scheme1-button-hover-background);
+--button-hover-foreground: var(--scheme1-button-hover-foreground);
+--input-background: var(--scheme1-input-background);
+--input-foreground: var(--scheme1-input-foreground);
+--style-border-radius-inputs: {{ settings.input_corner_radius }}px;
+}
 {% endstyle %}
