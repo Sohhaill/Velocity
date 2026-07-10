@@ -1,4 +1,5 @@
-<div class="section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }} {% if section.settings.header_sticky %} header--sticky{% endif %}">
+<div class="section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}"
+  id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data-header-sticky="true" {% endif %}>
   <header
     class="header{% if section.settings.header_width_type == 'full_width' %} header--full-width{% else %} container-width{% endif %}">
     {% assign header_logo_styles = '--header-logo-width-desktop: ' | append: section.settings.logo_width_desktop |
@@ -109,6 +110,43 @@
 
     {% render 'header-scripts' %}
     {% render 'search-popup', color_scheme: section.settings.search_popup_color_scheme %}
+    {% if section.settings.header_sticky %}
+    <script>
+      (function () {
+        var headerWrapper = document.getElementById('header-wrapper-{{ section.id }}');
+        if (!headerWrapper) return;
+
+        var scrollThreshold = 10; // px — scroll start ke baad sticky trigger hoga
+        var isSticky = false;
+        var ticking = false;
+
+        function updateStickyState() {
+          var scrolled = window.scrollY || window.pageYOffset;
+
+          if (scrolled > scrollThreshold && !isSticky) {
+            headerWrapper.classList.add('header--sticky');
+            isSticky = true;
+          } else if (scrolled <= scrollThreshold && isSticky) {
+            headerWrapper.classList.remove('header--sticky');
+            isSticky = false;
+          }
+        }
+
+        window.addEventListener('scroll', function () {
+          if (!ticking) {
+            window.requestAnimationFrame(function () {
+              updateStickyState();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        }, { passive: true });
+
+        // Page already scrolled hone par (anchor link se aane par) sahi state set karein
+        updateStickyState();
+      })();
+    </script>
+    {% endif %}
   </header>
 </div>
 
