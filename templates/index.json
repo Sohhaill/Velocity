@@ -9,6 +9,13 @@
  */
 {
   "sections": {
+    "hello_world_XFBrUh": {
+      "type": "hello-world",
+      "name": "Hello World Template",
+      "settings": {
+        "section_color_scheme": "scheme_1"
+      }
+    },
     "multiple_image_text_k7WWD4": {
       "type": "multiple-image-text",
       "blocks": {
@@ -58,6 +65,7 @@
     }
   },
   "order": [
+    "hello_world_XFBrUh",
     "multiple_image_text_k7WWD4"
   ]
 }
