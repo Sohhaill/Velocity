@@ -112,7 +112,8 @@
   },
   "headers": {
     "desktop_padding": "Desktop padding",
-    "mobile_padding": "Mobile padding"
+    "mobile_padding": "Mobile padding",
+     "border_radius": "Border radius"
   },
   "options": {
     "alignment": {

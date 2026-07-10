@@ -124,13 +124,14 @@ button {
   color: var(--button-foreground);
   border: none;
   cursor: pointer;
+   border-radius: var(--button-radius);
 }
 
 button:hover,
 .button:hover {
   background-color: var(--button-hover-background);
   color: var(--button-hover-foreground);
-  border-radius: var(--button-radius);
+ 
 }
 .shopify-section-group-footer-group {
   margin-top: auto !important;
