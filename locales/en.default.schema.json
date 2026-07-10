@@ -8,8 +8,6 @@
  * ------------------------------------------------------------
  */
 
-
-
 {
   "colors": {
     "scheme_1": "Color scheme 1",
@@ -64,6 +62,9 @@
     "body": "Body",
     "heading": "Heading",
     "subheading": "Subheading",
+    "button_style": "Button style",
+    "padding_top": "Padding top",
+    "padding_bottom": "Padding bottom",
     "filled_button_background": "Background",
     "filled_button_text": "Text",
     "filled_button_hover_background": "Hover background",
@@ -114,6 +115,10 @@
       "left": "Left",
       "center": "Center",
       "right": "Right"
+    },
+    "button_style": {
+      "filled": "Filled",
+      "outline": "Outline"
     },
     "direction": {
       "horizontal": "Horizontal",

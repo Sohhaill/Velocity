@@ -12,6 +12,15 @@ variables
 .mit-section {
 width: 100%;
 position: relative;
+padding-top: {{ section.settings.padding_top_mobile | default: 40 }}px;
+padding-bottom: {{ section.settings.padding_bottom_mobile | default: 40 }}px;
+}
+
+@media (min-width: 768px) {
+.mit-section {
+padding-top: {{ section.settings.padding_top_desktop | default: 80 }}px;
+padding-bottom: {{ section.settings.padding_bottom_desktop | default: 80 }}px;
+}
 }
 
 .mit-inner {
@@ -366,7 +375,7 @@ padding-top: 0px;
           {%- endif -%}
 
           {%- if block.settings.button_label != blank -%}
-          <a class="mit-cta" href="{{ block.settings.button_url }}">
+          <a class="mit-cta {% if block.settings.button_style == 'outline' %}button--outline{% else %}button--filled{% endif %}" href="{{ block.settings.button_url }}">
             {{ block.settings.button_label }}
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
@@ -461,6 +470,54 @@ padding-top: 0px;
 { "value": "scheme_3", "label": "t:options.color_scheme.scheme_3" },
 { "value": "scheme_4", "label": "t:options.color_scheme.scheme_4" }
 ]
+},
+{
+"type": "header",
+"content": "t:headers.desktop_padding"
+},
+{
+"type": "range",
+"id": "padding_top_desktop",
+"label": "t:labels.padding_top",
+"min": 0,
+"max": 200,
+"step": 4,
+"unit": "px",
+"default": 80
+},
+{
+"type": "range",
+"id": "padding_bottom_desktop",
+"label": "t:labels.padding_bottom",
+"min": 0,
+"max": 200,
+"step": 4,
+"unit": "px",
+"default": 80
+},
+{
+"type": "header",
+"content": "t:headers.mobile_padding"
+},
+{
+"type": "range",
+"id": "padding_top_mobile",
+"label": "t:labels.padding_top",
+"min": 0,
+"max": 120,
+"step": 4,
+"unit": "px",
+"default": 40
+},
+{
+"type": "range",
+"id": "padding_bottom_mobile",
+"label": "t:labels.padding_bottom",
+"min": 0,
+"max": 120,
+"step": 4,
+"unit": "px",
+"default": 40
 }
 ],
 "blocks": [
@@ -512,6 +569,16 @@ padding-top: 0px;
 "type": "url",
 "id": "button_url",
 "label": "Button URL"
+},
+{
+"type": "select",
+"id": "button_style",
+"label": "t:labels.button_style",
+"default": "filled",
+"options": [
+{ "value": "filled", "label": "t:options.button_style.filled" },
+{ "value": "outline", "label": "t:options.button_style.outline" }
+]
 }
 ]
 }
