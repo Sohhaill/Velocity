@@ -33,7 +33,8 @@
             "benefit_4": "",
             "benefit_5": "",
             "button_label": "Learn More",
-            "button_url": ""
+            "button_url": "",
+            "button_style": "filled"
           }
         },
         "image_text_card_Ww9gVG": {
@@ -50,7 +51,8 @@
             "benefit_4": "",
             "benefit_5": "",
             "button_label": "Learn More",
-            "button_url": ""
+            "button_url": "",
+            "button_style": "filled"
           }
         }
       },
@@ -60,7 +62,11 @@
       ],
       "name": "Multiple Image with Text",
       "settings": {
-        "section_color_scheme": "scheme_2"
+        "section_color_scheme": "scheme_2",
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
       }
     }
   },
