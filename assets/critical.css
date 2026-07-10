@@ -130,6 +130,7 @@ button:hover,
 .button:hover {
   background-color: var(--button-hover-background);
   color: var(--button-hover-foreground);
+  border-radius: var(--button-radius);
 }
 .shopify-section-group-footer-group {
   margin-top: auto !important;
@@ -142,6 +143,7 @@ select,
   background-color: var(--input-background);
   color: var(--input-foreground);
   border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--input-radius);
 }
 .header--full-width,
 .full-width {

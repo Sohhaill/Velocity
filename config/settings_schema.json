@@ -239,6 +239,30 @@
         "step": 1,
         "unit": "px",
         "default": 15
+      },
+      {
+        "type": "header",
+        "content": "t:headers.border_radius"
+      },
+      {
+        "type": "range",
+        "id": "button_corner_radius",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "unit": "px",
+        "label": "t:labels.button_corner_radius",
+        "default": 4
+      },
+      {
+        "type": "range",
+        "id": "input_corner_radius",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "unit": "px",
+        "label": "t:labels.input_corner_radius",
+        "default": 4
       }
     ]
   },
@@ -634,13 +658,13 @@
         "default": "#FFFFFF",
         "label": "t:labels.input_text"
       },
+      
       {
         "type": "color",
         "id": "scheme_2_input_background_color",
         "default": "#1F2937",
         "label": "t:labels.input_background"
       },
-      
       {
         "type": "header",
         "content": "t:colors.scheme_3"
