@@ -12,7 +12,9 @@ body {
   margin: 0;
   min-height: 100svh;
 }
-
+.shopify-section-group-header-group {
+  min-height: 91.59px;
+}
 html:has(dialog[scroll-lock][open], details[scroll-lock][open]) {
   overflow: hidden;
 }
@@ -123,17 +125,16 @@ button {
   border: none;
   cursor: pointer;
   border-radius: var(--button-radius);
-      transition: all 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 button:hover,
 .button--filled:hover {
   background-color: var(--button-hover-background);
   color: var(--button-hover-foreground);
- 
 }
 .button--filled:hover {
- transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 .shopify-section-group-footer-group {
   margin-top: auto !important;
@@ -291,8 +292,8 @@ select,
   background-color: transparent;
   border: 1px solid var(--button-outline-border);
   color: var(--button-outline-foreground);
-      transition: all 0.25s ease;
-      border-radius: var(--button-radius);
+  transition: all 0.25s ease;
+  border-radius: var(--button-radius);
 }
 
 .button--outline:hover {
@@ -300,5 +301,4 @@ select,
   border-color: var(--button-outline-hover-border);
   color: var(--button-outline-hover-foreground);
   transform: translateY(-5px);
-  
 }
