@@ -110,6 +110,10 @@
     "text_style": "Text style",
     "text": "Text"
   },
+  "headers": {
+    "desktop_padding": "Desktop padding",
+    "mobile_padding": "Mobile padding"
+  },
   "options": {
     "alignment": {
       "left": "Left",
