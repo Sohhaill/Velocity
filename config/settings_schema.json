@@ -640,16 +640,7 @@
         "default": "#1F2937",
         "label": "t:labels.input_background"
       },
-      {
-        "type": "range",
-        "id": "input_corner_radius",
-        "min": 0,
-        "max": 10,
-        "step": 1,
-        "unit": "px",
-        "label": "t:labels.input_corner_radius",
-        "default": 4
-      },
+      
       {
         "type": "header",
         "content": "t:colors.scheme_3"
