@@ -1,326 +1,319 @@
 {% comment %}
-  Section: mit - Multiple Image with Text
-  Prefix: mit
-  Color scheme: managed via section.settings.section_color_scheme (see footer.liquid for the same convention)
-  Font sizes / colors: intentionally omitted everywhere — handled globally by theme typography + color scheme CSS variables
+Section: mit - Multiple Image with Text
+Prefix: mit
+Color scheme: managed via section.settings.section_color_scheme (see footer.liquid for the same convention)
+Font sizes / colors: intentionally omitted everywhere — handled globally by theme typography + color scheme CSS
+variables
 {% endcomment %}
 
 {% assign mit_width_class = 'container-width' %}
 
 {%- style -%}
-  .mit-section {
-    width: 100%;
-    position: relative;
-  }
+.mit-section {
+width: 100%;
+position: relative;
+padding-top: {{ section.settings.padding_top_mobile | default: 40 }}px;
+padding-bottom: {{ section.settings.padding_bottom_mobile | default: 40 }}px;
+}
 
-  .mit-inner {
-    display: flex;
-    align-items: flex-start;
-    position: relative;
-  }
+@media (min-width: 768px) {
+.mit-section {
+padding-top: {{ section.settings.padding_top_desktop | default: 80 }}px;
+padding-bottom: {{ section.settings.padding_bottom_desktop | default: 80 }}px;
+}
+}
 
-  /* ── LEFT: sticky image column (desktop only) ── */
-  .mit-image-col {
-    position: sticky;
-    top: 0;
-    width: 50%;
-    height: 100vh;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
+.mit-inner {
+display: flex;
+align-items: flex-start;
+position: relative;
+}
 
-  .mit-image-track {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
+/* ── LEFT: sticky image column (desktop only) ── */
+.mit-image-col {
+position: sticky;
+top: 0;
+width: 50%;
+height: 100vh;
+flex-shrink: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+}
 
-  .mit-img-slide {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transform: scale(1.04);
-    transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1), transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none;
-  }
+.mit-image-track {
+position: relative;
+width: 100%;
+height: 100%;
+}
 
-  .mit-img-slide.is-active {
-    opacity: 1;
-    transform: scale(1);
-    pointer-events: auto;
-  }
+.mit-img-slide {
+position: absolute;
+inset: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+opacity: 0;
+transform: scale(1.04);
+transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1), transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+pointer-events: none;
+}
 
-  .mit-img-slide img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    max-height: 70vh;
-    object-fit: cover;
-    border-radius: 10px;
-    display: block;
-  }
+.mit-img-slide.is-active {
+opacity: 1;
+transform: scale(1);
+pointer-events: auto;
+}
 
-  /* ── RIGHT: scrolling content column ── */
-  .mit-content-col {
-    width: 50%;
-    padding-left: 60px;
-  }
+.mit-img-slide img {
+width: 100%;
+max-width: 100%;
+height: auto;
+max-height: 70vh;
+object-fit: cover;
+border-radius: 10px;
+display: block;
+}
 
-  .mit-content-block {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-  }
+/* ── RIGHT: scrolling content column ── */
+.mit-content-col {
+width: 50%;
+padding-left: 60px;
+}
 
-  .mit-content-inner {
-    opacity: 0;
-    transform: translateY(48px);
-    transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1),
-                transform 0.6s cubic-bezier(0.4,0,0.2,1);
-  }
+.mit-content-block {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+position: relative;
+}
 
-  .mit-content-inner.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.mit-content-inner {
+opacity: 0;
+transform: translateY(48px);
+transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1),
+transform 0.6s cubic-bezier(0.4,0,0.2,1);
+}
 
-  .mit-eyebrow {
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--button-background);
-    margin-bottom: 16px;
-    display: block;
-  }
+.mit-content-inner.is-visible {
+opacity: 1;
+transform: translateY(0);
+}
 
-  .mit-title {
-    font-weight: 800;
-    margin: 0 0 14px;
-    letter-spacing: -0.02em;
-  }
+.mit-eyebrow {
+font-weight: 700;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: var(--button-background);
+margin-bottom: 16px;
+display: block;
+}
 
-  .mit-subtitle {
-    font-style: italic;
-    font-weight: 500;
-    color: var(--button-background);
-    margin: 0 0 22px;
-  }
+.mit-title {
+font-weight: 800;
+margin: 0 0 14px;
+letter-spacing: -0.02em;
+}
 
-  .mit-description {
-    opacity: 0.65;
-    margin: 0 0 30px;
-    max-width: 460px;
-  }
+.mit-subtitle {
+font-style: italic;
+font-weight: 500;
+color: var(--button-background);
+margin: 0 0 22px;
+}
 
-  .mit-benefits-label {
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    margin: 0 0 16px;
-  }
+.mit-description {
+opacity: 0.65;
+margin: 0 0 30px;
+max-width: 460px;
+}
 
-  .mit-benefits {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 36px;
-  }
+.mit-benefits-label {
+font-weight: 700;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+margin: 0 0 16px;
+}
 
-  .mit-benefits li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    opacity: 0.85;
-    padding: 7px 0;
-    line-height: 1.5;
-  }
+.mit-benefits {
+list-style: none;
+padding: 0;
+margin: 0 0 36px;
+}
 
-  .mit-benefits li::before {
-    content: '';
-    width: 18px;
-    height: 18px;
-    min-width: 18px;
-    background-color: currentColor;
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M4 10l4.5 4.5L16 6' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M4 10l4.5 4.5L16 6' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    margin-top: 2px;
-  }
+.mit-benefits li {
+display: flex;
+align-items: flex-start;
+gap: 12px;
+opacity: 0.85;
+padding: 7px 0;
+line-height: 1.5;
+}
 
-  .mit-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: transparent;
-    border: 1.5px solid var(--button-background);
-    color: inherit;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 14px 28px;
-    border-radius: 100px;
-    text-decoration: none;
-    transition: background 0.25s, border-color 0.25s, color 0.25s;
-    cursor: pointer;
-  }
+.mit-benefits li::before {
+content: '';
+width: 18px;
+height: 18px;
+min-width: 18px;
+background-color: currentColor;
+-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'
+fill='none'%3E%3Cpath d='M4 10l4.5 4.5L16 6' stroke='%23000' stroke-width='2.2' stroke-linecap='round'
+stroke-linejoin='round'/%3E%3C/svg%3E");
+mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath
+d='M4 10l4.5 4.5L16 6' stroke='%23000' stroke-width='2.2' stroke-linecap='round'
+stroke-linejoin='round'/%3E%3C/svg%3E");
+-webkit-mask-repeat: no-repeat;
+mask-repeat: no-repeat;
+-webkit-mask-size: contain;
+mask-size: contain;
+margin-top: 2px;
+}
 
-  .mit-cta:hover {
-    background: var(--button-hover-background);
-    border-color: var(--button-hover-background);
-    color: var(--button-hover-foreground);
-  }
+.mit-cta {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+color: inherit;
+padding: 14px 28px;
+text-decoration: none;
+transition: background 0.25s, border-color 0.25s, color 0.25s;
+cursor: pointer;
+}
 
-  .mit-cta svg {
-    transition: transform 0.2s;
-  }
 
-  .mit-cta:hover svg {
-    transform: translateX(4px);
-  }
 
-  /* ── DOT PROGRESS: lives inside the sticky image column so it centers on the viewport, not the whole section ── */
-  .mit-progress {
-    position: absolute;
-    right: 10px;
-    top: 0;
-    bottom: 0;
-    width: 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    z-index: 10;
-    pointer-events: none;
-  }
+.mit-cta svg {
+transition: transform 0.2s;
+}
 
-  .mit-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: currentColor;
-    opacity: 0.3;
-    cursor: pointer;
-    pointer-events: auto;
-    transition: background-color 0.3s, opacity 0.3s, transform 0.3s;
-  }
+.mit-cta:hover svg {
+transform: translateX(4px);
+}
 
-  .mit-dot.is-active {
-    background-color: var(--button-background);
-    opacity: 1;
-    transform: scale(1.6);
-  }
+/* ── DOT PROGRESS: lives inside the sticky image column so it centers on the viewport, not the whole section ── */
+.mit-progress {
+position: absolute;
+right: 10px;
+top: 0;
+bottom: 0;
+width: 24px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 10px;
+z-index: 10;
+pointer-events: none;
+}
 
-  /* Mobile image (hidden on desktop) */
-  .mit-mobile-img {
-    display: none;
-  }
+.mit-dot {
+width: 6px;
+height: 6px;
+border-radius: 50%;
+background-color: currentColor;
+opacity: 0.3;
+cursor: pointer;
+pointer-events: auto;
+transition: background-color 0.3s, opacity 0.3s, transform 0.3s;
+}
 
-  /* ── MOBILE ── */
-  @media (max-width: 767px) {
-    .mit-inner {
-      flex-direction: column;
-      padding: 0;
-    }
+.mit-dot.is-active {
+background-color: var(--button-background);
+opacity: 1;
+transform: scale(1.6);
+}
 
-    .mit-image-col {
-      display: none;
-    }
+/* Mobile image (hidden on desktop) */
+.mit-mobile-img {
+display: none;
+}
 
-    .mit-content-col {
-      width: 100%;
-      padding-left: 0;
-    }
+/* ── MOBILE ── */
+@media (max-width: 767px) {
+.mit-inner {
+flex-direction: column;
+padding: 0;
+}
 
-    .mit-content-block {
-      min-height: unset;
-      padding: 0 0 48px;
-      display: flex;
-      flex-direction: column;
-    }
+.mit-image-col {
+display: none;
+}
 
-    .mit-mobile-img {
-      display: block;
-      width: 100%;
-      padding: 32px 24px 20px;
-    }
+.mit-content-col {
+width: 100%;
+padding-left: 0;
+}
 
-    .mit-mobile-img img {
-      width: 100%;
-      max-height: 280px;
-      object-fit: cover;
-      border-radius: 16px;
-      display: block;
-      margin: 0 auto;
-    }
+.mit-content-block {
+min-height: unset;
+padding: 0 0 48px;
+display: flex;
+flex-direction: column;
+}
 
-    .mit-content-inner {
-      padding: 0 24px;
-    }
+.mit-mobile-img {
+display: block;
+width: 100%;
+padding: 32px 24px 20px;
+}
 
-    .mit-progress {
-      display: none;
-    }
+.mit-mobile-img img {
+width: 100%;
+max-height: 280px;
+object-fit: cover;
+border-radius: 16px;
+display: block;
+margin: 0 auto;
+}
 
-    .mit-content-block + .mit-content-block {
-      border-top: 1px solid currentColor;
-      opacity: 0.97;
-      padding-top: 0px;
-    }
-  }
+.mit-content-inner {
+padding: 0 24px;
+}
+
+.mit-progress {
+display: none;
+}
+
+.mit-content-block + .mit-content-block {
+border-top: 1px solid currentColor;
+opacity: 0.97;
+padding-top: 0px;
+}
+}
 {%- endstyle -%}
 
-<section
-  class="mit-section section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}"
-  id="mit-{{ section.id }}"
-  data-section-id="{{ section.id }}"
->
+<section class="mit-section section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}"
+  id="mit-{{ section.id }}" data-section-id="{{ section.id }}">
   <div class="mit-inner {{ mit_width_class }}">
 
     <!-- LEFT: sticky image column (desktop) -->
     <div class="mit-image-col">
       <div class="mit-image-track" id="mit-img-track-{{ section.id }}">
         {%- for block in section.blocks -%}
-          {%- if block.type == 'image_text_card' -%}
-            <div
-              class="mit-img-slide{% if forloop.first %} is-active{% endif %}"
-              data-mit-slide="{{ forloop.index0 }}"
-            >
-              {%- if block.settings.image != blank -%}
-                {{ block.settings.image | image_url: width: 900 | image_tag:
-                  loading: 'lazy',
-                  alt: block.settings.title | escape
-                }}
-              {%- else -%}
-                {{ 'product-1' | placeholder_svg_tag: 'mit-placeholder-svg' }}
-              {%- endif -%}
-            </div>
+        {%- if block.type == 'image_text_card' -%}
+        <div class="mit-img-slide{% if forloop.first %} is-active{% endif %}" data-mit-slide="{{ forloop.index0 }}">
+          {%- if block.settings.image != blank -%}
+          {{ block.settings.image | image_url: width: 900 | image_tag:
+          loading: 'lazy',
+          alt: block.settings.title | escape
+          }}
+          {%- else -%}
+          {{ 'product-1' | placeholder_svg_tag: 'mit-placeholder-svg' }}
           {%- endif -%}
+        </div>
+        {%- endif -%}
         {%- endfor -%}
       </div>
 
       <!-- Progress dots, scoped to the sticky image column so they center on the viewport -->
       <div class="mit-progress" id="mit-progress-{{ section.id }}">
         {%- for block in section.blocks -%}
-          {%- if block.type == 'image_text_card' -%}
-            <span
-              class="mit-dot{% if forloop.first %} is-active{% endif %}"
-              data-mit-dot="{{ forloop.index0 }}"
-              role="button"
-              tabindex="0"
-              aria-label="Go to item {{ forloop.index }}"
-            ></span>
-          {%- endif -%}
+        {%- if block.type == 'image_text_card' -%}
+        <span class="mit-dot{% if forloop.first %} is-active{% endif %}" data-mit-dot="{{ forloop.index0 }}"
+          role="button" tabindex="0" aria-label="Go to item {{ forloop.index }}"></span>
+        {%- endif -%}
         {%- endfor -%}
       </div>
     </div>
@@ -328,78 +321,72 @@
     <!-- RIGHT: scrolling content -->
     <div class="mit-content-col" id="mit-content-col-{{ section.id }}">
       {%- for block in section.blocks -%}
-        {%- if block.type == 'image_text_card' -%}
-          <div
-            class="mit-content-block"
-            data-mit-block="{{ forloop.index0 }}"
-            {{ block.shopify_attributes }}
-          >
+      {%- if block.type == 'image_text_card' -%}
+      <div class="mit-content-block" data-mit-block="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
 
-            <!-- Mobile-only image sits above the content for this block -->
-            <div class="mit-mobile-img">
-              {%- if block.settings.image != blank -%}
-                {{ block.settings.image | image_url: width: 800 | image_tag:
-                  loading: 'lazy',
-                  alt: block.settings.title | escape
-                }}
-              {%- else -%}
-                {{ 'product-1' | placeholder_svg_tag: 'mit-placeholder-svg' }}
-              {%- endif -%}
-            </div>
+        <!-- Mobile-only image sits above the content for this block -->
+        <div class="mit-mobile-img">
+          {%- if block.settings.image != blank -%}
+          {{ block.settings.image | image_url: width: 800 | image_tag:
+          loading: 'lazy',
+          alt: block.settings.title | escape
+          }}
+          {%- else -%}
+          {{ 'product-1' | placeholder_svg_tag: 'mit-placeholder-svg' }}
+          {%- endif -%}
+        </div>
 
-            <div class="mit-content-inner">
+        <div class="mit-content-inner">
 
-              {%- if block.settings.eyebrow != blank -%}
-                <span class="mit-eyebrow">{{ block.settings.eyebrow }}</span>
-              {%- endif -%}
+          {%- if block.settings.eyebrow != blank -%}
+          <span class="mit-eyebrow">{{ block.settings.eyebrow }}</span>
+          {%- endif -%}
 
-              {%- if block.settings.title != blank -%}
-                <h2 class="mit-title">{{ block.settings.title }}</h2>
-              {%- endif -%}
+          {%- if block.settings.title != blank -%}
+          <h2 class="mit-title">{{ block.settings.title }}</h2>
+          {%- endif -%}
 
-              {%- if block.settings.subtitle != blank -%}
-                <p class="mit-subtitle">{{ block.settings.subtitle }}</p>
-              {%- endif -%}
+          {%- if block.settings.subtitle != blank -%}
+          <p class="mit-subtitle">{{ block.settings.subtitle }}</p>
+          {%- endif -%}
 
-              {%- if block.settings.description != blank -%}
-                <p class="mit-description">{{ block.settings.description }}</p>
-              {%- endif -%}
+          {%- if block.settings.description != blank -%}
+          <p class="mit-description">{{ block.settings.description }}</p>
+          {%- endif -%}
 
-              {%- assign has_benefits = false -%}
-              {%- for i in (1..5) -%}
-                {%- assign key = 'benefit_' | append: i -%}
-                {%- if block.settings[key] != blank -%}
-                  {%- assign has_benefits = true -%}
-                {%- endif -%}
-              {%- endfor -%}
+          {%- assign has_benefits = false -%}
+          {%- for i in (1..5) -%}
+          {%- assign key = 'benefit_' | append: i -%}
+          {%- if block.settings[key] != blank -%}
+          {%- assign has_benefits = true -%}
+          {%- endif -%}
+          {%- endfor -%}
 
-              {%- if has_benefits -%}
-                <p class="mit-benefits-label">Key Benefits</p>
-                <ul class="mit-benefits">
-                  {%- for i in (1..5) -%}
-                    {%- assign key = 'benefit_' | append: i -%}
-                    {%- if block.settings[key] != blank -%}
-                      <li>{{ block.settings[key] }}</li>
-                    {%- endif -%}
-                  {%- endfor -%}
-                </ul>
-              {%- endif -%}
+          {%- if has_benefits -%}
+          <p class="mit-benefits-label">Key Benefits</p>
+          <ul class="mit-benefits">
+            {%- for i in (1..5) -%}
+            {%- assign key = 'benefit_' | append: i -%}
+            {%- if block.settings[key] != blank -%}
+            <li>{{ block.settings[key] }}</li>
+            {%- endif -%}
+            {%- endfor -%}
+          </ul>
+          {%- endif -%}
 
-              {%- if block.settings.button_label != blank -%}
-                <a
-                  class="mit-cta"
-                  href="{{ block.settings.button_url }}"
-                >
-                  {{ block.settings.button_label }}
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </a>
-              {%- endif -%}
+          {%- if block.settings.button_label != blank -%}
+          <a class="mit-cta {% if block.settings.button_style == 'outline' %}button--outline{% else %}button--filled{% endif %}" href="{{ block.settings.button_url }}">
+            {{ block.settings.button_label }}
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+          {%- endif -%}
 
-            </div>
-          </div>
-        {%- endif -%}
+        </div>
+      </div>
+      {%- endif -%}
       {%- endfor -%}
     </div>
 
@@ -407,166 +394,224 @@
 </section>
 
 <script>
-(function() {
-  var sectionId  = '{{ section.id }}';
-  var section    = document.getElementById('mit-' + sectionId);
-  var imgTrack   = document.getElementById('mit-img-track-' + sectionId);
-  var contentCol = document.getElementById('mit-content-col-' + sectionId);
-  var progress   = document.getElementById('mit-progress-' + sectionId);
+  (function () {
+    var sectionId = '{{ section.id }}';
+    var section = document.getElementById('mit-' + sectionId);
+    var imgTrack = document.getElementById('mit-img-track-' + sectionId);
+    var contentCol = document.getElementById('mit-content-col-' + sectionId);
+    var progress = document.getElementById('mit-progress-' + sectionId);
 
-  if (!section || !imgTrack || !contentCol) return;
+    if (!section || !imgTrack || !contentCol) return;
 
-  var slides   = imgTrack.querySelectorAll('.mit-img-slide');
-  var blocks   = contentCol.querySelectorAll('.mit-content-block');
-  var dots     = progress ? progress.querySelectorAll('.mit-dot') : [];
-  var innerEls = contentCol.querySelectorAll('.mit-content-inner');
-  var current  = 0;
+    var slides = imgTrack.querySelectorAll('.mit-img-slide');
+    var blocks = contentCol.querySelectorAll('.mit-content-block');
+    var dots = progress ? progress.querySelectorAll('.mit-dot') : [];
+    var innerEls = contentCol.querySelectorAll('.mit-content-inner');
+    var current = 0;
 
-  /* ── Reveal text on scroll ── */
-  var revealObs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) entry.target.classList.add('is-visible');
+    /* ── Reveal text on scroll ── */
+    var revealObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      });
+    }, { threshold: 0.2 });
+
+    innerEls.forEach(function (el) { revealObs.observe(el); });
+
+    /* ── Track active block → swap image ── */
+    var activeObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var idx = parseInt(entry.target.getAttribute('data-mit-block'), 10);
+          if (!isNaN(idx) && idx !== current) switchSlide(idx);
+        }
+      });
+    }, { rootMargin: '-40% 0px -40% 0px', threshold: 0 });
+
+    blocks.forEach(function (b) { activeObs.observe(b); });
+
+    /* ── Dot click ── */
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
+        var idx = parseInt(dot.getAttribute('data-mit-dot'), 10);
+        if (!isNaN(idx)) blocks[idx].scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+      dot.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') dot.click();
+      });
     });
-  }, { threshold: 0.2 });
 
-  innerEls.forEach(function(el) { revealObs.observe(el); });
+    /* ── Switch slide ── */
+    function switchSlide(idx) {
+      slides[current] && slides[current].classList.remove('is-active');
+      slides[idx] && slides[idx].classList.add('is-active');
+      dots[current] && dots[current].classList.remove('is-active');
+      dots[idx] && dots[idx].classList.add('is-active');
+      current = idx;
+    }
 
-  /* ── Track active block → swap image ── */
-  var activeObs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        var idx = parseInt(entry.target.getAttribute('data-mit-block'), 10);
-        if (!isNaN(idx) && idx !== current) switchSlide(idx);
-      }
-    });
-  }, { rootMargin: '-40% 0px -40% 0px', threshold: 0 });
-
-  blocks.forEach(function(b) { activeObs.observe(b); });
-
-  /* ── Dot click ── */
-  dots.forEach(function(dot) {
-    dot.addEventListener('click', function() {
-      var idx = parseInt(dot.getAttribute('data-mit-dot'), 10);
-      if (!isNaN(idx)) blocks[idx].scrollIntoView({ behavior: 'smooth', block: 'center' });
-    });
-    dot.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') dot.click();
-    });
-  });
-
-  /* ── Switch slide ── */
-  function switchSlide(idx) {
-    slides[current] && slides[current].classList.remove('is-active');
-    slides[idx]     && slides[idx].classList.add('is-active');
-    dots[current]   && dots[current].classList.remove('is-active');
-    dots[idx]       && dots[idx].classList.add('is-active');
-    current = idx;
-  }
-
-})();
+  })();
 </script>
 
 {% schema %}
 {
-  "name": "Multiple Image with Text",
-  "tag": "section",
-  "class": "mit-wrapper",
-  "settings": [
-    {
-      "type": "select",
-      "id": "section_color_scheme",
-      "label": "t:labels.color_scheme",
-      "default": "scheme_1",
-      "options": [
-        { "value": "scheme_1", "label": "t:options.color_scheme.scheme_1" },
-        { "value": "scheme_2", "label": "t:options.color_scheme.scheme_2" },
-        { "value": "scheme_3", "label": "t:options.color_scheme.scheme_3" },
-        { "value": "scheme_4", "label": "t:options.color_scheme.scheme_4" }
-      ]
-    }
-  ],
-  "blocks": [
-    {
-      "type": "image_text_card",
-      "name": "Image with Text",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        },
-        {
-          "type": "text",
-          "id": "eyebrow",
-          "label": "Eyebrow Label",
-          "placeholder": "e.g. Featured"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title",
-          "default": "Add your title"
-        },
-        {
-          "type": "text",
-          "id": "subtitle",
-          "label": "Subtitle",
-          "default": "Add a supporting subtitle"
-        },
-        {
-          "type": "textarea",
-          "id": "description",
-          "label": "Description",
-          "default": "Describe this item in a sentence or two."
-        },
-        { "type": "text", "id": "benefit_1", "label": "Benefit 1" },
-        { "type": "text", "id": "benefit_2", "label": "Benefit 2" },
-        { "type": "text", "id": "benefit_3", "label": "Benefit 3" },
-        { "type": "text", "id": "benefit_4", "label": "Benefit 4" },
-        { "type": "text", "id": "benefit_5", "label": "Benefit 5" },
-        {
-          "type": "text",
-          "id": "button_label",
-          "label": "Button Label",
-          "default": "Learn More"
-        },
-        {
-          "type": "url",
-          "id": "button_url",
-          "label": "Button URL"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Multiple Image with Text",
-      "blocks": [
-        {
-          "type": "image_text_card",
-          "settings": {
-            "title": "Add your title",
-            "subtitle": "Add a supporting subtitle",
-            "description": "Describe this item in a sentence or two, highlighting what makes it worth a closer look.",
-            "benefit_1": "First key benefit",
-            "benefit_2": "Second key benefit",
-            "benefit_3": "Third key benefit",
-            "button_label": "Learn More"
-          }
-        },
-        {
-          "type": "image_text_card",
-          "settings": {
-            "title": "Add another title",
-            "subtitle": "Add another subtitle",
-            "description": "Describe this second item, giving shoppers a reason to keep scrolling.",
-            "benefit_1": "First key benefit",
-            "benefit_2": "Second key benefit",
-            "button_label": "Learn More"
-          }
-        }
-      ]
-    }
-  ]
+"name": "Multiple Image with Text",
+"tag": "section",
+"class": "mit-wrapper",
+"settings": [
+{
+"type": "select",
+"id": "section_color_scheme",
+"label": "t:labels.color_scheme",
+"default": "scheme_1",
+"options": [
+{ "value": "scheme_1", "label": "t:options.color_scheme.scheme_1" },
+{ "value": "scheme_2", "label": "t:options.color_scheme.scheme_2" },
+{ "value": "scheme_3", "label": "t:options.color_scheme.scheme_3" },
+{ "value": "scheme_4", "label": "t:options.color_scheme.scheme_4" }
+]
+},
+{
+"type": "header",
+"content": "t:headers.desktop_padding"
+},
+{
+"type": "range",
+"id": "padding_top_desktop",
+"label": "t:labels.padding_top",
+"min": 0,
+"max": 200,
+"step": 4,
+"unit": "px",
+"default": 80
+},
+{
+"type": "range",
+"id": "padding_bottom_desktop",
+"label": "t:labels.padding_bottom",
+"min": 0,
+"max": 200,
+"step": 4,
+"unit": "px",
+"default": 80
+},
+{
+"type": "header",
+"content": "t:headers.mobile_padding"
+},
+{
+"type": "range",
+"id": "padding_top_mobile",
+"label": "t:labels.padding_top",
+"min": 0,
+"max": 120,
+"step": 4,
+"unit": "px",
+"default": 40
+},
+{
+"type": "range",
+"id": "padding_bottom_mobile",
+"label": "t:labels.padding_bottom",
+"min": 0,
+"max": 120,
+"step": 4,
+"unit": "px",
+"default": 40
+}
+],
+"blocks": [
+{
+"type": "image_text_card",
+"name": "Image with Text",
+"settings": [
+{
+"type": "image_picker",
+"id": "image",
+"label": "Image"
+},
+{
+"type": "text",
+"id": "eyebrow",
+"label": "Eyebrow Label",
+"placeholder": "e.g. Featured"
+},
+{
+"type": "text",
+"id": "title",
+"label": "Title",
+"default": "Add your title"
+},
+{
+"type": "text",
+"id": "subtitle",
+"label": "Subtitle",
+"default": "Add a supporting subtitle"
+},
+{
+"type": "textarea",
+"id": "description",
+"label": "Description",
+"default": "Describe this item in a sentence or two."
+},
+{ "type": "text", "id": "benefit_1", "label": "Benefit 1" },
+{ "type": "text", "id": "benefit_2", "label": "Benefit 2" },
+{ "type": "text", "id": "benefit_3", "label": "Benefit 3" },
+{ "type": "text", "id": "benefit_4", "label": "Benefit 4" },
+{ "type": "text", "id": "benefit_5", "label": "Benefit 5" },
+{
+"type": "text",
+"id": "button_label",
+"label": "Button Label",
+"default": "Learn More"
+},
+{
+"type": "url",
+"id": "button_url",
+"label": "Button URL"
+},
+{
+"type": "select",
+"id": "button_style",
+"label": "t:labels.button_style",
+"default": "filled",
+"options": [
+{ "value": "filled", "label": "t:options.button_style.filled" },
+{ "value": "outline", "label": "t:options.button_style.outline" }
+]
+}
+]
+}
+],
+"presets": [
+{
+"name": "Multiple Image with Text",
+"blocks": [
+{
+"type": "image_text_card",
+"settings": {
+"title": "Add your title",
+"subtitle": "Add a supporting subtitle",
+"description": "Describe this item in a sentence or two, highlighting what makes it worth a closer look.",
+"benefit_1": "First key benefit",
+"benefit_2": "Second key benefit",
+"benefit_3": "Third key benefit",
+"button_label": "Learn More"
+}
+},
+{
+"type": "image_text_card",
+"settings": {
+"title": "Add another title",
+"subtitle": "Add another subtitle",
+"description": "Describe this second item, giving shoppers a reason to keep scrolling.",
+"benefit_1": "First key benefit",
+"benefit_2": "Second key benefit",
+"button_label": "Learn More"
+}
+}
+]
+}
+]
 }
 {% endschema %}
