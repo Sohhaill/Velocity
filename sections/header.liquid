@@ -556,24 +556,35 @@ opacity: 0;
 .header__drawer {
 position: fixed;
 inset: 0;
-background: rgba(0, 0, 0, 0.45);
 display: flex;
 align-items: flex-start;
 justify-content: flex-start;
-opacity: 0;
 pointer-events: none;
-transition: opacity 0.3s ease;
 z-index: 100;
 }
 
+.header__drawer::before {
+content: '';
+position: absolute;
+inset: 0;
+background: rgba(0, 0, 0, 0.45);
+opacity: 0;
+transition: opacity 0.3s ease;
+}
+
 .header__drawer--open {
-opacity: 1;
 pointer-events: auto;
+}
+
+.header__drawer--open::before {
+opacity: 1;
 transition: opacity 0.35s ease;
 }
 
 /* Drawer panel: full height, slides in from the left */
 .header__drawer-panel {
+position: relative;
+z-index: 1;
 width: 100%;
 max-width: 467px;
 height: 100%;
