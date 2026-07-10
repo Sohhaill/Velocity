@@ -130,7 +130,10 @@ button:hover,
 .button--filled:hover {
   background-color: var(--button-hover-background);
   color: var(--button-hover-foreground);
-  transform: translateY(-5px);
+ 
+}
+.button--filled:hover {
+ transform: translateY(-5px);
 }
 .shopify-section-group-footer-group {
   margin-top: auto !important;
