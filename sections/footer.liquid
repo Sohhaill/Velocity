@@ -202,11 +202,13 @@ position: relative;
 
 .footer__top,
 .footer__bottom {
-display: flex;
-justify-content: space-between;
+
 gap: 4rem;
 }
-
+.bottom-inner{
+display: flex;
+justify-content: space-between;
+}
 .footer__top {
 padding-bottom: 2.5rem;
 }
@@ -467,7 +469,7 @@ overflow: visible;
 
 @media (max-width: 860px) {
 .footer__top,
-.footer__bottom,
+.bottom-inner,
 .footer__blocks {
 flex-direction: column;
 }
@@ -518,11 +520,7 @@ text-align: center;
 gap: 1.25rem;
 margin: unset;
 }
-.bottom-inner{
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-align-items: center;
-flex-wrap: wrap;
-}
+
 .footer__subscribe {
 flex-direction: column;
 }
