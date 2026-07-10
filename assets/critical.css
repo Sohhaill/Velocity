@@ -128,7 +128,7 @@ button {
 }
 
 button:hover,
-.button:hover {
+.button--filled:hover {
   background-color: var(--button-hover-background);
   color: var(--button-hover-foreground);
  
