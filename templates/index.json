@@ -52,7 +52,7 @@
             "benefit_5": "",
             "button_label": "Learn More",
             "button_url": "",
-            "button_style": "filled"
+            "button_style": "outline"
           }
         }
       },
