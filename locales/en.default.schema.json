@@ -53,6 +53,8 @@
     "typography": "Typography"
   },
   "labels": {
+      "button_corner_radius": "Button corner radius",
+    "input_corner_radius": "Input corner radius",
     "alignment": "Alignment",
     "background": "Background",
     "body_font": "Body font",
