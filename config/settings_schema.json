@@ -480,25 +480,53 @@
         "type": "color",
         "id": "scheme_1_button_background_color",
         "default": "#111111",
-        "label": "t:labels.button_background"
+        "label": "t:labels.filled_button_background"
       },
       {
         "type": "color",
         "id": "scheme_1_button_text_color",
         "default": "#FFFFFF",
-        "label": "t:labels.button_text"
+        "label": "t:labels.filled_button_text"
       },
       {
         "type": "color",
         "id": "scheme_1_button_hover_background_color",
         "default": "#333333",
-        "label": "t:labels.button_hover_background"
+        "label": "t:labels.filled_button_hover_background"
       },
       {
         "type": "color",
         "id": "scheme_1_button_hover_text_color",
         "default": "#FFFFFF",
-        "label": "t:labels.button_hover_text"
+        "label": "t:labels.filled_button_hover_text"
+      },
+      {
+        "type": "header",
+        "content": "t:colors.outline_button"
+      },
+      {
+        "type": "color",
+        "id": "scheme_1_outline_button_border_color",
+        "default": "#111111",
+        "label": "t:labels.outline_button_border"
+      },
+      {
+        "type": "color",
+        "id": "scheme_1_outline_button_text_color",
+        "default": "#111111",
+        "label": "t:labels.outline_button_text"
+      },
+      {
+        "type": "color",
+        "id": "scheme_1_outline_button_hover_border_color",
+        "default": "#333333",
+        "label": "t:labels.outline_button_hover_border"
+      },
+      {
+        "type": "color",
+        "id": "scheme_1_outline_button_hover_text_color",
+        "default": "#333333",
+        "label": "t:labels.outline_button_hover_text"
       },
       {
         "type": "color",
@@ -544,25 +572,53 @@
         "type": "color",
         "id": "scheme_2_button_background_color",
         "default": "#FFFFFF",
-        "label": "t:labels.button_background"
+        "label": "t:labels.filled_button_background"
       },
       {
         "type": "color",
         "id": "scheme_2_button_text_color",
         "default": "#111111",
-        "label": "t:labels.button_text"
+        "label": "t:labels.filled_button_text"
       },
       {
         "type": "color",
         "id": "scheme_2_button_hover_background_color",
         "default": "#E5E7EB",
-        "label": "t:labels.button_hover_background"
+        "label": "t:labels.filled_button_hover_background"
       },
       {
         "type": "color",
         "id": "scheme_2_button_hover_text_color",
         "default": "#111111",
-        "label": "t:labels.button_hover_text"
+        "label": "t:labels.filled_button_hover_text"
+      },
+      {
+        "type": "header",
+        "content": "t:colors.outline_button"
+      },
+      {
+        "type": "color",
+        "id": "scheme_2_outline_button_border_color",
+        "default": "#FFFFFF",
+        "label": "t:labels.outline_button_border"
+      },
+      {
+        "type": "color",
+        "id": "scheme_2_outline_button_text_color",
+        "default": "#FFFFFF",
+        "label": "t:labels.outline_button_text"
+      },
+      {
+        "type": "color",
+        "id": "scheme_2_outline_button_hover_border_color",
+        "default": "#E5E7EB",
+        "label": "t:labels.outline_button_hover_border"
+      },
+      {
+        "type": "color",
+        "id": "scheme_2_outline_button_hover_text_color",
+        "default": "#E5E7EB",
+        "label": "t:labels.outline_button_hover_text"
       },
       {
         "type": "color",
@@ -618,25 +674,53 @@
         "type": "color",
         "id": "scheme_3_button_background_color",
         "default": "#111111",
-        "label": "t:labels.button_background"
+        "label": "t:labels.filled_button_background"
       },
       {
         "type": "color",
         "id": "scheme_3_button_text_color",
         "default": "#FFFFFF",
-        "label": "t:labels.button_text"
+        "label": "t:labels.filled_button_text"
       },
       {
         "type": "color",
         "id": "scheme_3_button_hover_background_color",
         "default": "#333333",
-        "label": "t:labels.button_hover_background"
+        "label": "t:labels.filled_button_hover_background"
       },
       {
         "type": "color",
         "id": "scheme_3_button_hover_text_color",
         "default": "#FFFFFF",
-        "label": "t:labels.button_hover_text"
+        "label": "t:labels.filled_button_hover_text"
+      },
+      {
+        "type": "header",
+        "content": "t:colors.outline_button"
+      },
+      {
+        "type": "color",
+        "id": "scheme_3_outline_button_border_color",
+        "default": "#111111",
+        "label": "t:labels.outline_button_border"
+      },
+      {
+        "type": "color",
+        "id": "scheme_3_outline_button_text_color",
+        "default": "#111111",
+        "label": "t:labels.outline_button_text"
+      },
+      {
+        "type": "color",
+        "id": "scheme_3_outline_button_hover_border_color",
+        "default": "#333333",
+        "label": "t:labels.outline_button_hover_border"
+      },
+      {
+        "type": "color",
+        "id": "scheme_3_outline_button_hover_text_color",
+        "default": "#333333",
+        "label": "t:labels.outline_button_hover_text"
       },
       {
         "type": "color",
@@ -682,25 +766,53 @@
         "type": "color",
         "id": "scheme_4_button_background_color",
         "default": "#FFFFFF",
-        "label": "t:labels.button_background"
+        "label": "t:labels.filled_button_background"
       },
       {
         "type": "color",
         "id": "scheme_4_button_text_color",
         "default": "#111111",
-        "label": "t:labels.button_text"
+        "label": "t:labels.filled_button_text"
       },
       {
         "type": "color",
         "id": "scheme_4_button_hover_background_color",
         "default": "#E5E7EB",
-        "label": "t:labels.button_hover_background"
+        "label": "t:labels.filled_button_hover_background"
       },
       {
         "type": "color",
         "id": "scheme_4_button_hover_text_color",
         "default": "#111111",
-        "label": "t:labels.button_hover_text"
+        "label": "t:labels.filled_button_hover_text"
+      },
+      {
+        "type": "header",
+        "content": "t:colors.outline_button"
+      },
+      {
+        "type": "color",
+        "id": "scheme_4_outline_button_border_color",
+        "default": "#FFFFFF",
+        "label": "t:labels.outline_button_border"
+      },
+      {
+        "type": "color",
+        "id": "scheme_4_outline_button_text_color",
+        "default": "#FFFFFF",
+        "label": "t:labels.outline_button_text"
+      },
+      {
+        "type": "color",
+        "id": "scheme_4_outline_button_hover_border_color",
+        "default": "#E5E7EB",
+        "label": "t:labels.outline_button_hover_border"
+      },
+      {
+        "type": "color",
+        "id": "scheme_4_outline_button_hover_text_color",
+        "default": "#E5E7EB",
+        "label": "t:labels.outline_button_hover_text"
       },
       {
         "type": "color",
