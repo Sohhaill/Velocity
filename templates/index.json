@@ -68,10 +68,19 @@
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0
       }
+    },
+    "custom_liquid_eUTyj9": {
+      "type": "custom-liquid",
+      "name": "Custom liquid",
+      "settings": {
+        "custom_liquid": "{% if localization.available_countries.size > 1 %}\n  <localization-form>\n    {% form 'localization' %}\n      <div className=\"disclosure\">\n        <button type=\"button\" className=\"disclosure__button\" aria-expanded=\"false\" aria-controls=\"CountryList\">\n          {{ localization.country.name }} ({{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }})\n\n          <svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" className=\"icon icon-caret\" viewBox=\"0 0 10 6\">\n            <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z\" fill=\"currentColor\">\n          </svg>\n        </button>\n\n        <ul id=\"CountryList\" role=\"list\" className=\"disclosure__list\" hidden>\n          {% for country in localization.available_countries %}\n            <li className=\"disclosure__item\" tabindex=\"-1\">\n              <a href=\"#\"{% if country.iso_code == localization.country.iso_code %} aria-current=\"true\"{% endif %} data-value=\"{{ country.iso_code }}\">\n                {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})\n              </a>\n            </li>\n          {% endfor %}\n        </ul>\n\n        <input type=\"hidden\" name=\"country_code\" value=\"{{ localization.country.iso_code }}\" />\n      </div>\n    {% endform %}\n  </localization-form>\n{% endif %}",
+        "custom_class": ""
+      }
     }
   },
   "order": [
     "hello_world_XFBrUh",
-    "multiple_image_text_k7WWD4"
+    "multiple_image_text_k7WWD4",
+    "custom_liquid_eUTyj9"
   ]
 }
