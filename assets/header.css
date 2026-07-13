@@ -189,7 +189,7 @@
   z-index: 20;
 }
 .header__menu-link-wrap:hover > .header__submenu-toggle {
-  transform: rotate(90deg);
+  transform: rotate(45deg);
 }
 .header__menu-item:hover > .header__submenu,
 .header__menu-item:focus-within > .header__submenu {
