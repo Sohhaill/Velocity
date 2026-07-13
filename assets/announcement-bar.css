@@ -117,21 +117,21 @@
   display: flex;
   align-items: center;
 }
-.section-announcement-bar{
-   min-height: unset; 
+.section-announcement-bar {
+  min-height: unset;
 }
 .v-annoucment__loc-item select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: transparent;
+  background-color: var(--color-background);
   color: currentColor;
   border: none;
   outline: none;
   width: 160px;
   cursor: pointer;
   padding: 4px 18px 4px 4px;
-  letter-spacing: 0.02em;
+
   text-transform: uppercase;
 }
 
