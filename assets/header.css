@@ -574,7 +574,12 @@
   white-space: nowrap;
   border: 0;
 }
-
+select#DrawerCountrySelector {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  background: #00000008;
+}
 @media (max-width: 860px) {
   .shopify-section-group-header-group {
     min-height: 70.59px;
