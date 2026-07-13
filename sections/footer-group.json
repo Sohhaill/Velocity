@@ -57,7 +57,7 @@
         "show_currency_selector": true,
         "footer_text": "We're here to help you find exactly what you're looking for, with quality you can trust and support",
         "show_footer_bottom": true,
-        "show_bottom_menu": false,
+        "show_bottom_menu": true,
         "show_payment_icons": true
       }
     }
