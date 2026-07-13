@@ -147,10 +147,7 @@
   cursor: pointer;
   padding: 0;
 }
-.header__submenu-toggle svg {
-  width: 11px;
-  height: 11px;
-}
+
 .header__menu-item {
   position: relative;
 }
