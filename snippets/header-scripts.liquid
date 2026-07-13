@@ -1,5 +1,11 @@
 <script>
-  function openHeaderDrawer() {
+  if (window.__headerScriptsInitialized) {
+    document.currentScript.remove();
+  } else {
+  window.__headerScriptsInitialized = true;
+
+  function openHeaderDrawer(event) {
+    if (event && event.isTrusted === false) return;
     var drawer = document.getElementById('header-drawer');
     if (!drawer) return;
     drawer.classList.add('header__drawer--open');
@@ -122,4 +128,5 @@
       }
     });
   });
+  }
 </script>

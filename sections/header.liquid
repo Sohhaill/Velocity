@@ -8,7 +8,7 @@
     append: 'px; --header-logo-width-mobile: ' | append: section.settings.logo_width_mobile | append: 'px;' %}
     <div class="header__inner">
       <button class="header__toggle" type="button" aria-expanded="false" aria-controls="header-drawer"
-        onclick="openHeaderDrawer()">
+        onclick="openHeaderDrawer(event)">
         {{ 'icon-hamburger-simple.svg' | inline_asset_content }}
         <span class="visually-hidden">{{ 'header.open_menu' | t }}</span>
       </button>
