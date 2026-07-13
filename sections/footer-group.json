@@ -18,7 +18,7 @@
           "type": "menu",
           "settings": {
             "heading": "Main",
-            "open_by_default": false,
+            "open_by_default": true,
             "width": "25",
             "menu": "main-menu"
           }
@@ -53,7 +53,8 @@
         "footer_width_type": "container_width",
         "logo_width_desktop": 220,
         "logo_width_mobile": 200,
-        "bottom_menu": "main-menu"
+        "bottom_menu": "main-menu",
+        "show_currency_selector": true
       }
     }
   },
