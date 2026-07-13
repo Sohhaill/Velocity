@@ -141,7 +141,6 @@
   width: 14px;
   height: 14px;
   transition: transform var(--transition-default);
-
   border: none;
   background: transparent;
   color: inherit;
@@ -190,7 +189,7 @@
   z-index: 20;
 }
 .header__menu-link-wrap:hover > .header__submenu-toggle {
-  transform: rotate(180deg);
+  transform: rotate(90deg);
 }
 .header__menu-item:hover > .header__submenu,
 .header__menu-item:focus-within > .header__submenu {
