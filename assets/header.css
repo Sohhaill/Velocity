@@ -604,6 +604,13 @@ select#DrawerLanguageSelector {
   background: #00000008;
   font-size: .9em;
 }
+a.social-button {
+    color: currentColor;
+    transition: all .25s ease;
+}
+a.social-button:hover {
+    transform: translateY(-5px);
+}
 @media (max-width: 860px) {
   .shopify-section-group-header-group {
     min-height: 70.59px;
