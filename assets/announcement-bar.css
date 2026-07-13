@@ -44,7 +44,9 @@
   color: currentColor;
   width: 15px;
   opacity: 0.85;
-  transition: opacity 0.25s cubic-bezier(0.65, 0, 0.35, 1), transform 0.25s cubic-bezier(0.65, 0, 0.35, 1);
+  transition:
+    opacity 0.25s cubic-bezier(0.65, 0, 0.35, 1),
+    transform 0.25s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 .v-annoucment__social-button svg {
@@ -79,7 +81,9 @@
   transform: translateY(100%);
   opacity: 0;
   pointer-events: none;
-  transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+  transition:
+    transform 0.6s cubic-bezier(0.65, 0, 0.35, 1),
+    opacity 0.6s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 .v-annoucment__ticker-item.is-active {
@@ -113,7 +117,9 @@
   display: flex;
   align-items: center;
 }
-
+.section-announcement-bar{
+   min-height: unset; 
+}
 .v-annoucment__loc-item select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -122,6 +128,7 @@
   color: currentColor;
   border: none;
   outline: none;
+  width: 160px;
   cursor: pointer;
   padding: 4px 18px 4px 4px;
   letter-spacing: 0.02em;
@@ -137,7 +144,7 @@
 }
 
 .v-annoucment__loc-item:not(:last-child)::after {
-  content: '';
+  content: "";
   display: block;
   width: 1px;
   height: 12px;
