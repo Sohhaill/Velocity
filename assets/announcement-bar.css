@@ -55,7 +55,7 @@
 
 .v-annoucment__social-button:hover {
   opacity: 1;
-  transform: translateY(-1px);
+  transform: translateY(-5px);
 }
 
 /* TICKER */

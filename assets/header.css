@@ -98,11 +98,11 @@
   text-decoration: none;
   opacity: 0.8;
   font-weight: 500;
-  transition: all var(--transition-default);
+  transition: all 0.25s ease;
 }
 .header__menu-item,
 .header__icon {
-  transition: all var(--transition-default);
+  transition: all 0.25s ease;
 }
 .header__menu-item:hover {
   transform: translateY(-5px);
