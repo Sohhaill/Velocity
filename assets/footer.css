@@ -248,11 +248,7 @@ ul.footer__menu-list {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: var(--input-background);
-  color: var(--input-foreground);
-  border: 1px solid;
   width: 160px;
-  border-radius: 6px;
   cursor: pointer;
   padding: 0.4rem 2rem 0.4rem 0.4rem;
   transition: border-color 0.25s ease;
