@@ -248,18 +248,24 @@ form#FooterLocalizationForm {
   align-items: center;
 }
 
-.footer__currency-item select {
+.footer__currency-item select, select#FooterLanguageSelector {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  width: 160px;
+ 
   cursor: pointer;
   padding: 0.4rem 2rem 0.4rem 0.4rem;
   transition: border-color 0.25s ease;
 }
-
+.footer__currency-item select{
+ width: 160px;
+}
 .footer__currency-item select:hover,
 .footer__currency-item select:focus-visible {
+  border-color: var(--button-background);
+}
+select#FooterLanguageSelector:hover,
+select#FooterLanguageSelector:focus-visible {
   border-color: var(--button-background);
 }
 
