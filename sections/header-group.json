@@ -11,6 +11,34 @@
   "type": "header",
   "name": "t:general.header",
   "sections": {
+    "announcement_bar_PzP6rQ": {
+      "type": "announcement-bar",
+      "blocks": {
+        "text_m9JfYW": {
+          "type": "text",
+          "settings": {
+            "text": "Free shipping on all orders over $50"
+          }
+        },
+        "text_EkaRR4": {
+          "type": "text",
+          "settings": {
+            "text": "Free shipping on all orders over $50"
+          }
+        }
+      },
+      "block_order": [
+        "text_m9JfYW",
+        "text_EkaRR4"
+      ],
+      "name": "t:sections.announcement-bar.presets.name",
+      "settings": {
+        "section_color_scheme": "scheme_1",
+        "show_social_icons": true,
+        "enable_localization": true,
+        "autoplay_speed": 4
+      }
+    },
     "header": {
       "type": "header",
       "settings": {
@@ -30,6 +58,7 @@
     }
   },
   "order": [
+    "announcement_bar_PzP6rQ",
     "header"
   ]
 }
