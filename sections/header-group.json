@@ -41,28 +41,6 @@
     },
     "header": {
       "type": "header",
-      "blocks": {
-        "mega_menu_grid_gQJ7jp": {
-          "type": "mega_menu_grid",
-          "settings": {
-            "menu_item_name": "Catalog",
-            "grid_heading": "adf",
-            "card_1_image": "shopify://shop_images/ChatGPTImageJun20_2026_09_58_56PM_1.webp",
-            "card_1_title": "",
-            "card_1_url": "",
-            "card_2_title": "",
-            "card_2_url": "",
-            "card_3_title": "",
-            "card_3_url": "",
-            "card_4_title": "",
-            "card_4_url": "",
-            "bottom_menu": ""
-          }
-        }
-      },
-      "block_order": [
-        "mega_menu_grid_gQJ7jp"
-      ],
       "settings": {
         "section_color_scheme": "scheme_1",
         "logo": "shopify://shop_images/download.webp",
@@ -70,7 +48,7 @@
         "logo_width_desktop": 170,
         "logo_width_mobile": 120,
         "header_sticky": true,
-        "enable_drawer_desktop": false,
+        "enable_drawer_desktop": true,
         "menu": "main-menu",
         "show_wishlist_icon": true,
         "show_account_icon": true,
