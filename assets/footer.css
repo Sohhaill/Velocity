@@ -285,15 +285,15 @@ ul.footer__menu-list {
 }
 
 .footer__payment img {
-  height: 20px;
+  height: 23px;
   width: auto;
   display: block;
   opacity: 1;
-  transition: opacity 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .footer__payment img:hover {
-  opacity: 1;
+  transform: translateY(-1px);
 }
 
 .footer__bottom-menu {
