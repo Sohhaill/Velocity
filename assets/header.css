@@ -105,9 +105,9 @@
   transition: all 0.25s ease;
 }
 .drawer-socials {
-    display: flex;
-    align-items: center;
-    gap: .4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 .header__menu-item:hover {
   transform: translateY(-5px);
@@ -576,6 +576,9 @@
 }
 
 @media (max-width: 860px) {
+  .shopify-section-group-header-group {
+    min-height: 70.59px;
+  }
   .header__inner {
     max-width: var(--header-max-width-mobile);
   }
