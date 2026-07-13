@@ -115,7 +115,7 @@
   align-items: center;
 }
 .section-announcement-bar {
-  min-height: unset;
+  min-height: unset !important;
 }
 .v-annoucment__loc-item select {
   -webkit-appearance: none;
