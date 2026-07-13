@@ -97,7 +97,20 @@
         </nav>
 
         <div class="header__drawer-icons">
-
+          <div class="drawer-socials">
+            {% if settings.footer_facebook_url != blank %}
+            {{ 'icon-fb.svg' | inline_asset_content }}
+            {% endif %}
+            {% if settings.footer_instagram_url != blank %}
+            {{ 'icon-insta.svg' | inline_asset_content }}
+            {% endif %}
+            {% if settings.footer_youtube_url != blank %}
+            {{ 'icon-youtube.svg' | inline_asset_content }}
+            {% endif %}
+            {% if settings.footer_twitter_url != blank %}
+            {{ 'icon-twitter.svg' | inline_asset_content }}
+            {% endif %}
+          </div>
           {% if section.settings.show_account_icon and shop.customer_accounts_enabled %}
           <a class="header__drawer-icon" href="{{ routes.account_login_url }}">
             {{ 'icon-account.svg' | inline_asset_content }}
@@ -153,10 +166,16 @@
 </div>
 
 <style>
-  #shopify-section-{{ section.id }} {
+  #shopify-section- {
+      {
+      section.id
+    }
+  }
 
---transition-default: 0.45s cubic-bezier(0.65, 0, 0.35, 1);
-}
+    {
+
+    --transition-default: 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+  }
 </style>
 
 {% schema %}

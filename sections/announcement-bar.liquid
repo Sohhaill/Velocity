@@ -1,86 +1,98 @@
 {{ 'announcement-bar.css' | asset_url | stylesheet_tag }}
 
-<div class="v-annoucment section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}" id="v-annoucment-{{ section.id }}" data-v-annoucment data-speed="{{ section.settings.autoplay_speed | times: 1000 }}">
+<div class="v-annoucment section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}"
+  id="v-annoucment-{{ section.id }}" data-v-annoucment data-speed="{{ section.settings.autoplay_speed | times: 1000 }}">
   <div class="v-annoucment__inner container-width">
 
     {%- comment -%} LEFT: SOCIAL ICONS (reference: footer settings) {%- endcomment -%}
     <div class="v-annoucment__col v-annoucment__col--left">
       {%- if section.settings.show_social_icons -%}
-        <div class="v-annoucment__socials">
-          {% if settings.footer_facebook_url != blank %}
-          <a class="v-annoucment__social-button" href="{{ settings.footer_facebook_url }}" target="_blank" rel="noopener" aria-label="Facebook">
-            {{ 'icon-fb.svg' | inline_asset_content }}
-          </a>
-          {% endif %}
-          {% if settings.footer_instagram_url != blank %}
-          <a class="v-annoucment__social-button" href="{{ settings.footer_instagram_url }}" target="_blank" rel="noopener" aria-label="Instagram">
-            {{ 'icon-insta.svg' | inline_asset_content }}
-          </a>
-          {% endif %}
-          {% if settings.footer_youtube_url != blank %}
-          <a class="v-annoucment__social-button" href="{{ settings.footer_youtube_url }}" target="_blank" rel="noopener" aria-label="YouTube">
-            {{ 'icon-youtube.svg' | inline_asset_content }}
-          </a>
-          {% endif %}
-          {% if settings.footer_twitter_url != blank %}
-          <a class="v-annoucment__social-button" href="{{ settings.footer_twitter_url }}" target="_blank" rel="noopener" aria-label="Twitter">
-             {{ 'icon-twitter.svg' | inline_asset_content }}
-          </a>
-          {% endif %}
-        </div>
+      <div class="v-annoucment__socials">
+        {% if settings.footer_facebook_url != blank %}
+        <a class="v-annoucment__social-button" href="{{ settings.footer_facebook_url }}" target="_blank" rel="noopener"
+          aria-label="Facebook">
+          {{ 'icon-fb.svg' | inline_asset_content }}
+        </a>
+        {% endif %}
+        {% if settings.footer_instagram_url != blank %}
+        <a class="v-annoucment__social-button" href="{{ settings.footer_instagram_url }}" target="_blank" rel="noopener"
+          aria-label="Instagram">
+          {{ 'icon-insta.svg' | inline_asset_content }}
+        </a>
+        {% endif %}
+        {% if settings.footer_youtube_url != blank %}
+        <a class="v-annoucment__social-button" href="{{ settings.footer_youtube_url }}" target="_blank" rel="noopener"
+          aria-label="YouTube">
+          {{ 'icon-youtube.svg' | inline_asset_content }}
+        </a>
+        {% endif %}
+        {% if settings.footer_twitter_url != blank %}
+        <a class="v-annoucment__social-button" href="{{ settings.footer_twitter_url }}" target="_blank" rel="noopener"
+          aria-label="Twitter">
+          {{ 'icon-twitter.svg' | inline_asset_content }}
+        </a>
+        {% endif %}
+      </div>
       {%- endif -%}
     </div>
 
     {%- comment -%} CENTER: ROTATING TEXT {%- endcomment -%}
     <div class="v-annoucment__col v-annoucment__col--center">
       {%- if section.blocks.size > 0 -%}
-        <div class="v-annoucment__ticker">
-          {%- for block in section.blocks -%}
-            {%- if block.type == 'text' -%}
-              <p class="v-annoucment__ticker-item{% if forloop.first %} is-active{% endif %}" {{ block.shopify_attributes }}>
-                {{- block.settings.text -}}
-              </p>
-            {%- endif -%}
-          {%- endfor -%}
-        </div>
+      <div class="v-annoucment__ticker">
+        {%- for block in section.blocks -%}
+        {%- if block.type == 'text' -%}
+        <p class="v-annoucment__ticker-item{% if forloop.first %} is-active{% endif %}" {{ block.shopify_attributes }}>
+          {{- block.settings.text -}}
+        </p>
+        {%- endif -%}
+        {%- endfor -%}
+      </div>
       {%- endif -%}
     </div>
 
     {%- comment -%} RIGHT: LOCALIZATION {%- endcomment -%}
     <div class="v-annoucment__col v-annoucment__col--right">
       {%- if section.settings.enable_localization -%}
-        {%- if localization.available_countries.size > 1 or localization.available_languages.size > 1 -%}
-          {% form 'localization', id: 'VAnnoucmentLocalizationForm', class: 'v-annoucment__localization' %}
-            {%- if localization.available_countries.size > 1 -%}
-              <div class="v-annoucment__loc-item">
-                <select id="VAnnoucmentCountrySelector" name="country_code" aria-label="Country / Currency" onchange="this.form.submit()">
-                  {%- for country in localization.available_countries -%}
-                    <option value="{{ country.iso_code }}" {% if country.iso_code == localization.country.iso_code %}selected{% endif %}>
-                      {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
-                    </option>
-                  {%- endfor -%}
-                </select>
-                <svg class="v-annoucment__loc-caret" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-            {%- endif -%}
-            {%- if localization.available_languages.size > 1 -%}
-              <div class="v-annoucment__loc-item">
-                <select id="VAnnoucmentLanguageSelector" name="locale_code" aria-label="Language" onchange="this.form.submit()">
-                  {%- for language in localization.available_languages -%}
-                    <option value="{{ language.iso_code }}" {% if language.iso_code == localization.language.iso_code %}selected{% endif %}>
-                      {{ language.endonym_name }}
-                    </option>
-                  {%- endfor -%}
-                </select>
-                <svg class="v-annoucment__loc-caret" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-            {%- endif -%}
-          {% endform %}
-        {%- endif -%}
+      {%- if localization.available_countries.size > 1 or localization.available_languages.size > 1 -%}
+      {% form 'localization', id: 'VAnnoucmentLocalizationForm', class: 'v-annoucment__localization' %}
+      {%- if localization.available_countries.size > 1 -%}
+      <div class="v-annoucment__loc-item">
+        <select id="VAnnoucmentCountrySelector" name="country_code" aria-label="Country / Currency"
+          onchange="this.form.submit()">
+          {%- for country in localization.available_countries -%}
+          <option value="{{ country.iso_code }}" {% if country.iso_code==localization.country.iso_code %}selected{%
+            endif %}>
+            {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
+          </option>
+          {%- endfor -%}
+        </select>
+        <svg class="v-annoucment__loc-caret" width="10" height="6" viewBox="0 0 10 6" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </div>
+      {%- endif -%}
+      {%- if localization.available_languages.size > 1 -%}
+      <div class="v-annoucment__loc-item">
+        <select id="VAnnoucmentLanguageSelector" name="locale_code" aria-label="Language" onchange="this.form.submit()">
+          {%- for language in localization.available_languages -%}
+          <option value="{{ language.iso_code }}" {% if language.iso_code==localization.language.iso_code %}selected{%
+            endif %}>
+            {{ language.endonym_name }}
+          </option>
+          {%- endfor -%}
+        </select>
+        <svg class="v-annoucment__loc-caret" width="10" height="6" viewBox="0 0 10 6" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </div>
+      {%- endif -%}
+      {% endform %}
+      {%- endif -%}
       {%- endif -%}
     </div>
 
@@ -91,67 +103,67 @@
 
 {% schema %}
 {
-  "name": "t:sections.announcement-bar.name",
-  "class": "section-announcement-bar",
-  "settings": [
-    {
-      "type": "select",
-      "id": "section_color_scheme",
-      "label": "t:labels.color_scheme",
-      "default": "scheme_1",
-      "options": [
-        { "value": "scheme_1", "label": "t:options.color_scheme.scheme_1" },
-        { "value": "scheme_2", "label": "t:options.color_scheme.scheme_2" },
-        { "value": "scheme_3", "label": "t:options.color_scheme.scheme_3" },
-        { "value": "scheme_4", "label": "t:options.color_scheme.scheme_4" }
-      ]
-    },
-    {
-      "type": "checkbox",
-      "id": "show_social_icons",
-      "label": "t:sections.announcement-bar.settings.show_social_icons.label",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_localization",
-      "label": "t:sections.announcement-bar.settings.enable_localization.label",
-      "default": true
-    },
-    {
-      "type": "range",
-      "id": "autoplay_speed",
-      "label": "t:sections.announcement-bar.settings.autoplay_speed.label",
-      "min": 2,
-      "max": 10,
-      "step": 1,
-      "unit": "s",
-      "default": 4
-    }
-  ],
-  "blocks": [
-    {
-      "type": "text",
-      "name": "t:sections.announcement-bar.blocks.text.name",
-      "settings": [
-        {
-          "type": "text",
-          "id": "text",
-          "label": "t:sections.announcement-bar.blocks.text.settings.text.label",
-          "default": "Free shipping on all orders over $50"
-        }
-      ]
-    }
-  ],
-  "max_blocks": 8,
-  "presets": [
-    {
-      "name": "t:sections.announcement-bar.presets.name",
-      "blocks": [
-        { "type": "text" },
-        { "type": "text" }
-      ]
-    }
-  ]
+"name": "t:sections.announcement-bar.name",
+"class": "section-announcement-bar",
+"settings": [
+{
+"type": "select",
+"id": "section_color_scheme",
+"label": "t:labels.color_scheme",
+"default": "scheme_1",
+"options": [
+{ "value": "scheme_1", "label": "t:options.color_scheme.scheme_1" },
+{ "value": "scheme_2", "label": "t:options.color_scheme.scheme_2" },
+{ "value": "scheme_3", "label": "t:options.color_scheme.scheme_3" },
+{ "value": "scheme_4", "label": "t:options.color_scheme.scheme_4" }
+]
+},
+{
+"type": "checkbox",
+"id": "show_social_icons",
+"label": "t:sections.announcement-bar.settings.show_social_icons.label",
+"default": true
+},
+{
+"type": "checkbox",
+"id": "enable_localization",
+"label": "t:sections.announcement-bar.settings.enable_localization.label",
+"default": true
+},
+{
+"type": "range",
+"id": "autoplay_speed",
+"label": "t:sections.announcement-bar.settings.autoplay_speed.label",
+"min": 2,
+"max": 10,
+"step": 1,
+"unit": "s",
+"default": 4
+}
+],
+"blocks": [
+{
+"type": "text",
+"name": "t:sections.announcement-bar.blocks.text.name",
+"settings": [
+{
+"type": "text",
+"id": "text",
+"label": "t:sections.announcement-bar.blocks.text.settings.text.label",
+"default": "Free shipping on all orders over $50"
+}
+]
+}
+],
+"max_blocks": 8,
+"presets": [
+{
+"name": "t:sections.announcement-bar.presets.name",
+"blocks": [
+{ "type": "text" },
+{ "type": "text" }
+]
+}
+]
 }
 {% endschema %}
