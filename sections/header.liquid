@@ -1,6 +1,7 @@
 {{ 'header.css' | asset_url | stylesheet_tag }}
 
-<div class="section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }} v-header{% if section.settings.enable_drawer_desktop %} header--drawer-desktop{% endif %}"
+<div
+  class="section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }} v-header{% if section.settings.enable_drawer_desktop %} header--drawer-desktop{% endif %}"
   id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data-header-sticky="true" {% endif %}>
   <header
     class="header{% if section.settings.header_width_type == 'full_width' %} header--full-width{% else %} container-width{% endif %}">
@@ -98,17 +99,26 @@
 
         <div class="header__drawer-icons">
           <div class="drawer-socials">
-            {% if settings.footer_facebook_url != blank %}
-            {{ 'icon-fb.svg' | inline_asset_content }}
-            {% endif %}
+            <a class="social-button" href="{{ settings.footer_facebook_url }}" target="_blank"
+              rel="noopener" aria-label="Facebook">
+              {% if settings.footer_facebook_url != blank %}
+              {{ 'icon-fb.svg' | inline_asset_content }}
+              {% endif %}
+            </a>
             {% if settings.footer_instagram_url != blank %}
-            {{ 'icon-insta.svg' | inline_asset_content }}
+            <a class="social-button" href="{{ settings.footer_instagram_url }}" target="_blank" rel="noopener" aria-label="Instagram">
+              {{ 'icon-insta.svg' | inline_asset_content }}
+            </a>
             {% endif %}
             {% if settings.footer_youtube_url != blank %}
-            {{ 'icon-youtube.svg' | inline_asset_content }}
+            <a class="social-button" href="{{ settings.footer_youtube_url }}" target="_blank" rel="noopener" aria-label="YouTube">
+              {{ 'icon-youtube.svg' | inline_asset_content }}
+            </a>
             {% endif %}
             {% if settings.footer_twitter_url != blank %}
-            {{ 'icon-twitter.svg' | inline_asset_content }}
+            <a class="social-button" href="{{ settings.footer_twitter_url }}" target="_blank" rel="noopener" aria-label="Twitter">
+              {{ 'icon-twitter.svg' | inline_asset_content }}
+            </a>
             {% endif %}
           </div>
           {% if section.settings.show_account_icon and shop.customer_accounts_enabled %}
