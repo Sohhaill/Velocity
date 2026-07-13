@@ -420,9 +420,10 @@
   content: "";
   position: absolute;
   inset: 0;
+  backdrop-filter: blur(3px);
   background: rgba(0, 0, 0, 0.45);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .header__drawer--open {
