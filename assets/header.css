@@ -104,6 +104,11 @@
 .header__icon {
   transition: all 0.25s ease;
 }
+.drawer-socials {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
 .header__menu-item:hover {
   transform: translateY(-5px);
 }

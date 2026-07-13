@@ -117,7 +117,50 @@
             <span>{{ 'header.account_icon' | t }}</span>
           </a>
           {% endif %}
+          {%- if localization.available_countries.size > 1 or localization.available_languages.size > 1 -%}
+          {% form 'localization', id: 'DrawerLocalizationForm', class: 'drawer__localization' %}
 
+          {%- if localization.available_countries.size > 1 -%}
+          <div class="drawer__loc-item">
+            <select id="DrawerCountrySelector" name="country_code" aria-label="Country / Currency"
+              onchange="this.form.submit()">
+              {%- for country in localization.available_countries -%}
+              <option value="{{ country.iso_code }}" {% if country.iso_code==localization.country.iso_code %}selected{%
+                endif %}>
+                {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
+              </option>
+              {%- endfor -%}
+            </select>
+
+            <svg class="drawer__loc-caret" width="10" height="6" viewBox="0 0 10 6" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          {%- endif -%}
+
+          {%- if localization.available_languages.size > 1 -%}
+          <div class="drawer__loc-item">
+            <select id="DrawerLanguageSelector" name="locale_code" aria-label="Language" onchange="this.form.submit()">
+              {%- for language in localization.available_languages -%}
+              <option value="{{ language.iso_code }}" {% if language.iso_code==localization.language.iso_code
+                %}selected{% endif %}>
+                {{ language.endonym_name }}
+              </option>
+              {%- endfor -%}
+            </select>
+
+            <svg class="drawer__loc-caret" width="10" height="6" viewBox="0 0 10 6" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          {%- endif -%}
+
+          {% endform %}
+          {%- endif -%}
 
         </div>
       </div>
