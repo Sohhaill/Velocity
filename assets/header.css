@@ -19,7 +19,9 @@
   width: 100%;
   align-self: stretch;
 }
-
+#VAnnoucmentLanguageSelector {
+    width: 100%;
+}
 .header__inner {
   display: flex;
   align-items: center;
@@ -120,9 +122,7 @@
 .header__menu-item:hover {
   transform: translateX(5px);
 }
-select#VAnnoucmentLanguageSelector {
-    width: 100%;
-}
+
 .header__menu-item:hover a.header__menu-link {
   opacity: 1;
 }
