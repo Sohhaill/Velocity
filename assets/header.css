@@ -113,7 +113,7 @@
   background: #00000008;
 }
 .header__menu-item:hover {
-  transform: translateY(-5px);
+  transform: translateX(5px);
 }
 .header__menu-item:hover a.header__menu-link {
   opacity: 1;
