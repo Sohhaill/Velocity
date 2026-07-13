@@ -11,6 +11,7 @@
 .bottom-inner {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .footer__top {
   padding-bottom: 2.5rem;

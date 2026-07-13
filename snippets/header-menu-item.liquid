@@ -1,74 +1,93 @@
 {% doc %}
-  Renders a recursive header menu item for desktop and drawer navigation.
+Renders a recursive header menu item for desktop and drawer navigation.
 
-  @param {link} link - The menu link to render
-  @param {string} mode - Either `desktop` or `drawer`
-  @param {string} parent_id - Unique id prefix for nested submenu controls
-  @param {number} depth - Current nesting depth
+@param {link} link - The menu link to render
+@param {string} mode - Either `desktop` or `drawer`
+@param {string} parent_id - Unique id prefix for nested submenu controls
+@param {number} depth - Current nesting depth
 {% enddoc %}
 
 {% assign has_children = false %}
 {% if link.links and link.links.size > 0 %}
-  {% assign has_children = true %}
+{% assign has_children = true %}
 {% endif %}
 
 {% assign submenu_id = parent_id | append: index %}
 {% assign child_parent_id = submenu_id | append: '-' %}
 
 {% if mode == 'drawer' %}
-  <li class="header__drawer-item{% if has_children %} header__drawer-item--has-children{% endif %}" data-depth="{{ depth }}" style="--drawer-depth: {{ depth }}">
-    <div class="header__drawer-item-top">
-      <a href="{{ link.url }}">{{ link.title }}</a>
-      {% if has_children %}
-        <button class="header__drawer-submenu-toggle" type="button" aria-expanded="false" aria-controls="{{ submenu_id }}">
-          {% if depth == 0 %}
-            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-              <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          {% else %}
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-              <path d="M4 2L8 6L4 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          {% endif %}
-          <span class="visually-hidden">{{ 'header.open_submenu' | t }}</span>
-        </button>
-      {% endif %}
-    </div>
-
+<li class="header__drawer-item{% if has_children %} header__drawer-item--has-children{% endif %}"
+  data-depth="{{ depth }}" style="--drawer-depth: {{ depth }}">
+  <div class="header__drawer-item-top">
+    <a href="{{ link.url }}">{{ link.title }}</a>
     {% if has_children %}
-      <ul id="{{ submenu_id }}" class="header__drawer-submenu" data-depth="{{ depth }}">
-        {% for child in link.links %}
-          {% render 'header-menu-item', link: child, mode: 'drawer', parent_id: child_parent_id, depth: depth | plus: 1, index: forloop.index0 %}
-        {% endfor %}
-      </ul>
+    <button class="header__drawer-submenu-toggle" type="button" aria-expanded="false" aria-controls="{{ submenu_id }}">
+      {% if depth == 0 %}
+      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+        focusable="false">
+        <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+      {% else %}
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+        focusable="false">
+        <path d="M4 2L8 6L4 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+      {% endif %}
+      <span class="visually-hidden">{{ 'header.open_submenu' | t }}</span>
+    </button>
     {% endif %}
-  </li>
+  </div>
+
+  {% if has_children %}
+  <ul id="{{ submenu_id }}" class="header__drawer-submenu" data-depth="{{ depth }}">
+    {% for child in link.links %}
+    {% render 'header-menu-item', link: child, mode: 'drawer', parent_id: child_parent_id, depth: depth | plus: 1,
+    index: forloop.index0 %}
+    {% endfor %}
+  </ul>
+  {% endif %}
+</li>
 {% else %}
-  <li class="header__menu-item{% if has_children %} header__menu-item--has-children{% endif %}" data-depth="{{ depth }}">
-    <div class="header__menu-link-wrap">
-      <a class="header__menu-link" href="{{ link.url }}">{{ link.title }}</a>
-      {% if has_children %}
-        <button class="header__submenu-toggle" type="button" aria-expanded="false" aria-controls="{{ submenu_id }}">
-          {% if depth == 0 %}
-            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-              <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          {% else %}
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-              <path d="M4 2L8 6L4 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          {% endif %}
-          <span class="visually-hidden">{{ 'header.open_submenu' | t }}</span>
-        </button>
-      {% endif %}
-    </div>
-
+<li class="header__menu-item{% if has_children %} header__menu-item--has-children{% endif %}" data-depth="{{ depth }}">
+  <div class="header__menu-link-wrap">
+    <a class="header__menu-link" href="{{ link.url }}">{{ link.title }}</a>
     {% if has_children %}
-      <ul id="{{ submenu_id }}" class="header__submenu header__submenu--depth-{{ depth }}" data-depth="{{ depth }}">
-        {% for child in link.links %}
-          {% render 'header-menu-item', link: child, mode: 'desktop', parent_id: child_parent_id, depth: depth | plus: 1, index: forloop.index0 %}
-        {% endfor %}
-      </ul>
+    <button class="header__submenu-toggle" type="button" aria-expanded="false" aria-controls="{{ submenu_id }}">
+      {% if depth == 0 %}
+      <svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
+        <g clip-path="url(#clip0_429_10970)">
+          <circle cx="12" cy="11.999" r="9" stroke="#292929" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path d="M12 9V15" stroke="#292929" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M9 12H15" stroke="#292929" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+        </g>
+        <defs>
+          <clipPath id="clip0_429_10970">
+            <rect width="24" height="24" fill="white" />
+          </clipPath>
+        </defs>
+      </svg>
+      {% else %}
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+        focusable="false">
+        <path d="M4 2L8 6L4 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+      {% endif %}
+      <span class="visually-hidden">{{ 'header.open_submenu' | t }}</span>
+    </button>
     {% endif %}
-  </li>
+  </div>
+
+  {% if has_children %}
+  <ul id="{{ submenu_id }}" class="header__submenu header__submenu--depth-{{ depth }}" data-depth="{{ depth }}">
+    {% for child in link.links %}
+    {% render 'header-menu-item', link: child, mode: 'desktop', parent_id: child_parent_id, depth: depth | plus: 1,
+    index: forloop.index0 %}
+    {% endfor %}
+  </ul>
+  {% endif %}
+</li>
 {% endif %}
