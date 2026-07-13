@@ -46,7 +46,8 @@
           "type": "mega_menu_grid",
           "settings": {
             "menu_item_name": "Catalog",
-            "grid_heading": "",
+            "grid_heading": "adf",
+            "card_1_image": "shopify://shop_images/ChatGPTImageJun20_2026_09_58_56PM_1.webp",
             "card_1_title": "",
             "card_1_url": "",
             "card_2_title": "",
