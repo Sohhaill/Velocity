@@ -121,16 +121,18 @@
   min-height: unset;
 }
 .v-annoucment__loc-item select {
-  -webkit-appearance: none;
+ -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: var(--color-background);
-  color: currentColor;
-  border: none;
-  outline: none;
+  background: var(--input-background);
+  color: var(--input-foreground);
+  border: 1px solid;
   width: 160px;
+    color-mix(in srgb, var(--button-background) 24%, transparent);
+  border-radius: 6px;
   cursor: pointer;
-  padding: 4px 18px 4px 4px;
+  padding: 0.6rem 2rem 0.6rem 1rem;
+  transition: border-color 0.25s ease;
 }
 
 .v-annoucment__loc-caret {
