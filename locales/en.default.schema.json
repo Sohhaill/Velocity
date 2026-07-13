@@ -158,5 +158,25 @@
     "button_hover_text": "Button hover text",
     "input_text": "Input text",
     "input_background": "Input background"
+  },
+  "sections": {
+  "announcement-bar": {
+    "name": "Announcement bar",
+    "settings": {
+      "show_social_icons": { "label": "Show social media icons" },
+      "enable_localization": { "label": "Show country/language selector" },
+      "autoplay_speed": { "label": "Change text every" },
+      "header_colors": { "content": "Colors" },
+      "bg_color": { "label": "Background color" },
+      "text_color": { "label": "Text color" }
+    },
+    "blocks": {
+      "text": {
+        "name": "Text",
+        "settings": { "text": { "label": "Text" } }
+      }
+    },
+    "presets": { "name": "Announcement bar" }
   }
+}
 }
