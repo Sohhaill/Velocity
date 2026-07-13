@@ -252,6 +252,34 @@
 }
 
 /* ---- Style 2: Grid Cards ---- */
+.header__mega-grid-layout {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.header__mega-grid-sublist {
+  flex: 0 0 200px;
+  position: relative;
+  padding-right: 2rem;
+}
+
+.header__mega-grid-sublist::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0.15rem;
+  bottom: 0.15rem;
+  width: 1px;
+  background: currentColor;
+  opacity: 0.12;
+}
+
+.header__mega-grid-main {
+  flex: 1;
+  min-width: 0;
+}
+
 .header__mega-grid-heading {
   font-weight: 700;
   letter-spacing: 0.08em;

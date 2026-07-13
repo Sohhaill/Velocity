@@ -65,6 +65,16 @@
                     {%- endif -%}
                   </div>
                   <div class="header__mega-columns">
+                    {%- if link.links and link.links.size > 0 -%}
+                    <div class="header__mega-column">
+                      <p class="header__mega-column-heading">{{ link.title }}</p>
+                      <ul class="header__mega-column-list">
+                        {%- for sub_link in link.links -%}
+                        <li><a href="{{ sub_link.url }}">{{ sub_link.title }}</a></li>
+                        {%- endfor -%}
+                      </ul>
+                    </div>
+                    {%- endif -%}
                     {%- for i in (1..3) -%}
                       {%- assign col_menu_key = 'column_' | append: i | append: '_menu' -%}
                       {%- assign col_heading_key = 'column_' | append: i | append: '_heading' -%}
@@ -94,6 +104,18 @@
               </div>
               <div class="header__mega-panel header__mega-panel--grid">
                 <div class="header__mega-inner container-width">
+                  <div class="header__mega-grid-layout">
+                    {%- if link.links and link.links.size > 0 -%}
+                    <div class="header__mega-grid-sublist">
+                      <p class="header__mega-column-heading">{{ link.title }}</p>
+                      <ul class="header__mega-column-list">
+                        {%- for sub_link in link.links -%}
+                        <li><a href="{{ sub_link.url }}">{{ sub_link.title }}</a></li>
+                        {%- endfor -%}
+                      </ul>
+                    </div>
+                    {%- endif -%}
+                    <div class="header__mega-grid-main">
                   {%- if mega_block.settings.grid_heading != blank -%}
                   <p class="header__mega-grid-heading">{{ mega_block.settings.grid_heading }}</p>
                   {%- endif -%}
@@ -119,6 +141,8 @@
                       </a>
                       {%- endif -%}
                     {%- endfor -%}
+                  </div>
+                    </div>
                   </div>
                   {%- if mega_block.settings.bottom_menu != blank and mega_block.settings.bottom_menu.links.size > 0 -%}
                   <ul class="header__mega-bottom-links">
