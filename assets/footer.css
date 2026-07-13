@@ -254,7 +254,7 @@ ul.footer__menu-list {
   width: 160px;
   border-radius: 6px;
   cursor: pointer;
-  padding: .4rem 2rem .4rem .4rem;
+  padding: 0.4rem 2rem 0.4rem 0.4rem;
   transition: border-color 0.25s ease;
 }
 
@@ -297,8 +297,10 @@ ul.footer__menu-list {
 }
 .footer__text {
   margin: 0.75rem 0 0;
-  max-width: 32ch;
-  opacity: 0.75;
+  max-width: 38ch;
+  opacity: 0.85;
+  font-style: italic;
+  font-size: 0.8em;
 }
 .footer__bottom-menu {
   display: flex;
@@ -306,8 +308,8 @@ ul.footer__menu-list {
   gap: 0 1.25rem;
 }
 ul.footer__bottom-menu a {
-    text-decoration: underline;
-    font-size: .9em;
+  text-decoration: underline;
+  font-size: 0.9em;
 }
 .footer__bottom-menu li + li {
   margin-top: 0;
@@ -347,6 +349,9 @@ ul.footer__bottom-menu a {
 
   .footer__brand-column {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .footer__logo {
