@@ -138,31 +138,32 @@
   </div>
 
   <div class="footer__bottom">
-    {%- if section.settings.show_currency_selector -%}
-    {%- if localization.available_countries.size > 1 -%}
-    <div class="container-width footer__currency-row">
-      {% form 'localization', id: 'FooterCurrencyForm', class: 'footer__currency-form' %}
-      <div class="footer__currency-item">
-        <select id="FooterCountrySelector" name="country_code" aria-label="Country / Currency"
-          onchange="this.form.submit()">
-          {%- for country in localization.available_countries -%}
-          <option value="{{ country.iso_code }}" {% if country.iso_code==localization.country.iso_code %}selected{%
-            endif %}>
-            {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
-          </option>
-          {%- endfor -%}
-        </select>
-        <svg class="footer__currency-caret" width="10" height="6" viewBox="0 0 10 6" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
-            stroke-linejoin="round" />
-        </svg>
-      </div>
-      {% endform %}
-    </div>
-    {%- endif -%}
-    {%- endif -%}
+
     <div class="container-width bottom-inner">
+      {%- if section.settings.show_currency_selector -%}
+      {%- if localization.available_countries.size > 1 -%}
+      <div class="footer__currency-row">
+        {% form 'localization', id: 'FooterCurrencyForm', class: 'footer__currency-form' %}
+        <div class="footer__currency-item">
+          <select id="FooterCountrySelector" name="country_code" aria-label="Country / Currency"
+            onchange="this.form.submit()">
+            {%- for country in localization.available_countries -%}
+            <option value="{{ country.iso_code }}" {% if country.iso_code==localization.country.iso_code %}selected{%
+              endif %}>
+              {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
+            </option>
+            {%- endfor -%}
+          </select>
+          <svg class="footer__currency-caret" width="10" height="6" viewBox="0 0 10 6" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+        {% endform %}
+      </div>
+      {%- endif -%}
+      {%- endif -%}
       <div class="footer__bottom-left">
         {% if section.settings.bottom_menu != blank %}
         <ul class="footer__bottom-menu">
