@@ -253,7 +253,7 @@ ul.footer__menu-list {
   width: 160px;
   border-radius: 6px;
   cursor: pointer;
-  padding: 0.6rem 2rem 0.6rem 1rem;
+  padding: .4rem 2rem .4rem .4rem;
   transition: border-color 0.25s ease;
 }
 
