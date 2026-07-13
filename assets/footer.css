@@ -237,7 +237,11 @@ ul.footer__menu-list {
   display: flex;
   justify-content: flex-start;
 }
-
+form#FooterLocalizationForm {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+}
 .footer__currency-item {
   position: relative;
   display: inline-flex;
