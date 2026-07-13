@@ -109,6 +109,228 @@
     left: unset;
     top: -27%;
 }
+/* ============ MEGA MENU ============ */
+.header__mega-item {
+  position: static;
+}
+
+.header__mega-panel {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(14px);
+  transition:
+    opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0s linear 0.4s;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  border-top: 1px solid color-mix(in srgb, var(--color-foreground) 8%, transparent);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
+  z-index: 30;
+}
+
+.header__mega-item:hover > .header__mega-panel,
+.header__mega-item:focus-within > .header__mega-panel {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+
+.header__mega-inner {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+/* ---- Style 1: Editorial Split ---- */
+.header__mega-panel--editorial .header__mega-inner {
+  display: flex;
+  gap: 3.5rem;
+  align-items: flex-start;
+}
+
+.header__mega-feature {
+  flex: 0 0 30%;
+  max-width: 320px;
+}
+
+.header__mega-feature-media {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+
+.header__mega-feature-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header__mega-feature:hover .header__mega-feature-media img {
+  transform: scale(1.05);
+}
+
+.header__mega-feature-heading {
+  margin: 0 0 0.4rem;
+}
+
+.header__mega-feature-subheading {
+  opacity: 0.65;
+  margin: 0 0 1rem;
+}
+
+.header__mega-feature-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.65rem 1.4rem;
+  text-decoration: none;
+}
+
+.header__mega-columns {
+  flex: 1;
+  display: flex;
+  gap: 3rem;
+}
+
+.header__mega-column {
+  flex: 1;
+  position: relative;
+  padding-left: 3rem;
+}
+
+.header__mega-column:first-child {
+  padding-left: 0;
+}
+
+.header__mega-column:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  bottom: 0.15rem;
+  width: 1px;
+  background: currentColor;
+  opacity: 0.12;
+}
+
+.header__mega-column-heading {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  margin: 0 0 1rem;
+}
+
+.header__mega-column-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.header__mega-column-list a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.header__mega-column-list a:hover {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+/* ---- Style 2: Grid Cards ---- */
+.header__mega-grid-heading {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  margin: 0 0 1.5rem;
+}
+
+.header__mega-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.header__mega-card {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+.header__mega-card-media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 10px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--color-foreground) 5%, transparent);
+  margin-bottom: 0.75rem;
+}
+
+.header__mega-card-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header__mega-card:hover .header__mega-card-media img {
+  transform: scale(1.08);
+}
+
+.header__mega-card-title {
+  font-weight: 600;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.header__mega-card:hover .header__mega-card-title {
+  opacity: 1;
+}
+
+.header__mega-bottom-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 2rem;
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 1.5rem 0 0;
+  border-top: 1px solid color-mix(in srgb, var(--color-foreground) 10%, transparent);
+}
+
+.header__mega-bottom-links a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.header__mega-bottom-links a:hover {
+  opacity: 1;
+}
+
+/* Mega menu sirf desktop pe hai — mobile drawer apna normal accordion use karega */
+@media (max-width: 860px) {
+  .header__mega-panel {
+    display: none;
+  }
+}
 .drawer-socials {
   display: flex;
   align-items: center;
