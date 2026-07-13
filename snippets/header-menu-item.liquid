@@ -74,7 +74,7 @@ Renders a recursive header menu item for desktop and drawer navigation.
   </div>
 
   {% if has_children %}
-  <ul id="{{ submenu_id }}" class="header__submenu header__submenu--depth-{{ depth }}" data-depth="{{ depth }} desktop-dropdown-menu">
+  <ul id="{{ submenu_id }}" class="header__submenu header__submenu--depth-{{ depth }} desktop-dropdown-menu" data-depth="{{ depth }} ">
     {% for child in link.links %}
     {% render 'header-menu-item', link: child, mode: 'desktop', parent_id: child_parent_id, depth: depth | plus: 1,
     index: forloop.index0 %}

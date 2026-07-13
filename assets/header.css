@@ -104,7 +104,7 @@
 .header__icon {
   transition: all 0.25s ease;
 }
-.header__menu-item--has-children .header__submenu{
+.desktop-dropdown-menu .header__menu-item--has-children .header__submenu{
     right: -99% !important;
     left: unset;
     top: -27%;
