@@ -42,25 +42,25 @@
     "header": {
       "type": "header",
       "blocks": {
-        "mega_menu_editorial_xeDpDq": {
-          "type": "mega_menu_editorial",
+        "mega_menu_grid_gQJ7jp": {
+          "type": "mega_menu_grid",
           "settings": {
             "menu_item_name": "Catalog",
-            "feature_heading": "New Arrivals",
-            "feature_subheading": "Discover the latest drop",
-            "feature_button_label": "Shop Now",
-            "feature_button_url": "",
-            "column_1_heading": "",
-            "column_1_menu": "",
-            "column_2_heading": "",
-            "column_2_menu": "",
-            "column_3_heading": "",
-            "column_3_menu": ""
+            "grid_heading": "",
+            "card_1_title": "",
+            "card_1_url": "",
+            "card_2_title": "",
+            "card_2_url": "",
+            "card_3_title": "",
+            "card_3_url": "",
+            "card_4_title": "",
+            "card_4_url": "",
+            "bottom_menu": ""
           }
         }
       },
       "block_order": [
-        "mega_menu_editorial_xeDpDq"
+        "mega_menu_grid_gQJ7jp"
       ],
       "settings": {
         "section_color_scheme": "scheme_1",
