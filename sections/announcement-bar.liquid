@@ -1,7 +1,7 @@
 {{ 'announcement-bar.css' | asset_url | stylesheet_tag }}
 
-<div class="v-annoucment" data-v-annoucment data-speed="{{ section.settings.autoplay_speed | times: 1000 }}">
-  <div class="v-annoucment__inner page-width">
+<div class="v-annoucment section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}" id="v-annoucment-{{ section.id }}" data-v-annoucment data-speed="{{ section.settings.autoplay_speed | times: 1000 }}">
+  <div class="v-annoucment__inner container-width">
 
     {%- comment -%} LEFT: SOCIAL ICONS (reference: footer settings) {%- endcomment -%}
     <div class="v-annoucment__col v-annoucment__col--left">
@@ -107,20 +107,25 @@
   </div>
 </div>
 
-<style>
-  .v-annoucment {
-    background-color: {{ section.settings.bg_color }};
-    color: {{ section.settings.text_color }};
-  }
-</style>
-
-
 <script src="{{ 'announcement-bar.js' | asset_url }}" defer></script>
+
 {% schema %}
 {
   "name": "t:sections.announcement-bar.name",
   "class": "section-announcement-bar",
   "settings": [
+    {
+      "type": "select",
+      "id": "section_color_scheme",
+      "label": "t:labels.color_scheme",
+      "default": "scheme_1",
+      "options": [
+        { "value": "scheme_1", "label": "t:options.color_scheme.scheme_1" },
+        { "value": "scheme_2", "label": "t:options.color_scheme.scheme_2" },
+        { "value": "scheme_3", "label": "t:options.color_scheme.scheme_3" },
+        { "value": "scheme_4", "label": "t:options.color_scheme.scheme_4" }
+      ]
+    },
     {
       "type": "checkbox",
       "id": "show_social_icons",
@@ -142,22 +147,6 @@
       "step": 1,
       "unit": "s",
       "default": 4
-    },
-    {
-      "type": "header",
-      "content": "t:sections.announcement-bar.settings.header_colors.content"
-    },
-    {
-      "type": "color",
-      "id": "bg_color",
-      "label": "t:sections.announcement-bar.settings.bg_color.label",
-      "default": "#111111"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "t:sections.announcement-bar.settings.text_color.label",
-      "default": "#ffffff"
     }
   ],
   "blocks": [
