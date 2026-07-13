@@ -61,18 +61,9 @@
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0
       }
-    },
-    "custom_liquid_eUTyj9": {
-      "type": "custom-liquid",
-      "name": "Custom liquid",
-      "settings": {
-        "custom_liquid": "{% if localization.available_countries.size > 1 or localization.available_languages.size > 1 %}\n\n  {% form 'localization', id: 'LocalizationForm', class: 'localization-form' %}\n\n    {% if localization.available_countries.size > 1 %}\n      <div class=\"localization-item\">\n        <label for=\"CountrySelector\">Country / Currency</label>\n\n        <select\n          id=\"CountrySelector\"\n          name=\"country_code\"\n          onchange=\"this.form.submit()\"\n        >\n          {% for country in localization.available_countries %}\n            <option\n              value=\"{{ country.iso_code }}\"\n              {% if country.iso_code == localization.country.iso_code %}\n                selected\n              {% endif %}\n            >\n              {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})\n            </option>\n          {% endfor %}\n        </select>\n      </div>\n    {% endif %}\n\n    {% if localization.available_languages.size > 1 %}\n      <div class=\"localization-item\">\n        <label for=\"LanguageSelector\">Language</label>\n\n        <select\n          id=\"LanguageSelector\"\n          name=\"locale_code\"\n          onchange=\"this.form.submit()\"\n        >\n          {% for language in localization.available_languages %}\n            <option\n              value=\"{{ language.iso_code }}\"\n              {% if language.iso_code == localization.language.iso_code %}\n                selected\n              {% endif %}\n            >\n              {{ language.endonym_name }}\n            </option>\n          {% endfor %}\n        </select>\n      </div>\n    {% endif %}\n\n  {% endform %}\n\n{% endif %}",
-        "custom_class": ""
-      }
     }
   },
   "order": [
-    "multiple_image_text_k7WWD4",
-    "custom_liquid_eUTyj9"
+    "multiple_image_text_k7WWD4"
   ]
 }
