@@ -42,25 +42,25 @@
     "header": {
       "type": "header",
       "blocks": {
-        "mega_menu_grid_c39za8": {
-          "type": "mega_menu_grid",
+        "mega_menu_editorial_xeDpDq": {
+          "type": "mega_menu_editorial",
           "settings": {
             "menu_item_name": "Catalog",
-            "grid_heading": "as",
-            "card_1_title": "ad",
-            "card_1_url": "",
-            "card_2_title": "ad",
-            "card_2_url": "",
-            "card_3_title": "adda",
-            "card_3_url": "",
-            "card_4_title": "",
-            "card_4_url": "",
-            "bottom_menu": ""
+            "feature_heading": "New Arrivals",
+            "feature_subheading": "Discover the latest drop",
+            "feature_button_label": "Shop Now",
+            "feature_button_url": "",
+            "column_1_heading": "",
+            "column_1_menu": "",
+            "column_2_heading": "",
+            "column_2_menu": "",
+            "column_3_heading": "",
+            "column_3_menu": ""
           }
         }
       },
       "block_order": [
-        "mega_menu_grid_c39za8"
+        "mega_menu_editorial_xeDpDq"
       ],
       "settings": {
         "section_color_scheme": "scheme_1",
