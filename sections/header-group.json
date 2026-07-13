@@ -41,6 +41,27 @@
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "mega_menu_grid_c39za8": {
+          "type": "mega_menu_grid",
+          "settings": {
+            "menu_item_name": "Catalog",
+            "grid_heading": "",
+            "card_1_title": "",
+            "card_1_url": "",
+            "card_2_title": "",
+            "card_2_url": "",
+            "card_3_title": "",
+            "card_3_url": "",
+            "card_4_title": "",
+            "card_4_url": "",
+            "bottom_menu": ""
+          }
+        }
+      },
+      "block_order": [
+        "mega_menu_grid_c39za8"
+      ],
       "settings": {
         "section_color_scheme": "scheme_1",
         "logo": "shopify://shop_images/download.webp",
