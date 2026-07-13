@@ -1,6 +1,6 @@
 {{ 'header.css' | asset_url | stylesheet_tag }}
 
-<div class="section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }} v-header"
+<div class="section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }} v-header{% if section.settings.enable_drawer_desktop %} header--drawer-desktop{% endif %}"
   id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data-header-sticky="true" {% endif %}>
   <header
     class="header{% if section.settings.header_width_type == 'full_width' %} header--full-width{% else %} container-width{% endif %}">
@@ -132,7 +132,7 @@
               {%- endfor -%}
             </select>
 
-           
+
           </div>
           {%- endif -%}
 
@@ -147,7 +147,7 @@
               {%- endfor -%}
             </select>
 
-           
+
           </div>
           {%- endif -%}
 
@@ -269,6 +269,13 @@
 "id": "header_sticky",
 "label": "t:labels.header_sticky",
 "default": true
+},
+{
+"type": "checkbox",
+"id": "enable_drawer_desktop",
+"label": "t:labels.enable_drawer_desktop",
+"info": "t:labels.enable_drawer_desktop_info",
+"default": false
 },
 {
 "type": "link_list",

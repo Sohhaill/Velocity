@@ -607,3 +607,12 @@ select#DrawerCountrySelector {
     width: var(--header-logo-width-mobile);
   }
 }
+
+/* Enable drawer on desktop: hamburger shows, desktop nav hides — regardless of viewport width */
+.header--drawer-desktop .header__nav {
+  display: none;
+}
+
+.header--drawer-desktop .header__toggle {
+  display: inline-flex;
+}

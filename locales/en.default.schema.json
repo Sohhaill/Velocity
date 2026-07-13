@@ -53,7 +53,7 @@
     "typography": "Typography"
   },
   "labels": {
-      "button_corner_radius": "Button corner radius",
+    "button_corner_radius": "Button corner radius",
     "input_corner_radius": "Input corner radius",
     "alignment": "Alignment",
     "background": "Background",
@@ -98,6 +98,8 @@
     "header_width_desktop": "Header width (desktop)",
     "header_width_mobile": "Header width (mobile)",
     "header_sticky": "Sticky header",
+    "enable_drawer_desktop": "Enable drawer menu on desktop",
+    "enable_drawer_desktop_info": "When enabled, the hamburger icon replaces the desktop navigation menu on all screen sizes.",
     "wishlist_icon": "Wishlist icon",
     "account_icon": "Account icon",
     "search_icon": "Search icon",
@@ -115,7 +117,7 @@
   "headers": {
     "desktop_padding": "Desktop padding",
     "mobile_padding": "Mobile padding",
-     "border_radius": "Border radius"
+    "border_radius": "Border radius"
   },
   "options": {
     "alignment": {
@@ -160,23 +162,23 @@
     "input_background": "Input background"
   },
   "sections": {
-  "announcement-bar": {
-    "name": "Announcement bar",
-    "settings": {
-      "show_social_icons": { "label": "Show social media icons" },
-      "enable_localization": { "label": "Show country/language selector" },
-      "autoplay_speed": { "label": "Change text every" },
-      "header_colors": { "content": "Colors" },
-      "bg_color": { "label": "Background color" },
-      "text_color": { "label": "Text color" }
-    },
-    "blocks": {
-      "text": {
-        "name": "Text",
-        "settings": { "text": { "label": "Text" } }
-      }
-    },
-    "presets": { "name": "Announcement bar" }
+    "announcement-bar": {
+      "name": "Announcement bar",
+      "settings": {
+        "show_social_icons": { "label": "Show social media icons" },
+        "enable_localization": { "label": "Show country/language selector" },
+        "autoplay_speed": { "label": "Change text every" },
+        "header_colors": { "content": "Colors" },
+        "bg_color": { "label": "Background color" },
+        "text_color": { "label": "Text color" }
+      },
+      "blocks": {
+        "text": {
+          "name": "Text",
+          "settings": { "text": { "label": "Text" } }
+        }
+      },
+      "presets": { "name": "Announcement bar" }
+    }
   }
-}
 }
