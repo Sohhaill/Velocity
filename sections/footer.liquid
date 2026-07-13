@@ -99,7 +99,9 @@
       {%- if section.settings.show_currency_selector -%}
       {%- if localization.available_countries.size > 1 -%}
       <div class="footer__currency-row">
-        {% form 'localization', id: 'FooterCurrencyForm', class: 'footer__currency-form' %}
+        {% form 'localization', id: 'FooterLocalizationForm', class: 'footer__localization-form' %}
+
+        {%- if localization.available_countries.size > 1 -%}
         <div class="footer__currency-item">
           <select id="FooterCountrySelector" name="country_code" aria-label="Country / Currency"
             onchange="this.form.submit()">
@@ -110,12 +112,34 @@
             </option>
             {%- endfor -%}
           </select>
+
           <svg class="footer__currency-caret" width="10" height="6" viewBox="0 0 10 6" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
               stroke-linejoin="round" />
           </svg>
         </div>
+        {%- endif -%}
+
+        {%- if localization.available_languages.size > 1 -%}
+        <div class="footer__language-item">
+          <select id="FooterLanguageSelector" name="locale_code" aria-label="Language" onchange="this.form.submit()">
+            {%- for language in localization.available_languages -%}
+            <option value="{{ language.iso_code }}" {% if language.iso_code==localization.language.iso_code %}selected{%
+              endif %}>
+              {{ language.endonym_name }}
+            </option>
+            {%- endfor -%}
+          </select>
+
+          <svg class="footer__language-caret" width="10" height="6" viewBox="0 0 10 6" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+        {%- endif -%}
+
         {% endform %}
       </div>
       {%- endif -%}
@@ -130,9 +154,9 @@
         {% endif %}
 
       </div>
-        {% if section.settings.show_payment_icons %}
+      {% if section.settings.show_payment_icons %}
       <div class="footer__bottom-right">
-      
+
         {% if settings.footer_payment_icon_1 != blank or settings.footer_payment_icon_2 != blank or
         settings.footer_payment_icon_3 != blank or settings.footer_payment_icon_4 != blank or
         settings.footer_payment_icon_5 != blank or settings.footer_payment_icon_6 != blank or
