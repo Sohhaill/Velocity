@@ -17,6 +17,10 @@
       </a>
       {% endif %}
 
+      {% if section.settings.footer_text != blank %}
+      <p class="footer__text">{{ section.settings.footer_text }}</p>
+      {% endif %}
+
       <div class="footer__socials">
 
         {% if settings.footer_facebook_url != blank %}
@@ -88,6 +92,7 @@
     </div>
   </div>
 
+  {%- if section.settings.show_footer_bottom -%}
   <div class="footer__bottom">
 
     <div class="container-width bottom-inner">
@@ -116,7 +121,7 @@
       {%- endif -%}
       {%- endif -%}
       <div class="footer__bottom-left">
-        {% if section.settings.bottom_menu != blank %}
+        {% if section.settings.show_bottom_menu and section.settings.bottom_menu != blank %}
         <ul class="footer__bottom-menu">
           {% for link in linklists[section.settings.bottom_menu].links %}
           <li><a href="{{ link.url }}">{{ link.title }}</a></li>
@@ -126,6 +131,7 @@
 
       </div>
       <div class="footer__bottom-right">
+        {% if section.settings.show_payment_icons %}
         {% if settings.footer_payment_icon_1 != blank or settings.footer_payment_icon_2 != blank or
         settings.footer_payment_icon_3 != blank or settings.footer_payment_icon_4 != blank or
         settings.footer_payment_icon_5 != blank or settings.footer_payment_icon_6 != blank or
@@ -149,9 +155,12 @@
             alt="Payment icon 8">{% endif %}
         </div>
         {% endif %}
+        {% endif %}
       </div>
     </div>
   </div>
+  {%- endif -%}
+
 </footer>
 
 <script>
@@ -224,6 +233,46 @@
 "step": 10,
 "unit": "px",
 "default": 160
+},
+{
+"type": "link_list",
+"id": "bottom_menu",
+"label": "Bottom menu"
+},
+{
+"type": "checkbox",
+"id": "show_currency_selector",
+"label": "Show currency/country selector",
+"default": true
+},
+{
+"type": "textarea",
+"id": "footer_text",
+"label": "t:labels.footer_text",
+"default": "We're here to help you find exactly what you're looking for, with quality you can trust and support that
+goes the extra mile."
+},
+{
+"type": "header",
+"content": "t:headers.footer_bottom"
+},
+{
+"type": "checkbox",
+"id": "show_footer_bottom",
+"label": "t:labels.show_footer_bottom",
+"default": true
+},
+{
+"type": "checkbox",
+"id": "show_bottom_menu",
+"label": "t:labels.show_bottom_menu",
+"default": true
+},
+{
+"type": "checkbox",
+"id": "show_payment_icons",
+"label": "t:labels.show_payment_icons",
+"default": true
 },
 {
 "type": "link_list",

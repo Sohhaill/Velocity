@@ -301,7 +301,10 @@ ul.footer__menu-list {
   flex-wrap: wrap;
   gap: 0 1.25rem;
 }
-
+ul.footer__bottom-menu a {
+    text-decoration: underline;
+    font-size: .9em;
+}
 .footer__bottom-menu li + li {
   margin-top: 0;
 }
