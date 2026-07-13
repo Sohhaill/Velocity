@@ -288,7 +288,7 @@ ul.footer__menu-list {
   height: 23px;
   width: auto;
   display: block;
-  opacity: 1;
+  cursor: pointer;
   transition: transform 0.2s ease;
 }
 
