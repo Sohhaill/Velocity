@@ -120,6 +120,10 @@
 .header__menu-item:hover {
   transform: translateX(5px);
 }
+.v-annoucment__localization .v-annoucment__loc-item:nth-child(2) {
+  width: 100%;
+}
+
 .header__menu-item:hover a.header__menu-link {
   opacity: 1;
 }
