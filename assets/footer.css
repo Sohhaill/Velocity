@@ -235,7 +235,6 @@ ul.footer__menu-list {
 .footer__currency-row {
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 1.25rem;
 }
 
 .footer__currency-item {
