@@ -252,7 +252,6 @@ ul.footer__menu-list {
   color: var(--input-foreground);
   border: 1px solid;
   width: 160px;
-    color-mix(in srgb, var(--button-background) 24%, transparent);
   border-radius: 6px;
   cursor: pointer;
   padding: 0.6rem 2rem 0.6rem 1rem;
