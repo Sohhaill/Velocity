@@ -1,8 +1,8 @@
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const lenis = new Lenis({
-    duration: 1.4,
+    duration: 1,
     smoothWheel: true,
-    wheelMultiplier: 0.7
+    wheelMultiplier: 0.4
   });
 
   function raf(time) {

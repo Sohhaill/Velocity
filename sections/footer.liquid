@@ -136,42 +136,42 @@
   </div>
 
   <div class="footer__bottom">
-    <div class="container-width bottom-inner" >
-    <div class="footer__bottom-left">
-      {% if section.settings.bottom_menu != blank %}
-      <ul class="footer__bottom-menu">
-        {% for link in linklists[section.settings.bottom_menu].links %}
-        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-        {% endfor %}
-      </ul>
-      {% endif %}
+    <div class="container-width bottom-inner">
+      <div class="footer__bottom-left">
+        {% if section.settings.bottom_menu != blank %}
+        <ul class="footer__bottom-menu">
+          {% for link in linklists[section.settings.bottom_menu].links %}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
 
-    </div>
-    <div class="footer__bottom-right">
-      {% if settings.footer_payment_icon_1 != blank or settings.footer_payment_icon_2 != blank or
-      settings.footer_payment_icon_3 != blank or settings.footer_payment_icon_4 != blank or
-      settings.footer_payment_icon_5 != blank or settings.footer_payment_icon_6 != blank or
-      settings.footer_payment_icon_7 != blank or settings.footer_payment_icon_8 != blank %}
-      <div class="footer__payment">
-        {% if settings.footer_payment_icon_1 != blank %}<img src="{{ settings.footer_payment_icon_1 | image_url }}"
-          alt="Payment icon 1">{% endif %}
-        {% if settings.footer_payment_icon_2 != blank %}<img src="{{ settings.footer_payment_icon_2 | image_url }}"
-          alt="Payment icon 2">{% endif %}
-        {% if settings.footer_payment_icon_3 != blank %}<img src="{{ settings.footer_payment_icon_3 | image_url }}"
-          alt="Payment icon 3">{% endif %}
-        {% if settings.footer_payment_icon_4 != blank %}<img src="{{ settings.footer_payment_icon_4 | image_url }}"
-          alt="Payment icon 4">{% endif %}
-        {% if settings.footer_payment_icon_5 != blank %}<img src="{{ settings.footer_payment_icon_5 | image_url }}"
-          alt="Payment icon 5">{% endif %}
-        {% if settings.footer_payment_icon_6 != blank %}<img src="{{ settings.footer_payment_icon_6 | image_url }}"
-          alt="Payment icon 6">{% endif %}
-        {% if settings.footer_payment_icon_7 != blank %}<img src="{{ settings.footer_payment_icon_7 | image_url }}"
-          alt="Payment icon 7">{% endif %}
-        {% if settings.footer_payment_icon_8 != blank %}<img src="{{ settings.footer_payment_icon_8 | image_url }}"
-          alt="Payment icon 8">{% endif %}
       </div>
-      {% endif %}
-    </div>
+      <div class="footer__bottom-right">
+        {% if settings.footer_payment_icon_1 != blank or settings.footer_payment_icon_2 != blank or
+        settings.footer_payment_icon_3 != blank or settings.footer_payment_icon_4 != blank or
+        settings.footer_payment_icon_5 != blank or settings.footer_payment_icon_6 != blank or
+        settings.footer_payment_icon_7 != blank or settings.footer_payment_icon_8 != blank %}
+        <div class="footer__payment">
+          {% if settings.footer_payment_icon_1 != blank %}<img src="{{ settings.footer_payment_icon_1 | image_url }}"
+            alt="Payment icon 1">{% endif %}
+          {% if settings.footer_payment_icon_2 != blank %}<img src="{{ settings.footer_payment_icon_2 | image_url }}"
+            alt="Payment icon 2">{% endif %}
+          {% if settings.footer_payment_icon_3 != blank %}<img src="{{ settings.footer_payment_icon_3 | image_url }}"
+            alt="Payment icon 3">{% endif %}
+          {% if settings.footer_payment_icon_4 != blank %}<img src="{{ settings.footer_payment_icon_4 | image_url }}"
+            alt="Payment icon 4">{% endif %}
+          {% if settings.footer_payment_icon_5 != blank %}<img src="{{ settings.footer_payment_icon_5 | image_url }}"
+            alt="Payment icon 5">{% endif %}
+          {% if settings.footer_payment_icon_6 != blank %}<img src="{{ settings.footer_payment_icon_6 | image_url }}"
+            alt="Payment icon 6">{% endif %}
+          {% if settings.footer_payment_icon_7 != blank %}<img src="{{ settings.footer_payment_icon_7 | image_url }}"
+            alt="Payment icon 7">{% endif %}
+          {% if settings.footer_payment_icon_8 != blank %}<img src="{{ settings.footer_payment_icon_8 | image_url }}"
+            alt="Payment icon 8">{% endif %}
+        </div>
+        {% endif %}
+      </div>
     </div>
   </div>
 </footer>
@@ -420,7 +420,7 @@ transform: translateY(-1px);
 .footer__bottom {
 margin-top: 2.5rem;
 padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+border-top: 1px solid rgba(255, 255, 255, 0.1);
 
 
 }
