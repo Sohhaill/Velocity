@@ -159,8 +159,8 @@ select,
     display: none !important;
   }
   .header svg {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
   }
   body {
     font-size: var(--font-size-mobile-base);
