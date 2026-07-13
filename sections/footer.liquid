@@ -1,3 +1,5 @@
+{{ 'footer.css' | asset_url | stylesheet_tag }}
+
 {% assign footer_width_class = 'container-width' %}
 {% if section.settings.footer_width_type == 'full_width' %}
 {% assign footer_width_class = 'full-width' %}
@@ -136,6 +138,30 @@
   </div>
 
   <div class="footer__bottom">
+    {%- if section.settings.show_currency_selector -%}
+    {%- if localization.available_countries.size > 1 -%}
+    <div class="container-width footer__currency-row">
+      {% form 'localization', id: 'FooterCurrencyForm', class: 'footer__currency-form' %}
+      <div class="footer__currency-item">
+        <select id="FooterCountrySelector" name="country_code" aria-label="Country / Currency"
+          onchange="this.form.submit()">
+          {%- for country in localization.available_countries -%}
+          <option value="{{ country.iso_code }}" {% if country.iso_code==localization.country.iso_code %}selected{%
+            endif %}>
+            {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
+          </option>
+          {%- endfor -%}
+        </select>
+        <svg class="footer__currency-caret" width="10" height="6" viewBox="0 0 10 6" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </div>
+      {% endform %}
+    </div>
+    {%- endif -%}
+    {%- endif -%}
     <div class="container-width bottom-inner">
       <div class="footer__bottom-left">
         {% if section.settings.bottom_menu != blank %}
@@ -176,363 +202,25 @@
   </div>
 </footer>
 
-{% javascript %}
-document.addEventListener('DOMContentLoaded', () => {
-const desktopQuery = window.matchMedia('(min-width: 861px)');
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const desktopQuery = window.matchMedia('(min-width: 861px)');
 
-document.querySelectorAll('.footer__block').forEach((block) => {
-const toggle = block.querySelector('[data-footer-menu-toggle]');
-if (!toggle) return;
+    document.querySelectorAll('.footer__block').forEach((block) => {
+      const toggle = block.querySelector('[data-footer-menu-toggle]');
+      if (!toggle) return;
 
-toggle.addEventListener('click', () => {
-if (desktopQuery.matches) return;
+      toggle.addEventListener('click', () => {
+        if (desktopQuery.matches) return;
 
-const isOpen = block.classList.toggle('footer__block--open');
-toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-});
-});
-});
-{% endjavascript %}
-
-{% stylesheet %}
-.footer {
-padding: 3rem 0 1.5rem;
-position: relative;
-}
-
-.footer__top,
-.footer__bottom {
-display: flex;
-gap: 4rem;
-}
-.bottom-inner{
-display: flex;
-justify-content: space-between;
-}
-.footer__top {
-padding-bottom: 2.5rem;
-}
-
-.footer__brand-column {
-flex: 0 0 25%;
-}
-.footer__block-heading:hover{
-background: unset !important;
-color: unset !important;
-}
-.footer__logo {
-display: block;
-height: auto;
-max-width: 100%;
-width: min(var(--footer-logo-width-desktop), 100%);
-}
-
-.footer__socials {
-display: flex;
-flex-wrap: wrap;
-gap: 0.75rem;
-margin-top: 1.25rem;
-}
-
-.footer__social-button {
-display: inline-flex;
-align-items: center;
-justify-content: center;
-width: 2.5rem;
-height: 2.5rem;
-border-radius: 999px;
-background: var(--button-background);
-color: var(--button-foreground);
-transition: background-color 0.25s ease, transform 0.25s ease;
-}
-
-.footer__social-button:hover,
-.footer__social-button:focus-visible {
-background: var(--button-hover-background);
-color: var(--button-hover-foreground);
-transform: translateY(-5px);
-}
-
-.footer__social-button svg {
-width: 1.5rem;
-height: 1.5rem;
-fill: currentColor;
-transition: fill 0.25s ease;
-}
-
-.footer__blocks {
-display: flex;
-flex-wrap: wrap;
-flex: 1;
-gap: 1.5rem 2rem;
-}
-
-.footer__block {
-box-sizing: border-box;
-max-width: 100%;
-min-width: 180px;
-}
-
-.footer__block--20 {
-flex: 1 1 calc(20% - 1.6rem);
-}
-
-.footer__block--25 {
-flex: 1 1 calc(25% - 1.5rem);
-}
-
-.footer__block--33 {
-flex: 1 1 calc(33.333% - 1.34rem);
-}
-
-.footer__block--50 {
-flex: 1 1 calc(50% - 1rem);
-}
-
-.footer__block--100 {
-flex: 1 1 100%;
-}
-ul.footer__menu-list {
-margin-top: 1em;
-}
-.footer__block-heading {
-margin: 0;
-position: relative;
-padding: 0 2rem 0.4rem 0;
-width: 100%;
-border: 0;
-background: transparent;
-color: inherit;
-text-align: left;
-cursor: pointer;
-}
-
-.footer__block-heading::after {
-content: "";
-position: absolute;
-left: 0;
-bottom: 0;
-width: 2rem;
-height: 2px;
-background: var(--button-background);
-
-}
-
-.footer__block-icon {
-position: absolute;
-right: 0;
-top: 0.15rem;
-width: 1rem;
-height: 1rem;
-transition: transform 0.25s ease;
-}
-
-.footer__block-icon::before,
-.footer__block-icon::after {
-content: "";
-position: absolute;
-left: 50%;
-top: 50%;
-background: currentColor;
-transform: translate(-50%, -50%);
-}
-
-.footer__block-icon::before {
-width: 1rem;
-height: 2px;
-}
-
-.footer__block-icon::after {
-width: 2px;
-height: 1rem;
-}
-
-.footer__menu-list,
-.footer__bottom-menu {
-list-style: none;
-margin: 0;
-padding: 0;
-}
-
-.footer__menu-list {
-overflow: hidden;
-max-height: 0;
-transition: max-height 0.3s ease;
-}
-
-.footer__menu-list li + li,
-.footer__bottom-menu li + li {
-margin-top: 0.85rem;
-}
-
-.footer__menu-list a,
-.footer__bottom-menu a {
-color: inherit;
-text-decoration: none;
-display: inline-block;
-opacity: 0.8;
-transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.footer__menu-list a:hover,
-.footer__menu-list a:focus-visible,
-.footer__bottom-menu a:hover,
-.footer__bottom-menu a:focus-visible {
-opacity: 1;
-transform: translateX(5px);
-}
-
-.footer__subscribe {
-display: flex;
-flex-wrap: wrap;
-gap: 0.75rem;
-}
-
-.footer__subscribe input {
-flex: 1 1 auto;
-min-width: 160px;
-padding: 0.75rem 1rem;
-border-radius: 6px;
-border: 1px solid color-mix(in srgb, var(--button-background) 24%, transparent);
-background: var(--input-background);
-color: inherit;
-box-sizing: border-box;
-}
-
-.footer__subscribe button {
-flex: 0 0 auto;
-padding: 0.75rem 1.5rem;
-border-radius: 6px;
-border: 1px solid transparent;
-background: var(--button-background);
-color: var(--button-foreground);
-cursor: pointer;
-transition: background-color 0.25s ease, transform 0.25s ease;
-}
-
-.footer__subscribe button:hover,
-.footer__subscribe button:focus-visible {
-background: var(--button-hover-background);
-color: var(--button-hover-foreground);
-transform: translateY(-1px);
-}
-
-.footer__bottom {
-margin-top: 2.5rem;
-padding-top: 1.5rem;
-border-top: 1px solid rgba(255, 255, 255, 0.1);
+        const isOpen = block.classList.toggle('footer__block--open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
+  });
+</script>
 
 
-}
-
-.footer__payment {
-display: flex;
-align-items: center;
-gap: 0.4rem;
-flex-wrap: wrap;
-}
-
-.footer__payment img {
-height: 20px;
-width: auto;
-display: block;
-opacity: 1;
-transition: opacity 0.2s ease;
-}
-
-.footer__payment img:hover {
-opacity: 1;
-}
-
-.footer__bottom-menu {
-display: flex;
-flex-wrap: wrap;
-gap: 0 1.25rem;
-}
-
-.footer__bottom-menu li + li {
-margin-top: 0;
-}
-
-@media (min-width: 861px) {
-.footer__block-heading {
-pointer-events: none;
-}
-
-.footer__block-icon {
-display: none;
-}
-
-.footer__menu-list {
-max-height: none;
-overflow: visible;
-}
-}
-
-@media (max-width: 860px) {
-.footer__top,
-.bottom-inner,
-.footer__blocks {
-flex-direction: column;
-gap: 1rem;
-}
-
-.footer__block--20,
-.footer__block--25,
-.footer__block--33,
-.footer__block--50,
-.footer__block--100,
-.footer__brand-column {
-flex: 1 1 auto;
-}
-
-.footer__brand-column {
-text-align: center;
-}
-
-.footer__logo {
-width: min(var(--footer-logo-width-mobile), 100%);
-margin: auto;
-}
-
-.footer__block-heading {
-padding-bottom: 0;
-padding-right: 2rem;
-pointer-events: auto;
-}
-
-.footer__block-heading::after {
-display: none;
-}
-
-.footer__block--open .footer__menu-list {
-max-height: 1000px;
-}
-
-.footer__block--open .footer__block-icon {
-transform: rotate(45deg);
-}
-
-.footer__socials {
-justify-content: center;
-}
-
-.footer__bottom {
-flex-direction: column;
-text-align: center;
-gap: 1.25rem;
-margin: unset;
-}
-
-.footer__subscribe {
-flex-direction: column;
-}
-
-.footer__subscribe button {
-width: 100%;
-}
-}
-{% endstylesheet %}
 
 {% schema %}
 {
@@ -589,6 +277,12 @@ width: 100%;
 "type": "link_list",
 "id": "bottom_menu",
 "label": "Bottom menu"
+},
+{
+"type": "checkbox",
+"id": "show_currency_selector",
+"label": "Show currency/country selector",
+"default": true
 }
 ],
 "blocks": [
