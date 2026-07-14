@@ -1,4 +1,3 @@
-<script src="https://unpkg.com/lenis@1.3.25/dist/lenis.min.js"></script> 
 
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const lenis = new Lenis({
