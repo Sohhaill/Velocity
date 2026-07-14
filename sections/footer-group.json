@@ -19,7 +19,7 @@
           "settings": {
             "heading": "Main",
             "open_by_default": true,
-            "width": "25",
+            "width": "20",
             "menu": "main-menu"
           }
         },
@@ -28,7 +28,7 @@
           "settings": {
             "heading": "Main",
             "open_by_default": false,
-            "width": "25",
+            "width": "20",
             "menu": "main-menu"
           }
         },
@@ -36,7 +36,7 @@
           "type": "subscribe",
           "settings": {
             "heading": "Subscribe",
-            "width": "33",
+            "width": "20",
             "placeholder": "Enter your email",
             "button_label": "Subscribe"
           }
@@ -50,7 +50,7 @@
       "settings": {
         "section_color_scheme": "scheme_3",
         "logo": "shopify://shop_images/download.webp",
-        "footer_width_type": "full_width",
+        "footer_width_type": "container_width",
         "logo_width_desktop": 220,
         "logo_width_mobile": 200,
         "bottom_menu": "main-menu",
