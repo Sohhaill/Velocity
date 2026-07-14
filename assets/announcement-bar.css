@@ -138,15 +138,6 @@
   color: currentColor;
 }
 
-.v-annoucment__loc-item:not(:last-child)::after {
-  content: "";
-  display: block;
-  width: 1px;
-  height: 12px;
-  background: currentColor;
-  opacity: 0.3;
-  margin-left: 10px;
-}
 
 @media screen and (max-width: 749px) {
   .v-annoucment__inner {
