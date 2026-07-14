@@ -111,6 +111,7 @@ ul.footer__menu-list {
   color: inherit;
   text-align: left;
   cursor: pointer;
+  font-weight: 600;
 }
 
 .footer__block-heading::after {
@@ -176,6 +177,7 @@ ul.footer__menu-list {
   text-decoration: none;
   display: inline-block;
   opacity: 0.8;
+  font-weight: 500;
   transition:
     opacity 0.2s ease,
     transform 0.2s ease;
@@ -229,8 +231,8 @@ ul.footer__menu-list {
 
 .footer__bottom {
   margin-top: 2.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2.5rem;
+  border-top: 1px var(--color-foreground);
 }
 
 .footer__currency-row {
@@ -238,9 +240,9 @@ ul.footer__menu-list {
   justify-content: flex-start;
 }
 form#FooterLocalizationForm {
-    display: flex;
-    align-items: center;
-    gap: .5em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
 }
 .footer__currency-item {
   position: relative;
@@ -248,17 +250,18 @@ form#FooterLocalizationForm {
   align-items: center;
 }
 
-.footer__currency-item select, select#FooterLanguageSelector {
+.footer__currency-item select,
+select#FooterLanguageSelector {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
- 
+
   cursor: pointer;
   padding: 0.4rem 2rem 0.4rem 0.4rem;
   transition: border-color 0.25s ease;
 }
-.footer__currency-item select{
- width: 160px;
+.footer__currency-item select {
+  width: 160px;
 }
 .footer__currency-item select:hover,
 .footer__currency-item select:focus-visible {
