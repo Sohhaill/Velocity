@@ -1,0 +1,168 @@
+
+
+{%- style -%}
+.text-logo-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: {{ section.settings.padding_top_mobile | default: 20 }}px 0 {{ section.settings.padding_bottom_mobile | default: 35 }}px;
+}
+
+.text-logo-section__title {
+  margin: 0;
+  text-align: center;
+  font-family: {{ section.settings.font_family.family }}, sans-serif;
+  font-weight: {{ section.settings.font_family.weight | default: 700 }};
+  font-size: clamp(30px, 11vw, {{ section.settings.font_size_desktop | default: 120 }}px);
+  line-height: 0.82;
+  letter-spacing: -0.05em;
+  user-select: none;
+  background: linear-gradient(
+    to bottom,
+    #f8f8f8 0%,
+    #efefef 20%,
+    #c8c8c8 45%,
+    #8f8f8f 70%,
+    #202020 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-logo-section::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--color-background) 0%, transparent) 0%,
+    color-mix(in srgb, var(--color-background) 15%, transparent) 30%,
+    color-mix(in srgb, var(--color-background) 45%, transparent) 60%,
+    color-mix(in srgb, var(--color-background) 80%, transparent) 85%,
+    var(--color-background) 100%
+  );
+}
+
+@media (min-width: 768px) {
+  .text-logo-section {
+    padding: {{ section.settings.padding_top_desktop | default: 10 }}px 0 {{ section.settings.padding_bottom_desktop | default: 35 }}px;
+  }
+
+  .text-logo-section__title {
+    font-size: clamp(120px, 20vw, {{ section.settings.font_size_desktop | default: 120 }}px);
+  }
+
+  .text-logo-section::after {
+    height: 140px;
+  }
+}
+{%- endstyle -%}
+
+{{ section.settings.font_family | font_face }}
+
+<section class="text-logo-section section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}">
+  <h1 class="text-logo-section__title">{{ section.settings.text | default: 'Crystal Clean' }}</h1>
+</section>
+
+{% schema %}
+{
+  "name": "Text Logo",
+  "tag": "section",
+  "class": "text-logo-wrapper",
+  "settings": [
+    {
+      "type": "select",
+      "id": "section_color_scheme",
+      "label": "t:labels.color_scheme",
+      "default": "scheme_1",
+      "options": [
+        { "value": "scheme_1", "label": "t:options.color_scheme.scheme_1" },
+        { "value": "scheme_2", "label": "t:options.color_scheme.scheme_2" },
+        { "value": "scheme_3", "label": "t:options.color_scheme.scheme_3" },
+        { "value": "scheme_4", "label": "t:options.color_scheme.scheme_4" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Crystal Clean"
+    },
+    {
+      "type": "font_picker",
+      "id": "font_family",
+      "label": "Font family",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "font_size_desktop",
+      "label": "Max font size (desktop)",
+      "min": 60,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "header",
+      "content": "t:headers.desktop_padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "t:labels.padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "t:labels.padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 35
+    },
+    {
+      "type": "header",
+      "content": "t:headers.mobile_padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "t:labels.padding_top",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "t:labels.padding_bottom",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 35
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text Logo"
+    }
+  ]
+}
+{% endschema %}
