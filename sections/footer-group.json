@@ -73,10 +73,13 @@
         "font_size_desktop": 200,
         "text_color_type": "solid",
         "text_color": "#f8f8f8",
+        "gradient_color_start": "#f8f8f8",
+        "gradient_color_middle": "#c8c8c8",
+        "gradient_color_end": "#202020",
         "padding_top_desktop": 50,
         "padding_bottom_desktop": 35,
         "padding_top_mobile": 20,
-        "padding_bottom_mobile": 35
+        "padding_bottom_mobile": 20
       }
     }
   },
