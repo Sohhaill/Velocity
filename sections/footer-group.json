@@ -19,7 +19,7 @@
           "settings": {
             "heading": "Main",
             "open_by_default": true,
-            "width": "25",
+            "width": "20",
             "menu": "main-menu"
           }
         },
@@ -28,7 +28,7 @@
           "settings": {
             "heading": "Main",
             "open_by_default": false,
-            "width": "25",
+            "width": "20",
             "menu": "main-menu"
           }
         },
@@ -37,7 +37,7 @@
           "settings": {
             "heading": "",
             "open_by_default": false,
-            "width": "33",
+            "width": "20",
             "menu": "main-menu"
           }
         },
@@ -45,7 +45,7 @@
           "type": "subscribe",
           "settings": {
             "heading": "Subscribe",
-            "width": "33",
+            "width": "20",
             "placeholder": "Enter your email",
             "button_label": "Subscribe"
           }
