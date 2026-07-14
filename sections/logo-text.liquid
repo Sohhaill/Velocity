@@ -14,7 +14,6 @@ font-family: {{ section.settings.font_family.family }}, sans-serif;
 font-weight: {{ section.settings.font_family.weight | default: 700 }};
 font-size: clamp(30px, 11vw, {{ section.settings.font_size_desktop | default: 120 }}px);
 line-height: 0.82;
-letter-spacing: -0.05em;
 user-select: none;
 {%- if section.settings.text_color_type == 'solid' -%}
 color: {{ section.settings.text_color | default: '#f8f8f8' }};
