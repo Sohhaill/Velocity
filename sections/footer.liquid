@@ -7,7 +7,7 @@
 {% assign footer_logo_styles = '--footer-logo-width-desktop: ' | append: section.settings.logo_width_desktop | append:
 'px; --footer-logo-width-mobile: ' | append: section.settings.logo_width_mobile | append: 'px;' %}
 
-<footer class="footer section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }} ">
+<footer class="footer footer-{{ section.id }} section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }} ">
   <div class="footer__top {{ footer_width_class }}">
     <div class="footer__brand-column">
       {% if section.settings.logo %}
@@ -86,6 +86,9 @@
           placeholder="{{ block.settings.placeholder | default: 'Enter your email' | escape }}">
         <button type="submit">{{ block.settings.button_label | default: 'Subscribe' }}</button>
         {% endform %}
+        {% if block.settings.subscribe_text != blank %}
+        <div class="footer__subscribe-text rte">{{ block.settings.subscribe_text }}</div>
+        {% endif %}
       </div>
       {% endcase %}
       {% endfor %}
@@ -139,7 +142,9 @@
       {%- endif -%}
       {%- endif -%}
       <div class="footer__bottom-left">
-        {% if section.settings.show_bottom_menu and section.settings.bottom_menu != blank %}
+        {% if section.settings.bottom_text != blank %}
+        <div class="footer__bottom-text rte">{{ section.settings.bottom_text }}</div>
+        {% elsif section.settings.show_bottom_menu and section.settings.bottom_menu != blank %}
         <ul class="footer__bottom-menu">
           {% for link in linklists[section.settings.bottom_menu].links %}
           <li><a href="{{ link.url }}">{{ link.title }}</a></li>
@@ -181,6 +186,40 @@
   {%- endif -%}
 
 </footer>
+
+<style>
+  .footer-{{ section.id }} .footer__subscribe button {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    isolation: isolate;
+  }
+
+  .footer-{{ section.id }} .footer__subscribe button::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--button-hover-background);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .footer-{{ section.id }} .footer__subscribe button:hover::before,
+  .footer-{{ section.id }} .footer__subscribe button:focus-visible::before {
+    transform: scaleY(1);
+  }
+
+  .footer-{{ section.id }} .footer__subscribe-text,
+  .footer-{{ section.id }} .footer__bottom-text {
+    margin-top: 0.75rem;
+  }
+</style>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -257,6 +296,11 @@
 "type": "link_list",
 "id": "bottom_menu",
 "label": "Bottom menu"
+},
+{
+"type": "richtext",
+"id": "bottom_text",
+"label": "Bottom text (replaces bottom menu if filled)"
 },
 {
 "type": "checkbox",
@@ -363,6 +407,11 @@
 "id": "button_label",
 "label": "Button label",
 "default": "Subscribe"
+},
+{
+"type": "richtext",
+"id": "subscribe_text",
+"label": "Text below subscribe form"
 }
 ]
 }
