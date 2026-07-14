@@ -84,11 +84,12 @@
         <input type="hidden" name="contact[tags]" value="newsletter">
         <input type="email" name="contact[email]" required
           placeholder="{{ block.settings.placeholder | default: 'Enter your email' | escape }}">
-        <button class="button--filled" type="submit">{{ block.settings.button_label | default: 'Subscribe' }}</button>
-        {% endform %}
-        {% if block.settings.subscribe_text != blank %}
+          {% if block.settings.subscribe_text != blank %}
         <div class="footer__subscribe-text rte">{{ block.settings.subscribe_text }}</div>
         {% endif %}
+        <button class="button--filled" type="submit">{{ block.settings.button_label | default: 'Subscribe' }}</button>
+        {% endform %}
+        
       </div>
       {% endcase %}
       {% endfor %}
