@@ -38,7 +38,8 @@
             "heading": "Subscribe",
             "width": "20",
             "placeholder": "Enter your email",
-            "button_label": "Subscribe"
+            "button_label": "Subscribe",
+            "subscribe_text": "<p>By clicking on the “Subscribe” button, I confirm my agreement with the <a href=\"https://milan-theme-amore.myshopify.com/pages/privacy-policy\" target=\"_blank\" title=\"Privacy policy\">Privacy Policy </a>and <a href=\"https://milan-theme-amore.myshopify.com/pages/terms-of-service\" target=\"_blank\" title=\"Terms of service\">Terms of Use</a></p>"
           }
         }
       },
@@ -54,6 +55,7 @@
         "logo_width_desktop": 220,
         "logo_width_mobile": 200,
         "bottom_menu": "main-menu",
+        "bottom_text": "",
         "show_currency_selector": true,
         "footer_text": "We're here to help you find exactly what you're looking for, with quality you can trust and support",
         "show_footer_bottom": true,
