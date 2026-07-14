@@ -32,15 +32,6 @@
             "menu": "main-menu"
           }
         },
-        "menu_P3xxj4": {
-          "type": "menu",
-          "settings": {
-            "heading": "",
-            "open_by_default": false,
-            "width": "20",
-            "menu": "main-menu"
-          }
-        },
         "subscribe_PA3PyJ": {
           "type": "subscribe",
           "settings": {
@@ -54,7 +45,6 @@
       "block_order": [
         "menu_X7Jt7j",
         "menu_6KFWBc",
-        "menu_P3xxj4",
         "subscribe_PA3PyJ"
       ],
       "settings": {
