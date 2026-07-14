@@ -99,7 +99,7 @@
 .footer__block--100 {
   flex: 1 1 100%;
 }
-ul.footer__menu-list {
+ul.footer__menu-list, .footer__subscribe {
   margin-top: 1em;
 }
 .footer__block-heading {
