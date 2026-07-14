@@ -264,7 +264,7 @@ select#FooterLanguageSelector {
   appearance: none;
 
   cursor: pointer;
-  padding: 0.4rem 2rem 0.4rem 0.4rem;
+  padding: .4rem 2rem .4rem .7rem;
   transition: border-color 0.25s ease;
 }
 .footer__currency-item select {
@@ -402,6 +402,7 @@ ul.footer__bottom-menu a {
     text-align: center;
     gap: 1.25rem;
     margin: unset;
+    padding-top: 1.5rem;
   }
 
   .footer__subscribe {
