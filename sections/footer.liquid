@@ -143,7 +143,7 @@
       {%- endif -%}
       <div class="footer__bottom-left">
         {% if section.settings.bottom_text != blank %}
-        <div class="footer__bottom-text rte">{{ section.settings.bottom_text }}</div>
+        <div class="footer__bottom-text rte copywrite">{{ section.settings.bottom_text }}</div>
         {% elsif section.settings.show_bottom_menu and section.settings.bottom_menu != blank %}
         <ul class="footer__bottom-menu">
           {% for link in linklists[section.settings.bottom_menu].links %}
