@@ -1,6 +1,6 @@
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   window.lenis = new Lenis({
-    duration: 1,
+    duration: 0.5,
     smoothWheel: true,
     wheelMultiplier: 0.4
   });
