@@ -69,8 +69,10 @@
       "settings": {
         "section_color_scheme": "scheme_4",
         "text": "Velocity",
-        "font_family": "acme_n4",
+        "font_family": "bungee_n4",
         "font_size_desktop": 200,
+        "text_color_type": "solid",
+        "text_color": "#f8f8f8",
         "padding_top_desktop": 50,
         "padding_bottom_desktop": 35,
         "padding_top_mobile": 20,
