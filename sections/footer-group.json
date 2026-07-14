@@ -68,10 +68,10 @@
       "name": "Text Logo",
       "settings": {
         "section_color_scheme": "scheme_4",
-        "text": "Crystal Clean",
+        "text": "Velocity",
         "font_family": "acme_n4",
         "font_size_desktop": 200,
-        "padding_top_desktop": 10,
+        "padding_top_desktop": 50,
         "padding_bottom_desktop": 35,
         "padding_top_mobile": 20,
         "padding_bottom_mobile": 35
