@@ -71,7 +71,7 @@
   display: flex;
   flex-wrap: wrap;
   flex: 1;
-  gap: 1.5rem 2rem;
+  gap: 1.5rem 1rem;
 }
 
 .footer__block {
