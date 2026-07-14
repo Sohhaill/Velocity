@@ -58,6 +58,8 @@
     "scheme_3_body_color": "#000000",
     "scheme_3_button_background_color": "#000000",
     "scheme_3_button_text_color": "#FFFFFF",
+    "scheme_3_button_hover_background_color": "#FFFFFF",
+    "scheme_3_button_hover_text_color": "#000000",
     "scheme_3_input_text_color": "#FFFFFF",
     "scheme_3_input_background_color": "#000000",
     "scheme_4_background_color": "#000000",
