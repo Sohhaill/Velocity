@@ -62,15 +62,14 @@ font-size: clamp(120px, 20vw, {{ section.settings.font_size_desktop | default: 1
 height: 140px;
 }
 }
+{{ section.settings.font_family | font_face }}
 {%- endstyle -%}
 
-{{ section.settings.font_family | font_face }}
 
-<section
-    class="text-logo-section section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}">
-    <h1 class="text-logo-section__title">{{ section.settings.text | default: 'Crystal Clean' }}</h1>
+
+<section class="text-logo-section section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}">
+  <h1 class="text-logo-section__title">{{ section.settings.text | default: 'Crystal Clean' }}</h1>
 </section>
-
 {% schema %}
 {
 "name": "Text Logo",
