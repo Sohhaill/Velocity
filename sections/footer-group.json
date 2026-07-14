@@ -67,9 +67,9 @@
       "type": "logo-text",
       "name": "Text Logo",
       "settings": {
-        "section_color_scheme": "scheme_3",
+        "section_color_scheme": "scheme_4",
         "text": "Crystal Clean",
-        "font_family": "assistant_n4",
+        "font_family": "acme_n4",
         "font_size_desktop": 120,
         "padding_top_desktop": 10,
         "padding_bottom_desktop": 35,
