@@ -368,8 +368,8 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.65rem 0.9rem;
-  background: rgba(255, 255, 255, 0.08);
-  color: inherit;
+  background-color: var(--button-background);
+  color: var(--button-foreground);
   text-decoration: none;
 }
 
