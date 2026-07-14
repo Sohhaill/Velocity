@@ -14,17 +14,16 @@ font-family: {{ section.settings.font_family.family }}, sans-serif;
 font-weight: {{ section.settings.font_family.weight | default: 700 }};
 font-size: clamp(30px, 11vw, {{ section.settings.font_size_desktop | default: 120 }}px);
 line-height: 0.82;
+letter-spacing: -0.05em;
 user-select: none;
 {%- if section.settings.text_color_type == 'solid' -%}
 color: {{ section.settings.text_color | default: '#f8f8f8' }};
 {%- else -%}
 background: linear-gradient(
 to bottom,
-#f8f8f8 0%,
-#efefef 20%,
-#c8c8c8 45%,
-#8f8f8f 70%,
-#202020 100%
+{{ section.settings.gradient_color_start | default: '#f8f8f8' }} 0%,
+{{ section.settings.gradient_color_middle | default: '#c8c8c8' }} 45%,
+{{ section.settings.gradient_color_end | default: '#202020' }} 100%
 );
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
@@ -129,6 +128,27 @@ height: 140px;
 "label": "Text color",
 "default": "#f8f8f8",
 "visible_if": "{{ section.settings.text_color_type == 'solid' }}"
+},
+{
+"type": "color",
+"id": "gradient_color_start",
+"label": "Gradient color (top)",
+"default": "#f8f8f8",
+"visible_if": "{{ section.settings.text_color_type == 'gradient' }}"
+},
+{
+"type": "color",
+"id": "gradient_color_middle",
+"label": "Gradient color (middle)",
+"default": "#c8c8c8",
+"visible_if": "{{ section.settings.text_color_type == 'gradient' }}"
+},
+{
+"type": "color",
+"id": "gradient_color_end",
+"label": "Gradient color (bottom)",
+"default": "#202020",
+"visible_if": "{{ section.settings.text_color_type == 'gradient' }}"
 },
 {
 "type": "header",
