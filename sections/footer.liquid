@@ -93,9 +93,9 @@
   </div>
 
   {%- if section.settings.show_footer_bottom -%}
-  <div class="footer__bottom">
+  <div class="footer__bottom {{ footer_width_class }}">
 
-    <div class="container-width bottom-inner">
+    <div class="bottom-inner">
       {%- if section.settings.show_currency_selector -%}
       {%- if localization.available_countries.size > 1 -%}
       <div class="footer__currency-row">
