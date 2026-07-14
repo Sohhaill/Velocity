@@ -36,7 +36,7 @@
           "type": "subscribe",
           "settings": {
             "heading": "Subscribe",
-            "width": "20",
+            "width": "33",
             "placeholder": "Enter your email",
             "button_label": "Subscribe",
             "subscribe_text": "<p>By clicking on the “Subscribe” button, I confirm my agreement with the <a href=\"https://milan-theme-amore.myshopify.com/pages/privacy-policy\" target=\"_blank\" title=\"Privacy policy\">Privacy Policy </a>and <a href=\"https://milan-theme-amore.myshopify.com/pages/terms-of-service\" target=\"_blank\" title=\"Terms of service\">Terms of Use</a></p>"
