@@ -222,7 +222,9 @@ ul.footer__menu-list, .footer__subscribe {
     background-color 0.25s ease,
     transform 0.25s ease;
 }
-
+.footer__subscribe input:focus-visible {
+    outline: unset;
+}
 .footer__subscribe button:hover,
 .footer__subscribe button:focus-visible {
   background: var(--button-hover-background);
