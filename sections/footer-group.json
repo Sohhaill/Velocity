@@ -32,20 +32,20 @@
             "menu": "main-menu"
           }
         },
-        "menu_df69pF": {
-          "type": "menu",
+        "subscribe_PA3PyJ": {
+          "type": "subscribe",
           "settings": {
-            "heading": "Main",
-            "open_by_default": false,
-            "width": "25",
-            "menu": "main-menu"
+            "heading": "Subscribe",
+            "width": "33",
+            "placeholder": "Enter your email",
+            "button_label": "Subscribe"
           }
         }
       },
       "block_order": [
         "menu_X7Jt7j",
         "menu_6KFWBc",
-        "menu_df69pF"
+        "subscribe_PA3PyJ"
       ],
       "settings": {
         "section_color_scheme": "scheme_3",
