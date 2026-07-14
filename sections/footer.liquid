@@ -84,7 +84,7 @@
         <input type="hidden" name="contact[tags]" value="newsletter">
         <input type="email" name="contact[email]" required
           placeholder="{{ block.settings.placeholder | default: 'Enter your email' | escape }}">
-        <button type="submit">{{ block.settings.button_label | default: 'Subscribe' }}</button>
+        <button class="button--filled" type="submit">{{ block.settings.button_label | default: 'Subscribe' }}</button>
         {% endform %}
         {% if block.settings.subscribe_text != blank %}
         <div class="footer__subscribe-text rte">{{ block.settings.subscribe_text }}</div>
@@ -187,39 +187,7 @@
 
 </footer>
 
-<style>
-  .footer-{{ section.id }} .footer__subscribe button {
-    position: relative;
-    overflow: hidden;
-    z-index: 0;
-    isolation: isolate;
-  }
 
-  .footer-{{ section.id }} .footer__subscribe button::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--button-hover-background);
-    transform: scaleY(0);
-    transform-origin: bottom;
-    transition: transform 0.45s cubic-bezier(0.65, 0, 0.35, 1);
-    z-index: -1;
-    pointer-events: none;
-  }
-
-  .footer-{{ section.id }} .footer__subscribe button:hover::before,
-  .footer-{{ section.id }} .footer__subscribe button:focus-visible::before {
-    transform: scaleY(1);
-  }
-
-  .footer-{{ section.id }} .footer__subscribe-text,
-  .footer-{{ section.id }} .footer__bottom-text {
-    margin-top: 0.75rem;
-  }
-</style>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
