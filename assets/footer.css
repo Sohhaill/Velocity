@@ -6,7 +6,7 @@
 .footer__top,
 .footer__bottom {
   display: flex;
-  gap: 4rem;
+  gap: 2rem;
 }
 .bottom-inner {
   display: flex;
@@ -264,7 +264,7 @@ select#FooterLanguageSelector {
   appearance: none;
 
   cursor: pointer;
-  padding: .4rem 2rem .4rem .7rem;
+  padding: 0.4rem 2rem 0.4rem 0.7rem;
   transition: border-color 0.25s ease;
 }
 .footer__currency-item select {
@@ -353,7 +353,9 @@ ul.footer__bottom-menu a {
     flex-direction: column;
     gap: 1rem;
   }
-
+  .footer__bottom-left {
+    order: 3;
+  }
   .footer__block--20,
   .footer__block--25,
   .footer__block--33,
