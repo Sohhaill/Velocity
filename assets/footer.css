@@ -232,7 +232,7 @@ ul.footer__menu-list {
 .footer__bottom {
   margin-top: 2.5rem;
   padding-top: 2.5rem;
-  border-top: 1px var(--color-foreground);
+  border-top: 1px solid var(--color-foreground);
 }
 
 .footer__currency-row {
