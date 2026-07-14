@@ -144,6 +144,7 @@ button {
     transform: scaleY(0);
     transform-origin: bottom;
     transition: transform 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+
     z-index: -1;
     pointer-events: none;
   }
@@ -152,14 +153,11 @@ button {
   .button--filled:focus-visible::before {
     transform: scaleY(1);
   }
-/* button:hover,
+ button:hover,
 .button--filled:hover {
-  background-color: var(--button-hover-background);
   color: var(--button-hover-foreground);
 }
-.button--filled:hover {
-  transform: translateY(-5px);
-} */
+
 .shopify-section-group-footer-group {
   margin-top: auto !important;
 }
