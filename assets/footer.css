@@ -196,6 +196,7 @@ ul.footer__menu-list, .footer__subscribe {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+  flex-direction: column;
 }
 
 .footer__subscribe input {
