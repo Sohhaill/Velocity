@@ -226,12 +226,7 @@ ul.footer__menu-list,
 .footer__subscribe input:focus-visible {
   outline: unset;
 }
-.footer__subscribe button:hover,
-.footer__subscribe button:focus-visible {
-  background: var(--button-hover-background);
-  color: var(--button-hover-foreground);
-  transform: translateY(-1px);
-}
+
 .footer__bottom-text.rte.copywrite, .footer__subscribe-text.rte {
   font-size: 0.84em;
   font-weight: 500;
