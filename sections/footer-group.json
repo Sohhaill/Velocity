@@ -62,9 +62,18 @@
         "show_bottom_menu": true,
         "show_payment_icons": true
       }
+    },
+    "custom_liquid_gbJwNg": {
+      "type": "custom-liquid",
+      "name": "Custom liquid",
+      "settings": {
+        "custom_liquid": "<style>\n\n\n.crys-hero{\n    position:relative;\n    width:100%;\n    overflow:hidden;\n    background:#000;\n    padding:10px 0 35px;\n}\n\n.crys-hero__title{\n    margin:0;\n    text-align:center;\n    font-family:\"Michroma\",sans-serif;\n        font-size: clamp(120px, 20vw, 10vw);\n    line-height:.82;\n    font-weight:700;\n    letter-spacing:-0.05em;\n    user-select:none;\n\n    background:linear-gradient(\n        to bottom,\n        #f8f8f8 0%,\n        #efefef 20%,\n        #c8c8c8 45%,\n        #8f8f8f 70%,\n        #202020 100%\n    );\n\n    -webkit-background-clip:text;\n    -webkit-text-fill-color:transparent;\n    background-clip:text;\n    color:transparent;\n}\n\n.crys-hero::after{\n    content:\"\";\n    position:absolute;\n    left:0;\n    bottom:0;\n    width:100%;\n    height:140px;\n    pointer-events:none;\n\n    background:linear-gradient(\n        to bottom,\n        rgba(0,0,0,0) 0%,\n        rgba(0,0,0,.15) 30%,\n        rgba(0,0,0,.45) 60%,\n        rgba(0,0,0,.8) 85%,\n        #000 100%\n    );\n}\n\n@media (max-width:768px){\n\n    .crys-hero{\n        padding:20px 0;\n    }\n\n    .crys-hero__title{\n       font-size: clamp(30px, 11vw, 120px);\n    }\n\n    .crys-hero::after{\n        height:70px;\n    }\n\n}\n</style>\n\n\n\n<section class=\"crys-hero\">\n    <h1 class=\"crys-hero__title\">Crystal Clean</h1>\n</section>",
+        "custom_class": ""
+      }
     }
   },
   "order": [
-    "footer"
+    "footer",
+    "custom_liquid_gbJwNg"
   ]
 }
