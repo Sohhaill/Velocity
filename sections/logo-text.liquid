@@ -16,6 +16,9 @@ font-size: clamp(30px, 11vw, {{ section.settings.font_size_desktop | default: 12
 line-height: 0.82;
 letter-spacing: -0.05em;
 user-select: none;
+{%- if section.settings.text_color_type == 'solid' -%}
+color: {{ section.settings.text_color | default: '#f8f8f8' }};
+{%- else -%}
 background: linear-gradient(
 to bottom,
 #f8f8f8 0%,
@@ -28,6 +31,7 @@ to bottom,
 -webkit-text-fill-color: transparent;
 background-clip: text;
 color: transparent;
+{%- endif -%}
 }
 
 .text-logo-section::after {
@@ -109,6 +113,23 @@ height: 140px;
 "step": 5,
 "unit": "px",
 "default": 120
+},
+{
+"type": "select",
+"id": "text_color_type",
+"label": "Text color style",
+"default": "gradient",
+"options": [
+{ "value": "gradient", "label": "Gradient (default)" },
+{ "value": "solid", "label": "Solid color" }
+]
+},
+{
+"type": "color",
+"id": "text_color",
+"label": "Text color",
+"default": "#f8f8f8",
+"visible_if": "{{ section.settings.text_color_type == 'solid' }}"
 },
 {
 "type": "header",
