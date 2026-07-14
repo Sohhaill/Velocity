@@ -293,7 +293,8 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.72);
   z-index: 0;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(3px);
+  transition: all 0.3s ease;
 }
 
 .search-popup__panel {

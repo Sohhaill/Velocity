@@ -40,6 +40,7 @@
           input.focus();
         }, 0);
       }
+      if (window.lenis) window.lenis.stop();
     }
 
     function closeSearchPopup() {
@@ -49,6 +50,7 @@
       popup.classList.remove('search-popup--open');
       popup.setAttribute('aria-hidden', 'true');
       document.documentElement.classList.remove('search-popup-open');
+      if (window.lenis) window.lenis.start();
     }
 
     document.addEventListener('click', function (event) {
