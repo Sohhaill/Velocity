@@ -198,6 +198,7 @@ ul.footer__menu-list,
   flex-wrap: wrap;
   gap: 0.75rem;
   flex-direction: column;
+  margin-bottom: 0.7rem;
 }
 
 .footer__subscribe input {
@@ -227,7 +228,8 @@ ul.footer__menu-list,
   outline: unset;
 }
 
-.footer__bottom-text.rte.copywrite, .footer__subscribe-text.rte {
+.footer__bottom-text.rte.copywrite,
+.footer__subscribe-text.rte {
   font-size: 0.84em;
   font-weight: 500;
   font-style: italic;
