@@ -99,7 +99,8 @@
 .footer__block--100 {
   flex: 1 1 100%;
 }
-ul.footer__menu-list, .footer__subscribe {
+ul.footer__menu-list,
+.footer__subscribe {
   margin-top: 1em;
 }
 .footer__block-heading {
@@ -223,7 +224,7 @@ ul.footer__menu-list, .footer__subscribe {
     transform 0.25s ease;
 }
 .footer__subscribe input:focus-visible {
-    outline: unset;
+  outline: unset;
 }
 .footer__subscribe button:hover,
 .footer__subscribe button:focus-visible {
@@ -231,7 +232,12 @@ ul.footer__menu-list, .footer__subscribe {
   color: var(--button-hover-foreground);
   transform: translateY(-1px);
 }
-
+.footer__bottom-text.rte.copywrite, .footer__subscribe-text.rte {
+  font-size: 0.84em;
+  font-weight: 500;
+  font-style: italic;
+  margin: unset;
+}
 .footer__bottom {
   margin-top: 1.5rem;
   padding-top: 2.5rem;
