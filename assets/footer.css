@@ -1,5 +1,5 @@
 .footer {
-  padding: 3rem 0 1.5rem;
+  padding: 3rem 0 1.8rem;
   position: relative;
 }
 
@@ -232,7 +232,8 @@ ul.footer__menu-list {
 .footer__bottom {
   margin-top: 2.5rem;
   padding-top: 2.5rem;
- border-top: 1px solid color-mix(in srgb, var(--color-foreground) 20%, transparent);
+  border-top: 1px solid
+    color-mix(in srgb, var(--color-foreground) 20%, transparent);
 }
 
 .footer__currency-row {
