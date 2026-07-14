@@ -12,7 +12,7 @@
       drawer.setAttribute('aria-hidden', 'false');
       document.documentElement.classList.add('header-drawer-open');
       document.body.style.overflow = 'hidden';
-      lenis.stop();
+      if (window.lenis) window.lenis.stop();
     }
 
     function closeHeaderDrawer() {
@@ -22,7 +22,7 @@
       drawer.setAttribute('aria-hidden', 'true');
       document.documentElement.classList.remove('header-drawer-open');
       document.body.style.overflow = '';
-      lenis.start();
+      if (window.lenis) window.lenis.start();
 
     }
 
