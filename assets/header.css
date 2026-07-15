@@ -199,7 +199,7 @@
 .header__menu-link-wrap:hover > .header__submenu-toggle {
   transform: rotate(45deg);
 }
-.header__menu-item--has-mega-menu:hover > svg.megamenu-svg {
+.header__menu-item--has-mega-menu:hover  svg.megamenu-svg {
   transform: rotate(45deg);
 }
 .header__menu-item:hover > .header__submenu,
