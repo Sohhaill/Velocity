@@ -28,8 +28,8 @@
   top: 100%;
   left: 0;
   width: 100%;
-  background: var(--color-scheme-background, #ffffff);
-  color: var(--color-scheme-text, #111111);
+  background: var(--color-background);
+  color: var(--color-foreground);
   border-top: 1px solid var(--color-scheme-border, rgba(0, 0, 0, 0.08));
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.1);
 
