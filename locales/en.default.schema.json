@@ -110,6 +110,10 @@
     "padding": "Padding",
     "page_margin": "Page margin",
     "max_width": "Max width",
+    "padding_top_desktop": "Section padding top (desktop)",
+    "padding_bottom_desktop": "Section padding bottom (desktop)",
+    "padding_top_mobile": "Section padding top (mobile)",
+    "padding_bottom_mobile": "Section padding bottom (mobile)",
     "container_margin": "Container margin",
     "color_scheme": "Color scheme",
     "show_payment_icons": "Show payment icons",
@@ -133,6 +137,11 @@
     "button_style": {
       "filled": "Filled",
       "outline": "Outline"
+    },
+     "on_expire": {
+      "hide_timer": "Hide timer, show text",
+      "hide_section": "Hide entire section",
+      "show_zeros": "Keep showing 00:00:00:00"
     },
     "direction": {
       "horizontal": "Horizontal",
