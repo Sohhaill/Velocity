@@ -132,7 +132,9 @@
   opacity: 0.5;
   cursor: pointer;
   margin: 0 !important;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
 .v-banner__pagination .swiper-pagination-bullet-active {
@@ -188,17 +190,15 @@
 
 /* CONTENT-IN-CONTAINER TOGGLE */
 .v-banner__content--container {
-  max-width: var(--page-width, 1400px);
+  max-width: var(--container-width);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 24px;
-  padding-right: 24px;
 }
 
 @media screen and (min-width: 750px) {
   .v-banner__content--container {
-    padding-left: 48px;
-    padding-right: 48px;
+    padding-left: var(--container-margin);
+    padding-right: var(--container-margin);
   }
 }
 

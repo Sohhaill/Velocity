@@ -61,7 +61,8 @@
           {% assign text_color_class = 'v-banner__text--dark' %}
         {% endif %}
 
-        {% assign overlay_style = '--v-banner-overlay-opacity: ' | append: block.settings.overlay_opacity | divided_by: 100.0 | append: ';' %}
+         {% assign overlay_opacity_decimal = block.settings.overlay_opacity | default: 0 | divided_by: 100.0 %}
+        {% assign overlay_style = '--v-banner-overlay-opacity: ' | append: overlay_opacity_decimal | append: ';' %}
 
         <div class="swiper-slide v-banner__slide" data-slide-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
 
