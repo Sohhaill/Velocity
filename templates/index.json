@@ -81,8 +81,8 @@
             "button_1_label": "Shop now",
             "button_1_link": "#",
             "button_1_style": "filled",
-            "button_2_label": "",
-            "button_2_link": "",
+            "button_2_label": "Buy Now",
+            "button_2_link": "#",
             "button_2_style": "outline"
           }
         },
