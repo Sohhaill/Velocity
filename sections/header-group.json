@@ -34,7 +34,7 @@
       "name": "t:sections.announcement-bar.presets.name",
       "settings": {
         "section_color_scheme": "scheme_3",
-        "Container_width_type": "full_width",
+        "container_width_type": "full_width",
         "show_social_icons": true,
         "enable_localization": true,
         "autoplay_speed": 2
