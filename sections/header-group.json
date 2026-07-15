@@ -41,6 +41,23 @@
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "mega_menu_collection_JJ8bNQ": {
+          "type": "mega_menu_collection",
+          "settings": {
+            "menu_item_handle": "Catalog",
+            "collection_1": "frontpage",
+            "collection_1_title": "",
+            "collection_2": "hydrogen",
+            "collection_2_title": "",
+            "collection_3": "frontpage",
+            "collection_3_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "mega_menu_collection_JJ8bNQ"
+      ],
       "settings": {
         "section_color_scheme": "scheme_1",
         "logo": "shopify://shop_images/download.webp",
