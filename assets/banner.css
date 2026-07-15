@@ -106,7 +106,8 @@
   justify-content: var(--v-banner-content-justify, center);
 }
 .v-banner[allow-transparent-header] {
- transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  margin-top: -91px;
 }
 /* PAGINATION */
 .v-banner__pagination {
