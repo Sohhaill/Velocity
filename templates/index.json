@@ -85,10 +85,31 @@
             "button_2_link": "",
             "button_2_style": "outline"
           }
+        },
+        "slide_tg9Qdy": {
+          "type": "slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/HOMEPAGE_DESKTOP_BANNER_ICYCANDLES_1.webp",
+            "overlay_opacity": 45,
+            "content_position_desktop": "top_center",
+            "content_position_mobile": "top_right",
+            "content_in_container": true,
+            "text_color": "dark",
+            "subheading": "Subheading",
+            "heading": "Slide heading",
+            "description": "<p>Our description </p>",
+            "button_1_label": "Shop now",
+            "button_1_link": "#",
+            "button_1_style": "filled",
+            "button_2_label": "",
+            "button_2_link": "",
+            "button_2_style": "outline"
+          }
         }
       },
       "block_order": [
-        "slide_FcbQXV"
+        "slide_FcbQXV",
+        "slide_tg9Qdy"
       ],
       "name": "t:sections.banner.presets.name",
       "settings": {
@@ -98,7 +119,7 @@
         "transition_effect": "slide",
         "enable_autoplay": true,
         "autoplay_speed": 5,
-        "enable_navigation": false,
+        "enable_navigation": true,
         "enable_pagination": true
       }
     }
