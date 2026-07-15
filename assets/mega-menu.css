@@ -11,8 +11,12 @@
   --mega-menu-transition: var(--transition-default, 0.45s cubic-bezier(0.65, 0, 0.35, 1));
 }
 
-/* the <li> (or wrapping element) that owns a mega menu needs this */
-.header__menu-item--has-mega-menu {
+/* The mega-menu panel is rendered as a sibling of .header__inner, inside
+   <header>, NOT nested inside the triggering <li>. That's on purpose —
+   it means the panel's positioning context is the full-width header,
+   not one narrow nav item. Don't move the render call back inside the
+   <li> or the panel will collapse to that item's width again. */
+.header {
   position: relative;
 }
 

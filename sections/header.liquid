@@ -83,6 +83,27 @@
       </div>
     </div>
 
+    {%- comment -%}
+      Mega menu panels — rendered ONCE here, as siblings of .header__inner,
+      not nested inside any <li>. This is what makes them span the full
+      <header> width instead of being boxed in by a single nav item's
+      width. Each panel is hidden by default (CSS) and toggled via
+      data-mega-menu-trigger matching on the nav link.
+    {%- endcomment -%}
+    {% for block in section.blocks %}
+      {% if block.type == 'mega_menu_collection' or block.type == 'mega_menu_banner' %}
+        {% assign mm_link = blank %}
+        {% for link in section.settings.menu.links %}
+          {% if block.settings.menu_item_handle != blank and link.title == block.settings.menu_item_handle %}
+            {% assign mm_link = link %}
+          {% endif %}
+        {% endfor %}
+        {% if mm_link != blank %}
+          {% render 'mega-menu', block: block, link: mm_link %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
     <div id="header-drawer" class="header__drawer" aria-hidden="true">
       <div class="header__drawer-panel">
         <div class="header__drawer-top">
@@ -240,64 +261,89 @@
         var OPEN_DELAY = 80;
         var CLOSE_DELAY = 200;
 
-        function closeAll(except) {
+        function triggerFor(id) {
+          return document.querySelector('[data-mega-menu-trigger="' + id + '"]');
+        }
+        function panelFor(id) {
+          return document.getElementById('MegaMenu-' + id);
+        }
+
+        // Panel is now a SIBLING of the trigger link (not nested inside
+        // it), so we resolve the shared "id" from whichever one the
+        // mouse/focus event actually landed on.
+        function idFromEl(el) {
+          if (!el || !el.closest) return null;
+          var trigger = el.closest('[data-mega-menu-trigger]');
+          if (trigger) return trigger.getAttribute('data-mega-menu-trigger');
+          var panel = el.closest('.mega-menu[data-mega-menu]');
+          if (panel) return panel.id.replace('MegaMenu-', '');
+          return null;
+        }
+
+        function isWithinGroup(el, id) {
+          if (!el || !id) return false;
+          var trigger = triggerFor(id);
+          var panel = panelFor(id);
+          return (trigger && trigger.contains(el)) || (panel && panel.contains(el));
+        }
+
+        function closeAll(exceptId) {
           document.querySelectorAll('.mega-menu.is-active').forEach(function (el) {
-            if (el !== except) {
+            var id = el.id.replace('MegaMenu-', '');
+            if (id !== exceptId) {
               el.classList.remove('is-active');
               el.setAttribute('aria-hidden', 'true');
+              var trigger = triggerFor(id);
+              if (trigger) trigger.setAttribute('aria-expanded', 'false');
             }
           });
         }
 
-        function getMenu(trigger) {
-          var id = trigger.getAttribute('data-mega-menu-trigger');
-          return id ? document.getElementById('MegaMenu-' + id) : null;
-        }
-
-        function openMenu(trigger) {
-          var menu = getMenu(trigger);
-          if (!menu) return;
+        function openMenuById(id) {
+          var panel = panelFor(id);
+          if (!panel) return;
           clearTimeout(closeTimer);
           openTimer = setTimeout(function () {
-            closeAll(menu);
-            menu.classList.add('is-active');
-            menu.setAttribute('aria-hidden', 'false');
-            trigger.setAttribute('aria-expanded', 'true');
+            closeAll(id);
+            panel.classList.add('is-active');
+            panel.setAttribute('aria-hidden', 'false');
+            var trigger = triggerFor(id);
+            if (trigger) trigger.setAttribute('aria-expanded', 'true');
           }, OPEN_DELAY);
         }
 
-        function scheduleClose(trigger) {
-          var menu = getMenu(trigger);
+        function scheduleCloseById(id) {
           clearTimeout(openTimer);
           closeTimer = setTimeout(function () {
-            if (menu) {
-              menu.classList.remove('is-active');
-              menu.setAttribute('aria-hidden', 'true');
+            var panel = panelFor(id);
+            if (panel) {
+              panel.classList.remove('is-active');
+              panel.setAttribute('aria-hidden', 'true');
             }
-            trigger.setAttribute('aria-expanded', 'false');
+            var trigger = triggerFor(id);
+            if (trigger) trigger.setAttribute('aria-expanded', 'false');
           }, CLOSE_DELAY);
         }
 
         document.addEventListener('mouseover', function (e) {
-          var trigger = e.target.closest('[data-mega-menu-trigger]');
-          if (trigger) openMenu(trigger);
+          var id = idFromEl(e.target);
+          if (id) openMenuById(id);
         });
 
         document.addEventListener('mouseout', function (e) {
-          var trigger = e.target.closest('[data-mega-menu-trigger]');
-          if (!trigger) return;
-          var toEl = e.relatedTarget;
-          if (toEl && trigger.contains(toEl)) return;
-          scheduleClose(trigger);
+          var id = idFromEl(e.target);
+          if (!id) return;
+          if (isWithinGroup(e.relatedTarget, id)) return;
+          scheduleCloseById(id);
         });
 
         document.addEventListener('focusin', function (e) {
-          var trigger = e.target.closest('[data-mega-menu-trigger]');
-          if (trigger) openMenu(trigger);
+          var id = idFromEl(e.target);
+          if (id) openMenuById(id);
         });
 
         document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape') closeAll();
+          if (e.key === 'Escape') closeAll(null);
         });
       })();
     </script>

@@ -81,9 +81,7 @@ Renders a recursive header menu item for desktop and drawer navigation.
     {% endif %}
   </div>
 
-  {% if mega_menu_block != blank %}
-    {% render 'mega-menu', block: mega_menu_block, link: link %}
-  {% elsif has_children %}
+  {% if mega_menu_block == blank and has_children %}
   <ul id="{{ submenu_id }}" class="header__submenu header__submenu--depth-{{ depth }} desktop-dropdown-menu"
     data-depth="{{ depth }} ">
     {% for child in link.links %}
@@ -92,5 +90,11 @@ Renders a recursive header menu item for desktop and drawer navigation.
     {% endfor %}
   </ul>
   {% endif %}
+  {%- comment -%}
+    Note: when mega_menu_block is present, the actual mega-menu panel is
+    NOT rendered here. It's rendered once at the <header> level (see
+    header.liquid) so it can span the full header width instead of being
+    boxed in by this <li>'s narrow width.
+  {%- endcomment -%}
 </li>
 {% endif %}
