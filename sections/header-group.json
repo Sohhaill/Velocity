@@ -42,8 +42,32 @@
     "header": {
       "type": "header",
       "blocks": {
+        "mega_menu_banner_Wmfjk6": {
+          "type": "mega_menu_banner",
+          "settings": {
+            "menu_item_handle": "Catalog",
+            "heading": "",
+            "subheading": "",
+            "banner_1_image": "shopify://shop_images/ChatGPTImageJun20_2026_09_58_56PM_1.webp",
+            "banner_1_title": "fgh",
+            "banner_1_subtitle": "",
+            "banner_1_button_label": "",
+            "banner_1_link": "",
+            "banner_2_image": "shopify://shop_images/Main.jpg",
+            "banner_2_title": "",
+            "banner_2_subtitle": "",
+            "banner_2_button_label": "",
+            "banner_2_link": "",
+            "banner_3_image": "shopify://shop_images/theme_cover_image.jpg",
+            "banner_3_title": "",
+            "banner_3_subtitle": "",
+            "banner_3_button_label": "",
+            "banner_3_link": ""
+          }
+        },
         "mega_menu_collection_JJ8bNQ": {
           "type": "mega_menu_collection",
+          "disabled": true,
           "settings": {
             "menu_item_handle": "Catalog",
             "collection_1": "frontpage",
@@ -56,12 +80,13 @@
         }
       },
       "block_order": [
+        "mega_menu_banner_Wmfjk6",
         "mega_menu_collection_JJ8bNQ"
       ],
       "settings": {
         "section_color_scheme": "scheme_1",
         "logo": "shopify://shop_images/download.webp",
-        "header_width_type": "full_width",
+        "header_width_type": "container_width",
         "logo_width_desktop": 170,
         "logo_width_mobile": 120,
         "header_sticky": true,
