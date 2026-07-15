@@ -22,7 +22,7 @@
   data-mega-menu
   aria-hidden="true"
 >
-  <div class="mega-menu__inner container-width">
+  <div class="mega-menu__inner {% if section.settings.header_width_type == 'full_width' %} header--full-width{% else %} container-width{% endif %}">
 
     {%- case mm_type -%}
 

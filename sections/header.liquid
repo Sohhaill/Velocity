@@ -31,19 +31,19 @@
         {% if section.settings.menu.links and section.settings.menu.links.size > 0 %}
         <ul class="header__menu-list">
           {% for link in section.settings.menu.links %}
-            {%- comment -%}
-              Match this top-level link to a mega menu block by comparing
-              the link's title against the block's "menu_item_handle"
-              text setting (exact match, case-sensitive).
-            {%- endcomment -%}
-            {% assign mega_menu_block = blank %}
-            {% for block in section.blocks %}
-              {% if block.type == 'mega_menu_collection' or block.type == 'mega_menu_banner' %}
-                {% if block.settings.menu_item_handle != blank and block.settings.menu_item_handle == link.title %}
-                  {% assign mega_menu_block = block %}
-                {% endif %}
-              {% endif %}
-            {% endfor %}
+          {%- comment -%}
+          Match this top-level link to a mega menu block by comparing
+          the link's title against the block's "menu_item_handle"
+          text setting (exact match, case-sensitive).
+          {%- endcomment -%}
+          {% assign mega_menu_block = blank %}
+          {% for block in section.blocks %}
+          {% if block.type == 'mega_menu_collection' or block.type == 'mega_menu_banner' %}
+          {% if block.settings.menu_item_handle != blank and block.settings.menu_item_handle == link.title %}
+          {% assign mega_menu_block = block %}
+          {% endif %}
+          {% endif %}
+          {% endfor %}
           {% render 'header-menu-item', link: link, mode: 'desktop', parent_id: 'desktop-', depth: 0, index:
           forloop.index0, mega_menu_block: mega_menu_block %}
           {% endfor %}
@@ -83,7 +83,7 @@
       </div>
     </div>
 
-   
+
 
     <div id="header-drawer" class="header__drawer" aria-hidden="true">
       <div class="header__drawer-panel">
@@ -115,24 +115,27 @@
 
         <div class="header__drawer-icons">
           <div class="drawer-socials">
-            <a class="social-button" href="{{ settings.footer_facebook_url }}" target="_blank"
-              rel="noopener" aria-label="Facebook">
+            <a class="social-button" href="{{ settings.footer_facebook_url }}" target="_blank" rel="noopener"
+              aria-label="Facebook">
               {% if settings.footer_facebook_url != blank %}
               {{ 'icon-fb.svg' | inline_asset_content }}
               {% endif %}
             </a>
             {% if settings.footer_instagram_url != blank %}
-            <a class="social-button" href="{{ settings.footer_instagram_url }}" target="_blank" rel="noopener" aria-label="Instagram">
+            <a class="social-button" href="{{ settings.footer_instagram_url }}" target="_blank" rel="noopener"
+              aria-label="Instagram">
               {{ 'icon-insta.svg' | inline_asset_content }}
             </a>
             {% endif %}
             {% if settings.footer_youtube_url != blank %}
-            <a class="social-button" href="{{ settings.footer_youtube_url }}" target="_blank" rel="noopener" aria-label="YouTube">
+            <a class="social-button" href="{{ settings.footer_youtube_url }}" target="_blank" rel="noopener"
+              aria-label="YouTube">
               {{ 'icon-youtube.svg' | inline_asset_content }}
             </a>
             {% endif %}
             {% if settings.footer_twitter_url != blank %}
-            <a class="social-button" href="{{ settings.footer_twitter_url }}" target="_blank" rel="noopener" aria-label="Twitter">
+            <a class="social-button" href="{{ settings.footer_twitter_url }}" target="_blank" rel="noopener"
+              aria-label="Twitter">
               {{ 'icon-twitter.svg' | inline_asset_content }}
             </a>
             {% endif %}
@@ -224,30 +227,36 @@
     </script>
     {% endif %}
   </header>
-   {%- comment -%}
-      Mega menu panels — rendered ONCE here, as siblings of .header__inner,
-      not nested inside any <li>. This is what makes them span the full
-      <header> width instead of being boxed in by a single nav item's
+  {%- comment -%}
+  Mega menu panels — rendered ONCE here, as siblings of .header__inner,
+  not nested inside any <li>. This is what makes them span the full
+    <header> width instead of being boxed in by a single nav item's
       width. Each panel is hidden by default (CSS) and toggled via
       data-mega-menu-trigger matching on the nav link.
-    {%- endcomment -%}
-    {% for block in section.blocks %}
+      {%- endcomment -%}
+      {% for block in section.blocks %}
       {% if block.type == 'mega_menu_collection' or block.type == 'mega_menu_banner' %}
-        {% assign mm_link = blank %}
-        {% for link in section.settings.menu.links %}
-          {% if block.settings.menu_item_handle != blank and link.title == block.settings.menu_item_handle %}
-            {% assign mm_link = link %}
-          {% endif %}
-        {% endfor %}
-        {% if mm_link != blank %}
-          {% render 'mega-menu', block: block, link: mm_link %}
-        {% endif %}
+      {% assign mm_link = blank %}
+      {% for link in section.settings.menu.links %}
+      {% if block.settings.menu_item_handle != blank and link.title == block.settings.menu_item_handle %}
+      {% assign mm_link = link %}
       {% endif %}
-    {% endfor %}
+      {% endfor %}
+      {% if mm_link != blank %}
+      {% render 'mega-menu', block: block, link: mm_link %}
+      {% endif %}
+      {% endif %}
+      {% endfor %}
 </div>
 
 <style>
-  #shopify-section-{{ section.id }} {
+  #shopify-section- {
+      {
+      section.id
+    }
+  }
+
+    {
     --transition-default: 0.45s cubic-bezier(0.65, 0, 0.35, 1);
   }
 </style>
@@ -363,11 +372,12 @@
 "type": "mega_menu_collection",
 "name": "Mega Menu — Collections",
 "settings": [
+  
 {
 "type": "text",
 "id": "menu_item_handle",
 "label": "Connect to menu item",
-"info": "Header menu mein jo link ka naam hai (e.g. \"Shop\"), wahi exact text yahan type karein — case-sensitive match hota hai."
+"info": "write exact text of the link in the header menu — case-sensitive match, to connect this mega menu to that menu item"
 },
 {
 "type": "header",
@@ -382,7 +392,7 @@
 "type": "text",
 "id": "collection_1_title",
 "label": "Title override",
-"info": "Blank chhorne par collection ka apna title use hoga"
+"info": "If left blank, the collection's own title will be used"
 },
 {
 "type": "header",
@@ -422,7 +432,7 @@
 "type": "text",
 "id": "menu_item_handle",
 "label": "Connect to menu item",
-"info": "Header menu mein jo link ka naam hai, wahi exact text yahan type karein — case-sensitive match hota hai."
+"info": "write exact text of the link in the header menu — case-sensitive match, to connect this mega menu to that menu item"
 },
 {
 "type": "text",
