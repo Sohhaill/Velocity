@@ -114,6 +114,7 @@
     "color_scheme": "Color scheme",
     "show_payment_icons": "Show payment icons",
     "header_width_type": "Header width",
+    "Container_width_type": "Container width",
     "text_style": "Text style",
     "text": "Text"
   },
@@ -144,6 +145,10 @@
       "scheme_4": "Scheme 4"
     },
     "header_width_type": {
+      "container_width": "Container width",
+      "full_width": "Full width"
+    },
+    "Container_width_type": {
       "container_width": "Container width",
       "full_width": "Full width"
     },
