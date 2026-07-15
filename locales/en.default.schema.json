@@ -211,7 +211,7 @@
       },
       "presets": { "name": "Announcement bar" }
     },
-     "banner": {
+    "banner": {
       "name": "Banner slider",
       "previous": "Previous slide",
       "next": "Next slide",
@@ -220,9 +220,9 @@
         "slider": "Slider settings"
       },
       "settings": {
-         "allow_transparent_header": {
+        "allow_transparent_header": {
           "label": "Allow transparent header",
-          "info": "Adds an attribute your header script can detect to enable a transparent/overlay header on this slide"
+          "info": "When this section is placed directly below the header, the header background becomes transparent and overlays this section until the visitor scrolls."
         },
         "height_desktop": {
           "label": "Section height (desktop)"
@@ -255,11 +255,11 @@
             "position": "Content position",
             "content": "Content",
             "button_1": "Button 1",
-             "overlay": "Overlay",
+            "overlay": "Overlay",
             "button_2": "Button 2"
           },
           "settings": {
-             "overlay_opacity": {
+            "overlay_opacity": {
               "label": "Overlay opacity"
             },
             "content_alignment": {
@@ -310,6 +310,4 @@
       }
     }
   }
-  
-  
 }
