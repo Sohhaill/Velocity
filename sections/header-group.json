@@ -113,7 +113,7 @@
         "on_expire": "hide_timer",
         "expired_text": "This offer has ended",
         "button_label": "Shop now",
-        "button_link": "",
+        "button_link": "#",
         "button_style": "filled",
         "padding_top_desktop": 60,
         "padding_bottom_desktop": 60,
