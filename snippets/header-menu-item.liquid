@@ -5,6 +5,9 @@ Renders a recursive header menu item for desktop and drawer navigation.
 @param {string} mode - Either `desktop` or `drawer`
 @param {string} parent_id - Unique id prefix for nested submenu controls
 @param {number} depth - Current nesting depth
+@param {object} mega_menu_block - (optional, desktop + depth 0 only) the
+  matched mega-menu schema block for this top-level item. When present,
+  it replaces the normal dropdown submenu for this item.
 {% enddoc %}
 
 {% assign has_children = false %}
@@ -51,10 +54,14 @@ Renders a recursive header menu item for desktop and drawer navigation.
   {% endif %}
 </li>
 {% else %}
-<li class="header__menu-item{% if has_children %} header__menu-item--has-children{% endif %}" data-depth="{{ depth }}">
+<li class="header__menu-item{% if has_children %} header__menu-item--has-children{% endif %}{% if mega_menu_block != blank %} header__menu-item--has-mega-menu{% endif %}"
+  data-depth="{{ depth }}">
   <div class="header__menu-link-wrap">
-    <a class="header__menu-link" href="{{ link.url }}">{{ link.title }}</a>
-    {% if has_children %}
+    <a class="header__menu-link" href="{{ link.url }}"
+      {% if mega_menu_block != blank %}data-mega-menu-trigger="{{ mega_menu_block.id }}" aria-expanded="false"{% endif %}>
+      {{ link.title }}
+    </a>
+    {% if has_children and mega_menu_block == blank %}
     <button class="header__submenu-toggle" type="button" aria-expanded="false" aria-controls="{{ submenu_id }}">
       {% if depth == 0 %}
       <svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
@@ -74,7 +81,9 @@ Renders a recursive header menu item for desktop and drawer navigation.
     {% endif %}
   </div>
 
-  {% if has_children %}
+  {% if mega_menu_block != blank %}
+    {% render 'mega-menu', block: mega_menu_block, link: link %}
+  {% elsif has_children %}
   <ul id="{{ submenu_id }}" class="header__submenu header__submenu--depth-{{ depth }} desktop-dropdown-menu"
     data-depth="{{ depth }} ">
     {% for child in link.links %}
