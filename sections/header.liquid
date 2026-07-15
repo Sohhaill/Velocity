@@ -3,7 +3,7 @@
 {{ 'megemenu-script.js' | asset_url | script_tag }}
 <div
   class="section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }} v-header{% if section.settings.enable_drawer_desktop %} header--drawer-desktop{% endif %}"
- data-header-transparent-check  
+  
 id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data-header-sticky="true" {% endif %}>
   <header
     class="header{% if section.settings.header_width_type == 'full_width' %} full-width{% else %} container-width{% endif %}">

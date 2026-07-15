@@ -14,33 +14,7 @@
       document.body.style.overflow = 'hidden';
       if (window.lenis) window.lenis.stop();
     }
-    function checkTransparentHeader() {
-      var headerWrapper = document.querySelector('[data-header-transparent-check]');
-      if (!headerWrapper) return;
 
-      var nextSection = headerWrapper.nextElementSibling;
-      while (nextSection && nextSection.nodeType !== 1) {
-        nextSection = nextSection.nextElementSibling;
-      }
-
-      var hasTransparentTarget =
-        (nextSection && nextSection.matches && nextSection.matches('[allow-transparent-header]')) ||
-        (nextSection && nextSection.querySelector && nextSection.querySelector('[allow-transparent-header]'));
-
-      if (hasTransparentTarget) {
-        headerWrapper.classList.add('allow-transparent-header');
-      } else {
-        headerWrapper.classList.remove('allow-transparent-header');
-      }
-    }
-
-    checkTransparentHeader();
-
-    if (Shopify && Shopify.designMode) {
-      document.addEventListener('shopify:section:load', checkTransparentHeader);
-      document.addEventListener('shopify:section:unload', checkTransparentHeader);
-      document.addEventListener('shopify:section:reorder', checkTransparentHeader);
-    }
     function closeHeaderDrawer() {
       var drawer = document.getElementById('header-drawer');
       if (!drawer) return;
