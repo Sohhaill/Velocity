@@ -109,7 +109,7 @@
         "heading": "Sale ends in",
         "text": "<p>Don't miss out on our limited time offer.</p>",
         "end_date": "2026-12-31",
-        "end_time": "00:00",
+        "end_time": "23:59",
         "on_expire": "hide_timer",
         "expired_text": "This offer has ended",
         "button_label": "Shop now",
