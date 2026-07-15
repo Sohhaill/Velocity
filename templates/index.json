@@ -70,7 +70,7 @@
           "type": "slide",
           "settings": {
             "image_desktop": "shopify://shop_images/HOMEPAGE_DESKTOP_BANNER_ICYCANDLES_1.webp",
-            "content_position_desktop": "center_center",
+            "content_position_desktop": "center_left",
             "content_position_mobile": "bottom_center",
             "subheading": "",
             "heading": "Slide heading",
@@ -95,7 +95,7 @@
         "transition_effect": "slide",
         "enable_autoplay": true,
         "autoplay_speed": 5,
-        "enable_navigation": true,
+        "enable_navigation": false,
         "enable_pagination": true
       }
     }
