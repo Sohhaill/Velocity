@@ -2,7 +2,7 @@
 {{ 'mega-menu.css' | asset_url | stylesheet_tag }}
 {{ 'megemenu-script.js' | asset_url | script_tag }}
 <div
-  class="section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }} v-header{% if section.settings.enable_drawer_desktop %} header--drawer-desktop{% endif %}"
+  class="section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }} v-header{% if section.settings.enable_drawer_desktop %} header--drawer-desktop{% endif %}{% if section.settings.enable_transparent_header %} allow-transparent-header{% endif %}"
   
 id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data-header-sticky="true" {% endif %}>
   <header
@@ -251,15 +251,16 @@ id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data
 </div>
 
 <style>
-  #shopify-section- {
-      {
-      section.id
-    }
-  }
-
-    {
+  #shopify-section-{{ section.id }} {
     --transition-default: 0.45s cubic-bezier(0.65, 0, 0.35, 1);
   }
+
+  {% if section.settings.enable_transparent_header %}
+  #header-wrapper-{{ section.id }}.allow-transparent-header .header {
+    background: transparent;
+    color: {{ section.settings.transparent_header_text_color }};
+  }
+  {% endif %}
 </style>
 
 {% schema %}
@@ -325,6 +326,19 @@ id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data
 "label": "t:labels.enable_drawer_desktop",
 "info": "t:labels.enable_drawer_desktop_info",
 "default": false
+},
+{
+"type": "checkbox",
+"id": "enable_transparent_header",
+"label": "t:labels.enable_transparent_header",
+"info": "t:labels.enable_transparent_header_info",
+"default": false
+},
+{
+"type": "color",
+"id": "transparent_header_text_color",
+"label": "t:labels.transparent_header_text_color",
+"default": "#ffffff"
 },
 {
 "type": "link_list",
