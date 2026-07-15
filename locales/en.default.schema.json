@@ -201,9 +201,8 @@
         }
       },
       "presets": { "name": "Announcement bar" }
-    }
-  },
-   "banner": {
+    },
+     "banner": {
       "name": "Banner slider",
       "previous": "Previous slide",
       "next": "Next slide",
@@ -283,5 +282,7 @@
         "name": "Banner slider"
       }
     }
+  }
+  
   
 }
