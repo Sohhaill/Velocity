@@ -61,7 +61,7 @@
       "settings": {
         "section_color_scheme": "scheme_1",
         "logo": "shopify://shop_images/download.webp",
-        "header_width_type": "container_width",
+        "header_width_type": "full_width",
         "logo_width_desktop": 170,
         "logo_width_mobile": 120,
         "header_sticky": true,
