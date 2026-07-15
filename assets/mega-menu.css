@@ -148,6 +148,12 @@
   opacity: 1;
   transform: translateY(-4px);
 }
+svg.megamenu-svg {
+    display: none;
+}
+.header__menu-item--has-mega-menu svg.megamenu-svg {
+    display: block;
+}
 
 /* ---- deep menus: scroll instead of blowing out the panel height ---- */
 .mega-menu__col--links,
