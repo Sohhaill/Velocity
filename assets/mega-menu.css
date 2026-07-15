@@ -1,0 +1,262 @@
+/* ==========================================================================
+   Mega Menu
+   - Inherits colors from the parent .section-color-scheme--{{ scheme }}
+     wrapper on the header, so it always matches header's chosen scheme.
+   - If your color-scheme system uses different variable names than the
+     ones below (--color-scheme-background etc.), swap them to match —
+     these are just sensible fallbacks.
+   ========================================================================== */
+
+:root {
+  --mega-menu-transition: var(--transition-default, 0.45s cubic-bezier(0.65, 0, 0.35, 1));
+}
+
+/* the <li> (or wrapping element) that owns a mega menu needs this */
+.header__menu-item--has-mega-menu {
+  position: relative;
+}
+
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--color-scheme-background, #ffffff);
+  color: var(--color-scheme-text, #111111);
+  border-top: 1px solid var(--color-scheme-border, rgba(0, 0, 0, 0.08));
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.10);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition:
+    opacity var(--mega-menu-transition),
+    transform var(--mega-menu-transition),
+    visibility 0s linear 0.45s;
+
+  z-index: 40;
+}
+
+.mega-menu.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition:
+    opacity var(--mega-menu-transition),
+    transform var(--mega-menu-transition),
+    visibility 0s linear 0s;
+}
+
+.mega-menu__inner {
+  display: flex;
+  gap: 48px;
+  padding: 40px 0 48px;
+}
+
+/* ---- shared submenu list (left column, both layouts) ---- */
+.mega-menu__col--links,
+.mega-menu__col--text {
+  flex: 0 0 220px;
+}
+
+.mega-menu__heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.mega-menu__subheading {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  margin-bottom: 16px;
+}
+
+.mega-menu__submenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mega-menu__submenu-link {
+  display: inline-block;
+  padding: 6px 0;
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity var(--mega-menu-transition), transform var(--mega-menu-transition);
+}
+
+.mega-menu__submenu-link:hover {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+/* ---- Layout 1: collection cards ---- */
+.mega-menu__col--collections {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.mega-menu__coll-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.mega-menu__coll-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--color-scheme-border, rgba(0, 0, 0, 0.06));
+}
+
+.mega-menu__coll-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.mega-menu__coll-placeholder {
+  width: 100%;
+  height: 100%;
+}
+
+.mega-menu__coll-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.35) 100%);
+  opacity: 0;
+  transition: opacity var(--mega-menu-transition);
+}
+
+.mega-menu__coll-card:hover .mega-menu__coll-image {
+  transform: scale(1.06);
+}
+
+.mega-menu__coll-card:hover .mega-menu__coll-overlay {
+  opacity: 1;
+}
+
+.mega-menu__coll-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.mega-menu__coll-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1px;
+  background: currentColor;
+  transition: width var(--mega-menu-transition);
+}
+
+.mega-menu__coll-card:hover .mega-menu__coll-title::after {
+  width: 100%;
+}
+
+/* ---- Layout 2: banner grid (bento, dark overlay, full-bleed) ---- */
+.mega-menu__col--banners {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.mega-menu__banner-card {
+  position: relative;
+  display: block;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  text-decoration: none;
+  color: #fff;
+}
+
+.mega-menu__banner-image-wrap {
+  position: absolute;
+  inset: 0;
+}
+
+.mega-menu__banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.mega-menu__banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 30%, rgba(0, 0, 0, 0.65) 100%);
+  transition: background var(--mega-menu-transition);
+}
+
+.mega-menu__banner-card:hover .mega-menu__banner-image {
+  transform: scale(1.06);
+}
+
+.mega-menu__banner-card:hover .mega-menu__banner-overlay {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 20%, rgba(0, 0, 0, 0.75) 100%);
+}
+
+.mega-menu__banner-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transform: translateY(6px);
+  transition: transform var(--mega-menu-transition);
+}
+
+.mega-menu__banner-card:hover .mega-menu__banner-content {
+  transform: translateY(0);
+}
+
+.mega-menu__banner-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.mega-menu__banner-subtitle {
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.mega-menu__banner-btn {
+  margin-top: 6px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  width: fit-content;
+}
+
+/* ---- mobile: mega menu is desktop-only, drawer handles submenus itself ---- */
+@media screen and (max-width: 989px) {
+  .mega-menu {
+    display: none;
+  }
+}
