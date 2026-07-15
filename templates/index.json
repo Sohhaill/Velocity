@@ -81,6 +81,26 @@
             "button_1_label": "Shop now",
             "button_1_link": "#",
             "button_1_style": "filled",
+            "button_2_label": "Buy Now",
+            "button_2_link": "#",
+            "button_2_style": "outline"
+          }
+        },
+        "slide_tg9Qdy": {
+          "type": "slide",
+          "settings": {
+            "video_desktop": "shopify://files/videos/e7c24e5e1e2c4b5bb5d7fd2461bb6baa.SD-480p-1.5Mbps-81313404.mp4",
+            "overlay_opacity": 0,
+            "content_position_desktop": "top_center",
+            "content_position_mobile": "top_right",
+            "content_in_container": true,
+            "text_color": "dark",
+            "subheading": "Subheading",
+            "heading": "Slide heading",
+            "description": "<p>Our description </p>",
+            "button_1_label": "Shop now",
+            "button_1_link": "#",
+            "button_1_style": "filled",
             "button_2_label": "",
             "button_2_link": "",
             "button_2_style": "outline"
@@ -88,15 +108,16 @@
         }
       },
       "block_order": [
-        "slide_FcbQXV"
+        "slide_FcbQXV",
+        "slide_tg9Qdy"
       ],
       "name": "t:sections.banner.presets.name",
       "settings": {
         "section_color_scheme": "scheme_1",
-        "height_desktop": 600,
+        "height_desktop": 720,
         "height_mobile": 450,
         "transition_effect": "slide",
-        "enable_autoplay": true,
+        "enable_autoplay": false,
         "autoplay_speed": 5,
         "enable_navigation": false,
         "enable_pagination": true
