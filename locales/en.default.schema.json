@@ -126,6 +126,11 @@
     "footer_bottom": "Footer bottom"
   },
   "options": {
+    "content_alignment": {
+      "left": "Left",
+      "center": "Center",
+      "right": "Right"
+    },
     "text_color": {
       "light": "White text",
       "dark": "Dark text"
@@ -215,6 +220,10 @@
         "slider": "Slider settings"
       },
       "settings": {
+         "allow_transparent_header": {
+          "label": "Allow transparent header",
+          "info": "Adds an attribute your header script can detect to enable a transparent/overlay header on this slide"
+        },
         "height_desktop": {
           "label": "Section height (desktop)"
         },
@@ -252,6 +261,9 @@
           "settings": {
              "overlay_opacity": {
               "label": "Overlay opacity"
+            },
+            "content_alignment": {
+              "label": "Content alignment"
             },
             "content_in_container": {
               "label": "Contain content within page width",

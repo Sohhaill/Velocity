@@ -106,11 +106,6 @@
   justify-content: var(--v-banner-content-justify, center);
 }
 
-.v-banner__content-inner[style*="text-align: right"] .v-banner__buttons,
-.v-banner__content-inner[style*="text-align: center"] .v-banner__buttons {
-  justify-content: inherit;
-}
-
 /* PAGINATION */
 .v-banner__pagination {
   position: absolute;
