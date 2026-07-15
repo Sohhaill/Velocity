@@ -9,7 +9,9 @@
     data-autoplay="{{ section.settings.enable_autoplay }}"
     data-autoplay-speed="{{ section.settings.autoplay_speed | times: 1000 }}"
     data-navigation="{{ section.settings.enable_navigation }}"
-    data-pagination="{{ section.settings.enable_pagination }}" style="{{ v_banner_styles }}">
+    data-pagination="{{ section.settings.enable_pagination }}"
+    {% if section.settings.allow_transparent_header %}allow-transparent-header{% endif %}
+    style="{{ v_banner_styles }}">
     <div class="v-banner__swiper swiper">
         <div class="swiper-wrapper">
             {%- for block in section.blocks -%}
@@ -64,6 +66,14 @@
             {% assign overlay_opacity_decimal = block.settings.overlay_opacity | default: 0 | divided_by: 100.0 %}
             {% assign overlay_style = '--v-banner-overlay-opacity: ' | append: overlay_opacity_decimal | append: ';' %}
 
+            {% assign content_justify_value = 'center' %}
+            {% case block.settings.content_alignment %}
+            {% when 'left' %}{% assign content_justify_value = 'flex-start' %}
+            {% when 'right' %}{% assign content_justify_value = 'flex-end' %}
+            {% endcase %}
+            {% assign content_alignment_style = '--v-banner-content-text-align: ' | append:
+            block.settings.content_alignment | append: '; --v-banner-content-justify: ' | append: content_justify_value
+            | append: ';' %}
             <div class="swiper-slide v-banner__slide" data-slide-index="{{ forloop.index0 }}" {{
                 block.shopify_attributes }}>
 
@@ -99,7 +109,7 @@
                 <div class="v-banner__overlay" style="{{ overlay_style }}"></div>
 
                 <div class="v-banner__content{{ content_container_class }}" style="{{ content_style }}">
-                    <div class="v-banner__content-inner">
+                <div class="v-banner__content-inner" style="{{ content_alignment_style }}">
                         <div class="v-banner__text {{ text_color_class }}">
                             {%- if block.settings.subheading != blank -%}
                             <p class="v-banner__subheading">{{ block.settings.subheading }}</p>
@@ -173,6 +183,13 @@
 { "value": "scheme_3", "label": "t:options.color_scheme.scheme_3" },
 { "value": "scheme_4", "label": "t:options.color_scheme.scheme_4" }
 ]
+},
+{
+"type": "checkbox",
+"id": "allow_transparent_header",
+"label": "t:sections.banner.settings.allow_transparent_header.label",
+"info": "t:sections.banner.settings.allow_transparent_header.info",
+"default": false
 },
 {
 "type": "header",
@@ -340,6 +357,17 @@
 {
 "type": "header",
 "content": "t:sections.banner.blocks.slide.headers.content"
+},
+{
+"type": "select",
+"id": "content_alignment",
+"label": "t:sections.banner.blocks.slide.settings.content_alignment.label",
+"default": "center",
+"options": [
+{ "value": "left", "label": "t:options.content_alignment.left" },
+{ "value": "center", "label": "t:options.content_alignment.center" },
+{ "value": "right", "label": "t:options.content_alignment.right" }
+]
 },
 {
 "type": "select",

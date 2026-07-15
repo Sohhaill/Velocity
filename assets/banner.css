@@ -78,14 +78,13 @@
 
 .v-banner__content-inner {
   max-width: 480px;
-  text-align: var(--v-banner-text-align-mobile);
+  text-align: var(--v-banner-content-text-align, center);
   pointer-events: auto;
 }
 
 @media screen and (min-width: 750px) {
   .v-banner__content-inner {
     max-width: 560px;
-    text-align: var(--v-banner-text-align-desktop);
   }
 }
 
@@ -104,6 +103,7 @@
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 8px;
+  justify-content: var(--v-banner-content-justify, center);
 }
 
 .v-banner__content-inner[style*="text-align: right"] .v-banner__buttons,
