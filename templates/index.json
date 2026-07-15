@@ -69,6 +69,7 @@
         "slide_FcbQXV": {
           "type": "slide",
           "settings": {
+            "image_desktop": "shopify://shop_images/HOMEPAGE_DESKTOP_BANNER_ICYCANDLES_1.webp",
             "content_position_desktop": "center_center",
             "content_position_mobile": "bottom_center",
             "subheading": "",
