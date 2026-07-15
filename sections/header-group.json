@@ -99,10 +99,32 @@
         "search_popup_color_scheme": "scheme_3",
         "show_cart_icon": true
       }
+    },
+    "count_down_ETi6Vg": {
+      "type": "count-down",
+      "name": "t:sections.count_down.presets.name",
+      "settings": {
+        "section_color_scheme": "scheme_1",
+        "container_width_type": "container_width",
+        "heading": "Sale ends in",
+        "text": "<p>Don't miss out on our limited time offer.</p>",
+        "end_date": "",
+        "end_time": "00:00",
+        "on_expire": "hide_timer",
+        "expired_text": "This offer has ended",
+        "button_label": "Shop now",
+        "button_link": "",
+        "button_style": "filled",
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
     }
   },
   "order": [
     "announcement_bar_PzP6rQ",
-    "header"
+    "header",
+    "count_down_ETi6Vg"
   ]
 }
