@@ -110,15 +110,10 @@
     "padding": "Padding",
     "page_margin": "Page margin",
     "max_width": "Max width",
-    "padding_top_desktop": "Section padding top (desktop)",
-    "padding_bottom_desktop": "Section padding bottom (desktop)",
-    "padding_top_mobile": "Section padding top (mobile)",
-    "padding_bottom_mobile": "Section padding bottom (mobile)",
     "container_margin": "Container margin",
     "color_scheme": "Color scheme",
     "show_payment_icons": "Show payment icons",
     "header_width_type": "Header width",
-    "Container_width_type": "Container width",
     "text_style": "Text style",
     "text": "Text"
   },
@@ -126,7 +121,7 @@
     "desktop_padding": "Desktop padding",
     "mobile_padding": "Mobile padding",
     "border_radius": "Border radius",
-    "footer_bottom": "Footer bottom"
+     "footer_bottom": "Footer bottom"
   },
   "options": {
     "alignment": {
@@ -137,11 +132,6 @@
     "button_style": {
       "filled": "Filled",
       "outline": "Outline"
-    },
-     "on_expire": {
-      "hide_timer": "Hide timer, show text",
-      "hide_section": "Hide entire section",
-      "show_zeros": "Keep showing 00:00:00:00"
     },
     "direction": {
       "horizontal": "Horizontal",
@@ -154,10 +144,6 @@
       "scheme_4": "Scheme 4"
     },
     "header_width_type": {
-      "container_width": "Container width",
-      "full_width": "Full width"
-    },
-    "Container_width_type": {
       "container_width": "Container width",
       "full_width": "Full width"
     },
@@ -197,51 +183,6 @@
         }
       },
       "presets": { "name": "Announcement bar" }
-    },
-
-    "count_down": {
-      "name": "Countdown timer",
-      "headers": {
-        "content": "Content",
-        "timer": "Timer",
-        "button": "Button"
-      },
-      "settings": {
-        "heading": {
-          "label": "Heading"
-        },
-        "text": {
-          "label": "Text"
-        },
-        "end_date": {
-          "label": "End date",
-          "info": "Format: YYYY-MM-DD, e.g. 2026-12-31"
-        },
-        "end_time": {
-          "label": "End time",
-          "info": "24-hour format, e.g. 23:59. Uses visitor's local timezone."
-        },
-        "on_expire": {
-          "label": "When timer ends"
-        },
-        "expired_text": {
-          "label": "Expired message",
-          "info": "Shown only when \"Hide timer, show text\" is selected above"
-        },
-        "button_label": {
-          "label": "Button label"
-        },
-        "button_link": {
-          "label": "Button link"
-        }
-      },
-      "days": "Days",
-      "hours": "Hours",
-      "minutes": "Minutes",
-      "seconds": "Seconds",
-      "presets": {
-        "name": "Countdown timer"
-      }
     }
   }
 }
