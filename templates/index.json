@@ -74,6 +74,7 @@
             "content_position_desktop": "center_left",
             "content_position_mobile": "bottom_center",
             "content_in_container": true,
+            "content_alignment": "center",
             "text_color": "light",
             "subheading": "Subheading",
             "heading": "Slide heading",
@@ -94,6 +95,7 @@
             "content_position_desktop": "top_center",
             "content_position_mobile": "top_right",
             "content_in_container": true,
+            "content_alignment": "center",
             "text_color": "dark",
             "subheading": "Subheading",
             "heading": "Slide heading",
@@ -114,6 +116,7 @@
       "name": "t:sections.banner.presets.name",
       "settings": {
         "section_color_scheme": "scheme_1",
+        "allow_transparent_header": true,
         "height_desktop": 720,
         "height_mobile": 450,
         "transition_effect": "slide",
