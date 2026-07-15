@@ -60,7 +60,6 @@ Renders a recursive header menu item for desktop and drawer navigation.
     <a class="header__menu-link" href="{{ link.url }}"
       {% if mega_menu_block != blank %}data-mega-menu-trigger="{{ mega_menu_block.id }}" aria-expanded="false"{% endif %}>
       {{ link.title }}
-      
     </a>
     {% if has_children and mega_menu_block == blank %}
     <button class="header__submenu-toggle" type="button" aria-expanded="false" aria-controls="{{ submenu_id }}">
