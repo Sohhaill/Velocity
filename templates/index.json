@@ -53,6 +53,7 @@
         "image_text_card_zDDEm7",
         "image_text_card_Ww9gVG"
       ],
+      "disabled": true,
       "name": "Multiple Image with Text",
       "settings": {
         "section_color_scheme": "scheme_2",
