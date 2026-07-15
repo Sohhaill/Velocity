@@ -104,7 +104,7 @@
       "type": "count-down",
       "name": "t:sections.count_down.presets.name",
       "settings": {
-        "section_color_scheme": "scheme_1",
+        "section_color_scheme": "scheme_2",
         "container_width_type": "container_width",
         "heading": "Sale ends in",
         "text": "<p>Don't miss out on our limited time offer.</p>",
@@ -113,7 +113,7 @@
         "on_expire": "hide_timer",
         "expired_text": "This offer has ended",
         "button_label": "Shop now",
-        "button_link": "",
+        "button_link": "#",
         "button_style": "filled",
         "padding_top_desktop": 60,
         "padding_bottom_desktop": 60,
