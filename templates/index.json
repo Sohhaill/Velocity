@@ -62,9 +62,45 @@
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0
       }
+    },
+    "banner_dUTX7b": {
+      "type": "banner",
+      "blocks": {
+        "slide_FcbQXV": {
+          "type": "slide",
+          "settings": {
+            "content_position_desktop": "center_center",
+            "content_position_mobile": "bottom_center",
+            "subheading": "",
+            "heading": "Slide heading",
+            "description": "",
+            "button_1_label": "",
+            "button_1_link": "",
+            "button_1_style": "filled",
+            "button_2_label": "",
+            "button_2_link": "",
+            "button_2_style": "outline"
+          }
+        }
+      },
+      "block_order": [
+        "slide_FcbQXV"
+      ],
+      "name": "t:sections.banner.presets.name",
+      "settings": {
+        "section_color_scheme": "scheme_1",
+        "height_desktop": 600,
+        "height_mobile": 450,
+        "transition_effect": "slide",
+        "enable_autoplay": true,
+        "autoplay_speed": 5,
+        "enable_navigation": true,
+        "enable_pagination": true
+      }
     }
   },
   "order": [
-    "multiple_image_text_k7WWD4"
+    "multiple_image_text_k7WWD4",
+    "banner_dUTX7b"
   ]
 }
