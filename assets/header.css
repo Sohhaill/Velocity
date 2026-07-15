@@ -23,8 +23,8 @@
   background: transparent;
   transition: all 0.25s ease;
   .header{
-
-    transition: all 0.25s ease;
+    background: transparent;
+    
   }
 }
 #VAnnoucmentLanguageSelector {
