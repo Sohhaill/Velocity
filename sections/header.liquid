@@ -196,7 +196,7 @@ id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data
         var headerWrapper = document.getElementById('header-wrapper-{{ section.id }}');
         if (!headerWrapper) return;
 
-        var scrollThreshold = 50; // px — scroll start ke baad sticky trigger hoga
+        var scrollThreshold = 50; 
         var isSticky = false;
         var ticking = false;
 
@@ -222,7 +222,7 @@ id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data
           }
         }, { passive: true });
 
-        // Page already scrolled hone par (anchor link se aane par) sahi state set karein
+       
         updateStickyState();
       })();
     </script>
