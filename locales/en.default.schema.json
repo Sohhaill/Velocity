@@ -79,6 +79,8 @@
     "outline_button_hover_border": "Hover border",
     "outline_button_hover_text": "Hover text",
     "input_text": "Input text",
+    "button_label": "Button label",
+    "button_link": "Button link",
     "input_background": "Input background",
     "field": "Field",
     "foreground": "Foreground",
@@ -121,9 +123,25 @@
     "desktop_padding": "Desktop padding",
     "mobile_padding": "Mobile padding",
     "border_radius": "Border radius",
-     "footer_bottom": "Footer bottom"
+    "footer_bottom": "Footer bottom"
   },
   "options": {
+    "position": {
+      "top_left": "Top left",
+      "top_center": "Top center",
+      "top_right": "Top right",
+      "center_left": "Middle left",
+      "center_center": "Middle center",
+      "center_right": "Middle right",
+      "bottom_left": "Bottom left",
+      "bottom_center": "Bottom center",
+      "bottom_right": "Bottom right"
+    },
+    "transition_effect": {
+      "slide": "Slide",
+      "fade": "Fade",
+      "coverflow": "Coverflow"
+    },
     "alignment": {
       "left": "Left",
       "center": "Center",
@@ -184,5 +202,88 @@
       },
       "presets": { "name": "Announcement bar" }
     }
+  },
+    "sections": {
+    "banner": {
+      "name": "Banner slider",
+      "previous": "Previous slide",
+      "next": "Next slide",
+      "headers": {
+        "layout": "Layout",
+        "slider": "Slider settings"
+      },
+      "settings": {
+        "height_desktop": {
+          "label": "Section height (desktop)"
+        },
+        "height_mobile": {
+          "label": "Section height (mobile)"
+        },
+        "transition_effect": {
+          "label": "Slide transition"
+        },
+        "enable_autoplay": {
+          "label": "Enable autoplay"
+        },
+        "autoplay_speed": {
+          "label": "Autoplay speed"
+        },
+        "enable_navigation": {
+          "label": "Enable navigation arrows"
+        },
+        "enable_pagination": {
+          "label": "Enable pagination dots"
+        }
+      },
+      "blocks": {
+        "slide": {
+          "name": "Slide",
+          "headers": {
+            "media_desktop": "Desktop media",
+            "media_mobile": "Mobile media",
+            "position": "Content position",
+            "content": "Content",
+            "button_1": "Button 1",
+            "button_2": "Button 2"
+          },
+          "settings": {
+            "image_desktop": {
+              "label": "Image (desktop)"
+            },
+            "video_desktop": {
+              "label": "Video (desktop)",
+              "info": "Uploaded from Shopify's video library. Autoplays muted and loops."
+            },
+            "image_mobile": {
+              "label": "Image (mobile)",
+              "info": "Optional — uses desktop image if left empty"
+            },
+            "video_mobile": {
+              "label": "Video (mobile)",
+              "info": "Optional — uses desktop video (or image) if left empty"
+            },
+            "content_position_desktop": {
+              "label": "Content position (desktop)"
+            },
+            "content_position_mobile": {
+              "label": "Content position (mobile)"
+            },
+            "subheading": {
+              "label": "Subheading"
+            },
+            "heading": {
+              "label": "Heading"
+            },
+            "description": {
+              "label": "Description"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Banner slider"
+      }
+    }
   }
+  
 }
