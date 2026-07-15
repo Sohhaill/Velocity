@@ -120,7 +120,7 @@
   background: #00000008;
 }
 .header__menu-item:hover {
-  transform: translateX(5px);
+  transform: translateY(-5px);
 }
 
 .header__menu-item:hover a.header__menu-link {
