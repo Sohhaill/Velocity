@@ -149,10 +149,12 @@
   transform: translateY(-4px);
 }
 svg.megamenu-svg {
-    display: none;
+  display: none;
 }
 .header__menu-item--has-mega-menu svg.megamenu-svg {
-    display: block;
+  display: block;
+  width: 16px;
+  height: 16px;
 }
 
 /* ---- deep menus: scroll instead of blowing out the panel height ---- */
