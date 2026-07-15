@@ -145,7 +145,7 @@
 
 .mega-menu__submenu-sublink:hover {
   opacity: 1;
-  transform: translateX(4px);
+  transform: translateY(-4px);
 }
 
 /* ---- deep menus: scroll instead of blowing out the panel height ---- */

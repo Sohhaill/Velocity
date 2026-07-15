@@ -83,26 +83,7 @@
       </div>
     </div>
 
-    {%- comment -%}
-      Mega menu panels — rendered ONCE here, as siblings of .header__inner,
-      not nested inside any <li>. This is what makes them span the full
-      <header> width instead of being boxed in by a single nav item's
-      width. Each panel is hidden by default (CSS) and toggled via
-      data-mega-menu-trigger matching on the nav link.
-    {%- endcomment -%}
-    {% for block in section.blocks %}
-      {% if block.type == 'mega_menu_collection' or block.type == 'mega_menu_banner' %}
-        {% assign mm_link = blank %}
-        {% for link in section.settings.menu.links %}
-          {% if block.settings.menu_item_handle != blank and link.title == block.settings.menu_item_handle %}
-            {% assign mm_link = link %}
-          {% endif %}
-        {% endfor %}
-        {% if mm_link != blank %}
-          {% render 'mega-menu', block: block, link: mm_link %}
-        {% endif %}
-      {% endif %}
-    {% endfor %}
+   
 
     <div id="header-drawer" class="header__drawer" aria-hidden="true">
       <div class="header__drawer-panel">
@@ -242,9 +223,27 @@
       })();
     </script>
     {% endif %}
-
-   
   </header>
+   {%- comment -%}
+      Mega menu panels — rendered ONCE here, as siblings of .header__inner,
+      not nested inside any <li>. This is what makes them span the full
+      <header> width instead of being boxed in by a single nav item's
+      width. Each panel is hidden by default (CSS) and toggled via
+      data-mega-menu-trigger matching on the nav link.
+    {%- endcomment -%}
+    {% for block in section.blocks %}
+      {% if block.type == 'mega_menu_collection' or block.type == 'mega_menu_banner' %}
+        {% assign mm_link = blank %}
+        {% for link in section.settings.menu.links %}
+          {% if block.settings.menu_item_handle != blank and link.title == block.settings.menu_item_handle %}
+            {% assign mm_link = link %}
+          {% endif %}
+        {% endfor %}
+        {% if mm_link != blank %}
+          {% render 'mega-menu', block: block, link: mm_link %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
 </div>
 
 <style>
