@@ -1,6 +1,4 @@
-{{ 'header.css' | asset_url | stylesheet_tag }}
-{{ 'mega-menu.css' | asset_url | stylesheet_tag }}
-{{ 'megemenu-script.js' | asset_url | script_tag }}
+
 <div
   class="section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }} v-header{% if section.settings.enable_drawer_desktop %} header--drawer-desktop{% endif %}{% if section.settings.enable_transparent_header %} allow-transparent-header{% endif %}"
   
@@ -188,7 +186,7 @@ id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data
       </div>
     </div>
 
-    {% render 'header-scripts' %}
+    
     {% render 'search-popup', color_scheme: section.settings.search_popup_color_scheme %}
     {% if section.settings.header_sticky %}
     <script>
