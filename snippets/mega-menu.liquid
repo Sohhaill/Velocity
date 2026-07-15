@@ -29,15 +29,7 @@
       {%- when 'mega_menu_collection' -%}
 
         <div class="mega-menu__col mega-menu__col--links">
-          {%- if link.links.size > 0 -%}
-            <ul class="mega-menu__submenu">
-              {%- for child_link in link.links -%}
-                <li class="mega-menu__submenu-item">
-                  <a href="{{ child_link.url }}" class="mega-menu__submenu-link">{{ child_link.title }}</a>
-                </li>
-              {%- endfor -%}
-            </ul>
-          {%- endif -%}
+          {%- render 'mega-menu-submenu', link: link -%}
         </div>
 
         <div class="mega-menu__col mega-menu__col--collections">
@@ -72,15 +64,7 @@
           {%- if block.settings.subheading != blank -%}
             <div class="mega-menu__subheading">{{ block.settings.subheading }}</div>
           {%- endif -%}
-          {%- if link.links.size > 0 -%}
-            <ul class="mega-menu__submenu">
-              {%- for child_link in link.links -%}
-                <li class="mega-menu__submenu-item">
-                  <a href="{{ child_link.url }}" class="mega-menu__submenu-link">{{ child_link.title }}</a>
-                </li>
-              {%- endfor -%}
-            </ul>
-          {%- endif -%}
+          {%- render 'mega-menu-submenu', link: link -%}
         </div>
 
         <div class="mega-menu__col mega-menu__col--banners">

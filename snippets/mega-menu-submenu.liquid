@@ -1,0 +1,41 @@
+{%- comment -%}
+  Mega Menu — Submenu List
+  ------------------------------------------------------------------
+  Renders the connected menu item's children inside the mega menu's
+  left column. Supports ONE extra level of nesting:
+
+    Link (connected item)
+      └── child_link                → plain link
+      └── child_link (has children) → bold group heading + indented
+                                        list of grandchild links
+
+  Anything deeper than that (great-grandchildren) is intentionally
+  not shown — a mega-menu column isn't the right place for a 3rd
+  level of nesting; move that far down and it's better as its own
+  page or a "View all" link instead.
+
+  @param {link} link - the top-level connected menu link
+{%- endcomment -%}
+
+{%- if link.links.size > 0 -%}
+  <ul class="mega-menu__submenu">
+    {%- for child_link in link.links -%}
+      {%- if child_link.links.size > 0 -%}
+        <li class="mega-menu__submenu-group">
+          <a href="{{ child_link.url }}" class="mega-menu__submenu-heading">{{ child_link.title }}</a>
+          <ul class="mega-menu__submenu-sublist">
+            {%- for grandchild_link in child_link.links -%}
+              <li>
+                <a href="{{ grandchild_link.url }}" class="mega-menu__submenu-sublink">{{ grandchild_link.title }}</a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </li>
+      {%- else -%}
+        <li class="mega-menu__submenu-item">
+          <a href="{{ child_link.url }}" class="mega-menu__submenu-link">{{ child_link.title }}</a>
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+{%- endif -%}

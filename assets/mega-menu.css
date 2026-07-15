@@ -100,6 +100,62 @@
   transform: translateX(4px);
 }
 
+/* ---- nested group: a sub-menu item that itself has children ---- */
+.mega-menu__submenu-group {
+  margin-top: 4px;
+}
+
+.mega-menu__submenu-group:first-child {
+  margin-top: 0;
+}
+
+.mega-menu__submenu-heading {
+  display: inline-block;
+  padding: 6px 0 4px;
+  font-weight: 600;
+  font-size: 0.95em;
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.95;
+  transition: opacity var(--mega-menu-transition);
+}
+
+.mega-menu__submenu-heading:hover {
+  opacity: 1;
+}
+
+.mega-menu__submenu-sublist {
+  list-style: none;
+  margin: 0 0 6px;
+  padding-left: 12px;
+  border-left: 1px solid var(--color-scheme-border, rgba(0, 0, 0, 0.1));
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mega-menu__submenu-sublink {
+  display: inline-block;
+  padding: 4px 0 4px 10px;
+  font-size: 0.85em;
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity var(--mega-menu-transition), transform var(--mega-menu-transition);
+}
+
+.mega-menu__submenu-sublink:hover {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+/* ---- deep menus: scroll instead of blowing out the panel height ---- */
+.mega-menu__col--links,
+.mega-menu__col--text {
+  max-height: 65vh;
+  overflow-y: auto;
+}
+
 /* ---- Layout 1: collection cards ---- */
 .mega-menu__col--collections {
   flex: 1;
