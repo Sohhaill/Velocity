@@ -6,8 +6,8 @@ Renders a recursive header menu item for desktop and drawer navigation.
 @param {string} parent_id - Unique id prefix for nested submenu controls
 @param {number} depth - Current nesting depth
 @param {object} mega_menu_block - (optional, desktop + depth 0 only) the
-matched mega-menu schema block for this top-level item. When present,
-it replaces the normal dropdown submenu for this item.
+  matched mega-menu schema block for this top-level item. When present,
+  it replaces the normal dropdown submenu for this item.
 {% enddoc %}
 
 {% assign has_children = false %}
@@ -54,18 +54,13 @@ it replaces the normal dropdown submenu for this item.
   {% endif %}
 </li>
 {% else %}
-<li
-  class="header__menu-item{% if has_children %} header__menu-item--has-children{% endif %}{% if mega_menu_block != blank %} header__menu-item--has-mega-menu{% endif %}"
+<li class="header__menu-item{% if has_children %} header__menu-item--has-children{% endif %}{% if mega_menu_block != blank %} header__menu-item--has-mega-menu{% endif %}"
   data-depth="{{ depth }}">
   <div class="header__menu-link-wrap">
-    <a class="header__menu-link" href="{{ link.url }}" {% if mega_menu_block !=blank
-      %}data-mega-menu-trigger="{{ mega_menu_block.id }}" aria-expanded="false" {% endif %}>
+    <a class="header__menu-link" href="{{ link.url }}"
+      {% if mega_menu_block != blank %}data-mega-menu-trigger="{{ mega_menu_block.id }}" aria-expanded="false"{% endif %}>
       {{ link.title }}
-      <svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
-        <path fill-rule="evenodd" clip-rule="evenodd"
-          d="M12 4C12.5523 4 13 4.44772 13 5V11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H13V19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19V13H5C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11H11V5C11 4.44772 11.4477 4 12 4Z"
-          fill="#000000" />
-      </svg>
+      
     </a>
     {% if has_children and mega_menu_block == blank %}
     <button class="header__submenu-toggle" type="button" aria-expanded="false" aria-controls="{{ submenu_id }}">
@@ -97,11 +92,10 @@ it replaces the normal dropdown submenu for this item.
   </ul>
   {% endif %}
   {%- comment -%}
-  Note: when mega_menu_block is present, the actual mega-menu panel is
-  NOT rendered here. It's rendered once at the <header> level (see
+    Note: when mega_menu_block is present, the actual mega-menu panel is
+    NOT rendered here. It's rendered once at the <header> level (see
     header.liquid) so it can span the full header width instead of being
-    boxed in by this
-<li>'s narrow width.
+    boxed in by this <li>'s narrow width.
   {%- endcomment -%}
 </li>
 {% endif %}
