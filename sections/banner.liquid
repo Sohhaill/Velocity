@@ -49,6 +49,20 @@
 
         {% assign content_style = '--v-banner-align-desktop: ' | append: align_d | append: '; --v-banner-justify-desktop: ' | append: justify_d | append: '; --v-banner-text-align-desktop: ' | append: text_align_d | append: '; --v-banner-align-mobile: ' | append: align_m | append: '; --v-banner-justify-mobile: ' | append: justify_m | append: '; --v-banner-text-align-mobile: ' | append: text_align_m | append: ';' %}
 
+        {%- comment -%} content-in-container toggle {%- endcomment -%}
+        {% assign content_container_class = '' %}
+        {% if block.settings.content_in_container %}
+          {% assign content_container_class = ' v-banner__content--container' %}
+        {% endif %}
+
+        {%- comment -%} text color toggle — dark or light, buttons excluded {%- endcomment -%}
+        {% assign text_color_class = 'v-banner__text--light' %}
+        {% if block.settings.text_color == 'dark' %}
+          {% assign text_color_class = 'v-banner__text--dark' %}
+        {% endif %}
+
+        {% assign overlay_style = '--v-banner-overlay-opacity: ' | append: block.settings.overlay_opacity | divided_by: 100.0 | append: ';' %}
+
         <div class="swiper-slide v-banner__slide" data-slide-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
 
           {%- comment -%} MOBILE MEDIA — falls back to mobile image/video, then desktop {%- endcomment -%}
@@ -73,19 +87,24 @@
             {%- endif -%}
           </div>
 
-          <div class="v-banner__content" style="{{ content_style }}">
+          {%- comment -%} DARK OVERLAY — opacity controlled per block {%- endcomment -%}
+          <div class="v-banner__overlay" style="{{ overlay_style }}"></div>
+
+          <div class="v-banner__content{{ content_container_class }}" style="{{ content_style }}">
             <div class="v-banner__content-inner">
-              {%- if block.settings.subheading != blank -%}
-              <p class="v-banner__subheading">{{ block.settings.subheading }}</p>
-              {%- endif -%}
+              <div class="v-banner__text {{ text_color_class }}">
+                {%- if block.settings.subheading != blank -%}
+                <p class="v-banner__subheading">{{ block.settings.subheading }}</p>
+                {%- endif -%}
 
-              {%- if block.settings.heading != blank -%}
-              <h2 class="v-banner__heading">{{ block.settings.heading }}</h2>
-              {%- endif -%}
+                {%- if block.settings.heading != blank -%}
+                <h2 class="v-banner__heading">{{ block.settings.heading }}</h2>
+                {%- endif -%}
 
-              {%- if block.settings.description != blank -%}
-              <div class="v-banner__description">{{ block.settings.description }}</div>
-              {%- endif -%}
+                {%- if block.settings.description != blank -%}
+                <div class="v-banner__description">{{ block.settings.description }}</div>
+                {%- endif -%}
+              </div>
 
               {%- if block.settings.button_1_label != blank or block.settings.button_2_label != blank -%}
               <div class="v-banner__buttons">
@@ -250,6 +269,20 @@
         },
         {
           "type": "header",
+          "content": "t:sections.banner.blocks.slide.headers.overlay"
+        },
+        {
+          "type": "range",
+          "id": "overlay_opacity",
+          "label": "t:sections.banner.blocks.slide.settings.overlay_opacity.label",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "default": 0
+        },
+        {
+          "type": "header",
           "content": "t:sections.banner.blocks.slide.headers.position"
         },
         {
@@ -287,8 +320,25 @@
           ]
         },
         {
+          "type": "checkbox",
+          "id": "content_in_container",
+          "label": "t:sections.banner.blocks.slide.settings.content_in_container.label",
+          "info": "t:sections.banner.blocks.slide.settings.content_in_container.info",
+          "default": false
+        },
+        {
           "type": "header",
           "content": "t:sections.banner.blocks.slide.headers.content"
+        },
+        {
+          "type": "select",
+          "id": "text_color",
+          "label": "t:sections.banner.blocks.slide.settings.text_color.label",
+          "default": "light",
+          "options": [
+            { "value": "light", "label": "t:options.text_color.light" },
+            { "value": "dark", "label": "t:options.text_color.dark" }
+          ]
         },
         {
           "type": "text",

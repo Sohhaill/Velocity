@@ -126,6 +126,10 @@
     "footer_bottom": "Footer bottom"
   },
   "options": {
+    "text_color": {
+      "light": "White text",
+      "dark": "Dark text"
+    },
     "position": {
       "top_left": "Top left",
       "top_center": "Top center",
@@ -242,9 +246,20 @@
             "position": "Content position",
             "content": "Content",
             "button_1": "Button 1",
+             "overlay": "Overlay",
             "button_2": "Button 2"
           },
           "settings": {
+             "overlay_opacity": {
+              "label": "Overlay opacity"
+            },
+            "content_in_container": {
+              "label": "Contain content within page width",
+              "info": "When off, content uses full-width padding instead"
+            },
+            "text_color": {
+              "label": "Text color"
+            },
             "image_desktop": {
               "label": "Image (desktop)"
             },
