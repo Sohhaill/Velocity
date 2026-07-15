@@ -65,7 +65,7 @@
         "logo_width_desktop": 170,
         "logo_width_mobile": 120,
         "header_sticky": true,
-        "enable_drawer_desktop": true,
+        "enable_drawer_desktop": false,
         "menu": "main-menu",
         "show_wishlist_icon": true,
         "show_account_icon": true,
