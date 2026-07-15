@@ -174,10 +174,10 @@ select,
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: var(--input-radius);
 }
-.header--full-width,
 .full-width {
   padding-left: var(--container-margin);
   padding-right: var(--container-margin);
+  width: 100%;
 }
 @media screen and (max-width: 767px) {
   .hide-mobile {

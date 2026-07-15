@@ -2,7 +2,7 @@
 
 <div class="v-annoucment section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}"
   id="v-annoucment-{{ section.id }}" data-v-annoucment data-speed="{{ section.settings.autoplay_speed | times: 1000 }}">
-  <div class="v-annoucment__inner container-width">
+  <div class="v-annoucment__inner{% if section.settings.container_width_type == 'full_width' %} full-width{% else %} container-width{% endif %}">
 
     {%- comment -%} LEFT: SOCIAL ICONS (reference: footer settings) {%- endcomment -%}
     <div class="v-annoucment__col v-annoucment__col--left">
@@ -116,6 +116,16 @@
 { "value": "scheme_2", "label": "t:options.color_scheme.scheme_2" },
 { "value": "scheme_3", "label": "t:options.color_scheme.scheme_3" },
 { "value": "scheme_4", "label": "t:options.color_scheme.scheme_4" }
+]
+},
+{
+"type": "select",
+"id": "Container_width_type",
+"label": "t:labels.Container_width_type",
+"default": "container_width",
+"options": [
+{ "value": "container_width", "label": "t:options.Container_width_type.container_width" },
+{ "value": "full_width", "label": "t:options.Container_width_type.full_width" }
 ]
 },
 {
