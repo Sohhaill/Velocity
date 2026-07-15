@@ -89,9 +89,8 @@
         "slide_tg9Qdy": {
           "type": "slide",
           "settings": {
-            "image_desktop": "shopify://shop_images/HOMEPAGE_DESKTOP_BANNER_ICYCANDLES_1.webp",
             "video_desktop": "shopify://files/videos/e7c24e5e1e2c4b5bb5d7fd2461bb6baa.SD-480p-1.5Mbps-81313404.mp4",
-            "overlay_opacity": 45,
+            "overlay_opacity": 0,
             "content_position_desktop": "top_center",
             "content_position_mobile": "top_right",
             "content_in_container": true,
