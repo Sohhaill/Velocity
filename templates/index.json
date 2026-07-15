@@ -93,7 +93,7 @@
       "name": "t:sections.banner.presets.name",
       "settings": {
         "section_color_scheme": "scheme_1",
-        "height_desktop": 600,
+        "height_desktop": 640,
         "height_mobile": 450,
         "transition_effect": "slide",
         "enable_autoplay": true,
