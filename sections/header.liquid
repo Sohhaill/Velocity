@@ -66,7 +66,7 @@ id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data
 
         {% if section.settings.show_search_icon %}
         <button class="header__icon" type="button" aria-label="{{ 'header.search_icon' | t }}"
-          onclick="openSearchPopup()">
+         onclick="openSearchPopup(event)">
           {{ 'icon-search.svg' | inline_asset_content }}
         </button>
         {% endif %}
@@ -187,6 +187,7 @@ id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data
     </div>
 
     
+    {% render 'search-popup', color_scheme: section.settings.search_popup_color_scheme %}
     {% if section.settings.header_sticky %}
     <script>
       (function () {
