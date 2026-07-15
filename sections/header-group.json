@@ -46,11 +46,11 @@
           "type": "mega_menu_collection",
           "settings": {
             "menu_item_handle": "Catalog",
-            "collection_1": "",
+            "collection_1": "frontpage",
             "collection_1_title": "",
-            "collection_2": "",
+            "collection_2": "hydrogen",
             "collection_2_title": "",
-            "collection_3": "",
+            "collection_3": "frontpage",
             "collection_3_title": ""
           }
         }
