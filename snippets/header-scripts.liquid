@@ -1,44 +1,10 @@
 <script>
-  // Use a namespace to prevent re-declaration issues
-  window.HeaderApp = window.HeaderApp || {
-    init: function() {
-      // 1. Accordion Toggle (Using Event Delegation)
-      // This allows the click to work even after Shopify reloads the section
-      if (!this.initialized) {
-        document.addEventListener('click', (e) => {
-          const toggle = e.target.closest('.header__drawer-submenu-toggle');
-          if (toggle) {
-            this.handleAccordion(toggle);
-          }
-        });
-        
-        // 2. Global Close Listeners (Only attach once)
-        document.addEventListener('click', (event) => {
-          var drawer = document.getElementById('header-drawer');
-          if (!drawer || !drawer.classList.contains('header__drawer--open')) return;
-          if (event.target.closest('.header__drawer-panel')) return;
-          if (event.target.closest('.header__toggle')) return;
-          this.closeHeaderDrawer();
-        });
+  if (window.__headerScriptsInitialized) {
+    document.currentScript.remove();
+  } else {
+    window.__headerScriptsInitialized = true;
 
-        document.addEventListener('keydown', (event) => {
-          if (event.key === 'Escape') {
-            this.closeHeaderDrawer();
-            this.closeSearchPopup();
-          }
-        });
-
-        document.addEventListener('click', (event) => {
-          if (event.target.closest('[data-search-popup-close]')) {
-            this.closeSearchPopup();
-          }
-        });
-        
-        this.initialized = true;
-      }
-    },
-
-    openHeaderDrawer: function(event) {
+    function openHeaderDrawer(event) {
       if (event && event.isTrusted === false) return;
       var drawer = document.getElementById('header-drawer');
       if (!drawer) return;
@@ -47,9 +13,9 @@
       document.documentElement.classList.add('header-drawer-open');
       document.body.style.overflow = 'hidden';
       if (window.lenis) window.lenis.stop();
-    },
+    }
 
-    closeHeaderDrawer: function() {
+    function closeHeaderDrawer() {
       var drawer = document.getElementById('header-drawer');
       if (!drawer) return;
       drawer.classList.remove('header__drawer--open');
@@ -57,23 +23,28 @@
       document.documentElement.classList.remove('header-drawer-open');
       document.body.style.overflow = '';
       if (window.lenis) window.lenis.start();
-    },
+    }
 
-    openSearchPopup: function() {
+    function openSearchPopup(event) {
+      if (event && event.isTrusted === false) return;
       var popup = document.getElementById('search-popup');
       var input = document.getElementById('search-popup-input');
       if (!popup) return;
+
       popup.classList.add('search-popup--open');
       popup.setAttribute('aria-hidden', 'false');
       document.documentElement.classList.add('search-popup-open');
+
       if (input) {
-        setTimeout(() => input.focus(), 100);
+        window.setTimeout(function () {
+          input.focus();
+        }, 0);
       }
       document.body.style.overflow = 'hidden';
       if (window.lenis) window.lenis.stop();
-    },
+    }
 
-    closeSearchPopup: function() {
+    function closeSearchPopup() {
       var popup = document.getElementById('search-popup');
       if (!popup) return;
       popup.classList.remove('search-popup--open');
@@ -81,42 +52,110 @@
       document.documentElement.classList.remove('search-popup-open');
       document.body.style.overflow = '';
       if (window.lenis) window.lenis.start();
-    },
+    }
 
-    handleAccordion: function(toggle) {
+    // expose globally so onclick="" attributes keep working across re-renders
+    window.openHeaderDrawer = openHeaderDrawer;
+    window.closeHeaderDrawer = closeHeaderDrawer;
+    window.openSearchPopup = openSearchPopup;
+    window.closeSearchPopup = closeSearchPopup;
+
+    document.addEventListener('click', function (event) {
+      var drawer = document.getElementById('header-drawer');
+      if (!drawer || !drawer.classList.contains('header__drawer--open')) return;
+      if (event.target.closest('.header__drawer-panel')) return;
+      if (event.target.closest('.header__toggle')) return;
+      closeHeaderDrawer();
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        closeHeaderDrawer();
+        closeSearchPopup();
+      }
+    });
+
+    document.addEventListener('click', function (event) {
+      if (event.target.closest('[data-search-popup-close]')) {
+        closeSearchPopup();
+      }
+    });
+
+    // ---- FIX: force-reset state whenever Theme Editor re-renders this section ----
+    function forceResetHeaderUI() {
+      var drawer = document.getElementById('header-drawer');
+      var popup = document.getElementById('search-popup');
+      if (drawer) {
+        drawer.classList.remove('header__drawer--open');
+        drawer.setAttribute('aria-hidden', 'true');
+      }
+      if (popup) {
+        popup.classList.remove('search-popup--open');
+        popup.setAttribute('aria-hidden', 'true');
+      }
+      document.documentElement.classList.remove('header-drawer-open', 'search-popup-open');
+      document.body.style.overflow = '';
+    }
+
+    if (Shopify && Shopify.designMode) {
+      document.addEventListener('shopify:section:load', function (event) {
+        // naya section DOM aaya hai — turant reset karo
+        forceResetHeaderUI();
+      });
+      document.addEventListener('shopify:section:select', function (event) {
+        forceResetHeaderUI();
+      });
+      document.addEventListener('shopify:section:reorder', forceResetHeaderUI);
+    }
+
+    // Drawer submenu accordion — re-bind on every load since DOM is fresh
+    function updateDrawerSubmenuHeight(item) {
+      var submenu = item ? item.querySelector(':scope > .header__drawer-submenu') : null;
+      if (!item || !submenu) return;
+      if (item.classList.contains('header__drawer-item--open')) {
+        submenu.style.maxHeight = '100%';
+      } else {
+        submenu.style.maxHeight = '0px';
+      }
+      var parentItem = item.parentElement ? item.parentElement.closest('.header__drawer-item--open') : null;
+      if (parentItem) {
+        requestAnimationFrame(function () {
+          updateDrawerSubmenuHeight(parentItem);
+        });
+      }
+    }
+
+    function closeDrawerItem(item) {
+      if (!item) return;
+      item.classList.remove('header__drawer-item--open');
+      var toggle = item.querySelector(':scope > .header__drawer-item-top .header__drawer-submenu-toggle');
+      var submenu = item.querySelector(':scope > .header__drawer-submenu');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      if (submenu) submenu.style.maxHeight = '0px';
+      item.querySelectorAll('.header__drawer-item--open').forEach(function (childOpenItem) {
+        childOpenItem.classList.remove('header__drawer-item--open');
+        var childToggle = childOpenItem.querySelector(':scope > .header__drawer-item-top .header__drawer-submenu-toggle');
+        var childSubmenu = childOpenItem.querySelector(':scope > .header__drawer-submenu');
+        if (childToggle) childToggle.setAttribute('aria-expanded', 'false');
+        if (childSubmenu) childSubmenu.style.maxHeight = '0px';
+      });
+    }
+
+    document.addEventListener('click', function (event) {
+      var toggle = event.target.closest('.header__drawer-submenu-toggle');
+      if (!toggle) return;
       var item = toggle.closest('.header__drawer-item');
       var submenu = item ? item.querySelector(':scope > .header__drawer-submenu') : null;
       if (!item || !submenu) return;
-
       var isOpen = item.classList.contains('header__drawer-item--open');
       if (isOpen) {
-        item.classList.remove('header__drawer-item--open');
-        toggle.setAttribute('aria-expanded', 'false');
-        submenu.style.maxHeight = '0px';
+        closeDrawerItem(item);
       } else {
         item.classList.add('header__drawer-item--open');
         toggle.setAttribute('aria-expanded', 'true');
         submenu.style.maxHeight = submenu.scrollHeight + 'px';
+        updateDrawerSubmenuHeight(item.parentElement ? item.parentElement.closest('.header__drawer-item--open') : null);
       }
-    }
-  };
-
-  // Map the global functions back to the ones used in your HTML onclicks
-  window.openHeaderDrawer = window.HeaderApp.openHeaderDrawer;
-  window.closeHeaderDrawer = window.HeaderApp.closeHeaderDrawer;
-  window.openSearchPopup = window.HeaderApp.openSearchPopup;
-  window.closeSearchPopup = window.HeaderApp.closeSearchPopup;
-
-  // Initialize on load
-  window.HeaderApp.init();
-
-  // THE FIX FOR THE EDITOR:
-  // This listener detects when you change a setting in the Shopify Editor
-  document.addEventListener('shopify:section:load', function(event) {
-    if (event.detail.sectionId === '{{ section.id }}') {
-      // Ensure all popups are closed when a setting changes to prevent "flashing"
-      window.HeaderApp.closeHeaderDrawer();
-      window.HeaderApp.closeSearchPopup();
-    }
-  });
+    });
+  }
 </script>
