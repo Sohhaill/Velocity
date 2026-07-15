@@ -44,7 +44,6 @@
       "blocks": {
         "mega_menu_banner_Wmfjk6": {
           "type": "mega_menu_banner",
-          "disabled": true,
           "settings": {
             "menu_item_handle": "Catalog",
             "heading": "",
