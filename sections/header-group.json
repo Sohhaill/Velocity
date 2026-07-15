@@ -90,7 +90,7 @@
         "header_width_type": "container_width",
         "logo_width_desktop": 170,
         "logo_width_mobile": 120,
-        "header_sticky": true,
+        "header_sticky": false,
         "enable_drawer_desktop": false,
         "enable_transparent_header": true,
         "transparent_header_text_color": "#ffffff",
