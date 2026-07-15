@@ -1,0 +1,185 @@
+.v-banner {
+  width: 100%;
+}
+
+.v-banner__swiper {
+  position: relative;
+  width: 100%;
+  height: var(--v-banner-height-mobile);
+  overflow: hidden;
+}
+
+@media screen and (min-width: 750px) {
+  .v-banner__swiper {
+    height: var(--v-banner-height-desktop);
+  }
+}
+
+.v-banner__slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* MEDIA */
+.v-banner__media {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.v-banner__media--desktop {
+  display: none;
+}
+
+.v-banner__img,
+.v-banner__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media screen and (max-width: 749px) {
+  .v-banner__media--mobile {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .v-banner__media--mobile {
+    display: none;
+  }
+  .v-banner__media--desktop {
+    display: block;
+  }
+}
+
+/* CONTENT — absolute, positioned via CSS custom properties set per block */
+.v-banner__content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: var(--v-banner-align-mobile);
+  justify-content: var(--v-banner-justify-mobile);
+  padding: 24px;
+  pointer-events: none;
+}
+
+@media screen and (min-width: 750px) {
+  .v-banner__content {
+    align-items: var(--v-banner-align-desktop);
+    justify-content: var(--v-banner-justify-desktop);
+    padding: 48px;
+  }
+}
+
+.v-banner__content-inner {
+  max-width: 480px;
+  text-align: var(--v-banner-text-align-mobile);
+  pointer-events: auto;
+}
+
+@media screen and (min-width: 750px) {
+  .v-banner__content-inner {
+    max-width: 560px;
+    text-align: var(--v-banner-text-align-desktop);
+  }
+}
+
+.v-banner__subheading,
+.v-banner__heading,
+.v-banner__description {
+  margin: 0 0 12px 0;
+}
+
+.v-banner__description p {
+  margin: 0;
+}
+
+.v-banner__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.v-banner__content-inner[style*="text-align: right"] .v-banner__buttons,
+.v-banner__content-inner[style*="text-align: center"] .v-banner__buttons {
+  justify-content: inherit;
+}
+
+/* PAGINATION */
+.v-banner__pagination {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 16px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.v-banner__pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.5;
+  cursor: pointer;
+  margin: 0 !important;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.v-banner__pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* NAVIGATION */
+.v-banner__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-background);
+  color: currentColor;
+  cursor: pointer;
+  transition: opacity 0.25s ease;
+}
+
+.v-banner__nav svg {
+  width: 18px;
+  height: 18px;
+}
+
+.v-banner__nav--prev {
+  left: 16px;
+}
+
+.v-banner__nav--next {
+  right: 16px;
+}
+
+.v-banner__nav.swiper-button-disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+@media screen and (max-width: 749px) {
+  .v-banner__nav {
+    width: 36px;
+    height: 36px;
+  }
+}
