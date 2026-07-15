@@ -122,7 +122,7 @@
     "desktop_padding": "Desktop padding",
     "mobile_padding": "Mobile padding",
     "border_radius": "Border radius",
-     "footer_bottom": "Footer bottom"
+    "footer_bottom": "Footer bottom"
   },
   "options": {
     "alignment": {
@@ -188,6 +188,51 @@
         }
       },
       "presets": { "name": "Announcement bar" }
+    },
+
+    "count_down": {
+      "name": "Countdown timer",
+      "headers": {
+        "content": "Content",
+        "timer": "Timer",
+        "button": "Button"
+      },
+      "settings": {
+        "heading": {
+          "label": "Heading"
+        },
+        "text": {
+          "label": "Text"
+        },
+        "end_date": {
+          "label": "End date",
+          "info": "Format: YYYY-MM-DD, e.g. 2026-12-31"
+        },
+        "end_time": {
+          "label": "End time",
+          "info": "24-hour format, e.g. 23:59. Uses visitor's local timezone."
+        },
+        "on_expire": {
+          "label": "When timer ends"
+        },
+        "expired_text": {
+          "label": "Expired message",
+          "info": "Shown only when \"Hide timer, show text\" is selected above"
+        },
+        "button_label": {
+          "label": "Button label"
+        },
+        "button_link": {
+          "label": "Button link"
+        }
+      },
+      "days": "Days",
+      "hours": "Hours",
+      "minutes": "Minutes",
+      "seconds": "Seconds",
+      "presets": {
+        "name": "Countdown timer"
+      }
     }
   }
 }
