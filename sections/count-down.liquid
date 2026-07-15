@@ -53,7 +53,7 @@
       {%- endif -%}
 
       {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
-      
+      <a
         href="{{ section.settings.button_link }}"
         class="v-cntdwn__button button {% if section.settings.button_style == 'outline' %}button--outline{% else %}button--filled{% endif %}"
       >
