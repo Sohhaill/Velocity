@@ -113,6 +113,7 @@
         "slide_FcbQXV",
         "slide_tg9Qdy"
       ],
+      "disabled": true,
       "name": "t:sections.banner.presets.name",
       "settings": {
         "section_color_scheme": "scheme_1",
