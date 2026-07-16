@@ -9,8 +9,8 @@
     data-autoplay="{{ section.settings.enable_autoplay }}"
     data-autoplay-speed="{{ section.settings.autoplay_speed | times: 1000 }}"
     data-navigation="{{ section.settings.enable_navigation }}"
-    data-pagination="{{ section.settings.enable_pagination }}" {% if section.settings.allow_transparent_header
-    %}allow-transparent-header{% endif %} style="{{ v_banner_styles }}">
+    data-pagination="{{ section.settings.enable_pagination }}" 
+    style="{{ v_banner_styles }}">
     <div class="v-banner__swiper swiper">
         <div class="swiper-wrapper">
             {%- for block in section.blocks -%}
