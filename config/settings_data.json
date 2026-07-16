@@ -9,7 +9,8 @@
  */
 {
   "current": {
-    "type_heading_font": "montserrat_n7",
+    "type_heading_font": "dm_serif_display_n4",
+    "type_body_font": "geist_n4",
     "type_button_font": "inter_n5",
     "font_size_h4": 20,
     "font_size_h5": 16,
