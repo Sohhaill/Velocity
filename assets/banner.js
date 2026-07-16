@@ -15,7 +15,7 @@
 
     var config = {
       effect: effect,
-      speed: 700,
+      speed: 1200,
       loop: true,
       slidesPerView: 1,
       watchSlidesProgress: true,
