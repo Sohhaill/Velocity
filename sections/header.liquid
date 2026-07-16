@@ -265,7 +265,41 @@ id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data
   color: {{ section.settings.transparent_header_text_color }};
 }
 
+.header__brand-link {
+  position: relative;
+}
 
+.header__logo,
+.header__logo--transparent {
+  transition: opacity var(--transition-default, 0.45s cubic-bezier(0.65, 0, 0.35, 1));
+}
+
+.header__logo--transparent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.v-header.allow-transparent-header .header__brand-link:has(.header__logo--transparent) .header__logo {
+  opacity: 0;
+}
+
+.v-header.allow-transparent-header .header__logo--transparent {
+  opacity: 1;
+}
+
+.v-header.allow-transparent-header.header--sticky .header__brand-link:has(.header__logo--transparent) .header__logo {
+  opacity: 1;
+}
+
+.v-header.allow-transparent-header.header--sticky .header__logo--transparent {
+  opacity: 0;
+}
 </style>
 
 {% schema %}
