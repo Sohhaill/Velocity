@@ -22,10 +22,9 @@
 .v-header.allow-transparent-header {
   background: transparent;
   transition: all 0.25s ease;
-  .header{
-    background: transparent;
-    
-  }
+}
+.v-header.allow-transparent-header .header {
+  background: transparent;
 }
 #VAnnoucmentLanguageSelector {
   width: 100%;
