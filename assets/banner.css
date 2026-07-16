@@ -177,7 +177,7 @@
 }
 .v-banner__nav :hover{
   background: #000000c4;
-  transform: translateY(-5px);
+
 }
 
 .v-banner__nav--prev {
