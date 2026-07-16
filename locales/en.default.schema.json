@@ -54,6 +54,7 @@
   },
   "labels": {
     "footer_text": "Text below logo",
+    "Container_width_type": "Container width type",
     "show_footer_bottom": "Show footer bottom",
     "transparent_logo": "Transparent header logo",
     "transparent_logo_info": "Shown when the header is transparent. Uses the same logo width settings as the main logo, and is used on both desktop and mobile.",
@@ -131,6 +132,10 @@
     "footer_bottom": "Footer bottom"
   },
   "options": {
+    "Container_width_type": {
+      "container_width": "Container width",
+      "full_width": "Full width"
+    },
     "content_alignment": {
       "left": "Left",
       "center": "Center",
