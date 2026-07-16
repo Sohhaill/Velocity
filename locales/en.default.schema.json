@@ -56,7 +56,7 @@
     "footer_text": "Text below logo",
     "show_footer_bottom": "Show footer bottom",
     "enable_transparent_header": "Enable transparent header",
-    "enable_transparent_header_info": "This only works when a slideshow, banner image, or video hero section is placed directly below the header.",
+    "enable_transparent_header_info": "This only works when a slideshow, banner image hero, or video hero section is placed directly below the header. and make sure allow transparent header is enabled in that section's settings.<a href=\"https://yourdomain.com/help/transparent-header\" target=\"_blank\">Learn more</a>",
     "transparent_header_text_color": "Transparent header text color",
     "show_bottom_menu": "Show bottom menu",
     "button_corner_radius": "Button corner radius",
@@ -225,7 +225,7 @@
       "settings": {
         "allow_transparent_header": {
           "label": "Allow transparent header",
-          "info": "When this section is placed directly below the header, the header background becomes transparent and overlays this section until the visitor scrolls."
+          "info": "This only works when this section is placed directly below the header, and enable transparent header is enabled in the theme settings of the header section. Turn this setting off if you don't want the header to be transparent when this section is visible. <a href=\"https://yourdomain.com/help/transparent-header\" target=\"_blank\">Learn more</a>"
         },
         "height_desktop": {
           "label": "Section height (desktop)"
