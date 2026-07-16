@@ -92,7 +92,7 @@
 
 .swiper-slide-active .v-banner__content-inner {
   grid-template-rows: 1fr;
-  transition: grid-template-rows .8s cubic-bezier(0.65, 0, 0.35, 1) .9s;
+  transition: grid-template-rows 0.8s cubic-bezier(0.65, 0, 0.35, 1) 0.9s;
 }
 
 .v-banner__content-inner-track {
@@ -155,25 +155,29 @@
 
 /* NAVIGATION */
 .v-banner__nav {
-    position: absolute;
-    top: 50%;
-    padding: 10px;
-    transform: translateY(-50%);
-    z-index: 3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0%;
-    border: none;
-    background: #00000091;
-    color: white;
-    cursor: pointer;
-    transition: opacity .25s ease;
+  position: absolute;
+  top: 50%;
+  padding: 10px;
+  transform: translateY(-50%);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0%;
+  border: none;
+  background: #00000091;
+  color: white;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
 .v-banner__nav svg {
   width: 18px;
   height: 18px;
+}
+.v-banner__nav :hover{
+  background: #000000c4;
+  transform: translateY(-5px);
 }
 
 .v-banner__nav--prev {
