@@ -175,9 +175,8 @@
   width: 18px;
   height: 18px;
 }
-.v-banner__nav:hover{
-  background: #000000c4;
-
+.v-banner__nav:hover {
+  background: #000000;
 }
 
 .v-banner__nav--prev {
