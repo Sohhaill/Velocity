@@ -84,7 +84,14 @@
             "button_1_style": "filled",
             "button_2_label": "Buy Now",
             "button_2_link": "#",
-            "button_2_style": "outline"
+            "button_2_style": "outline",
+            "featured_products": [
+              "the-3p-fulfilled-snowboard",
+              "the-collection-snowboard-hydrogen",
+              "the-collection-snowboard-liquid"
+            ],
+            "hide_products_desktop": false,
+            "hide_products_mobile": false
           }
         },
         "slide_tg9Qdy": {
@@ -105,7 +112,10 @@
             "button_1_style": "filled",
             "button_2_label": "",
             "button_2_link": "",
-            "button_2_style": "outline"
+            "button_2_style": "outline",
+            "featured_products": [],
+            "hide_products_desktop": false,
+            "hide_products_mobile": false
           }
         }
       },
