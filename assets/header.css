@@ -1,10 +1,10 @@
 .v-header {
   position: relative;
   z-index: 1000;
+  --icon-transition: 0.25s ease;
 }
 .header {
   width: 100%;
-  
   color: var(--color-foreground);
   padding-top: 20px;
   padding-bottom: 20px;
@@ -21,7 +21,7 @@
 }
 .v-header.allow-transparent-header {
   background: transparent;
-  transition: all 0.25s ease;
+  transition: all var(--icon-transition);
 }
 
 #VAnnoucmentLanguageSelector {
@@ -105,11 +105,11 @@
   text-decoration: none;
   opacity: 0.8;
   font-weight: 500;
-  transition: all 0.25s ease;
+  transition: all var(--icon-transition);
 }
 .header__menu-item,
 .header__icon {
-  transition: all 0.25s ease;
+  transition: all var(--icon-transition);
 }
 .desktop-dropdown-menu .header__menu-item--has-children .header__submenu {
   right: -99% !important;
@@ -153,7 +153,7 @@
   justify-content: center;
   width: 14px;
   height: 14px;
-  transition: transform var(--transition-default);
+  transition: transform var(--icon-transition);
   border: none;
   background: transparent;
   color: inherit;
@@ -205,7 +205,7 @@
   transform: rotate(45deg);
 }
 svg.megamenu-svg {
-  transition: all 0.25s ease;
+  transition: all var(--icon-transition);
 }
 .header__menu-item--has-mega-menu:hover svg.megamenu-svg {
   transform: rotate(45deg);
@@ -541,7 +541,7 @@ svg.megamenu-svg {
 }
 
 .header__drawer-submenu-toggle svg {
-  transition: transform var(--transition-default);
+  transition: transform var(--icon-transition);
 }
 
 .header__drawer-submenu-toggle[aria-expanded="true"] svg {
@@ -619,7 +619,7 @@ select#DrawerLanguageSelector {
 }
 a.social-button {
   color: currentColor;
-  transition: all 0.25s ease;
+  transition: all var(--icon-transition);
 }
 a.social-button:hover {
   transform: translateY(-5px);
@@ -635,7 +635,8 @@ a.social-button:hover {
   background-color: var(--color-background);
   z-index: -1;
   pointer-events: none;
-  transition: height var(--transition-default, 0.45s cubic-bezier(0.65, 0, 0.35, 1));
+  transition: height
+    var(--transition-default, 0.45s cubic-bezier(0.65, 0, 0.35, 1));
 }
 
 .v-header.header--sticky::before {
@@ -643,12 +644,13 @@ a.social-button:hover {
 }
 
 .v-header header.header {
-  transition: background-color var(--transition-default, 0.45s cubic-bezier(0.65, 0, 0.35, 1)),
+  transition:
+    background-color
+      var(--transition-default, 0.45s cubic-bezier(0.65, 0, 0.35, 1)),
     color var(--transition-default, 0.45s cubic-bezier(0.65, 0, 0.35, 1));
 }
 
 .v-header.header--sticky header.header {
- 
   color: var(--color-foreground);
 }
 @media (max-width: 860px) {
