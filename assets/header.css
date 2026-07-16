@@ -4,7 +4,7 @@
 }
 .header {
   width: 100%;
-  background: var(--color-background);
+  
   color: var(--color-foreground);
   padding-top: 20px;
   padding-bottom: 20px;
@@ -648,7 +648,7 @@ a.social-button:hover {
 }
 
 .v-header.header--sticky header.header {
-  background-color: var(--color-background);
+ 
   color: var(--color-foreground);
 }
 @media (max-width: 860px) {
