@@ -262,6 +262,7 @@
           "headers": {
             "media_desktop": "Desktop media",
             "media_mobile": "Mobile media",
+            "featured_product": "Featured product",
             "position": "Content position",
             "content": "Content",
             "button_1": "Button 1",
@@ -269,6 +270,16 @@
             "button_2": "Button 2"
           },
           "settings": {
+            "featured_products": {
+              "label": "Featured products",
+              "info": "Select up to 6 products. If more than one is selected, they'll show as a small slider."
+            },
+            "hide_products_desktop": {
+              "label": "Hide on desktop"
+            },
+            "hide_products_mobile": {
+              "label": "Hide on mobile"
+            },
             "overlay_opacity": {
               "label": "Overlay opacity"
             },

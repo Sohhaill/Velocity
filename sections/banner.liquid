@@ -144,6 +144,42 @@
                     </div>
                 </div>
 
+                {%- if block.settings.featured_products.size > 0 -%}
+                {% assign hide_class = '' %}
+                {% if block.settings.hide_products_desktop %}{% assign hide_class = hide_class | append: ' v-banner__featured--hide-desktop' %}{% endif %}
+                {% if block.settings.hide_products_mobile %}{% assign hide_class = hide_class | append: ' v-banner__featured--hide-mobile' %}{% endif %}
+                <div class="v-banner__featured{{ hide_class }}">
+                    <div class="v-banner__featured-swiper swiper">
+                        <div class="swiper-wrapper">
+                            {%- for product in block.settings.featured_products -%}
+                            <div class="swiper-slide v-banner__featured-slide">
+                                <div class="v-banner__featured-card">
+                                    <a href="{{ product.url }}" class="v-banner__featured-media">
+                                        {%- if product.featured_image -%}
+                                        {{ product.featured_image | image_url: width: 300 | image_tag: loading: 'lazy', widths: '150,200,300', sizes: '150px', class: 'v-banner__featured-img' }}
+                                        {%- endif -%}
+                                    </a>
+                                    <div class="v-banner__featured-info">
+                                        <a href="{{ product.url }}" class="v-banner__featured-title">{{ product.title }}</a>
+                                        <span class="v-banner__featured-price">
+                                            {%- if product.compare_at_price > product.price -%}
+                                            <s class="v-banner__featured-price--compare">{{ product.compare_at_price | money }}</s>
+                                            {%- endif -%}
+                                            {{ product.price | money }}
+                                        </span>
+                                        <a href="{{ product.url }}" class="v-banner__featured-cta">{{ 'sections.banner.choose_options' | t }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {%- endfor -%}
+                        </div>
+                        {%- if block.settings.featured_products.size > 1 -%}
+                        <div class="v-banner__featured-pagination"></div>
+                        {%- endif -%}
+                    </div>
+                </div>
+                {%- endif -%}
+
             </div>
             {%- endif -%}
             {%- endfor -%}
@@ -443,6 +479,29 @@
 { "value": "filled", "label": "t:options.button_style.filled" },
 { "value": "outline", "label": "t:options.button_style.outline" }
 ]
+},
+{
+  "type": "header",
+  "content": "t:sections.banner.blocks.slide.headers.featured_product"
+},
+{
+  "type": "product_list",
+  "id": "featured_products",
+  "label": "t:sections.banner.blocks.slide.settings.featured_products.label",
+  "info": "t:sections.banner.blocks.slide.settings.featured_products.info",
+  "limit": 6
+},
+{
+  "type": "checkbox",
+  "id": "hide_products_desktop",
+  "label": "t:sections.banner.blocks.slide.settings.hide_products_desktop.label",
+  "default": false
+},
+{
+  "type": "checkbox",
+  "id": "hide_products_mobile",
+  "label": "t:sections.banner.blocks.slide.settings.hide_products_mobile.label",
+  "default": false
 }
 ]
 }
