@@ -92,7 +92,7 @@
 
 .swiper-slide-active .v-banner__content-inner {
   grid-template-rows: 1fr;
-  transition: grid-template-rows 0.8s cubic-bezier(0.65, 0, 0.35, 1) 0.6s;
+  transition: grid-template-rows 1s cubic-bezier(0.65, 0, 0.35, 1) 0.7s;
 }
 
 .v-banner__content-inner-track {
