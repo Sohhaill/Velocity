@@ -28,7 +28,9 @@
   inset: 0;
   z-index: 1;
 }
-
+.v-banner__featured-nav-btn:hover{
+transform: unset;
+}
 .v-banner__media--desktop {
   display: none;
 }
