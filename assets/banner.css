@@ -298,20 +298,13 @@
 }
 
 .v-banner__featured-title {
-  font-size: 1.4rem;
-  line-height: 1.3;
   text-decoration: none;
   color: inherit;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
 }
 
 .v-banner__featured-title:hover {
   text-decoration: underline;
-}
-
-.v-banner__featured-price {
-  font-size: 1.3rem;
 }
 
 .v-banner__featured-price--compare {
@@ -320,8 +313,6 @@
 }
 
 .v-banner__featured-cta {
-  font-size: 1.2rem;
-  color: inherit;
   text-decoration: underline;
   text-underline-offset: 3px;
   width: fit-content;
