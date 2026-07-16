@@ -338,7 +338,7 @@ span.v-banner__featured-price {
 /* NAVIGATION — top right of the product card */
 .v-banner__featured-nav {
   position: absolute;
-  top: 8px;
+  bottom: 12px;
   right: 8px;
   z-index: 2;
   display: flex;
