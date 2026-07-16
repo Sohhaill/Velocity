@@ -45,10 +45,7 @@
   visibility: visible;
   pointer-events: auto;
   transform: translateY(0);
-  transition:
-    opacity var(--mega-menu-transition),
-    transform var(--mega-menu-transition),
-    visibility 0s linear 0s;
+  transition: all 0.25s ease;
 }
 
 .mega-menu__inner {
