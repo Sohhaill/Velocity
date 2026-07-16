@@ -273,7 +273,7 @@ span.v-banner__featured-price {
 
 .v-banner__featured-card:hover {
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
-  transform: translateY(-3px);
+ 
 }
 
 .v-banner__featured-media {
