@@ -615,7 +615,8 @@ select#DrawerLanguageSelector {
   width: 100%;
   padding: 0.45rem 1rem;
   border-radius: 0.45rem;
-  background: #00000008;
+  background-color: var(--input-background);
+  color: var(--input-foreground);
   font-size: 0.9em;
 }
 a.social-button {
@@ -655,7 +656,6 @@ a.social-button:hover {
   color: var(--color-foreground);
 }
 @media (max-width: 860px) {
-  
   .header__inner {
     max-width: var(--header-max-width-mobile);
   }
