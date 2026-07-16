@@ -76,9 +76,9 @@
       };
 
       if (slidesCount > 1) {
-        featuredConfig.pagination = {
-          el: el.querySelector(".v-banner__featured-pagination"),
-          clickable: true,
+        featuredConfig.navigation = {
+          nextEl: el.querySelector(".v-banner__featured-nav-btn--next"),
+          prevEl: el.querySelector(".v-banner__featured-nav-btn--prev"),
         };
       }
 
