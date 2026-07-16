@@ -178,7 +178,6 @@ ul.footer__menu-list,
   color: inherit;
   text-decoration: none;
   display: inline-block;
-  opacity: 0.8;
   font-weight: 500;
   transition:
     opacity 0.2s ease,
@@ -189,7 +188,7 @@ ul.footer__menu-list,
 .footer__menu-list a:focus-visible,
 .footer__bottom-menu a:hover,
 .footer__bottom-menu a:focus-visible {
-  opacity: 1;
+ 
   transform: translateX(5px);
 }
 
