@@ -180,50 +180,7 @@ select,
   padding-right: var(--container-margin);
   width: 100%;
 }
-@media screen and (max-width: 767px) {
-  .hide-mobile {
-    display: none !important;
-  }
-  .header svg {
-    width: 20px;
-    height: 20px;
-  }
-  body {
-    font-size: var(--font-size-mobile-base);
-  }
 
-  h1 {
-    font-size: var(--font-size-mobile-h1);
-  }
-  h2 {
-    font-size: var(--font-size-mobile-h2);
-  }
-  h3 {
-    font-size: var(--font-size-mobile-h3);
-  }
-  h4 {
-    font-size: var(--font-size-mobile-h4);
-  }
-  h5 {
-    font-size: var(--font-size-mobile-h5);
-  }
-  h6 {
-    font-size: var(--font-size-mobile-h6);
-  }
-
-  button,
-  .button {
-    padding: 0.4rem 1.5rem;
-    font-size: var(--font-size-mobile-button);
-  }
-
-  input,
-  textarea,
-  select,
-  .field__input {
-    font-size: var(--font-size-mobile-field);
-  }
-}
 
 /** Section layout utilities */
 
@@ -328,4 +285,50 @@ select,
   border-color: var(--button-outline-hover-border);
   color: var(--button-outline-hover-foreground);
   transform: translateY(-5px);
+}
+
+
+@media screen and (max-width: 767px) {
+  .hide-mobile {
+    display: none !important;
+  }
+  .header svg {
+    width: 20px;
+    height: 20px;
+  }
+  body {
+    font-size: var(--font-size-mobile-base);
+  }
+
+  h1 {
+    font-size: var(--font-size-mobile-h1);
+  }
+  h2 {
+    font-size: var(--font-size-mobile-h2);
+  }
+  h3 {
+    font-size: var(--font-size-mobile-h3);
+  }
+  h4 {
+    font-size: var(--font-size-mobile-h4);
+  }
+  h5 {
+    font-size: var(--font-size-mobile-h5);
+  }
+  h6 {
+    font-size: var(--font-size-mobile-h6);
+  }
+
+  button,
+  .button {
+    padding: 0.4rem 1.5rem;
+    font-size: var(--font-size-mobile-button);
+  }
+
+  input,
+  textarea,
+  select,
+  .field__input {
+    font-size: var(--font-size-mobile-field);
+  }
 }
