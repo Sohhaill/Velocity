@@ -163,10 +163,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    border-radius: 0%;
     border: none;
-    background: color-mix(in srgb, var(--color-background) 20%, transparent);
-    color: currentColor;
+    background: #00000091;
+    color: white;
     cursor: pointer;
     transition: opacity .25s ease;
 }
