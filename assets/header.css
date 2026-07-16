@@ -624,9 +624,7 @@ a.social-button {
 a.social-button:hover {
   transform: translateY(-5px);
 }
-.v-header {
-  position: relative;
-}
+
 
 .v-header::before {
   content: "";
