@@ -232,7 +232,7 @@
       "settings": {
         "allow_transparent_header": {
           "label": "Allow transparent header",
-          "info": "This only works when this section is placed directly below the header, and enable transparent header is enabled in the theme settings of the header section. Turn this setting off if you don't want the header to be transparent when this section is visible. <a href=\"https://yourdomain.com/help/transparent-header\" target=\"_blank\">Learn more</a>"
+          "info": "This only works when this section is placed directly below the header, and enable transparent header is enabled in the theme settings of the header section. Turn this setting off if you don't want the header to be transparent when this section is visible."
         },
         "height_desktop": {
           "label": "Section height (desktop)"
