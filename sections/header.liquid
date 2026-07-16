@@ -249,7 +249,7 @@
       {% endfor %}
 </div>
 
-<style>
+{% comment %} <style>
   #shopify-section- {
       {
       section.id
@@ -260,32 +260,7 @@
     --transition-default: 0.45s cubic-bezier(0.65, 0, 0.35, 1);
   }
 
-    {
-    % if section.settings.enable_transparent_header %
-  }
-
-  #header-wrapper- {
-      {
-      section.id
-    }
-  }
-
-  .allow-transparent-header .header {
-    background: transparent;
-
-    color: {
-        {
-        section.settings.transparent_header_text_color
-      }
-    }
-
-    ;
-  }
-
-    {
-    % endif %
-  }
-</style>
+</style> {% endcomment %}
 
 {% schema %}
 {
