@@ -116,7 +116,7 @@
       "name": "t:sections.banner.presets.name",
       "settings": {
         "section_color_scheme": "scheme_1",
-        "allow_transparent_header": true,
+        "allow_transparent_header": false,
         "height_desktop": 720,
         "height_mobile": 530,
         "transition_effect": "slide",
