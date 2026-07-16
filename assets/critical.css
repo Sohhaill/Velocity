@@ -191,9 +191,7 @@ button:hover,
 .button--filled:hover {
   color: var(--button-hover-foreground);
 }
-.button--filled:hover {
-  transform: translateY(-5px);
-}
+
 .shopify-section-group-footer-group {
   margin-top: auto !important;
 }
@@ -316,7 +314,7 @@ select,
   background-color: transparent;
   border-color: var(--button-outline-hover-border);
   color: var(--button-outline-hover-foreground);
-  transform: translateY(-5px);
+ 
 }
 
 
