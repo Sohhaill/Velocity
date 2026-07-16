@@ -72,7 +72,7 @@
             "image_desktop": "shopify://shop_images/HOMEPAGE_DESKTOP_BANNER_ICYCANDLES_1.webp",
             "overlay_opacity": 45,
             "content_position_desktop": "center_center",
-            "content_position_mobile": "bottom_center",
+            "content_position_mobile": "center_center",
             "content_in_container": true,
             "content_alignment": "center",
             "text_color": "light",
@@ -91,7 +91,7 @@
               "the-collection-snowboard-liquid"
             ],
             "hide_products_desktop": false,
-            "hide_products_mobile": false
+            "hide_products_mobile": true
           }
         },
         "slide_tg9Qdy": {
