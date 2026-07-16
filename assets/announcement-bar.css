@@ -43,7 +43,7 @@
   justify-content: center;
   color: currentColor;
   width: 23px;
-   transition: all 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 .v-annoucment__social-button svg {
@@ -52,7 +52,6 @@
 }
 
 .v-annoucment__social-button:hover {
-
   transform: translateY(-5px);
 }
 
@@ -126,6 +125,7 @@
   outline: none;
   width: 160px;
   cursor: pointer;
+  font-weight: 500;
   padding: 4px 18px 4px 4px;
 }
 
@@ -136,7 +136,6 @@
   opacity: 0.75;
   color: currentColor;
 }
-
 
 @media screen and (max-width: 749px) {
   .v-annoucment__inner {
