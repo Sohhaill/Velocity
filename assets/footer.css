@@ -48,9 +48,7 @@
   border-radius: 999px;
   background: var(--button-background);
   color: var(--button-foreground);
-  transition:
-    background-color 0.25s ease,
-    transform 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 .footer__social-button:hover,
@@ -188,7 +186,6 @@ ul.footer__menu-list,
 .footer__menu-list a:focus-visible,
 .footer__bottom-menu a:hover,
 .footer__bottom-menu a:focus-visible {
- 
   transform: translateX(5px);
 }
 
