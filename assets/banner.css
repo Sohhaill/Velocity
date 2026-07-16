@@ -230,5 +230,9 @@
   .v-banner__nav {
     width: 36px;
     height: 36px;
+    display: none;
+  }
+  .v-banner__pagination .swiper-pagination-bullet {
+    width: 3rem;
   }
 }
