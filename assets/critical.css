@@ -213,9 +213,8 @@ select,
 
   button,
   .button {
-    font-family: var(--font-button--family);
+    padding: 0.4rem 1.2rem;
     font-size: var(--font-size-mobile-button);
-    font-weight: var(--font-button--weight);
   }
 
   input,
