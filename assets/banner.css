@@ -78,11 +78,10 @@
 
 .v-banner__content-inner {
   max-width: 480px;
-  text-align: var(--v-banner-content-text-align, center);
   pointer-events: auto;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.6s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 @media screen and (min-width: 750px) {
@@ -92,8 +91,14 @@
 }
 
 .swiper-slide-active .v-banner__content-inner {
-  max-height: 800px;
-  transition: max-height 0.6s cubic-bezier(0.65, 0, 0.35, 1) 0.3s;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 0.6s cubic-bezier(0.65, 0, 0.35, 1) 0.3s;
+}
+
+.v-banner__content-inner-track {
+  overflow: hidden;
+  min-height: 0;
+  text-align: var(--v-banner-content-text-align, center);
 }
 
 .v-banner__subheading,

@@ -109,6 +109,7 @@
 
                 <div class="v-banner__content{{ content_container_class }}" style="{{ content_style }}">
                     <div class="v-banner__content-inner" style="{{ content_alignment_style }}">
+                        <div class="v-banner__content-inner-track">
                         <div class="v-banner__text {{ text_color_class }}">
                             {%- if block.settings.subheading != blank -%}
                             <p class="v-banner__subheading">{{ block.settings.subheading }}</p>
@@ -139,6 +140,7 @@
                             {%- endif -%}
                         </div>
                         {%- endif -%}
+                        </div>
                     </div>
                 </div>
 
