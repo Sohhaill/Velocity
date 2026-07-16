@@ -2,7 +2,7 @@
 {{ 'mega-menu.css' | asset_url | stylesheet_tag }}
 {{ 'megemenu-script.js' | asset_url | script_tag }}
 <div
-  class="section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }} v-header{% if section.settings.enable_drawer_desktop %} header--drawer-desktop{% endif %}"
+  class="section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }} v-header{% if section.settings.enable_drawer_desktop %} header--drawer-desktop{% endif %}{% if section.settings.enable_transparent_header %} allow-transparent-header{% endif %}"
   
 id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data-header-sticky="true" {% endif %}>
   <header
@@ -224,29 +224,6 @@ id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data
 
        
         updateStickyState();
-      })();
-    </script>
-    {% endif %}
-     {% if section.settings.enable_transparent_header %}
-    <script>
-      (function () {
-        var headerSectionWrapper = document.getElementById('shopify-section-{{ section.id }}');
-        var headerEl = document.getElementById('header-wrapper-{{ section.id }}');
-        if (!headerSectionWrapper || !headerEl) return;
-
-        var nextSection = headerSectionWrapper.nextElementSibling;
-        if (!nextSection) return;
-
-        // the banner section might BE the wrapper's direct child, or the class
-        // might sit on the wrapper itself depending on how the section renders
-        var bannerEl = nextSection.classList.contains('v-banner')
-          ? nextSection
-          : nextSection.querySelector('.v-banner');
-
-        if (bannerEl) {
-          bannerEl.setAttribute('allow-transparent-header', '');
-          headerEl.classList.add('allow-transparent-header');
-        }
       })();
     </script>
     {% endif %}
