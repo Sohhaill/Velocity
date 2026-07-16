@@ -625,7 +625,6 @@ a.social-button:hover {
   transform: translateY(-5px);
 }
 
-
 .v-header::before {
   content: "";
   position: absolute;
@@ -641,6 +640,11 @@ a.social-button:hover {
 
 .v-header.header--sticky::before {
   height: 100%;
+}
+
+.v-header header.header {
+  transition: background-color var(--transition-default, 0.45s cubic-bezier(0.65, 0, 0.35, 1)),
+    color var(--transition-default, 0.45s cubic-bezier(0.65, 0, 0.35, 1));
 }
 
 .v-header.header--sticky header.header {
