@@ -626,10 +626,10 @@ a.social-button {
 a.social-button:hover {
   transform: translateY(-5px);
 }
-.v-header .header--sticky {
+.header--sticky {
   background-color: var(--color-background);
 }
-.v-header .header--sticky header.header {
+.header--sticky header.header {
   background-color: var(--color-background);
   color: var(--color-foreground);
 }
