@@ -3,8 +3,7 @@
 {{ 'megemenu-script.js' | asset_url | script_tag }}
 <div
   class="section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }} v-header{% if section.settings.enable_drawer_desktop %} header--drawer-desktop{% endif %}{% if section.settings.enable_transparent_header %} allow-transparent-header{% endif %}"
-  
-id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data-header-sticky="true" {% endif %}>
+  id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data-header-sticky="true" {% endif %}>
   <header
     class="header{% if section.settings.header_width_type == 'full_width' %} full-width{% else %} container-width{% endif %}">
     {% assign header_logo_styles = '--header-logo-width-desktop: ' | append: section.settings.logo_width_desktop |
@@ -196,7 +195,7 @@ id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data
         var headerWrapper = document.getElementById('header-wrapper-{{ section.id }}');
         if (!headerWrapper) return;
 
-        var scrollThreshold = 50; 
+        var scrollThreshold = 50;
         var isSticky = false;
         var ticking = false;
 
@@ -222,7 +221,7 @@ id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data
           }
         }, { passive: true });
 
-       
+
         updateStickyState();
       })();
     </script>
@@ -251,16 +250,41 @@ id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data
 </div>
 
 <style>
-  #shopify-section-{{ section.id }} {
+  #shopify-section- {
+      {
+      section.id
+    }
+  }
+
+    {
     --transition-default: 0.45s cubic-bezier(0.65, 0, 0.35, 1);
   }
 
-  {% if section.settings.enable_transparent_header %}
-  #header-wrapper-{{ section.id }}.allow-transparent-header .header {
-    background: transparent;
-    color: {{ section.settings.transparent_header_text_color }};
+    {
+    % if section.settings.enable_transparent_header %
   }
-  {% endif %}
+
+  #header-wrapper- {
+      {
+      section.id
+    }
+  }
+
+  .allow-transparent-header .header {
+    background: transparent;
+
+    color: {
+        {
+        section.settings.transparent_header_text_color
+      }
+    }
+
+    ;
+  }
+
+    {
+    % endif %
+  }
 </style>
 
 {% schema %}
@@ -338,7 +362,8 @@ id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data
 "type": "color",
 "id": "transparent_header_text_color",
 "label": "t:labels.transparent_header_text_color",
-"default": "#ffffff"
+"default": "#ffffff",
+"visible_if": "{{ section.settings.enable_transparent_header }}"
 },
 {
 "type": "link_list",
@@ -387,12 +412,13 @@ id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data
 "type": "mega_menu_collection",
 "name": "Mega Menu — Collections",
 "settings": [
-  
+
 {
 "type": "text",
 "id": "menu_item_handle",
 "label": "Connect to menu item",
-"info": "write exact text of the link in the header menu — case-sensitive match, to connect this mega menu to that menu item"
+"info": "write exact text of the link in the header menu — case-sensitive match, to connect this mega menu to that menu
+item"
 },
 {
 "type": "header",
@@ -447,7 +473,8 @@ id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data
 "type": "text",
 "id": "menu_item_handle",
 "label": "Connect to menu item",
-"info": "write exact text of the link in the header menu — case-sensitive match, to connect this mega menu to that menu item"
+"info": "write exact text of the link in the header menu — case-sensitive match, to connect this mega menu to that menu
+item"
 },
 {
 "type": "text",
