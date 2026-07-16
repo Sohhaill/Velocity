@@ -246,6 +246,7 @@
   overflow: hidden;
   min-height: 0;
   position: relative;
+  width: 100%;
 }
 
 .v-banner__featured-slide {
