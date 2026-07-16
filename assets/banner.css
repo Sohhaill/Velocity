@@ -114,7 +114,9 @@
 .v-banner__description p {
   margin: 0;
 }
-
+span.v-banner__featured-price {
+    font-weight: 500;
+}
 .v-banner__buttons {
   display: flex;
   flex-wrap: wrap;
@@ -238,7 +240,7 @@
     bottom: 32px;
     transform: none;
     width: 100%;
-    max-width: 360px;
+    max-width: 415px;
   }
 }
 
