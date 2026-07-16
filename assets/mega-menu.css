@@ -40,7 +40,7 @@
   transition:
     opacity var(--mega-menu-transition),
     transform var(--mega-menu-transition),
-    visibility 0s linear 0.45s;
+    visibility 0s linear 0.25s;
 
   z-index: 40;
 }
