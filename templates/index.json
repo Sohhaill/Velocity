@@ -133,7 +133,7 @@
         "enable_autoplay": false,
         "autoplay_speed": 5,
         "enable_navigation": true,
-        "enable_pagination": true
+        "enable_pagination": false
       }
     }
   },
