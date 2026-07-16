@@ -212,9 +212,10 @@ select,
   }
 
   button,
-  .button, .button--outline, a.button.button--filled {
-    padding: 0.4rem 1.2rem;
+  .button {
+   
     font-size: var(--font-size-mobile-button);
+
   }
 
   input,
