@@ -180,6 +180,7 @@
 }
 .v-banner__nav:hover {
   background: #000000;
+  color: white;
 }
 
 .v-banner__nav--prev {
