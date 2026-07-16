@@ -346,28 +346,23 @@ span.v-banner__featured-price {
 }
 
 .v-banner__featured-nav-btn {
-  width: 26px;
-  height: 26px;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  border: none;
-  background: #00000091;
-  color: white;
-  cursor: pointer;
-  transition: all 0.25s ease;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: all .25s ease;
 }
 
 .v-banner__featured-nav-btn svg {
-  width: 11px;
-  height: 11px;
+  width: 12px;
+  height: 12px;
 }
 
-.v-banner__featured-nav-btn:hover {
-  background: #000000;
-}
+
 
 .v-banner__featured-nav-btn.swiper-button-disabled {
   opacity: 0.4;
