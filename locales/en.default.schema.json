@@ -56,7 +56,7 @@
     "footer_text": "Text below logo",
     "show_footer_bottom": "Show footer bottom",
     "enable_transparent_header": "Enable transparent header",
-    "enable_transparent_header_info": "This only works when a slideshow, banner image hero, or video hero section is placed directly below the header. and make sure allow transparent header is enabled in that section's settings .[Learn more](#)",
+    "enable_transparent_header_info": "This only works when a slideshow, banner image hero, or video hero section is placed directly below the header. and make sure allow transparent header is enabled in that section's settings",
     "transparent_header_text_color": "Transparent header text color",
     "show_bottom_menu": "Show bottom menu",
     "button_corner_radius": "Button corner radius",
