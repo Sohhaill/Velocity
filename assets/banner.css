@@ -64,7 +64,7 @@
   display: flex;
   align-items: var(--v-banner-align-mobile);
   justify-content: var(--v-banner-justify-mobile);
-  padding: 24px;
+
   pointer-events: none;
 }
 
@@ -72,7 +72,7 @@
   .v-banner__content {
     align-items: var(--v-banner-align-desktop);
     justify-content: var(--v-banner-justify-desktop);
-    padding: 48px;
+ 
   }
 }
 
