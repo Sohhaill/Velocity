@@ -125,7 +125,7 @@
       ],
       "name": "t:sections.banner.presets.name",
       "settings": {
-        "section_color_scheme": "scheme_1",
+        "section_color_scheme": "scheme_2",
         "allow_transparent_header": true,
         "height_desktop": 720,
         "height_mobile": 530,
