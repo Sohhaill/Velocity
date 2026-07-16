@@ -626,6 +626,13 @@ a.social-button {
 a.social-button:hover {
   transform: translateY(-5px);
 }
+.v-header .header--sticky {
+  background-color: var(--color-background);
+}
+.v-header .header--sticky header.header {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
 @media (max-width: 860px) {
   .shopify-section-group-header-group {
     min-height: 70.59px;
