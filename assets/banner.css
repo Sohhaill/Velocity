@@ -257,7 +257,7 @@
   align-items: center;
   gap: 14px;
   background: var(--color-background);
-  color: var(--color-text);
+  color: var(--color-foreground);
   padding: 14px;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
   transition:
