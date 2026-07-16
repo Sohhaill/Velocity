@@ -655,9 +655,7 @@ a.social-button:hover {
   color: var(--color-foreground);
 }
 @media (max-width: 860px) {
-  .shopify-section-group-header-group {
-    min-height: 70.59px;
-  }
+  
   .header__inner {
     max-width: var(--header-max-width-mobile);
   }
