@@ -66,6 +66,8 @@
   justify-content: var(--v-banner-justify-mobile);
   padding-left: var(--container-margin);
   padding-right: var(--container-margin);
+  padding-bottom: 13%;
+  padding-top: 13px;
   pointer-events: none;
 }
 
