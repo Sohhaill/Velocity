@@ -320,7 +320,7 @@ select,
   }
 
   button,
-  .button {
+  .button, .button--outline {
     padding: 0.4rem 1.5rem;
     font-size: var(--font-size-mobile-button);
   }
