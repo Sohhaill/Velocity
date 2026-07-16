@@ -23,10 +23,7 @@
   background: transparent;
   transition: all 0.25s ease;
 }
-.v-header.allow-transparent-header .header {
-  background: transparent;
-  color: {{ section.settings.transparent_header_text_color }};
-}
+
 #VAnnoucmentLanguageSelector {
   width: 100%;
 }
