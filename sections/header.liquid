@@ -21,7 +21,12 @@ id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data
           {{ section.settings.logo | image_url: width: section.settings.logo_width_desktop | default: 280 | image_tag:
           class: 'header__logo', alt: shop.name }}
           {% else %}
-          <span class="header__brand-text">{{ shop.name }}</span>
+          <span class="header__brand-text header__logo">{{ shop.name }}</span>
+          {% endif %}
+
+          {% if section.settings.enable_transparent_header and section.settings.transparent_logo %}
+          {{ section.settings.transparent_logo | image_url: width: section.settings.logo_width_desktop | default: 280
+          | image_tag: class: 'header__logo header__logo--transparent', alt: shop.name }}
           {% endif %}
         </a>
       </div>
@@ -255,9 +260,45 @@ id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data
     --transition-default: 0.45s cubic-bezier(0.65, 0, 0.35, 1);
   }
 
- .v-header.allow-transparent-header .header {
+.v-header.allow-transparent-header .header {
   background: transparent;
   color: {{ section.settings.transparent_header_text_color }};
+}
+
+.header__brand-link {
+  position: relative;
+}
+
+.header__logo,
+.header__logo--transparent {
+  transition: opacity var(--transition-default, 0.45s cubic-bezier(0.65, 0, 0.35, 1));
+}
+
+.header__logo--transparent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.v-header.allow-transparent-header .header__logo {
+  opacity: 0;
+}
+
+.v-header.allow-transparent-header .header__logo--transparent {
+  opacity: 1;
+}
+
+.v-header.allow-transparent-header.header--sticky .header__logo {
+  opacity: 1;
+}
+
+.v-header.allow-transparent-header.header--sticky .header__logo--transparent {
+  opacity: 0;
 }
 </style>
 
@@ -281,6 +322,13 @@ id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data
 "type": "image_picker",
 "id": "logo",
 "label": "t:labels.logo"
+},
+{
+"type": "image_picker",
+"id": "transparent_logo",
+"label": "t:labels.transparent_logo",
+"info": "t:labels.transparent_logo_info",
+"visible_if": "{{ section.settings.enable_transparent_header }}"
 },
 {
 "type": "select",

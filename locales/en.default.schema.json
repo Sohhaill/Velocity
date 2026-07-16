@@ -55,6 +55,8 @@
   "labels": {
     "footer_text": "Text below logo",
     "show_footer_bottom": "Show footer bottom",
+    "transparent_logo": "Transparent header logo",
+    "transparent_logo_info": "Shown when the header is transparent. Uses the same logo width settings as the main logo, and is used on both desktop and mobile.",
     "enable_transparent_header": "Enable transparent header",
     "enable_transparent_header_info": "This only works when a slideshow, banner image hero, or video hero section is placed directly below the header. and make sure allow transparent header is enabled in that section's settings",
     "transparent_header_text_color": "Transparent header text color",
