@@ -157,5 +157,37 @@
         updateDrawerSubmenuHeight(item.parentElement ? item.parentElement.closest('.header__drawer-item--open') : null);
       }
     });
+
+    // ---- Remove allow-transparent-header on hover, restore it on hover-out ----
+    function bindTransparentHoverToggle() {
+      document.querySelectorAll('.v-header').forEach(function (headerWrapper) {
+        // already bound? skip (theme editor re-renders can re-call this)
+        if (headerWrapper.dataset.transparentHoverBound === 'true') return;
+        headerWrapper.dataset.transparentHoverBound = 'true';
+
+        // remember it was originally transparent-enabled, even after class is removed
+        if (headerWrapper.classList.contains('allow-transparent-header')) {
+          headerWrapper.dataset.wasTransparent = 'true';
+        }
+
+        headerWrapper.addEventListener('mouseenter', function () {
+          if (headerWrapper.dataset.wasTransparent === 'true') {
+            headerWrapper.classList.remove('allow-transparent-header');
+          }
+        });
+
+        headerWrapper.addEventListener('mouseleave', function () {
+          if (headerWrapper.dataset.wasTransparent === 'true') {
+            headerWrapper.classList.add('allow-transparent-header');
+          }
+        });
+      });
+    }
+
+    bindTransparentHoverToggle();
+
+    if (Shopify && Shopify.designMode) {
+      document.addEventListener('shopify:section:load', bindTransparentHoverToggle);
+    }
   }
 </script>
