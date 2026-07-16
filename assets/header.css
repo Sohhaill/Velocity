@@ -25,6 +25,7 @@
 }
 .v-header.allow-transparent-header .header {
   background: transparent;
+  color: {{ section.settings.transparent_header_text_color }};
 }
 #VAnnoucmentLanguageSelector {
   width: 100%;
