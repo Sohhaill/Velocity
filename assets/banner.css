@@ -258,6 +258,7 @@ span.v-banner__featured-price {
 .v-banner__featured-card {
   display: flex;
   align-items: center;
+  border-radius: 10px;
   gap: 14px;
   background: var(--color-background);
   color: var(--color-foreground);
@@ -274,11 +275,12 @@ span.v-banner__featured-price {
 }
 
 .v-banner__featured-media {
-  flex: 0 0 84px;
-  width: 84px;
-  height: 110px;
+  flex: 0 0 100px;
+  width: 100px;
+  height: 100px;
   display: block;
   overflow: hidden;
+      border-radius: 5px;
 }
 
 .v-banner__featured-img {
