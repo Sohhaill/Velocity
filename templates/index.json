@@ -126,62 +126,10 @@
         "enable_navigation": false,
         "enable_pagination": true
       }
-    },
-    "multiple_image_text_PxB3WJ": {
-      "type": "multiple-image-text",
-      "blocks": {
-        "image_text_card_BHihY6": {
-          "type": "image_text_card",
-          "settings": {
-            "eyebrow": "",
-            "title": "Add your title",
-            "subtitle": "Add a supporting subtitle",
-            "description": "Describe this item in a sentence or two, highlighting what makes it worth a closer look.",
-            "benefit_1": "First key benefit",
-            "benefit_2": "Second key benefit",
-            "benefit_3": "Third key benefit",
-            "benefit_4": "",
-            "benefit_5": "",
-            "button_label": "Learn More",
-            "button_url": "",
-            "button_style": "filled"
-          }
-        },
-        "image_text_card_xt6Aa9": {
-          "type": "image_text_card",
-          "settings": {
-            "eyebrow": "",
-            "title": "Add another title",
-            "subtitle": "Add another subtitle",
-            "description": "Describe this second item, giving shoppers a reason to keep scrolling.",
-            "benefit_1": "First key benefit",
-            "benefit_2": "Second key benefit",
-            "benefit_3": "",
-            "benefit_4": "",
-            "benefit_5": "",
-            "button_label": "Learn More",
-            "button_url": "",
-            "button_style": "filled"
-          }
-        }
-      },
-      "block_order": [
-        "image_text_card_BHihY6",
-        "image_text_card_xt6Aa9"
-      ],
-      "name": "Multiple Image with Text",
-      "settings": {
-        "section_color_scheme": "scheme_2",
-        "padding_top_desktop": 80,
-        "padding_bottom_desktop": 80,
-        "padding_top_mobile": 40,
-        "padding_bottom_mobile": 40
-      }
     }
   },
   "order": [
     "multiple_image_text_k7WWD4",
-    "banner_dUTX7b",
-    "multiple_image_text_PxB3WJ"
+    "banner_dUTX7b"
   ]
 }
