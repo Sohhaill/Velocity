@@ -60,7 +60,7 @@
         class="footer__block footer__block--{{ block.settings.width }}{% if block.settings.open_by_default %} footer__block--open{% endif %}"
         {{ block.shopify_attributes }}>
         {% if block.settings.heading != blank %}
-        <button class="footer__block-heading" type="button" data-footer-menu-toggle
+        <button class="footer__block-heading h5" type="button" data-footer-menu-toggle
           aria-expanded="{% if block.settings.open_by_default %}true{% else %}false{% endif %}">
           <span>{{ block.settings.heading }}</span>
           <span class="footer__block-icon" aria-hidden="true"></span>
@@ -78,7 +78,7 @@
       {% when 'subscribe' %}
       <div class="footer__block footer__block--{{ block.settings.width }}" {{ block.shopify_attributes }}>
         {% if block.settings.heading != blank %}
-        <h4 class="footer__block-heading">{{ block.settings.heading }}</h4>
+        <h4 class="footer__block-heading h5">{{ block.settings.heading }}</h4>
         {% endif %}
         {% form 'customer', class: 'footer__subscribe' %}
         <input type="hidden" name="contact[tags]" value="newsletter">

@@ -91,7 +91,7 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6, {
   font-family: var(--font-heading--family);
   font-weight: var(--font-heading--weight);
   line-height: var(--line-height-heading);
