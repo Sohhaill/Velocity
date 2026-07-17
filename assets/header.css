@@ -205,9 +205,7 @@
 svg.megamenu-svg {
   transition: all var(--icon-transition);
 }
-.header__menu-item--has-mega-menu:hover svg.megamenu-svg {
-  transform: rotate(45deg);
-}
+
 .header__menu-item:hover > .header__submenu,
 .header__menu-item:focus-within > .header__submenu {
   opacity: 1;
