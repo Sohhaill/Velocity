@@ -108,10 +108,7 @@
   font-weight: 500;
   transition: all var(--icon-transition);
 }
-.header__menu-item,
-.header__icon {
-  transition: all var(--icon-transition);
-}
+
 .desktop-dropdown-menu .header__menu-item--has-children .header__submenu {
   right: -99% !important;
   left: unset;
