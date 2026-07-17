@@ -132,12 +132,7 @@
 .header__icon:hover {
   transform: translateY(-5px);
 }
-.header__toggle svg,
-.header__icon svg,
-.header__submenu-toggle svg,
-.header__drawer-submenu-toggle svg {
-  stroke: currentColor;
-}
+
 
 .header__menu-link-wrap {
   display: inline-flex;
