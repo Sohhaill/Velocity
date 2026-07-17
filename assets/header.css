@@ -125,7 +125,6 @@
   transform: translateY(-5px);
 }
 
-
 .header__submenu-toggle {
   display: inline-flex;
   align-items: center;
@@ -235,7 +234,7 @@ svg.megamenu-svg {
   color: inherit;
   text-decoration: none;
   position: relative;
-  transition: unset;
+  transition: all var(--icon-transition);
 }
 
 .header__icon sup {
