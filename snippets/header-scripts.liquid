@@ -158,6 +158,29 @@
       }
     });
 
+    // ---- Propagate allow-transparent-header from header to the next opted-in section ----
+    // Any section that wants transparent-header support just adds data-transparent-target
+    // to its own outer wrapper — no schema setting, no JS changes needed per-section.
+    function syncTransparentHeaderSection() {
+      document.querySelectorAll('.v-header').forEach(function (headerWrapper) {
+        var isEnabled = headerWrapper.dataset.wasTransparent === 'true'
+          && headerWrapper.classList.contains('allow-transparent-header');
+
+        var sectionWrapper = headerWrapper.closest('.shopify-section') || headerWrapper.parentElement;
+        var nextSectionWrapper = sectionWrapper ? sectionWrapper.nextElementSibling : null;
+        if (!nextSectionWrapper) return;
+
+        var target = nextSectionWrapper.matches('[data-transparent-target]')
+          ? nextSectionWrapper
+          : nextSectionWrapper.querySelector('[data-transparent-target]');
+
+        if (!target) return;
+
+        target.classList.toggle('allow-transparent-header', isEnabled);
+      });
+    }
+    window.syncTransparentHeaderSection = syncTransparentHeaderSection;
+
     // ---- Remove allow-transparent-header on hover, restore it on hover-out ----
     function bindTransparentHoverToggle() {
       document.querySelectorAll('.v-header').forEach(function (headerWrapper) {
@@ -173,21 +196,26 @@
         headerWrapper.addEventListener('mouseenter', function () {
           if (headerWrapper.dataset.wasTransparent === 'true') {
             headerWrapper.classList.remove('allow-transparent-header');
+            syncTransparentHeaderSection();
           }
         });
 
         headerWrapper.addEventListener('mouseleave', function () {
           if (headerWrapper.dataset.wasTransparent === 'true') {
             headerWrapper.classList.add('allow-transparent-header');
+            syncTransparentHeaderSection();
           }
         });
       });
+
+      syncTransparentHeaderSection(); // initial sync on page load
     }
 
     bindTransparentHoverToggle();
 
     if (Shopify && Shopify.designMode) {
       document.addEventListener('shopify:section:load', bindTransparentHoverToggle);
+      document.addEventListener('shopify:section:reorder', syncTransparentHeaderSection);
     }
   }
 </script>

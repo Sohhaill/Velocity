@@ -5,12 +5,11 @@
 --v-banner-height-mobile: ' | append: section.settings.height_mobile | append: 'px;' %}
 
 <div class="v-banner section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}"
-    id="v-banner-{{ section.id }}" data-v-banner data-effect="{{ section.settings.transition_effect }}"
+    id="v-banner-{{ section.id }}" data-v-banner data-transparent-target data-effect="{{ section.settings.transition_effect }}"
     data-autoplay="{{ section.settings.enable_autoplay }}"
     data-autoplay-speed="{{ section.settings.autoplay_speed | times: 1000 }}"
     data-navigation="{{ section.settings.enable_navigation }}"
-    data-pagination="{{ section.settings.enable_pagination }}" {% if section.settings.allow_transparent_header
-    %}allow-transparent-header{% endif %} style="{{ v_banner_styles }}">
+    data-pagination="{{ section.settings.enable_pagination }}" style="{{ v_banner_styles }}">
     <div class="v-banner__swiper swiper">
         <div class="swiper-wrapper">
             {%- for block in section.blocks -%}
@@ -227,13 +226,6 @@
 { "value": "scheme_3", "label": "t:options.color_scheme.scheme_3" },
 { "value": "scheme_4", "label": "t:options.color_scheme.scheme_4" }
 ]
-},
-{
-"type": "checkbox",
-"id": "allow_transparent_header",
-"label": "t:sections.banner.settings.allow_transparent_header.label",
-"info": "t:sections.banner.settings.allow_transparent_header.info",
-"default": false
 },
 {
 "type": "header",
