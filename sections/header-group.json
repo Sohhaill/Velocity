@@ -69,6 +69,7 @@
         },
         "mega_menu_collection_JJ8bNQ": {
           "type": "mega_menu_collection",
+          "disabled": true,
           "settings": {
             "menu_item_handle": "Catalog",
             "collection_1": "frontpage",
