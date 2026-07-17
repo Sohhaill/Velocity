@@ -167,15 +167,22 @@
 
         var sectionWrapper = headerWrapper.closest('.shopify-section') || headerWrapper.parentElement;
         var nextSectionWrapper = sectionWrapper ? sectionWrapper.nextElementSibling : null;
-        if (!nextSectionWrapper) return;
 
-        var target = nextSectionWrapper.matches('[data-transparent-target]')
-          ? nextSectionWrapper
-          : nextSectionWrapper.querySelector('[data-transparent-target]');
+        var target = null;
+        if (nextSectionWrapper) {
+          target = nextSectionWrapper.matches('[data-transparent-target]')
+            ? nextSectionWrapper
+            : nextSectionWrapper.querySelector('[data-transparent-target]');
+        }
 
-        if (!target) return;
+        // If the next section doesn't support transparent header, the header
+        // itself shouldn't render transparent either — even if the merchant
+        // setting is enabled — since there's nothing suitable underneath it.
+        headerWrapper.classList.toggle('allow-transparent-header', isEnabled && !!target);
 
-        target.classList.toggle('allow-transparent-header', isEnabled);
+        if (target) {
+          target.classList.toggle('allow-transparent-header', isEnabled);
+        }
       });
     }
     window.syncTransparentHeaderSection = syncTransparentHeaderSection;
