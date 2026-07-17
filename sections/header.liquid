@@ -72,10 +72,10 @@ id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data
         {% endif %}
 
         {% if section.settings.show_search_icon %}
-        <a class="header__icon" type="button" aria-label="{{ 'header.search_icon' | t }}"
+        <button class="header__icon" type="button" aria-label="{{ 'header.search_icon' | t }}"
           onclick="openSearchPopup(event)">
           {{ 'icon-search.svg' | inline_asset_content }}
-        </a>
+        </button>
         {% endif %}
 
         {% if section.settings.show_cart_icon %}
