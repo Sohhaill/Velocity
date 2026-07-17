@@ -163,8 +163,7 @@
     // to its own outer wrapper — no schema setting, no JS changes needed per-section.
     function syncTransparentHeaderSection() {
       document.querySelectorAll('.v-header').forEach(function (headerWrapper) {
-        var isEnabled = headerWrapper.dataset.wasTransparent === 'true'
-          && headerWrapper.classList.contains('allow-transparent-header');
+        var isEnabled = headerWrapper.dataset.wasTransparent === 'true';
 
         var sectionWrapper = headerWrapper.closest('.shopify-section') || headerWrapper.parentElement;
         var nextSectionWrapper = sectionWrapper ? sectionWrapper.nextElementSibling : null;
@@ -196,14 +195,12 @@
         headerWrapper.addEventListener('mouseenter', function () {
           if (headerWrapper.dataset.wasTransparent === 'true') {
             headerWrapper.classList.remove('allow-transparent-header');
-            syncTransparentHeaderSection();
           }
         });
 
         headerWrapper.addEventListener('mouseleave', function () {
           if (headerWrapper.dataset.wasTransparent === 'true') {
             headerWrapper.classList.add('allow-transparent-header');
-            syncTransparentHeaderSection();
           }
         });
       });
