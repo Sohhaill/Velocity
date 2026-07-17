@@ -208,7 +208,11 @@
       syncTransparentHeaderSection(); // initial sync on page load
     }
 
-    bindTransparentHoverToggle();
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', bindTransparentHoverToggle);
+    } else {
+      bindTransparentHoverToggle();
+    }
 
     if (Shopify && Shopify.designMode) {
       document.addEventListener('shopify:section:load', bindTransparentHoverToggle);
