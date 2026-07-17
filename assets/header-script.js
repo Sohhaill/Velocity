@@ -1,4 +1,4 @@
-<script>
+
   if (window.__headerScriptsInitialized) {
     document.currentScript.remove();
   } else {
@@ -228,4 +228,3 @@
       document.addEventListener('shopify:section:reorder', syncTransparentHeaderSection);
     }
   }
-</script>
