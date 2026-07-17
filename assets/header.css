@@ -125,11 +125,6 @@
   transform: translateY(-5px);
 }
 
-.header__menu-link-wrap {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-}
 
 .header__submenu-toggle {
   display: inline-flex;
@@ -150,11 +145,6 @@
 }
 .header__menu-item {
   position: relative;
-}
-
-.header__menu-link {
-  color: inherit;
-  text-decoration: none;
 }
 
 .header__menu-link-wrap {
