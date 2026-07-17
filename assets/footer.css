@@ -182,12 +182,7 @@ ul.footer__menu-list,
     transform 0.2s ease;
 }
 
-.footer__menu-list a:hover,
-.footer__menu-list a:focus-visible,
-.footer__bottom-menu a:hover,
-.footer__bottom-menu a:focus-visible {
-  transform: translateX(5px);
-}
+
 
 .footer__subscribe {
   display: flex;
