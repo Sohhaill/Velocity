@@ -153,8 +153,8 @@ svg.megamenu-svg {
 }
 .header__menu-item--has-mega-menu svg.megamenu-svg {
   display: block;
-  width: 16px;
-  height: 16px;
+  width: 19px;
+  height: 19px;
 }
 
 /* ---- deep menus: scroll instead of blowing out the panel height ---- */
