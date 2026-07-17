@@ -45,6 +45,7 @@
       "blocks": {
         "mega_menu_banner_Wmfjk6": {
           "type": "mega_menu_banner",
+          "disabled": true,
           "settings": {
             "menu_item_handle": "Catalog",
             "heading": "",
@@ -68,7 +69,6 @@
         },
         "mega_menu_collection_JJ8bNQ": {
           "type": "mega_menu_collection",
-          "disabled": true,
           "settings": {
             "menu_item_handle": "Catalog",
             "collection_1": "frontpage",
@@ -92,7 +92,7 @@
         "logo_width_desktop": 170,
         "logo_width_mobile": 120,
         "header_sticky": true,
-        "enable_drawer_desktop": true,
+        "enable_drawer_desktop": false,
         "enable_transparent_header": true,
         "transparent_header_text_color": "#ffffff",
         "menu": "main-menu",
