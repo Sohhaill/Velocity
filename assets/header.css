@@ -129,8 +129,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 14px;
-  height: 14px;
+  width: 19px;
+  height: 19px;
   transition: transform var(--icon-transition);
   border: none;
   background: transparent;
