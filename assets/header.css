@@ -199,9 +199,7 @@
     visibility 0s linear 0.35s;
   z-index: 20;
 }
-.header__menu-link-wrap:hover > .header__submenu-toggle {
-  transform: rotate(45deg);
-}
+
 svg.megamenu-svg {
   transition: all var(--icon-transition);
 }
