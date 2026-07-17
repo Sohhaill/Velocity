@@ -178,7 +178,9 @@
         // If the next section doesn't support transparent header, the header
         // itself shouldn't render transparent either — even if the merchant
         // setting is enabled — since there's nothing suitable underneath it.
-        headerWrapper.classList.toggle('allow-transparent-header', isEnabled && !!target);
+        var isActive = isEnabled && !!target;
+        headerWrapper.classList.toggle('allow-transparent-header', isActive);
+        headerWrapper.dataset.transparentActive = isActive ? 'true' : 'false';
 
         if (target) {
           target.classList.toggle('allow-transparent-header', isEnabled);
@@ -200,13 +202,13 @@
         }
 
         headerWrapper.addEventListener('mouseenter', function () {
-          if (headerWrapper.dataset.wasTransparent === 'true') {
+          if (headerWrapper.dataset.transparentActive === 'true') {
             headerWrapper.classList.remove('allow-transparent-header');
           }
         });
 
         headerWrapper.addEventListener('mouseleave', function () {
-          if (headerWrapper.dataset.wasTransparent === 'true') {
+          if (headerWrapper.dataset.transparentActive === 'true') {
             headerWrapper.classList.add('allow-transparent-header');
           }
         });
