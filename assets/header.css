@@ -234,7 +234,7 @@ svg.megamenu-svg {
   color: inherit;
   text-decoration: none;
   position: relative;
-  transition: all var(--icon-transition);
+  transition: transform var(--icon-transition);
 }
 
 .header__icon sup {
