@@ -28,8 +28,8 @@
   inset: 0;
   z-index: 1;
 }
-.v-banner__featured-nav-btn:hover{
-transform: unset;
+.v-banner__featured-nav-btn:hover {
+  transform: unset;
 }
 .v-banner__media--desktop {
   display: none;
@@ -88,17 +88,21 @@ transform: unset;
   display: grid;
   grid-template-rows: 0fr;
   transition: grid-template-rows 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+  opacity: 0;
 }
 
 @media screen and (min-width: 750px) {
   .v-banner__content-inner {
     max-width: 560px;
+    opacity: 0;
   }
 }
 
 .swiper-slide-active .v-banner__content-inner {
   grid-template-rows: 1fr;
   transition: grid-template-rows 0.8s cubic-bezier(0.65, 0, 0.35, 1) 0.9s;
+  opacity: 1;
+
 }
 
 .v-banner__content-inner-track {
@@ -117,7 +121,7 @@ transform: unset;
   margin: 0;
 }
 span.v-banner__featured-price {
-    font-weight: 500;
+  font-weight: 500;
 }
 .v-banner__buttons {
   display: flex;
@@ -273,7 +277,6 @@ span.v-banner__featured-price {
 
 .v-banner__featured-card:hover {
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
- 
 }
 
 .v-banner__featured-media {
@@ -282,7 +285,7 @@ span.v-banner__featured-price {
   height: 100px;
   display: block;
   overflow: hidden;
-      border-radius: 5px;
+  border-radius: 5px;
 }
 
 .v-banner__featured-img {
@@ -350,23 +353,21 @@ span.v-banner__featured-price {
 }
 
 .v-banner__featured-nav-btn {
-    width: 26px;
-    height: 26px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    cursor: pointer;
-    transition: all .25s ease;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
 .v-banner__featured-nav-btn svg {
   width: 12px;
   height: 12px;
 }
-
-
 
 .v-banner__featured-nav-btn.swiper-button-disabled {
   opacity: 0.4;
