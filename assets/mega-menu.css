@@ -8,10 +8,7 @@
    ========================================================================== */
 
 :root {
-  --mega-menu-transition: var(
-    --transition-default,
-    0.25s ease
-  );
+  --mega-menu-transition: var(--transition-default, 0.25s ease);
 }
 
 /* The mega-menu panel is rendered as a sibling of .header__inner, inside
@@ -66,7 +63,7 @@
 /* ---- shared submenu list (left column, both layouts) ---- */
 .mega-menu__col--links,
 .mega-menu__col--text {
-  flex: 0 0 37%;
+  flex: 0 0 fit-content;
 }
 
 .mega-menu__heading {
@@ -161,7 +158,6 @@ svg.megamenu-svg {
 .mega-menu__col--links,
 .mega-menu__col--text {
   max-height: 65vh;
-  overflow-y: auto;
 }
 
 /* ---- Layout 1: collection cards ---- */
