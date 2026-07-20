@@ -326,7 +326,7 @@ select,
     background: currentColor;
     transition: width var(--mega-menu-transition);
 }
-.header__menu-link:hover::after {
+.header__menu-link:hover::after, .header__menu-link:hover::after, .header__menu-link:hover::after, .footer__menu-list a:hover::after  {
     width: 100%;
 }
 
