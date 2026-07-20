@@ -141,10 +141,7 @@
     transform var(--mega-menu-transition);
 }
 
-.mega-menu__submenu-sublink:hover {
-  opacity: 1;
-  transform: translateY(-4px);
-}
+
 svg.megamenu-svg {
   display: none;
 }
