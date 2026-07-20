@@ -136,11 +136,11 @@
   text-decoration: none;
   opacity: 0.8;
   font-weight: 500;
+  position: relative;
   transition:
     opacity var(--mega-menu-transition),
     transform var(--mega-menu-transition);
 }
-
 
 svg.megamenu-svg {
   display: none;
