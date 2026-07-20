@@ -324,8 +324,23 @@ select,
     width: 0%;
     height: 2px;
     background: currentColor;
-    transition: width var(--mega-menu-transition);
+    transition: width 0.25s ease;
 }
+a.mega-menu__submenu-sublink::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: currentColor;
+    transition: width 0.25s ease;
+}
+
+a.mega-menu__submenu-sublink:hover::after {
+    width: 100%;
+}
+
 .header__menu-link:hover::after {
     width: 100%;
 }
