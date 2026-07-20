@@ -316,7 +316,7 @@ select,
   color: var(--button-outline-hover-foreground);
  
 }
-.header__menu-link::after, a.mega-menu__submenu-sublink::after {
+.header__menu-link::after, a.mega-menu__submenu-sublink::after, .footer__menu-list a::after, .footer__bottom-menu a::after {
     content: "";
     position: absolute;
     left: 0;
@@ -330,7 +330,7 @@ select,
 
 
 
-.header__menu-link:hover::after, a.mega-menu__submenu-sublink:hover::after {
+.header__menu-link:hover::after, a.mega-menu__submenu-sublink:hover::after, .footer__menu-list a:hover::after, .footer__bottom-menu a:hover::after {
     width: 100%;
 }
 
