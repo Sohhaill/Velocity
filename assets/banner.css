@@ -235,7 +235,7 @@ span.v-banner__featured-price {
 .swiper-slide-active .v-banner__featured {
   grid-template-rows: 1fr;
   transition: grid-template-rows 0.8s cubic-bezier(0.65, 0, 0.35, 1) 1s;
-  opacity: 1;
+
 }
 
 @media screen and (min-width: 750px) {
@@ -246,7 +246,7 @@ span.v-banner__featured-price {
     transform: none;
     width: 100%;
     max-width: 415px;
-    opacity: 0;
+
   }
 }
 
