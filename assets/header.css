@@ -110,7 +110,7 @@
     background: currentColor;
     transition: width var(--mega-menu-transition);
 }
-.header__menu-link:hover .header__menu-link::after {
+.header__menu-link:hover::after {
     width: 100%;
 }
 .header__menu-link {
