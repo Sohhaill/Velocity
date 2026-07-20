@@ -230,7 +230,7 @@ svg.megamenu-svg {
   left: 0;
   bottom: -4px;
   width: 0%;
-  height: 1px;
+  height: 2px;
   background: currentColor;
   transition: width var(--mega-menu-transition);
 }
