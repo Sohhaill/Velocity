@@ -316,7 +316,7 @@ select,
   color: var(--button-outline-hover-foreground);
  
 }
-.header__menu-link::after, .header__menu-link::after, .header__menu-link::after, .footer__menu-list a::after  {
+.header__menu-link::after, .mega-menu__submenu-sublink::after, .footer__menu-list a::after, .footer__bottom-menu a::after  {
     content: "";
     position: absolute;
     left: 0;
@@ -326,7 +326,7 @@ select,
     background: currentColor;
     transition: width var(--mega-menu-transition);
 }
-.header__menu-link:hover::after, .header__menu-link:hover::after, .header__menu-link:hover::after, .footer__menu-list a:hover::after  {
+.header__menu-link:hover::after, .mega-menu__submenu-sublink:hover::after, .footer__bottom-menu a:hover::after, .footer__menu-list a:hover::after {
     width: 100%;
 }
 
