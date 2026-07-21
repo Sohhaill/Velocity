@@ -4,7 +4,7 @@
 
 .v-annoucment__inner {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   gap: 16px;
   padding-top: 10px;
@@ -51,11 +51,11 @@
 }
 
 .v-annoucment__nav--prev {
-  left: -50%;
+  left: -25%;
 }
 
 .v-annoucment__nav--next {
-  right: -50%;
+  right: -25%;
 }
 
 /* COUNTDOWN BLOCK */
