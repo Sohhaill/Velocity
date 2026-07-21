@@ -217,16 +217,47 @@
         "autoplay_speed": { "label": "Change text every" },
         "header_colors": { "content": "Colors" },
         "bg_color": { "label": "Background color" },
-        "text_color": { "label": "Text color" }
-      },
-      "blocks": {
-        "text": {
-          "name": "Text",
-          "settings": { "text": { "label": "Text" } }
+        "text_color": { "label": "Text color" },
+         "enable_navigation": {
+          "label": "Show navigation arrows"
         }
       },
-      "presets": { "name": "Announcement bar" }
-    },
+        "blocks": {
+        "text": {
+          "name": "Text",
+          "settings": {
+            "text": {
+              "label": "Text"
+            }
+          }
+        },
+        "countdown": {
+          "name": "Countdown timer",
+          "headers": {
+            "duration": "Countdown duration"
+          },
+          "settings": {
+            "text": {
+              "label": "Label text"
+            },
+            "show_icon": {
+              "label": "Show icon"
+            },
+            "days": {
+              "label": "Days"
+            },
+            "hours": {
+              "label": "Hours"
+            },
+            "minutes": {
+              "label": "Minutes"
+            },
+            "seconds": {
+              "label": "Seconds"
+            }
+          }
+        }
+      },
     "banner": {
       "name": "Banner slider",
       "previous": "Previous slide",
