@@ -333,7 +333,11 @@ select,
 .header__menu-link:hover::after, a.mega-menu__submenu-sublink:hover::after, .footer__menu-list a:hover::after, .footer__bottom-menu a:hover::after {
     width: 100%;
 }
-
+@media(max-width:860px){
+  .v-banner.allow-transparent-header {
+    margin-top: -91px;
+  }
+}
 @media screen and (max-width: 767px) {
   .hide-mobile {
     display: none !important;
