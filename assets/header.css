@@ -689,6 +689,7 @@ a.social-button:hover {
 .header--drawer-desktop .header__toggle {
   display: inline-flex;
 }
+@media(min-width:861px){
 .header--layout-center {
   .header__brand {
     order: 2;
@@ -701,4 +702,5 @@ a.social-button:hover {
   .header__icons {
     order: 3;
   }
+}
 }
