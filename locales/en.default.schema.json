@@ -218,19 +218,16 @@
         "header_colors": { "content": "Colors" },
         "bg_color": { "label": "Background color" },
         "text_color": { "label": "Text color" },
-         "enable_navigation": {
+        "enable_navigation": {
           "label": "Show navigation arrows"
         }
       },
-       "blocks": {
+      "blocks": {
         "text": {
           "name": "Text",
-          "settings": {
-            "text": {
-              "label": "Text"
-            }
-          }
+          "settings": { "text": { "label": "Text" } }
         },
+
         "countdown": {
           "name": "Countdown timer",
           "headers": {
@@ -258,11 +255,8 @@
           }
         }
       },
-      "presets": {
-        "name": "Announcement bar"
-      }
-    }
-  },
+      "presets": { "name": "Announcement bar" }
+    },
     "banner": {
       "name": "Banner slider",
       "previous": "Previous slide",
