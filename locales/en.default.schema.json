@@ -123,11 +123,7 @@
     "show_payment_icons": "Show payment icons",
     "header_width_type": "Header width",
     "text_style": "Text style",
-    "text": "Text",
-    "header_layout": {
-      "left": "Left aligned",
-      "center": "Centered"
-    }
+    "text": "Text"
   },
   "headers": {
     "desktop_padding": "Desktop padding",
@@ -135,6 +131,10 @@
     "border_radius": "Border radius",
     "footer_bottom": "Footer bottom",
     "header_layout": "Header layout"
+  },
+  "header_layout": {
+    "left": "Left aligned",
+    "center": "Centered"
   },
   "options": {
     "Container_width_type": {
@@ -146,7 +146,6 @@
       "center": "Center",
       "right": "Right"
     },
-
     "text_color": {
       "light": "White text",
       "dark": "Dark text"
