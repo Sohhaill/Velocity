@@ -215,4 +215,10 @@
   .v-annoucment__col--right {
     display: none;
   }
+  .v-annoucment__nav--next {
+    right: 0%;
+}
+.v-annoucment__nav--prev {
+    left: 0%;
+}
 }
