@@ -131,16 +131,16 @@
     "mobile_padding": "Mobile padding",
     "border_radius": "Border radius",
     "footer_bottom": "Footer bottom"
-    
   },
-  "header_layout": {
-    "left": "Left aligned",
-    "center": "Centered"
-  },
+
   "options": {
     "Container_width_type": {
       "container_width": "Container width",
       "full_width": "Full width"
+    },
+    "header_layout": {
+      "left": "Left aligned",
+      "center": "Centered"
     },
     "content_alignment": {
       "left": "Left",
