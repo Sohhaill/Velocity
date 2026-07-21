@@ -335,7 +335,7 @@ select,
 }
 @media(max-width:860px){
   .v-banner.allow-transparent-header {
-    margin-top: -91px !important;
+    margin-top: -91px;
   }
 }
 @media screen and (max-width: 767px) {
