@@ -42,13 +42,9 @@
   color: inherit;
   cursor: pointer;
   padding: 6px;
-  opacity: 0.8;
-  transition: opacity 0.2s ease;
 }
 
-.v-annoucment__nav:hover {
-  opacity: 1;
-}
+
 
 .v-annoucment__nav--prev {
   left: -25%;
