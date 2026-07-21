@@ -1,7 +1,7 @@
 {{ 'announcement-bar.css' | asset_url | stylesheet_tag }}
 
 <div class="v-annoucment section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}"
-  id="v-annoucment-{{ section.id }}" data-v-annoucment data-speed="{{ section.settings.autoplay_speed | times: 1000 }}">
+  id="v-annoucment-{{ section.id }}" data-v-annoucment data-speed="{{ section.settings.autoplay_speed | times: 1000 }}" data-autoplay="{{ section.settings.enable_autoplay }}">
 
   <div
     class="v-annoucment__inner{% if section.settings.container_width_type == 'full_width' %} full-width{% else %} container-width{% endif %}">
@@ -197,6 +197,12 @@
 "type": "checkbox",
 "id": "enable_navigation",
 "label": "t:sections.announcement-bar.settings.enable_navigation.label",
+"default": true
+},
+{
+"type": "checkbox",
+"id": "enable_autoplay",
+"label": "t:sections.announcement-bar.settings.enable_autoplay.label",
 "default": true
 }
 ],

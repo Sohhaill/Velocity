@@ -57,6 +57,7 @@
 
     if (items.length < 2) return;
 
+    var autoplayEnabled = root.getAttribute("data-autoplay") !== "false";
     var speed = parseInt(root.getAttribute("data-speed"), 10) || 4000;
     var current = 0;
     var timer = null;
@@ -94,6 +95,7 @@
 
     function start() {
       stop();
+      if (!autoplayEnabled) return;
       timer = setInterval(goToNext, speed);
     }
 
@@ -103,8 +105,10 @@
 
     start();
 
-    root.addEventListener("mouseenter", stop);
-    root.addEventListener("mouseleave", start);
+    if (autoplayEnabled) {
+      root.addEventListener("mouseenter", stop);
+      root.addEventListener("mouseleave", start);
+    }
 
     var prevBtn = root.querySelector(".v-annoucment__nav--prev");
     var nextBtn = root.querySelector(".v-annoucment__nav--next");

@@ -220,6 +220,9 @@
         "text_color": { "label": "Text color" },
         "enable_navigation": {
           "label": "Show navigation arrows"
+        },
+        "enable_autoplay": {
+          "label": "Enable autoplay"
         }
       },
       "blocks": {
