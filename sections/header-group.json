@@ -20,16 +20,21 @@
             "text": "Free shipping on all orders over $50"
           }
         },
-        "text_EkaRR4": {
-          "type": "text",
+        "countdown_xgNKGf": {
+          "type": "countdown",
           "settings": {
-            "text": "Free shipping on all orders over $50"
+            "text": "Unlock save 15% off",
+            "show_icon": true,
+            "days": 163,
+            "hours": 6,
+            "minutes": 49,
+            "seconds": 17
           }
         }
       },
       "block_order": [
         "text_m9JfYW",
-        "text_EkaRR4"
+        "countdown_xgNKGf"
       ],
       "name": "t:sections.announcement-bar.presets.name",
       "settings": {
@@ -37,7 +42,8 @@
         "container_width_type": "container_width",
         "show_social_icons": true,
         "enable_localization": true,
-        "autoplay_speed": 2
+        "autoplay_speed": 5,
+        "enable_navigation": true
       }
     },
     "header": {
