@@ -68,7 +68,7 @@
 
       var featuredConfig = {
         slidesPerView: 1,
-        loop: slidesCount > 1,
+
         speed: 600,
         a11y: true,
         observer: true,
@@ -98,43 +98,17 @@
     });
     // Only the active slide's video should play — keeps things light and avoids
     // multiple background videos competing for bandwidth/decoding at once.
-    // Only the active slide's video should play
     function syncVideos() {
-      // 1. Find all videos in this banner
-      var allVideos = swiperEl.querySelectorAll("video");
-      
-      // 2. Pause all videos first to save bandwidth
-      allVideos.forEach(function (video) {
+      swiperEl.querySelectorAll("video").forEach(function (video) {
         video.pause();
       });
-
-      // 3. Find the currently active slide
-      // We use a slight timeout to ensure Swiper has updated the DOM classes
-      setTimeout(function() {
-        var activeSlide = swiperEl.querySelector(".swiper-slide-active");
-        if (!activeSlide) return;
-
-        var activeVideos = activeSlide.querySelectorAll("video");
-        activeVideos.forEach(function (video) {
-          video.muted = true; // Essential for autoplay browser policy
-          video.currentTime = 0; // Optional: restart video from beginning
-          var playPromise = video.play();
-          if (playPromise !== undefined) {
-            playPromise.catch(function (error) {
-              console.log("Autoplay prevented:", error);
-            });
-          }
-        });
-      }, 50);
+      var activeSlide = swiperEl.querySelector(".swiper-slide-active");
+      if (!activeSlide) return;
+      activeSlide.querySelectorAll("video").forEach(function (video) {
+        var playPromise = video.play();
+        if (playPromise && playPromise.catch) playPromise.catch(function () {});
+      });
     }
-
-    // Initialize videos for the first slide
-    syncVideos();
-
-    // Trigger sync on 'slideChange' (fires as soon as navigation is clicked)
-    // and 'transitionEnd' (double-check to handle loop jumps)
-    swiperInstance.on("slideChange", syncVideos);
-    swiperInstance.on("slideChangeTransitionEnd", syncVideos);
 
     syncVideos();
     swiperInstance.on("slideChangeTransitionEnd", syncVideos);
