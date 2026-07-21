@@ -66,30 +66,6 @@
     "banner_dUTX7b": {
       "type": "banner",
       "blocks": {
-        "slide_tg9Qdy": {
-          "type": "slide",
-          "settings": {
-            "video_desktop": "shopify://files/videos/e7c24e5e1e2c4b5bb5d7fd2461bb6baa.SD-480p-1.5Mbps-81313404.mp4",
-            "overlay_opacity": 25,
-            "content_position_desktop": "center_center",
-            "content_position_mobile": "center_center",
-            "content_in_container": true,
-            "content_alignment": "center",
-            "text_color": "light",
-            "subheading": "Subheading",
-            "heading": "Slide heading",
-            "description": "<p>Our description </p>",
-            "button_1_label": "Shop now",
-            "button_1_link": "#",
-            "button_1_style": "filled",
-            "button_2_label": "",
-            "button_2_link": "",
-            "button_2_style": "outline",
-            "featured_products": [],
-            "hide_products_desktop": false,
-            "hide_products_mobile": false
-          }
-        },
         "slide_FcbQXV": {
           "type": "slide",
           "settings": {
@@ -117,11 +93,35 @@
             "hide_products_desktop": false,
             "hide_products_mobile": true
           }
+        },
+        "slide_tg9Qdy": {
+          "type": "slide",
+          "settings": {
+            "video_desktop": "shopify://files/videos/e7c24e5e1e2c4b5bb5d7fd2461bb6baa.SD-480p-1.5Mbps-81313404.mp4",
+            "overlay_opacity": 25,
+            "content_position_desktop": "center_center",
+            "content_position_mobile": "center_center",
+            "content_in_container": true,
+            "content_alignment": "center",
+            "text_color": "light",
+            "subheading": "Subheading",
+            "heading": "Slide heading",
+            "description": "<p>Our description </p>",
+            "button_1_label": "Shop now",
+            "button_1_link": "#",
+            "button_1_style": "filled",
+            "button_2_label": "",
+            "button_2_link": "",
+            "button_2_style": "outline",
+            "featured_products": [],
+            "hide_products_desktop": false,
+            "hide_products_mobile": false
+          }
         }
       },
       "block_order": [
-        "slide_tg9Qdy",
-        "slide_FcbQXV"
+        "slide_FcbQXV",
+        "slide_tg9Qdy"
       ],
       "name": "t:sections.banner.presets.name",
       "settings": {
