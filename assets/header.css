@@ -688,35 +688,3 @@ a.social-button:hover {
 .header--drawer-desktop .header__toggle {
   display: inline-flex;
 }
-/* Header layout: center variant — desktop only, mobile untouched */
-@media (min-width: 861px) {
-  .header--layout-center .header__inner {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-  }
-
-  .header--layout-center .header__toggle {
-    display: none;
-  }
-
-  .header--layout-center .header__nav {
-    grid-column: 1;
-    justify-self: start;
-    flex: unset;
-  }
-
-  .header--layout-center .header__nav .header__menu-list {
-    justify-content: flex-start;
-  }
-
-  .header--layout-center .header__brand {
-    grid-column: 2;
-    justify-self: center;
-  }
-
-  .header--layout-center .header__icons {
-    grid-column: 3;
-    justify-self: end;
-  }
-}
