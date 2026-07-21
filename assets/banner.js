@@ -68,7 +68,7 @@
 
       var featuredConfig = {
         slidesPerView: 1,
-
+        loop: slidesCount > 1,
         speed: 600,
         a11y: true,
         observer: true,
