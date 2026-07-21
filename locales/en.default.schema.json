@@ -240,9 +240,7 @@
             "text": {
               "label": "Label text"
             },
-            "show_icon": {
-              "label": "Show icon"
-            },
+           
             "days": {
               "label": "Days"
             },

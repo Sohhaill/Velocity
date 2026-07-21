@@ -64,13 +64,7 @@
           {%- if block.settings.text != blank -%}
           <span class="v-annoucment__countdown-label">{{ block.settings.text }}</span>
           {%- endif -%}
-          {%- if block.settings.show_icon -%}
-          <span class="v-annoucment__countdown-icon">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path d="M13 2 3 14h7l-1 8 11-14h-7l0-6z" />
-            </svg>
-          </span>
-          {%- endif -%}
+         
           <span class="v-annoucment__countdown-timer">
             <span class="v-annoucment__countdown-unit"><small class="v-annoucment__countdown-value"
                 data-unit="days">00</small><span class="v-annoucment__countdown-suffix">D</span></span>
@@ -230,12 +224,7 @@
 "label": "t:sections.announcement-bar.blocks.countdown.settings.text.label",
 "default": "Unlock save 15% off"
 },
-{
-"type": "checkbox",
-"id": "show_icon",
-"label": "t:sections.announcement-bar.blocks.countdown.settings.show_icon.label",
-"default": true
-},
+
 {
 "type": "header",
 "content": "t:sections.announcement-bar.blocks.countdown.headers.duration"
