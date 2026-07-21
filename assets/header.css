@@ -16,7 +16,7 @@
 
 .header__logo,
 .header__logo--transparent {
-  transition: opacity var(--transition-default, .25s ease);
+  transition: opacity var(--transition-default, 0.25s ease);
 }
 
 .header__logo--transparent {
@@ -82,7 +82,7 @@
 .header__brand-link {
   display: inline-flex;
   align-items: center;
-  
+
   width: var(--header-logo-width-desktop);
   height: auto;
 }
@@ -688,4 +688,17 @@ a.social-button:hover {
 
 .header--drawer-desktop .header__toggle {
   display: inline-flex;
+}
+.header--layout-center {
+  .header__brand {
+    order: 2;
+    text-align: center;
+    flex: 1;
+  }
+  .header__nav {
+    flex: unset;
+  }
+  .header__icons {
+    order: 3;
+  }
 }
