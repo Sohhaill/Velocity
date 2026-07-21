@@ -167,7 +167,7 @@ button {
   display: flex;
   align-items: center;
 }
-.button--filled:hover .btn-Button_Arrow {
+.button--filled:hover span.v-banner__button-arrow {
     inline-size: 27px;
 }
 .button--filled::before {
@@ -319,7 +319,7 @@ select,
   border-color: var(--button-outline-hover-border);
   color: var(--button-outline-hover-foreground);
 }
-.button--outline:hover .btn-Button_Arrow {
+.button--outline:hover span.v-banner__button-arrow {
     inline-size: 27px;
 }
 .header__menu-link::after,
