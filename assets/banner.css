@@ -150,7 +150,13 @@ span.v-banner__featured-price {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 6px;
+}
+
+.v-banner__pagination .swiper-pagination-bullet:not(:last-child)::after {
+  content: "/";
+  margin-left: 6px;
+  opacity: 0.5;
 }
 
 .v-banner__pagination .swiper-pagination-bullet {
