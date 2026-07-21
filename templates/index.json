@@ -129,7 +129,7 @@
         "height_desktop": 720,
         "height_mobile": 530,
         "transition_effect": "fade",
-        "enable_autoplay": false,
+        "enable_autoplay": true,
         "autoplay_speed": 5,
         "enable_navigation": true,
         "enable_pagination": true
