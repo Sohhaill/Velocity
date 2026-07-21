@@ -43,7 +43,8 @@
         "show_social_icons": true,
         "enable_localization": true,
         "autoplay_speed": 5,
-        "enable_navigation": true
+        "enable_navigation": true,
+        "enable_autoplay": false
       }
     },
     "header": {
