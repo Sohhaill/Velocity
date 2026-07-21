@@ -101,10 +101,13 @@
     function syncVideos() {
       swiperEl.querySelectorAll("video").forEach(function (video) {
         video.pause();
+        video.currentTime = 0;
       });
       var activeSlide = swiperEl.querySelector(".swiper-slide-active");
       if (!activeSlide) return;
       activeSlide.querySelectorAll("video").forEach(function (video) {
+        video.muted = true;
+        video.playsInline = true;
         var playPromise = video.play();
         if (playPromise && playPromise.catch) playPromise.catch(function () {});
       });
