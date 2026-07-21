@@ -211,10 +211,7 @@ span.v-banner__featured-price {
   width: 18px;
   height: 18px;
 }
-.v-banner__nav:hover {
-  background: #000000;
-  color: white;
-}
+
 
 .v-banner__nav-container {
   position: absolute;
