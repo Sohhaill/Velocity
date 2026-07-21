@@ -176,7 +176,7 @@ svg.megamenu-svg {
 .mega-menu__coll-image-wrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  height: 100%;
   overflow: hidden;
   border-radius: 8px;
   background: var(--color-scheme-border, rgba(0, 0, 0, 0.06));
