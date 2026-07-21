@@ -131,34 +131,64 @@ span.v-banner__featured-price {
   margin-top: calc(-1 * var(--header-height, 90px));
   transition: all 0.25s ease;
 }
-/* PAGINATION */
-.v-banner__pagination {
+/* PAGINATION WRAP */
+.v-banner__pagination-wrap {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 16px;
   z-index: 3;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* PAGINATION — numbers instead of bullets */
+.v-banner__pagination {
+  position: static;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
+  gap: 14px;
 }
 
 .v-banner__pagination .swiper-pagination-bullet {
-  width: 4rem;
-  height: 0.3rem;
-  border-radius: 0%;
-  background: currentColor;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: none;
   opacity: 0.5;
   cursor: pointer;
   margin: 0 !important;
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: currentColor;
+  line-height: 1;
+  transition: opacity 0.25s ease;
 }
 
 .v-banner__pagination .swiper-pagination-bullet-active {
   opacity: 1;
+}
+
+/* PROGRESS BAR — fills based on autoplay time-left, resets on slide change */
+.v-banner__progress {
+  position: relative;
+  width: 160px;
+  max-width: 60vw;
+  height: 2px;
+  background: currentColor;
+  opacity: 0.3;
+  overflow: hidden;
+}
+
+.v-banner__progress-bar {
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  transform-origin: left center;
+  transform: scaleX(0);
 }
 
 /* NAVIGATION */

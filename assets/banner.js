@@ -56,6 +56,25 @@
       config.pagination = {
         el: root.querySelector(".v-banner__pagination"),
         clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + (index + 1) + "</span>";
+        },
+      };
+    }
+
+    var progressBarEl = root.querySelector(".v-banner__progress-bar");
+    if (progressBarEl && autoplayEnabled) {
+      config.on = config.on || {};
+
+      config.on.autoplayTimeLeft = function (swiper, timeLeft, progress) {
+        progressBarEl.style.transitionDuration = "0s";
+        progressBarEl.style.transform = "scaleX(" + (1 - progress) + ")";
+      };
+
+      config.on.slideChangeTransitionStart = function () {
+        // Reset instantly then let the next autoplayTimeLeft tick animate it back up
+        progressBarEl.style.transitionDuration = "0s";
+        progressBarEl.style.transform = "scaleX(0)";
       };
     }
 

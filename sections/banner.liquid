@@ -203,7 +203,14 @@
         </div>
 
         {%- if section.settings.enable_pagination -%}
-        <div class="v-banner__pagination"></div>
+        <div class="v-banner__pagination-wrap">
+            <div class="v-banner__pagination"></div>
+            {%- if section.settings.enable_autoplay -%}
+            <div class="v-banner__progress">
+                <div class="v-banner__progress-bar"></div>
+            </div>
+            {%- endif -%}
+        </div>
         {%- endif -%}
         {%- if section.settings.enable_navigation -%}
         <div class="v-banner__nav-container">
