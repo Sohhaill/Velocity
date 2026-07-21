@@ -440,7 +440,5 @@ span.v-banner__featured-price {
     height: 36px;
     display: none;
   }
-  .v-banner__pagination .swiper-pagination-bullet {
-    width: 3rem;
-  }
+  
 }
