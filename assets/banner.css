@@ -203,9 +203,6 @@ span.v-banner__featured-price {
   align-items: center;
   justify-content: center;
   border-radius: var(--button-radius);
-  border: none;
-  background: #00000091;
-  color: #fff;
   cursor: pointer;
   transition: all 0.25s ease;
 }
