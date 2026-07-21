@@ -693,8 +693,7 @@ a.social-button:hover {
   .header--layout-center {
     .header__brand {
       order: 2;
-      text-align: center;
-      flex: 1;
+      width: 29%;
     }
     .header__nav {
       flex: unset;
@@ -705,6 +704,8 @@ a.social-button:hover {
     }
     .header__icons {
       order: 3;
+      width: 30%;
+      justify-content: flex-end;
     }
   }
 }
