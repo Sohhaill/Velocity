@@ -166,6 +166,7 @@ button {
   text-decoration: unset;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .button--filled::before {
@@ -311,6 +312,7 @@ select,
   text-decoration: unset;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .button--outline:hover {
