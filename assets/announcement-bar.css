@@ -25,7 +25,80 @@
   justify-content: center;
   overflow: hidden;
 }
+.v-annoucment {
+  position: relative;
+}
 
+.v-annoucment__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  padding: 6px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.v-annoucment__nav:hover {
+  opacity: 1;
+}
+
+.v-annoucment__nav--prev {
+  left: 12px;
+}
+
+.v-annoucment__nav--next {
+  right: 12px;
+}
+
+/* COUNTDOWN BLOCK */
+.v-annoucment__ticker-item--countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.v-annoucment__countdown-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.v-annoucment__countdown-timer {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  padding: 3px 10px;
+}
+
+.v-annoucment__countdown-unit {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+  font-variant-numeric: tabular-nums;
+}
+
+.v-annoucment__countdown-value {
+  font-weight: 700;
+  font-size: 0.9em;
+}
+
+.v-annoucment__countdown-suffix {
+  font-size: 0.7em;
+  opacity: 0.65;
+  text-transform: uppercase;
+}
 .v-annoucment__col--right {
   justify-content: flex-end;
 }
