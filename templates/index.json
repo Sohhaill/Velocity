@@ -70,7 +70,7 @@
           "type": "slide",
           "settings": {
             "video_desktop": "shopify://files/videos/e7c24e5e1e2c4b5bb5d7fd2461bb6baa.SD-480p-1.5Mbps-81313404.mp4",
-            "overlay_opacity": 50,
+            "overlay_opacity": 25,
             "content_position_desktop": "center_center",
             "content_position_mobile": "center_center",
             "content_in_container": true,
