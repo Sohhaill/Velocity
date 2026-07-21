@@ -45,7 +45,6 @@
       "blocks": {
         "mega_menu_banner_Wmfjk6": {
           "type": "mega_menu_banner",
-          "disabled": true,
           "settings": {
             "menu_item_handle": "SHOP BY",
             "heading": "",
@@ -69,6 +68,7 @@
         },
         "mega_menu_collection_JJ8bNQ": {
           "type": "mega_menu_collection",
+          "disabled": true,
           "settings": {
             "menu_item_handle": "SHOP BY",
             "collection_1": "frontpage",
