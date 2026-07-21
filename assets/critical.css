@@ -326,7 +326,16 @@ select,
     background: currentColor;
     transition: width 0.25s ease;
 }
-
+span.v-banner__button-arrow{
+      block-size: 8px;
+    display: flex;
+    flex-shrink: 0;
+    inline-size: 0;
+    justify-content: flex-end;
+    margin-inline: 10px -10px;
+    overflow: hidden;
+    transition: width .2s ease;
+}
 
 
 
