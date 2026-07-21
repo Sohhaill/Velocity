@@ -163,10 +163,7 @@ span.v-banner__featured-price {
 
 /* NAVIGATION */
 .v-banner__nav {
-  position: absolute;
-  bottom: 2%;
   padding: 10px;
-  transform: translateY(-50%);
   z-index: 3;
   display: flex;
   align-items: center;
@@ -188,14 +185,15 @@ span.v-banner__featured-price {
   color: white;
 }
 
-.v-banner__nav--prev {
-  left: 16px;
+.v-banner__nav-container {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    bottom: 4.5%;
+    gap: 10px;
+    right: 1%;
+    justify-content: end;
 }
-
-.v-banner__nav--next {
-  right: 16px;
-}
-
 .v-banner__nav.swiper-button-disabled {
   opacity: 0.4;
   cursor: default;
