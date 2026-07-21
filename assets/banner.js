@@ -41,7 +41,6 @@
       config.autoplay = {
         delay: autoplaySpeed,
         disableOnInteraction: false,
-        pauseOnMouseEnter: true,
       };
     }
 
