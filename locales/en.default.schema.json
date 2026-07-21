@@ -222,7 +222,7 @@
           "label": "Show navigation arrows"
         }
       },
-        "blocks": {
+       "blocks": {
         "text": {
           "name": "Text",
           "settings": {
@@ -258,6 +258,11 @@
           }
         }
       },
+      "presets": {
+        "name": "Announcement bar"
+      }
+    }
+  },
     "banner": {
       "name": "Banner slider",
       "previous": "Previous slide",
