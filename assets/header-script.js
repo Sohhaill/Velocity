@@ -227,4 +227,49 @@
       document.addEventListener('shopify:section:load', bindTransparentHoverToggle);
       document.addEventListener('shopify:section:reorder', syncTransparentHeaderSection);
     }
+
+    // ---- Set --header-height CSS var based on actual rendered header height ----
+    function setHeaderHeightVar() {
+      document.querySelectorAll('.v-header').forEach(function (headerWrapper) {
+        var headerEl = headerWrapper.querySelector('.header');
+        if (!headerEl) return;
+        var height = headerEl.getBoundingClientRect().height;
+        document.documentElement.style.setProperty('--header-height', height + 'px');
+      });
+    }
+    window.setHeaderHeightVar = setHeaderHeightVar;
+
+    function bindHeaderHeightObserver() {
+      setHeaderHeightVar();
+
+      var resizeTimeout;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(setHeaderHeightVar, 100);
+      });
+
+      if (window.ResizeObserver && !window.__headerHeightRO) {
+        window.__headerHeightRO = new ResizeObserver(function () {
+          setHeaderHeightVar();
+        });
+        document.querySelectorAll('.v-header .header').forEach(function (headerEl) {
+          window.__headerHeightRO.observe(headerEl);
+        });
+      }
+
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(setHeaderHeightVar);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', bindHeaderHeightObserver);
+    } else {
+      bindHeaderHeightObserver();
+    }
+
+    if (Shopify && Shopify.designMode) {
+      document.addEventListener('shopify:section:load', setHeaderHeightVar);
+      document.addEventListener('shopify:section:reorder', setHeaderHeightVar);
+    }
   }
