@@ -123,14 +123,15 @@
     "show_payment_icons": "Show payment icons",
     "header_width_type": "Header width",
     "text_style": "Text style",
-    "text": "Text"
+    "text": "Text",
+    "header_layout": "Header layout"
   },
   "headers": {
     "desktop_padding": "Desktop padding",
     "mobile_padding": "Mobile padding",
     "border_radius": "Border radius",
-    "footer_bottom": "Footer bottom",
-    "header_layout": "Header layout"
+    "footer_bottom": "Footer bottom"
+    
   },
   "header_layout": {
     "left": "Left aligned",
