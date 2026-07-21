@@ -129,7 +129,8 @@
     "desktop_padding": "Desktop padding",
     "mobile_padding": "Mobile padding",
     "border_radius": "Border radius",
-    "footer_bottom": "Footer bottom"
+    "footer_bottom": "Footer bottom",
+    "header_layout": "Header layout"
   },
   "options": {
     "Container_width_type": {
@@ -140,6 +141,10 @@
       "left": "Left",
       "center": "Center",
       "right": "Right"
+    },
+    "header_layout": {
+      "left": "Left aligned",
+      "center": "Centered"
     },
     "text_color": {
       "light": "White text",
