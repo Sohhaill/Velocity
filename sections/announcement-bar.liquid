@@ -42,10 +42,7 @@
     <div class="v-annoucment__col v-annoucment__col--center">
       {%- if section.settings.enable_navigation -%}
       <button type="button" class="v-annoucment__nav v-annoucment__nav--prev" aria-label="{{ 'general.previous' | t }}">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" />
-        </svg>
+        {{ 'icon-chevron-left.svg' | inline_asset_content }}
       </button>
       {%- endif -%}
       {%- if section.blocks.size > 0 -%}
