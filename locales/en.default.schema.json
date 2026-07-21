@@ -123,7 +123,11 @@
     "show_payment_icons": "Show payment icons",
     "header_width_type": "Header width",
     "text_style": "Text style",
-    "text": "Text"
+    "text": "Text",
+    "header_layout": {
+      "left": "Left aligned",
+      "center": "Centered"
+    }
   },
   "headers": {
     "desktop_padding": "Desktop padding",
@@ -142,10 +146,7 @@
       "center": "Center",
       "right": "Right"
     },
-    "header_layout": {
-      "left": "Left aligned",
-      "center": "Centered"
-    },
+
     "text_color": {
       "light": "White text",
       "dark": "Dark text"
