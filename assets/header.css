@@ -16,7 +16,7 @@
 
 .header__logo,
 .header__logo--transparent {
-  transition: opacity var(--transition-default, .25s ease);
+  transition: opacity var(--transition-default, 0.25s ease);
 }
 
 .header__logo--transparent {
@@ -82,6 +82,7 @@
 .header__brand-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center; /* add this */
   width: var(--header-logo-width-desktop);
   height: auto;
 }
@@ -103,6 +104,8 @@
 .header__brand-text {
   font-weight: 700;
   font-size: 1.2rem;
+  width: 100%;
+  text-align: center;
 }
 
 .header__toggle {
