@@ -689,18 +689,22 @@ a.social-button:hover {
 .header--drawer-desktop .header__toggle {
   display: inline-flex;
 }
-@media(min-width:861px){
-.header--layout-center {
-  .header__brand {
-    order: 2;
-    text-align: center;
-    flex: 1;
+@media (min-width: 861px) {
+  .header--layout-center {
+    .header__brand {
+      order: 2;
+      text-align: center;
+      flex: 1;
+    }
+    .header__nav {
+      flex: unset;
+      width: 41%;
+    }
+    .header__menu-list {
+      justify-content: flex-start;
+    }
+    .header__icons {
+      order: 3;
+    }
   }
-  .header__nav {
-    flex: unset;
-  }
-  .header__icons {
-    order: 3;
-  }
-}
 }
