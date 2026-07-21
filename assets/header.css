@@ -686,7 +686,6 @@ a.social-button:hover {
     max-width: var(--header-max-width-mobile);
   }
   .header__icons,
-  .header__brand,
   .header__toggle {
     width: 33.33%;
   }
