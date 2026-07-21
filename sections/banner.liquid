@@ -5,8 +5,8 @@
 --v-banner-height-mobile: ' | append: section.settings.height_mobile | append: 'px;' %}
 
 <div class="v-banner section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}"
-    id="v-banner-{{ section.id }}" data-v-banner data-transparent-target data-effect="{{ section.settings.transition_effect }}"
-    data-autoplay="{{ section.settings.enable_autoplay }}"
+    id="v-banner-{{ section.id }}" data-v-banner data-transparent-target
+    data-effect="{{ section.settings.transition_effect }}" data-autoplay="{{ section.settings.enable_autoplay }}"
     data-autoplay-speed="{{ section.settings.autoplay_speed | times: 1000 }}"
     data-navigation="{{ section.settings.enable_navigation }}"
     data-pagination="{{ section.settings.enable_pagination }}" style="{{ v_banner_styles }}">
@@ -109,44 +109,48 @@
                 <div class="v-banner__content{{ content_container_class }}" style="{{ content_style }}">
                     <div class="v-banner__content-inner" style="{{ content_alignment_style }}">
                         <div class="v-banner__content-inner-track">
-                        <div class="v-banner__text {{ text_color_class }}">
-                            {%- if block.settings.subheading != blank -%}
-                            <p class="v-banner__subheading">{{ block.settings.subheading }}</p>
-                            {%- endif -%}
+                            <div class="v-banner__text {{ text_color_class }}">
+                                {%- if block.settings.subheading != blank -%}
+                                <p class="v-banner__subheading">{{ block.settings.subheading }}</p>
+                                {%- endif -%}
 
-                            {%- if block.settings.heading != blank -%}
-                            <h1 class="v-banner__heading">{{ block.settings.heading }}</h1>
-                            {%- endif -%}
+                                {%- if block.settings.heading != blank -%}
+                                <h1 class="v-banner__heading">{{ block.settings.heading }}</h1>
+                                {%- endif -%}
 
-                            {%- if block.settings.description != blank -%}
-                            <div class="v-banner__description">{{ block.settings.description }}</div>
-                            {%- endif -%}
-                        </div>
+                                {%- if block.settings.description != blank -%}
+                                <div class="v-banner__description">{{ block.settings.description }}</div>
+                                {%- endif -%}
+                            </div>
 
-                        {%- if block.settings.button_1_label != blank or block.settings.button_2_label != blank -%}
-                        <div class="v-banner__buttons">
-                            {%- if block.settings.button_1_label != blank and block.settings.button_1_link != blank -%}
-                            <a href="{{ block.settings.button_1_link }}"
-                                class="button {% if block.settings.button_1_style == 'outline' %}button--outline{% else %}button--filled{% endif %}">
-                                {{ block.settings.button_1_label }}
-                            </a>
+                            {%- if block.settings.button_1_label != blank or block.settings.button_2_label != blank -%}
+                            <div class="v-banner__buttons">
+                                {%- if block.settings.button_1_label != blank and block.settings.button_1_link != blank
+                                -%}
+                                <a href="{{ block.settings.button_1_link }}"
+                                    class="button {% if block.settings.button_1_style == 'outline' %}button--outline{% else %}button--filled{% endif %}">
+                                    {{ block.settings.button_1_label }}
+                                </a>
+                                {%- endif -%}
+                                {%- if block.settings.button_2_label != blank and block.settings.button_2_link != blank
+                                -%}
+                                <a href="{{ block.settings.button_2_link }}"
+                                    class="button {% if block.settings.button_2_style == 'outline' %}button--outline{% else %}button--filled{% endif %}">
+                                    {{ block.settings.button_2_label }}
+                                </a>
+                                {%- endif -%}
+                            </div>
                             {%- endif -%}
-                            {%- if block.settings.button_2_label != blank and block.settings.button_2_link != blank -%}
-                            <a href="{{ block.settings.button_2_link }}"
-                                class="button {% if block.settings.button_2_style == 'outline' %}button--outline{% else %}button--filled{% endif %}">
-                                {{ block.settings.button_2_label }}
-                            </a>
-                            {%- endif -%}
-                        </div>
-                        {%- endif -%}
                         </div>
                     </div>
                 </div>
 
                 {%- if block.settings.featured_products.size > 0 -%}
                 {% assign hide_class = '' %}
-                {% if block.settings.hide_products_desktop %}{% assign hide_class = hide_class | append: ' v-banner__featured--hide-desktop' %}{% endif %}
-                {% if block.settings.hide_products_mobile %}{% assign hide_class = hide_class | append: ' v-banner__featured--hide-mobile' %}{% endif %}
+                {% if block.settings.hide_products_desktop %}{% assign hide_class = hide_class | append: '
+                v-banner__featured--hide-desktop' %}{% endif %}
+                {% if block.settings.hide_products_mobile %}{% assign hide_class = hide_class | append: '
+                v-banner__featured--hide-mobile' %}{% endif %}
                 <div class="v-banner__featured{{ hide_class }}">
                     <div class="v-banner__featured-swiper swiper">
                         <div class="swiper-wrapper">
@@ -155,14 +159,17 @@
                                 <div class="v-banner__featured-card">
                                     <a href="{{ product.url }}" class="v-banner__featured-media">
                                         {%- if product.featured_image -%}
-                                        {{ product.featured_image | image_url: width: 300 | image_tag: loading: 'lazy', widths: '150,200,300', sizes: '150px', class: 'v-banner__featured-img' }}
+                                        {{ product.featured_image | image_url: width: 300 | image_tag: loading: 'lazy',
+                                        widths: '150,200,300', sizes: '150px', class: 'v-banner__featured-img' }}
                                         {%- endif -%}
                                     </a>
                                     <div class="v-banner__featured-info">
-                                        <a href="{{ product.url }}" class="v-banner__featured-title h6">{{ product.title }}</a>
+                                        <a href="{{ product.url }}" class="v-banner__featured-title h6">{{ product.title
+                                            }}</a>
                                         <span class="v-banner__featured-price">
                                             {%- if product.compare_at_price > product.price -%}
-                                            <s class="v-banner__featured-price--compare">{{ product.compare_at_price | money }}</s>
+                                            <s class="v-banner__featured-price--compare">{{ product.compare_at_price |
+                                                money }}</s>
                                             {%- endif -%}
                                             {{ product.price | money }}
                                         </span>
@@ -174,10 +181,14 @@
                         </div>
                         {%- if block.settings.featured_products.size > 1 -%}
                         <div class="v-banner__featured-nav">
-                            <button type="button" class="v-banner__featured-nav-btn v-banner__featured-nav-btn--prev button--filled" aria-label="{{ 'sections.banner.previous' | t }}">
+                            <button type="button"
+                                class="v-banner__featured-nav-btn v-banner__featured-nav-btn--prev button--filled"
+                                aria-label="{{ 'sections.banner.previous' | t }}">
                                 {{ 'icon-chevron-left.svg' | inline_asset_content }}
                             </button>
-                            <button type="button" class="v-banner__featured-nav-btn v-banner__featured-nav-btn--next button--filled" aria-label="{{ 'sections.banner.next' | t }}">
+                            <button type="button"
+                                class="v-banner__featured-nav-btn v-banner__featured-nav-btn--next button--filled"
+                                aria-label="{{ 'sections.banner.next' | t }}">
                                 {{ 'icon-chevron-right.svg' | inline_asset_content }}
                             </button>
                         </div>
@@ -194,15 +205,19 @@
         {%- if section.settings.enable_pagination -%}
         <div class="v-banner__pagination"></div>
         {%- endif -%}
-
         {%- if section.settings.enable_navigation -%}
-        <button type="button" class="v-banner__nav v-banner__nav--prev"
-            aria-label="{{ 'sections.banner.previous' | t }}">
-            {{ 'icon-chevron-left.svg' | inline_asset_content }}
-        </button>
-        <button type="button" class="v-banner__nav v-banner__nav--next" aria-label="{{ 'sections.banner.next' | t }}">
-            {{ 'icon-chevron-right.svg' | inline_asset_content }}
-        </button>
+        <div class="v-banner__nav-container">
+
+            <button type="button" class="v-banner__nav v-banner__nav--prev"
+                aria-label="{{ 'sections.banner.previous' | t }}">
+                {{ 'icon-chevron-left.svg' | inline_asset_content }}
+            </button>
+            <button type="button" class="v-banner__nav v-banner__nav--next"
+                aria-label="{{ 'sections.banner.next' | t }}">
+                {{ 'icon-chevron-right.svg' | inline_asset_content }}
+            </button>
+
+        </div>
         {%- endif -%}
     </div>
 </div>
@@ -478,27 +493,27 @@
 ]
 },
 {
-  "type": "header",
-  "content": "t:sections.banner.blocks.slide.headers.featured_product"
+"type": "header",
+"content": "t:sections.banner.blocks.slide.headers.featured_product"
 },
 {
-  "type": "product_list",
-  "id": "featured_products",
-  "label": "t:sections.banner.blocks.slide.settings.featured_products.label",
-  "info": "t:sections.banner.blocks.slide.settings.featured_products.info",
-  "limit": 6
+"type": "product_list",
+"id": "featured_products",
+"label": "t:sections.banner.blocks.slide.settings.featured_products.label",
+"info": "t:sections.banner.blocks.slide.settings.featured_products.info",
+"limit": 6
 },
 {
-  "type": "checkbox",
-  "id": "hide_products_desktop",
-  "label": "t:sections.banner.blocks.slide.settings.hide_products_desktop.label",
-  "default": false
+"type": "checkbox",
+"id": "hide_products_desktop",
+"label": "t:sections.banner.blocks.slide.settings.hide_products_desktop.label",
+"default": false
 },
 {
-  "type": "checkbox",
-  "id": "hide_products_mobile",
-  "label": "t:sections.banner.blocks.slide.settings.hide_products_mobile.label",
-  "default": false
+"type": "checkbox",
+"id": "hide_products_mobile",
+"label": "t:sections.banner.blocks.slide.settings.hide_products_mobile.label",
+"default": false
 }
 ]
 }
