@@ -24,6 +24,7 @@
 .v-annoucment__col--center {
   justify-content: center;
   overflow: hidden;
+  position: relative;
 }
 .v-annoucment {
   position: relative;
@@ -51,11 +52,11 @@
 }
 
 .v-annoucment__nav--prev {
-  left: 12px;
+  left: -50%;
 }
 
 .v-annoucment__nav--next {
-  right: 12px;
+  right: -50%;
 }
 
 /* COUNTDOWN BLOCK */
