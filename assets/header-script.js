@@ -1,4 +1,3 @@
-
   if (window.__headerScriptsInitialized) {
     document.currentScript.remove();
   } else {
@@ -95,17 +94,6 @@
       }
       document.documentElement.classList.remove('header-drawer-open', 'search-popup-open');
       document.body.style.overflow = '';
-    }
-
-    if (Shopify && Shopify.designMode) {
-      document.addEventListener('shopify:section:load', function (event) {
-        // naya section DOM aaya hai — turant reset karo
-        forceResetHeaderUI();
-      });
-      document.addEventListener('shopify:section:select', function (event) {
-        forceResetHeaderUI();
-      });
-      document.addEventListener('shopify:section:reorder', forceResetHeaderUI);
     }
 
     // Drawer submenu accordion — re-bind on every load since DOM is fresh
@@ -223,11 +211,6 @@
       bindTransparentHoverToggle();
     }
 
-    if (Shopify && Shopify.designMode) {
-      document.addEventListener('shopify:section:load', bindTransparentHoverToggle);
-      document.addEventListener('shopify:section:reorder', syncTransparentHeaderSection);
-    }
-
     // ---- Set --header-height CSS var based on actual rendered header height ----
     function setHeaderHeightVar() {
       document.querySelectorAll('.v-header').forEach(function (headerWrapper) {
@@ -268,8 +251,22 @@
       bindHeaderHeightObserver();
     }
 
+
     if (Shopify && Shopify.designMode) {
-      document.addEventListener('shopify:section:load', setHeaderHeightVar);
-      document.addEventListener('shopify:section:reorder', setHeaderHeightVar);
+      document.addEventListener('shopify:section:load', function () {
+        forceResetHeaderUI();
+        bindTransparentHoverToggle();
+        setHeaderHeightVar();
+      });
+
+      document.addEventListener('shopify:section:select', function () {
+        forceResetHeaderUI();
+      });
+
+      document.addEventListener('shopify:section:reorder', function () {
+        forceResetHeaderUI();
+        syncTransparentHeaderSection();
+        setHeaderHeightVar();
+      });
     }
   }
