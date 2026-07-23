@@ -351,11 +351,7 @@ a.mega-menu__submenu-sublink:hover::after,
 .footer__bottom-menu a:hover::after {
   width: 100%;
 }
-@media (max-width: 860px) {
-  .v-banner.allow-transparent-header {
-    margin-top: -91px !important;
-  }
-}
+
 @media screen and (max-width: 767px) {
   
   .hide-mobile {
