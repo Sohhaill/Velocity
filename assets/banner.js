@@ -71,7 +71,6 @@
       };
 
       config.on.slideChangeTransitionStart = function () {
-        // Reset instantly then let the next autoplayTimeLeft tick animate it back up
         progressBarEl.style.transitionDuration = "0s";
         progressBarEl.style.transform = "scaleX(0)";
       };
@@ -79,6 +78,7 @@
 
     var swiperInstance = new Swiper(swiperEl, config);
     root.__vBannerSwiperInstance = swiperInstance;
+
     // FEATURED PRODUCT SWIPERS — one nested instance per slide
     root.querySelectorAll(".v-banner__featured-swiper").forEach(function (el) {
       var slidesCount = el.querySelectorAll(".swiper-slide").length;
@@ -114,22 +114,52 @@
         }
       });
     });
-    // Only the active slide's video should play — keeps things light and avoids
-    // multiple background videos competing for bandwidth/decoding at once.
+
+    // ---- VIDEO AUTOPLAY SYNC ----
+    // Only the real active slide's video should play. We read the active
+    // slide straight from Swiper's own `slides`/`activeIndex`, not from a
+    // ".swiper-slide-active" class lookup — with loop mode, Swiper clones
+    // slides at the boundaries, and during a "loopFix" correction jump the
+    // class can briefly sit on a slide whose video hasn't attempted to play
+    // yet, especially depending on which direction you're navigating.
+    // That's why "next" could fail while "prev" worked: only one direction
+    // was reliably triggering the loop correction in a way that beat the
+    // class-based lookup. Reading swiper.slides[swiper.activeIndex] instead,
+    // and re-syncing on Swiper's own "loopFix" event as well as
+    // "slideChangeTransitionEnd", removes that race.
+    function playVideoWhenReady(video) {
+      video.currentTime = 0;
+      var attemptPlay = function () {
+        var playPromise = video.play();
+        if (playPromise && playPromise.catch) {
+          playPromise.catch(function () {
+            // Autoplay was blocked or the video wasn't ready yet — retry
+            // once it reports enough data to actually play through.
+            video.addEventListener("canplay", attemptPlay, { once: true });
+          });
+        }
+      };
+      if (video.readyState >= 2) {
+        attemptPlay();
+      } else {
+        video.addEventListener("canplay", attemptPlay, { once: true });
+      }
+    }
+
     function syncVideos() {
       swiperEl.querySelectorAll("video").forEach(function (video) {
         video.pause();
       });
-      var activeSlide = swiperEl.querySelector(".swiper-slide-active");
+
+      var activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
       if (!activeSlide) return;
-      activeSlide.querySelectorAll("video").forEach(function (video) {
-        var playPromise = video.play();
-        if (playPromise && playPromise.catch) playPromise.catch(function () {});
-      });
+
+      activeSlide.querySelectorAll("video").forEach(playVideoWhenReady);
     }
 
     syncVideos();
     swiperInstance.on("slideChangeTransitionEnd", syncVideos);
+    swiperInstance.on("loopFix", syncVideos);
   }
 
   function destroyVBanner(root) {
@@ -153,8 +183,6 @@
       .forEach(initVBanner);
   }
 
-  // Init every banner instance currently on the page.
-  // Safe with multiple sections since each is guarded by its own dataset flag.
   scanAndInit(document);
 
   if (!window.__vBannerListenersInitialized) {
@@ -173,8 +201,6 @@
         destroyVBanner(root);
       });
 
-      // Jumps to the slide being edited in the theme editor sidebar,
-      // and pauses autoplay so it doesn't fight the editor selection.
       document.addEventListener("shopify:block:select", function (event) {
         var root = event.target.closest("[data-v-banner]");
         if (!root || !root.__vBannerSwiperInstance) return;
