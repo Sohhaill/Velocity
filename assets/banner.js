@@ -108,9 +108,9 @@
     root.querySelectorAll(".v-banner__featured").forEach(function (el) {
       el.addEventListener("transitionend", function (e) {
         if (e.propertyName !== "grid-template-rows") return;
-        var swiperEl = el.querySelector(".v-banner__featured-swiper");
-        if (swiperEl && swiperEl.__vBannerFeaturedInstance) {
-          swiperEl.__vBannerFeaturedInstance.update();
+        var featuredSwiperEl = el.querySelector(".v-banner__featured-swiper");
+        if (featuredSwiperEl && featuredSwiperEl.__vBannerFeaturedInstance) {
+          featuredSwiperEl.__vBannerFeaturedInstance.update();
         }
       });
     });
