@@ -79,15 +79,15 @@
 }
 
 .mega-menu__submenu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 1rem;
-    row-gap: 1.8rem;
-    align-items: self-start;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    justify-content: flex-start;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+  row-gap: 1.8rem;
+  align-items: self-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  justify-content: flex-start;
 }
 
 .mega-menu__submenu-link {
@@ -167,6 +167,7 @@ svg.megamenu-svg {
   gap: 12px;
   text-decoration: none;
   color: inherit;
+  height: fit-content;
 }
 
 .mega-menu__coll-image-wrap {
