@@ -60,6 +60,11 @@
   padding-bottom: 40px;
 }
 
+/* ---- shared submenu list (left column, both layouts) ---- */
+.mega-menu__col--links,
+.mega-menu__col--text {
+  width: 54%;
+}
 
 .mega-menu__heading {
   font-size: 1.1rem;
