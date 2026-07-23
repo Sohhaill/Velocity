@@ -682,6 +682,10 @@ a.social-button:hover {
 }
 
 @media (max-width: 860px) {
+  .header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
   .header__inner {
     max-width: var(--header-max-width-mobile);
   }

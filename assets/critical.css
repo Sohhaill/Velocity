@@ -359,6 +359,9 @@ a.mega-menu__submenu-sublink:hover::after,
   }
 }
 @media screen and (max-width: 767px) {
+  .shopify-section-group-header-group {
+    min-height: 67.59px;
+  }
   .hide-mobile {
     display: none !important;
   }
