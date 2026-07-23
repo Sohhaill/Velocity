@@ -60,11 +60,6 @@
   padding-bottom: 40px;
 }
 
-/* ---- shared submenu list (left column, both layouts) ---- */
-.mega-menu__col--links,
-.mega-menu__col--text {
-  width: 54%;
-}
 
 .mega-menu__heading {
   font-size: 1.1rem;
@@ -173,7 +168,7 @@ svg.megamenu-svg {
 .mega-menu__coll-image-wrap {
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 362px;
   overflow: hidden;
   border-radius: 8px;
   background: var(--color-scheme-border, rgba(0, 0, 0, 0.06));
