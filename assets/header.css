@@ -701,6 +701,7 @@ a.social-button:hover {
 
   .header__toggle {
     display: inline-flex;
+    justify-content: flex-start;
   }
 
   .header__submenu {
