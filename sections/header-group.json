@@ -24,7 +24,6 @@
           "type": "countdown",
           "settings": {
             "text": "Unlock save 15% off",
-            "show_icon": true,
             "days": 163,
             "hours": 6,
             "minutes": 49,
@@ -52,7 +51,6 @@
       "blocks": {
         "mega_menu_banner_Wmfjk6": {
           "type": "mega_menu_banner",
-          "disabled": true,
           "settings": {
             "menu_item_handle": "SHOP BY",
             "heading": "",
@@ -76,6 +74,7 @@
         },
         "mega_menu_collection_JJ8bNQ": {
           "type": "mega_menu_collection",
+          "disabled": true,
           "settings": {
             "menu_item_handle": "SHOP BY",
             "collection_1": "frontpage",
