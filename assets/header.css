@@ -462,7 +462,14 @@ svg.megamenu-svg {
   opacity: 1;
   transition: opacity 0.35s ease;
 }
+.header__drawer-panel {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge legacy */
+}
 
+.header__drawer-panel::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge Chromium */
+}
 /* Drawer panel: full height, slides in from the left */
 .header__drawer-panel {
   position: relative;
