@@ -126,7 +126,7 @@
       ],
       "name": "t:sections.banner.presets.name",
       "settings": {
-        "section_color_scheme": "scheme_4",
+        "section_color_scheme": "scheme_3",
         "height_desktop": 720,
         "height_mobile": 530,
         "transition_effect": "fade",
