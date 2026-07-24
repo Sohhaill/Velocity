@@ -135,10 +135,73 @@
         "enable_navigation": true,
         "enable_pagination": true
       }
+    },
+    "scrolling_animation_E9jqjc": {
+      "type": "scrolling-animation",
+      "blocks": {
+        "item_9JhHXt": {
+          "type": "item",
+          "settings": {
+            "content_type": "text",
+            "image_width_desktop": 80,
+            "image_width_mobile": 60,
+            "text": "Your text here",
+            "text_tag": "h2"
+          }
+        },
+        "item_k8FwCW": {
+          "type": "item",
+          "settings": {
+            "content_type": "image",
+            "image": "shopify://shop_images/ChatGPTImageJun20_2026_09_59_04PM.webp",
+            "image_width_desktop": 80,
+            "image_width_mobile": 60,
+            "text": "Your text here",
+            "text_tag": "h3"
+          }
+        },
+        "item_qRBzUJ": {
+          "type": "item",
+          "settings": {
+            "content_type": "text",
+            "image_width_desktop": 80,
+            "image_width_mobile": 60,
+            "text": "Your text here",
+            "text_tag": "h3"
+          }
+        },
+        "item_ibe6tz": {
+          "type": "item",
+          "settings": {
+            "content_type": "image",
+            "image": "shopify://shop_images/ChatGPTImageJun20_2026_09_58_56PM_1.webp",
+            "image_width_desktop": 80,
+            "image_width_mobile": 60,
+            "text": "Your text here",
+            "text_tag": "h3"
+          }
+        }
+      },
+      "block_order": [
+        "item_9JhHXt",
+        "item_k8FwCW",
+        "item_qRBzUJ",
+        "item_ibe6tz"
+      ],
+      "name": "Scrolling Animation",
+      "settings": {
+        "section_color_scheme": "scheme_2",
+        "container_width_type": "full_width",
+        "speed": 20,
+        "gap": 32,
+        "border_radius": 50,
+        "pause_on_hover": true
+      }
     }
   },
   "order": [
     "multiple_image_text_k7WWD4",
-    "banner_dUTX7b"
+    "banner_dUTX7b",
+    "scrolling_animation_E9jqjc"
   ]
 }
