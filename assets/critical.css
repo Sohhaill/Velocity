@@ -94,7 +94,7 @@ h5,
 h6 {
   font-family: var(--font-heading--family);
   font-weight: var(--font-heading--weight);
-    font-style: normal;
+  font-style: normal;
   font-display: swap;
   line-height: var(--line-height-heading);
   color: var(--color-heading);
@@ -107,7 +107,7 @@ h6 {
 .h6 {
   font-family: var(--font-heading--family);
   font-weight: var(--font-heading--weight);
-    font-style: normal;
+  font-style: normal;
   font-display: swap;
   line-height: var(--line-height-heading);
   color: var(--color-heading);
@@ -154,7 +154,7 @@ h6 {
 .button--filled,
 button {
   font-family: var(--font-button--family);
-    font-style: normal;
+  font-style: normal;
   font-display: swap;
   font-size: var(--font-size-button);
   font-weight: var(--font-button--weight);
