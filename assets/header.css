@@ -29,11 +29,11 @@
   opacity: 0;
   pointer-events: none;
 }
-.header--drawer-desktop.header--layout-center .header__brand {
+.header--drawer-desktop .header__brand {
   text-align: center;
   width: 100%;
 }
-.header--drawer-desktop.header--layout-center .header__icons {
+.header--drawer-desktop .header__icons {
   width: fit-content;
 }
 .v-header.allow-transparent-header .header__logo {
