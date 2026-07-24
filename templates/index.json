@@ -145,8 +145,7 @@
             "content_type": "text",
             "image_width_desktop": 80,
             "image_width_mobile": 60,
-            "text": "Your text here",
-            "text_tag": "h3"
+            "text": "Your text here"
           }
         },
         "item_k8FwCW": {
@@ -156,8 +155,7 @@
             "image": "shopify://shop_images/ChatGPTImageJun20_2026_09_59_04PM.webp",
             "image_width_desktop": 80,
             "image_width_mobile": 60,
-            "text": "Your text here",
-            "text_tag": "h3"
+            "text": "Your text here"
           }
         },
         "item_qRBzUJ": {
@@ -166,8 +164,7 @@
             "content_type": "text",
             "image_width_desktop": 80,
             "image_width_mobile": 60,
-            "text": "Your text here",
-            "text_tag": "h3"
+            "text": "Your text here"
           }
         },
         "item_ibe6tz": {
@@ -177,8 +174,7 @@
             "image": "shopify://shop_images/ChatGPTImageJun20_2026_09_58_56PM_1.webp",
             "image_width_desktop": 80,
             "image_width_mobile": 60,
-            "text": "Your text here",
-            "text_tag": "h3"
+            "text": "Your text here"
           }
         }
       },
@@ -190,9 +186,10 @@
       ],
       "name": "Scrolling Animation",
       "settings": {
-        "section_color_scheme": "scheme_2",
+        "section_color_scheme": "scheme_1",
         "speed": 20,
         "gap": 32,
+        "text_tag": "h3",
         "border_radius": 0,
         "pause_on_hover": true,
         "padding_top_desktop": 20,
