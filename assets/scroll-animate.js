@@ -6,8 +6,8 @@
   if (window.scrollAnimateInit) return;
   window.scrollAnimateInit = true;
 
-  var DEFAULT_THRESHOLD = 0.55;
-  var DEFAULT_OFFSET = '0px 0px -8% 0px';
+  var DEFAULT_THRESHOLD = 0.15;
+  var DEFAULT_OFFSET = '0px 0px -10% 0px';
 
   var io = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
