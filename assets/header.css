@@ -36,6 +36,7 @@
 .header--drawer-desktop .header__icons {
   width: fit-content;
 }
+
 .v-header.allow-transparent-header .header__logo {
   opacity: 0;
 }
