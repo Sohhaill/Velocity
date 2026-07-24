@@ -146,7 +146,7 @@
             "image_width_desktop": 80,
             "image_width_mobile": 60,
             "text": "Your text here",
-            "text_tag": "h2"
+            "text_tag": "h3"
           }
         },
         "item_k8FwCW": {
@@ -191,11 +191,14 @@
       "name": "Scrolling Animation",
       "settings": {
         "section_color_scheme": "scheme_2",
-        "container_width_type": "full_width",
         "speed": 20,
         "gap": 32,
-        "border_radius": 50,
-        "pause_on_hover": true
+        "border_radius": 0,
+        "pause_on_hover": true,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 20,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 12
       }
     }
   },
