@@ -6,7 +6,7 @@
   }
 {%- endstyle -%}
 
-<div class="v-scroll section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}{% if section.settings.container_width_type == 'full_width' %} full-width{% else %} container-width{% endif %}">
+<div class="v-scroll section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}">
   <div class="v-scroll__wrapper{% if section.settings.pause_on_hover %} v-scroll__wrapper--pause-on-hover{% endif %}">
     <div class="v-scroll__track">
       {%- for i in (1..4) -%}
@@ -55,16 +55,6 @@
         { "value": "scheme_2", "label": "t:options.color_scheme.scheme_2" },
         { "value": "scheme_3", "label": "t:options.color_scheme.scheme_3" },
         { "value": "scheme_4", "label": "t:options.color_scheme.scheme_4" }
-      ]
-    },
-    {
-      "type": "select",
-      "id": "container_width_type",
-      "label": "Container width",
-      "default": "full_width",
-      "options": [
-        { "value": "container_width", "label": "Container width" },
-        { "value": "full_width", "label": "Full width" }
       ]
     },
     {
