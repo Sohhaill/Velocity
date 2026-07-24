@@ -29,7 +29,7 @@
   color: var(--color-foreground);
   border-top: 1px solid var(--color-scheme-border, rgba(0, 0, 0, 0.08));
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.1);
-
+  border-radius: 0px 0px 20px 20px;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
