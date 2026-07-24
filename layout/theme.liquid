@@ -42,8 +42,8 @@
   {{ 'megemenu-script.js' | asset_url | script_tag }}
 
   {{ 'header-script.js' | asset_url | script_tag }}
-  <script src="{{ 'lenis.min.js' | asset_url }}" defer></script>
-  <script src="{{ 'lenis.js' | asset_url }}" defer></script>
+  {% comment %} <script src="{{ 'lenis.min.js' | asset_url }}" defer></script>
+  <script src="{{ 'lenis.js' | asset_url }}" defer></script> {% endcomment %}
   {{ 'scroll-animate.css' | asset_url | stylesheet_tag }}
   <script src="{{ 'scroll-animate.js' | asset_url }}" defer></script>
 </body>
