@@ -1,179 +1,237 @@
 {%- style -%}
-  #shopify-section-{{ section.id }} {
-    --v-scroll-gap: {{ section.settings.gap }}px;
-    --v-scroll-duration: {{ section.settings.speed }}s;
-    --v-scroll-radius: {{ section.settings.border_radius }}%;
+#shopify-section-{{ section.id }} {
+--v-scroll-gap: {{ section.settings.gap }}px;
+--v-scroll-radius: {{ section.settings.border_radius }}%;
+--v-scroll-padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+--v-scroll-padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
+--v-scroll-padding-top-mobile: {{ section.settings.padding_top_mobile }}px;
+--v-scroll-padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
+}
+.v-scroll{
+padding-top: var(--v-scroll-padding-top-mobile, 24px);
+padding-bottom: var(--v-scroll-padding-bottom-mobile, 24px);
+}
+@media (min-width: 861px) {
+  .v-scroll {
+    padding-top: var(--v-scroll-padding-top-desktop, 40px);
+    padding-bottom: var(--v-scroll-padding-bottom-desktop, 40px);
+  }
   }
 {%- endstyle -%}
 
 <div class="v-scroll section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}">
-  <div class="v-scroll__wrapper{% if section.settings.pause_on_hover %} v-scroll__wrapper--pause-on-hover{% endif %}">
-    <div class="v-scroll__track">
-      {%- for i in (1..4) -%}
-        <div class="v-scroll__group" aria-hidden="{% if i > 1 %}true{% else %}false{% endif %}">
-          {%- for block in section.blocks -%}
-            <div class="v-scroll__item"
-              style="--item-w-desktop: {{ block.settings.image_width_desktop }}px; --item-w-mobile: {{ block.settings.image_width_mobile }}px;"
-              {{ block.shopify_attributes }}>
-              {%- if block.settings.content_type == 'image' -%}
-                {%- if block.settings.image -%}
-                  {{ block.settings.image | image_url: width: 600 | image_tag: class: 'v-scroll__image', widths: '100,200,300,400,600', alt: block.settings.image.alt }}
-                {%- else -%}
-                  {{ 'image' | placeholder_svg_tag: 'v-scroll__image v-scroll__placeholder' }}
-                {%- endif -%}
-              {%- else -%}
-                {%- case block.settings.text_tag -%}
-                  {%- when 'h1' -%}<h1 class="v-scroll__text">{{ block.settings.text }}</h1>
-                  {%- when 'h2' -%}<h2 class="v-scroll__text">{{ block.settings.text }}</h2>
-                  {%- when 'h4' -%}<h4 class="v-scroll__text">{{ block.settings.text }}</h4>
-                  {%- when 'p' -%}<p class="v-scroll__text">{{ block.settings.text }}</p>
-                  {%- else -%}<h3 class="v-scroll__text">{{ block.settings.text }}</h3>
-                {%- endcase -%}
-              {%- endif -%}
+    <div class="v-scroll__wrapper{% if section.settings.pause_on_hover %} v-scroll__wrapper--pause-on-hover{% endif %}">
+        <div class="v-scroll__track">
+            {%- for i in (1..4) -%}
+            <div class="v-scroll__group" aria-hidden="{% if i > 1 %}true{% else %}false{% endif %}">
+                {%- for block in section.blocks -%}
+                <div class="v-scroll__item"
+                    style="--item-w-desktop: {{ block.settings.image_width_desktop }}px; --item-w-mobile: {{ block.settings.image_width_mobile }}px;"
+                    {{ block.shopify_attributes }}>
+                    {%- if block.settings.content_type == 'image' -%}
+                    {%- if block.settings.image -%}
+                    {{ block.settings.image | image_url: width: 600 | image_tag: class: 'v-scroll__image', widths:
+                    '100,200,300,400,600', alt: block.settings.image.alt }}
+                    {%- else -%}
+                    {{ 'image' | placeholder_svg_tag: 'v-scroll__image v-scroll__placeholder' }}
+                    {%- endif -%}
+                    {%- else -%}
+                    {%- case block.settings.text_tag -%}
+                    {%- when 'h1' -%}<h1 class="v-scroll__text">{{ block.settings.text }}</h1>
+                    {%- when 'h2' -%}<h2 class="v-scroll__text">{{ block.settings.text }}</h2>
+                    {%- when 'h4' -%}<h4 class="v-scroll__text">{{ block.settings.text }}</h4>
+                    {%- when 'p' -%}<p class="v-scroll__text">{{ block.settings.text }}</p>
+                    {%- else -%}<h3 class="v-scroll__text">{{ block.settings.text }}</h3>
+                    {%- endcase -%}
+                    {%- endif -%}
+                </div>
+                {%- endfor -%}
             </div>
-          {%- endfor -%}
+            {%- endfor -%}
         </div>
-      {%- endfor -%}
     </div>
-  </div>
 </div>
 
 
 
 {% schema %}
 {
-  "name": "Scrolling Animation",
-  "class": "section-v-scroll",
-  "settings": [
-    {
-      "type": "select",
-      "id": "section_color_scheme",
-      "label": "t:labels.color_scheme",
-      "default": "scheme_1",
-      "options": [
-        { "value": "scheme_1", "label": "t:options.color_scheme.scheme_1" },
-        { "value": "scheme_2", "label": "t:options.color_scheme.scheme_2" },
-        { "value": "scheme_3", "label": "t:options.color_scheme.scheme_3" },
-        { "value": "scheme_4", "label": "t:options.color_scheme.scheme_4" }
-      ]
-    },
-    {
-      "type": "range",
-      "id": "speed",
-      "label": "Scroll speed (duration)",
-      "info": "Lower value = faster scroll",
-      "min": 5,
-      "max": 60,
-      "step": 1,
-      "unit": "s",
-      "default": 20
-    },
-    {
-      "type": "range",
-      "id": "gap",
-      "label": "Gap between items",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "default": 32
-    },
-    {
-      "type": "range",
-      "id": "border_radius",
-      "label": "Image border radius",
-      "info": "50% = full circle, 0% = square",
-      "min": 0,
-      "max": 50,
-      "step": 1,
-      "unit": "%",
-      "default": 50
-    },
-    {
-      "type": "checkbox",
-      "id": "pause_on_hover",
-      "label": "Pause animation on hover",
-      "default": true
-    }
-  ],
-  "blocks": [
-    {
-      "type": "item",
-      "name": "Item",
-      "settings": [
-        {
-          "type": "select",
-          "id": "content_type",
-          "label": "Content type",
-          "default": "image",
-          "options": [
-            { "value": "image", "label": "Image" },
-            { "value": "text", "label": "Text" }
-          ]
-        },
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image",
-          "visible_if": "{{ block.settings.content_type == 'image' }}"
-        },
-        {
-          "type": "range",
-          "id": "image_width_desktop",
-          "label": "Image width — desktop",
-          "min": 30,
-          "max": 200,
-          "step": 5,
-          "unit": "px",
-          "default": 80,
-          "visible_if": "{{ block.settings.content_type == 'image' }}"
-        },
-        {
-          "type": "range",
-          "id": "image_width_mobile",
-          "label": "Image width — mobile",
-          "min": 20,
-          "max": 150,
-          "step": 5,
-          "unit": "px",
-          "default": 60,
-          "visible_if": "{{ block.settings.content_type == 'image' }}"
-        },
-        {
-          "type": "text",
-          "id": "text",
-          "label": "Text",
-          "default": "Your text here",
-          "visible_if": "{{ block.settings.content_type == 'text' }}"
-        },
-        {
-          "type": "select",
-          "id": "text_tag",
-          "label": "Text tag",
-          "default": "h3",
-          "options": [
-            { "value": "h1", "label": "H1" },
-            { "value": "h2", "label": "H2" },
-            { "value": "h3", "label": "H3" },
-            { "value": "h4", "label": "H4" },
-            { "value": "p", "label": "Paragraph" }
-          ],
-          "visible_if": "{{ block.settings.content_type == 'text' }}"
-        }
-      ]
-    }
-  ],
-  "max_blocks": 20,
-  "presets": [
-    {
-      "name": "Scrolling Animation",
-      "blocks": [
-        { "type": "item" },
-        { "type": "item" },
-        { "type": "item" },
-        { "type": "item" }
-      ]
-    }
-  ]
+"name": "Scrolling Animation",
+"class": "section-v-scroll",
+"settings": [
+{
+"type": "select",
+"id": "section_color_scheme",
+"label": "t:labels.color_scheme",
+"default": "scheme_1",
+"options": [
+{ "value": "scheme_1", "label": "t:options.color_scheme.scheme_1" },
+{ "value": "scheme_2", "label": "t:options.color_scheme.scheme_2" },
+{ "value": "scheme_3", "label": "t:options.color_scheme.scheme_3" },
+{ "value": "scheme_4", "label": "t:options.color_scheme.scheme_4" }
+]
+},
+{
+"type": "range",
+"id": "speed",
+"label": "Scroll speed (duration)",
+"info": "Lower value = faster scroll",
+"min": 5,
+"max": 60,
+"step": 1,
+"unit": "s",
+"default": 20
+},
+{
+"type": "range",
+"id": "gap",
+"label": "Gap between items",
+"min": 0,
+"max": 100,
+"step": 4,
+"unit": "px",
+"default": 32
+},
+{
+"type": "range",
+"id": "border_radius",
+"label": "Image border radius",
+"info": "50% = full circle, 0% = square",
+"min": 0,
+"max": 50,
+"step": 1,
+"unit": "%",
+"default": 50
+},
+{
+"type": "checkbox",
+"id": "pause_on_hover",
+"label": "Pause animation on hover",
+"default": true
+},
+{
+"type": "header",
+"content": "Section padding"
+},
+{
+"type": "range",
+"id": "padding_top_desktop",
+"label": "Padding top — desktop",
+"min": 0,
+"max": 150,
+"step": 4,
+"unit": "px",
+"default": 40
+},
+{
+"type": "range",
+"id": "padding_bottom_desktop",
+"label": "Padding bottom — desktop",
+"min": 0,
+"max": 150,
+"step": 4,
+"unit": "px",
+"default": 40
+},
+{
+"type": "range",
+"id": "padding_top_mobile",
+"label": "Padding top — mobile",
+"min": 0,
+"max": 100,
+"step": 4,
+"unit": "px",
+"default": 24
+},
+{
+"type": "range",
+"id": "padding_bottom_mobile",
+"label": "Padding bottom — mobile",
+"min": 0,
+"max": 100,
+"step": 4,
+"unit": "px",
+"default": 24
+}
+],
+"blocks": [
+{
+"type": "item",
+"name": "Item",
+"settings": [
+{
+"type": "select",
+"id": "content_type",
+"label": "Content type",
+"default": "image",
+"options": [
+{ "value": "image", "label": "Image" },
+{ "value": "text", "label": "Text" }
+]
+},
+{
+"type": "image_picker",
+"id": "image",
+"label": "Image",
+"visible_if": "{{ block.settings.content_type == 'image' }}"
+},
+{
+"type": "range",
+"id": "image_width_desktop",
+"label": "Image width — desktop",
+"min": 30,
+"max": 200,
+"step": 5,
+"unit": "px",
+"default": 80,
+"visible_if": "{{ block.settings.content_type == 'image' }}"
+},
+{
+"type": "range",
+"id": "image_width_mobile",
+"label": "Image width — mobile",
+"min": 20,
+"max": 150,
+"step": 5,
+"unit": "px",
+"default": 60,
+"visible_if": "{{ block.settings.content_type == 'image' }}"
+},
+{
+"type": "text",
+"id": "text",
+"label": "Text",
+"default": "Your text here",
+"visible_if": "{{ block.settings.content_type == 'text' }}"
+},
+{
+"type": "select",
+"id": "text_tag",
+"label": "Text tag",
+"default": "h3",
+"options": [
+{ "value": "h1", "label": "H1" },
+{ "value": "h2", "label": "H2" },
+{ "value": "h3", "label": "H3" },
+{ "value": "h4", "label": "H4" },
+{ "value": "p", "label": "Paragraph" }
+],
+"visible_if": "{{ block.settings.content_type == 'text' }}"
+}
+]
+}
+],
+"max_blocks": 20,
+"presets": [
+{
+"name": "Scrolling Animation",
+"blocks": [
+{ "type": "item" },
+{ "type": "item" },
+{ "type": "item" },
+{ "type": "item" }
+]
+}
+]
 }
 {% endschema %}
