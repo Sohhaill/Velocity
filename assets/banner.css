@@ -224,7 +224,7 @@ span.v-banner__featured-price {
     transition: bottom 0.25s ease;
 }
 .v-banner:hover .v-banner__nav-container {
-bottom: -4.5%;
+bottom: 4.5%;
 }
 .v-banner__nav.swiper-button-disabled {
   opacity: 0.4;
