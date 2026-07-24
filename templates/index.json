@@ -197,74 +197,11 @@
         "padding_top_mobile": 12,
         "padding_bottom_mobile": 12
       }
-    },
-    "scrolling_animation_bWy8iK": {
-      "type": "scrolling-animation",
-      "blocks": {
-        "item_ng37Ti": {
-          "type": "item",
-          "settings": {
-            "content_type": "text",
-            "image_width_desktop": 80,
-            "image_width_mobile": 60,
-            "text": "Your text here"
-          }
-        },
-        "item_Ueq3bb": {
-          "type": "item",
-          "settings": {
-            "content_type": "image",
-            "image": "shopify://shop_images/ChatGPTImageJun20_2026_09_59_04PM.webp",
-            "image_width_desktop": 80,
-            "image_width_mobile": 60,
-            "text": "Your text here"
-          }
-        },
-        "item_jEFjbk": {
-          "type": "item",
-          "settings": {
-            "content_type": "text",
-            "image_width_desktop": 80,
-            "image_width_mobile": 60,
-            "text": "Your text here"
-          }
-        },
-        "item_tq76DP": {
-          "type": "item",
-          "settings": {
-            "content_type": "image",
-            "image": "shopify://shop_images/ChatGPTImageJun20_2026_09_58_56PM_1.webp",
-            "image_width_desktop": 80,
-            "image_width_mobile": 60,
-            "text": "Your text here"
-          }
-        }
-      },
-      "block_order": [
-        "item_ng37Ti",
-        "item_Ueq3bb",
-        "item_jEFjbk",
-        "item_tq76DP"
-      ],
-      "name": "Scrolling Animation",
-      "settings": {
-        "section_color_scheme": "scheme_3",
-        "speed": 20,
-        "gap": 32,
-        "text_tag": "h4",
-        "border_radius": 0,
-        "pause_on_hover": true,
-        "padding_top_desktop": 20,
-        "padding_bottom_desktop": 20,
-        "padding_top_mobile": 12,
-        "padding_bottom_mobile": 12
-      }
     }
   },
   "order": [
     "multiple_image_text_k7WWD4",
     "banner_dUTX7b",
-    "scrolling_animation_E9jqjc",
-    "scrolling_animation_bWy8iK"
+    "scrolling_animation_E9jqjc"
   ]
 }
