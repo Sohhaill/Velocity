@@ -99,7 +99,7 @@
         "logo_width_mobile": 120,
         "header_sticky": true,
         "header_layout": "left",
-        "enable_drawer_desktop": false,
+        "enable_drawer_desktop": true,
         "enable_transparent_header": true,
         "transparent_header_text_color": "#ffffff",
         "menu": "main-menu",
