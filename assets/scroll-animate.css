@@ -29,11 +29,3 @@
 [data-animate="flip-up"] { transform: perspective(1000px) rotateX(20deg); }
 [data-animate="flip-down"] { transform: perspective(1000px) rotateX(-20deg); }
 
-/* Respect users who prefer reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  [data-animate] {
-    transition: none !important;
-    transform: none !important;
-    opacity: 1 !important;
-  }
-}
