@@ -11,7 +11,7 @@
       drawer.setAttribute('aria-hidden', 'false');
       document.documentElement.classList.add('header-drawer-open');
       document.body.style.overflow = 'hidden';
-      if (window.lenis) window.lenis.stop();
+      // if (window.lenis) window.lenis.stop();
     }
 
     function closeHeaderDrawer() {
