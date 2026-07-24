@@ -111,6 +111,7 @@
     "header_sticky": "Sticky header",
     "enable_drawer_desktop": "Enable drawer menu on desktop",
     "enable_drawer_desktop_info": "When enabled, the hamburger icon replaces the desktop navigation menu on all screen sizes.",
+    "menu_layout_info": "This setting will not work when desktop drawer menu is enabled.",
     "wishlist_icon": "Wishlist icon",
     "account_icon": "Account icon",
     "search_icon": "Search icon",
@@ -240,7 +241,7 @@
             "text": {
               "label": "Label text"
             },
-           
+
             "days": {
               "label": "Days"
             },
