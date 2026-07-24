@@ -352,20 +352,6 @@ span.v-banner__featured-price {
   width: fit-content;
 }
 
-.v-banner__featured-card {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  background: var(--color-background);
-  color: var(--color-foreground);
-  padding: 14px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
-  transition:
-    box-shadow 0.35s ease,
-    transform 0.35s ease;
-}
-
 /* NAVIGATION — top right of the product card */
 .v-banner__featured-nav {
   position: absolute;
