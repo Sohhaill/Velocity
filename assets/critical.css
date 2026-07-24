@@ -399,69 +399,69 @@ a.mega-menu__submenu-sublink:hover::after,
   }
 }
 /* scrolling-animation css start */
-.v-scroll {
-  overflow: hidden;
-  padding-top: var(--v-scroll-padding-top-mobile, 24px);
-  padding-bottom: var(--v-scroll-padding-bottom-mobile, 24px);
-}
-
-.v-scroll__wrapper {
-  overflow: hidden;
-  width: 100%;
-}
-
-.v-scroll__track {
-  display: flex;
-  width: max-content;
-  will-change: transform;
-}
-
-.v-scroll__group {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  gap: var(--v-scroll-gap, 32px);
-  padding-right: var(--v-scroll-gap, 32px);
-}
-
-.v-scroll__item {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  color: inherit;
-  text-decoration: none;
-}
-
-.v-scroll__image,
-.v-scroll__placeholder {
-  display: block;
-  width: var(--item-w-mobile, 60px);
-  height: var(--item-w-mobile, 60px);
-  object-fit: cover;
-  border-radius: var(--v-scroll-radius, 50%);
-}
-
-.v-scroll__text {
-  white-space: nowrap;
-  margin: 0;
-}
-
-@media (min-width: 861px) {
   .v-scroll {
-    padding-top: var(--v-scroll-padding-top-desktop, 40px);
-    padding-bottom: var(--v-scroll-padding-bottom-desktop, 40px);
+    overflow: hidden;
+  }
+
+  .v-scroll__wrapper {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .v-scroll__track {
+    display: flex;
+    width: max-content;
+    animation: v-scroll-marquee var(--v-scroll-duration, 20s) linear infinite;
+  }
+
+  .v-scroll__wrapper--pause-on-hover:hover .v-scroll__track {
+    animation-play-state: paused;
+  }
+
+  .v-scroll__group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: var(--v-scroll-gap, 32px);
+    padding-right: var(--v-scroll-gap, 32px);
+  }
+
+  .v-scroll__item {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
   }
 
   .v-scroll__image,
   .v-scroll__placeholder {
-    width: var(--item-w-desktop, 80px);
-    height: var(--item-w-desktop, 80px);
+    display: block;
+    width: var(--item-w-mobile, 60px);
+    height: var(--item-w-mobile, 60px);
+    object-fit: cover;
+    border-radius: var(--v-scroll-radius, 50%);
   }
-}
 
-@media (prefers-reduced-motion: reduce) {
-  .v-scroll__track {
-    transform: none !important;
+  .v-scroll__text {
+    white-space: nowrap;
+    margin: 0;
   }
-}
+
+  @keyframes v-scroll-marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-25%); }
+  }
+
+  @media (min-width: 861px) {
+    .v-scroll__image,
+    .v-scroll__placeholder {
+      width: var(--item-w-desktop, 80px);
+      height: var(--item-w-desktop, 80px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .v-scroll__track {
+      animation: none;
+    }
+  }
 /* scrolling-animation css end */
