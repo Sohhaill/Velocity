@@ -29,7 +29,9 @@
   opacity: 0;
   pointer-events: none;
 }
-
+.header--drawer-desktop.header--layout-center .header__brand {
+  text-align: end;
+}
 .v-header.allow-transparent-header .header__logo {
   opacity: 0;
 }
@@ -56,7 +58,6 @@
 }
 .v-header.allow-transparent-header {
   background: transparent;
-
 }
 
 #VAnnoucmentLanguageSelector {
@@ -682,7 +683,7 @@ a.social-button:hover {
 }
 
 @media (max-width: 860px) {
-  .header{
+  .header {
     padding-top: 15px;
     padding-bottom: 15px;
   }
