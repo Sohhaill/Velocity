@@ -7,7 +7,8 @@
 {% assign footer_logo_styles = '--footer-logo-width-desktop: ' | append: section.settings.logo_width_desktop | append:
 'px; --footer-logo-width-mobile: ' | append: section.settings.logo_width_mobile | append: 'px;' %}
 
-<footer class="footer footer-{{ section.id }} section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }} ">
+<footer
+  class="footer footer-{{ section.id }} section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }} ">
   <div class="footer__top {{ footer_width_class }}">
     <div class="footer__brand-column">
       {% if section.settings.logo %}
@@ -24,27 +25,26 @@
       <div class="footer__socials">
 
         {% if settings.footer_facebook_url != blank %}
-
         <a class="footer__social-button" href="{{ settings.footer_facebook_url }}" target="_blank" rel="noopener"
-          aria-label="Facebook">
+          aria-label="Facebook" data-animate="fade-up" data-animate-delay="0">
           {{ 'icon-fb.svg' | inline_asset_content }}
         </a>
         {% endif %}
         {% if settings.footer_instagram_url != blank %}
         <a class="footer__social-button" href="{{ settings.footer_instagram_url }}" target="_blank" rel="noopener"
-          aria-label="Instagram">
+          aria-label="Instagram" data-animate="fade-up" data-animate-delay="80">
           {{ 'icon-insta.svg' | inline_asset_content }}
         </a>
         {% endif %}
         {% if settings.footer_youtube_url != blank %}
         <a class="footer__social-button" href="{{ settings.footer_youtube_url }}" target="_blank" rel="noopener"
-          aria-label="YouTube">
+          aria-label="YouTube" data-animate="fade-up" data-animate-delay="160">
           {{ 'icon-youtube.svg' | inline_asset_content }}
         </a>
         {% endif %}
         {% if settings.footer_twitter_url != blank %}
         <a class="footer__social-button" href="{{ settings.footer_twitter_url }}" target="_blank" rel="noopener"
-          aria-label="Twitter">
+          aria-label="Twitter" data-animate="fade-up" data-animate-delay="240">
           {{ 'icon-twitter.svg' | inline_asset_content }}
         </a>
         {% endif %}
@@ -84,12 +84,12 @@
         <input type="hidden" name="contact[tags]" value="newsletter">
         <input type="email" name="contact[email]" required
           placeholder="{{ block.settings.placeholder | default: 'Enter your email' | escape }}">
-          {% if block.settings.subscribe_text != blank %}
+        {% if block.settings.subscribe_text != blank %}
         <div class="footer__subscribe-text rte">{{ block.settings.subscribe_text }}</div>
         {% endif %}
         <button class="button--filled" type="submit">{{ block.settings.button_label | default: 'Subscribe' }}</button>
         {% endform %}
-        
+
       </div>
       {% endcase %}
       {% endfor %}

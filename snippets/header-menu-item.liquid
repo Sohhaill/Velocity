@@ -56,7 +56,8 @@ it replaces the normal dropdown submenu for this item.
 {% else %}
 <li
   class="header__menu-item{% if has_children %} header__menu-item--has-children{% endif %}{% if mega_menu_block != blank %} header__menu-item--has-mega-menu{% endif %}"
-  data-depth="{{ depth }}" data-animate="fade-down" data-animate-delay="{{ index | times: 80 }}">
+  data-depth="{{ depth }}"
+  >
   <div class="header__menu-link-wrap">
     <a class="header__menu-link" href="{{ link.url }}" {% if mega_menu_block !=blank
       %}data-mega-menu-trigger="{{ mega_menu_block.id }}" aria-expanded="false" {% endif %}>
