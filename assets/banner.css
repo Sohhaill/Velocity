@@ -223,7 +223,7 @@ span.v-banner__featured-price {
     justify-content: end;
     transition: bottom 0.25s ease;
 }
-.v-banner__swiper:hover .v-banner__nav-container {
+.v-banner__slide:hover .v-banner__nav-container {
 bottom: -4.5%;
 }
 .v-banner__nav.swiper-button-disabled {
