@@ -21,18 +21,22 @@
   <ul class="mega-menu__submenu">
     {%- for child_link in link.links -%}
       {%- if child_link.links.size > 0 -%}
-        <li class="mega-menu__submenu-group">
+        <li class="mega-menu__submenu-group"
+            data-animate="fade-up"
+            data-animate-delay="{{ forloop.index0 | times: 80 }}">
           <a href="{{ child_link.url }}" class="mega-menu__submenu-heading">{{ child_link.title }}</a>
           <ul class="mega-menu__submenu-sublist">
             {%- for grandchild_link in child_link.links -%}
-              <li>
+              <li data-animate="fade-up" data-animate-delay="{{ forloop.index0 | times: 60 }}">
                 <a href="{{ grandchild_link.url }}" class="mega-menu__submenu-sublink">{{ grandchild_link.title }}</a>
               </li>
             {%- endfor -%}
           </ul>
         </li>
       {%- else -%}
-        <li class="mega-menu__submenu-item">
+        <li class="mega-menu__submenu-item"
+            data-animate="fade-up"
+            data-animate-delay="{{ forloop.index0 | times: 80 }}">
           <a href="{{ child_link.url }}" class="mega-menu__submenu-link">{{ child_link.title }}</a>
         </li>
       {%- endif -%}

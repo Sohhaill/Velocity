@@ -1,0 +1,39 @@
+/* Scroll Animate — base setup */
+[data-animate] {
+  --animate-duration: 700ms;
+  --animate-delay: 0ms;
+  --animate-easing: cubic-bezier(0.16, 1, 0.3, 1);
+
+  opacity: 0;
+  transition: opacity var(--animate-duration) var(--animate-easing) var(--animate-delay),
+              transform var(--animate-duration) var(--animate-easing) var(--animate-delay);
+  will-change: opacity, transform;
+}
+
+[data-animate].is-animated {
+  opacity: 1;
+  transform: none !important;
+}
+
+/* Animation types */
+[data-animate="fade"] { transform: none; }
+
+[data-animate="fade-up"] { transform: translateY(40px); }
+[data-animate="fade-down"] { transform: translateY(-40px); }
+[data-animate="fade-left"] { transform: translateX(40px); }
+[data-animate="fade-right"] { transform: translateX(-40px); }
+
+[data-animate="zoom-in"] { transform: scale(0.9); }
+[data-animate="zoom-out"] { transform: scale(1.1); }
+
+[data-animate="flip-up"] { transform: perspective(1000px) rotateX(20deg); }
+[data-animate="flip-down"] { transform: perspective(1000px) rotateX(-20deg); }
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  [data-animate] {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
