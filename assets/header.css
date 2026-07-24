@@ -29,13 +29,7 @@
   opacity: 0;
   pointer-events: none;
 }
-.header--drawer-desktop .header__brand {
-  text-align: center;
-  width: 100%;
-}
-.header--drawer-desktop .header__icons {
-  width: fit-content;
-}
+
 
 .v-header.allow-transparent-header .header__logo {
   opacity: 0;
@@ -665,6 +659,13 @@ a.social-button:hover {
 
 .v-header.header--sticky header.header {
   color: var(--color-foreground);
+}
+.header--drawer-desktop .header__brand {
+  text-align: center;
+  width: 100%;
+}
+.header--drawer-desktop .header__icons {
+  width: fit-content;
 }
 @media (min-width: 861px) {
   .header--layout-center {
