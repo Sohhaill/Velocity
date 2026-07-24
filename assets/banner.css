@@ -285,14 +285,15 @@ span.v-banner__featured-price {
 }
 
 .v-banner__featured-card {
+  position: relative;
   display: flex;
   align-items: center;
-  border-radius: 10px;
   gap: 14px;
-  background: var(--color-background);
+  background: color-mix(in srgb, var(--color-background) 29%, transparent);
+  backdrop-filter: blur(5px);
   color: var(--color-foreground);
   padding: 14px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 18px #0000001f;
   transition:
     box-shadow 0.35s ease,
     transform 0.35s ease;
