@@ -56,7 +56,7 @@
 }
 .v-header.allow-transparent-header {
   background: transparent;
-  transition: all var(--icon-transition);
+
 }
 
 #VAnnoucmentLanguageSelector {
