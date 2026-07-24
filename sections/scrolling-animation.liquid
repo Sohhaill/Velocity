@@ -12,11 +12,11 @@ padding-top: var(--v-scroll-padding-top-mobile, 24px);
 padding-bottom: var(--v-scroll-padding-bottom-mobile, 24px);
 }
 @media (min-width: 861px) {
-  .v-scroll {
-    padding-top: var(--v-scroll-padding-top-desktop, 40px);
-    padding-bottom: var(--v-scroll-padding-bottom-desktop, 40px);
-  }
-  }
+.v-scroll {
+padding-top: var(--v-scroll-padding-top-desktop, 40px);
+padding-bottom: var(--v-scroll-padding-bottom-desktop, 40px);
+}
+}
 {%- endstyle -%}
 
 <div class="v-scroll section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}">
@@ -36,7 +36,7 @@ padding-bottom: var(--v-scroll-padding-bottom-mobile, 24px);
                     {{ 'image' | placeholder_svg_tag: 'v-scroll__image v-scroll__placeholder' }}
                     {%- endif -%}
                     {%- else -%}
-                    {%- case block.settings.text_tag -%}
+                    {%- case section.settings.text_tag -%}
                     {%- when 'h1' -%}<h1 class="v-scroll__text">{{ block.settings.text }}</h1>
                     {%- when 'h2' -%}<h2 class="v-scroll__text">{{ block.settings.text }}</h2>
                     {%- when 'h4' -%}<h4 class="v-scroll__text">{{ block.settings.text }}</h4>
@@ -93,6 +93,20 @@ padding-bottom: var(--v-scroll-padding-bottom-mobile, 24px);
 "default": 32
 },
 {
+  "type": "select",
+  "id": "text_tag",
+  "label": "Text tag",
+  "info": "Applies to all text blocks in this section",
+  "default": "h3",
+  "options": [
+    { "value": "h1", "label": "H1" },
+    { "value": "h2", "label": "H2" },
+    { "value": "h3", "label": "H3" },
+    { "value": "h4", "label": "H4" },
+    { "value": "p", "label": "Paragraph" }
+  ]
+},
+{
 "type": "range",
 "id": "border_radius",
 "label": "Image border radius",
@@ -114,24 +128,24 @@ padding-bottom: var(--v-scroll-padding-bottom-mobile, 24px);
 "content": "Section padding"
 },
 {
-  "type": "range",
-  "id": "padding_top_desktop",
-  "label": "Padding top — desktop",
-  "min": 0,
-  "max": 150,
-  "step": 5,
-  "unit": "px",
-  "default": 40
+"type": "range",
+"id": "padding_top_desktop",
+"label": "Padding top — desktop",
+"min": 0,
+"max": 150,
+"step": 5,
+"unit": "px",
+"default": 40
 },
 {
-  "type": "range",
-  "id": "padding_bottom_desktop",
-  "label": "Padding bottom — desktop",
-  "min": 0,
-  "max": 150,
-  "step": 5,
-  "unit": "px",
-  "default": 40
+"type": "range",
+"id": "padding_bottom_desktop",
+"label": "Padding bottom — desktop",
+"min": 0,
+"max": 150,
+"step": 5,
+"unit": "px",
+"default": 40
 },
 {
 "type": "range",
@@ -202,20 +216,6 @@ padding-bottom: var(--v-scroll-padding-bottom-mobile, 24px);
 "id": "text",
 "label": "Text",
 "default": "Your text here",
-"visible_if": "{{ block.settings.content_type == 'text' }}"
-},
-{
-"type": "select",
-"id": "text_tag",
-"label": "Text tag",
-"default": "h3",
-"options": [
-{ "value": "h1", "label": "H1" },
-{ "value": "h2", "label": "H2" },
-{ "value": "h3", "label": "H3" },
-{ "value": "h4", "label": "H4" },
-{ "value": "p", "label": "Paragraph" }
-],
 "visible_if": "{{ block.settings.content_type == 'text' }}"
 }
 ]
