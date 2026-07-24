@@ -33,6 +33,9 @@
   text-align: center;
   width: 100%;
 }
+.header--drawer-desktop.header--layout-center .header__icons {
+  width: fit-content;
+}
 .v-header.allow-transparent-header .header__logo {
   opacity: 0;
 }
