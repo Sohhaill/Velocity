@@ -157,7 +157,7 @@ button {
   border: none;
   cursor: pointer;
   border-radius: var(--button-radius);
-  transition: all 0.25s ease;
+  transition: all 0.35s ease;
   position: relative;
   overflow: hidden;
   z-index: 0;
@@ -306,7 +306,7 @@ select,
   background-color: transparent;
   border: 1px solid var(--button-outline-border);
   color: var(--button-outline-foreground);
-  transition: all 0.25s ease;
+  transition: all 0.35s ease;
   border-radius: var(--button-radius);
   padding: 0.6rem 2.5rem;
   text-decoration: unset;
@@ -334,7 +334,7 @@ a.mega-menu__submenu-sublink::after,
   width: 0%;
   height: 2px;
   background: currentColor;
-  transition: width 0.25s ease;
+  transition: width 0.35s ease;
 }
 span.v-banner__button-arrow {
   block-size: 8px;

@@ -8,7 +8,7 @@
    ========================================================================== */
 
 :root {
-  --mega-menu-transition: var(--transition-default, 0.25s ease);
+  --mega-menu-transition: var(--transition-default, 0.35s ease);
 }
 
 /* The mega-menu panel is rendered as a sibling of .header__inner, inside

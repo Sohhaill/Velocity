@@ -1,8 +1,8 @@
 .v-header {
   position: relative;
   z-index: 1000;
-  --icon-transition: 0.25s ease;
-  transition: all 0.25s ease;
+  --icon-transition: 0.35s ease;
+  transition: all 0.35s ease;
 }
 .header {
   width: 100%;
@@ -16,7 +16,7 @@
 
 .header__logo,
 .header__logo--transparent {
-  transition: opacity var(--transition-default, 0.25s ease);
+  transition: opacity var(--transition-default, 0.35s ease);
 }
 
 .header__logo--transparent {

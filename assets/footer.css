@@ -48,7 +48,7 @@
   border-radius: 999px;
   background: var(--button-background);
   color: var(--button-foreground);
-  transition: all 0.25s ease;
+  transition: all 0.35s ease;
 }
 
 .footer__social-button:hover,
@@ -62,7 +62,7 @@
   width: 1.5rem;
   height: 1.5rem;
   fill: currentColor;
-  transition: fill 0.25s ease;
+  transition: fill 0.35s ease;
 }
 
 .footer__blocks {
@@ -130,7 +130,7 @@ ul.footer__menu-list,
   top: 0.15rem;
   width: 1rem;
   height: 1rem;
-  transition: transform 0.25s ease;
+  transition: transform 0.35s ease;
 }
 
 .footer__block-icon::before,
@@ -213,8 +213,8 @@ ul.footer__menu-list,
   color: var(--button-foreground);
   cursor: pointer;
   transition:
-    background-color 0.25s ease,
-    transform 0.25s ease;
+    background-color 0.35s ease,
+    transform 0.35s ease;
 }
 .footer__subscribe input:focus-visible {
   outline: unset;
@@ -257,7 +257,7 @@ select#FooterLanguageSelector {
 
   cursor: pointer;
   padding: 0.4rem 2rem 0.4rem 0.7rem;
-  transition: border-color 0.25s ease;
+  transition: border-color 0.35s ease;
 }
 .footer__currency-item select {
   width: 160px;

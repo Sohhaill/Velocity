@@ -129,7 +129,7 @@ span.v-banner__featured-price {
 
 .v-banner.allow-transparent-header {
   margin-top: calc(-1 * var(--header-height, 90px));
-  transition: all 0.25s ease;
+  transition: all 0.35s ease;
 }
 /* PAGINATION WRAP */
 .v-banner__pagination-wrap {
@@ -169,7 +169,7 @@ span.v-banner__featured-price {
   margin: 0 !important;
   color: currentColor;
   line-height: 1;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.35s ease;
 }
 
 .v-banner__pagination .swiper-pagination-bullet-active {
@@ -204,7 +204,7 @@ span.v-banner__featured-price {
   justify-content: center;
   border-radius: var(--button-radius);
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.35s ease;
 }
 
 .v-banner__nav svg {
@@ -222,7 +222,7 @@ span.v-banner__featured-price {
     right: 1%;
     opacity: 0;
     justify-content: end;
-    transition: all 0.25s ease;
+    transition: all 0.35s ease;
 }
 .v-banner:hover .v-banner__nav-container {
 opacity: 1;
@@ -299,8 +299,8 @@ opacity: 1;
   padding: 14px;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
   transition:
-    box-shadow 0.25s ease,
-    transform 0.25s ease;
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
 }
 
 .v-banner__featured-card:hover {
@@ -366,8 +366,8 @@ opacity: 1;
   padding: 14px;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
   transition:
-    box-shadow 0.25s ease,
-    transform 0.25s ease;
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
 }
 
 /* NAVIGATION — top right of the product card */
@@ -389,7 +389,7 @@ opacity: 1;
   justify-content: center;
   border: none;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.35s ease;
 }
 
 .v-banner__featured-nav-btn svg {

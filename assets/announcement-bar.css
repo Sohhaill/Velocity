@@ -109,7 +109,7 @@
   justify-content: center;
   color: currentColor;
   width: 23px;
-  transition: all 0.25s ease;
+  transition: all 0.35s ease;
 }
 
 .v-annoucment__social-button svg {
