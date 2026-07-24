@@ -294,13 +294,12 @@ span.v-banner__featured-price {
   color: var(--color-foreground);
   padding: 14px;
   box-shadow: 0 4px 18px #0000001f;
-  transition:
-    box-shadow 0.35s ease,
-    transform 0.35s ease;
+  transition: all .35s ease;
+  border-radius: 10px;
 }
 
 .v-banner__featured-card:hover {
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+   backdrop-filter: blur(50px);
 }
 
 .v-banner__featured-media {
