@@ -69,8 +69,10 @@ height: 140px;
 
 
 
-<section class="text-logo-section section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}">
-  <h1 class="text-logo-section__title">{{ section.settings.text | default: 'Crystal Clean' }}</h1>
+<section
+  class="text-logo-section section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}">
+  <h1 data-animate="fade-up" data-animate-delay="80" class="text-logo-section__title">{{ section.settings.text |
+    default: 'Crystal Clean' }}</h1>
 </section>
 {% schema %}
 {
