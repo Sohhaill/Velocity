@@ -265,8 +265,8 @@ span.v-banner__featured-price {
 @media screen and (min-width: 750px) {
   .v-banner__featured {
     right: auto;
-    left: 32px;
-    bottom: 32px;
+    left: 0px;
+    bottom: 40px;
     transform: none;
     width: 100%;
     max-width: 415px;
