@@ -1,19 +1,5 @@
 {{ 'media-grid.css' | asset_url | stylesheet_tag }}
 
-{% assign aspect_ratio_value = '1/1' %}
-{% case section.settings.aspect_ratio %}
-  {% when '4_5' -%}
-    {%- assign aspect_ratio_value = '4/5' %}
-  {% when '3_4' -%}
-    {%- assign aspect_ratio_value = '3/4' %}
-  {% when '16_9' -%}
-    {%- assign aspect_ratio_value = '16/9' %}
-  {% when '9_16' -%}
-    {%- assign aspect_ratio_value = '9/16' %}
-  {% when '3_2' -%}
-    {%- assign aspect_ratio_value = '3/2' %}
-{% endcase %}
-
 {%- style -%}
 #v-mediagrid-{{ section.id }} {
   --v-mediagrid-columns-desktop: {{ section.settings.columns_desktop }};
@@ -24,7 +10,8 @@
   --v-mediagrid-padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
   --v-mediagrid-padding-top-mobile: {{ section.settings.padding_top_mobile }}px;
   --v-mediagrid-padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
-  --v-mediagrid-aspect: {{ aspect_ratio_value }};
+  --v-mediagrid-height-desktop: {{ section.settings.block_height_desktop }}px;
+  --v-mediagrid-height-mobile: {{ section.settings.block_height_mobile }}px;
 }
 {%- endstyle -%}
 
@@ -173,18 +160,24 @@
       "default": 12
     },
     {
-      "type": "select",
-      "id": "aspect_ratio",
-      "label": "Block aspect ratio",
-      "default": "1_1",
-      "options": [
-        { "value": "1_1", "label": "1:1 Square" },
-        { "value": "4_5", "label": "4:5 Portrait" },
-        { "value": "3_4", "label": "3:4 Portrait" },
-        { "value": "16_9", "label": "16:9 Landscape" },
-        { "value": "9_16", "label": "9:16 Tall" },
-        { "value": "3_2", "label": "3:2 Landscape" }
-      ]
+      "type": "range",
+      "id": "block_height_desktop",
+      "label": "Block height — desktop",
+      "min": 200,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "block_height_mobile",
+      "label": "Block height — mobile",
+      "min": 150,
+      "max": 700,
+      "step": 10,
+      "unit": "px",
+      "default": 350
     },
     {
       "type": "select",
