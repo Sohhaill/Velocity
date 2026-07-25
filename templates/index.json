@@ -215,7 +215,7 @@
         "text_color": "light",
         "subheading": "sdf",
         "heading": "Video heading",
-        "heading_tag": "h2",
+        "heading_tag": "h4",
         "description": "<p>asd</p>",
         "button_label": "ad",
         "button_link": "#",
