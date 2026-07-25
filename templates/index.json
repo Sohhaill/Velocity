@@ -235,9 +235,9 @@
             "row_span_desktop": 0,
             "col_span_mobile": 2,
             "row_span_mobile": 0,
-            "heading": "",
-            "button_label": "",
-            "button_link": "",
+            "heading": "hjgh",
+            "button_label": "jhgf",
+            "button_link": "#",
             "button_style": "filled"
           }
         },
@@ -264,7 +264,7 @@
       ],
       "name": "Media grid",
       "settings": {
-        "section_color_scheme": "scheme_1",
+        "section_color_scheme": "scheme_2",
         "container_width": false,
         "columns_desktop": 2,
         "columns_mobile": 2,
