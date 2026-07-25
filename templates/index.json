@@ -256,11 +256,28 @@
             "button_link": "",
             "button_style": "filled"
           }
+        },
+        "media_item_gPwBt9": {
+          "type": "media_item",
+          "settings": {
+            "image_desktop": "shopify://shop_images/MAGUIRE-MAY218085-web.webp",
+            "overlay_opacity_desktop": 30,
+            "overlay_opacity_mobile": 30,
+            "col_span_desktop": 2,
+            "row_span_desktop": 0,
+            "col_span_mobile": 0,
+            "row_span_mobile": 0,
+            "heading": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "filled"
+          }
         }
       },
       "block_order": [
         "media_item_yGgqTW",
-        "media_item_cmjdEX"
+        "media_item_cmjdEX",
+        "media_item_gPwBt9"
       ],
       "name": "Media grid",
       "settings": {
@@ -271,7 +288,7 @@
         "gap_desktop": 0,
         "gap_mobile": 0,
         "aspect_ratio": "4_5",
-        "hover_effect": "lift",
+        "hover_effect": "zoom",
         "padding_top_desktop": 60,
         "padding_bottom_desktop": 60,
         "padding_top_mobile": 32,
