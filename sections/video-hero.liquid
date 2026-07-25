@@ -107,14 +107,25 @@
 
   <div class="v-video__overlay"></div>
 
-  <div class="v-video__content container-width">
+  <div class="v-video__content{% if section.settings.full_width %} full-width{% else %} container-width{% endif %}">
     <div class="v-video__content-inner" style="{{ content_alignment_style }}">
       <div class="v-video__text {{ text_color_class }}">
         {%- if section.settings.subheading != blank -%}
           <p class="v-video__subheading">{{ section.settings.subheading }}</p>
         {%- endif -%}
         {%- if section.settings.heading != blank -%}
-          <h2 class="v-video__heading">{{ section.settings.heading }}</h2>
+          {%- case section.settings.heading_tag -%}
+            {%- when 'h1' -%}
+              <h1 class="v-video__heading">{{ section.settings.heading }}</h1>
+            {%- when 'h3' -%}
+              <h3 class="v-video__heading">{{ section.settings.heading }}</h3>
+            {%- when 'h4' -%}
+              <h4 class="v-video__heading">{{ section.settings.heading }}</h4>
+            {%- when 'h5' -%}
+              <h5 class="v-video__heading">{{ section.settings.heading }}</h5>
+            {%- else -%}
+              <h2 class="v-video__heading">{{ section.settings.heading }}</h2>
+          {%- endcase -%}
         {%- endif -%}
         {%- if section.settings.description != blank -%}
           <div class="v-video__description">{{ section.settings.description }}</div>
@@ -161,6 +172,12 @@
       ]
     },
     { "type": "header", "content": "Layout" },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": false
+    },
     {
       "type": "range",
       "id": "height_desktop",
