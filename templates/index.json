@@ -233,7 +233,7 @@
             "overlay_opacity_mobile": 30,
             "col_span_desktop": 0,
             "row_span_desktop": 0,
-            "col_span_mobile": 0,
+            "col_span_mobile": 2,
             "row_span_mobile": 0,
             "heading": "",
             "button_label": "",
