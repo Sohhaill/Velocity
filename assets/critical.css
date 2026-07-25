@@ -362,8 +362,6 @@ span.v-banner__button-arrow {
 }
 
 .placeholder-image svg {
-  width: 40%;
-  height: 40%;
   fill: #c9c9c9;
 }
 .header__menu-link:hover::after,
@@ -470,4 +468,3 @@ a.mega-menu__submenu-sublink:hover::after,
   }
 }
 /* scrolling-animation css end */
-
