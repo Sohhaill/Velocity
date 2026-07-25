@@ -617,6 +617,7 @@ a.mega-menu__submenu-sublink:hover::after,
 .v-video__mute-btn:hover,
 .v-video__play-btn:hover {
   backdrop-filter: blur(50px);
+  color: white;
 }
 
 .v-video__mute-btn {
