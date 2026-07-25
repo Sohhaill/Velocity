@@ -203,11 +203,13 @@
                   </div>
 
                   {% capture buttons_html %}
-                                {% assign button_numbers = '1,2' | split: ',' %}
                                 {%- for n in button_numbers -%}
-                                    {% assign btn_label = block.settings['button_' | append: n | append: '_label'] %}
-                                    {% assign btn_link = block.settings['button_' | append: n | append: '_link'] %}
-                                    {% assign btn_style = block.settings['button_' | append: n | append: '_style'] %}
+                                    {% assign btn_label_key = 'button_' | append: n | append: '_label' %}
+                                    {% assign btn_link_key = 'button_' | append: n | append: '_link' %}
+                                    {% assign btn_style_key = 'button_' | append: n | append: '_style' %}
+                                    {% assign btn_label = block.settings[btn_label_key] %}
+                                    {% assign btn_link = block.settings[btn_link_key] %}
+                                    {% assign btn_style = block.settings[btn_style_key] %}
                                     {%- if btn_label != blank and btn_link != blank -%}
                                     <a href="{{ btn_link }}" class="button {% if btn_style == 'outline' %}button--outline{% else %}button--filled{% endif %}">
                                         {{ btn_label }}
