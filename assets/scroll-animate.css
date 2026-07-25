@@ -1,6 +1,6 @@
 /* Scroll Animate — base setup */
 [data-animate] {
-  --animate-duration: 700ms;
+  --animate-duration: 900ms;
   --animate-delay: 0ms;
   --animate-easing: cubic-bezier(0.16, 1, 0.3, 1);
 
