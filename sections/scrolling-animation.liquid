@@ -90,8 +90,7 @@ padding-bottom: var(--v-scroll-padding-bottom-desktop, 40px);
     if (Math.abs(delta) < 0.5) return;
 
     direction = delta > 0 ? -1 : 1; // scroll down = normal, scroll up = reverse
-    scrollBoost = Math.min(Math.abs(delta) * 0.7, 45);
-
+    scrollBoost = Math.min(Math.abs(delta) * 0.35, 20); 
     clearTimeout(boostTimer);
     boostTimer = setTimeout(function() { scrollBoost = 0; }, 200);
   }, { passive: true });
