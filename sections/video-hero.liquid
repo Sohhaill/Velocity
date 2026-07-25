@@ -1,5 +1,15 @@
 
 
+{{ 'video-hero.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+#v-video-{{ section.id }} {
+  --v-video-height-desktop: {{ section.settings.height_desktop }}px;
+  --v-video-height-mobile: {{ section.settings.height_mobile }}px;
+  --v-video-overlay-opacity: {{ section.settings.overlay_opacity | default: 0 | divided_by: 100.0 }};
+}
+{%- endstyle -%}
+
 {% assign v_video_styles = '--v-video-height-desktop: '
   | append: section.settings.height_desktop
   | append: 'px; --v-video-height-mobile: '
@@ -63,7 +73,7 @@
   id="v-video-{{ section.id }}"
   data-v-video-hero
   data-autoplay="{{ section.settings.enable_autoplay }}"
-  style="{{ v_video_styles }}{{ position_style }}"
+  style="{{ position_style }}"
 >
   <div class="v-video__media">
     {%- comment -%} MOBILE POSTER — falls back to desktop {%- endcomment -%}
