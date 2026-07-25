@@ -70,7 +70,7 @@
           "type": "slide",
           "settings": {
             "image_desktop": "shopify://shop_images/H1_DESKTOP_Lomba_Vino_85d2bfc7-bc98-49ff-a0dc-0388a271555c.webp",
-            "overlay_opacity": 45,
+            "overlay_opacity": 30,
             "content_position_desktop": "center_center",
             "content_position_mobile": "center_center",
             "content_in_container": true,
@@ -228,6 +228,7 @@
         "media_item_yGgqTW": {
           "type": "media_item",
           "settings": {
+            "image_desktop": "shopify://shop_images/SS26_COLLECTION.webp",
             "overlay_opacity_desktop": 30,
             "overlay_opacity_mobile": 30,
             "col_span_desktop": 0,
@@ -243,6 +244,7 @@
         "media_item_cmjdEX": {
           "type": "media_item",
           "settings": {
+            "image_desktop": "shopify://shop_images/SS26_COLLECTION_92e597e4-7eee-4db3-bfa2-44fe8e44f4d5.webp",
             "overlay_opacity_desktop": 30,
             "overlay_opacity_mobile": 30,
             "col_span_desktop": 0,
