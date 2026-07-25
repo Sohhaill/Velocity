@@ -182,7 +182,18 @@
                       <p class="v-banner__subheading">{{ block.settings.subheading }}</p>
                     {%- endif -%}
                     {%- if block.settings.heading != blank -%}
-                      <h1 class="v-banner__heading">{{ block.settings.heading }}</h1>
+                      {%- case block.settings.heading_tag -%}
+                        {%- when 'h1' -%}
+                          <h1 class="v-banner__heading">{{ block.settings.heading }}</h1>
+                        {%- when 'h3' -%}
+                          <h3 class="v-banner__heading">{{ block.settings.heading }}</h3>
+                        {%- when 'h4' -%}
+                          <h4 class="v-banner__heading">{{ block.settings.heading }}</h4>
+                        {%- when 'h5' -%}
+                          <h5 class="v-banner__heading">{{ block.settings.heading }}</h5>
+                        {%- else -%}
+                          <h2 class="v-banner__heading">{{ block.settings.heading }}</h2>
+                      {%- endcase -%}
                     {%- endif -%}
                     {%- if block.settings.description != blank -%}
                       <div class="v-banner__description">{{ block.settings.description }}</div>
@@ -499,6 +510,20 @@
           "id": "heading",
           "label": "t:sections.banner.blocks.slide.settings.heading.label",
           "default": "Slide heading"
+        },
+        {
+          "type": "select",
+          "id": "heading_tag",
+          "label": "Heading tag",
+          "info": "Controls the HTML tag used for SEO/accessibility. Visual size is unaffected.",
+          "default": "h2",
+          "options": [
+            { "value": "h1", "label": "H1" },
+            { "value": "h2", "label": "H2" },
+            { "value": "h3", "label": "H3" },
+            { "value": "h4", "label": "H4" },
+            { "value": "h5", "label": "H5" }
+          ]
         },
         {
           "type": "richtext",
