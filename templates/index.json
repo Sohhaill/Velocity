@@ -260,7 +260,7 @@
         "media_item_GxLTPa": {
           "type": "media_item",
           "settings": {
-            "image_desktop": "shopify://shop_images/MAGUIRE-MAY218085-web.webp",
+            "video_desktop": "shopify://files/videos/b7763137afc846f68fea61896fc77b5c.HD-1080p-7.2Mbps-83877115.mp4",
             "overlay_opacity_desktop": 30,
             "overlay_opacity_mobile": 30,
             "col_span_desktop": 2,
