@@ -203,7 +203,7 @@
       "type": "video-hero",
       "name": "Video hero",
       "settings": {
-        "section_color_scheme": "scheme_1",
+        "section_color_scheme": "scheme_2",
         "full_width": true,
         "height_desktop": 600,
         "height_mobile": 450,
@@ -214,11 +214,11 @@
         "content_position_mobile": "center_center",
         "content_alignment": "center",
         "text_color": "light",
-        "subheading": "",
+        "subheading": "sdf",
         "heading": "Video heading",
-        "description": "",
-        "button_label": "",
-        "button_link": "",
+        "description": "<p>asd</p>",
+        "button_label": "ad",
+        "button_link": "#",
         "button_style": "filled"
       }
     }
