@@ -187,11 +187,10 @@
       "name": "Scrolling Animation",
       "settings": {
         "section_color_scheme": "scheme_2",
-        "speed": 20,
+        "speed": 30,
         "gap": 32,
         "text_tag": "h3",
         "border_radius": 0,
-        "pause_on_hover": true,
         "padding_top_desktop": 20,
         "padding_bottom_desktop": 20,
         "padding_top_mobile": 12,
