@@ -19,8 +19,12 @@ padding-bottom: var(--v-scroll-padding-bottom-desktop, 40px);
 }
 {%- endstyle -%}
 
-<div class="v-scroll section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}">
-    <div class="v-scroll__wrapper{% if section.settings.pause_on_hover %} v-scroll__wrapper--pause-on-hover{% endif %}">
+<div class="v-scroll section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}"
+ id="shopify-section-{{ section.id }}"
+    data-v-scroll
+    data-speed="{{ section.settings.speed | default: 20 }}"
+>
+    <div class="v-scroll__wrapper">
         <div class="v-scroll__track">
             {%- for i in (1..4) -%}
             <div class="v-scroll__group" aria-hidden="{% if i > 1 %}true{% else %}false{% endif %}">
@@ -52,7 +56,7 @@ padding-bottom: var(--v-scroll-padding-bottom-desktop, 40px);
     </div>
 </div>
 
-<script src="{{ 'scrolling-animation.js' | asset_url }}" defer></script>
+
 
 {% schema %}
 {
