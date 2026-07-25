@@ -418,11 +418,7 @@ a.mega-menu__submenu-sublink:hover::after,
 .v-scroll__track {
   display: flex;
   width: max-content;
-  animation: v-scroll-marquee var(--v-scroll-duration, 20s) linear infinite;
-}
-
-.v-scroll__wrapper--pause-on-hover:hover .v-scroll__track {
-  animation-play-state: paused;
+  will-change: transform;
 }
 
 .v-scroll__group {
@@ -453,26 +449,11 @@ a.mega-menu__submenu-sublink:hover::after,
   margin: 0;
 }
 
-@keyframes v-scroll-marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-25%);
-  }
-}
-
 @media (min-width: 861px) {
   .v-scroll__image,
   .v-scroll__placeholder {
     width: var(--item-w-desktop, 80px);
     height: var(--item-w-desktop, 80px);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .v-scroll__track {
-    animation: none;
   }
 }
 /* scrolling-animation css end */
