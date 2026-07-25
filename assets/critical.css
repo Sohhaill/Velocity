@@ -458,8 +458,6 @@ a.mega-menu__submenu-sublink:hover::after,
 }
 /* scrolling-animation css end */
 
-
-
 /* video-hero css start */
 .v-video {
   position: relative;
@@ -598,6 +596,7 @@ a.mega-menu__submenu-sublink:hover::after,
 /* CONTROLS */
 .v-video__mute-btn,
 .v-video__play-btn {
+  padding: unset;
   position: absolute;
   z-index: 4;
   width: 44px;
