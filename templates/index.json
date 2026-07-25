@@ -270,7 +270,7 @@
         "columns_mobile": 2,
         "gap_desktop": 0,
         "gap_mobile": 0,
-        "block_height_desktop": 660,
+        "block_height_desktop": 700,
         "block_height_mobile": 350,
         "hover_effect": "zoom",
         "padding_top_desktop": 0,
