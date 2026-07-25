@@ -198,11 +198,35 @@
         "padding_top_mobile": 12,
         "padding_bottom_mobile": 12
       }
+    },
+    "video_hero_aLhMGN": {
+      "type": "video-hero",
+      "name": "Video hero",
+      "settings": {
+        "section_color_scheme": "scheme_1",
+        "full_width": false,
+        "height_desktop": 600,
+        "height_mobile": 450,
+        "overlay_opacity": 0,
+        "video_desktop": "shopify://files/videos/e7c24e5e1e2c4b5bb5d7fd2461bb6baa.SD-480p-1.5Mbps-81313404.mp4",
+        "enable_autoplay": true,
+        "content_position_desktop": "center_center",
+        "content_position_mobile": "center_center",
+        "content_alignment": "center",
+        "text_color": "light",
+        "subheading": "",
+        "heading": "Video heading",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "filled"
+      }
     }
   },
   "order": [
     "multiple_image_text_k7WWD4",
     "banner_dUTX7b",
-    "scrolling_animation_E9jqjc"
+    "scrolling_animation_E9jqjc",
+    "video_hero_aLhMGN"
   ]
 }
