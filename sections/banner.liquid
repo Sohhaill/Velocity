@@ -31,8 +31,7 @@
         {%- if block.type == 'slide' -%}
           {%- comment -%} ---- CONTENT POSITION (desktop + mobile in one pass) ---- {%- endcomment -%}
           {% assign position_style = '' %}
-          {% assign device_list = 'desktop,mobile' | split: ',' %}
-          {% for device in device_list %}
+          {% for device in 'desktop,mobile' | split: ',' %}
             {% assign pos = block.settings['content_position_' | append: device] | split: '_' %}
             {% assign align = 'center' %}
             {% if pos[0] == 'top' -%}
@@ -183,18 +182,7 @@
                       <p class="v-banner__subheading">{{ block.settings.subheading }}</p>
                     {%- endif -%}
                     {%- if block.settings.heading != blank -%}
-                      {%- case block.settings.heading_tag -%}
-                        {%- when 'h1' -%}
-                          <h1 class="v-banner__heading">{{ block.settings.heading }}</h1>
-                        {%- when 'h3' -%}
-                          <h3 class="v-banner__heading">{{ block.settings.heading }}</h3>
-                        {%- when 'h4' -%}
-                          <h4 class="v-banner__heading">{{ block.settings.heading }}</h4>
-                        {%- when 'h5' -%}
-                          <h5 class="v-banner__heading">{{ block.settings.heading }}</h5>
-                        {%- else -%}
-                          <h2 class="v-banner__heading">{{ block.settings.heading }}</h2>
-                      {%- endcase -%}
+                      <h1 class="v-banner__heading">{{ block.settings.heading }}</h1>
                     {%- endif -%}
                     {%- if block.settings.description != blank -%}
                       <div class="v-banner__description">{{ block.settings.description }}</div>
@@ -202,8 +190,7 @@
                   </div>
 
                   {% capture buttons_html %}
-                                {% assign button_numbers = '1,2' | split: ',' %}
-                                {%- for n in button_numbers -%}
+                                {%- for n in '1,2' | split: ',' -%}
                                     {% assign btn_label = block.settings['button_' | append: n | append: '_label'] %}
                                     {% assign btn_link = block.settings['button_' | append: n | append: '_link'] %}
                                     {% assign btn_style = block.settings['button_' | append: n | append: '_style'] %}
@@ -265,8 +252,7 @@
                   </div>
                   {%- if block.settings.featured_products.size > 1 -%}
                     <div class="v-banner__featured-nav">
-                      {% assign featured_nav_directions = 'prev,next' | split: ',' %}
-                      {%- for dir in featured_nav_directions -%}
+                      {%- for dir in 'prev,next' | split: ',' -%}
                         {% assign featured_nav_icon = 'icon-chevron-left.svg' %}
                         {% assign featured_nav_label_key = 'sections.banner.previous' %}
                         {% if dir == 'next' %}
@@ -304,8 +290,7 @@
 
     {%- if section.settings.enable_navigation -%}
       <div class="v-banner__nav-container">
-        {% assign nav_directions = 'prev,next' | split: ',' %}
-        {%- for dir in nav_directions -%}
+        {%- for dir in 'prev,next' | split: ',' -%}
           {% assign nav_icon = 'icon-chevron-left.svg' %}
           {% assign nav_label_key = 'sections.banner.previous' %}
           {% if dir == 'next' %}
@@ -514,20 +499,6 @@
           "id": "heading",
           "label": "t:sections.banner.blocks.slide.settings.heading.label",
           "default": "Slide heading"
-        },
-        {
-          "type": "select",
-          "id": "heading_tag",
-          "label": "Heading tag",
-          "info": "Controls the HTML tag used for SEO/accessibility. Visual size is unaffected.",
-          "default": "h2",
-          "options": [
-            { "value": "h1", "label": "H1" },
-            { "value": "h2", "label": "H2" },
-            { "value": "h3", "label": "H3" },
-            { "value": "h4", "label": "H4" },
-            { "value": "h5", "label": "H5" }
-          ]
         },
         {
           "type": "richtext",
