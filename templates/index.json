@@ -74,7 +74,7 @@
             "overlay_opacity": 45,
             "content_position_desktop": "center_center",
             "content_position_mobile": "center_center",
-            "content_in_container": true,
+            "content_in_container": false,
             "content_alignment": "center",
             "text_color": "light",
             "subheading": "Subheading",
