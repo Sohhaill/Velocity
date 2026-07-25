@@ -1,0 +1,130 @@
+.v-mediagrid {
+  width: 100%;
+  padding-top: var(--v-mediagrid-padding-top-mobile, 32px);
+  padding-bottom: var(--v-mediagrid-padding-bottom-mobile, 32px);
+}
+
+@media screen and (min-width: 750px) {
+  .v-mediagrid {
+    padding-top: var(--v-mediagrid-padding-top-desktop, 60px);
+    padding-bottom: var(--v-mediagrid-padding-bottom-desktop, 60px);
+  }
+}
+
+.v-mediagrid__grid {
+  display: grid;
+  grid-template-columns: repeat(var(--v-mediagrid-columns-mobile, 2), 1fr);
+  gap: var(--v-mediagrid-gap-mobile, 12px);
+}
+
+@media screen and (min-width: 750px) {
+  .v-mediagrid__grid {
+    grid-template-columns: repeat(var(--v-mediagrid-columns-desktop, 2), 1fr);
+    gap: var(--v-mediagrid-gap-desktop, 24px);
+  }
+}
+
+.v-mediagrid__item {
+  grid-column: span var(--col-span-mobile, 1);
+  grid-row: span var(--row-span-mobile, 1);
+}
+
+@media screen and (min-width: 750px) {
+  .v-mediagrid__item {
+    grid-column: span var(--col-span-desktop, 1);
+    grid-row: span var(--row-span-desktop, 1);
+  }
+}
+
+.v-mediagrid__media {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: var(--v-mediagrid-aspect, 1/1);
+  overflow: hidden;
+  display: block;
+}
+
+.v-mediagrid__media-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.v-mediagrid__img,
+.v-mediagrid__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.v-mediagrid__media-wrap--desktop {
+  display: none;
+}
+
+@media screen and (min-width: 750px) {
+  .v-mediagrid__media-wrap--mobile {
+    display: none;
+  }
+  .v-mediagrid__media-wrap--desktop {
+    display: block;
+  }
+}
+
+/* OVERLAY */
+.v-mediagrid__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: #000000;
+  opacity: var(--overlay-opacity-mobile, 0);
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+@media screen and (min-width: 750px) {
+  .v-mediagrid__overlay {
+    opacity: var(--overlay-opacity-desktop, 0);
+  }
+}
+
+/* CONTENT */
+.v-mediagrid__content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+  padding: 40px 24px;
+  color: #ffffff;
+}
+
+.v-mediagrid__heading {
+  margin: 0;
+  font-style: italic;
+}
+
+/* HOVER EFFECTS — applied via parent .v-mediagrid__hover--* class */
+.v-mediagrid__hover--zoom .v-mediagrid__item:hover .v-mediagrid__img,
+.v-mediagrid__hover--zoom .v-mediagrid__item:hover .v-mediagrid__video {
+  transform: scale(1.06);
+}
+
+.v-mediagrid__hover--lift .v-mediagrid__item {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.v-mediagrid__hover--lift .v-mediagrid__item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+.v-mediagrid__hover--overlay-darken .v-mediagrid__item:hover .v-mediagrid__overlay {
+  opacity: 0.5;
+}
