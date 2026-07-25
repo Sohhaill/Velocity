@@ -69,9 +69,8 @@
         "slide_FcbQXV": {
           "type": "slide",
           "settings": {
-            "image_desktop": "shopify://shop_images/HOMEPAGE_DESKTOP_BANNER_ICYCANDLES_1.webp",
-            "image_mobile": "shopify://shop_images/HOMEPAGE_DESKTOP_BANNER_ICYCANDLES_1_c8ef8b44-a852-4f4a-9928-76a0dbfe39c2.webp",
-            "overlay_opacity": 45,
+            "image_desktop": "shopify://shop_images/H1_DESKTOP_Lomba_Vino_85d2bfc7-bc98-49ff-a0dc-0388a271555c.webp",
+            "overlay_opacity": 30,
             "content_position_desktop": "center_center",
             "content_position_mobile": "center_center",
             "content_in_container": true,
@@ -223,12 +222,13 @@
         "button_style": "filled"
       }
     },
-    "media_grid_QLMjNr": {
+    "media_grid_VhVGUE": {
       "type": "media-grid",
       "blocks": {
-        "media_item_G3NPC8": {
+        "media_item_yGgqTW": {
           "type": "media_item",
           "settings": {
+            "image_desktop": "shopify://shop_images/SS26_COLLECTION.webp",
             "overlay_opacity_desktop": 30,
             "overlay_opacity_mobile": 30,
             "col_span_desktop": 0,
@@ -241,9 +241,10 @@
             "button_style": "filled"
           }
         },
-        "media_item_VN7W43": {
+        "media_item_cmjdEX": {
           "type": "media_item",
           "settings": {
+            "image_desktop": "shopify://shop_images/MAGUIRE-MAY218085-web.webp",
             "overlay_opacity_desktop": 30,
             "overlay_opacity_mobile": 30,
             "col_span_desktop": 0,
@@ -255,11 +256,28 @@
             "button_link": "",
             "button_style": "filled"
           }
+        },
+        "media_item_GxLTPa": {
+          "type": "media_item",
+          "settings": {
+            "image_desktop": "shopify://shop_images/MAGUIRE-MAY218085-web.webp",
+            "overlay_opacity_desktop": 30,
+            "overlay_opacity_mobile": 30,
+            "col_span_desktop": 2,
+            "row_span_desktop": 0,
+            "col_span_mobile": 0,
+            "row_span_mobile": 0,
+            "heading": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "filled"
+          }
         }
       },
       "block_order": [
-        "media_item_G3NPC8",
-        "media_item_VN7W43"
+        "media_item_yGgqTW",
+        "media_item_cmjdEX",
+        "media_item_GxLTPa"
       ],
       "name": "Media grid",
       "settings": {
@@ -267,8 +285,8 @@
         "container_width": false,
         "columns_desktop": 2,
         "columns_mobile": 2,
-        "gap_desktop": 24,
-        "gap_mobile": 12,
+        "gap_desktop": 0,
+        "gap_mobile": 0,
         "aspect_ratio": "1_1",
         "hover_effect": "zoom",
         "padding_top_desktop": 60,
@@ -283,6 +301,6 @@
     "banner_dUTX7b",
     "scrolling_animation_E9jqjc",
     "video_hero_aLhMGN",
-    "media_grid_QLMjNr"
+    "media_grid_VhVGUE"
   ]
 }
