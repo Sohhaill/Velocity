@@ -164,15 +164,15 @@
 
 .v-video__icon {
   display: none;
-  width: 18px;
-  height: 18px;
+  width: 26px;
+  height: 26px;
   flex-shrink: 0;
 }
 
 .v-video__icon svg {
   display: block;
-  width: 18px;
-  height: 18px;
+  width: 26px;
+  height: 26px;
   flex-shrink: 0;
   pointer-events: none;
 }
