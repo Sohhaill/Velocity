@@ -609,12 +609,12 @@ a.mega-menu__submenu-sublink:hover::after,
   cursor: pointer;
   background: #ffffffcc;
   color: #111111;
-  transition: background 0.35s ease;
+  transition: backdrop-filter 0.35s ease;
 }
 
 .v-video__mute-btn:hover,
 .v-video__play-btn:hover {
-  background: #ffffff;
+  backdrop-filter: blur(50px);
 }
 
 .v-video__mute-btn {
