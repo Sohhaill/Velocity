@@ -74,7 +74,7 @@
             "overlay_opacity": 45,
             "content_position_desktop": "top_left",
             "content_position_mobile": "center_center",
-            "content_in_container": true,
+            "content_in_container": false,
             "content_alignment": "center",
             "text_color": "light",
             "subheading": "Subheading",
@@ -204,7 +204,6 @@
       "name": "Video hero",
       "settings": {
         "section_color_scheme": "scheme_2",
-        "full_width": true,
         "height_desktop": 600,
         "height_mobile": 450,
         "overlay_opacity": 45,
