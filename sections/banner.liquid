@@ -33,7 +33,8 @@
           {% assign position_style = '' %}
           {% assign device_list = 'desktop,mobile' | split: ',' %}
           {% for device in device_list %}
-            {% assign pos = block.settings['content_position_' | append: device] | split: '_' %}
+            {% assign position_key = 'content_position_' | append: device %}
+            {% assign pos = block.settings[position_key] | split: '_' %}
             {% assign align = 'center' %}
             {% if pos[0] == 'top' -%}
               {%- assign align = 'flex-start' %}
