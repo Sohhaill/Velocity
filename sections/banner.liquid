@@ -221,72 +221,73 @@
                   {%- endif -%}
                 </div>
               </div>
-            </div>
-
-            {%- if block.settings.featured_products.size > 0 -%}
-              {% assign hide_class = '' %}
-              {% if block.settings.hide_products_desktop -%}
-                {%- assign hide_class = hide_class | append: ' v-banner__featured--hide-desktop' -%}
-              {%- endif %}
-              {% if block.settings.hide_products_mobile -%}
-                {%- assign hide_class = hide_class | append: ' v-banner__featured--hide-mobile' -%}
-              {%- endif %}
-              <div class="v-banner__featured{{ hide_class }}">
-                <div class="v-banner__featured-swiper swiper">
-                  <div class="swiper-wrapper">
-                    {%- for product in block.settings.featured_products -%}
-                      <div class="swiper-slide v-banner__featured-slide">
-                        <div class="v-banner__featured-card">
-                          <a href="{{ product.url }}" class="v-banner__featured-media">
-                            {%- if product.featured_image -%}
-                              {{
-                                product.featured_image
-                                | image_url: width: 300
-                                | image_tag:
-                                  loading: 'lazy',
-                                  widths: '150,200,300',
-                                  sizes: '150px',
-                                  class: 'v-banner__featured-img'
-                              }}
-                            {%- endif -%}
-                          </a>
-                          <div class="v-banner__featured-info">
-                            <a href="{{ product.url }}" class="v-banner__featured-title h6">{{ product.title }}</a>
-                            <span class="v-banner__featured-price">
-                              {%- if product.compare_at_price > product.price -%}
-                                <s class="v-banner__featured-price--compare">{{ product.compare_at_price | money }}</s>
+              {%- if block.settings.featured_products.size > 0 -%}
+                {% assign hide_class = '' %}
+                {% if block.settings.hide_products_desktop -%}
+                  {%- assign hide_class = hide_class | append: ' v-banner__featured--hide-desktop' -%}
+                {%- endif %}
+                {% if block.settings.hide_products_mobile -%}
+                  {%- assign hide_class = hide_class | append: ' v-banner__featured--hide-mobile' -%}
+                {%- endif %}
+                <div class="v-banner__featured{{ hide_class }}">
+                  <div class="v-banner__featured-swiper swiper">
+                    <div class="swiper-wrapper">
+                      {%- for product in block.settings.featured_products -%}
+                        <div class="swiper-slide v-banner__featured-slide">
+                          <div class="v-banner__featured-card">
+                            <a href="{{ product.url }}" class="v-banner__featured-media">
+                              {%- if product.featured_image -%}
+                                {{
+                                  product.featured_image
+                                  | image_url: width: 300
+                                  | image_tag:
+                                    loading: 'lazy',
+                                    widths: '150,200,300',
+                                    sizes: '150px',
+                                    class: 'v-banner__featured-img'
+                                }}
                               {%- endif -%}
-                              {{ product.price | money }}
-                            </span>
-                            <a href="{{ product.url }}" class="v-banner__featured-cta">Choose Options</a>
+                            </a>
+                            <div class="v-banner__featured-info">
+                              <a href="{{ product.url }}" class="v-banner__featured-title h6">{{ product.title }}</a>
+                              <span class="v-banner__featured-price">
+                                {%- if product.compare_at_price > product.price -%}
+                                  <s class="v-banner__featured-price--compare">
+                                    {{- product.compare_at_price | money -}}
+                                  </s>
+                                {%- endif -%}
+                                {{ product.price | money }}
+                              </span>
+                              <a href="{{ product.url }}" class="v-banner__featured-cta">Choose Options</a>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    {%- endfor -%}
-                  </div>
-                  {%- if block.settings.featured_products.size > 1 -%}
-                    <div class="v-banner__featured-nav">
-                      {% assign featured_nav_directions = 'prev,next' | split: ',' %}
-                      {%- for dir in featured_nav_directions -%}
-                        {% assign featured_nav_icon = 'icon-chevron-left.svg' %}
-                        {% assign featured_nav_label_key = 'sections.banner.previous' %}
-                        {% if dir == 'next' %}
-                          {% assign featured_nav_icon = 'icon-chevron-right.svg' %}
-                          {% assign featured_nav_label_key = 'sections.banner.next' %}
-                        {% endif %}
-                        <button
-                          type="button"
-                          class="v-banner__featured-nav-btn v-banner__featured-nav-btn--{{ dir }} button--filled"
-                          aria-label="{{ featured_nav_label_key | t }}"
-                        >
-                          {{ featured_nav_icon | inline_asset_content }}
-                        </button>
                       {%- endfor -%}
                     </div>
-                  {%- endif -%}
+                    {%- if block.settings.featured_products.size > 1 -%}
+                      <div class="v-banner__featured-nav">
+                        {% assign featured_nav_directions = 'prev,next' | split: ',' %}
+                        {%- for dir in featured_nav_directions -%}
+                          {% assign featured_nav_icon = 'icon-chevron-left.svg' %}
+                          {% assign featured_nav_label_key = 'sections.banner.previous' %}
+                          {% if dir == 'next' %}
+                            {% assign featured_nav_icon = 'icon-chevron-right.svg' %}
+                            {% assign featured_nav_label_key = 'sections.banner.next' %}
+                          {% endif %}
+                          <button
+                            type="button"
+                            class="v-banner__featured-nav-btn v-banner__featured-nav-btn--{{ dir }} button--filled"
+                            aria-label="{{ featured_nav_label_key | t }}"
+                          >
+                            {{ featured_nav_icon | inline_asset_content }}
+                          </button>
+                        {%- endfor -%}
+                      </div>
+                    {%- endif -%}
+                  </div>
                 </div>
-              </div>
-            {%- endif -%}
+              {%- endif -%}
+            </div>
           </div>
         {%- endif -%}
       {%- endfor -%}
