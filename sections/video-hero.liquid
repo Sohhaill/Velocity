@@ -10,14 +10,7 @@
 }
 {%- endstyle -%}
 
-{% assign v_video_styles = '--v-video-height-desktop: '
-  | append: section.settings.height_desktop
-  | append: 'px; --v-video-height-mobile: '
-  | append: section.settings.height_mobile
-  | append: 'px; --v-video-overlay-opacity: '
-  | append: section.settings.overlay_opacity | default: 0 | divided_by: 100.0
-  | append: ';'
-%}
+
 
 {% assign position_style = '' %}
 {% assign device_list = 'desktop,mobile' | split: ',' %}
