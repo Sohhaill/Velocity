@@ -1,18 +1,18 @@
 {{ 'media-grid.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-#v-mediagrid-{{ section.id }} {
-  --v-mediagrid-columns-desktop: {{ section.settings.columns_desktop }};
-  --v-mediagrid-columns-mobile: {{ section.settings.columns_mobile }};
-  --v-mediagrid-gap-desktop: {{ section.settings.gap_desktop }}px;
-  --v-mediagrid-gap-mobile: {{ section.settings.gap_mobile }}px;
-  --v-mediagrid-padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
-  --v-mediagrid-padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
-  --v-mediagrid-padding-top-mobile: {{ section.settings.padding_top_mobile }}px;
-  --v-mediagrid-padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
-  --v-mediagrid-height-desktop: {{ section.settings.block_height_desktop }}px;
-  --v-mediagrid-height-mobile: {{ section.settings.block_height_mobile }}px;
-}
+  #v-mediagrid-{{ section.id }} {
+    --v-mediagrid-columns-desktop: {{ section.settings.columns_desktop }};
+    --v-mediagrid-columns-mobile: {{ section.settings.columns_mobile }};
+    --v-mediagrid-gap-desktop: {{ section.settings.gap_desktop }}px;
+    --v-mediagrid-gap-mobile: {{ section.settings.gap_mobile }}px;
+    --v-mediagrid-padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+    --v-mediagrid-padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
+    --v-mediagrid-padding-top-mobile: {{ section.settings.padding_top_mobile }}px;
+    --v-mediagrid-padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
+    --v-mediagrid-height-desktop: {{ section.settings.block_height_desktop }}px;
+    --v-mediagrid-height-mobile: {{ section.settings.block_height_mobile }}px;
+  }
 {%- endstyle -%}
 
 <div
@@ -26,22 +26,42 @@
         {% assign span_style = '' %}
 
         {% if block.settings.col_span_desktop > 0 %}
-          {% assign span_style = span_style | append: '--col-span-desktop: ' | append: block.settings.col_span_desktop | append: '; ' %}
+          {% assign span_style = span_style
+            | append: '--col-span-desktop: '
+            | append: block.settings.col_span_desktop
+            | append: '; '
+          %}
         {% endif %}
         {% if block.settings.row_span_desktop > 0 %}
-          {% assign span_style = span_style | append: '--row-span-desktop: ' | append: block.settings.row_span_desktop | append: '; ' %}
+          {% assign span_style = span_style
+            | append: '--row-span-desktop: '
+            | append: block.settings.row_span_desktop
+            | append: '; '
+          %}
         {% endif %}
         {% if block.settings.col_span_mobile > 0 %}
-          {% assign span_style = span_style | append: '--col-span-mobile: ' | append: block.settings.col_span_mobile | append: '; ' %}
+          {% assign span_style = span_style
+            | append: '--col-span-mobile: '
+            | append: block.settings.col_span_mobile
+            | append: '; '
+          %}
         {% endif %}
         {% if block.settings.row_span_mobile > 0 %}
-          {% assign span_style = span_style | append: '--row-span-mobile: ' | append: block.settings.row_span_mobile | append: '; ' %}
+          {% assign span_style = span_style
+            | append: '--row-span-mobile: '
+            | append: block.settings.row_span_mobile
+            | append: '; '
+          %}
         {% endif %}
 
         {% assign overlay_style = '--overlay-opacity-desktop: '
-          | append: block.settings.overlay_opacity_desktop | default: 0 | divided_by: 100.0
+          | append: block.settings.overlay_opacity_desktop
+          | default: 0
+          | divided_by: 100.0
           | append: '; --overlay-opacity-mobile: '
-          | append: block.settings.overlay_opacity_mobile | default: 0 | divided_by: 100.0
+          | append: block.settings.overlay_opacity_mobile
+          | default: 0
+          | divided_by: 100.0
           | append: ';'
         %}
 
@@ -54,13 +74,47 @@
             {%- comment -%} MOBILE — falls back to desktop {%- endcomment -%}
             <div class="v-mediagrid__media-wrap v-mediagrid__media-wrap--mobile">
               {%- if block.settings.video_mobile != blank -%}
-                {{ block.settings.video_mobile | video_tag: image_size: '1500x', muted: true, loop: true, autoplay: true, controls: false, class: 'v-mediagrid__video' }}
+                {{
+                  block.settings.video_mobile
+                  | video_tag:
+                    image_size: '1500x',
+                    muted: true,
+                    loop: true,
+                    autoplay: true,
+                    controls: false,
+                    class: 'v-mediagrid__video'
+                }}
               {%- elsif block.settings.image_mobile != blank -%}
-                {{ block.settings.image_mobile | image_url: width: 3840 | image_tag: loading: 'lazy', widths: '480,750,1000,1500,2000,3000,3840', sizes: '100vw', class: 'v-mediagrid__img' }}
+                {{
+                  block.settings.image_mobile
+                  | image_url: width: 3840
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '480,750,1000,1500,2000,3000,3840',
+                    sizes: '100vw',
+                    class: 'v-mediagrid__img'
+                }}
               {%- elsif block.settings.video_desktop != blank -%}
-                {{ block.settings.video_desktop | video_tag: image_size: '1500x', muted: true, loop: true, autoplay: true, controls: false, class: 'v-mediagrid__video' }}
+                {{
+                  block.settings.video_desktop
+                  | video_tag:
+                    image_size: '1500x',
+                    muted: true,
+                    loop: true,
+                    autoplay: true,
+                    controls: false,
+                    class: 'v-mediagrid__video'
+                }}
               {%- elsif block.settings.image_desktop != blank -%}
-                {{ block.settings.image_desktop | image_url: width: 3840 | image_tag: loading: 'lazy', widths: '480,750,1000,1500,2000,3000,3840', sizes: '100vw', class: 'v-mediagrid__img' }}
+                {{
+                  block.settings.image_desktop
+                  | image_url: width: 3840
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '480,750,1000,1500,2000,3000,3840',
+                    sizes: '100vw',
+                    class: 'v-mediagrid__img'
+                }}
               {%- else -%}
                 <div class="placeholder-image">{{ 'placeholder-media.svg' | inline_asset_content }}</div>
               {%- endif -%}
@@ -68,9 +122,26 @@
 
             <div class="v-mediagrid__media-wrap v-mediagrid__media-wrap--desktop">
               {%- if block.settings.video_desktop != blank -%}
-                {{ block.settings.video_desktop | video_tag: image_size: '3840x', muted: true, loop: true, autoplay: true, controls: false, class: 'v-mediagrid__video' }}
+                {{
+                  block.settings.video_desktop
+                  | video_tag:
+                    image_size: '3840x',
+                    muted: true,
+                    loop: true,
+                    autoplay: true,
+                    controls: false,
+                    class: 'v-mediagrid__video'
+                }}
               {%- elsif block.settings.image_desktop != blank -%}
-                {{ block.settings.image_desktop | image_url: width: 3840 | image_tag: loading: 'lazy', widths: '750,1100,1500,1920,2560,3200,3840', sizes: '100vw', class: 'v-mediagrid__img' }}
+                {{
+                  block.settings.image_desktop
+                  | image_url: width: 3840
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '750,1100,1500,1920,2560,3200,3840',
+                    sizes: '100vw',
+                    class: 'v-mediagrid__img'
+                }}
               {%- else -%}
                 <div class="placeholder-image">{{ 'placeholder-media.svg' | inline_asset_content }}</div>
               {%- endif -%}
@@ -83,7 +154,10 @@
                 <h3 class="v-mediagrid__heading">{{ block.settings.heading }}</h3>
               {%- endif -%}
               {%- if block.settings.button_label != blank and block.settings.button_link != blank -%}
-                <a href="{{ block.settings.button_link }}" class="button {% if block.settings.button_style == 'outline' %}button--outline{% else %}button--filled{% endif %}">
+                <a
+                  href="{{ block.settings.button_link }}"
+                  class="button {% if block.settings.button_style == 'outline' %}button--outline{% else %}button--filled{% endif %}"
+                >
                   {{ block.settings.button_label }}
                 </a>
               {%- endif -%}
@@ -95,24 +169,16 @@
   </div>
 </div>
 
-
-
 {% schema %}
 {
   "name": "Media grid",
   "class": "section-media-grid",
   "settings": [
     {
-      "type": "select",
+      "type": "color_scheme",
       "id": "section_color_scheme",
-      "label": "Color scheme",
-      "default": "scheme_1",
-      "options": [
-        { "value": "scheme_1", "label": "Scheme 1" },
-        { "value": "scheme_2", "label": "Scheme 2" },
-        { "value": "scheme_3", "label": "Scheme 3" },
-        { "value": "scheme_4", "label": "Scheme 4" }
-      ]
+      "label": "t:labels.color_scheme",
+      "default": "scheme-1"
     },
     {
       "type": "checkbox",
@@ -242,7 +308,12 @@
         { "type": "image_picker", "id": "image_desktop", "label": "Image" },
         { "type": "video", "id": "video_desktop", "label": "Video", "info": "Takes priority over image if set" },
         { "type": "header", "content": "Media — mobile" },
-        { "type": "image_picker", "id": "image_mobile", "label": "Image", "info": "Falls back to desktop image if empty" },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image",
+          "info": "Falls back to desktop image if empty"
+        },
         { "type": "video", "id": "video_mobile", "label": "Video", "info": "Falls back to desktop video if empty" },
         { "type": "header", "content": "Overlay" },
         {
