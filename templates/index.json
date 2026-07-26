@@ -269,7 +269,7 @@
         "profile_tagline": "",
         "profile_url": "",
         "follow_button_label": "Follow",
-        "follow_button_style": "outline",
+        "follow_button_style": "filled",
         "shop_button_label": "Shop the Look",
         "slides_per_view_desktop": 4,
         "slides_per_view_mobile": 1.2,
