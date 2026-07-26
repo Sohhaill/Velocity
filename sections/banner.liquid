@@ -1,22 +1,22 @@
 {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
 {{ 'banner.css' | asset_url | stylesheet_tag }}
 
-{% assign v_banner_styles = '--v-slideshow-height-desktop: '
+{% assign v_banner_styles = '--v-banner-height-desktop: '
   | append: section.settings.height_desktop
-  | append: 'px; --v-slideshow-height-mobile: '
+  | append: 'px; --v-banner-height-mobile: '
   | append: section.settings.height_mobile
   | append: 'px;'
 %}
 
 {% comment %} Reused arrow icon for outline-style buttons {% endcomment %}
 {% capture button_arrow_svg %}
-<span class="v-slideshow__button-arrow"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 8"><path stroke="currentColor" d="M0 4h15M11 8c0-2 4-4 4-4s-4-2-4-4"></path></svg></span>
+<span class="v-banner__button-arrow"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 8"><path stroke="currentColor" d="M0 4h15M11 8c0-2 4-4 4-4s-4-2-4-4"></path></svg></span>
 {% endcapture %}
 
 <div
-  class="v-slideshow section-color-scheme--{{ section.settings.section_color_scheme.id }}"
-  id="v-slideshow-{{ section.id }}"
-  data-v-slideshow
+  class="v-banner section-color-scheme--{{ section.settings.section_color_scheme.id }}"
+  id="v-banner-{{ section.id }}"
+  data-v-banner
   data-transparent-target
   data-effect="{{ section.settings.transition_effect }}"
   data-autoplay="{{ section.settings.enable_autoplay }}"
@@ -25,7 +25,7 @@
   data-pagination="{{ section.settings.enable_pagination }}"
   style="{{ v_banner_styles }}"
 >
-  <div class="v-slideshow__swiper swiper">
+  <div class="v-banner__swiper swiper">
     <div class="swiper-wrapper">
       {%- for block in section.blocks -%}
         {%- if block.type == 'slide' -%}
@@ -51,15 +51,15 @@
               {%- assign text_align = 'right' -%}
             {%- endif %}
             {% assign position_style = position_style
-              | append: '--v-slideshow-align-'
+              | append: '--v-banner-align-'
               | append: device
               | append: ': '
               | append: align
-              | append: '; --v-slideshow-justify-'
+              | append: '; --v-banner-justify-'
               | append: device
               | append: ': '
               | append: justify
-              | append: '; --v-slideshow-text-align-'
+              | append: '; --v-banner-text-align-'
               | append: device
               | append: ': '
               | append: text_align
@@ -69,16 +69,16 @@
 
           {% assign content_container_class = '' %}
           {% if block.settings.content_in_container %}
-            {% assign content_container_class = ' v-slideshow__content--container' %}
+            {% assign content_container_class = ' v-banner__content--container' %}
           {% endif %}
 
-          {% assign text_color_class = 'v-slideshow__text--light' %}
+          {% assign text_color_class = 'v-banner__text--light' %}
           {% if block.settings.text_color == 'dark' %}
-            {% assign text_color_class = 'v-slideshow__text--dark' %}
+            {% assign text_color_class = 'v-banner__text--dark' %}
           {% endif %}
 
           {% assign overlay_opacity_decimal = block.settings.overlay_opacity | default: 0 | divided_by: 100.0 %}
-          {% assign overlay_style = '--v-slideshow-overlay-opacity: ' | append: overlay_opacity_decimal | append: ';' %}
+          {% assign overlay_style = '--v-banner-overlay-opacity: ' | append: overlay_opacity_decimal | append: ';' %}
 
           {% assign content_justify_value = 'center' %}
           {% case block.settings.content_alignment %}
@@ -87,15 +87,15 @@
             {% when 'right' -%}
               {%- assign content_justify_value = 'flex-end' %}
           {% endcase %}
-          {% assign content_alignment_style = '--v-slideshow-content-text-align: '
+          {% assign content_alignment_style = '--v-banner-content-text-align: '
             | append: block.settings.content_alignment
-            | append: '; --v-slideshow-content-justify: '
+            | append: '; --v-banner-content-justify: '
             | append: content_justify_value
             | append: ';'
           %}
 
           <div
-            class="swiper-slide v-slideshow__slide"
+            class="swiper-slide v-banner__slide"
             data-slide-index="{{ forloop.index0 }}"
             {{ block.shopify_attributes }}
           >
@@ -103,7 +103,7 @@
               MOBILE MEDIA — falls back to desktop video/image automatically
               when no mobile-specific media is uploaded.
             {%- endcomment -%}
-            <div class="v-slideshow__media v-slideshow__media--mobile">
+            <div class="v-banner__media v-banner__media--mobile">
               {%- if block.settings.video_mobile != blank -%}
                 {{
                   block.settings.video_mobile
@@ -113,7 +113,7 @@
                     loop: true,
                     muted: true,
                     controls: false,
-                    class: 'v-slideshow__video'
+                    class: 'v-banner__video'
                 }}
               {%- elsif block.settings.image_mobile != blank -%}
                 {{
@@ -123,7 +123,7 @@
                     loading: 'lazy',
                     widths: '480,750,1000,1500,2000,3000,3840',
                     sizes: '100vw',
-                    class: 'v-slideshow__img'
+                    class: 'v-banner__img'
                 }}
               {%- elsif block.settings.video_desktop != blank -%}
                 {{
@@ -134,7 +134,7 @@
                     loop: true,
                     muted: true,
                     controls: false,
-                    class: 'v-slideshow__video'
+                    class: 'v-banner__video'
                 }}
               {%- elsif block.settings.image_desktop != blank -%}
                 {{
@@ -144,12 +144,12 @@
                     loading: 'lazy',
                     widths: '480,750,1000,1500,2000,3000,3840',
                     sizes: '100vw',
-                    class: 'v-slideshow__img'
+                    class: 'v-banner__img'
                 }}
               {%- endif -%}
             </div>
 
-            <div class="v-slideshow__media v-slideshow__media--desktop">
+            <div class="v-banner__media v-banner__media--desktop">
               {%- if block.settings.video_desktop != blank -%}
                 {{
                   block.settings.video_desktop
@@ -159,7 +159,7 @@
                     loop: true,
                     muted: true,
                     controls: false,
-                    class: 'v-slideshow__video'
+                    class: 'v-banner__video'
                 }}
               {%- elsif block.settings.image_desktop != blank -%}
                 {{
@@ -169,36 +169,36 @@
                     loading: 'lazy',
                     widths: '750,1100,1500,1920,2560,3200,3840',
                     sizes: '100vw',
-                    class: 'v-slideshow__img'
+                    class: 'v-banner__img'
                 }}
               {%- endif -%}
             </div>
 
-            <div class="v-slideshow__overlay" style="{{ overlay_style }}"></div>
+            <div class="v-banner__overlay" style="{{ overlay_style }}"></div>
 
-            <div class="v-slideshow__content{{ content_container_class }}" style="{{ position_style }}">
-              <div class="v-slideshow__content-inner" style="{{ content_alignment_style }}">
-                <div class="v-slideshow__content-inner-track">
-                  <div class="v-slideshow__text {{ text_color_class }}">
+            <div class="v-banner__content{{ content_container_class }}" style="{{ position_style }}">
+              <div class="v-banner__content-inner" style="{{ content_alignment_style }}">
+                <div class="v-banner__content-inner-track">
+                  <div class="v-banner__text {{ text_color_class }}">
                     {%- if block.settings.subheading != blank -%}
-                      <p class="v-slideshow__subheading">{{ block.settings.subheading }}</p>
+                      <p class="v-banner__subheading">{{ block.settings.subheading }}</p>
                     {%- endif -%}
                     {%- if block.settings.heading != blank -%}
                       {%- case block.settings.heading_tag -%}
                         {%- when 'h1' -%}
-                          <h1 class="v-slideshow__heading">{{ block.settings.heading }}</h1>
+                          <h1 class="v-banner__heading">{{ block.settings.heading }}</h1>
                         {%- when 'h3' -%}
-                          <h3 class="v-slideshow__heading">{{ block.settings.heading }}</h3>
+                          <h3 class="v-banner__heading">{{ block.settings.heading }}</h3>
                         {%- when 'h4' -%}
-                          <h4 class="v-slideshow__heading">{{ block.settings.heading }}</h4>
+                          <h4 class="v-banner__heading">{{ block.settings.heading }}</h4>
                         {%- when 'h5' -%}
-                          <h5 class="v-slideshow__heading">{{ block.settings.heading }}</h5>
+                          <h5 class="v-banner__heading">{{ block.settings.heading }}</h5>
                         {%- else -%}
-                          <h2 class="v-slideshow__heading">{{ block.settings.heading }}</h2>
+                          <h2 class="v-banner__heading">{{ block.settings.heading }}</h2>
                       {%- endcase -%}
                     {%- endif -%}
                     {%- if block.settings.description != blank -%}
-                      <div class="v-slideshow__description">{{ block.settings.description }}</div>
+                      <div class="v-banner__description">{{ block.settings.description }}</div>
                     {%- endif -%}
                   </div>
 
@@ -217,25 +217,25 @@
                                 {%- endif -%}
                                 {% endcapture %}
                   {%- if buttons_html != blank -%}
-                    <div class="v-slideshow__buttons">{{ buttons_html }}</div>
+                    <div class="v-banner__buttons">{{ buttons_html }}</div>
                   {%- endif -%}
                 </div>
               </div>
               {%- if block.settings.featured_products.size > 0 -%}
                 {% assign hide_class = '' %}
                 {% if block.settings.hide_products_desktop -%}
-                  {%- assign hide_class = hide_class | append: ' v-slideshow__featured--hide-desktop' -%}
+                  {%- assign hide_class = hide_class | append: ' v-banner__featured--hide-desktop' -%}
                 {%- endif %}
                 {% if block.settings.hide_products_mobile -%}
-                  {%- assign hide_class = hide_class | append: ' v-slideshow__featured--hide-mobile' -%}
+                  {%- assign hide_class = hide_class | append: ' v-banner__featured--hide-mobile' -%}
                 {%- endif %}
-                <div class="v-slideshow__featured{{ hide_class }}">
-                  <div class="v-slideshow__featured-swiper swiper">
+                <div class="v-banner__featured{{ hide_class }}">
+                  <div class="v-banner__featured-swiper swiper">
                     <div class="swiper-wrapper">
                       {%- for product in block.settings.featured_products -%}
-                        <div class="swiper-slide v-slideshow__featured-slide">
-                          <div class="v-slideshow__featured-card">
-                            <a href="{{ product.url }}" class="v-slideshow__featured-media">
+                        <div class="swiper-slide v-banner__featured-slide">
+                          <div class="v-banner__featured-card">
+                            <a href="{{ product.url }}" class="v-banner__featured-media">
                               {%- if product.featured_image -%}
                                 {{
                                   product.featured_image
@@ -244,28 +244,28 @@
                                     loading: 'lazy',
                                     widths: '150,200,300',
                                     sizes: '150px',
-                                    class: 'v-slideshow__featured-img'
+                                    class: 'v-banner__featured-img'
                                 }}
                               {%- endif -%}
                             </a>
-                            <div class="v-slideshow__featured-info">
-                              <a href="{{ product.url }}" class="v-slideshow__featured-title h6">{{ product.title }}</a>
-                              <span class="v-slideshow__featured-price">
+                            <div class="v-banner__featured-info">
+                              <a href="{{ product.url }}" class="v-banner__featured-title h6">{{ product.title }}</a>
+                              <span class="v-banner__featured-price">
                                 {%- if product.compare_at_price > product.price -%}
-                                  <s class="v-slideshow__featured-price--compare">
+                                  <s class="v-banner__featured-price--compare">
                                     {{- product.compare_at_price | money -}}
                                   </s>
                                 {%- endif -%}
                                 {{ product.price | money }}
                               </span>
-                              <a href="{{ product.url }}" class="v-slideshow__featured-cta">Choose Options</a>
+                              <a href="{{ product.url }}" class="v-banner__featured-cta">Choose Options</a>
                             </div>
                           </div>
                         </div>
                       {%- endfor -%}
                     </div>
                     {%- if block.settings.featured_products.size > 1 -%}
-                      <div class="v-slideshow__featured-nav">
+                      <div class="v-banner__featured-nav">
                         {% assign featured_nav_directions = 'prev,next' | split: ',' %}
                         {%- for dir in featured_nav_directions -%}
                           {% assign featured_nav_icon = 'icon-chevron-left.svg' %}
@@ -276,7 +276,7 @@
                           {% endif %}
                           <button
                             type="button"
-                            class="v-slideshow__featured-nav-btn v-slideshow__featured-nav-btn--{{ dir }} button--filled"
+                            class="v-banner__featured-nav-btn v-banner__featured-nav-btn--{{ dir }} button--filled"
                             aria-label="{{ featured_nav_label_key | t }}"
                           >
                             {{ featured_nav_icon | inline_asset_content }}
@@ -294,18 +294,18 @@
     </div>
 
     {%- if section.settings.enable_pagination -%}
-      <div class="v-slideshow__pagination-wrap">
-        <div class="v-slideshow__pagination"></div>
+      <div class="v-banner__pagination-wrap">
+        <div class="v-banner__pagination"></div>
         {%- if section.settings.enable_autoplay -%}
-          <div class="v-slideshow__progress">
-            <div class="v-slideshow__progress-bar"></div>
+          <div class="v-banner__progress">
+            <div class="v-banner__progress-bar"></div>
           </div>
         {%- endif -%}
       </div>
     {%- endif -%}
 
     {%- if section.settings.enable_navigation -%}
-      <div class="v-slideshow__nav-container">
+      <div class="v-banner__nav-container">
         {% assign nav_directions = 'prev,next' | split: ',' %}
         {%- for dir in nav_directions -%}
           {% assign nav_icon = 'icon-chevron-left.svg' %}
@@ -316,7 +316,7 @@
           {% endif %}
           <button
             type="button"
-            class="v-slideshow__nav v-slideshow__nav--{{ dir }} button button--filled"
+            class="v-banner__nav v-banner__nav--{{ dir }} button button--filled"
             aria-label="{{ nav_label_key | t }}"
           >
             {{ nav_icon | inline_asset_content }}

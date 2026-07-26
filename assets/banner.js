@@ -4,7 +4,7 @@
     if (typeof Swiper === "undefined") return;
     root.dataset.vBannerInit = "true";
 
-    var swiperEl = root.querySelector(".v-slideshow__swiper");
+    var swiperEl = root.querySelector(".v-banner__swiper");
     if (!swiperEl) return;
 
     var effect = root.getAttribute("data-effect") || "slide";
@@ -46,14 +46,14 @@
 
     if (navigationEnabled) {
       config.navigation = {
-        nextEl: root.querySelector(".v-slideshow__nav--next"),
-        prevEl: root.querySelector(".v-slideshow__nav--prev"),
+        nextEl: root.querySelector(".v-banner__nav--next"),
+        prevEl: root.querySelector(".v-banner__nav--prev"),
       };
     }
 
     if (paginationEnabled) {
       config.pagination = {
-        el: root.querySelector(".v-slideshow__pagination"),
+        el: root.querySelector(".v-banner__pagination"),
         clickable: true,
         renderBullet: function (index, className) {
           return '<span class="' + className + '">' + (index + 1) + "</span>";
@@ -61,7 +61,7 @@
       };
     }
 
-    var progressBarEl = root.querySelector(".v-slideshow__progress-bar");
+    var progressBarEl = root.querySelector(".v-banner__progress-bar");
     if (progressBarEl && autoplayEnabled) {
       config.on = config.on || {};
 
@@ -80,7 +80,7 @@
     root.__vBannerSwiperInstance = swiperInstance;
 
     // FEATURED PRODUCT SWIPERS — one nested instance per slide
-    root.querySelectorAll(".v-slideshow__featured-swiper").forEach(function (el) {
+    root.querySelectorAll(".v-banner__featured-swiper").forEach(function (el) {
       var slidesCount = el.querySelectorAll(".swiper-slide").length;
       if (slidesCount < 1) return;
 
@@ -95,8 +95,8 @@
 
       if (slidesCount > 1) {
         featuredConfig.navigation = {
-          nextEl: el.querySelector(".v-slideshow__featured-nav-btn--next"),
-          prevEl: el.querySelector(".v-slideshow__featured-nav-btn--prev"),
+          nextEl: el.querySelector(".v-banner__featured-nav-btn--next"),
+          prevEl: el.querySelector(".v-banner__featured-nav-btn--prev"),
         };
       }
 
@@ -105,10 +105,10 @@
 
     // Height 0 -> 100% transition ke baad Swiper ko sahi size pe update karo,
     // warna init ke time height 0 hone se slide width galat calculate hoti hai
-    root.querySelectorAll(".v-slideshow__featured").forEach(function (el) {
+    root.querySelectorAll(".v-banner__featured").forEach(function (el) {
       el.addEventListener("transitionend", function (e) {
         if (e.propertyName !== "grid-template-rows") return;
-        var featuredSwiperEl = el.querySelector(".v-slideshow__featured-swiper");
+        var featuredSwiperEl = el.querySelector(".v-banner__featured-swiper");
         if (featuredSwiperEl && featuredSwiperEl.__vBannerFeaturedInstance) {
           featuredSwiperEl.__vBannerFeaturedInstance.update();
         }
@@ -168,7 +168,7 @@
       root.__vBannerSwiperInstance.destroy(true, true);
       delete root.__vBannerSwiperInstance;
     }
-    root.querySelectorAll(".v-slideshow__featured-swiper").forEach(function (el) {
+    root.querySelectorAll(".v-banner__featured-swiper").forEach(function (el) {
       if (el.__vBannerFeaturedInstance) {
         el.__vBannerFeaturedInstance.destroy(true, true);
         delete el.__vBannerFeaturedInstance;
@@ -179,7 +179,7 @@
 
   function scanAndInit(context) {
     (context || document)
-      .querySelectorAll("[data-v-slideshow]")
+      .querySelectorAll("[data-v-banner]")
       .forEach(initVBanner);
   }
 
@@ -190,19 +190,19 @@
 
     if (window.Shopify && Shopify.designMode) {
       document.addEventListener("shopify:section:load", function (event) {
-        var root = event.target.querySelector("[data-v-slideshow]");
+        var root = event.target.querySelector("[data-v-banner]");
         if (!root) return;
         destroyVBanner(root);
         initVBanner(root);
       });
 
       document.addEventListener("shopify:section:unload", function (event) {
-        var root = event.target.querySelector("[data-v-slideshow]");
+        var root = event.target.querySelector("[data-v-banner]");
         destroyVBanner(root);
       });
 
       document.addEventListener("shopify:block:select", function (event) {
-        var root = event.target.closest("[data-v-slideshow]");
+        var root = event.target.closest("[data-v-banner]");
         if (!root || !root.__vBannerSwiperInstance) return;
         var idx = parseInt(event.target.getAttribute("data-slide-index"), 10);
         if (isNaN(idx)) return;
