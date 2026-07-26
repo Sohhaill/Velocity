@@ -54,33 +54,38 @@
 --container-width: {{ settings.container_max_width }}px;
 --container-margin: {{ settings.container_margin }}px;
 --transition-default: 0.35s ease;
-{%- for scheme in settings.color_schemes -%}
-{%- assign s = scheme.settings -%}
---scheme{{ forloop.index }}-background: {{ s.background }};
---scheme{{ forloop.index }}-heading: {{ s.heading }};
---scheme{{ forloop.index }}-subheading: {{ s.subheading }};
---scheme{{ forloop.index }}-body: {{ s.body }};
---scheme{{ forloop.index }}-button-background: {{ s.button_background }};
---scheme{{ forloop.index }}-button-foreground: {{ s.button_text }};
---scheme{{ forloop.index }}-button-hover-background: {{ s.button_hover_background }};
---scheme{{ forloop.index }}-button-hover-foreground: {{ s.button_hover_text }};
---scheme{{ forloop.index }}-outline-button-border: {{ s.outline_button_border }};
---scheme{{ forloop.index }}-outline-button-foreground: {{ s.outline_button_text }};
---scheme{{ forloop.index }}-outline-button-hover-border: {{ s.outline_button_hover_border }};
---scheme{{ forloop.index }}-outline-button-hover-foreground: {{ s.outline_button_hover_text }};
---scheme{{ forloop.index }}-input-background: {{ s.input_background }};
---scheme{{ forloop.index }}-input-foreground: {{ s.input_text }};
-{%- endfor -%}
---color-background: var(--scheme1-background);
---color-foreground: var(--scheme1-body);
---color-heading: var(--scheme1-heading);
---button-background: var(--scheme1-button-background);
---button-foreground: var(--scheme1-button-foreground);
---button-hover-background: var(--scheme1-button-hover-background);
---button-hover-foreground: var(--scheme1-button-hover-foreground);
---input-background: var(--scheme1-input-background);
---input-foreground: var(--scheme1-input-foreground);
+{%- assign default_scheme = settings.color_schemes.first.settings -%}
+--color-background: {{ default_scheme.background }};
+--color-foreground: {{ default_scheme.body }};
+--color-heading: {{ default_scheme.heading }};
+--button-background: {{ default_scheme.button_background }};
+--button-foreground: {{ default_scheme.button_text }};
+--button-hover-background: {{ default_scheme.button_hover_background }};
+--button-hover-foreground: {{ default_scheme.button_hover_text }};
+--input-background: {{ default_scheme.input_background }};
+--input-foreground: {{ default_scheme.input_text }};
 --button-radius: {{ settings.button_corner_radius }}px;
 --input-radius: {{ settings.input_corner_radius }}px;
 }
+
+{%- for scheme in settings.color_schemes -%}
+{%- assign s = scheme.settings -%}
+.section-color-scheme--{{ scheme.id }} {
+  --color-background: {{ s.background }};
+  --color-foreground: {{ s.body }};
+  --color-heading: {{ s.heading }};
+  --button-background: {{ s.button_background }};
+  --button-foreground: {{ s.button_text }};
+  --button-hover-background: {{ s.button_hover_background }};
+  --button-hover-foreground: {{ s.button_hover_text }};
+  --button-outline-border: {{ s.outline_button_border }};
+  --button-outline-foreground: {{ s.outline_button_text }};
+  --button-outline-hover-border: {{ s.outline_button_hover_border }};
+  --button-outline-hover-foreground: {{ s.outline_button_hover_text }};
+  --input-background: {{ s.input_background }};
+  --input-foreground: {{ s.input_text }};
+  background-color: {{ s.background }};
+  color: {{ s.body }};
+}
+{%- endfor -%}
 {% endstyle %}
