@@ -79,7 +79,7 @@ p:empty {
 body {
   font-family: var(--font-body--family);
   font-style: normal;
-  font-display: swap;
+
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
   background-color: var(--color-background);
@@ -95,7 +95,7 @@ h6 {
   font-family: var(--font-heading--family);
   font-weight: var(--font-heading--weight);
   font-style: normal;
-  font-display: swap;
+
   line-height: var(--line-height-heading);
   color: var(--color-heading);
 }
@@ -108,7 +108,7 @@ h6 {
   font-family: var(--font-heading--family);
   font-weight: var(--font-heading--weight);
   font-style: normal;
-  font-display: swap;
+
   line-height: var(--line-height-heading);
   color: var(--color-heading);
 }
@@ -155,7 +155,7 @@ h6 {
 button {
   font-family: var(--font-button--family);
   font-style: normal;
-  font-display: swap;
+
   font-size: var(--font-size-button);
   font-weight: var(--font-button--weight);
   background-color: var(--button-background);
