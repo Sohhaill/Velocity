@@ -91,7 +91,7 @@
 
                 {%- if products.size > 0 -%}
                   <div class="v-insta__thumbs">
-                    {%- for product in products limit: 2 -%}
+                    {%- for product in products limit: 4 -%}
                       <span class="v-insta__thumb">
                         {%- if product.featured_image -%}
                           {{ product.featured_image | image_url: width: 100 | image_tag: loading: 'lazy', widths: '60,100', class: 'v-insta__thumb-img' }}
@@ -359,7 +359,7 @@
           "default": 0
         },
         { "type": "header", "content": "Products" },
-        { "type": "product_list", "id": "products", "label": "Products", "limit": 6 }
+        { "type": "product_list", "id": "products", "label": "Products", "limit": 4 }
       ]
     }
   ],
