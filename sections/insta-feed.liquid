@@ -72,6 +72,8 @@
         {%- for block in section.blocks -%}
           {%- if block.type == 'feed_item' -%}
             {% assign products = block.settings.products %}
+            {% assign overlay_opacity_decimal = block.settings.overlay_opacity | default: 0 | divided_by: 100.0 %}
+            {% assign overlay_style = '--overlay-opacity: ' | append: overlay_opacity_decimal | append: ';' %}
             <div class="swiper-slide v-insta__slide" {{ block.shopify_attributes }}>
               <div class="v-insta__item">
                 <div class="v-insta__media">
@@ -83,6 +85,7 @@
                     <div class="placeholder-image">{{ 'placeholder-media.svg' | inline_asset_content }}</div>
                   {%- endif -%}
                 </div>
+                <div class="v-insta__overlay" style="{{ overlay_style }}"></div>
 
                 <span class="v-insta__badge">{{ 'icon-insta.svg' | inline_asset_content }}</span>
 
@@ -344,6 +347,18 @@
       "settings": [
         { "type": "image_picker", "id": "image", "label": "Image" },
         { "type": "video", "id": "video", "label": "Video", "info": "Takes priority over image if set" },
+        { "type": "header", "content": "Overlay" },
+        {
+          "type": "range",
+          "id": "overlay_opacity",
+          "label": "Overlay opacity",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "default": 0
+        },
+        { "type": "header", "content": "Products" },
         { "type": "product_list", "id": "products", "label": "Products", "limit": 6 }
       ]
     }

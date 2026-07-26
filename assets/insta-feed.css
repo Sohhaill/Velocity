@@ -101,6 +101,16 @@
   display: block;
 }
 
+.v-insta__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: #000000;
+  opacity: var(--overlay-opacity, 0);
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
 .v-insta__badge {
   position: absolute;
   top: 12px;
