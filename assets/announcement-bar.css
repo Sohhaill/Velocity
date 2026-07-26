@@ -41,9 +41,12 @@
   background: transparent;
   color: inherit;
   cursor: pointer;
-  padding: 6px;
+  padding: 0px;
 }
-
+.v-annoucment__nav:hover{
+  background: unset;
+  color: unset;
+}
 
 
 .v-annoucment__nav--prev {
