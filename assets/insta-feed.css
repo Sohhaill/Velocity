@@ -216,11 +216,18 @@
   position: fixed;
   inset: 0;
   z-index: 999;
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0s linear 0.35s;
 }
 
 .v-insta__popup.is-active {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.35s ease, visibility 0s linear 0s;
 }
 
 .v-insta__popup-overlay {
@@ -238,11 +245,15 @@
   max-width: 1200px;
   max-height: 750px;
   margin: auto;
-  top: 50%;
-  transform: translateY(-50%);
   background: var(--color-background, #fff);
   color: var(--color-foreground, #111);
   overflow: hidden;
+  transform: translateY(60px);
+  transition: transform 0.35s ease;
+}
+
+.v-insta__popup.is-active .v-insta__popup-inner {
+  transform: translateY(0);
 }
 
 @media screen and (max-width: 899px) {
