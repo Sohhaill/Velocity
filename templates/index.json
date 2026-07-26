@@ -9,60 +9,6 @@
  */
 {
   "sections": {
-    "multiple_image_text_k7WWD4": {
-      "type": "multiple-image-text",
-      "blocks": {
-        "image_text_card_zDDEm7": {
-          "type": "image_text_card",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPTImageJun20_2026_09_58_56PM_1.webp",
-            "eyebrow": "",
-            "title": "Add your title",
-            "subtitle": "Add a supporting subtitle",
-            "description": "Describe this item in a sentence or two, highlighting what makes it worth a closer look.",
-            "benefit_1": "First key benefit",
-            "benefit_2": "Second key benefit",
-            "benefit_3": "Third key benefit",
-            "benefit_4": "",
-            "benefit_5": "",
-            "button_label": "Learn More",
-            "button_url": "",
-            "button_style": "filled"
-          }
-        },
-        "image_text_card_Ww9gVG": {
-          "type": "image_text_card",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPTImageJun20_2026_09_59_04PM.webp",
-            "eyebrow": "",
-            "title": "Add another title",
-            "subtitle": "Add another subtitle",
-            "description": "Describe this second item, giving shoppers a reason to keep scrolling.",
-            "benefit_1": "First key benefit",
-            "benefit_2": "Second key benefit",
-            "benefit_3": "",
-            "benefit_4": "",
-            "benefit_5": "",
-            "button_label": "Learn More",
-            "button_url": "",
-            "button_style": "outline"
-          }
-        }
-      },
-      "block_order": [
-        "image_text_card_zDDEm7",
-        "image_text_card_Ww9gVG"
-      ],
-      "disabled": true,
-      "name": "Multiple Image with Text",
-      "settings": {
-        "section_color_scheme": "scheme_2",
-        "padding_top_desktop": 0,
-        "padding_bottom_desktop": 0,
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0
-      }
-    },
     "banner_dUTX7b": {
       "type": "banner",
       "blocks": {
@@ -281,7 +227,6 @@
     }
   },
   "order": [
-    "multiple_image_text_k7WWD4",
     "banner_dUTX7b",
     "scrolling_animation_E9jqjc",
     "video_hero_aLhMGN",
