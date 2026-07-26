@@ -194,7 +194,7 @@ id="header-wrapper-{{ section.id }}" {% if section.settings.header_sticky %}data
     </div>
 
    
-    {% render 'search-popup'%}
+    {% render 'search-popup', color_scheme: section.settings.search_color_scheme %}
     {% if section.settings.header_sticky %}
     <script>
       (function () {
