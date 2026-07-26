@@ -9,58 +9,28 @@
  */
 {
   "sections": {
-    "multiple_image_text_k7WWD4": {
-      "type": "multiple-image-text",
-      "blocks": {
-        "image_text_card_zDDEm7": {
-          "type": "image_text_card",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPTImageJun20_2026_09_58_56PM_1.webp",
-            "eyebrow": "",
-            "title": "Add your title",
-            "subtitle": "Add a supporting subtitle",
-            "description": "Describe this item in a sentence or two, highlighting what makes it worth a closer look.",
-            "benefit_1": "First key benefit",
-            "benefit_2": "Second key benefit",
-            "benefit_3": "Third key benefit",
-            "benefit_4": "",
-            "benefit_5": "",
-            "button_label": "Learn More",
-            "button_url": "",
-            "button_style": "filled"
-          }
-        },
-        "image_text_card_Ww9gVG": {
-          "type": "image_text_card",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPTImageJun20_2026_09_59_04PM.webp",
-            "eyebrow": "",
-            "title": "Add another title",
-            "subtitle": "Add another subtitle",
-            "description": "Describe this second item, giving shoppers a reason to keep scrolling.",
-            "benefit_1": "First key benefit",
-            "benefit_2": "Second key benefit",
-            "benefit_3": "",
-            "benefit_4": "",
-            "benefit_5": "",
-            "button_label": "Learn More",
-            "button_url": "",
-            "button_style": "outline"
-          }
-        }
-      },
-      "block_order": [
-        "image_text_card_zDDEm7",
-        "image_text_card_Ww9gVG"
-      ],
-      "disabled": true,
-      "name": "Multiple Image with Text",
+    "video_hero_aLhMGN": {
+      "type": "video-hero",
+      "name": "Video hero",
       "settings": {
-        "section_color_scheme": "scheme_2",
-        "padding_top_desktop": 0,
-        "padding_bottom_desktop": 0,
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0
+        "section_color_scheme": "scheme-4",
+        "full_width": true,
+        "height_desktop": 700,
+        "height_mobile": 450,
+        "overlay_opacity": 0,
+        "video_desktop": "shopify://files/videos/b7763137afc846f68fea61896fc77b5c.HD-1080p-7.2Mbps-83877115.mp4",
+        "enable_autoplay": true,
+        "content_position_desktop": "top_left",
+        "content_position_mobile": "center_center",
+        "content_alignment": "center",
+        "text_color": "light",
+        "subheading": "sdf",
+        "heading": "Video heading",
+        "heading_tag": "h1",
+        "description": "<p>asd</p>",
+        "button_label": "ad",
+        "button_link": "#",
+        "button_style": "filled"
       }
     },
     "banner_dUTX7b": {
@@ -187,7 +157,7 @@
       ],
       "name": "Scrolling Animation",
       "settings": {
-        "section_color_scheme": "scheme-3",
+        "section_color_scheme": "scheme-2",
         "speed": 10,
         "gap": 32,
         "text_tag": "h3",
@@ -196,30 +166,6 @@
         "padding_bottom_desktop": 20,
         "padding_top_mobile": 12,
         "padding_bottom_mobile": 12
-      }
-    },
-    "video_hero_aLhMGN": {
-      "type": "video-hero",
-      "name": "Video hero",
-      "settings": {
-        "section_color_scheme": "scheme-4",
-        "full_width": true,
-        "height_desktop": 700,
-        "height_mobile": 450,
-        "overlay_opacity": 0,
-        "video_desktop": "shopify://files/videos/b7763137afc846f68fea61896fc77b5c.HD-1080p-7.2Mbps-83877115.mp4",
-        "enable_autoplay": true,
-        "content_position_desktop": "top_left",
-        "content_position_mobile": "center_center",
-        "content_alignment": "center",
-        "text_color": "light",
-        "subheading": "sdf",
-        "heading": "Video heading",
-        "heading_tag": "h1",
-        "description": "<p>asd</p>",
-        "button_label": "ad",
-        "button_link": "#",
-        "button_style": "filled"
       }
     },
     "media_grid_VhVGUE": {
@@ -281,10 +227,9 @@
     }
   },
   "order": [
-    "multiple_image_text_k7WWD4",
+    "video_hero_aLhMGN",
     "banner_dUTX7b",
     "scrolling_animation_E9jqjc",
-    "video_hero_aLhMGN",
     "media_grid_VhVGUE"
   ]
 }
