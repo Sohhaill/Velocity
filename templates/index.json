@@ -240,7 +240,7 @@
           "type": "feed_item",
           "settings": {
             "video": "shopify://files/videos/b7763137afc846f68fea61896fc77b5c.HD-1080p-7.2Mbps-83877115.mp4",
-            "overlay_opacity": 0,
+            "overlay_opacity": 25,
             "products": [
               "the-3p-fulfilled-snowboard",
               "the-collection-snowboard-hydrogen"
@@ -278,7 +278,7 @@
       ],
       "name": "Insta feed",
       "settings": {
-        "section_color_scheme": "scheme-3",
+        "section_color_scheme": "scheme-2",
         "container_width": false,
         "heading": "Shop the Feed",
         "subheading": "",
