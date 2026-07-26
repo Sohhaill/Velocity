@@ -231,13 +231,18 @@
         "feed_item_FbKbf7": {
           "type": "feed_item",
           "settings": {
+            "image": "shopify://shop_images/MAGUIRE-MAY218085-web.webp",
             "products": []
           }
         },
         "feed_item_UFgm8g": {
           "type": "feed_item",
           "settings": {
-            "products": []
+            "video": "shopify://files/videos/b7763137afc846f68fea61896fc77b5c.HD-1080p-7.2Mbps-83877115.mp4",
+            "products": [
+              "the-3p-fulfilled-snowboard",
+              "the-collection-snowboard-hydrogen"
+            ]
           }
         },
         "feed_item_HdBwBT": {
