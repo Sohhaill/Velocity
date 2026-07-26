@@ -470,393 +470,192 @@
     ]
   },
   {
-    "name": "t:general.colors",
-    "settings": [
-      {
-        "type": "header",
-        "content": "t:colors.scheme_1"
-      },
-      {
-        "type": "color",
-        "id": "scheme_1_background_color",
-        "default": "#FFFFFF",
-        "label": "t:labels.background"
-      },
-      {
-        "type": "color",
-        "id": "scheme_1_heading_color",
-        "default": "#111111",
-        "label": "t:labels.heading"
-      },
-      {
-        "type": "color",
-        "id": "scheme_1_subheading_color",
-        "default": "#6B7280",
-        "label": "t:labels.subheading"
-      },
-      {
-        "type": "color",
-        "id": "scheme_1_body_color",
-        "default": "#111111",
-        "label": "t:labels.body"
-      },
-      {
-        "type": "header",
-        "content": "t:colors.filled_button"
-      },
-      {
-        "type": "color",
-        "id": "scheme_1_button_background_color",
-        "default": "#111111",
-        "label": "t:labels.filled_button_background"
-      },
-      {
-        "type": "color",
-        "id": "scheme_1_button_text_color",
-        "default": "#FFFFFF",
-        "label": "t:labels.filled_button_text"
-      },
-      {
-        "type": "color",
-        "id": "scheme_1_button_hover_background_color",
-        "default": "#333333",
-        "label": "t:labels.filled_button_hover_background"
-      },
-      {
-        "type": "color",
-        "id": "scheme_1_button_hover_text_color",
-        "default": "#FFFFFF",
-        "label": "t:labels.filled_button_hover_text"
-      },
-      {
-        "type": "header",
-        "content": "t:colors.outline_button"
-      },
-      {
-        "type": "color",
-        "id": "scheme_1_outline_button_border_color",
-        "default": "#111111",
-        "label": "t:labels.outline_button_border"
-      },
-      {
-        "type": "color",
-        "id": "scheme_1_outline_button_text_color",
-        "default": "#111111",
-        "label": "t:labels.outline_button_text"
-      },
-      {
-        "type": "color",
-        "id": "scheme_1_outline_button_hover_border_color",
-        "default": "#333333",
-        "label": "t:labels.outline_button_hover_border"
-      },
-      {
-        "type": "color",
-        "id": "scheme_1_outline_button_hover_text_color",
-        "default": "#333333",
-        "label": "t:labels.outline_button_hover_text"
-      },
-      {
-        "type": "color",
-        "id": "scheme_1_input_text_color",
-        "default": "#111111",
-        "label": "t:labels.input_text"
-      },
-      {
-        "type": "color",
-        "id": "scheme_1_input_background_color",
-        "default": "#F3F4F6",
-        "label": "t:labels.input_background"
-      },
-      {
-        "type": "header",
-        "content": "t:colors.scheme_2"
-      },
-      {
-        "type": "color",
-        "id": "scheme_2_background_color",
-        "default": "#111111",
-        "label": "t:labels.background"
-      },
-      {
-        "type": "color",
-        "id": "scheme_2_heading_color",
-        "default": "#FFFFFF",
-        "label": "t:labels.heading"
-      },
-      {
-        "type": "color",
-        "id": "scheme_2_subheading_color",
-        "default": "#D1D5DB",
-        "label": "t:labels.subheading"
-      },
-      {
-        "type": "color",
-        "id": "scheme_2_body_color",
-        "default": "#FFFFFF",
-        "label": "t:labels.body"
-      },
-      {
-        "type": "header",
-        "content": "t:colors.filled_button"
-      },
-      {
-        "type": "color",
-        "id": "scheme_2_button_background_color",
-        "default": "#FFFFFF",
-        "label": "t:labels.filled_button_background"
-      },
-      {
-        "type": "color",
-        "id": "scheme_2_button_text_color",
-        "default": "#111111",
-        "label": "t:labels.filled_button_text"
-      },
-      {
-        "type": "color",
-        "id": "scheme_2_button_hover_background_color",
-        "default": "#E5E7EB",
-        "label": "t:labels.filled_button_hover_background"
-      },
-      {
-        "type": "color",
-        "id": "scheme_2_button_hover_text_color",
-        "default": "#111111",
-        "label": "t:labels.filled_button_hover_text"
-      },
-      {
-        "type": "header",
-        "content": "t:colors.outline_button"
-      },
-      {
-        "type": "color",
-        "id": "scheme_2_outline_button_border_color",
-        "default": "#FFFFFF",
-        "label": "t:labels.outline_button_border"
-      },
-      {
-        "type": "color",
-        "id": "scheme_2_outline_button_text_color",
-        "default": "#FFFFFF",
-        "label": "t:labels.outline_button_text"
-      },
-      {
-        "type": "color",
-        "id": "scheme_2_outline_button_hover_border_color",
-        "default": "#E5E7EB",
-        "label": "t:labels.outline_button_hover_border"
-      },
-      {
-        "type": "color",
-        "id": "scheme_2_outline_button_hover_text_color",
-        "default": "#E5E7EB",
-        "label": "t:labels.outline_button_hover_text"
-      },
-      {
-        "type": "color",
-        "id": "scheme_2_input_text_color",
-        "default": "#FFFFFF",
-        "label": "t:labels.input_text"
-      },
-      
-      {
-        "type": "color",
-        "id": "scheme_2_input_background_color",
-        "default": "#1F2937",
-        "label": "t:labels.input_background"
-      },
-      {
-        "type": "header",
-        "content": "t:colors.scheme_3"
-      },
-      {
-        "type": "color",
-        "id": "scheme_3_background_color",
-        "default": "#F5F4F4",
-        "label": "t:labels.background"
-      },
-      {
-        "type": "color",
-        "id": "scheme_3_heading_color",
-        "default": "#111111",
-        "label": "t:labels.heading"
-      },
-      {
-        "type": "color",
-        "id": "scheme_3_subheading_color",
-        "default": "#6B7280",
-        "label": "t:labels.subheading"
-      },
-      {
-        "type": "color",
-        "id": "scheme_3_body_color",
-        "default": "#111111",
-        "label": "t:labels.body"
-      },
-      {
-        "type": "header",
-        "content": "t:colors.filled_button"
-      },
-      {
-        "type": "color",
-        "id": "scheme_3_button_background_color",
-        "default": "#111111",
-        "label": "t:labels.filled_button_background"
-      },
-      {
-        "type": "color",
-        "id": "scheme_3_button_text_color",
-        "default": "#FFFFFF",
-        "label": "t:labels.filled_button_text"
-      },
-      {
-        "type": "color",
-        "id": "scheme_3_button_hover_background_color",
-        "default": "#333333",
-        "label": "t:labels.filled_button_hover_background"
-      },
-      {
-        "type": "color",
-        "id": "scheme_3_button_hover_text_color",
-        "default": "#FFFFFF",
-        "label": "t:labels.filled_button_hover_text"
-      },
-      {
-        "type": "header",
-        "content": "t:colors.outline_button"
-      },
-      {
-        "type": "color",
-        "id": "scheme_3_outline_button_border_color",
-        "default": "#111111",
-        "label": "t:labels.outline_button_border"
-      },
-      {
-        "type": "color",
-        "id": "scheme_3_outline_button_text_color",
-        "default": "#111111",
-        "label": "t:labels.outline_button_text"
-      },
-      {
-        "type": "color",
-        "id": "scheme_3_outline_button_hover_border_color",
-        "default": "#333333",
-        "label": "t:labels.outline_button_hover_border"
-      },
-      {
-        "type": "color",
-        "id": "scheme_3_outline_button_hover_text_color",
-        "default": "#333333",
-        "label": "t:labels.outline_button_hover_text"
-      },
-      {
-        "type": "color",
-        "id": "scheme_3_input_text_color",
-        "default": "#111111",
-        "label": "t:labels.input_text"
-      },
-      {
-        "type": "color",
-        "id": "scheme_3_input_background_color",
-        "default": "#F3F4F6",
-        "label": "t:labels.input_background"
-      },
-      {
-        "type": "header",
-        "content": "t:colors.scheme_4"
-      },
-      {
-        "type": "color",
-        "id": "scheme_4_background_color",
-        "default": "#111111",
-        "label": "t:labels.background"
-      },
-      {
-        "type": "color",
-        "id": "scheme_4_heading_color",
-        "default": "#FFFFFF",
-        "label": "t:labels.heading"
-      },
-      {
-        "type": "color",
-        "id": "scheme_4_subheading_color",
-        "default": "#D1D5DB",
-        "label": "t:labels.subheading"
-      },
-      {
-        "type": "color",
-        "id": "scheme_4_body_color",
-        "default": "#FFFFFF",
-        "label": "t:labels.body"
-      },
-      {
-        "type": "header",
-        "content": "t:colors.filled_button"
-      },
-      {
-        "type": "color",
-        "id": "scheme_4_button_background_color",
-        "default": "#FFFFFF",
-        "label": "t:labels.filled_button_background"
-      },
-      {
-        "type": "color",
-        "id": "scheme_4_button_text_color",
-        "default": "#111111",
-        "label": "t:labels.filled_button_text"
-      },
-      {
-        "type": "color",
-        "id": "scheme_4_button_hover_background_color",
-        "default": "#E5E7EB",
-        "label": "t:labels.filled_button_hover_background"
-      },
-      {
-        "type": "color",
-        "id": "scheme_4_button_hover_text_color",
-        "default": "#111111",
-        "label": "t:labels.filled_button_hover_text"
-      },
-      {
-        "type": "header",
-        "content": "t:colors.outline_button"
-      },
-      {
-        "type": "color",
-        "id": "scheme_4_outline_button_border_color",
-        "default": "#FFFFFF",
-        "label": "t:labels.outline_button_border"
-      },
-      {
-        "type": "color",
-        "id": "scheme_4_outline_button_text_color",
-        "default": "#FFFFFF",
-        "label": "t:labels.outline_button_text"
-      },
-      {
-        "type": "color",
-        "id": "scheme_4_outline_button_hover_border_color",
-        "default": "#E5E7EB",
-        "label": "t:labels.outline_button_hover_border"
-      },
-      {
-        "type": "color",
-        "id": "scheme_4_outline_button_hover_text_color",
-        "default": "#E5E7EB",
-        "label": "t:labels.outline_button_hover_text"
-      },
-      {
-        "type": "color",
-        "id": "scheme_4_input_text_color",
-        "default": "#FFFFFF",
-        "label": "t:labels.input_text"
-      },
-      {
-        "type": "color",
-        "id": "scheme_4_input_background_color",
-        "default": "#1F2937",
-        "label": "t:labels.input_background"
-      }
-    ]
-  }
+  "name": "t:general.colors",
+  "settings": [
+    {
+      "type": "color_scheme_group",
+      "id": "color_schemes",
+      "definition": [
+        {
+          "type": "color",
+          "id": "background",
+          "label": "t:labels.background",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "color",
+          "id": "heading",
+          "label": "t:labels.heading",
+          "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "subheading",
+          "label": "t:labels.subheading",
+          "default": "#6B7280"
+        },
+        {
+          "type": "color",
+          "id": "body",
+          "label": "t:labels.body",
+          "default": "#111111"
+        },
+        {
+          "type": "header",
+          "content": "t:colors.filled_button"
+        },
+        {
+          "type": "color",
+          "id": "button_background",
+          "label": "t:labels.filled_button_background",
+          "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "button_text",
+          "label": "t:labels.filled_button_text",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "color",
+          "id": "button_hover_background",
+          "label": "t:labels.filled_button_hover_background",
+          "default": "#333333"
+        },
+        {
+          "type": "color",
+          "id": "button_hover_text",
+          "label": "t:labels.filled_button_hover_text",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "header",
+          "content": "t:colors.outline_button"
+        },
+        {
+          "type": "color",
+          "id": "outline_button_border",
+          "label": "t:labels.outline_button_border",
+          "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "outline_button_text",
+          "label": "t:labels.outline_button_text",
+          "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "outline_button_hover_border",
+          "label": "t:labels.outline_button_hover_border",
+          "default": "#333333"
+        },
+        {
+          "type": "color",
+          "id": "outline_button_hover_text",
+          "label": "t:labels.outline_button_hover_text",
+          "default": "#333333"
+        },
+        {
+          "type": "color",
+          "id": "input_text",
+          "label": "t:labels.input_text",
+          "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "input_background",
+          "label": "t:labels.input_background",
+          "default": "#F3F4F6"
+        }
+      ],
+      "role": {
+        "text": "heading",
+        "background": "background",
+        "primary_button": "button_background",
+        "on_primary_button": "button_text",
+        "secondary_button": "outline_button_border",
+        "on_secondary_button": "outline_button_text"
+      },
+      "default": [
+        {
+          "id": "scheme-1",
+          "settings": {
+            "background": "#FFFFFF",
+            "heading": "#111111",
+            "subheading": "#6B7280",
+            "body": "#111111",
+            "button_background": "#111111",
+            "button_text": "#FFFFFF",
+            "button_hover_background": "#333333",
+            "button_hover_text": "#FFFFFF",
+            "outline_button_border": "#111111",
+            "outline_button_text": "#111111",
+            "outline_button_hover_border": "#333333",
+            "outline_button_hover_text": "#333333",
+            "input_text": "#111111",
+            "input_background": "#F3F4F6"
+          }
+        },
+        {
+          "id": "scheme-2",
+          "settings": {
+            "background": "#111111",
+            "heading": "#FFFFFF",
+            "subheading": "#D1D5DB",
+            "body": "#FFFFFF",
+            "button_background": "#FFFFFF",
+            "button_text": "#111111",
+            "button_hover_background": "#E5E7EB",
+            "button_hover_text": "#111111",
+            "outline_button_border": "#FFFFFF",
+            "outline_button_text": "#FFFFFF",
+            "outline_button_hover_border": "#E5E7EB",
+            "outline_button_hover_text": "#E5E7EB",
+            "input_text": "#FFFFFF",
+            "input_background": "#1F2937"
+          }
+        },
+        {
+          "id": "scheme-3",
+          "settings": {
+            "background": "#F5F4F4",
+            "heading": "#111111",
+            "subheading": "#6B7280",
+            "body": "#111111",
+            "button_background": "#111111",
+            "button_text": "#FFFFFF",
+            "button_hover_background": "#333333",
+            "button_hover_text": "#FFFFFF",
+            "outline_button_border": "#111111",
+            "outline_button_text": "#111111",
+            "outline_button_hover_border": "#333333",
+            "outline_button_hover_text": "#333333",
+            "input_text": "#111111",
+            "input_background": "#F3F4F6"
+          }
+        },
+        {
+          "id": "scheme-4",
+          "settings": {
+            "background": "#111111",
+            "heading": "#FFFFFF",
+            "subheading": "#D1D5DB",
+            "body": "#FFFFFF",
+            "button_background": "#FFFFFF",
+            "button_text": "#111111",
+            "button_hover_background": "#E5E7EB",
+            "button_hover_text": "#111111",
+            "outline_button_border": "#FFFFFF",
+            "outline_button_text": "#FFFFFF",
+            "outline_button_hover_border": "#E5E7EB",
+            "outline_button_hover_text": "#E5E7EB",
+            "input_text": "#FFFFFF",
+            "input_background": "#1F2937"
+          }
+        }
+      ]
+    }
+  ]
+}
 ]
