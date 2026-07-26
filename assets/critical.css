@@ -230,7 +230,7 @@ select,
   box-sizing: border-box;
   margin: auto;
 }
-.section-color-scheme--scheme_1 {
+.section-color-scheme--scheme-1 {
   --color-background: var(--scheme1-background);
   --color-foreground: var(--scheme1-body);
   --color-heading: var(--scheme1-heading);
@@ -250,7 +250,7 @@ select,
   color: var(--color-foreground);
 }
 
-.section-color-scheme--scheme_2 {
+.section-color-scheme--scheme-2 {
   --color-background: var(--scheme2-background);
   --color-foreground: var(--scheme2-body);
   --color-heading: var(--scheme2-heading);
@@ -269,7 +269,7 @@ select,
   background-color: var(--color-background);
   color: var(--color-foreground);
 }
-.section-color-scheme--scheme_3 {
+.section-color-scheme--scheme-3 {
   --color-background: var(--scheme3-background);
   --color-foreground: var(--scheme3-body);
   --color-heading: var(--scheme3-heading);
@@ -289,7 +289,7 @@ select,
   color: var(--color-foreground);
 }
 
-.section-color-scheme--scheme_4 {
+.section-color-scheme--scheme-4 {
   --color-background: var(--scheme4-background);
   --color-foreground: var(--scheme4-body);
   --color-heading: var(--scheme4-heading);
