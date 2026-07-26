@@ -248,7 +248,10 @@
         "feed_item_HdBwBT": {
           "type": "feed_item",
           "settings": {
-            "products": []
+            "image": "shopify://shop_images/ChatGPTImageJun20_2026_09_58_56PM_1.webp",
+            "products": [
+              "the-inventory-not-tracked-snowboard"
+            ]
           }
         },
         "feed_item_tiazyX": {
