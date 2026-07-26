@@ -67,7 +67,7 @@
       "type": "logo-text",
       "name": "Text Logo",
       "settings": {
-        "section_color_scheme": "scheme_4",
+        "section_color_scheme": "scheme-4",
         "text": "Velocity",
         "font_family": "bungee_n4",
         "font_size_desktop": 200,
