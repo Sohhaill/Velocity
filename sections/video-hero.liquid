@@ -62,7 +62,7 @@
 {% endif %}
 
 <div
-  class="v-video section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}"
+  class="v-video section-color-scheme--{{ section.settings.section_color_scheme.id }}"
   id="v-video-{{ section.id }}"
   data-v-video-hero
   data-autoplay="{{ section.settings.enable_autoplay }}"

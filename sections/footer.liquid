@@ -12,7 +12,7 @@
 %}
 
 <footer
-  class="footer footer-{{ section.id }} section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }} "
+  class="footer footer-{{ section.id }} section-color-scheme--{{ section.settings.section_color_scheme.id }} "
 >
   <div class="footer__top {{ footer_width_class }}">
     <div class="footer__brand-column">

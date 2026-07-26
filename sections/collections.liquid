@@ -5,7 +5,7 @@
   https://shopify.dev/docs/storefronts/themes/architecture/templates/collection
 {% endcomment %}
 
-<div class="section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}">
+<div class="section-color-scheme--{{ section.settings.section_color_scheme.id }}">
   <h1>{{ 'collections.title' | t }}</h1>
 
   <div

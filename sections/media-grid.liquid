@@ -16,7 +16,7 @@
 {%- endstyle -%}
 
 <div
-  class="v-mediagrid section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}{% if section.settings.container_width %} container-width{% endif %}"
+  class="v-mediagrid section-color-scheme--{{ section.settings.section_color_scheme.id }}{% if section.settings.container_width %} container-width{% endif %}"
   id="v-mediagrid-{{ section.id }}"
   data-v-mediagrid
 >

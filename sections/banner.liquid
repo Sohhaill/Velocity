@@ -14,7 +14,7 @@
 {% endcapture %}
 
 <div
-  class="v-banner section-color-scheme--{{ section.settings.section_color_scheme | default: 'scheme_1' }}"
+  class="v-banner section-color-scheme--{{ section.settings.section_color_scheme.id }}"
   id="v-banner-{{ section.id }}"
   data-v-banner
   data-transparent-target
