@@ -108,7 +108,8 @@
     </div>
 
     <div class="v-insta__nav-container">
-      {%- for dir in 'prev,next' | split: ',' -%}
+      {% assign nav_directions = 'prev,next' | split: ',' %}
+      {%- for dir in nav_directions -%}
         {% assign nav_icon = 'icon-chevron-left.svg' %}
         {% if dir == 'next' %}
           {% assign nav_icon = 'icon-chevron-right.svg' %}
