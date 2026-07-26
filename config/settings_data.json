@@ -50,39 +50,80 @@
     "footer_payment_icon_6": "shopify://shop_images/download.png",
     "footer_payment_icon_7": "shopify://shop_images/download_96c0baa4-7973-460d-a109-8642100a6dad.webp",
     "footer_payment_icon_8": "shopify://shop_images/download_fd7bb283-f532-430c-9dfc-63579293b38e.webp",
-    "scheme_1_background_color": "#F5F4F4",
-    "scheme_1_button_background_color": "#FFD900",
-    "scheme_1_button_text_color": "#000000",
-    "scheme_1_button_hover_background_color": "#FFFFFF",
-    "scheme_1_button_hover_text_color": "#000000",
-    "scheme_1_input_text_color": "#FFFFFF",
-    "scheme_1_input_background_color": "#000000",
-    "scheme_2_background_color": "#000000",
-    "scheme_2_heading_color": "#FFFFFF",
-    "scheme_2_subheading_color": "#FFFFFF",
-    "scheme_2_body_color": "#FFFFFF",
-    "scheme_2_button_background_color": "#00E5FF",
-    "scheme_2_button_text_color": "#FFFFFF",
-    "scheme_3_background_color": "#F2FF00",
-    "scheme_3_heading_color": "#000000",
-    "scheme_3_subheading_color": "#000000",
-    "scheme_3_body_color": "#000000",
-    "scheme_3_button_background_color": "#000000",
-    "scheme_3_button_text_color": "#FFFFFF",
-    "scheme_3_button_hover_background_color": "#FFFFFF",
-    "scheme_3_button_hover_text_color": "#000000",
-    "scheme_3_outline_button_border_color": "#FFFFFF",
-    "scheme_3_outline_button_text_color": "#FFFFFF",
-    "scheme_3_outline_button_hover_border_color": "#FFFFFF",
-    "scheme_3_outline_button_hover_text_color": "#FFFFFF",
-    "scheme_3_input_text_color": "#FFFFFF",
-    "scheme_3_input_background_color": "#000000",
-    "scheme_4_background_color": "#000000",
-    "scheme_4_heading_color": "#FFFFFF",
-    "scheme_4_subheading_color": "#FFFFFF",
-    "scheme_4_body_color": "#FFFFFF",
-    "scheme_4_button_background_color": "#00E5FF",
-    "scheme_4_button_text_color": "#FFFFFF",
+    "color_schemes": {
+      "scheme-1": {
+        "settings": {
+          "background": "#F5F4F4",
+          "heading": "#111111",
+          "subheading": "#6B7280",
+          "body": "#111111",
+          "button_background": "#FFD900",
+          "button_text": "#000000",
+          "button_hover_background": "#FFFFFF",
+          "button_hover_text": "#000000",
+          "outline_button_border": "#111111",
+          "outline_button_text": "#111111",
+          "outline_button_hover_border": "#333333",
+          "outline_button_hover_text": "#333333",
+          "input_text": "#FFFFFF",
+          "input_background": "#000000"
+        }
+      },
+      "scheme-2": {
+        "settings": {
+          "background": "#000000",
+          "heading": "#FFFFFF",
+          "subheading": "#FFFFFF",
+          "body": "#FFFFFF",
+          "button_background": "#00E5FF",
+          "button_text": "#FFFFFF",
+          "button_hover_background": "#E5E7EB",
+          "button_hover_text": "#111111",
+          "outline_button_border": "#FFFFFF",
+          "outline_button_text": "#FFFFFF",
+          "outline_button_hover_border": "#E5E7EB",
+          "outline_button_hover_text": "#E5E7EB",
+          "input_text": "#FFFFFF",
+          "input_background": "#1F2937"
+        }
+      },
+      "scheme-3": {
+        "settings": {
+          "background": "#F2FF00",
+          "heading": "#000000",
+          "subheading": "#000000",
+          "body": "#000000",
+          "button_background": "#000000",
+          "button_text": "#FFFFFF",
+          "button_hover_background": "#FFFFFF",
+          "button_hover_text": "#000000",
+          "outline_button_border": "#FFFFFF",
+          "outline_button_text": "#FFFFFF",
+          "outline_button_hover_border": "#FFFFFF",
+          "outline_button_hover_text": "#FFFFFF",
+          "input_text": "#FFFFFF",
+          "input_background": "#000000"
+        }
+      },
+      "scheme-4": {
+        "settings": {
+          "background": "#000000",
+          "heading": "#FFFFFF",
+          "subheading": "#FFFFFF",
+          "body": "#FFFFFF",
+          "button_background": "#00E5FF",
+          "button_text": "#FFFFFF",
+          "button_hover_background": "#E5E7EB",
+          "button_hover_text": "#111111",
+          "outline_button_border": "#FFFFFF",
+          "outline_button_text": "#FFFFFF",
+          "outline_button_hover_border": "#E5E7EB",
+          "outline_button_hover_text": "#E5E7EB",
+          "input_text": "#FFFFFF",
+          "input_background": "#1F2937"
+        }
+      }
+    },
     "content_for_index": []
   }
 }
