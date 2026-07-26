@@ -73,7 +73,7 @@
             "overlay_opacity": 30,
             "content_position_desktop": "center_center",
             "content_position_mobile": "center_center",
-            "content_in_container": true,
+            "content_in_container": false,
             "content_alignment": "center",
             "text_color": "light",
             "subheading": "Subheading",
@@ -98,11 +98,11 @@
         "slide_tg9Qdy": {
           "type": "slide",
           "settings": {
-            "video_desktop": "shopify://files/videos/e7c24e5e1e2c4b5bb5d7fd2461bb6baa.SD-480p-1.5Mbps-81313404.mp4",
+            "video_desktop": "shopify://files/videos/b7763137afc846f68fea61896fc77b5c.HD-1080p-7.2Mbps-83877115.mp4",
             "overlay_opacity": 25,
             "content_position_desktop": "center_center",
             "content_position_mobile": "center_center",
-            "content_in_container": true,
+            "content_in_container": false,
             "content_alignment": "center",
             "text_color": "light",
             "subheading": "Subheading",
@@ -203,7 +203,7 @@
       "name": "Video hero",
       "settings": {
         "section_color_scheme": "scheme_2",
-        "full_width": false,
+        "full_width": true,
         "height_desktop": 700,
         "height_mobile": 450,
         "overlay_opacity": 0,
