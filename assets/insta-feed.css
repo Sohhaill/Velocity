@@ -160,7 +160,9 @@
   font-weight: 600;
   transform: translateY(100%);
   opacity: 0;
-  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.4s ease;
+  transition:
+    transform 0.4s cubic-bezier(0.65, 0, 0.35, 1),
+    opacity 0.4s ease;
 }
 
 .v-insta__item:hover .v-insta__shop-btn,
@@ -216,18 +218,23 @@
   position: fixed;
   inset: 0;
   z-index: 999;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.35s ease, visibility 0s linear 0.35s;
+  transition:
+    opacity 0.35s ease,
+    visibility 0s linear 0.35s;
 }
 
 .v-insta__popup.is-active {
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.35s ease, visibility 0s linear 0s;
+  transition:
+    opacity 0.35s ease,
+    visibility 0s linear 0s;
 }
 
 .v-insta__popup-overlay {

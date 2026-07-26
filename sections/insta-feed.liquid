@@ -185,7 +185,7 @@
                   {%- endif -%}
                 </div>
                 {%- if section.settings.follow_button_label != blank -%}
-                  
+                  <a
                     href="{{ section.settings.profile_url | default: '#' }}"
                     class="button v-insta__popup-follow {% if section.settings.follow_button_style == 'outline' %}button--outline{% else %}button--filled{% endif %}"
                   >
