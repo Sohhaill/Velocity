@@ -261,7 +261,7 @@
       ],
       "name": "Insta feed",
       "settings": {
-        "section_color_scheme": "",
+        "section_color_scheme": "scheme-3",
         "container_width": false,
         "heading": "Shop the Feed",
         "subheading": "",
