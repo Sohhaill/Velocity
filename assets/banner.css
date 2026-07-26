@@ -127,7 +127,10 @@ span.v-banner__featured-price {
   justify-content: var(--v-banner-content-justify, center);
 }
 
-
+.v-banner.allow-transparent-header {
+  margin-top: calc(-1 * var(--header-height, 90px));
+  transition: all 0.35s ease;
+}
 /* PAGINATION WRAP */
 .v-banner__pagination-wrap {
   position: absolute;
