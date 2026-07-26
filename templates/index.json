@@ -224,12 +224,70 @@
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0
       }
+    },
+    "insta_feed_EAQWeE": {
+      "type": "insta-feed",
+      "blocks": {
+        "feed_item_FbKbf7": {
+          "type": "feed_item",
+          "settings": {
+            "products": []
+          }
+        },
+        "feed_item_UFgm8g": {
+          "type": "feed_item",
+          "settings": {
+            "products": []
+          }
+        },
+        "feed_item_HdBwBT": {
+          "type": "feed_item",
+          "settings": {
+            "products": []
+          }
+        },
+        "feed_item_tiazyX": {
+          "type": "feed_item",
+          "settings": {
+            "products": []
+          }
+        }
+      },
+      "block_order": [
+        "feed_item_FbKbf7",
+        "feed_item_UFgm8g",
+        "feed_item_HdBwBT",
+        "feed_item_tiazyX"
+      ],
+      "name": "Insta feed",
+      "settings": {
+        "section_color_scheme": "scheme-3",
+        "container_width": false,
+        "heading": "Shop the Feed",
+        "subheading": "",
+        "profile_name": "@Harmony",
+        "profile_tagline": "",
+        "profile_url": "",
+        "follow_button_label": "Follow",
+        "follow_button_style": "outline",
+        "shop_button_label": "Shop the Look",
+        "slides_per_view_desktop": 4,
+        "slides_per_view_mobile": 1.2,
+        "gap_desktop": 20,
+        "gap_mobile": 12,
+        "aspect_ratio": "3_4",
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 60,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
+      }
     }
   },
   "order": [
     "banner_dUTX7b",
     "video_hero_aLhMGN",
     "scrolling_animation_E9jqjc",
-    "media_grid_VhVGUE"
+    "media_grid_VhVGUE",
+    "insta_feed_EAQWeE"
   ]
 }
