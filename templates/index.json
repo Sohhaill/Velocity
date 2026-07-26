@@ -257,7 +257,12 @@
         "feed_item_tiazyX": {
           "type": "feed_item",
           "settings": {
-            "products": []
+            "video": "shopify://files/videos/e7c24e5e1e2c4b5bb5d7fd2461bb6baa.SD-480p-1.5Mbps-81313404.mp4",
+            "products": [
+              "the-collection-snowboard-oxygen",
+              "the-compare-at-price-snowboard",
+              "the-complete-snowboard"
+            ]
           }
         }
       },
