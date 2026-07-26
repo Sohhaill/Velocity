@@ -9,6 +9,30 @@
  */
 {
   "sections": {
+    "video_hero_aLhMGN": {
+      "type": "video-hero",
+      "name": "Video hero",
+      "settings": {
+        "section_color_scheme": "scheme-4",
+        "full_width": true,
+        "height_desktop": 700,
+        "height_mobile": 450,
+        "overlay_opacity": 0,
+        "video_desktop": "shopify://files/videos/b7763137afc846f68fea61896fc77b5c.HD-1080p-7.2Mbps-83877115.mp4",
+        "enable_autoplay": true,
+        "content_position_desktop": "top_left",
+        "content_position_mobile": "center_center",
+        "content_alignment": "center",
+        "text_color": "light",
+        "subheading": "sdf",
+        "heading": "Video heading",
+        "heading_tag": "h1",
+        "description": "<p>asd</p>",
+        "button_label": "ad",
+        "button_link": "#",
+        "button_style": "filled"
+      }
+    },
     "banner_dUTX7b": {
       "type": "banner",
       "blocks": {
@@ -144,30 +168,6 @@
         "padding_bottom_mobile": 12
       }
     },
-    "video_hero_aLhMGN": {
-      "type": "video-hero",
-      "name": "Video hero",
-      "settings": {
-        "section_color_scheme": "scheme-4",
-        "full_width": true,
-        "height_desktop": 700,
-        "height_mobile": 450,
-        "overlay_opacity": 0,
-        "video_desktop": "shopify://files/videos/b7763137afc846f68fea61896fc77b5c.HD-1080p-7.2Mbps-83877115.mp4",
-        "enable_autoplay": true,
-        "content_position_desktop": "top_left",
-        "content_position_mobile": "center_center",
-        "content_alignment": "center",
-        "text_color": "light",
-        "subheading": "sdf",
-        "heading": "Video heading",
-        "heading_tag": "h1",
-        "description": "<p>asd</p>",
-        "button_label": "ad",
-        "button_link": "#",
-        "button_style": "filled"
-      }
-    },
     "media_grid_VhVGUE": {
       "type": "media-grid",
       "blocks": {
@@ -227,9 +227,9 @@
     }
   },
   "order": [
+    "video_hero_aLhMGN",
     "banner_dUTX7b",
     "scrolling_animation_E9jqjc",
-    "video_hero_aLhMGN",
     "media_grid_VhVGUE"
   ]
 }
