@@ -187,7 +187,7 @@
       ],
       "name": "Scrolling Animation",
       "settings": {
-        "section_color_scheme": "scheme-3",
+        "section_color_scheme": "scheme-2",
         "speed": 10,
         "gap": 32,
         "text_tag": "h3",
