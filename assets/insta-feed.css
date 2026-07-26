@@ -227,7 +227,7 @@
 .v-insta__popup {
   position: fixed;
   inset: 0;
-  z-index: 999;
+  z-index: 9999;
   background: transparent;
   display: flex;
   align-items: center;
@@ -316,15 +316,15 @@
 }
 
 .v-insta__popup-close {
-  width: 34px;
-  height: 34px;
-  border: none;
-  border-radius: 50%;
-  background: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+ width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: unset;
 }
 
 .v-insta__popup-close svg {
