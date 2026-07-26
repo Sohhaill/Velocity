@@ -39,8 +39,8 @@
 
 .v-insta__profile-avatar {
   display: block;
-  width: 44px;
-  height: 44px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
