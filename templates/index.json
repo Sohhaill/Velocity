@@ -232,6 +232,7 @@
           "type": "feed_item",
           "settings": {
             "image": "shopify://shop_images/MAGUIRE-MAY218085-web.webp",
+            "overlay_opacity": 55,
             "products": []
           }
         },
@@ -239,6 +240,7 @@
           "type": "feed_item",
           "settings": {
             "video": "shopify://files/videos/b7763137afc846f68fea61896fc77b5c.HD-1080p-7.2Mbps-83877115.mp4",
+            "overlay_opacity": 0,
             "products": [
               "the-3p-fulfilled-snowboard",
               "the-collection-snowboard-hydrogen"
@@ -249,6 +251,7 @@
           "type": "feed_item",
           "settings": {
             "image": "shopify://shop_images/ChatGPTImageJun20_2026_09_58_56PM_1.webp",
+            "overlay_opacity": 0,
             "products": [
               "the-inventory-not-tracked-snowboard"
             ]
@@ -258,6 +261,7 @@
           "type": "feed_item",
           "settings": {
             "video": "shopify://files/videos/e7c24e5e1e2c4b5bb5d7fd2461bb6baa.SD-480p-1.5Mbps-81313404.mp4",
+            "overlay_opacity": 0,
             "products": [
               "the-collection-snowboard-oxygen",
               "the-compare-at-price-snowboard",
