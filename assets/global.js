@@ -35,6 +35,7 @@ function initInstaFeed() {
     var nextBtn = root.querySelector('.v-insta__nav--next');
 
     var slidesDesktop = parseFloat(root.dataset.slidesDesktop) || 4;
+    var slidesTablet = parseFloat(root.dataset.slidesTablet) || 2.2;
     var slidesMobile = parseFloat(root.dataset.slidesMobile) || 1.2;
     var gapDesktop = parseFloat(root.dataset.gapDesktop) || 20;
     var gapMobile = parseFloat(root.dataset.gapMobile) || 12;
@@ -50,7 +51,8 @@ function initInstaFeed() {
           releaseOnEdges: true
         },
         breakpoints: {
-          750: { slidesPerView: slidesDesktop, spaceBetween: gapDesktop }
+          750: { slidesPerView: slidesTablet, spaceBetween: gapDesktop },
+          990: { slidesPerView: slidesDesktop, spaceBetween: gapDesktop }
         }
       });
     }
