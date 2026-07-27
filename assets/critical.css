@@ -294,7 +294,7 @@ span.v-banner__button-arrow {
 a.mega-menu__submenu-sublink:hover::after,
 .footer__menu-list a:hover::after,
 .footer__bottom-menu a:hover::after {
-  width: 100%;
+  width: calc(100% - 30px);
 }
 
 @media screen and (max-width: 767px) {
