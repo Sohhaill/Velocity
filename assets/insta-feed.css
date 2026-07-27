@@ -26,7 +26,6 @@
   margin: 0 0 8px 0;
 }
 
-
 .v-insta__profile {
   display: flex;
   align-items: center;
@@ -157,20 +156,12 @@
   display: block;
 }
 
-/* SHOP BUTTON — slides up on hover */
 .v-insta__shop-btn {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
   z-index: 4;
   width: 100%;
   border: none;
   border-radius: 0;
-  padding: 14px;
   cursor: pointer;
-  background: #ffffff;
-  color: #111111;
   font-weight: 600;
   transform: translateY(100%);
   opacity: 0;
