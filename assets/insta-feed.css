@@ -329,7 +329,7 @@
   padding: unset;
 }
 .v-insta__popup-close:hover{
-  color: curr
+  color: currentColor;
 }
 .v-insta__popup-products {
   display: flex;
