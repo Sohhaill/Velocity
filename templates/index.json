@@ -87,7 +87,7 @@
       "type": "video-hero",
       "name": "Video hero",
       "settings": {
-        "section_color_scheme": "scheme-4",
+        "section_color_scheme": "scheme-3",
         "full_width": true,
         "height_desktop": 700,
         "height_mobile": 450,
