@@ -23,7 +23,7 @@
     "font_size_mobile_button": 13,
     "font_size_mobile_input": 13,
     "font_size_mobile_field": 13,
-    "button_corner_radius": 70,
+    "button_corner_radius": 0,
     "input_corner_radius": 33,
     "container_max_width": 1420,
     "container_margin": 16,
@@ -50,80 +50,80 @@
     "footer_payment_icon_6": "shopify://shop_images/download.png",
     "footer_payment_icon_7": "shopify://shop_images/download_96c0baa4-7973-460d-a109-8642100a6dad.webp",
     "footer_payment_icon_8": "shopify://shop_images/download_fd7bb283-f532-430c-9dfc-63579293b38e.webp",
+    "content_for_index": [],
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#F5F4F4",
+          "background": "#f5f4f4",
           "heading": "#111111",
-          "subheading": "#6B7280",
+          "subheading": "#6b7280",
           "body": "#111111",
-          "button_background": "#FFD900",
+          "button_background": "#ffd900",
           "button_text": "#000000",
-          "button_hover_background": "#FFFFFF",
+          "button_hover_background": "#ffffff",
           "button_hover_text": "#000000",
           "outline_button_border": "#111111",
           "outline_button_text": "#111111",
           "outline_button_hover_border": "#333333",
           "outline_button_hover_text": "#333333",
-          "input_text": "#FFFFFF",
+          "input_text": "#ffffff",
           "input_background": "#000000"
         }
       },
       "scheme-2": {
         "settings": {
           "background": "#000000",
-          "heading": "#FFFFFF",
-          "subheading": "#FFFFFF",
-          "body": "#FFFFFF",
-          "button_background": "#00E5FF",
-          "button_text": "#FFFFFF",
-          "button_hover_background": "#E5E7EB",
+          "heading": "#ffffff",
+          "subheading": "#ffffff",
+          "body": "#ffffff",
+          "button_background": "#00e5ff",
+          "button_text": "#ffffff",
+          "button_hover_background": "#e5e7eb",
           "button_hover_text": "#111111",
-          "outline_button_border": "#FFFFFF",
-          "outline_button_text": "#FFFFFF",
-          "outline_button_hover_border": "#E5E7EB",
-          "outline_button_hover_text": "#E5E7EB",
-          "input_text": "#FFFFFF",
-          "input_background": "#1F2937"
+          "outline_button_border": "#ffffff",
+          "outline_button_text": "#ffffff",
+          "outline_button_hover_border": "#e5e7eb",
+          "outline_button_hover_text": "#e5e7eb",
+          "input_text": "#ffffff",
+          "input_background": "#1f2937"
         }
       },
       "scheme-3": {
         "settings": {
-          "background": "#F2FF00",
+          "background": "#f2ff00",
           "heading": "#000000",
           "subheading": "#000000",
           "body": "#000000",
           "button_background": "#000000",
-          "button_text": "#FFFFFF",
-          "button_hover_background": "#FFFFFF",
+          "button_text": "#ffffff",
+          "button_hover_background": "#ffffff",
           "button_hover_text": "#000000",
-          "outline_button_border": "#FFFFFF",
-          "outline_button_text": "#FFFFFF",
-          "outline_button_hover_border": "#FFFFFF",
-          "outline_button_hover_text": "#FFFFFF",
-          "input_text": "#FFFFFF",
+          "outline_button_border": "#ffffff",
+          "outline_button_text": "#ffffff",
+          "outline_button_hover_border": "#ffffff",
+          "outline_button_hover_text": "#ffffff",
+          "input_text": "#ffffff",
           "input_background": "#000000"
         }
       },
       "scheme-4": {
         "settings": {
           "background": "#000000",
-          "heading": "#FFFFFF",
-          "subheading": "#FFFFFF",
-          "body": "#FFFFFF",
-          "button_background": "#00E5FF",
-          "button_text": "#FFFFFF",
-          "button_hover_background": "#E5E7EB",
+          "heading": "#ffffff",
+          "subheading": "#ffffff",
+          "body": "#ffffff",
+          "button_background": "#00e5ff",
+          "button_text": "#ffffff",
+          "button_hover_background": "#e5e7eb",
           "button_hover_text": "#111111",
-          "outline_button_border": "#FFFFFF",
-          "outline_button_text": "#FFFFFF",
-          "outline_button_hover_border": "#E5E7EB",
-          "outline_button_hover_text": "#E5E7EB",
-          "input_text": "#FFFFFF",
-          "input_background": "#1F2937"
+          "outline_button_border": "#ffffff",
+          "outline_button_text": "#ffffff",
+          "outline_button_hover_border": "#e5e7eb",
+          "outline_button_hover_text": "#e5e7eb",
+          "input_text": "#ffffff",
+          "input_background": "#1f2937"
         }
       }
-    },
-    "content_for_index": []
+    }
   }
 }
