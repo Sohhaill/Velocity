@@ -146,11 +146,7 @@
   transition: background 0.35s ease;
 }
 
-.v-video__mute-btn:hover,
-.v-video__play-btn:hover {
-  backdrop-filter: blur(50px);
-  color: #fff;
-}
+
 
 .v-video__mute-btn {
   bottom: 16px;
