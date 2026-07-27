@@ -171,7 +171,7 @@ button {
   overflow: hidden;
   z-index: 0;
   isolation: isolate;
-  padding: 0.43rem 2rem;
+  padding: 0.53rem 2rem;
   text-decoration: unset;
   display: flex;
   align-items: center;
