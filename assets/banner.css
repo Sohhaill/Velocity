@@ -358,12 +358,12 @@ span.v-banner__featured-price {
   right: 8px;
   z-index: 2;
   display: flex;
-  gap: 6px;
 }
 
 .v-banner__featured-nav-btn {
   width: 26px;
   height: 26px;
+  background: transparent;
   padding: 0;
   display: flex;
   align-items: center;
