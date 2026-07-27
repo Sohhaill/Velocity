@@ -144,7 +144,7 @@
   transform: translateY(43%);
   transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
 }
-.v-insta__item:hover{
+.v-insta__item:hover {
   .v-insta__thumbs {
     transform: translateY(0);
   }
