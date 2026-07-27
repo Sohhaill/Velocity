@@ -308,7 +308,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
+  
+  border-bottom: 1px solid #ffffff40;
 }
 
 .v-insta__popup-heading {
@@ -326,7 +328,6 @@
   justify-content: center;
   cursor: pointer;
   padding: unset;
-  border-bottom: 1px solid #ffffff40;
 }
 .v-insta__popup-close:hover {
   color: currentColor;
