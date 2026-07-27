@@ -150,7 +150,8 @@ h5 {
 h6 {
   font-size: var(--font-size-h6);
 }
-.v-banner.allow-transparent-header,  .v-video.allow-transparent-header{
+.v-banner.allow-transparent-header,
+.v-video.allow-transparent-header {
   margin-top: calc(-1 * var(--header-height, 90px));
   transition: all 0.35s ease;
 }
@@ -158,7 +159,6 @@ h6 {
 button {
   font-family: var(--font-button--family);
   font-style: normal;
-
   font-size: var(--font-size-button);
   font-weight: var(--font-button--weight);
   background-color: var(--button-background);
@@ -171,7 +171,7 @@ button {
   overflow: hidden;
   z-index: 0;
   isolation: isolate;
-  padding: 0.6rem 2.5rem;
+  padding: 0.43rem 2rem;
   text-decoration: unset;
   display: flex;
   align-items: center;
@@ -240,7 +240,7 @@ select,
   color: var(--button-outline-foreground);
   transition: all 0.35s ease;
   border-radius: var(--button-radius);
-  padding: 0.6rem 2.5rem;
+  padding: 0.43rem 2rem;
   text-decoration: unset;
   display: flex;
   align-items: center;
