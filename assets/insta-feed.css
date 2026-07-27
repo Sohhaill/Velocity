@@ -328,7 +328,9 @@
   cursor: pointer;
   padding: unset;
 }
-
+.v-insta__popup-close:hover{
+  color: curr
+}
 .v-insta__popup-products {
   display: flex;
   flex-direction: column;
