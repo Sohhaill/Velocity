@@ -181,8 +181,10 @@
 
         <div class="v-insta__popup-footer">
           {%- if section.settings.profile_image != blank -%}
-          {{ section.settings.profile_image | image_url: width: 100 | image_tag: loading: 'lazy', class:
-          'v-insta__popup-footer-avatar' }}
+          <div class="v-insta-popup-profile">
+            {{ section.settings.profile_image | image_url: width: 100 | image_tag: loading: 'lazy', class:
+            'v-insta__popup-footer-avatar' }}
+          </div>
           {%- endif -%}
           <div class="v-insta__popup-footer-info">
             {%- if section.settings.profile_name != blank -%}

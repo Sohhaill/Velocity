@@ -52,8 +52,8 @@
   display: block;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid #fff; /* White gap like Instagram */
-  background: #fff;
+  border: 2px solid var(--color-background);
+  background: var(--color-background);
 }
 
 .v-insta__profile-name {
@@ -402,6 +402,8 @@
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
+  border: 2px solid var(--color-background);
+  background: var(--color-background);
 }
 
 .v-insta__popup-footer-info {
