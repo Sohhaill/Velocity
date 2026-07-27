@@ -44,6 +44,11 @@ function initInstaFeed() {
         slidesPerView: slidesMobile,
         spaceBetween: gapMobile,
         navigation: { prevEl: prevBtn, nextEl: nextBtn },
+        mousewheel: {
+          forceToAxis: true,
+          sensitivity: 1,
+          releaseOnEdges: true
+        },
         breakpoints: {
           750: { slidesPerView: slidesDesktop, spaceBetween: gapDesktop }
         }
