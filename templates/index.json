@@ -268,13 +268,26 @@
               "the-complete-snowboard"
             ]
           }
+        },
+        "feed_item_YW7ta6": {
+          "type": "feed_item",
+          "settings": {
+            "video": "shopify://files/videos/e7c24e5e1e2c4b5bb5d7fd2461bb6baa.SD-480p-1.5Mbps-81313404.mp4",
+            "overlay_opacity": 0,
+            "products": [
+              "the-collection-snowboard-oxygen",
+              "the-compare-at-price-snowboard",
+              "the-complete-snowboard"
+            ]
+          }
         }
       },
       "block_order": [
         "feed_item_FbKbf7",
         "feed_item_UFgm8g",
         "feed_item_HdBwBT",
-        "feed_item_tiazyX"
+        "feed_item_tiazyX",
+        "feed_item_YW7ta6"
       ],
       "name": "Insta feed",
       "settings": {
