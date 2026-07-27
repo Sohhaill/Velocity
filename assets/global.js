@@ -69,12 +69,13 @@ function initInstaFeed() {
       if (!target) return;
       target.classList.add('is-active');
       document.body.style.overflow = 'hidden';
+       if (window.lenis) window.lenis.stop();
     }
 
     root.querySelectorAll('[data-insta-open]').forEach(function(btn) {
       btn.addEventListener('click', function() {
         openPopup(btn.dataset.target);
-        if (window.lenis) window.lenis.stop();
+       
       });
     });
 
