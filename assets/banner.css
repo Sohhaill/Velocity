@@ -127,7 +127,6 @@ span.v-banner__featured-price {
   justify-content: var(--v-banner-content-justify, center);
 }
 
-
 /* PAGINATION WRAP */
 .v-banner__pagination-wrap {
   position: absolute;
@@ -202,6 +201,9 @@ span.v-banner__featured-price {
   border-radius: var(--button-radius);
   cursor: pointer;
   transition: all 0.35s ease;
+  background: #00000038;
+  backdrop-filter: blur(11px);
+  color: white;
 }
 
 .v-banner__nav svg {

@@ -205,6 +205,9 @@
   pointer-events: auto;
   width: 42px;
   height: 42px;
+  background: #00000038;
+  backdrop-filter: blur(11px);
+  color: white;
   padding: 0;
   display: flex;
   align-items: center;
@@ -219,8 +222,7 @@
 }
 
 .v-insta__nav.swiper-button-disabled {
-  opacity: 0.4;
-  cursor: default;
+  display: none;
 }
 
 /* POPUP */
@@ -316,15 +318,15 @@
 }
 
 .v-insta__popup-close {
- width: 34px;
-    height: 34px;
-    border: none;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    padding: unset;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: unset;
 }
 
 .v-insta__popup-close svg {
