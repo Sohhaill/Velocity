@@ -64,12 +64,39 @@ function initInstaFeed() {
     });
 
     // Popup open
+    function openPopup(targetId) {
+      var target = document.getElementById(targetId);
+      if (!target) return;
+      target.classList.add('is-active');
+      document.body.style.overflow = 'hidden';
+    }
+
     root.querySelectorAll('[data-insta-open]').forEach(function(btn) {
       btn.addEventListener('click', function() {
-        var target = document.getElementById(btn.dataset.target);
-        if (!target) return;
-        target.classList.add('is-active');
-        document.body.style.overflow = 'hidden';
+        openPopup(btn.dataset.target);
+      });
+    });
+
+    root.querySelectorAll('.v-insta__item').forEach(function(item) {
+      var shopBtn = item.querySelector('[data-insta-open]');
+      if (!shopBtn) return;
+
+      var media = item.querySelector('.v-insta__media');
+      var thumbs = item.querySelectorAll('.v-insta__thumb');
+
+      if (media) {
+        media.style.cursor = 'pointer';
+        media.addEventListener('click', function() {
+          openPopup(shopBtn.dataset.target);
+        });
+      }
+
+      thumbs.forEach(function(thumb) {
+        thumb.style.cursor = 'pointer';
+        thumb.addEventListener('click', function(e) {
+          e.stopPropagation();
+          openPopup(shopBtn.dataset.target);
+        });
       });
     });
 
