@@ -90,14 +90,17 @@
 
             {%- if products.size > 0 -%}
             <div class="v-insta__thumbs">
-              {%- for product in products limit: 4 -%}
-              <span class="v-insta__thumb">
-                {%- if product.featured_image -%}
-                {{ product.featured_image | image_url: width: 100 | image_tag: loading: 'lazy', widths: '60,100', class:
-                'v-insta__thumb-img' }}
-                {%- endif -%}
-              </span>
-              {%- endfor -%}
+              <div class="v-insta__products">
+                {%- for product in products limit: 4 -%}
+                <span class="v-insta__thumb">
+                  {%- if product.featured_image -%}
+                  {{ product.featured_image | image_url: width: 100 | image_tag: loading: 'lazy', widths: '60,100',
+                  class:
+                  'v-insta__thumb-img' }}
+                  {%- endif -%}
+                </span>
+                {%- endfor -%}
+              </div>
               <button type="button" class="v-insta__shop-btn" data-insta-open data-target="insta-popup-{{ block.id }}">
                 {{ section.settings.shop_button_label | default: 'Shop the Look' }}
               </button>
