@@ -384,6 +384,7 @@
 
 .v-insta__popup-view {
   flex-shrink: 0;
+  padding: 0.2rem 1.4rem;
 }
 
 .v-insta__popup-footer {
