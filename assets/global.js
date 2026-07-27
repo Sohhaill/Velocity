@@ -74,6 +74,7 @@ function initInstaFeed() {
     root.querySelectorAll('[data-insta-open]').forEach(function(btn) {
       btn.addEventListener('click', function() {
         openPopup(btn.dataset.target);
+        if (window.lenis) window.lenis.stop();
       });
     });
 
@@ -106,6 +107,7 @@ function initInstaFeed() {
         closer.addEventListener('click', function() {
           popup.classList.remove('is-active');
           document.body.style.overflow = '';
+          if (window.lenis) window.lenis.start();
         });
       });
     });
