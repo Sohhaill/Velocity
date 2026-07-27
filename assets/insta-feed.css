@@ -317,20 +317,16 @@
 }
 
 .v-insta__popup-close {
-  width: 34px;
-  height: 34px;
+  width: 20px;
+  height: 20px;
   border: none;
   border-radius: 50%;
   display: flex;
+  background: unset;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   padding: unset;
-}
-
-.v-insta__popup-close svg {
-  width: 16px;
-  height: 16px;
 }
 
 .v-insta__popup-products {
