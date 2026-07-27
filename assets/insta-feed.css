@@ -157,12 +157,10 @@
 }
 
 .v-insta__shop-btn {
-  z-index: 4;
   width: 100%;
   border: none;
   border-radius: 0;
   cursor: pointer;
-  font-weight: 600;
   transform: translateY(100%);
   opacity: 0;
   transition:
