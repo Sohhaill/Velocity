@@ -143,11 +143,7 @@
   transform: translateY(43%);
   transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
 }
-.v-insta__item:hover {
-  .v-insta__thumbs {
-    transform: translateY(0);
-  }
-}
+
 .v-insta__item .v-insta__thumb {
   width: 52px;
   height: 52px;
@@ -173,6 +169,7 @@
   border: none;
   cursor: pointer;
   transform: translateY(0);
+  opacity: 0;
 }
 
 /* NAV — hidden until hover on wrap */
@@ -236,7 +233,14 @@
     opacity 0.35s ease,
     visibility 0s linear 0.35s;
 }
-
+.v-insta__item:hover {
+  .v-insta__thumbs {
+    transform: translateY(0);
+  }
+  .v-insta__shop-btn{
+    opacity: 1;
+  }
+}
 .v-insta__popup.is-active {
   opacity: 1;
   visibility: visible;
