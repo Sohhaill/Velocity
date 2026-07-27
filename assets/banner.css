@@ -358,6 +358,7 @@ span.v-banner__featured-price {
   right: 8px;
   z-index: 2;
   display: flex;
+  gap: 2px;
 }
 
 .v-banner__featured-nav-btn {
@@ -374,12 +375,12 @@ span.v-banner__featured-price {
 }
 
 .v-banner__featured-nav-btn svg {
-  width: 12px;
-  height: 12px;
+  width: 20px;
+  height: 20px;
 }
 
 .v-banner__featured-nav-btn.swiper-button-disabled {
-  opacity: 0.4;
+  opacity: 0;
   cursor: default;
 }
 
