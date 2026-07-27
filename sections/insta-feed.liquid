@@ -71,7 +71,8 @@
         {% assign products = block.settings.products %}
         {% assign overlay_opacity_decimal = block.settings.overlay_opacity | default: 0 | divided_by: 100.0 %}
         {% assign overlay_style = '--overlay-opacity: ' | append: overlay_opacity_decimal | append: ';' %}
-      <div class="swiper-slide v-insta__slide" data-animate="fade-up" data-animate-delay="{{ forloop.index0 | times: 100 }}" {{ block.shopify_attributes }}>
+        <div class="swiper-slide v-insta__slide" data-animate="fade-up"
+          data-animate-delay="{{ forloop.index0 | times: 100 }}" {{ block.shopify_attributes }}>
           <div class="v-insta__item">
             <div class="v-insta__media">
               {%- if block.settings.video != blank -%}
@@ -101,7 +102,8 @@
                 </span>
                 {%- endfor -%}
               </div>
-              <button type="button" class="v-insta__shop-btn button--filled" data-insta-open data-target="insta-popup-{{ block.id }}">
+              <button type="button" class="v-insta__shop-btn button--filled" data-insta-open
+                data-target="insta-popup-{{ block.id }}">
                 {{ section.settings.shop_button_label | default: 'Shop the Look' }}
               </button>
             </div>
