@@ -70,6 +70,7 @@
 .v-insta__swiper-wrap {
   position: relative;
   padding: 0 var(--container-margin);
+  padding-right: unset;
 }
 
 .v-insta__swiper {
@@ -237,7 +238,7 @@
   .v-insta__thumbs {
     transform: translateY(0);
   }
-  .v-insta__shop-btn{
+  .v-insta__shop-btn {
     opacity: 1;
   }
 }
@@ -377,7 +378,7 @@
 .v-insta__popup-product-title {
   text-decoration: none;
   color: inherit;
-  font-weight: 500;
+
 }
 
 .v-insta__popup-product-compare {
@@ -421,8 +422,20 @@
   min-width: 0;
 }
 
-
 .v-insta__popup-footer-tagline {
   opacity: 0.7;
   font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+  .v-insta__item .v-insta__thumb {
+    width: 40px;
+    height: 40px;
+  }
+  .v-insta__thumbs {
+    padding: 16px;
+  }
+  .v-insta__swiper-wrap:hover .v-insta__nav-container{
+    display: none;
+  }
 }
