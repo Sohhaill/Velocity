@@ -265,7 +265,7 @@
             "products": [
               "the-collection-snowboard-oxygen",
               "the-compare-at-price-snowboard",
-              "the-complete-snowboard"
+              "the-out-of-stock-snowboard"
             ]
           }
         },
@@ -304,6 +304,7 @@
         "shop_button_label": "Shop the Look",
         "slides_per_view_desktop": 4,
         "slides_per_view_mobile": 1.2,
+        "slides_per_view_tablet": 2.2,
         "gap_desktop": 10,
         "gap_mobile": 12,
         "aspect_ratio": "3_4",
