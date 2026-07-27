@@ -327,8 +327,9 @@
   justify-content: center;
   cursor: pointer;
   padding: unset;
+  border-bottom: 1px solid #ffffff40;
 }
-.v-insta__popup-close:hover{
+.v-insta__popup-close:hover {
   color: currentColor;
 }
 .v-insta__popup-products {
