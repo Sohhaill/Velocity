@@ -48,6 +48,7 @@
   flex-shrink: 0;
   background: linear-gradient(30deg, #f7d00b 10%, #f60e0e, #b700ff 94%);
   text-decoration: none;
+  padding: 2px;
 }
 
 .v-insta__profile-img {
