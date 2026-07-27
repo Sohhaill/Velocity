@@ -405,7 +405,12 @@
   border: 2px solid var(--color-background);
   background: var(--color-background);
 }
-
+.v-insta-popup-profile {
+  border-radius: 50%;
+  background: linear-gradient(30deg, #f7d00b 10%, #f60e0e, #b700ff 94%);
+  text-decoration: none;
+  padding: 2px;
+}
 .v-insta__popup-footer-info {
   display: flex;
   flex-direction: column;
