@@ -265,8 +265,8 @@
   background: var(--color-background, #fff);
   color: var(--color-foreground, #111);
   overflow: hidden;
-  transform: translateY(160px);
-  transition: transform 0.35s ease;
+  transform: translateY(190px);
+  transition: transform 0.65s ease;
 }
 
 .v-insta__popup.is-active .v-insta__popup-inner {
