@@ -26,10 +26,6 @@
   margin: 0 0 8px 0;
 }
 
-.v-insta__subheading {
-  margin: 0;
-  opacity: 0.75;
-}
 
 .v-insta__profile {
   display: flex;
@@ -146,8 +142,8 @@
 }
 
 .v-insta__thumb {
-  width: 40px;
-  height: 40px;
+  width: 52px;
+  height: 52px;
   border-radius: 6px;
   overflow: hidden;
   border: 2px solid #ffffff;
