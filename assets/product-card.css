@@ -35,7 +35,14 @@
     padding: unset;
     background: unset;
 }
-.v-card__wishlist-icon{
-  width: 23px;
-  height: 23px;
+.v-card__wishlist-icon {
+  display: flex;
+  width: 16px;
+  height: 16px;
+}
+
+.v-card__wishlist-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
