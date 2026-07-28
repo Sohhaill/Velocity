@@ -59,5 +59,14 @@
     "account_icon": "Account",
     "search_icon": "Search",
     "cart_icon": "Cart"
+  },
+  "products": {
+    "price": {
+      "from": "From {{ price }}"
+    },
+    "card": {
+      "add_to_wishlist": "Add to wishlist",
+      "sale_badge": "Sale"
+    }
   }
 }
