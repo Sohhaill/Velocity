@@ -585,14 +585,36 @@
     ]
   },
   {
-  "product_card": {
-    "wishlist": "Wishlist",
-    "show_wishlist_icon": "Show wishlist icon on product card",
-    "badges": "Badges",
-    "show_sale_badge": "Show sale badge",
-    "show_sale_badge_info": "Shown automatically when a product has a compare-at price",
-    "show_custom_badge": "Show custom tag badge",
-    "show_custom_badge_info": "Add a tag like badge_new or badge_best-seller to a product to show a badge. Only the first matching tag is shown."
+    "name": "Product card",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:product_card.wishlist"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_wishlist_icon",
+        "label": "t:product_card.show_wishlist_icon",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "t:product_card.badges"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_sale_badge",
+        "label": "t:product_card.show_sale_badge",
+        "info": "t:product_card.show_sale_badge_info",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_custom_badge",
+        "label": "t:product_card.show_custom_badge",
+        "info": "t:product_card.show_custom_badge_info",
+        "default": true
+      }
+    ]
   }
-}
 ]
