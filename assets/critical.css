@@ -357,7 +357,8 @@ a.mega-menu__submenu-sublink:hover::after,
   opacity: 0;
   z-index: 9999;
   transform: translate(-9999px, -9999px);
-  transition: opacity 0.15s ease;
+  transition: opacity 0.45s ease;
+  color: black;
 }
 
 .v-cursor-close.is-active {
@@ -365,8 +366,8 @@ a.mega-menu__submenu-sublink:hover::after,
 }
 
 .v-cursor-close svg {
-  width: 18px;
-  height: 18px;
+  width: 23px;
+  height: 23px;
 }
 
 [data-cursor-overlay] {
