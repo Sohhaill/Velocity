@@ -34,7 +34,7 @@ padding-bottom: var(--v-scroll-padding-bottom-desktop, 40px);
                     {{ block.shopify_attributes }}>
                     {%- if block.settings.content_type == 'image' -%}
                     {%- if block.settings.image -%}
-                    {{ block.settings.image | image_url: width: 600 | image_tag: class: 'v-scroll__image', widths:
+                    {{ block.settings.image | image_url: width: 200 | image_tag: class: 'v-scroll__image', widths:
                     '100,200,300,400,600', alt: block.settings.image.alt }}
                     {%- else -%}
                     {{ 'image' | placeholder_svg_tag: 'v-scroll__image v-scroll__placeholder' }}
