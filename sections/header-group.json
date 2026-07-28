@@ -96,7 +96,7 @@
         "logo": "shopify://shop_images/imgi_2_logo_ad2b1380-227e-418b-9f3a-1fac87372564.png",
         "transparent_logo": "shopify://shop_images/imgi_2_logo_ad2b1380-227e-418b-9f3a-1fac87372564.png",
         "header_width_type": "container_width",
-        "logo_width_desktop": 170,
+        "logo_width_desktop": 120,
         "logo_width_mobile": 120,
         "header_sticky": true,
         "header_layout": "left",
