@@ -1,0 +1,21 @@
+.v-price {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.v-price__regular,
+.v-price__sale {
+  font-weight: 600;
+}
+
+.v-price__compare {
+  text-decoration: line-through;
+  opacity: 0.55;
+  font-weight: 400;
+}
+
+.v-price--sale .v-price__sale {
+  color: var(--color-sale, #d0201f);
+}

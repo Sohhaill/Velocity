@@ -1,0 +1,32 @@
+{%- comment -%}
+  Renders a product card: image, title, price.
+  Accepts:
+  - card_product: {Object} product object (required)
+{%- endcomment -%}
+
+{{ 'product-card.css' | asset_url | stylesheet_tag }}
+{{ 'price.css' | asset_url | stylesheet_tag }}
+
+<a href="{{ card_product.url }}" class="v-card">
+  <div class="v-card__media">
+    {%- if card_product.featured_image -%}
+      {{
+        card_product.featured_image
+        | image_url: width: 1000
+        | image_tag:
+          loading: 'lazy',
+          widths: '300,450,600,800,1000',
+          sizes: '(min-width: 990px) 25vw, 50vw',
+          class: 'v-card__img',
+          alt: card_product.featured_image.alt
+      }}
+    {%- else -%}
+      <div class="placeholder-image">{{ 'placeholder-media.svg' | inline_asset_content }}</div>
+    {%- endif -%}
+  </div>
+
+  <div class="v-card__info">
+    <h3 class="v-card__title">{{ card_product.title }}</h3>
+    {% render 'price', product: card_product %}
+  </div>
+</a>

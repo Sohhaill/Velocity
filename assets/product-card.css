@@ -1,0 +1,33 @@
+.v-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.v-card__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  display: block;
+}
+
+.v-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.v-card__info {
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.v-card__title {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 500;
+}

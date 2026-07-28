@@ -1,0 +1,21 @@
+.v-featured-collection {
+  width: 100%;
+  padding: 60px var(--container-margin);
+}
+
+.v-featured-collection__heading {
+  margin: 0 0 28px 0;
+}
+
+.v-featured-collection__grid {
+  display: grid;
+  grid-template-columns: repeat(var(--v-fc-columns-mobile, 2), 1fr);
+  gap: var(--v-fc-gap-mobile, 12px);
+}
+
+@media screen and (min-width: 750px) {
+  .v-featured-collection__grid {
+    grid-template-columns: repeat(var(--v-fc-columns-desktop, 4), 1fr);
+    gap: var(--v-fc-gap-desktop, 24px);
+  }
+}
