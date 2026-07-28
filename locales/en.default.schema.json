@@ -10,10 +10,6 @@
 
 {
   "colors": {
-    "scheme_1": "Color scheme 1",
-    "scheme_2": "Color scheme 2",
-    "scheme_3": "Color scheme 3",
-    "scheme_4": "Color scheme 4",
     "filled_button": "Filled button",
     "outline_button": "Outline button"
   },
@@ -374,7 +370,6 @@
     "wishlist": "Wishlist",
     "show_wishlist_icon": "Show wishlist icon on product card",
     "badges": "Badges",
-    "sale_badge": "Sale",
     "show_sale_badge": "Show sale badge",
     "show_sale_badge_info": "Shown automatically when a product has a compare-at price",
     "show_custom_badge": "Show custom tag badge",
