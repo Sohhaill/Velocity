@@ -475,7 +475,6 @@
       {
         "type": "color_scheme_group",
         "id": "color_schemes",
-        "label": "t:labels.color_scheme",
         "definition": [
           {
             "type": "color",
