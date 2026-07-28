@@ -374,6 +374,7 @@
     "wishlist": "Wishlist",
     "show_wishlist_icon": "Show wishlist icon on product card",
     "badges": "Badges",
+    "sale_badge": "Sale",
     "show_sale_badge": "Show sale badge",
     "show_sale_badge_info": "Shown automatically when a product has a compare-at price",
     "show_custom_badge": "Show custom tag badge",
