@@ -135,8 +135,9 @@
   {% assign products = block.settings.products %}
   {%- if products.size > 0 -%}
   <div class="v-insta__popup section-color-scheme--{{ section.settings.section_color_scheme.id }}"
-    id="insta-popup-{{ block.id }}" data-insta-popup>
-    <div class="v-insta__popup-overlay" data-insta-close></div>
+    id="insta-popup-{{ block.id }}" data-insta-popup data-cursor-root>
+    <div class="v-insta__popup-overlay" data-insta-close data-cursor-overlay></div>
+    {% render 'cursor-close' %}
     <div class="v-insta__popup-inner">
       <div class="v-insta__popup-media">
         {%- if block.settings.image != blank -%}

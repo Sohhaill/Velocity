@@ -182,3 +182,39 @@ function initHeaderSticky() {
     if (root) initHeaderSticky();
   });
 }
+
+
+document.addEventListener('DOMContentLoaded', initCursorFollow);
+if (document.readyState !== 'loading') initCursorFollow();
+
+function initCursorFollow() {
+  if (window.__vCursorFollowInit) return;
+  window.__vCursorFollowInit = true;
+
+  document.addEventListener('mousemove', function (e) {
+    var root = e.target.closest('[data-cursor-root]');
+    if (!root) return;
+
+    var cursor = root.querySelector('.v-cursor-close');
+    if (!cursor) return;
+
+    var overOverlay = e.target.closest('[data-cursor-overlay]');
+
+    if (overOverlay && root.contains(overOverlay)) {
+      cursor.style.transform = 'translate(' + e.clientX + 'px, ' + e.clientY + 'px) translate(-50%, -50%)';
+      cursor.classList.add('is-active');
+    } else {
+      cursor.classList.remove('is-active');
+    }
+  });
+
+  // Reset cursor jab bhi koi root (popup/drawer) close ho
+  document.addEventListener('click', function (e) {
+    var closer = e.target.closest('[data-insta-close], [data-cursor-close-trigger]');
+    if (!closer) return;
+    var root = closer.closest('[data-cursor-root]');
+    if (!root) return;
+    var cursor = root.querySelector('.v-cursor-close');
+    if (cursor) cursor.classList.remove('is-active');
+  });
+}

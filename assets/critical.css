@@ -342,6 +342,36 @@ a.mega-menu__submenu-sublink:hover::after,
     font-size: var(--font-size-mobile-field);
   }
 }
+.v-cursor-close {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 9999;
+  transform: translate(-9999px, -9999px);
+  transition: opacity 0.15s ease;
+}
+
+.v-cursor-close.is-active {
+  opacity: 1;
+}
+
+.v-cursor-close svg {
+  width: 18px;
+  height: 18px;
+}
+
+[data-cursor-overlay] {
+  cursor: none;
+}
 /* scrolling-animation css start */
 .v-scroll {
   overflow: hidden;
