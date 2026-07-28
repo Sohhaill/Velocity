@@ -58,3 +58,31 @@
   width: 100%;
   height: 100%;
 }
+
+
+.v-card__badge-track {
+  display: flex;
+  width: max-content;
+  animation: v-badge-marquee 4s linear infinite;
+}
+
+.v-card__badge-text {
+  padding: 0 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@keyframes v-badge-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v-card__badge-track {
+    animation: none;
+  }
+}
