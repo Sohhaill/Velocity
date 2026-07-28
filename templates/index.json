@@ -313,6 +313,21 @@
         "padding_top_mobile": 32,
         "padding_bottom_mobile": 32
       }
+    },
+    "featured_collection_t39zqm": {
+      "type": "featured-collection",
+      "name": "Featured collection",
+      "settings": {
+        "section_color_scheme": "scheme-1",
+        "container_width": false,
+        "heading": "Featured collection",
+        "collection": "hydrogen",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "columns_mobile": 2,
+        "gap_desktop": 24,
+        "gap_mobile": 12
+      }
     }
   },
   "order": [
@@ -320,6 +335,7 @@
     "video_hero_aLhMGN",
     "scrolling_animation_E9jqjc",
     "media_grid_VhVGUE",
-    "insta_feed_EAQWeE"
+    "insta_feed_EAQWeE",
+    "featured_collection_t39zqm"
   ]
 }
