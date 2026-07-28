@@ -318,7 +318,7 @@
       "type": "featured-collection",
       "name": "Featured collection",
       "settings": {
-        "section_color_scheme": "scheme-1",
+        "section_color_scheme": "scheme-2",
         "container_width": false,
         "heading": "Featured collection",
         "collection": "hydrogen",
