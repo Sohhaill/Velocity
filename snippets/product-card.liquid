@@ -7,26 +7,75 @@
 {{ 'product-card.css' | asset_url | stylesheet_tag }}
 {{ 'price.css' | asset_url | stylesheet_tag }}
 
-<a href="{{ card_product.url }}" class="v-card">
-  <div class="v-card__media">
-    {%- if card_product.featured_image -%}
-      {{
-        card_product.featured_image
-        | image_url: width: 1000
-        | image_tag:
-          loading: 'lazy',
-          widths: '300,450,600,800,1000',
-          sizes: '(min-width: 990px) 25vw, 50vw',
-          class: 'v-card__img',
-          alt: card_product.featured_image.alt
-      }}
-    {%- else -%}
-      <div class="placeholder-image">{{ 'placeholder-media.svg' | inline_asset_content }}</div>
-    {%- endif -%}
-  </div>
+{%- liquid
+  assign target_variant = card_product.selected_or_first_available_variant
+  assign is_sale = false
+  if target_variant.compare_at_price > target_variant.price
+    assign is_sale = true
+  endif
 
-  <div class="v-card__info">
-    <h3 class="v-card__title">{{ card_product.title }}</h3>
-    {% render 'price', product: card_product %}
-  </div>
-</a>
+  assign badge_tag = ''
+  for tag in card_product.tags
+    if tag contains 'badge_'
+      assign badge_tag = tag | remove_first: 'badge_'
+      break
+    endif
+  endfor
+
+  assign badge_label = ''
+  if badge_tag != ''
+    assign badge_label = badge_tag | replace: '-', ' ' | capitalize
+  endif
+-%}
+
+<div class="v-card" data-v-product-card>
+  <a href="{{ card_product.url }}" class="v-card__link">
+    <div class="v-card__media">
+      {%- if settings.show_wishlist_icon -%}
+        <button
+          type="button"
+          class="v-card__wishlist"
+          data-wishlist-toggle
+          data-product-id="{{ card_product.id }}"
+          aria-label="{{ 'products.card.add_to_wishlist' | t }}"
+          aria-pressed="false"
+          onclick="event.preventDefault();"
+        >
+          <span class="v-card__wishlist-icon v-card__wishlist-icon--outline">{{ 'icon-heart.svg' | inline_asset_content }}</span>
+          <span class="v-card__wishlist-icon v-card__wishlist-icon--filled">{{ 'icon-heart-filled.svg' | inline_asset_content }}</span>
+        </button>
+      {%- endif -%}
+
+      {%- if settings.show_sale_badge and is_sale or settings.show_custom_badge and badge_label != '' -%}
+        <div class="v-card__badges">
+          {%- if settings.show_sale_badge and is_sale -%}
+            <span class="v-card__badge v-card__badge--sale">{{ 'products.card.sale_badge' | t }}</span>
+          {%- endif -%}
+          {%- if settings.show_custom_badge and badge_label != '' -%}
+            <span class="v-card__badge v-card__badge--custom">{{ badge_label }}</span>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- if card_product.featured_image -%}
+        {{
+          card_product.featured_image
+          | image_url: width: 1000
+          | image_tag:
+            loading: 'lazy',
+            widths: '300,450,600,800,1000',
+            sizes: '(min-width: 990px) 25vw, 50vw',
+            class: 'v-card__img',
+            alt: card_product.featured_image.alt
+        }}
+      {%- else -%}
+        <div class="placeholder-image">{{ 'placeholder-media.svg' | inline_asset_content }}</div>
+      {%- endif -%}
+    </div>
+
+    <div class="v-card__info">
+      <h3 class="v-card__title">{{ card_product.title }}</h3>
+      {% render 'price', product: card_product %}
+    </div>
+  </a>
+</div>

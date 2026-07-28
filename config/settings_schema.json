@@ -589,12 +589,30 @@
     "settings": [
       {
         "type": "header",
-        "content": "Wishlist"
+        "content": "t:product_card.wishlist"
       },
       {
         "type": "checkbox",
         "id": "show_wishlist_icon",
-        "label": "Show wishlist icon on product card",
+        "label": "t:product_card.show_wishlist_icon",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "t:product_card.badges"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_sale_badge",
+        "label": "t:product_card.show_sale_badge",
+        "info": "t:product_card.show_sale_badge_info",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_custom_badge",
+        "label": "t:product_card.show_custom_badge",
+        "info": "t:product_card.show_custom_badge_info",
         "default": true
       }
     ]
