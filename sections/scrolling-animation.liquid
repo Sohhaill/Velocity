@@ -20,10 +20,7 @@ padding-bottom: var(--v-scroll-padding-bottom-desktop, 40px);
 {%- endstyle -%}
 
 <div class="v-scroll section-color-scheme--{{ section.settings.section_color_scheme.id }}"
- id="shopify-section-{{ section.id }}"
-    data-v-scroll
-    data-speed="{{ section.settings.speed | default: 20 }}"
->
+    id="shopify-section-{{ section.id }}" data-v-scroll data-speed="{{ section.settings.speed | default: 20 }}">
     <div class="v-scroll__wrapper">
         <div class="v-scroll__track">
             {%- for i in (1..4) -%}
@@ -34,8 +31,16 @@ padding-bottom: var(--v-scroll-padding-bottom-desktop, 40px);
                     {{ block.shopify_attributes }}>
                     {%- if block.settings.content_type == 'image' -%}
                     {%- if block.settings.image -%}
-                    {{ block.settings.image | image_url: width: 200 | image_tag: class: 'v-scroll__image', widths:
-                    '100,200,300,400,600', alt: block.settings.image.alt }}
+                    {{ block.settings.image
+                    | image_url: width: 600
+                    | image_tag:
+                    class: 'v-scroll__image',
+                    widths: '100,200,300,400,600',
+                    sizes: '(min-width: 861px) ' | append: block.settings.image_width_desktop | append: 'px, ' | append:
+                    block.settings.image_width_mobile | append: 'px',
+                    loading: 'lazy',
+                    alt: block.settings.image.alt
+                    }}
                     {%- else -%}
                     {{ 'image' | placeholder_svg_tag: 'v-scroll__image v-scroll__placeholder' }}
                     {%- endif -%}
@@ -92,18 +97,18 @@ padding-bottom: var(--v-scroll-padding-bottom-desktop, 40px);
 "default": 32
 },
 {
-  "type": "select",
-  "id": "text_tag",
-  "label": "Text tag",
-  "info": "Applies to all text blocks in this section",
-  "default": "h3",
-  "options": [
-    { "value": "h1", "label": "H1" },
-    { "value": "h2", "label": "H2" },
-    { "value": "h3", "label": "H3" },
-    { "value": "h4", "label": "H4" },
-    { "value": "p", "label": "Paragraph" }
-  ]
+"type": "select",
+"id": "text_tag",
+"label": "Text tag",
+"info": "Applies to all text blocks in this section",
+"default": "h3",
+"options": [
+{ "value": "h1", "label": "H1" },
+{ "value": "h2", "label": "H2" },
+{ "value": "h3", "label": "H3" },
+{ "value": "h4", "label": "H4" },
+{ "value": "p", "label": "Paragraph" }
+]
 },
 {
 "type": "range",
