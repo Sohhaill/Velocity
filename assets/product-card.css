@@ -32,20 +32,23 @@
   font-weight: 500;
 }
 .v-card__wishlist {
-  padding: unset;
-  background: unset;
   position: absolute;
   right: 15px;
   top: 15px;
-  transform: translateX(42px);
+  transform: translate(42px);
   transition: transform 0.35s ease;
+  background: #0000007d;
+  padding: 5px;
+  backdrop-filter: blur(4px);
+  border-radius: 3px;
+  color: white;
 }
 .v-card__wishlist-icon {
   display: flex;
   width: 21px;
   height: 21px;
 }
-.v-card__media:hover{
+.v-card__media:hover {
   .v-card__wishlist {
     transform: translateX(0);
   }
