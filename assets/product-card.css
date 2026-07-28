@@ -71,6 +71,12 @@
   white-space: nowrap;
   flex-shrink: 0;
 }
+.v-card__badge.v-card__badge--custom{
+  position: absolute;
+    bottom: 12px;
+    color: black;
+    right: 12px;
+}
 .v-card__badge.v-card__badge--sale {
     position: absolute;
     color: white;
