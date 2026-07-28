@@ -71,7 +71,18 @@
   white-space: nowrap;
   flex-shrink: 0;
 }
-
+.v-card__badge.v-card__badge--sale {
+    position: absolute;
+    color: white;
+    width: 101px;
+    overflow: hidden;
+    transform: rotate(-47deg);
+    left: -27px;
+    top: 12px;
+    font-size: 1.1rem;
+    background: #00000063;
+    backdrop-filter: blur(3px);
+}
 @keyframes v-badge-marquee {
   from {
     transform: translateX(0);
