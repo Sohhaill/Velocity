@@ -43,6 +43,7 @@
         },
         "slide_tg9Qdy": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "video_desktop": "shopify://files/videos/b7763137afc846f68fea61896fc77b5c.HD-1080p-7.2Mbps-83877115.mp4",
             "overlay_opacity": 25,
