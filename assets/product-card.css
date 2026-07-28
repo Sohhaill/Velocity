@@ -46,7 +46,9 @@
   height: 21px;
 }
 .v-card__media:hover{
-  
+  .v-card__wishlist {
+    transform: translateX(0);
+  }
 }
 .v-card__wishlist-icon svg {
   display: block;
