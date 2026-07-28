@@ -23,4 +23,10 @@
   {%- else -%}
     <span class="v-price__regular">{{ price | money }}</span>
   {%- endif -%}
+
+  {%- if target.unit_price_measurement -%}
+    <span class="v-price__unit">
+      ({{ target.unit_price | money }}/{% if target.unit_price_measurement.reference_value != 1 %}{{ target.unit_price_measurement.reference_value }}{% endif %}{{ target.unit_price_measurement.reference_unit }})
+    </span>
+  {%- endif -%}
 </div>
