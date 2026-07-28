@@ -444,21 +444,21 @@ svg.megamenu-svg {
   z-index: 100;
 }
 
-.header__drawer::before {
-  content: "";
+.header__drawer-overlay {
   position: absolute;
   inset: 0;
   backdrop-filter: blur(3px);
   background: rgba(0, 0, 0, 0.45);
   opacity: 0;
   transition: all 0.3s ease;
+  cursor: none;
 }
 
 .header__drawer--open {
   pointer-events: auto;
 }
 
-.header__drawer--open::before {
+.header__drawer--open .header__drawer-overlay {
   opacity: 1;
   transition: opacity 0.35s ease;
 }
