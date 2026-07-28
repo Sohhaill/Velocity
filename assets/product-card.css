@@ -34,13 +34,20 @@
 .v-card__wishlist {
   padding: unset;
   background: unset;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  transform: translateX(42px);
+  transition: transform 0.35s ease;
 }
 .v-card__wishlist-icon {
   display: flex;
   width: 21px;
   height: 21px;
 }
-
+.v-card__media:hover{
+  
+}
 .v-card__wishlist-icon svg {
   display: block;
   width: 100%;
