@@ -60,21 +60,14 @@
 }
 
 
-.v-card__badge--sale {
-  background: var(--color-sale, #d0201f);
-  overflow: hidden;
-  padding: 4px 10px;
-  width: 60px;
-}
-
 .v-card__badge-track {
   display: flex;
   width: max-content;
-  gap: 16px;
-  animation: v-badge-marquee 3s linear infinite;
+  animation: v-badge-marquee 4s linear infinite;
 }
 
 .v-card__badge-text {
+  padding: 0 10px;
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -84,6 +77,12 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(calc(-100% - 16px));
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v-card__badge-track {
+    animation: none;
   }
 }
