@@ -191,9 +191,22 @@ function initCursorFollow() {
   if (window.__vCursorFollowInit) return;
   window.__vCursorFollowInit = true;
 
+  var mouseX = 0, mouseY = 0;
+  var activeCursor = null;
+  var currentX = 0, currentY = 0;
+  var hasPosition = false;
+  var easing = 0.15; // 0 = no movement, 1 = instant (no smoothing). Lower = smoother/slower.
+
   document.addEventListener('mousemove', function (e) {
     var root = e.target.closest('[data-cursor-root]');
-    if (!root) return;
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    if (!root) {
+      if (activeCursor) activeCursor.classList.remove('is-active');
+      activeCursor = null;
+      return;
+    }
 
     var cursor = root.querySelector('.v-cursor-close');
     if (!cursor) return;
@@ -201,12 +214,29 @@ function initCursorFollow() {
     var overOverlay = e.target.closest('[data-cursor-overlay]');
 
     if (overOverlay && root.contains(overOverlay)) {
-      cursor.style.transform = 'translate(' + e.clientX + 'px, ' + e.clientY + 'px) translate(-50%, -50%)';
+      if (activeCursor !== cursor) {
+        // First time entering this overlay — snap to avoid a long slide-in
+        currentX = mouseX;
+        currentY = mouseY;
+        hasPosition = true;
+      }
+      activeCursor = cursor;
       cursor.classList.add('is-active');
     } else {
       cursor.classList.remove('is-active');
+      if (activeCursor === cursor) activeCursor = null;
     }
   });
+
+  function animate() {
+    if (activeCursor && hasPosition) {
+      currentX += (mouseX - currentX) * easing;
+      currentY += (mouseY - currentY) * easing;
+      activeCursor.style.transform = 'translate(' + currentX + 'px, ' + currentY + 'px) translate(-50%, -50%)';
+    }
+    requestAnimationFrame(animate);
+  }
+  requestAnimationFrame(animate);
 
   // Reset cursor jab bhi koi root (popup/drawer) close ho
   document.addEventListener('click', function (e) {
@@ -215,6 +245,9 @@ function initCursorFollow() {
     var root = closer.closest('[data-cursor-root]');
     if (!root) return;
     var cursor = root.querySelector('.v-cursor-close');
-    if (cursor) cursor.classList.remove('is-active');
+    if (cursor) {
+      cursor.classList.remove('is-active');
+      if (activeCursor === cursor) activeCursor = null;
+    }
   });
 }
