@@ -70,7 +70,7 @@
 /* SWIPER */
 .v-insta__swiper-wrap {
   position: relative;
-  padding: 0 var(--container-margin);
+ 
   padding-right: unset;
 }
 data-grid[true] .v-insta__swiper-wrap {
