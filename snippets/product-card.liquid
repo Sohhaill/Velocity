@@ -43,11 +43,11 @@ endif
             <div class="v-card__badges">
                 {%- if settings.show_sale_badge and is_sale -%}
                 <span class="v-card__badge v-card__style--accent v-card__badge--sale">
-                    <span class="v-card__badge-text">{{ 'products.card.sale_badge' | t }}</span></span>
+                    <small class="v-card__badge-text">{{ 'products.card.sale_badge' | t }}</small>
                 </span>
                 {%- endif -%}
                 {%- if settings.show_custom_badge and badge_label != '' -%}
-                <span class="v-card__badge v-card__style--accent v-card__badge--custom">{{ badge_label }}</span>
+                <small class="v-card__badge v-card__style--accent v-card__badge--custom">{{ badge_label }}</small>
                 {%- endif -%}
             </div>
             {%- endif -%}
