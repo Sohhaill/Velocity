@@ -15,7 +15,7 @@
   {% unless settings.type_heading_font.system? or settings.type_body_font.system? %}
   <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
   {% endunless %}
-
+  {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
   {% unless settings.type_heading_font.system? %}
   {{ settings.type_heading_font | font_url | preload_tag: as: 'font', crossorigin: 'anonymous' }}
   {% endunless %}
