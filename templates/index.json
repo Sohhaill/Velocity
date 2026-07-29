@@ -307,7 +307,7 @@
         "follow_button_label": "Follow",
         "follow_button_style": "blur",
         "shop_button_label": "Shop the Look",
-        "enable_grid": true,
+        "enable_grid": false,
         "grid_columns_desktop": 4,
         "grid_columns_mobile": 2,
         "slides_per_view_desktop": 4,
