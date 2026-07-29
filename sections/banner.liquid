@@ -237,15 +237,29 @@
 
               {% capture buttons_html %}
               {%- if block.settings.button_1_label != blank and block.settings.button_1_link != blank -%}
-              <a href="{{ block.settings.button_1_link }}"
-                class="button {% if block.settings.button_1_style == 'outline' %}button--outline{% else %}button--filled{% endif %}">
+              {%- case block.settings.button_1_style -%}
+              {%- when 'outline' -%}
+              {% assign button_1_class = 'button--outline' %}
+              {%- when 'blur' -%}
+              {% assign button_1_class = 'button--blur' %}
+              {%- else -%}
+              {% assign button_1_class = 'button--filled' %}
+              {%- endcase -%}
+              <a href="{{ block.settings.button_1_link }}" class="button {{ button_1_class }}">
                 {{ block.settings.button_1_label }}
                 {%- if block.settings.button_1_style == 'outline' %}{{ button_arrow_svg }}{% endif -%}
               </a>
               {%- endif -%}
               {%- if block.settings.button_2_label != blank and block.settings.button_2_link != blank -%}
-              <a href="{{ block.settings.button_2_link }}"
-                class="button {% if block.settings.button_2_style == 'outline' %}button--outline{% else %}button--filled{% endif %}">
+              {%- case block.settings.button_2_style -%}
+              {%- when 'outline' -%}
+              {% assign button_2_class = 'button--outline' %}
+              {%- when 'blur' -%}
+              {% assign button_2_class = 'button--blur' %}
+              {%- else -%}
+              {% assign button_2_class = 'button--filled' %}
+              {%- endcase -%}
+              <a href="{{ block.settings.button_2_link }}" class="button {{ button_2_class }}">
                 {{ block.settings.button_2_label }}
                 {%- if block.settings.button_2_style == 'outline' %}{{ button_arrow_svg }}{% endif -%}
               </a>
