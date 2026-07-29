@@ -28,7 +28,7 @@
             "description": "<p>Our description </p>",
             "button_1_label": "Shop now",
             "button_1_link": "#",
-            "button_1_style": "outline",
+            "button_1_style": "blur",
             "button_2_label": "Buy Now",
             "button_2_link": "#",
             "button_2_style": "filled",
