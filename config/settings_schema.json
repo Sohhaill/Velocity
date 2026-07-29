@@ -658,6 +658,16 @@
         ]
       },
       {
+        "type": "range",
+        "id": "card_media_radius",
+        "label": "t:product_card.media_radius",
+        "min": 0,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      },
+      {
         "type": "header",
         "content": "t:product_card.badges"
       },

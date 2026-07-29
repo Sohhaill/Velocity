@@ -451,6 +451,7 @@
     "aspect_ratio_tall": "Tall (3:4)",
     "aspect_ratio_landscape": "Landscape (16:9)",
     "aspect_ratio_adapt": "Adapt to image",
+    "media_radius": "Image border radius",
     "wishlist": "Wishlist",
     "show_wishlist_icon": "Show wishlist icon on product card",
     "badges": "Badges",
