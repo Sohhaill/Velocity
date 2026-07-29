@@ -640,6 +640,23 @@
         "label": "t:product_card.show_wishlist_icon",
         "default": true
       },
+       {
+        "type": "header",
+        "content": "t:product_card.image"
+      },
+      {
+        "type": "select",
+        "id": "card_aspect_ratio",
+        "label": "t:product_card.aspect_ratio",
+        "default": "square",
+        "options": [
+          { "value": "square", "label": "t:product_card.aspect_ratio_square" },
+          { "value": "portrait", "label": "t:product_card.aspect_ratio_portrait" },
+          { "value": "tall", "label": "t:product_card.aspect_ratio_tall" },
+          { "value": "landscape", "label": "t:product_card.aspect_ratio_landscape" },
+          { "value": "adapt", "label": "t:product_card.aspect_ratio_adapt" }
+        ]
+      },
       {
         "type": "header",
         "content": "t:product_card.badges"
