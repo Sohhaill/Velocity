@@ -11,9 +11,10 @@
   "current": {
     "container_max_width": 1420,
     "container_margin": 16,
-    "type_heading_font": "dm_serif_display_n4",
+    "type_heading_font": "anton_n4",
     "type_body_font": "geist_n4",
     "type_button_font": "inter_n5",
+    "font_size_h1": 80,
     "font_size_h4": 20,
     "font_size_h5": 18,
     "font_size_h6": 15,

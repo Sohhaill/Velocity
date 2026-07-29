@@ -96,7 +96,7 @@
         "enable_autoplay": true,
         "content_position_desktop": "top_left",
         "content_position_mobile": "center_center",
-        "content_alignment": "center",
+        "content_alignment": "left",
         "text_color": "light",
         "subheading": "sdf",
         "heading": "Video heading",
