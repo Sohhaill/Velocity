@@ -4,6 +4,7 @@ Accepts:
 - card_product: {Object} product object (required)
 {%- endcomment -%}
 
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
 {{ 'product-card.css' | asset_url | stylesheet_tag }}
 {{ 'price.css' | asset_url | stylesheet_tag }}
 
@@ -27,20 +28,32 @@ if badge_tag != ''
 assign badge_label = badge_tag | replace: '-', ' ' | capitalize
 endif
 
+assign style_class = ''
+case settings.badge_wishlist_style
+  when 'glass'
+    assign style_class = 'v-card__style--glass'
+  else
+    assign style_class = 'v-card__style--accent'
+endcase
+
 assign aspect_class = 'v-card__media--square'
 case settings.card_aspect_ratio
-when 'portrait'
-assign aspect_class = 'v-card__media--portrait'
-when 'tall'
-assign aspect_class = 'v-card__media--tall'
-when 'landscape'
-assign aspect_class = 'v-card__media--landscape'
-when 'adapt'
-assign aspect_class = 'v-card__media--adapt'
-else
-assign aspect_class = 'v-card__media--square'
+  when 'portrait'
+    assign aspect_class = 'v-card__media--portrait'
+  when 'tall'
+    assign aspect_class = 'v-card__media--tall'
+  when 'landscape'
+    assign aspect_class = 'v-card__media--landscape'
+  when 'adapt'
+    assign aspect_class = 'v-card__media--adapt'
+  else
+    assign aspect_class = 'v-card__media--square'
 endcase
+
+assign card_media_list = card_product.media | slice: 0, 5
+assign card_media_count = card_media_list.size
 -%}
+
 <div class="v-card" data-v-product-card>
     <a href="{{ card_product.url }}" class="v-card__link">
         <div class="v-card__media {{ aspect_class }}" style="border-radius: {{ settings.card_media_radius }}px;">
@@ -51,7 +64,6 @@ endcase
                 <span class="v-card__wishlist-icon">{{ 'icon-heart.svg' | inline_asset_content }}</span>
             </button>
             {%- endif -%}
-
             {%- if settings.show_sale_badge and is_sale or settings.show_custom_badge and badge_label != '' -%}
             <div class="v-card__badges">
                 {%- if settings.show_sale_badge and is_sale -%}
@@ -65,17 +77,27 @@ endcase
             </div>
             {%- endif -%}
 
-            {%- if card_product.featured_image -%}
-            {{
-            card_product.featured_image
-            | image_url: width: 1000
-            | image_tag:
-            loading: 'lazy',
-            widths: '300,450,600,800,1000',
-            sizes: '(min-width: 990px) 25vw, 50vw',
-            class: 'v-card__img',
-            alt: card_product.featured_image.alt
-            }}
+            {%- if card_media_count > 0 -%}
+            <div class="v-card__swiper swiper" data-card-swiper>
+                <div class="swiper-wrapper">
+                    {%- for media in card_media_list -%}
+                    <div class="swiper-slide v-card__slide">
+                        {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
+                        {%- if media.media_type == 'video' -%}
+                        {{ media | video_tag: image_size: '1000x', muted: true, loop: true, controls: false, class: 'v-card__img v-card__video' }}
+                        {%- else -%}
+                        {{ media.preview_image | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '300,450,600,800,1000', sizes: '(min-width: 990px) 25vw, 50vw', class: 'v-card__img' }}
+                        {%- endif -%}
+                        {%- else -%}
+                        {{ media | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '300,450,600,800,1000', sizes: '(min-width: 990px) 25vw, 50vw', class: 'v-card__img' }}
+                        {%- endif -%}
+                    </div>
+                    {%- endfor -%}
+                </div>
+                {%- if card_media_count > 1 -%}
+                <div class="v-card__pagination"></div>
+                {%- endif -%}
+            </div>
             {%- else -%}
             <div class="placeholder-image">{{ 'placeholder-media.svg' | inline_asset_content }}</div>
             {%- endif -%}
@@ -87,3 +109,6 @@ endcase
         </div>
     </a>
 </div>
+
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
+<script src="{{ 'product-card.js' | asset_url }}" defer></script>

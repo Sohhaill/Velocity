@@ -8,19 +8,19 @@
 --v-fc-gap-mobile: {{ section.settings.gap_mobile }}px;
 }
 {%- endstyle -%}
-<div class="section-color-scheme--{{ section.settings.section_color_scheme.id }}" >
-<div class="v-featured-collection{% if section.settings.container_width %} container-width{% endif %}"
-    id="v-featured-collection-{{ section.id }}">
-    {%- if section.settings.heading != blank -%}
-    <h2 class="v-featured-collection__heading">{{ section.settings.heading }}</h2>
-    {%- endif -%}
+<div class="section-color-scheme--{{ section.settings.section_color_scheme.id }}">
+    <div class="v-featured-collection{% if section.settings.container_width %} container-width{% endif %}"
+        id="v-featured-collection-{{ section.id }}">
+        {%- if section.settings.heading != blank -%}
+        <h2 class="v-featured-collection__heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
 
-    <div class="v-featured-collection__grid">
-        {%- for card_product in section.settings.collection.products limit: section.settings.products_to_show -%}
-        {% render 'product-card', card_product: card_product %}
-        {%- endfor -%}
+        <div class="v-featured-collection__grid">
+            {%- for card_product in section.settings.collection.products limit: section.settings.products_to_show -%}
+            {% render 'product-card', card_product: card_product %}
+            {%- endfor -%}
+        </div>
     </div>
-</div>
 </div>
 {% schema %}
 {
