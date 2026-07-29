@@ -260,7 +260,7 @@ select,
   background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  color: var(--button-foreground, #ffffff);
+  color: white;
   border: none;
   cursor: pointer;
   border-radius: var(--button-radius);

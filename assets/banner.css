@@ -201,8 +201,8 @@ span.v-banner__featured-price {
   border-radius: var(--button-radius);
   cursor: pointer;
   transition: all 0.35s ease;
-  background: #00000038;
-  backdrop-filter: blur(11px);
+     background-color: #ffffff26;
+    backdrop-filter: blur(10px);
   color: white;
 }
 
