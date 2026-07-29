@@ -327,7 +327,7 @@
       "name": "Featured collection",
       "settings": {
         "section_color_scheme": "scheme-2",
-        "container_width": false,
+        "container_width": true,
         "heading": "Featured collection",
         "collection": "hydrogen",
         "products_to_show": 8,
