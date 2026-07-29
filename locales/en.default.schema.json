@@ -176,7 +176,8 @@
     },
     "button_style": {
       "filled": "Filled",
-      "outline": "Outline"
+      "outline": "Outline",
+      "blur": "Blur effect"
     },
     "direction": {
       "horizontal": "Horizontal",
