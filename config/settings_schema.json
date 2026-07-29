@@ -500,7 +500,6 @@
             "label": "t:labels.body",
             "default": "#111111"
           },
-          
           {
             "type": "header",
             "content": "t:colors.filled_button"
