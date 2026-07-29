@@ -150,6 +150,9 @@ h5 {
 h6 {
   font-size: var(--font-size-h6);
 }
+.small-text, small{
+  font-size: var(--font-size-small);
+}
 .v-banner.allow-transparent-header,
 .v-video.allow-transparent-header {
   margin-top: calc(-1 * var(--header-height, 90px));
@@ -348,6 +351,7 @@ a.mega-menu__submenu-sublink:hover::after,
 }
 
 @media screen and (max-width: 767px) {
+  
   .hide-mobile {
     display: none !important;
   }
@@ -355,6 +359,9 @@ a.mega-menu__submenu-sublink:hover::after,
     width: 20px;
     height: 20px;
   }
+  .small-text, small{
+  font-size: var(--font-size-mobile-small);
+}
   body {
     font-size: var(--font-size-mobile-base);
   }
