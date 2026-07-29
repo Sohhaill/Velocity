@@ -596,7 +596,6 @@
         "role": {
           "background": "background",
           "text": "heading",
-          "accent": "accent_color",
           "links": "heading",
           "icons": "heading",
           "primary_button": "button_background",
