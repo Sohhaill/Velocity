@@ -43,10 +43,7 @@ endif
             <div class="v-card__badges">
                 {%- if settings.show_sale_badge and is_sale -%}
                 <span class="v-card__badge v-card__badge--sale">
-                    <span class="v-card__badge-track">
-                        <span class="v-card__badge-text">{{ 'products.card.sale_badge' | t }}</span>
-                        <span class="v-card__badge-text" aria-hidden="true">{{ 'products.card.sale_badge' | t }}</span>
-                    </span>
+                    <span class="v-card__badge-text">{{ 'products.card.sale_badge' | t }}</span></span>
                 </span>
                 {%- endif -%}
                 {%- if settings.show_custom_badge and badge_label != '' -%}
