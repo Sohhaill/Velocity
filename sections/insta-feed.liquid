@@ -31,7 +31,8 @@
 
 <div
   class="v-insta section-color-scheme--{{ section.settings.section_color_scheme.id }}{% if section.settings.container_width %} container-width{% endif %}{% if section.settings.enable_grid %} v-insta--grid{% endif %}"
-  id="v-insta-{{ section.id }}" data-v-insta data-grid="{{ section.settings.enable_grid }}" data-slides-desktop="{{ section.settings.slides_per_view_desktop }}"
+  id="v-insta-{{ section.id }}" data-v-insta data-grid="{{ section.settings.enable_grid }}"
+  data-slides-desktop="{{ section.settings.slides_per_view_desktop }}"
   data-slides-tablet="{{ section.settings.slides_per_view_tablet }}"
   data-slides-mobile="{{ section.settings.slides_per_view_mobile }}"
   data-gap-desktop="{{ section.settings.gap_desktop }}" data-gap-mobile="{{ section.settings.gap_mobile }}">
@@ -91,8 +92,9 @@
 
             <span class="v-insta__badge">{{ 'icon-insta.svg' | inline_asset_content }}</span>
 
-            {%- if products.size > 0 -%}
+
             <div class="v-insta__thumbs">
+              {%- if products.size > 0 -%}
               <div class="v-insta__products">
                 {%- for product in products limit: 4 -%}
                 <span class="v-insta__thumb">
@@ -104,13 +106,13 @@
                 </span>
                 {%- endfor -%}
               </div>
+              {%- endif -%}
               <button type="button" class="v-insta__shop-btn button--filled" data-insta-open
                 data-target="insta-popup-{{ block.id }}">
                 {{ section.settings.shop_button_label | default: 'Shop the Look' }}
               </button>
             </div>
 
-            {%- endif -%}
           </div>
         </div>
         {%- endif -%}
@@ -233,10 +235,13 @@
 { "type": "text", "id": "subheading", "label": "t:labels.subheading" },
 { "type": "header", "content": "t:sections.insta-feed.headers.profile" },
 { "type": "image_picker", "id": "profile_image", "label": "t:sections.insta-feed.settings.profile_image.label" },
-{ "type": "text", "id": "profile_name", "label": "t:sections.insta-feed.settings.profile_name.label", "default": "@Harmony" },
-{ "type": "text", "id": "profile_tagline", "label": "t:sections.insta-feed.settings.profile_tagline.label", "info": "t:sections.insta-feed.settings.profile_tagline.info" },
+{ "type": "text", "id": "profile_name", "label": "t:sections.insta-feed.settings.profile_name.label", "default":
+"@Harmony" },
+{ "type": "text", "id": "profile_tagline", "label": "t:sections.insta-feed.settings.profile_tagline.label", "info":
+"t:sections.insta-feed.settings.profile_tagline.info" },
 { "type": "url", "id": "profile_url", "label": "t:sections.insta-feed.settings.profile_url.label" },
-{ "type": "text", "id": "follow_button_label", "label": "t:sections.insta-feed.settings.follow_button_label.label", "default": "Follow" },
+{ "type": "text", "id": "follow_button_label", "label": "t:sections.insta-feed.settings.follow_button_label.label",
+"default": "Follow" },
 {
 "type": "select",
 "id": "follow_button_style",
@@ -248,9 +253,11 @@
 ]
 },
 { "type": "header", "content": "t:sections.insta-feed.headers.shop_button" },
-{ "type": "text", "id": "shop_button_label", "label": "t:sections.insta-feed.settings.shop_button_label.label", "default": "Shop the Look" },
+{ "type": "text", "id": "shop_button_label", "label": "t:sections.insta-feed.settings.shop_button_label.label",
+"default": "Shop the Look" },
 { "type": "header", "content": "t:sections.insta-feed.headers.grid_layout" },
-{ "type": "checkbox", "id": "enable_grid", "label": "t:sections.insta-feed.settings.enable_grid.label", "default": false },
+{ "type": "checkbox", "id": "enable_grid", "label": "t:sections.insta-feed.settings.enable_grid.label", "default": false
+},
 {
 "type": "range",
 "id": "grid_columns_desktop",
@@ -381,7 +388,8 @@
 "name": "t:sections.insta-feed.blocks.feed_item.name",
 "settings": [
 { "type": "image_picker", "id": "image", "label": "t:sections.insta-feed.blocks.feed_item.settings.image.label" },
-{ "type": "video", "id": "video", "label": "t:sections.insta-feed.blocks.feed_item.settings.video.label", "info": "t:sections.insta-feed.blocks.feed_item.settings.video.info" },
+{ "type": "video", "id": "video", "label": "t:sections.insta-feed.blocks.feed_item.settings.video.label", "info":
+"t:sections.insta-feed.blocks.feed_item.settings.video.info" },
 { "type": "header", "content": "t:sections.insta-feed.blocks.feed_item.headers.overlay" },
 {
 "type": "range",
@@ -401,7 +409,8 @@
 "info": "t:sections.insta-feed.blocks.feed_item.settings.description.info"
 },
 { "type": "header", "content": "t:sections.insta-feed.blocks.feed_item.headers.products" },
-{ "type": "product_list", "id": "products", "label": "t:sections.insta-feed.blocks.feed_item.settings.products.label", "limit": 4 }
+{ "type": "product_list", "id": "products", "label": "t:sections.insta-feed.blocks.feed_item.settings.products.label",
+"limit": 4 }
 ]
 }
 ],
