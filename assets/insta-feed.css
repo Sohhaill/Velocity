@@ -479,10 +479,7 @@ data-grid[true] .v-insta__swiper-wrap {
   margin-bottom: 0;
 }
 @media (max-width: 768px) {
-  .v-insta__item .v-insta__thumb {
-    width: 40px;
-    height: 40px;
-  }
+
   .v-insta__thumbs,
   .v-insta__popup-panel {
     padding: 16px;
