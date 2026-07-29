@@ -150,7 +150,8 @@ h5 {
 h6 {
   font-size: var(--font-size-h6);
 }
-.small-text, small{
+.small-text,
+small {
   font-size: var(--font-size-small);
 }
 .v-banner.allow-transparent-header,
@@ -290,7 +291,7 @@ select,
   bottom: 0;
   width: 100%;
   height: 100%;
-   background: var(--button-hover-background);
+  background: var(--button-hover-background);
   transform: scaleY(0);
   transform-origin: bottom;
   transition: transform 0.45s cubic-bezier(0.65, 0, 0.35, 1);
@@ -306,7 +307,7 @@ select,
 }
 
 .button--blur:hover {
- color: var(--button-hover-foreground);
+  color: var(--button-hover-foreground);
 }
 .header__menu-link::after,
 a.mega-menu__submenu-sublink::after,
@@ -351,7 +352,6 @@ a.mega-menu__submenu-sublink:hover::after,
 }
 
 @media screen and (max-width: 767px) {
-  
   .hide-mobile {
     display: none !important;
   }
@@ -359,9 +359,10 @@ a.mega-menu__submenu-sublink:hover::after,
     width: 20px;
     height: 20px;
   }
-  .small-text, small{
-  font-size: var(--font-size-mobile-small);
-}
+  .small-text,
+  small {
+    font-size: var(--font-size-mobile-small);
+  }
   body {
     font-size: var(--font-size-mobile-base);
   }
