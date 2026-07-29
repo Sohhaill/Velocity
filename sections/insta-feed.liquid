@@ -62,6 +62,7 @@
       <a href="{{ section.settings.profile_url | default: '#' }}"
         class="button v-insta__follow-btn {% if section.settings.follow_button_style == 'outline' %}button--outline{% else %}button--filled{% endif %}">
         {{ section.settings.follow_button_label }}
+        <span class="v-insta__badge">{{ 'icon-insta.svg' | inline_asset_content }}</span>
       </a>
       {%- endif -%}
     </div>
@@ -89,10 +90,7 @@
               {%- endif -%}
             </div>
             <div class="v-insta__overlay" style="{{ overlay_style }}"></div>
-
             <span class="v-insta__badge">{{ 'icon-insta.svg' | inline_asset_content }}</span>
-
-
             {%- if products.size > 0 or block.settings.description != blank -%}
             <div class="v-insta__thumbs">
               {%- if products.size > 0 -%}
