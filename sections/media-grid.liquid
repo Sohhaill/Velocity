@@ -149,8 +149,16 @@
           </h3>
           {%- endif -%}
           {%- if block.settings.button_label != blank and block.settings.button_link != blank -%}
+          {%- case block.settings.button_style -%}
+            {%- when 'outline' -%}
+              {% assign mediagrid_button_class = 'button--outline' %}
+            {%- when 'glass' -%}
+              {% assign mediagrid_button_class = 'button--blur' %}
+            {%- else -%}
+              {% assign mediagrid_button_class = 'button--filled' %}
+          {%- endcase -%}
           <a href="{{ block.settings.button_link }}" data-animate="fade-up" data-animate-delay="200"
-            class="button {% if block.settings.button_style == 'outline' %}button--outline{% else %}button--filled{% endif %}">
+            class="button {{ mediagrid_button_class }}">
             {{ block.settings.button_label }}
           </a>
           {%- endif -%}
