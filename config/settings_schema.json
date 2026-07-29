@@ -8,6 +8,31 @@
     "theme_support_url": "https://support.shopify.com/"
   },
   {
+    "name": "t:general.container_width",
+    "settings": [
+      {
+        "type": "range",
+        "id": "container_max_width",
+        "label": "t:labels.max_width",
+        "min": 100,
+        "max": 2000,
+        "step": 20,
+        "unit": "px",
+        "default": 1200
+      },
+      {
+        "type": "range",
+        "id": "container_margin",
+        "label": "t:labels.container_margin",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "default": 20
+      }
+    ]
+  },
+  {
     "name": "t:general.typography",
     "settings": [
       {
@@ -276,28 +301,139 @@
       }
     ]
   },
+
   {
-    "name": "t:general.container_width",
+    "name": "t:general.colors",
     "settings": [
       {
-        "type": "range",
-        "id": "container_max_width",
-        "label": "t:labels.max_width",
-        "min": 100,
-        "max": 2000,
-        "step": 20,
-        "unit": "px",
-        "default": 1200
-      },
-      {
-        "type": "range",
-        "id": "container_margin",
-        "label": "t:labels.container_margin",
-        "min": 0,
-        "max": 200,
-        "step": 2,
-        "unit": "px",
-        "default": 20
+        "type": "color_scheme_group",
+        "id": "color_schemes",
+        "definition": [
+          {
+            "type": "color",
+            "id": "background",
+            "label": "t:labels.background",
+            "default": "#FFFFFF"
+          },
+          {
+            "type": "color",
+            "id": "heading",
+            "label": "t:labels.heading",
+            "default": "#111111"
+          },
+          {
+            "type": "color",
+            "id": "subheading",
+            "label": "t:labels.subheading",
+            "default": "#6B7280"
+          },
+          {
+            "type": "color",
+            "id": "body",
+            "label": "t:labels.body",
+            "default": "#111111"
+          },
+          {
+            "type": "header",
+            "content": "t:colors.accent"
+          },
+          {
+            "type": "color",
+            "id": "accent_background",
+            "label": "t:labels.accent_background",
+            "default": "#111111"
+          },
+          {
+            "type": "color",
+            "id": "accent_text",
+            "label": "t:labels.accent_text",
+            "default": "#FFFFFF"
+          },
+          {
+            "type": "header",
+            "content": "t:colors.filled_button"
+          },
+          {
+            "type": "color",
+            "id": "button_background",
+            "label": "t:labels.filled_button_background",
+            "default": "#111111"
+          },
+          {
+            "type": "color",
+            "id": "button_text",
+            "label": "t:labels.filled_button_text",
+            "default": "#FFFFFF"
+          },
+          {
+            "type": "color",
+            "id": "button_hover_background",
+            "label": "t:labels.filled_button_hover_background",
+            "default": "#333333"
+          },
+          {
+            "type": "color",
+            "id": "button_hover_text",
+            "label": "t:labels.filled_button_hover_text",
+            "default": "#FFFFFF"
+          },
+          {
+            "type": "header",
+            "content": "t:colors.outline_button"
+          },
+          {
+            "type": "color",
+            "id": "outline_button_border",
+            "label": "t:labels.outline_button_border",
+            "default": "#111111"
+          },
+          {
+            "type": "color",
+            "id": "outline_button_text",
+            "label": "t:labels.outline_button_text",
+            "default": "#111111"
+          },
+          {
+            "type": "color",
+            "id": "outline_button_hover_border",
+            "label": "t:labels.outline_button_hover_border",
+            "default": "#333333"
+          },
+          {
+            "type": "color",
+            "id": "outline_button_hover_text",
+            "label": "t:labels.outline_button_hover_text",
+            "default": "#333333"
+          },
+          {
+            "type": "header",
+            "content": "t:colors.input_fields"
+          },
+          {
+            "type": "color",
+            "id": "input_text",
+            "label": "t:labels.input_text",
+            "default": "#111111"
+          },
+          {
+            "type": "color",
+            "id": "input_background",
+            "label": "t:labels.input_background",
+            "default": "#F3F4F6"
+          }
+        ],
+        "role": {
+          "background": "background",
+          "text": "heading",
+          "links": "heading",
+          "icons": "heading",
+          "primary_button": "button_background",
+          "on_primary_button": "button_text",
+          "primary_button_border": "button_background",
+          "secondary_button": "outline_button_border",
+          "on_secondary_button": "outline_button_text",
+          "secondary_button_border": "outline_button_border"
+        }
       }
     ]
   },
@@ -479,141 +615,7 @@
       }
     ]
   },
-  {
-    "name": "t:general.colors",
-    "settings": [
-      {
-        "type": "color_scheme_group",
-        "id": "color_schemes",
-        "definition": [
-          {
-            "type": "color",
-            "id": "background",
-            "label": "t:labels.background",
-            "default": "#FFFFFF"
-          },
-          {
-            "type": "color",
-            "id": "heading",
-            "label": "t:labels.heading",
-            "default": "#111111"
-          },
-          {
-            "type": "color",
-            "id": "subheading",
-            "label": "t:labels.subheading",
-            "default": "#6B7280"
-          },
-          {
-            "type": "color",
-            "id": "body",
-            "label": "t:labels.body",
-            "default": "#111111"
-          },
-          {
-            "type": "header",
-            "content": "t:colors.accent"
-          },
-          {
-            "type": "color",
-            "id": "accent_background",
-            "label": "t:labels.accent_background",
-            "default": "#111111"
-          },
-          {
-            "type": "color",
-            "id": "accent_text",
-            "label": "t:labels.accent_text",
-            "default": "#FFFFFF"
-          },
-          {
-            "type": "header",
-            "content": "t:colors.filled_button"
-          },
-          {
-            "type": "color",
-            "id": "button_background",
-            "label": "t:labels.filled_button_background",
-            "default": "#111111"
-          },
-          {
-            "type": "color",
-            "id": "button_text",
-            "label": "t:labels.filled_button_text",
-            "default": "#FFFFFF"
-          },
-          {
-            "type": "color",
-            "id": "button_hover_background",
-            "label": "t:labels.filled_button_hover_background",
-            "default": "#333333"
-          },
-          {
-            "type": "color",
-            "id": "button_hover_text",
-            "label": "t:labels.filled_button_hover_text",
-            "default": "#FFFFFF"
-          },
-          {
-            "type": "header",
-            "content": "t:colors.outline_button"
-          },
-          {
-            "type": "color",
-            "id": "outline_button_border",
-            "label": "t:labels.outline_button_border",
-            "default": "#111111"
-          },
-          {
-            "type": "color",
-            "id": "outline_button_text",
-            "label": "t:labels.outline_button_text",
-            "default": "#111111"
-          },
-          {
-            "type": "color",
-            "id": "outline_button_hover_border",
-            "label": "t:labels.outline_button_hover_border",
-            "default": "#333333"
-          },
-          {
-            "type": "color",
-            "id": "outline_button_hover_text",
-            "label": "t:labels.outline_button_hover_text",
-            "default": "#333333"
-          },
-          {
-            "type": "header",
-            "content": "t:colors.input_fields"
-          },
-          {
-            "type": "color",
-            "id": "input_text",
-            "label": "t:labels.input_text",
-            "default": "#111111"
-          },
-          {
-            "type": "color",
-            "id": "input_background",
-            "label": "t:labels.input_background",
-            "default": "#F3F4F6"
-          }
-        ],
-        "role": {
-          "background": "background",
-          "text": "heading",
-          "links": "heading",
-          "icons": "heading",
-          "primary_button": "button_background",
-          "on_primary_button": "button_text",
-          "primary_button_border": "button_background",
-          "secondary_button": "outline_button_border",
-          "on_secondary_button": "outline_button_text",
-          "secondary_button_border": "outline_button_border"
-        }
-      }
-    ]
-  },
+
   {
     "name": "Product card",
     "settings": [
