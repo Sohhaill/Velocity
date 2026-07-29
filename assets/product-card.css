@@ -37,9 +37,7 @@
   top: 15px;
   transform: translate(54px);
   transition: transform 0.35s ease;
-  background: #0000007d;
   padding: 5px;
-  backdrop-filter: blur(4px);
   border-radius: 3px;
   color: white;
 }
@@ -73,16 +71,13 @@
 .v-card__badge.v-card__badge--custom {
   position: absolute;
   top: 50px;
-  color: #fff;
+
   left: 12px;
   padding: 2px 6px;
-  background: #00000078;
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
 }
 .v-card__badge.v-card__badge--sale {
   position: absolute;
-  color: white;
+
   overflow: hidden;
   left: 12px;
   top: 12px;
