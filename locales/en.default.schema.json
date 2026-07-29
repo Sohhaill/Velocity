@@ -177,7 +177,7 @@
     "button_style": {
       "filled": "Filled",
       "outline": "Outline",
-      "blur_effect": "Blur effect"
+      "blur_effect": "Glass effect"
     },
     "direction": {
       "horizontal": "Horizontal",
