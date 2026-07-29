@@ -9,7 +9,7 @@
 }
 {%- endstyle -%}
 <div class="section-color-scheme--{{ section.settings.section_color_scheme.id }}" >
-<div class="v-featured-collection  {% if section.settings.container_width %} container-width{% endif %}"
+<div class="v-featured-collection{% if section.settings.container_width %} container-width{% endif %}"
     id="v-featured-collection-{{ section.id }}">
     {%- if section.settings.heading != blank -%}
     <h2 class="v-featured-collection__heading">{{ section.settings.heading }}</h2>
