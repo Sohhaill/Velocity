@@ -53,6 +53,7 @@
     "footer_payment_icon_6": "shopify://shop_images/download.png",
     "footer_payment_icon_7": "shopify://shop_images/download_96c0baa4-7973-460d-a109-8642100a6dad.webp",
     "footer_payment_icon_8": "shopify://shop_images/download_fd7bb283-f532-430c-9dfc-63579293b38e.webp",
+    "card_aspect_ratio": "portrait",
     "badge_wishlist_style": "glass",
     "content_for_index": [],
     "color_schemes": {
