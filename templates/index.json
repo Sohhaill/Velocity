@@ -315,7 +315,7 @@
         "slides_per_view_tablet": 2.2,
         "gap_desktop": 10,
         "gap_mobile": 12,
-        "aspect_ratio": "1_1",
+        "aspect_ratio": "3_4",
         "padding_top_desktop": 60,
         "padding_bottom_desktop": 60,
         "padding_top_mobile": 32,
