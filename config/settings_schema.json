@@ -494,16 +494,7 @@
             "label": "t:labels.subheading",
             "default": "#6B7280"
           },
-          {
-            "type": "header",
-            "content": "t:colors.accent"
-          },
-          {
-            "type": "color",
-            "id": "accent_color",
-            "label": "t:labels.accent_color",
-            "default": "#111111"
-          },
+          
           {
             "type": "color",
             "id": "body",
@@ -568,16 +559,6 @@
           },
           {
             "type": "header",
-            "content": "t:colors.blur_button"
-          },
-          {
-            "type": "checkbox",
-            "id": "enable_blur_button",
-            "label": "t:labels.enable_blur_button",
-            "default": false
-          },
-          {
-            "type": "header",
             "content": "t:colors.input_fields"
           },
           {
@@ -596,7 +577,6 @@
         "role": {
           "background": "background",
           "text": "heading",
-          "accent": "accent_color",
           "links": "heading",
           "icons": "heading",
           "primary_button": "button_background",
