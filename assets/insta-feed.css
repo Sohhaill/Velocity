@@ -337,6 +337,7 @@ data-grid[true] .v-insta__swiper-wrap {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  color: var(--color-foreground, #111);
   padding: unset;
 }
 .v-insta__popup-close:hover {
