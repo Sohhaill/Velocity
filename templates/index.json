@@ -264,7 +264,7 @@
           "type": "feed_item",
           "settings": {
             "video": "shopify://files/videos/e7c24e5e1e2c4b5bb5d7fd2461bb6baa.SD-480p-1.5Mbps-81313404.mp4",
-            "overlay_opacity": 0,
+            "overlay_opacity": 30,
             "description": "<p>🍃 <strong>Balance starts with the first step.</strong></p><p>Powered by mung bean extract and gentle ingredients, this toner helps <strong>clarify pores</strong>, <strong>soothe sensitivity</strong>, and bring your skin back to its natural balance.</p><p>💧 Lightweight & refreshing<br/><br/>🌱 pH-balanced and non-irritating</p><p>For skin that feels <strong>pure, calm, and clear</strong> — every single day.</p><p>#SkinBalance #FreshFacedRoutine #BePlainBeauty</p>",
             "products": [
               "the-collection-snowboard-oxygen",
@@ -277,7 +277,7 @@
           "type": "feed_item",
           "settings": {
             "video": "shopify://files/videos/e7c24e5e1e2c4b5bb5d7fd2461bb6baa.SD-480p-1.5Mbps-81313404.mp4",
-            "overlay_opacity": 0,
+            "overlay_opacity": 25,
             "description": "",
             "products": [
               "the-collection-snowboard-oxygen",
