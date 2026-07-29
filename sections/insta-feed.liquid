@@ -28,9 +28,9 @@
 --v-insta-padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
 }
 {%- endstyle -%}
-
+<div class="section-color-scheme--{{ section.settings.section_color_scheme.id }}" >
 <div
-  class="v-insta section-color-scheme--{{ section.settings.section_color_scheme.id }}{% if section.settings.container_width %} container-width{% endif %}{% if section.settings.enable_grid %} v-insta--grid{% endif %}"
+  class="v-insta {% if section.settings.container_width %} container-width{% endif %}{% if section.settings.enable_grid %} v-insta--grid{% endif %}"
   id="v-insta-{{ section.id }}" data-v-insta data-grid="{{ section.settings.enable_grid }}"
   data-slides-desktop="{{ section.settings.slides_per_view_desktop }}"
   data-slides-tablet="{{ section.settings.slides_per_view_tablet }}"
