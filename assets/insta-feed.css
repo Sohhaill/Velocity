@@ -70,7 +70,7 @@
 /* SWIPER */
 .v-insta__swiper-wrap {
   position: relative;
- 
+
   padding-right: unset;
 }
 data-grid[true] .v-insta__swiper-wrap {
@@ -394,6 +394,8 @@ data-grid[true] .v-insta__swiper-wrap {
 .v-insta__popup-view {
   flex-shrink: 0;
   padding: 0.2rem 1rem;
+  color: var(--color-foreground, #111);
+  border: 1px solid var(--color-foreground);
 }
 
 .v-insta__popup-footer {
