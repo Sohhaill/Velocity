@@ -165,9 +165,7 @@
           </button>
         </div>
 
-        {%- if block.settings.description != blank -%}
-        <div class="v-insta__popup-description">{{ block.settings.description }}</div>
-        {%- endif -%}
+
 
         {%- if products.size > 0 -%}
         <div class="v-insta__popup-products">
@@ -193,7 +191,9 @@
           {%- endfor -%}
         </div>
         {%- endif -%}
-
+        {%- if block.settings.description != blank -%}
+        <div class="v-insta__popup-description">{{ block.settings.description }}</div>
+        {%- endif -%}
         <div class="v-insta__popup-footer">
           {%- if section.settings.profile_image != blank -%}
           <div class="v-insta-popup-profile">
