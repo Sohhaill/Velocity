@@ -506,6 +506,16 @@
           },
           {
             "type": "color",
+            "id": "accent_color",
+            "label": "t:labels.accent_color",
+            "default": "#111111"
+          },
+          {
+            "type": "header",
+            "content": "t:colors.filled_button"
+          },
+          {
+            "type": "color",
             "id": "button_background",
             "label": "t:labels.filled_button_background",
             "default": "#111111"
