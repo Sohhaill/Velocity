@@ -444,10 +444,6 @@
 
   "product_card": {
     "wishlist": "Wishlist",
-    "style": "Style",
-    "badge_wishlist_style": "Badge & wishlist background",
-    "style_accent": "Accent color",
-    "style_glass": "Glass effect",
     "show_wishlist_icon": "Show wishlist icon on product card",
     "badges": "Badges",
     "show_sale_badge": "Show sale badge",

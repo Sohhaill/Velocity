@@ -26,21 +26,13 @@ assign badge_label = ''
 if badge_tag != ''
 assign badge_label = badge_tag | replace: '-', ' ' | capitalize
 endif
-
-assign style_class = ''
-case settings.badge_wishlist_style
-  when 'glass'
-    assign style_class = 'v-card__style--glass'
-  else
-    assign style_class = 'v-card__style--accent'
-endcase
 -%}
 
 <div class="v-card" data-v-product-card>
     <a href="{{ card_product.url }}" class="v-card__link">
         <div class="v-card__media">
             {%- if settings.show_wishlist_icon -%}
-            <button type="button" class="v-card__wishlist {{ style_class }}" data-wishlist-toggle data-product-id="{{ card_product.id }}"
+            <button type="button" class="v-card__wishlist" data-wishlist-toggle data-product-id="{{ card_product.id }}"
                 aria-label="{{ 'products.card.add_to_wishlist' | t }}" aria-pressed="false"
                 onclick="event.preventDefault();">
                 <span class="v-card__wishlist-icon">{{ 'icon-heart.svg' | inline_asset_content }}</span>
@@ -50,12 +42,12 @@ endcase
             {%- if settings.show_sale_badge and is_sale or settings.show_custom_badge and badge_label != '' -%}
             <div class="v-card__badges">
                 {%- if settings.show_sale_badge and is_sale -%}
-                <span class="v-card__badge v-card__badge--sale {{ style_class }}">
-                    <span class="v-card__badge-text">{{ 'products.card.sale_badge' | t }}</span>
+                <span class="v-card__badge v-card__badge--sale">
+                    <span class="v-card__badge-text">{{ 'products.card.sale_badge' | t }}</span></span>
                 </span>
                 {%- endif -%}
                 {%- if settings.show_custom_badge and badge_label != '' -%}
-                <span class="v-card__badge v-card__badge--custom {{ style_class }}">{{ badge_label }}</span>
+                <span class="v-card__badge v-card__badge--custom">{{ badge_label }}</span>
                 {%- endif -%}
             </div>
             {%- endif -%}
