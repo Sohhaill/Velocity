@@ -134,6 +134,16 @@
       },
       {
         "type": "range",
+        "id": "font_size_small",
+        "label": "t:labels.Small_text",
+        "min": 5,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "default": 10
+      },
+      {
+        "type": "range",
         "id": "font_size_button",
         "label": "t:labels.button",
         "min": 12,
