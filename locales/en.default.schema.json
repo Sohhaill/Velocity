@@ -363,6 +363,76 @@
       "presets": {
         "name": "Banner slider"
       }
+    },
+    "insta-feed": {
+      "name": "Insta feed",
+      "headers": {
+        "profile": "Profile",
+        "shop_button": "Shop button",
+        "grid_layout": "Grid layout",
+        "slider": "Slider",
+        "section_padding": "Section padding"
+      },
+      "settings": {
+        "profile_image": { "label": "Profile image" },
+        "profile_name": { "label": "Profile name" },
+        "profile_tagline": {
+          "label": "Profile tagline",
+          "info": "Shown in popup only"
+        },
+        "profile_url": { "label": "Profile link" },
+        "follow_button_label": { "label": "Follow button label" },
+        "shop_button_label": { "label": "Shop button label" },
+        "enable_grid": { "label": "Enable grid layout" },
+        "grid_columns_desktop": { "label": "Grid columns — desktop" },
+        "grid_columns_mobile": { "label": "Grid columns — mobile" },
+        "slides_per_view_desktop": { "label": "Slides per view — desktop" },
+        "slides_per_view_mobile": { "label": "Slides per view — mobile" },
+        "slides_per_view_tablet": { "label": "Slides per view — tablet" },
+        "gap_desktop": { "label": "Gap — desktop" },
+        "gap_mobile": { "label": "Gap — mobile" },
+        "aspect_ratio": {
+          "label": "Block aspect ratio",
+          "options": {
+            "1_1": "1:1 Square",
+            "4_5": "4:5 Portrait",
+            "3_4": "3:4 Portrait",
+            "16_9": "16:9 Landscape",
+            "9_16": "9:16 Tall",
+            "3_2": "3:2 Landscape"
+          }
+        },
+        "padding_top_desktop": { "label": "Padding top — desktop" },
+        "padding_bottom_desktop": { "label": "Padding bottom — desktop" },
+        "padding_top_mobile": { "label": "Padding top — mobile" },
+        "padding_bottom_mobile": { "label": "Padding bottom — mobile" }
+      },
+      "blocks": {
+        "feed_item": {
+          "name": "Feed item",
+          "headers": {
+            "overlay": "Overlay",
+            "description": "Description",
+            "products": "Products"
+          },
+          "settings": {
+            "image": { "label": "Image" },
+            "video": {
+              "label": "Video",
+              "info": "Takes priority over image if set"
+            },
+            "overlay_opacity": { "label": "Overlay opacity" },
+            "description": {
+              "label": "Description",
+              "info": "Shown inside the popup, below the product list"
+            },
+            "products": { "label": "Products" }
+          }
+        }
+      },
+      "presets": {
+        "name": "Insta feed"
+      }
     }
   },
 
