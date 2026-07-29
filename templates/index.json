@@ -296,7 +296,7 @@
       ],
       "name": "Insta feed",
       "settings": {
-        "section_color_scheme": "scheme-2",
+        "section_color_scheme": "scheme-3",
         "container_width": true,
         "heading": "Shop the Feed",
         "subheading": "Discover premium audio from our Instagram and shop now.",
@@ -305,7 +305,7 @@
         "profile_tagline": "We cultivate sonic excellence",
         "profile_url": "",
         "follow_button_label": "Follow",
-        "follow_button_style": "blur",
+        "follow_button_style": "filled",
         "shop_button_label": "Shop the Look",
         "enable_grid": false,
         "grid_columns_desktop": 4,
