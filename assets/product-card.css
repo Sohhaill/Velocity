@@ -7,9 +7,27 @@
 .v-card__media {
   position: relative;
   width: 100%;
-  aspect-ratio: 1/1;
   overflow: hidden;
   display: block;
+}
+.v-card__media--square {
+  aspect-ratio: 1/1;
+}
+
+.v-card__media--portrait {
+  aspect-ratio: 4/5;
+}
+
+.v-card__media--tall {
+  aspect-ratio: 3/4;
+}
+
+.v-card__media--landscape {
+  aspect-ratio: 16/9;
+}
+
+.v-card__media--adapt {
+  aspect-ratio: auto;
 }
 .v-card__badge {
   padding: 2px 6px;
