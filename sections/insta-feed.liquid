@@ -28,409 +28,410 @@
 --v-insta-padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
 }
 {%- endstyle -%}
-<div class="section-color-scheme--{{ section.settings.section_color_scheme.id }}" >
-<div
-  class="v-insta {% if section.settings.container_width %} container-width{% endif %}{% if section.settings.enable_grid %} v-insta--grid{% endif %}"
-  id="v-insta-{{ section.id }}" data-v-insta data-grid="{{ section.settings.enable_grid }}"
-  data-slides-desktop="{{ section.settings.slides_per_view_desktop }}"
-  data-slides-tablet="{{ section.settings.slides_per_view_tablet }}"
-  data-slides-mobile="{{ section.settings.slides_per_view_mobile }}"
-  data-gap-desktop="{{ section.settings.gap_desktop }}" data-gap-mobile="{{ section.settings.gap_mobile }}">
-  <div class="v-insta__header">
-    <div class="v-insta__header-text">
-      {%- if section.settings.heading != blank -%}
-      <h2 class="v-insta__heading">{{ section.settings.heading }}</h2>
-      {%- endif -%}
-      {%- if section.settings.subheading != blank -%}
-      <p class="v-insta__subheading">{{ section.settings.subheading }}</p>
-      {%- endif -%}
-    </div>
+<div class="section-color-scheme--{{ section.settings.section_color_scheme.id }}">
+  <div
+    class="v-insta {% if section.settings.container_width %} container-width{% endif %}{% if section.settings.enable_grid %} v-insta--grid{% endif %}"
+    id="v-insta-{{ section.id }}" data-v-insta data-grid="{{ section.settings.enable_grid }}"
+    data-slides-desktop="{{ section.settings.slides_per_view_desktop }}"
+    data-slides-tablet="{{ section.settings.slides_per_view_tablet }}"
+    data-slides-mobile="{{ section.settings.slides_per_view_mobile }}"
+    data-gap-desktop="{{ section.settings.gap_desktop }}" data-gap-mobile="{{ section.settings.gap_mobile }}">
+    <div class="v-insta__header">
+      <div class="v-insta__header-text">
+        {%- if section.settings.heading != blank -%}
+        <h2 class="v-insta__heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+        <p class="v-insta__subheading">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+      </div>
 
-    <div class="v-insta__profile">
-      {%- if section.settings.profile_image != blank -%}
-      <a href="{{ section.settings.profile_url | default: '#' }}" class="v-insta__profile-avatar">
-        {{ section.settings.profile_image | image_url: width: 100 | image_tag: loading: 'lazy', class:
-        'v-insta__profile-img' }}
-      </a>
-      {%- endif -%}
-      {%- if section.settings.profile_name != blank -%}
-      <h6 class="v-insta__profile-name">{{
-        section.settings.profile_name }}</h6>
-      {%- endif -%}
-      {%- if section.settings.follow_button_label != blank -%}
+      <div class="v-insta__profile">
+        {%- if section.settings.profile_image != blank -%}
+        <a href="{{ section.settings.profile_url | default: '#' }}" class="v-insta__profile-avatar">
+          {{ section.settings.profile_image | image_url: width: 100 | image_tag: loading: 'lazy', class:
+          'v-insta__profile-img' }}
+        </a>
+        {%- endif -%}
+        {%- if section.settings.profile_name != blank -%}
+        <h6 class="v-insta__profile-name">{{
+          section.settings.profile_name }}</h6>
+        {%- endif -%}
+        {%- if section.settings.follow_button_label != blank -%}
 
-      {%- case section.settings.follow_button_style -%}
+        {%- case section.settings.follow_button_style -%}
         {%- when 'outline' -%}
-          {% assign follow_btn_class = 'button--outline' %}
+        {% assign follow_btn_class = 'button--outline' %}
         {%- when 'blur' -%}
-          {% assign follow_btn_class = 'button--blur' %}
+        {% assign follow_btn_class = 'button--blur' %}
         {%- else -%}
-          {% assign follow_btn_class = 'button--filled' %}
-      {%- endcase -%}
-      <a href="{{ section.settings.profile_url | default: '#' }}"
-        class="button v-insta__follow-btn {{ follow_btn_class }}">
-        {{ section.settings.follow_button_label }}
-        {{ 'icon-insta.svg' | inline_asset_content }}
-      </a>
-      {%- endif -%}
+        {% assign follow_btn_class = 'button--filled' %}
+        {%- endcase -%}
+        <a href="{{ section.settings.profile_url | default: '#' }}"
+          class="button v-insta__follow-btn {{ follow_btn_class }}">
+          {{ section.settings.follow_button_label }}
+          {{ 'icon-insta.svg' | inline_asset_content }}
+        </a>
+        {%- endif -%}
+      </div>
     </div>
-  </div>
 
-  <div class="v-insta__swiper-wrap">
-    <div class="v-insta__swiper swiper">
-      <div class="swiper-wrapper">
-        {%- for block in section.blocks -%}
-        {%- if block.type == 'feed_item' -%}
-        {% assign products = block.settings.products %}
-        {% assign overlay_opacity_decimal = block.settings.overlay_opacity | default: 0 | divided_by: 100.0 %}
-        {% assign overlay_style = '--overlay-opacity: ' | append: overlay_opacity_decimal | append: ';' %}
-        <div class="swiper-slide v-insta__slide" {{ block.shopify_attributes }}>
-          <div class="v-insta__item" data-animate="fade-up" data-animate-delay="{{ forloop.index0 | times: 100 }}">
-            <div class="v-insta__media">
-              {%- if block.settings.video != blank -%}
-              {{ block.settings.video | video_tag: image_size: '1200x', muted: true, loop: true, autoplay: false,
-              controls: false, class: 'v-insta__video' }}
-              {%- elsif block.settings.image != blank -%}
-              {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', widths:
-              '400,600,800,1000,1200', sizes: '(min-width: 750px) 25vw, 60vw', class: 'v-insta__img' }}
-              {%- else -%}
-              <div class="placeholder-image">{{ 'placeholder-media.svg' | inline_asset_content }}</div>
-              {%- endif -%}
-            </div>
-            <div class="v-insta__overlay" style="{{ overlay_style }}"></div>
-            <span class="v-insta__badge">{{ 'icon-insta.svg' | inline_asset_content }}</span>
-            {%- if products.size > 0 or block.settings.description != blank -%}
-            <div class="v-insta__thumbs">
-              {%- if products.size > 0 -%}
-              <div class="v-insta__products">
-                {%- for product in products limit: 4 -%}
-                <span class="v-insta__thumb">
-                  {%- if product.featured_image -%}
-                  {{ product.featured_image | image_url: width: 100 | image_tag: loading: 'lazy', widths: '60,100',
-                  class:
-                  'v-insta__thumb-img' }}
-                  {%- endif -%}
-                </span>
-                {%- endfor -%}
+    <div class="v-insta__swiper-wrap">
+      <div class="v-insta__swiper swiper">
+        <div class="swiper-wrapper">
+          {%- for block in section.blocks -%}
+          {%- if block.type == 'feed_item' -%}
+          {% assign products = block.settings.products %}
+          {% assign overlay_opacity_decimal = block.settings.overlay_opacity | default: 0 | divided_by: 100.0 %}
+          {% assign overlay_style = '--overlay-opacity: ' | append: overlay_opacity_decimal | append: ';' %}
+          <div class="swiper-slide v-insta__slide" {{ block.shopify_attributes }}>
+            <div class="v-insta__item" data-animate="fade-up" data-animate-delay="{{ forloop.index0 | times: 100 }}">
+              <div class="v-insta__media">
+                {%- if block.settings.video != blank -%}
+                {{ block.settings.video | video_tag: image_size: '1200x', muted: true, loop: true, autoplay: false,
+                controls: false, class: 'v-insta__video' }}
+                {%- elsif block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', widths:
+                '400,600,800,1000,1200', sizes: '(min-width: 750px) 25vw, 60vw', class: 'v-insta__img' }}
+                {%- else -%}
+                <div class="placeholder-image">{{ 'placeholder-media.svg' | inline_asset_content }}</div>
+                {%- endif -%}
+              </div>
+              <div class="v-insta__overlay" style="{{ overlay_style }}"></div>
+              <span class="v-insta__badge">{{ 'icon-insta.svg' | inline_asset_content }}</span>
+              {%- if products.size > 0 or block.settings.description != blank -%}
+              <div class="v-insta__thumbs">
+                {%- if products.size > 0 -%}
+                <div class="v-insta__products">
+                  {%- for product in products limit: 4 -%}
+                  <span class="v-insta__thumb">
+                    {%- if product.featured_image -%}
+                    {{ product.featured_image | image_url: width: 100 | image_tag: loading: 'lazy', widths: '60,100',
+                    class:
+                    'v-insta__thumb-img' }}
+                    {%- endif -%}
+                  </span>
+                  {%- endfor -%}
+                </div>
+                {%- endif -%}
+                <button type="button" class="v-insta__shop-btn {{ follow_btn_class }}" data-insta-open
+                  data-target="insta-popup-{{ block.id }}">
+                  {{ section.settings.shop_button_label | default: 'Shop the Look' }}
+                </button>
               </div>
               {%- endif -%}
-              <button type="button" class="v-insta__shop-btn {{ follow_btn_class }}" data-insta-open
-                data-target="insta-popup-{{ block.id }}">
-                {{ section.settings.shop_button_label | default: 'Shop the Look' }}
-              </button>
-            </div>
-            {%- endif -%}
 
+            </div>
           </div>
+          {%- endif -%}
+          {%- endfor -%}
         </div>
-        {%- endif -%}
+      </div>
+
+      <div class="v-insta__nav-container">
+        {% assign nav_directions = 'prev,next' | split: ',' %}
+        {%- for dir in nav_directions -%}
+        {% assign nav_icon = 'icon-chevron-left.svg' %}
+        {% if dir == 'next' %}
+        {% assign nav_icon = 'icon-chevron-right.svg' %}
+        {% endif %}
+        <button type="button" class="v-insta__nav v-insta__nav--{{ dir }} button button--filled" aria-label="{{ dir }}">
+          {{ nav_icon | inline_asset_content }}
+        </button>
         {%- endfor -%}
       </div>
     </div>
 
-    <div class="v-insta__nav-container">
-      {% assign nav_directions = 'prev,next' | split: ',' %}
-      {%- for dir in nav_directions -%}
-      {% assign nav_icon = 'icon-chevron-left.svg' %}
-      {% if dir == 'next' %}
-      {% assign nav_icon = 'icon-chevron-right.svg' %}
-      {% endif %}
-      <button type="button" class="v-insta__nav v-insta__nav--{{ dir }} button button--filled" aria-label="{{ dir }}">
-        {{ nav_icon | inline_asset_content }}
-      </button>
-      {%- endfor -%}
-    </div>
-  </div>
-
-  {%- for block in section.blocks -%}
-  {%- if block.type == 'feed_item' -%}
-  {% assign products = block.settings.products %}
-  {%- if products.size > 0 or block.settings.description != blank -%}
-  <div class="v-insta__popup section-color-scheme--{{ section.settings.section_color_scheme.id }}"
-    id="insta-popup-{{ block.id }}" data-insta-popup data-cursor-root>
-    <div class="v-insta__popup-overlay" data-insta-close data-cursor-overlay></div>
-    {% render 'cursor-close' %}
-    <div class="v-insta__popup-inner">
-      <div class="v-insta__popup-media">
-        {%- if block.settings.image != blank -%}
-        {{ block.settings.image | image_url: width: 1500 | image_tag: loading: 'lazy', widths: '600,900,1200,1500',
-        sizes: '50vw', class: 'v-insta__popup-img' }}
-        {%- elsif block.settings.video != blank -%}
-        {{ block.settings.video | video_tag: image_size: '1500x', muted: true, loop: true, autoplay: true, controls:
-        false, class: 'v-insta__popup-video' }}
-        {%- else -%}
-        <div class="placeholder-image">{{ 'placeholder-media.svg' | inline_asset_content }}</div>
-        {%- endif -%}
-      </div>
-
-      <div class="v-insta__popup-panel">
-        <div class="v-insta__popup-top">
-          <h3 class="v-insta__popup-heading">{{ section.settings.heading }}</h3>
-          <button type="button" class="v-insta__popup-close" data-insta-close aria-label="Close">
-            {{ 'icon-close.svg' | inline_asset_content }}
-          </button>
+    {%- for block in section.blocks -%}
+    {%- if block.type == 'feed_item' -%}
+    {% assign products = block.settings.products %}
+    {%- if products.size > 0 or block.settings.description != blank -%}
+    <div class="v-insta__popup section-color-scheme--{{ section.settings.section_color_scheme.id }}"
+      id="insta-popup-{{ block.id }}" data-insta-popup data-cursor-root>
+      <div class="v-insta__popup-overlay" data-insta-close data-cursor-overlay></div>
+      {% render 'cursor-close' %}
+      <div class="v-insta__popup-inner">
+        <div class="v-insta__popup-media">
+          {%- if block.settings.image != blank -%}
+          {{ block.settings.image | image_url: width: 1500 | image_tag: loading: 'lazy', widths: '600,900,1200,1500',
+          sizes: '50vw', class: 'v-insta__popup-img' }}
+          {%- elsif block.settings.video != blank -%}
+          {{ block.settings.video | video_tag: image_size: '1500x', muted: true, loop: true, autoplay: true, controls:
+          false, class: 'v-insta__popup-video' }}
+          {%- else -%}
+          <div class="placeholder-image">{{ 'placeholder-media.svg' | inline_asset_content }}</div>
+          {%- endif -%}
         </div>
 
+        <div class="v-insta__popup-panel">
+          <div class="v-insta__popup-top">
+            <h3 class="v-insta__popup-heading">{{ section.settings.heading }}</h3>
+            <button type="button" class="v-insta__popup-close" data-insta-close aria-label="Close">
+              {{ 'icon-close.svg' | inline_asset_content }}
+            </button>
+          </div>
 
 
-        {%- if products.size > 0 -%}
-        <div class="v-insta__popup-products">
-          {%- for product in products -%}
-          <div class="v-insta__popup-product">
-            <a href="{{ product.url }}" class="v-insta__popup-product-media">
-              {%- if product.featured_image -%}
-              {{ product.featured_image | image_url: width: 300 | image_tag: loading: 'lazy', widths: '150,200,300',
-              sizes: '100px', class: 'v-insta__popup-product-img' }}
-              {%- endif -%}
-            </a>
-            <div class="v-insta__popup-product-info">
-              <a href="{{ product.url }}" class="v-insta__popup-product-title">{{ product.title }}</a>
-              <span class="v-insta__popup-product-price">
-                {%- if product.compare_at_price > product.price -%}
-                <s class="v-insta__popup-product-compare">{{ product.compare_at_price | money }}</s>
+
+          {%- if products.size > 0 -%}
+          <div class="v-insta__popup-products">
+            {%- for product in products -%}
+            <div class="v-insta__popup-product">
+              <a href="{{ product.url }}" class="v-insta__popup-product-media">
+                {%- if product.featured_image -%}
+                {{ product.featured_image | image_url: width: 300 | image_tag: loading: 'lazy', widths: '150,200,300',
+                sizes: '100px', class: 'v-insta__popup-product-img' }}
                 {%- endif -%}
-                {{ product.price | money }}
-              </span>
+              </a>
+              <div class="v-insta__popup-product-info">
+                <a href="{{ product.url }}" class="v-insta__popup-product-title">{{ product.title }}</a>
+                <span class="v-insta__popup-product-price">
+                  {%- if product.compare_at_price > product.price -%}
+                  <s class="v-insta__popup-product-compare">{{ product.compare_at_price | money }}</s>
+                  {%- endif -%}
+                  {{ product.price | money }}
+                </span>
+              </div>
+              <a href="{{ product.url }}" class="v-insta__popup-view button button--outline">+ View</a>
             </div>
-            <a href="{{ product.url }}" class="v-insta__popup-view button button--outline">+ View</a>
-          </div>
-          {%- endfor -%}
-        </div>
-        {%- endif -%}
-        {%- if block.settings.description != blank -%}
-        <div class="v-insta__popup-description">{{ block.settings.description }}</div>
-        {%- endif -%}
-        <div class="v-insta__popup-footer">
-          {%- if section.settings.profile_image != blank -%}
-          <div class="v-insta-popup-profile">
-            {{ section.settings.profile_image | image_url: width: 100 | image_tag: loading: 'lazy', class:
-            'v-insta__popup-footer-avatar' }}
+            {%- endfor -%}
           </div>
           {%- endif -%}
-          <div class="v-insta__popup-footer-info">
-            {%- if section.settings.profile_name != blank -%}
-            <h6 class="v-insta__popup-footer-name">{{ section.settings.profile_name }}</h6>
+          {%- if block.settings.description != blank -%}
+          <div class="v-insta__popup-description">{{ block.settings.description }}</div>
+          {%- endif -%}
+          <div class="v-insta__popup-footer">
+            {%- if section.settings.profile_image != blank -%}
+            <div class="v-insta-popup-profile">
+              {{ section.settings.profile_image | image_url: width: 100 | image_tag: loading: 'lazy', class:
+              'v-insta__popup-footer-avatar' }}
+            </div>
             {%- endif -%}
-            {%- if section.settings.profile_tagline != blank -%}
-            <span class="v-insta__popup-footer-tagline">{{ section.settings.profile_tagline }}</span>
+            <div class="v-insta__popup-footer-info">
+              {%- if section.settings.profile_name != blank -%}
+              <h6 class="v-insta__popup-footer-name">{{ section.settings.profile_name }}</h6>
+              {%- endif -%}
+              {%- if section.settings.profile_tagline != blank -%}
+              <span class="v-insta__popup-footer-tagline">{{ section.settings.profile_tagline }}</span>
+              {%- endif -%}
+            </div>
+            {%- if section.settings.follow_button_label != blank -%}
+            <a href="{{ section.settings.profile_url | default: '#' }}"
+              class="button v-insta__popup-follow {{ follow_btn_class }}">
+              {{ section.settings.follow_button_label }}
+            </a>
             {%- endif -%}
           </div>
-          {%- if section.settings.follow_button_label != blank -%}
-          <a href="{{ section.settings.profile_url | default: '#' }}"
-            class="button v-insta__popup-follow {{ follow_btn_class }}">
-            {{ section.settings.follow_button_label }}
-          </a>
-          {%- endif -%}
         </div>
       </div>
     </div>
+    {%- endif -%}
+    {%- endif -%}
+    {%- endfor -%}
   </div>
-  {%- endif -%}
-  {%- endif -%}
-  {%- endfor -%}
-</div>
 
-<script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
-<script src="{{ 'insta-feed.js' | asset_url }}" defer></script>
+  <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
+  <script src="{{ 'insta-feed.js' | asset_url }}" defer></script>
 
-{% schema %}
-{
-"name": "t:sections.insta-feed.name",
-"class": "section-insta-feed",
-"settings": [
-{ "type": "color_scheme", "id": "section_color_scheme", "label": "t:labels.color_scheme", "default": "scheme-1" },
-{ "type": "checkbox", "id": "container_width", "label": "t:general.container_width", "default": false },
-{ "type": "header", "content": "t:general.header" },
-{ "type": "text", "id": "heading", "label": "t:labels.heading", "default": "Shop the Feed" },
-{ "type": "text", "id": "subheading", "label": "t:labels.subheading" },
-{ "type": "header", "content": "t:sections.insta-feed.headers.profile" },
-{ "type": "image_picker", "id": "profile_image", "label": "t:sections.insta-feed.settings.profile_image.label" },
-{ "type": "text", "id": "profile_name", "label": "t:sections.insta-feed.settings.profile_name.label", "default":
-"@Harmony" },
-{ "type": "text", "id": "profile_tagline", "label": "t:sections.insta-feed.settings.profile_tagline.label", "info":
-"t:sections.insta-feed.settings.profile_tagline.info" },
-{ "type": "url", "id": "profile_url", "label": "t:sections.insta-feed.settings.profile_url.label" },
-{ "type": "text", "id": "follow_button_label", "label": "t:sections.insta-feed.settings.follow_button_label.label",
-"default": "Follow" },
-{
-"type": "select",
-"id": "follow_button_style",
-"label": "t:labels.button_style",
-"default": "outline",
-"options": [
-{ "value": "filled", "label": "t:options.button_style.filled" },
-{ "value": "outline", "label": "t:options.button_style.outline" },
-{ "value": "blur", "label": "t:options.button_style.blur_effect" }
-]
-},
-{ "type": "header", "content": "t:sections.insta-feed.headers.shop_button" },
-{ "type": "text", "id": "shop_button_label", "label": "t:sections.insta-feed.settings.shop_button_label.label",
-"default": "Shop the Look" },
-{ "type": "header", "content": "t:sections.insta-feed.headers.grid_layout" },
-{ "type": "checkbox", "id": "enable_grid", "label": "t:sections.insta-feed.settings.enable_grid.label", "default": false
-},
-{
-"type": "range",
-"id": "grid_columns_desktop",
-"label": "t:sections.insta-feed.settings.grid_columns_desktop.label",
-"min": 1,
-"max": 6,
-"step": 1,
-"default": 4,
-"visible_if": "{{ section.settings.enable_grid }}"
-},
-{
-"type": "range",
-"id": "grid_columns_mobile",
-"label": "t:sections.insta-feed.settings.grid_columns_mobile.label",
-"min": 1,
-"max": 3,
-"step": 1,
-"default": 2,
-"visible_if": "{{ section.settings.enable_grid }}"
-},
-{ "type": "header", "content": "t:sections.insta-feed.headers.slider" },
-{
-"type": "range",
-"id": "slides_per_view_desktop",
-"label": "t:sections.insta-feed.settings.slides_per_view_desktop.label",
-"min": 1,
-"max": 6,
-"step": 1,
-"default": 4
-},
-{
-"type": "range",
-"id": "slides_per_view_mobile",
-"label": "t:sections.insta-feed.settings.slides_per_view_mobile.label",
-"min": 1,
-"max": 3,
-"step": 0.1,
-"default": 1.2
-},
-{
-"type": "range",
-"id": "slides_per_view_tablet",
-"label": "t:sections.insta-feed.settings.slides_per_view_tablet.label",
-"min": 1,
-"max": 5,
-"step": 0.1,
-"default": 2.2
-},
-{
-"type": "range",
-"id": "gap_desktop",
-"label": "t:sections.insta-feed.settings.gap_desktop.label",
-"min": 0,
-"max": 60,
-"step": 2,
-"unit": "px",
-"default": 20
-},
-{
-"type": "range",
-"id": "gap_mobile",
-"label": "t:sections.insta-feed.settings.gap_mobile.label",
-"min": 0,
-"max": 40,
-"step": 2,
-"unit": "px",
-"default": 12
-},
-{
-"type": "select",
-"id": "aspect_ratio",
-"label": "t:sections.insta-feed.settings.aspect_ratio.label",
-"default": "3_4",
-"options": [
-{ "value": "1_1", "label": "t:sections.insta-feed.settings.aspect_ratio.options.1_1" },
-{ "value": "4_5", "label": "t:sections.insta-feed.settings.aspect_ratio.options.4_5" },
-{ "value": "3_4", "label": "t:sections.insta-feed.settings.aspect_ratio.options.3_4" },
-{ "value": "16_9", "label": "t:sections.insta-feed.settings.aspect_ratio.options.16_9" },
-{ "value": "9_16", "label": "t:sections.insta-feed.settings.aspect_ratio.options.9_16" },
-{ "value": "3_2", "label": "t:sections.insta-feed.settings.aspect_ratio.options.3_2" }
-]
-},
-{ "type": "header", "content": "t:sections.insta-feed.headers.section_padding" },
-{
-"type": "range",
-"id": "padding_top_desktop",
-"label": "t:sections.insta-feed.settings.padding_top_desktop.label",
-"min": 0,
-"max": 150,
-"step": 5,
-"unit": "px",
-"default": 60
-},
-{
-"type": "range",
-"id": "padding_bottom_desktop",
-"label": "t:sections.insta-feed.settings.padding_bottom_desktop.label",
-"min": 0,
-"max": 150,
-"step": 5,
-"unit": "px",
-"default": 60
-},
-{
-"type": "range",
-"id": "padding_top_mobile",
-"label": "t:sections.insta-feed.settings.padding_top_mobile.label",
-"min": 0,
-"max": 100,
-"step": 4,
-"unit": "px",
-"default": 32
-},
-{
-"type": "range",
-"id": "padding_bottom_mobile",
-"label": "t:sections.insta-feed.settings.padding_bottom_mobile.label",
-"min": 0,
-"max": 100,
-"step": 4,
-"unit": "px",
-"default": 32
-}
-],
-"blocks": [
-{
-"type": "feed_item",
-"name": "t:sections.insta-feed.blocks.feed_item.name",
-"settings": [
-{ "type": "image_picker", "id": "image", "label": "t:sections.insta-feed.blocks.feed_item.settings.image.label" },
-{ "type": "video", "id": "video", "label": "t:sections.insta-feed.blocks.feed_item.settings.video.label", "info":
-"t:sections.insta-feed.blocks.feed_item.settings.video.info" },
-{ "type": "header", "content": "t:sections.insta-feed.blocks.feed_item.headers.overlay" },
-{
-"type": "range",
-"id": "overlay_opacity",
-"label": "t:sections.insta-feed.blocks.feed_item.settings.overlay_opacity.label",
-"min": 0,
-"max": 100,
-"step": 5,
-"unit": "%",
-"default": 0
-},
-{ "type": "header", "content": "t:sections.insta-feed.blocks.feed_item.headers.description" },
-{
-"type": "richtext",
-"id": "description",
-"label": "t:sections.insta-feed.blocks.feed_item.settings.description.label",
-"info": "t:sections.insta-feed.blocks.feed_item.settings.description.info"
-},
-{ "type": "header", "content": "t:sections.insta-feed.blocks.feed_item.headers.products" },
-{ "type": "product_list", "id": "products", "label": "t:sections.insta-feed.blocks.feed_item.settings.products.label",
-"limit": 4 }
-]
-}
-],
-"max_blocks": 12,
-"presets": [
-{
-"name": "t:sections.insta-feed.presets.name",
-"blocks": [{ "type": "feed_item" }, { "type": "feed_item" }, { "type": "feed_item" }, { "type": "feed_item" }]
-}
-]
-}
-{% endschema %}
+  {% schema %}
+  {
+  "name": "t:sections.insta-feed.name",
+  "class": "section-insta-feed",
+  "settings": [
+  { "type": "color_scheme", "id": "section_color_scheme", "label": "t:labels.color_scheme", "default": "scheme-1" },
+  { "type": "checkbox", "id": "container_width", "label": "t:general.container_width", "default": false },
+  { "type": "header", "content": "t:general.header" },
+  { "type": "text", "id": "heading", "label": "t:labels.heading", "default": "Shop the Feed" },
+  { "type": "text", "id": "subheading", "label": "t:labels.subheading" },
+  { "type": "header", "content": "t:sections.insta-feed.headers.profile" },
+  { "type": "image_picker", "id": "profile_image", "label": "t:sections.insta-feed.settings.profile_image.label" },
+  { "type": "text", "id": "profile_name", "label": "t:sections.insta-feed.settings.profile_name.label", "default":
+  "@Harmony" },
+  { "type": "text", "id": "profile_tagline", "label": "t:sections.insta-feed.settings.profile_tagline.label", "info":
+  "t:sections.insta-feed.settings.profile_tagline.info" },
+  { "type": "url", "id": "profile_url", "label": "t:sections.insta-feed.settings.profile_url.label" },
+  { "type": "text", "id": "follow_button_label", "label": "t:sections.insta-feed.settings.follow_button_label.label",
+  "default": "Follow" },
+  {
+  "type": "select",
+  "id": "follow_button_style",
+  "label": "t:labels.button_style",
+  "default": "outline",
+  "options": [
+  { "value": "filled", "label": "t:options.button_style.filled" },
+  { "value": "outline", "label": "t:options.button_style.outline" },
+  { "value": "blur", "label": "t:options.button_style.blur_effect" }
+  ]
+  },
+  { "type": "header", "content": "t:sections.insta-feed.headers.shop_button" },
+  { "type": "text", "id": "shop_button_label", "label": "t:sections.insta-feed.settings.shop_button_label.label",
+  "default": "Shop the Look" },
+  { "type": "header", "content": "t:sections.insta-feed.headers.grid_layout" },
+  { "type": "checkbox", "id": "enable_grid", "label": "t:sections.insta-feed.settings.enable_grid.label", "default":
+  false
+  },
+  {
+  "type": "range",
+  "id": "grid_columns_desktop",
+  "label": "t:sections.insta-feed.settings.grid_columns_desktop.label",
+  "min": 1,
+  "max": 6,
+  "step": 1,
+  "default": 4,
+  "visible_if": "{{ section.settings.enable_grid }}"
+  },
+  {
+  "type": "range",
+  "id": "grid_columns_mobile",
+  "label": "t:sections.insta-feed.settings.grid_columns_mobile.label",
+  "min": 1,
+  "max": 3,
+  "step": 1,
+  "default": 2,
+  "visible_if": "{{ section.settings.enable_grid }}"
+  },
+  { "type": "header", "content": "t:sections.insta-feed.headers.slider" },
+  {
+  "type": "range",
+  "id": "slides_per_view_desktop",
+  "label": "t:sections.insta-feed.settings.slides_per_view_desktop.label",
+  "min": 1,
+  "max": 6,
+  "step": 1,
+  "default": 4
+  },
+  {
+  "type": "range",
+  "id": "slides_per_view_mobile",
+  "label": "t:sections.insta-feed.settings.slides_per_view_mobile.label",
+  "min": 1,
+  "max": 3,
+  "step": 0.1,
+  "default": 1.2
+  },
+  {
+  "type": "range",
+  "id": "slides_per_view_tablet",
+  "label": "t:sections.insta-feed.settings.slides_per_view_tablet.label",
+  "min": 1,
+  "max": 5,
+  "step": 0.1,
+  "default": 2.2
+  },
+  {
+  "type": "range",
+  "id": "gap_desktop",
+  "label": "t:sections.insta-feed.settings.gap_desktop.label",
+  "min": 0,
+  "max": 60,
+  "step": 2,
+  "unit": "px",
+  "default": 20
+  },
+  {
+  "type": "range",
+  "id": "gap_mobile",
+  "label": "t:sections.insta-feed.settings.gap_mobile.label",
+  "min": 0,
+  "max": 40,
+  "step": 2,
+  "unit": "px",
+  "default": 12
+  },
+  {
+  "type": "select",
+  "id": "aspect_ratio",
+  "label": "t:sections.insta-feed.settings.aspect_ratio.label",
+  "default": "3_4",
+  "options": [
+  { "value": "1_1", "label": "t:sections.insta-feed.settings.aspect_ratio.options.1_1" },
+  { "value": "4_5", "label": "t:sections.insta-feed.settings.aspect_ratio.options.4_5" },
+  { "value": "3_4", "label": "t:sections.insta-feed.settings.aspect_ratio.options.3_4" },
+  { "value": "16_9", "label": "t:sections.insta-feed.settings.aspect_ratio.options.16_9" },
+  { "value": "9_16", "label": "t:sections.insta-feed.settings.aspect_ratio.options.9_16" },
+  { "value": "3_2", "label": "t:sections.insta-feed.settings.aspect_ratio.options.3_2" }
+  ]
+  },
+  { "type": "header", "content": "t:sections.insta-feed.headers.section_padding" },
+  {
+  "type": "range",
+  "id": "padding_top_desktop",
+  "label": "t:sections.insta-feed.settings.padding_top_desktop.label",
+  "min": 0,
+  "max": 150,
+  "step": 5,
+  "unit": "px",
+  "default": 60
+  },
+  {
+  "type": "range",
+  "id": "padding_bottom_desktop",
+  "label": "t:sections.insta-feed.settings.padding_bottom_desktop.label",
+  "min": 0,
+  "max": 150,
+  "step": 5,
+  "unit": "px",
+  "default": 60
+  },
+  {
+  "type": "range",
+  "id": "padding_top_mobile",
+  "label": "t:sections.insta-feed.settings.padding_top_mobile.label",
+  "min": 0,
+  "max": 100,
+  "step": 4,
+  "unit": "px",
+  "default": 32
+  },
+  {
+  "type": "range",
+  "id": "padding_bottom_mobile",
+  "label": "t:sections.insta-feed.settings.padding_bottom_mobile.label",
+  "min": 0,
+  "max": 100,
+  "step": 4,
+  "unit": "px",
+  "default": 32
+  }
+  ],
+  "blocks": [
+  {
+  "type": "feed_item",
+  "name": "t:sections.insta-feed.blocks.feed_item.name",
+  "settings": [
+  { "type": "image_picker", "id": "image", "label": "t:sections.insta-feed.blocks.feed_item.settings.image.label" },
+  { "type": "video", "id": "video", "label": "t:sections.insta-feed.blocks.feed_item.settings.video.label", "info":
+  "t:sections.insta-feed.blocks.feed_item.settings.video.info" },
+  { "type": "header", "content": "t:sections.insta-feed.blocks.feed_item.headers.overlay" },
+  {
+  "type": "range",
+  "id": "overlay_opacity",
+  "label": "t:sections.insta-feed.blocks.feed_item.settings.overlay_opacity.label",
+  "min": 0,
+  "max": 100,
+  "step": 5,
+  "unit": "%",
+  "default": 0
+  },
+  { "type": "header", "content": "t:sections.insta-feed.blocks.feed_item.headers.description" },
+  {
+  "type": "richtext",
+  "id": "description",
+  "label": "t:sections.insta-feed.blocks.feed_item.settings.description.label",
+  "info": "t:sections.insta-feed.blocks.feed_item.settings.description.info"
+  },
+  { "type": "header", "content": "t:sections.insta-feed.blocks.feed_item.headers.products" },
+  { "type": "product_list", "id": "products", "label": "t:sections.insta-feed.blocks.feed_item.settings.products.label",
+  "limit": 4 }
+  ]
+  }
+  ],
+  "max_blocks": 12,
+  "presets": [
+  {
+  "name": "t:sections.insta-feed.presets.name",
+  "blocks": [{ "type": "feed_item" }, { "type": "feed_item" }, { "type": "feed_item" }, { "type": "feed_item" }]
+  }
+  ]
+  }
+  {% endschema %}
