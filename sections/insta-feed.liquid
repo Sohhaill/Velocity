@@ -114,7 +114,7 @@
                 {%- endfor -%}
               </div>
               {%- endif -%}
-              <button type="button" class="v-insta__shop-btn button--filled" data-insta-open
+              <button type="button" class="v-insta__shop-btn {{ follow_btn_class }}" data-insta-open
                 data-target="insta-popup-{{ block.id }}">
                 {{ section.settings.shop_button_label | default: 'Shop the Look' }}
               </button>
