@@ -311,7 +311,7 @@
         "grid_columns_desktop": 4,
         "grid_columns_mobile": 2,
         "slides_per_view_desktop": 4,
-        "slides_per_view_mobile": 1.2,
+        "slides_per_view_mobile": 2,
         "slides_per_view_tablet": 2.2,
         "gap_desktop": 10,
         "gap_mobile": 12,
