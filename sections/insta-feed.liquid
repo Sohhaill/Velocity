@@ -93,6 +93,7 @@
             <span class="v-insta__badge">{{ 'icon-insta.svg' | inline_asset_content }}</span>
 
 
+            {%- if products.size > 0 or block.settings.description != blank -%}
             <div class="v-insta__thumbs">
               {%- if products.size > 0 -%}
               <div class="v-insta__products">
@@ -112,6 +113,7 @@
                 {{ section.settings.shop_button_label | default: 'Shop the Look' }}
               </button>
             </div>
+            {%- endif -%}
 
           </div>
         </div>
@@ -137,7 +139,7 @@
   {%- for block in section.blocks -%}
   {%- if block.type == 'feed_item' -%}
   {% assign products = block.settings.products %}
-  {%- if products.size > 0 -%}
+  {%- if products.size > 0 or block.settings.description != blank -%}
   <div class="v-insta__popup section-color-scheme--{{ section.settings.section_color_scheme.id }}"
     id="insta-popup-{{ block.id }}" data-insta-popup data-cursor-root>
     <div class="v-insta__popup-overlay" data-insta-close data-cursor-overlay></div>
@@ -167,6 +169,7 @@
         <div class="v-insta__popup-description">{{ block.settings.description }}</div>
         {%- endif -%}
 
+        {%- if products.size > 0 -%}
         <div class="v-insta__popup-products">
           {%- for product in products -%}
           <div class="v-insta__popup-product">
@@ -189,6 +192,7 @@
           </div>
           {%- endfor -%}
         </div>
+        {%- endif -%}
 
         <div class="v-insta__popup-footer">
           {%- if section.settings.profile_image != blank -%}
