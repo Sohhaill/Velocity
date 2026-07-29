@@ -73,7 +73,9 @@
   padding: 0 var(--container-margin);
   padding-right: unset;
 }
-
+data-grid[true] .v-insta__swiper-wrap {
+  padding-right: var(--container-margin);
+}
 .v-insta__swiper {
   overflow: hidden;
   width: 100%;
