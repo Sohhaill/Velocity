@@ -68,7 +68,6 @@
 .v-card__badge-text {
   white-space: nowrap;
   flex-shrink: 0;
-  
 }
 .v-card__badge.v-card__badge--custom {
   position: absolute;
@@ -77,7 +76,7 @@
 }
 .v-card__badge.v-card__badge--sale {
   position: absolute;
- 
+
   overflow: hidden;
   left: 12px;
   top: 12px;
