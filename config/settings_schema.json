@@ -502,16 +502,6 @@
           },
           {
             "type": "header",
-            "content": "t:colors.accent"
-          },
-          {
-            "type": "color",
-            "id": "accent_color",
-            "label": "t:labels.accent_color",
-            "default": "#111111"
-          },
-          {
-            "type": "header",
             "content": "t:colors.filled_button"
           },
           {
@@ -595,17 +585,6 @@
           "on_secondary_button": "outline_button_text",
           "secondary_button_border": "outline_button_border"
         }
-      }
-    ]
-  },
-  {
-    "name": "Header",
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "enable_blur_button",
-        "label": "t:labels.enable_blur_button",
-        "default": false
       }
     ]
   },
