@@ -502,7 +502,7 @@
           },
           {
             "type": "header",
-            "content": "t:colors.filled_button"
+            "content": "t:colors.accent"
           },
           {
             "type": "color",
