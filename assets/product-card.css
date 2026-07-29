@@ -11,7 +11,9 @@
   overflow: hidden;
   display: block;
 }
-
+.v-card__badge {
+  padding: 2px 6px;
+}
 .v-card__img {
   width: 100%;
   height: 100%;
@@ -64,17 +66,14 @@
 }
 
 .v-card__badge-text {
-  padding: 0 13px;
   white-space: nowrap;
   flex-shrink: 0;
+  
 }
 .v-card__badge.v-card__badge--custom {
   position: absolute;
   top: 50px;
- 
   left: 12px;
-  padding: 2px 6px;
-  
 }
 .v-card__badge.v-card__badge--sale {
   position: absolute;
