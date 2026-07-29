@@ -558,7 +558,7 @@
           },
           {
             "type": "header",
-            "content": "t:colors.input_fields"
+            "content": "t:colors.input"
           },
           {
             "type": "color",
