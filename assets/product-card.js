@@ -24,6 +24,10 @@ function initProductCards() {
     var swiper = new Swiper(swiperEl, {
       loop: false,
       allowTouchMove: true,
+      observer: true,
+      observeParents: true,
+      observeSlideChildren: true,
+      resizeObserver: true,
       pagination: paginationEl ? { el: paginationEl, clickable: false } : false,
       on: {
         slideChangeTransitionEnd: function() {
@@ -31,8 +35,14 @@ function initProductCards() {
         },
         init: function() {
           updateVideos(this);
+          this.update();
         }
       }
+    });
+
+    // Extra safety: recalc after full page load (fonts/images can shift grid width)
+    window.addEventListener('load', function() {
+      swiper.update();
     });
 
     function updateVideos(instance) {
