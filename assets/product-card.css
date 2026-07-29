@@ -72,9 +72,9 @@
 }
 .v-card__badge.v-card__badge--custom {
   position: absolute;
-  bottom: 12px;
-  color: white;
-  right: 12px;
+  top: 50px;
+  color: #fff;
+  left: 12px;
   padding: 2px 6px;
   background: #00000078;
   -webkit-backdrop-filter: blur(3px);
