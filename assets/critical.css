@@ -287,7 +287,7 @@ select,
   bottom: 0;
   width: 100%;
   height: 100%;
-  background: var(--accent-color, #111111);
+  background: var(--accent-background, #111111);
   transform: scaleY(0);
   transform-origin: bottom;
   transition: transform 0.45s cubic-bezier(0.65, 0, 0.35, 1);
@@ -303,7 +303,7 @@ select,
 }
 
 .button--blur:hover {
-  color: var(--button-hover-foreground, #ffffff);
+  color: var(--accent-foreground, #ffffff);
 }
 .header__menu-link::after,
 a.mega-menu__submenu-sublink::after,

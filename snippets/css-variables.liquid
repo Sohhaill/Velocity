@@ -65,28 +65,33 @@
 --input-background: {{ default_scheme.input_background }};
 --input-foreground: {{ default_scheme.input_text }};
 --button-radius: {{ settings.button_corner_radius }}px;
+--accent-background: {{ default_scheme.accent_background }};
+--accent-foreground: {{ default_scheme.accent_text }};
 --input-radius: {{ settings.input_corner_radius }}px;
 }
 
 {%- for scheme in settings.color_schemes -%}
 {%- assign s = scheme.settings -%}
 .section-color-scheme--{{ scheme.id }} {
-  --color-background: {{ s.background }};
-  --color-foreground: {{ s.body }};
-  --color-heading: {{ s.heading }};
-  --accent-color: {{ s.accent_color }};
-  --button-background: {{ s.button_background }};
-  --button-foreground: {{ s.button_text }};
-  --button-hover-background: {{ s.button_hover_background }};
-  --button-hover-foreground: {{ s.button_hover_text }};
-  --button-outline-border: {{ s.outline_button_border }};
-  --button-outline-foreground: {{ s.outline_button_text }};
-  --button-outline-hover-border: {{ s.outline_button_hover_border }};
-  --button-outline-hover-foreground: {{ s.outline_button_hover_text }};
-  --input-background: {{ s.input_background }};
-  --input-foreground: {{ s.input_text }};
-  background-color: {{ s.background }};
-  color: {{ s.body }};
+--color-background: {{ s.background }};
+--color-foreground: {{ s.body }};
+--color-heading: {{ s.heading }};
+--accent-background: {{ s.accent_background }};
+  --accent-foreground: {{ s.accent_text }};
+--button-background: {{ s.button_background }};
+--accent-background: {{ s.accent_background }};
+  --accent-foreground: {{ s.accent_text }};
+--button-foreground: {{ s.button_text }};
+--button-hover-background: {{ s.button_hover_background }};
+--button-hover-foreground: {{ s.button_hover_text }};
+--button-outline-border: {{ s.outline_button_border }};
+--button-outline-foreground: {{ s.outline_button_text }};
+--button-outline-hover-border: {{ s.outline_button_hover_border }};
+--button-outline-hover-foreground: {{ s.outline_button_hover_text }};
+--input-background: {{ s.input_background }};
+--input-foreground: {{ s.input_text }};
+background-color: {{ s.background }};
+color: {{ s.body }};
 }
 {%- endfor -%}
 {% endstyle %}

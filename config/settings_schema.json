@@ -516,9 +516,15 @@
           },
           {
             "type": "color",
-            "id": "accent_color",
-            "label": "t:labels.accent_color",
+            "id": "accent_background",
+            "label": "t:labels.accent_background",
             "default": "#111111"
+          },
+          {
+            "type": "color",
+            "id": "accent_text",
+            "label": "t:labels.accent_text",
+            "default": "#FFFFFF"
           },
           {
             "type": "header",
