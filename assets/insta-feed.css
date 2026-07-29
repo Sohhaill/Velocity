@@ -300,6 +300,10 @@
   object-fit: cover;
   display: block;
 }
+.v-insta__follow-btn svg {
+    width: 14px;
+}
+
 
 .v-insta__popup-panel {
   flex: 1 1 50%;

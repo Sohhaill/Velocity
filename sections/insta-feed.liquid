@@ -62,7 +62,7 @@
       <a href="{{ section.settings.profile_url | default: '#' }}"
         class="button v-insta__follow-btn {% if section.settings.follow_button_style == 'outline' %}button--outline{% else %}button--filled{% endif %}">
         {{ section.settings.follow_button_label }}
-        <span class="v-insta__badge">{{ 'icon-insta.svg' | inline_asset_content }}</span>
+        {{ 'icon-insta.svg' | inline_asset_content }}
       </a>
       {%- endif -%}
     </div>
