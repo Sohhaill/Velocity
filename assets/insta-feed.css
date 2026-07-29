@@ -150,7 +150,7 @@ data-grid[true] .v-insta__swiper-wrap {
 
 .v-insta__item .v-insta__thumb {
   width: 3rem;
-  height: 52px;
+  height: 3rem;
   border-radius: 6px;
   overflow: hidden;
   border: 2px solid #ffffff;
