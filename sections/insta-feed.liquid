@@ -26,6 +26,9 @@
 --v-insta-padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
 --v-insta-padding-top-mobile: {{ section.settings.padding_top_mobile }}px;
 --v-insta-padding-bottom-mobile: {{ section.settings.padding_bottom_mobile }}px;
+--v-insta-slides-desktop: {{ section.settings.slides_per_view_desktop | default: 4 }};
+--v-insta-slides-tablet: {{ section.settings.slides_per_view_tablet | default: 2.2 }};
+--v-insta-slides-mobile: {{ section.settings.slides_per_view_mobile | default: 1.2 }};
 }
 {%- endstyle -%}
 <div class="section-color-scheme--{{ section.settings.section_color_scheme.id }}">

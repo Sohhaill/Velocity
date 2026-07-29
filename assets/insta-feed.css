@@ -478,6 +478,37 @@ data-grid[true] .v-insta__swiper-wrap {
 .v-insta__popup-description p:last-child {
   margin-bottom: 0;
 }
+/* Prevent FOUC/layout jump before Swiper JS initializes */
+.v-insta__swiper:not(.swiper-initialized) .swiper-wrapper {
+  display: flex;
+}
+
+.v-insta__swiper:not(.swiper-initialized) .swiper-slide {
+  flex-shrink: 0;
+  width: calc((100% - (var(--v-insta-slides-mobile) - 1) * var(--v-insta-gap-mobile)) / var(--v-insta-slides-mobile));
+}
+
+@media screen and (min-width: 750px) {
+  .v-insta__swiper:not(.swiper-initialized) .swiper-slide {
+    width: calc((100% - (var(--v-insta-slides-tablet) - 1) * var(--v-insta-gap-desktop)) / var(--v-insta-slides-tablet));
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .v-insta__swiper:not(.swiper-initialized) .swiper-slide {
+    width: calc((100% - (var(--v-insta-slides-desktop) - 1) * var(--v-insta-gap-desktop)) / var(--v-insta-slides-desktop));
+  }
+}
+
+/* Smooth fade once Swiper takes over, avoids any residual flash */
+.v-insta__swiper {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.v-insta__swiper.swiper-initialized {
+  opacity: 1;
+}
 @media (max-width: 768px) {
 
   .v-insta__thumbs,
