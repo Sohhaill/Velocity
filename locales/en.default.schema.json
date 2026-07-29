@@ -336,11 +336,11 @@
             },
             "image_mobile": {
               "label": "Image (mobile)",
-              "info": "Optional — uses desktop image if left empty"
+              "info": "Optional - uses desktop image if left empty"
             },
             "video_mobile": {
               "label": "Video (mobile)",
-              "info": "Optional — uses desktop video (or image) if left empty"
+              "info": "Optional - uses desktop video (or image) if left empty"
             },
             "content_position_desktop": {
               "label": "Content position (desktop)"
@@ -384,13 +384,13 @@
         "follow_button_label": { "label": "Follow button label" },
         "shop_button_label": { "label": "Shop button label" },
         "enable_grid": { "label": "Enable grid layout" },
-        "grid_columns_desktop": { "label": "Grid columns — desktop" },
-        "grid_columns_mobile": { "label": "Grid columns — mobile" },
-        "slides_per_view_desktop": { "label": "Slides per view — desktop" },
-        "slides_per_view_mobile": { "label": "Slides per view — mobile" },
-        "slides_per_view_tablet": { "label": "Slides per view — tablet" },
-        "gap_desktop": { "label": "Gap — desktop" },
-        "gap_mobile": { "label": "Gap — mobile" },
+        "grid_columns_desktop": { "label": "Grid columns - desktop" },
+        "grid_columns_mobile": { "label": "Grid columns - mobile" },
+        "slides_per_view_desktop": { "label": "Slides per view - desktop" },
+        "slides_per_view_mobile": { "label": "Slides per view - mobile" },
+        "slides_per_view_tablet": { "label": "Slides per view - tablet" },
+        "gap_desktop": { "label": "Gap - desktop" },
+        "gap_mobile": { "label": "Gap - mobile" },
         "aspect_ratio": {
           "label": "Block aspect ratio",
           "options": {
@@ -402,10 +402,10 @@
             "3_2": "3:2 Landscape"
           }
         },
-        "padding_top_desktop": { "label": "Padding top — desktop" },
-        "padding_bottom_desktop": { "label": "Padding bottom — desktop" },
-        "padding_top_mobile": { "label": "Padding top — mobile" },
-        "padding_bottom_mobile": { "label": "Padding bottom — mobile" }
+        "padding_top_desktop": { "label": "Padding top - desktop" },
+        "padding_bottom_desktop": { "label": "Padding bottom - desktop" },
+        "padding_top_mobile": { "label": "Padding top - mobile" },
+        "padding_bottom_mobile": { "label": "Padding bottom - mobile" }
       },
       "blocks": {
         "feed_item": {
