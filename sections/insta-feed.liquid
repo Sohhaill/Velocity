@@ -1,4 +1,4 @@
-
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
 {{ 'insta-feed.css' | asset_url | stylesheet_tag }}
 
 {% assign aspect_ratio_value = '1/1' %}
@@ -230,7 +230,8 @@
     {%- endfor -%}
   </div>
 </div>
-
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
+<script src="{{ 'insta-feed.js' | asset_url }}" defer></script>
 
 {% schema %}
 {

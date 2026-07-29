@@ -3,6 +3,8 @@ Renders a product card: image, title, price.
 Accepts:
 - card_product: {Object} product object (required)
 {%- endcomment -%}
+
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
 {{ 'product-card.css' | asset_url | stylesheet_tag }}
 {{ 'price.css' | asset_url | stylesheet_tag }}
 
@@ -108,4 +110,5 @@ assign card_media_count = card_media_list.size
     </a>
 </div>
 
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
 <script src="{{ 'product-card.js' | asset_url }}" defer></script>
