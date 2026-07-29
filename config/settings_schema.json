@@ -501,20 +501,14 @@
             "default": "#111111"
           },
           {
+            "type": "color",
+            "id": "accent_color",
+            "label": "t:labels.accent_color",
+            "default": "#111111"
+          },
+          {
             "type": "header",
-            "content": "Tooltip"
-          },
-          {
-            "type": "color",
-            "id": "tooltip",
-            "label": "Tooltip background",
-            "default": "#222222"
-          },
-          {
-            "type": "color",
-            "id": "tooltip_label",
-            "label": "Tooltip text",
-            "default": "#FFFFFF"
+            "content": "t:colors.filled_button"
           },
           {
             "type": "header",
@@ -571,6 +565,16 @@
             "id": "outline_button_hover_text",
             "label": "t:labels.outline_button_hover_text",
             "default": "#333333"
+          },
+          {
+            "type": "header",
+            "content": "t:colors.blur_button"
+          },
+          {
+            "type": "checkbox",
+            "id": "enable_blur_button",
+            "label": "t:labels.enable_blur_button",
+            "default": false
           },
           {
             "type": "header",
