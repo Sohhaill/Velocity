@@ -88,6 +88,25 @@
   display: block;
 }
 
+.v-card__external-video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.v-card__external-video iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  min-width: 177.77vh;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
 .v-card__info {
   padding-top: 12px;
   display: flex;

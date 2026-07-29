@@ -21,6 +21,19 @@ function initProductCards() {
 
     var paginationEl = swiperEl.querySelector('.v-card__pagination');
 
+    // Ensure YouTube/Vimeo iframes have JS API enabled
+    swiperEl.querySelectorAll('.v-card__video-iframe').forEach(function(iframe) {
+      var src = iframe.getAttribute('src');
+      if (!src) return;
+      if (src.indexOf('youtube') !== -1 && src.indexOf('enablejsapi') === -1) {
+        var sep = src.indexOf('?') !== -1 ? '&' : '?';
+        iframe.setAttribute('src', src + sep + 'enablejsapi=1');
+      } else if (src.indexOf('player.vimeo.com') !== -1 && src.indexOf('api=1') === -1) {
+        var vsep = src.indexOf('?') !== -1 ? '&' : '?';
+        iframe.setAttribute('src', src + vsep + 'api=1');
+      }
+    });
+
     var swiper = new Swiper(swiperEl, {
       loop: false,
       allowTouchMove: true,
@@ -48,12 +61,36 @@ function initProductCards() {
     function updateVideos(instance) {
       instance.slides.forEach(function(slide, i) {
         var video = slide.querySelector('.v-card__video');
-        if (!video) return;
-        if (i === instance.activeIndex) {
-          video.play().catch(function() {});
-        } else {
-          video.pause();
-          video.currentTime = 0;
+        var iframe = slide.querySelector('.v-card__video-iframe');
+
+        if (video) {
+          if (i === instance.activeIndex) {
+            video.play().catch(function() {});
+          } else {
+            video.pause();
+            video.currentTime = 0;
+          }
+        }
+
+        if (iframe) {
+          var isYouTube = iframe.src.indexOf('youtube') !== -1;
+          var isVimeo = iframe.src.indexOf('vimeo') !== -1;
+
+          if (i === instance.activeIndex) {
+            if (isYouTube) {
+              iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'mute', args: [] }), '*');
+              iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo', args: [] }), '*');
+            } else if (isVimeo) {
+              iframe.contentWindow.postMessage(JSON.stringify({ method: 'setVolume', value: 0 }), '*');
+              iframe.contentWindow.postMessage(JSON.stringify({ method: 'play' }), '*');
+            }
+          } else {
+            if (isYouTube) {
+              iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }), '*');
+            } else if (isVimeo) {
+              iframe.contentWindow.postMessage(JSON.stringify({ method: 'pause' }), '*');
+            }
+          }
         }
       });
     }

@@ -86,7 +86,9 @@ assign card_media_count = card_media_list.size
                         {%- if media.media_type == 'video' -%}
                         {{ media | video_tag: image_size: '1000x', muted: true, loop: true, controls: false, class: 'v-card__img v-card__video' }}
                         {%- else -%}
-                        {{ media.preview_image | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '300,450,600,800,1000', sizes: '(min-width: 990px) 25vw, 50vw', class: 'v-card__img' }}
+                        <div class="v-card__external-video" data-external-video>
+                          {{ media | external_video_tag: image_size: '1000x', class: 'v-card__img v-card__video-iframe' }}
+                        </div>
                         {%- endif -%}
                         {%- else -%}
                         {{ media | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '300,450,600,800,1000', sizes: '(min-width: 990px) 25vw, 50vw', class: 'v-card__img' }}
