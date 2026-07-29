@@ -79,7 +79,6 @@ p:empty {
 body {
   font-family: var(--font-body--family);
   font-style: normal;
-
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
   background-color: var(--color-background);
@@ -95,7 +94,6 @@ h6 {
   font-family: var(--font-heading--family);
   font-weight: var(--font-heading--weight);
   font-style: normal;
-
   line-height: var(--line-height-heading);
   color: var(--color-heading);
 }
@@ -153,6 +151,8 @@ h6 {
 .small-text,
 small {
   font-size: var(--font-size-small);
+  font-family: var(--font-body--family);
+  font-style: normal;
 }
 .v-banner.allow-transparent-header,
 .v-video.allow-transparent-header {
