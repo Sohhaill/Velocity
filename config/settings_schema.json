@@ -57,16 +57,7 @@
         "default": "inter_n4",
         "label": "t:labels.button_font"
       },
-      {
-        "type": "header",
-        "content": "t:colors.blur_button"
-      },
-      {
-        "type": "checkbox",
-        "id": "enable_blur_button",
-        "label": "t:labels.enable_blur_button",
-        "default": false
-      },
+      
       {
         "type": "header",
         "content": "Desktop Font Sizes"
