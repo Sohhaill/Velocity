@@ -90,3 +90,15 @@
   background: #00000078;
   backdrop-filter: blur(3px);
 }
+/* STYLE VARIANTS — accent or glass */
+.v-card__style--accent {
+  background: var(--accent-background, #111111);
+  color: var(--accent-foreground, #ffffff);
+}
+
+.v-card__style--glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+}

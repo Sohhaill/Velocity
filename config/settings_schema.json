@@ -622,6 +622,20 @@
       },
       {
         "type": "header",
+        "content": "t:product_card.style"
+      },
+      {
+        "type": "select",
+        "id": "badge_wishlist_style",
+        "label": "t:product_card.badge_wishlist_style",
+        "default": "accent",
+        "options": [
+          { "value": "accent", "label": "t:product_card.style_accent" },
+          { "value": "glass", "label": "t:product_card.style_glass" }
+        ]
+      },
+      {
+        "type": "header",
         "content": "t:product_card.badges"
       },
       {
