@@ -238,6 +238,16 @@
       },
       {
         "type": "range",
+        "id": "font_size_mobile_small_text",
+        "label": "Mobile Small Text",
+        "min": 4,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "default": 8
+      },
+      {
+        "type": "range",
         "id": "font_size_mobile_body_text",
         "label": "Mobile Base Text",
         "min": 12,
