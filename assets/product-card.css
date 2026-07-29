@@ -87,8 +87,6 @@
   left: 12px;
   top: 12px;
   font-size: 1.1rem;
-  background: #00000078;
-  backdrop-filter: blur(3px);
 }
 /* STYLE VARIANTS — accent or glass */
 .v-card__style--accent {
