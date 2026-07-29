@@ -496,13 +496,23 @@
           },
           {
             "type": "color",
-            "id": "body",
-            "label": "t:labels.body",
-            "default": "#111111"
+            "id": "outline_button_hover_text",
+            "label": "t:labels.outline_button_hover_text",
+            "default": "#333333"
           },
           {
             "type": "header",
-            "content": "t:colors.filled_button"
+            "content": "t:colors.blur_button"
+          },
+          {
+            "type": "checkbox",
+            "id": "enable_blur_button",
+            "label": "t:labels.enable_blur_button",
+            "default": false
+          },
+          {
+            "type": "header",
+            "content": "t:colors.input_fields"
           },
           {
             "type": "color",
@@ -557,6 +567,20 @@
             "default": "#333333"
           },
           {
+            "type": "header",
+            "content": "t:colors.blur_button"
+          },
+          {
+            "type": "checkbox",
+            "id": "enable_blur_button",
+            "label": "t:labels.enable_blur_button",
+            "default": false
+          },
+          {
+            "type": "header",
+            "content": "t:colors.input_fields"
+          },
+          {
             "type": "color",
             "id": "input_text",
             "label": "t:labels.input_text",
@@ -572,6 +596,7 @@
         "role": {
           "background": "background",
           "text": "heading",
+          "accent": "accent_color",
           "links": "heading",
           "icons": "heading",
           "primary_button": "button_background",

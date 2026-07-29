@@ -64,6 +64,7 @@
 
 .v-insta__follow-btn {
   white-space: nowrap;
+  gap: 7px;
 }
 
 /* SWIPER */
@@ -301,9 +302,8 @@
   display: block;
 }
 .v-insta__follow-btn svg {
-    width: 14px;
+  width: 14px;
 }
-
 
 .v-insta__popup-panel {
   flex: 1 1 50%;
@@ -382,7 +382,6 @@
 .v-insta__popup-product-title {
   text-decoration: none;
   color: inherit;
-
 }
 
 .v-insta__popup-product-compare {
@@ -479,15 +478,16 @@
     width: 40px;
     height: 40px;
   }
-  .v-insta__thumbs,  .v-insta__popup-panel{
+  .v-insta__thumbs,
+  .v-insta__popup-panel {
     padding: 16px;
   }
-  .v-insta__swiper-wrap:hover .v-insta__nav-container{
+  .v-insta__swiper-wrap:hover .v-insta__nav-container {
     display: none;
   }
-   
-  .v-insta__popup-product-media{
-        flex: 0 0 60px;
+
+  .v-insta__popup-product-media {
+    flex: 0 0 60px;
     width: 60px;
     height: 60px;
   }

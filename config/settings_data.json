@@ -51,79 +51,16 @@
     "footer_payment_icon_7": "shopify://shop_images/download_96c0baa4-7973-460d-a109-8642100a6dad.webp",
     "footer_payment_icon_8": "shopify://shop_images/download_fd7bb283-f532-430c-9dfc-63579293b38e.webp",
     "content_for_index": [],
-    "color_schemes": {
-      "scheme-1": {
-        "settings": {
-          "background": "#FFFFFF",
-          "heading": "#111111",
-          "subheading": "#6b7280",
-          "body": "#111111",
-          "button_background": "#ffd900",
-          "button_text": "#000000",
-          "button_hover_background": "#ffffff",
-          "button_hover_text": "#000000",
-          "outline_button_border": "#111111",
-          "outline_button_text": "#111111",
-          "outline_button_hover_border": "#000000",
-          "outline_button_hover_text": "#000000",
-          "input_text": "#ffffff",
-          "input_background": "#000000"
-        }
-      },
-      "scheme-2": {
-        "settings": {
-          "background": "#000000",
-          "heading": "#ffffff",
-          "subheading": "#ffffff",
-          "body": "#ffffff",
-          "button_background": "#00e5ff",
-          "button_text": "#ffffff",
-          "button_hover_background": "#e5e7eb",
-          "button_hover_text": "#111111",
-          "outline_button_border": "#ffffff",
-          "outline_button_text": "#ffffff",
-          "outline_button_hover_border": "#e5e7eb",
-          "outline_button_hover_text": "#e5e7eb",
-          "input_text": "#ffffff",
-          "input_background": "#1f2937"
-        }
-      },
-      "scheme-3": {
-        "settings": {
-          "background": "#f2ff00",
-          "heading": "#000000",
-          "subheading": "#000000",
-          "body": "#000000",
-          "button_background": "#000000",
-          "button_text": "#ffffff",
-          "button_hover_background": "#ffffff",
-          "button_hover_text": "#000000",
-          "outline_button_border": "#ffffff",
-          "outline_button_text": "#ffffff",
-          "outline_button_hover_border": "#ffffff",
-          "outline_button_hover_text": "#ffffff",
-          "input_text": "#ffffff",
-          "input_background": "#000000"
-        }
-      },
-      "scheme-4": {
-        "settings": {
-          "background": "#000000",
-          "heading": "#ffffff",
-          "subheading": "#ffffff",
-          "body": "#ffffff",
-          "button_background": "#00e5ff",
-          "button_text": "#ffffff",
-          "button_hover_background": "#e5e7eb",
-          "button_hover_text": "#111111",
-          "outline_button_border": "#ffffff",
-          "outline_button_text": "#ffffff",
-          "outline_button_hover_border": "#e5e7eb",
-          "outline_button_hover_text": "#e5e7eb",
-          "input_text": "#ffffff",
-          "input_background": "#1f2937"
-        }
-      }
-    }
+    "colors": {
+    "scheme_1": "Color scheme 1",
+    "scheme_2": "Color scheme 2",
+    "scheme_3": "Color scheme 3",
+    "scheme_4": "Color scheme 4",
+    "accent": "Accent",
+    "filled_button": "Filled button",
+    "outline_button": "Outline button",
+    "blur_button": "Blur button",
+    "input_fields": "Input fields"
+  }
   }
 }
