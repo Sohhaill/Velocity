@@ -496,23 +496,23 @@
           },
           {
             "type": "color",
-            "id": "outline_button_hover_text",
-            "label": "t:labels.outline_button_hover_text",
-            "default": "#333333"
+            "id": "body",
+            "label": "t:labels.body",
+            "default": "#111111"
           },
           {
             "type": "header",
-            "content": "t:colors.blur_button"
+            "content": "t:colors.accent"
           },
           {
-            "type": "checkbox",
-            "id": "enable_blur_button",
-            "label": "t:labels.enable_blur_button",
-            "default": false
+            "type": "color",
+            "id": "accent_color",
+            "label": "t:labels.accent_color",
+            "default": "#111111"
           },
           {
             "type": "header",
-            "content": "t:colors.input_fields"
+            "content": "t:colors.filled_button"
           },
           {
             "type": "color",
@@ -568,16 +568,6 @@
           },
           {
             "type": "header",
-            "content": "t:colors.blur_button"
-          },
-          {
-            "type": "checkbox",
-            "id": "enable_blur_button",
-            "label": "t:labels.enable_blur_button",
-            "default": false
-          },
-          {
-            "type": "header",
             "content": "t:colors.input_fields"
           },
           {
@@ -596,7 +586,6 @@
         "role": {
           "background": "background",
           "text": "heading",
-          "accent": "accent_color",
           "links": "heading",
           "icons": "heading",
           "primary_button": "button_background",
@@ -606,6 +595,17 @@
           "on_secondary_button": "outline_button_text",
           "secondary_button_border": "outline_button_border"
         }
+      }
+    ]
+  },
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_blur_button",
+        "label": "t:labels.enable_blur_button",
+        "default": false
       }
     ]
   },
