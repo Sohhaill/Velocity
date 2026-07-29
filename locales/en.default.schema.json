@@ -444,6 +444,13 @@
   },
 
   "product_card": {
+    "image": "Image",
+    "aspect_ratio": "Image aspect ratio",
+    "aspect_ratio_square": "Square (1:1)",
+    "aspect_ratio_portrait": "Portrait (4:5)",
+    "aspect_ratio_tall": "Tall (3:4)",
+    "aspect_ratio_landscape": "Landscape (16:9)",
+    "aspect_ratio_adapt": "Adapt to image",
     "wishlist": "Wishlist",
     "show_wishlist_icon": "Show wishlist icon on product card",
     "badges": "Badges",
