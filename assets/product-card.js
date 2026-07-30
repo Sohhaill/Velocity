@@ -2,18 +2,6 @@ document.addEventListener('DOMContentLoaded', initProductCards);
 if (document.readyState !== 'loading') initProductCards();
 
 function initProductCards() {
-  // Wishlist toggle
-  document.querySelectorAll('[data-wishlist-toggle]').forEach(function(btn) {
-    if (btn.__wishlistInit) return;
-    btn.__wishlistInit = true;
-
-    btn.addEventListener('click', function(e) {
-      e.preventDefault();
-      var pressed = btn.getAttribute('aria-pressed') === 'true';
-      btn.setAttribute('aria-pressed', String(!pressed));
-    });
-  });
-
   // Card media swiper + hover-zone navigation
   document.querySelectorAll('[data-card-swiper]').forEach(function(swiperEl) {
     if (swiperEl.__cardSwiperInit) return;
