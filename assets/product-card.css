@@ -125,7 +125,6 @@
   width: auto;
   transform: translateY(calc(100% + 20px));
   opacity: 0;
-  transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
 .v-card__media:hover .v-card__quick-add,
