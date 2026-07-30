@@ -48,11 +48,7 @@ function initProductCards() {
         },
         init: function() {
           updateVideos(this);
-          updateArrowVisibility(this);
           this.update();
-        },
-        slideChange: function() {
-          updateArrowVisibility(this);
         }
       }
     });
@@ -61,18 +57,6 @@ function initProductCards() {
     window.addEventListener('load', function() {
       swiper.update();
     });
-
-    function updateArrowVisibility(instance) {
-      var prevArrow = swiperEl.querySelector('[data-zone-arrow="prev"]');
-      var nextArrow = swiperEl.querySelector('[data-zone-arrow="next"]');
-
-      if (prevArrow) {
-        prevArrow.style.display = instance.isBeginning ? 'none' : 'flex';
-      }
-      if (nextArrow) {
-        nextArrow.style.display = instance.isEnd ? 'none' : 'flex';
-      }
-    }
 
     function updateVideos(instance) {
       instance.slides.forEach(function(slide, i) {

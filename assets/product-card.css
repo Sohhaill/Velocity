@@ -59,52 +59,6 @@
   width: 16px;
   border-radius: 3px;
 }
-
-/* ZONE ARROWS — visual hint only, not clickable */
-.v-card__zone-arrow {
-  position: absolute;
-  top: 50%;
-  z-index: 4;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.85);
-  color: #111111;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.v-card__zone-arrow svg {
-  width: 14px;
-  height: 14px;
-}
-
-.v-card__zone-arrow--prev {
-  left: 10px;
-  transform: translateY(-50%) translateX(-8px);
-}
-
-.v-card__zone-arrow--next {
-  right: 10px;
-  transform: translateY(-50%) translateX(8px);
-}
-
-.v-card__media:hover .v-card__zone-arrow {
-  opacity: 0.7;
-  transform: translateY(-50%) translateX(0);
-}
-
-/* Highlight the active arrow while its zone is hovered */
-.v-card__swiper.is-zone-prev .v-card__zone-arrow--prev,
-.v-card__swiper.is-zone-next .v-card__zone-arrow--next {
-  opacity: 1;
-  background: #ffffff;
-  transform: translateY(-50%) scale(1.1);
-}
 .v-card__media--square {
   aspect-ratio: 1/1;
 }
