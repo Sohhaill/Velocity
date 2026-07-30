@@ -143,11 +143,9 @@
   right: 15px;
   top: 15px;
   transform: translate(54px);
-  transition: transform 0.35s ease;
   padding: 5px;
   z-index: 3;
   border-radius: 3px;
-  color: white;
 }
 .v-card__quick-view-icon {
   display: flex;
