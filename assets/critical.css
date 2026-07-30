@@ -29,7 +29,53 @@ svg {
   max-width: 100%;
   height: auto;
 }
+.accent-button {
+  font-family: var(--font-button--family);
+  font-style: normal;
+  font-size: var(--font-size-button);
+  font-weight: var(--font-button--weight);
+  background-color: var(--accent-background);
+  color: var(--accent-foreground);
+  border: none;
+  cursor: pointer;
+  border-radius: var(--button-radius);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  isolation: isolate;
+  padding: 0.53rem 2rem;
+  text-decoration: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.accent-button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--accent-hover-background);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+  display: flex;
+  align-items: center;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.accent-button:hover::before,
+.accent-button:focus-visible::before {
+  transform: scaleY(1);
+}
+
+.accent-button:hover {
+  color: var(--accent-hover-foreground);
+}
 input,
 textarea,
 select {
