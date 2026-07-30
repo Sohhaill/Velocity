@@ -79,6 +79,14 @@ assign card_media_count = card_media_list.size
 
       {%- if card_media_count > 0 -%}
       <div class="v-card__swiper swiper" data-card-swiper>
+        {%- if card_media_count > 1 -%}
+        <span class="v-card__zone-arrow v-card__zone-arrow--prev" data-zone-arrow="prev">
+          {{ 'icon-chevron-left.svg' | inline_asset_content }}
+        </span>
+        <span class="v-card__zone-arrow v-card__zone-arrow--next" data-zone-arrow="next">
+          {{ 'icon-chevron-right.svg' | inline_asset_content }}
+        </span>
+        {%- endif -%}
         <div class="swiper-wrapper">
           {%- for media in card_media_list -%}
           <div class="swiper-slide v-card__slide">
