@@ -155,17 +155,7 @@
   white-space: nowrap;
   flex-shrink: 0;
 }
-.v-card__badge.v-card__badge--custom {
-  position: absolute;
-  top: 50px;
-  left: 12px;
-}
-.v-card__badge.v-card__badge--sale {
-  position: absolute;
-  overflow: hidden;
-  left: 12px;
-  top: 12px;
-}
+
 /* STYLE VARIANTS — accent or glass */
 .v-card__style--accent {
   background: var(--accent-background, #111111);
