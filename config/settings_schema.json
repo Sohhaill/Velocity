@@ -361,6 +361,18 @@
             "default": "#FFFFFF"
           },
           {
+            "type": "color",
+            "id": "accent_hover_background",
+            "label": "t:labels.accent_hover_background",
+            "default": "#333333"
+          },
+          {
+            "type": "color",
+            "id": "accent_hover_text",
+            "label": "t:labels.accent_hover_text",
+            "default": "#FFFFFF"
+          },
+          {
             "type": "header",
             "content": "t:colors.filled_button"
           },
