@@ -116,6 +116,24 @@
   gap: 6px;
 }
 
+.v-card__quick-add {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  z-index: 4;
+  width: auto;
+  transform: translateY(calc(100% + 20px));
+  opacity: 0;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.v-card__media:hover .v-card__quick-add,
+.v-card__media:focus-within .v-card__quick-add {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 .v-card__title {
   margin: 0;
   font-size: 1em;

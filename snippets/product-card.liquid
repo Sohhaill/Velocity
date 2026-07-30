@@ -52,6 +52,16 @@ endcase
 
 assign card_media_list = card_product.media | slice: 0, 5
 assign card_media_count = card_media_list.size
+
+assign quick_add_class = 'button--filled'
+case settings.quick_add_button_style
+  when 'outline'
+    assign quick_add_class = 'button--outline'
+  when 'glass'
+    assign quick_add_class = 'button--blur'
+  else
+    assign quick_add_class = 'button--filled'
+endcase
 -%}
 
 <div class="v-card" data-v-product-card>
@@ -102,6 +112,19 @@ assign card_media_count = card_media_list.size
             </div>
             {%- else -%}
             <div class="placeholder-image">{{ 'placeholder-media.svg' | inline_asset_content }}</div>
+            {%- endif -%}
+
+            {%- if settings.show_quick_add_button -%}
+            <button
+              type="button"
+              class="v-card__quick-add {{ quick_add_class }}"
+              data-quick-add
+              data-product-id="{{ card_product.id }}"
+              data-variant-id="{{ target_variant.id }}"
+              onclick="event.preventDefault();"
+            >
+              {{ settings.quick_add_button_label | default: 'Quick add' }}
+            </button>
             {%- endif -%}
         </div>
 
