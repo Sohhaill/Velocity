@@ -112,18 +112,7 @@ endcase
             <div class="placeholder-image">{{ 'placeholder-media.svg' | inline_asset_content }}</div>
             {%- endif -%}
 
-            {%- if settings.show_quick_add_button -%}
-            <button
-              type="button"
-              class="v-card__quick-add {{ quick_add_class }}"
-              data-quick-add
-              data-product-id="{{ card_product.id }}"
-              data-variant-id="{{ target_variant.id }}"
-              onclick="event.preventDefault();"
-            >
-              {{ settings.quick_add_button_label | default: 'Quick add' }}
-            </button>
-            {%- endif -%}
+            
         </div>
 
         <div class="v-card__info">

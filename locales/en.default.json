@@ -65,7 +65,8 @@
       "from": "From {{ price }}"
     },
     "card": {
-      "add_to_wishlist": "Add to wishlist",
+      "quick_view": "Quick view",
+      "quick_add": "Quick add",
       "sale_badge": "Sale"
     }
   }

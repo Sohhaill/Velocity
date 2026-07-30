@@ -695,12 +695,7 @@
         "label": "t:product_card.show_quick_add_button",
         "default": true
       },
-      {
-        "type": "text",
-        "id": "quick_add_button_label",
-        "label": "t:product_card.quick_add_button_label",
-        "default": "Quick add"
-      },
+     
       {
         "type": "select",
         "id": "quick_add_button_style",
