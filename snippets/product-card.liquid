@@ -30,24 +30,24 @@ endif
 
 assign style_class = ''
 case settings.badge_wishlist_style
-when 'glass'
-assign style_class = 'v-card__style--glass'
-else
-assign style_class = 'v-card__style--accent'
+  when 'glass'
+    assign style_class = 'v-card__style--glass'
+  else
+    assign style_class = 'v-card__style--accent'
 endcase
 
 assign aspect_class = 'v-card__media--square'
 case settings.card_aspect_ratio
-when 'portrait'
-assign aspect_class = 'v-card__media--portrait'
-when 'tall'
-assign aspect_class = 'v-card__media--tall'
-when 'landscape'
-assign aspect_class = 'v-card__media--landscape'
-when 'adapt'
-assign aspect_class = 'v-card__media--adapt'
-else
-assign aspect_class = 'v-card__media--square'
+  when 'portrait'
+    assign aspect_class = 'v-card__media--portrait'
+  when 'tall'
+    assign aspect_class = 'v-card__media--tall'
+  when 'landscape'
+    assign aspect_class = 'v-card__media--landscape'
+  when 'adapt'
+    assign aspect_class = 'v-card__media--adapt'
+  else
+    assign aspect_class = 'v-card__media--square'
 endcase
 
 assign card_media_list = card_product.media | slice: 0, 5
@@ -55,72 +55,61 @@ assign card_media_count = card_media_list.size
 -%}
 
 <div class="v-card" data-v-product-card>
-  <a href="{{ card_product.url }}" class="v-card__link">
-    <div class="v-card__media {{ aspect_class }}" style="border-radius: {{ settings.card_media_radius }}px;">
-      {%- if settings.show_wishlist_icon -%}
-      <button type="button" class="v-card__wishlist v-card__style--accent" data-wishlist-toggle
-        data-product-id="{{ card_product.id }}" aria-label="{{ 'products.card.add_to_wishlist' | t }}"
-        aria-pressed="false" onclick="event.preventDefault();">
-        <span class="v-card__wishlist-icon">{{ 'icon-heart.svg' | inline_asset_content }}</span>
-      </button>
-      {%- endif -%}
-      {%- if settings.show_sale_badge and is_sale or settings.show_custom_badge and badge_label != '' -%}
-      <div class="v-card__badges">
-        {%- if settings.show_sale_badge and is_sale -%}
-        <span class="v-card__badge v-card__style--accent v-card__badge--sale">
-          <small class="v-card__badge-text">{{ 'products.card.sale_badge' | t }}</small>
-        </span>
-        {%- endif -%}
-        {%- if settings.show_custom_badge and badge_label != '' -%}
-        <small class="v-card__badge v-card__style--accent v-card__badge--custom">{{ badge_label }}</small>
-        {%- endif -%}
-      </div>
-      {%- endif -%}
-
-      {%- if card_media_count > 0 -%}
-      <div class="v-card__swiper swiper" data-card-swiper>
-        {%- if card_media_count > 1 -%}
-        <span class="v-card__zone-arrow v-card__zone-arrow--prev" data-zone-arrow="prev">
-          {{ 'icon-chevron-left.svg' | inline_asset_content }}
-        </span>
-        <span class="v-card__zone-arrow v-card__zone-arrow--next" data-zone-arrow="next">
-          {{ 'icon-chevron-right.svg' | inline_asset_content }}
-        </span>
-        {%- endif -%}
-        <div class="swiper-wrapper">
-          {%- for media in card_media_list -%}
-          <div class="swiper-slide v-card__slide">
-            {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
-            {%- if media.media_type == 'video' -%}
-            {{ media | video_tag: image_size: '1000x', muted: true, loop: true, controls: false, class: 'v-card__img
-            v-card__video' }}
-            {%- else -%}
-            <div class="v-card__external-video" data-external-video>
-              {{ media | external_video_tag: image_size: '1000x', class: 'v-card__img v-card__video-iframe' }}
+    <a href="{{ card_product.url }}" class="v-card__link">
+        <div class="v-card__media {{ aspect_class }}" style="border-radius: {{ settings.card_media_radius }}px;">
+            {%- if settings.show_wishlist_icon -%}
+            <button type="button" class="v-card__wishlist v-card__style--accent" data-wishlist-toggle
+                data-product-id="{{ card_product.id }}" aria-label="{{ 'products.card.add_to_wishlist' | t }}"
+                aria-pressed="false" onclick="event.preventDefault();">
+                <span class="v-card__wishlist-icon">{{ 'icon-heart.svg' | inline_asset_content }}</span>
+            </button>
+            {%- endif -%}
+            {%- if settings.show_sale_badge and is_sale or settings.show_custom_badge and badge_label != '' -%}
+            <div class="v-card__badges">
+                {%- if settings.show_sale_badge and is_sale -%}
+                <span class="v-card__badge v-card__style--accent v-card__badge--sale">
+                    <small class="v-card__badge-text">{{ 'products.card.sale_badge' | t }}</small>
+                </span>
+                {%- endif -%}
+                {%- if settings.show_custom_badge and badge_label != '' -%}
+                <small class="v-card__badge v-card__style--accent v-card__badge--custom">{{ badge_label }}</small>
+                {%- endif -%}
             </div>
             {%- endif -%}
-            {%- else -%}
-            {{ media | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '300,450,600,800,1000', sizes:
-            '(min-width: 990px) 25vw, 50vw', class: 'v-card__img' }}
-            {%- endif -%}
-          </div>
-          {%- endfor -%}
-        </div>
-        {%- if card_media_count > 1 -%}
-        <div class="v-card__pagination"></div>
-        {%- endif -%}
-      </div>
-      {%- else -%}
-      <div class="placeholder-image">{{ 'placeholder-media.svg' | inline_asset_content }}</div>
-      {%- endif -%}
-      
-    </div>
 
-    <div class="v-card__info">
-      <h3 class="v-card__title">{{ card_product.title }}</h3>
-      {% render 'price', product: card_product %}
-    </div>
-  </a>
+            {%- if card_media_count > 0 -%}
+            <div class="v-card__swiper swiper" data-card-swiper>
+                <div class="swiper-wrapper">
+                    {%- for media in card_media_list -%}
+                    <div class="swiper-slide v-card__slide">
+                        {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
+                        {%- if media.media_type == 'video' -%}
+                        {{ media | video_tag: image_size: '1000x', muted: true, loop: true, controls: false, class: 'v-card__img v-card__video' }}
+                        {%- else -%}
+                        <div class="v-card__external-video" data-external-video>
+                          {{ media | external_video_tag: image_size: '1000x', class: 'v-card__img v-card__video-iframe' }}
+                        </div>
+                        {%- endif -%}
+                        {%- else -%}
+                        {{ media | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '300,450,600,800,1000', sizes: '(min-width: 990px) 25vw, 50vw', class: 'v-card__img' }}
+                        {%- endif -%}
+                    </div>
+                    {%- endfor -%}
+                </div>
+                {%- if card_media_count > 1 -%}
+                <div class="v-card__pagination"></div>
+                {%- endif -%}
+            </div>
+            {%- else -%}
+            <div class="placeholder-image">{{ 'placeholder-media.svg' | inline_asset_content }}</div>
+            {%- endif -%}
+        </div>
+
+        <div class="v-card__info">
+            <h3 class="v-card__title">{{ card_product.title }}</h3>
+            {% render 'price', product: card_product %}
+        </div>
+    </a>
 </div>
 
 <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
