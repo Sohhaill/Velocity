@@ -105,12 +105,7 @@ assign card_media_count = card_media_list.size
       {%- else -%}
       <div class="placeholder-image">{{ 'placeholder-media.svg' | inline_asset_content }}</div>
       {%- endif -%}
-      {%- if card_media_count > 0 -%}
-      <div class="v-card-nav">
-        <span class="v-card-nav_left">{{ 'icon-chevron-left.svg' | inline_asset_content }}</span>
-        <span class="v-card-nav_right">{{ 'icon-chevron-right.svg' | inline_asset_content }}</span>
-      </div>
-      {%- endif -%}
+      
     </div>
 
     <div class="v-card__info">
