@@ -56,6 +56,7 @@
     "show_wishlist_icon": true,
     "card_aspect_ratio": "portrait",
     "card_media_radius": 10,
+    "quick_add_button_style": "outline",
     "badge_wishlist_style": "glass",
     "content_for_index": [],
     "color_schemes": {
@@ -91,8 +92,8 @@
           "button_text": "#ffffff",
           "button_hover_background": "#e5e7eb",
           "button_hover_text": "#111111",
-          "outline_button_border": "#ffffff",
-          "outline_button_text": "#ffffff",
+          "outline_button_border": "#000000",
+          "outline_button_text": "#000000",
           "outline_button_hover_border": "#e5e7eb",
           "outline_button_hover_text": "#e5e7eb",
           "input_text": "#ffffff",
