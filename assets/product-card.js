@@ -100,7 +100,7 @@ function initProductCards() {
 
     var zoneTimer = null;
     var currentZone = 'neutral';
-    var ZONE_INTERVAL = 600;
+    var ZONE_INTERVAL = 400;
 
     function setZone(newZone) {
       if (newZone === currentZone) return;
