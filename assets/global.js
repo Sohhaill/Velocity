@@ -22,10 +22,6 @@ function initMediaGrid() {
   });
 }
 
-
-
-
-
 document.addEventListener('DOMContentLoaded', initInstaFeed);
 if (document.readyState !== 'loading') initInstaFeed();
 
