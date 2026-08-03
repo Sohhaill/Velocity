@@ -134,9 +134,22 @@ endif
             <h5 class="v-card__title">{{ card_product.title }}</h5>
             {% render 'price', product: card_product %}
             {%- if has_variants and main_option_values.size > 1 -%}
-            <div class="v-card__variants">
+            <div class="v-card__variants" style="--v-card-swatch-radius: {{ settings.variant_swatch_radius }}px;">
                 {%- for value in visible_variant_values -%}
-                <span class="v-card__variant-swatch" data-variant-value="{{ value | escape }}" title="{{ value | escape }}"></span>
+                {%- assign matched_variant = blank -%}
+                {%- for v in card_product.variants -%}
+                  {%- if v.option1 == value or v.option2 == value or v.option3 == value -%}
+                    {%- assign matched_variant = v -%}
+                    {%- break -%}
+                  {%- endif -%}
+                {%- endfor -%}
+                <span class="v-card__variant-swatch{% if matched_variant.featured_image == blank %} v-card__variant-swatch--text{% endif %}" data-variant-value="{{ value | escape }}" title="{{ value | escape }}">
+                  {%- if matched_variant.featured_image != blank -%}
+                  {{ matched_variant.featured_image | image_url: width: 60 | image_tag: loading: 'lazy', class: 'v-card__variant-swatch-img' }}
+                  {%- else -%}
+                  <span class="v-card__variant-swatch-text">{{ value | slice: 0, 1 }}</span>
+                  {%- endif -%}
+                </span>
                 {%- endfor -%}
                 {%- if remaining_variant_count > 0 -%}
                 <span class="v-card__variant-more" aria-label="{{ 'products.card.more_variants' | t }}">

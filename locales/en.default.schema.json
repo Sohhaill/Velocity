@@ -467,6 +467,8 @@
     "vendor": "Vendor",
     "show_vendor": "Show vendor",
     "show_quick_add_button": "Show quick add button",
+    "variants": "Variants",
+    "variant_swatch_radius": "Swatch border radius",
     "effects": "Effects",
     "enable_glass_effect": "Enable glass effect",
     "quick_add_pagination_radius": "Border radius",

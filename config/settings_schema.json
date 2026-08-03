@@ -735,6 +735,20 @@
       },
       {
         "type": "header",
+        "content": "t:product_card.variants"
+      },
+      {
+        "type": "range",
+        "id": "variant_swatch_radius",
+        "label": "t:product_card.variant_swatch_radius",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "px",
+        "default": 50
+      },
+      {
+        "type": "header",
         "content": "t:product_card.quick_add"
       },
       {
