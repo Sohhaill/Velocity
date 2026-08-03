@@ -20,7 +20,7 @@ a.v-card__link {
 }
 
 .v-card__variant-swatch {
-  width: 22px;
+  min-width: 22px;
   height: 22px;
   border-radius: var(--v-card-swatch-radius, 50px);
   border: 1px solid rgba(0, 0, 0, 0.15);
@@ -41,12 +41,14 @@ a.v-card__link {
 
 .v-card__variant-swatch--text {
   background: #f3f4f6;
+  padding: 0 10px;
+  width: auto;
 }
 
 .v-card__variant-swatch-text {
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1;
-  text-transform: uppercase;
+  white-space: nowrap;
   color: #111111;
 }
 
