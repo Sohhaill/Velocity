@@ -71,7 +71,7 @@
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   .swiper-pagination-bullet {
-    color: white;
+    background: white;
   }
 }
 .v-card__pagination .swiper-pagination-bullet-active {
