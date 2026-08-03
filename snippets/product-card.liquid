@@ -75,12 +75,12 @@ endcase
             {%- if settings.show_sale_badge and is_sale or settings.show_custom_badge and badge_label != '' -%}
             <div class="v-card__badges">
                 {%- if settings.show_sale_badge and is_sale -%}
-                <span class="v-card__badge v-card__style--accent v-card__badge--sale">
+                <span class="v-card__badge {{ style_class }} v-card__badge--sale">
                     <small class="v-card__badge-text">{{ 'products.card.sale_badge' | t }}</small>
                 </span>
                 {%- endif -%}
                 {%- if settings.show_custom_badge and badge_label != '' -%}
-                <small class="v-card__badge v-card__style--accent v-card__badge--custom">{{ badge_label }}</small>
+                <small class="v-card__badge {{ style_class }} v-card__badge--custom">{{ badge_label }}</small>
                 {%- endif -%}
             </div>
             {%- endif -%}
