@@ -8,6 +8,7 @@
 .v-price__regular,
 .v-price__sale {
   font-weight: 600;
+  color: inherit;
 }
 
 .v-price__compare {

@@ -681,6 +681,20 @@
       },
       {
         "type": "header",
+        "content": "t:product_card.price"
+      },
+      {
+        "type": "color",
+        "id": "price_color",
+        "label": "t:product_card.price_color"
+      },
+      {
+        "type": "color",
+        "id": "sale_price_color",
+        "label": "t:product_card.sale_price_color"
+      },
+      {
+        "type": "header",
         "content": "t:product_card.badges"
       },
       {

@@ -468,6 +468,9 @@
     "effects": "Effects",
     "enable_glass_effect": "Enable glass effect",
     "quick_add_pagination_radius": "Border radius",
+    "price": "Price",
+    "price_color": "Price color",
+    "sale_price_color": "Sale price color",
     "quick_add_pagination_radius_info": "Affects the quick view button and pagination controls.",
     "enable_glass_effect_info": "Applies a frosted glass look. This affects the quick view button and pagination controls. By default, accent colors are applied."
   }
