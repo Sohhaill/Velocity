@@ -698,6 +698,16 @@
         "default": true
       },
       {
+        "type": "select",
+        "id": "quick_add_button_style",
+        "label": "t:product_card.quick_add_button_style",
+        "default": "filled",
+        "options": [
+          { "value": "filled", "label": "t:options.button_style.filled" },
+          { "value": "glass", "label": "t:options.button_style.blur_effect" }
+        ]
+      }
+      {
         "type": "header",
         "content": "t:product_card.quick_add"
       },
@@ -706,18 +716,6 @@
         "id": "show_quick_add_button",
         "label": "t:product_card.show_quick_add_button",
         "default": true
-      },
-     
-      {
-        "type": "select",
-        "id": "quick_add_button_style",
-        "label": "t:product_card.quick_add_button_style",
-        "default": "filled",
-        "options": [
-          { "value": "filled", "label": "t:options.button_style.filled" },
-          { "value": "outline", "label": "t:options.button_style.outline" },
-          { "value": "glass", "label": "t:options.button_style.blur_effect" }
-        ]
       }
     ]
   }
