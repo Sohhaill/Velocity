@@ -705,6 +705,7 @@
         "default": "filled",
         "options": [
           { "value": "filled", "label": "t:options.button_style.filled" },
+          { "value": "outline", "label": "t:options.button_style.outline" },
           { "value": "glass", "label": "t:options.button_style.blur_effect" }
         ]
       },
