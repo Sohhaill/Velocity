@@ -162,14 +162,14 @@
   right: 15px;
   top: 15px;
   transform: translate(54px);
-  padding: 5px;
+  padding: 10px;
   z-index: 3;
   border-radius: var(--v-card-control-radius, 50px);
 }
 .v-card__quick-view-icon {
   display: flex;
-  width: 21px;
-  height: 21px;
+  width: 23px;
+  height: 23px;
 }
 .v-card__media:hover {
   .v-card__quick-view {
