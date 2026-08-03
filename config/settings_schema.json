@@ -719,10 +719,6 @@
         "default": true
       },
       {
-        "type": "header",
-        "content": "t:product_card.effects"
-      },
-      {
         "type": "checkbox",
         "id": "enable_glass_effect",
         "label": "t:product_card.enable_glass_effect",
