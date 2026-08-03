@@ -26,12 +26,8 @@ it replaces the normal dropdown submenu for this item.
     {% if has_children %}
     <button class="header__drawer-submenu-toggle" type="button" aria-expanded="false" aria-controls="{{ submenu_id }}">
       {% if depth == 0 %}
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="
-    transform: rotate(45deg);
-">
-        <path d="M6 6L18 18M6 18L18 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-          stroke-linejoin="round"></path>
-      </svg>
+      
+       {{ 'icon-plus.svg' | inline_asset_content }}
       {% else %}
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
         focusable="false">
@@ -56,8 +52,7 @@ it replaces the normal dropdown submenu for this item.
 {% else %}
 <li
   class="header__menu-item{% if has_children %} header__menu-item--has-children{% endif %}{% if mega_menu_block != blank %} header__menu-item--has-mega-menu{% endif %}"
-  data-depth="{{ depth }}"
-  >
+  data-depth="{{ depth }}">
   <div class="header__menu-link-wrap">
     <a class="header__menu-link" href="{{ link.url }}" {% if mega_menu_block !=blank
       %}data-mega-menu-trigger="{{ mega_menu_block.id }}" aria-expanded="false" {% endif %}>
