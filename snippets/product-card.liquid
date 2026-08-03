@@ -55,6 +55,8 @@ assign card_media_count = card_media_list.size
 
 assign quick_add_class = 'button--filled'
 case settings.quick_add_button_style
+  when 'outline'
+    assign quick_add_class = 'button--outline'
   when 'glass'
     assign quick_add_class = 'button--blur'
   else
