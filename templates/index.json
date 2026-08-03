@@ -313,7 +313,7 @@
         "slides_per_view_desktop": 4,
         "slides_per_view_mobile": 2,
         "slides_per_view_tablet": 2.2,
-        "gap_desktop": 10,
+        "gap_desktop": 4,
         "gap_mobile": 12,
         "aspect_ratio": "3_4",
         "padding_top_desktop": 60,
@@ -333,7 +333,7 @@
         "products_to_show": 8,
         "columns_desktop": 4,
         "columns_mobile": 2,
-        "gap_desktop": 24,
+        "gap_desktop": 2,
         "gap_mobile": 12
       }
     }
