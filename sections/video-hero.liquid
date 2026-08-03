@@ -70,7 +70,7 @@
   data-transparent-target
 >
   <div class="v-video__media">
-    {%- comment -%} MOBILE POSTER — falls back to desktop {%- endcomment -%}
+    {%- comment -%} MOBILE POSTER - falls back to desktop {%- endcomment -%}
     <div class="v-video__poster v-video__poster--mobile">
       {%- if section.settings.poster_mobile != blank -%}
         {{ section.settings.poster_mobile | image_url: width: 1500 | image_tag: loading: 'eager', widths: '480,750,1000,1500', sizes: '100vw', class: 'v-video__poster-img' }}
@@ -84,7 +84,7 @@
       {%- endif -%}
     </div>
 
-    {%- comment -%} MOBILE VIDEO — falls back to desktop {%- endcomment -%}
+    {%- comment -%} MOBILE VIDEO - falls back to desktop {%- endcomment -%}
     <div class="v-video__video-wrap v-video__video-wrap--mobile">
       {%- if section.settings.video_mobile != blank -%}
         {{ section.settings.video_mobile | video_tag: image_size: '1500x', muted: true, loop: true, controls: false, autoplay: section.settings.enable_autoplay, class: 'v-video__video' }}
@@ -169,7 +169,7 @@
     {
       "type": "range",
       "id": "height_desktop",
-      "label": "Height — desktop",
+      "label": "Height - desktop",
       "min": 300,
       "max": 900,
       "step": 10,
@@ -179,7 +179,7 @@
     {
       "type": "range",
       "id": "height_mobile",
-      "label": "Height — mobile",
+      "label": "Height - mobile",
       "min": 250,
       "max": 700,
       "step": 10,
@@ -196,10 +196,10 @@
       "unit": "%",
       "default": 0
     },
-    { "type": "header", "content": "Video — desktop" },
+    { "type": "header", "content": "Video - desktop" },
     { "type": "video", "id": "video_desktop", "label": "Video" },
     { "type": "image_picker", "id": "poster_desktop", "label": "Poster image" },
-    { "type": "header", "content": "Video — mobile" },
+    { "type": "header", "content": "Video - mobile" },
     { "type": "video", "id": "video_mobile", "label": "Video", "info": "Falls back to desktop video if empty" },
     { "type": "image_picker", "id": "poster_mobile", "label": "Poster image", "info": "Falls back to desktop poster if empty" },
     { "type": "header", "content": "Playback" },
@@ -213,7 +213,7 @@
     {
       "type": "select",
       "id": "content_position_desktop",
-      "label": "Position — desktop",
+      "label": "Position - desktop",
       "default": "center_center",
       "options": [
         { "value": "top_left", "label": "Top left" },
@@ -228,7 +228,7 @@
     {
       "type": "select",
       "id": "content_position_mobile",
-      "label": "Position — mobile",
+      "label": "Position - mobile",
       "default": "center_center",
       "options": [
         { "value": "top_left", "label": "Top left" },
