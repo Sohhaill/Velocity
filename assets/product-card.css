@@ -146,11 +146,7 @@
   opacity: 1;
 }
 
-.v-card__title {
-  margin: 0;
-  font-size: 1em;
-  font-weight: 500;
-}
+
 .v-card__quick-view {
   position: absolute;
   right: 15px;
