@@ -464,6 +464,8 @@
     "show_custom_badge_info": "Add a tag like badge_new or badge_best-seller to a product to show a badge. Only the first matching tag is shown.",
     "badge_style": "Badge style",
     "quick_add": "Quick add & Pagination",
+    "vendor": "Vendor",
+    "show_vendor": "Show vendor",
     "show_quick_add_button": "Show quick add button",
     "effects": "Effects",
     "enable_glass_effect": "Enable glass effect",

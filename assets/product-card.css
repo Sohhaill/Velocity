@@ -3,7 +3,9 @@
   text-decoration: none;
   color: inherit;
 }
-
+a.v-card__link {
+    text-decoration: unset !important;
+}
 .v-card__media {
   position: relative;
   width: 100%;

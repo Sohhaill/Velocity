@@ -644,6 +644,16 @@
     "settings": [
       {
         "type": "header",
+        "content": "t:product_card.vendor"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_vendor",
+        "label": "t:product_card.show_vendor",
+        "default": false
+      },
+      {
+        "type": "header",
         "content": "t:product_card.wishlist"
       },
       {

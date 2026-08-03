@@ -107,6 +107,9 @@ assign card_media_count = card_media_list.size
         </div>
 
         <div class="v-card__info">
+            {%- if settings.show_vendor and card_product.vendor != blank -%}
+            <p class="v-card__vendor">{{ card_product.vendor }}</p>
+            {%- endif -%}
             <h5 class="v-card__title">{{ card_product.title }}</h5>
             {% render 'price', product: card_product %}
         </div>
