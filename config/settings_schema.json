@@ -700,8 +700,8 @@
       
       {
         "type": "select",
-        "id": "quick_add_button_style",
-        "label": "t:product_card.quick_add_button_style",
+        "id": "badge_style",
+        "label": "t:product_card.badge_style",
         "default": "filled",
         "options": [
           { "value": "filled", "label": "t:options.button_style.filled" },

@@ -29,7 +29,7 @@ assign badge_label = badge_tag | replace: '-', ' ' | capitalize
 endif
 
 assign style_class = ''
-case settings.badge_wishlist_style
+case settings.badge_style
   when 'glass'
     assign style_class = 'v-card__style--glass'
   else
@@ -53,13 +53,6 @@ endcase
 assign card_media_list = card_product.media | slice: 0, 5
 assign card_media_count = card_media_list.size
 
-assign quick_add_class = 'button--filled'
-case settings.quick_add_button_style
-  when 'glass'
-    assign quick_add_class = 'button--blur'
-  else
-    assign quick_add_class = 'button--filled'
-endcase
 -%}
 
 <div class="v-card" data-v-product-card>
