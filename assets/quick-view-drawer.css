@@ -1,48 +1,53 @@
+/* Drawer overlay — matches header drawer pattern */
 .v-drawer {
   position: fixed;
   inset: 0;
-  z-index: 9999;
-  visibility: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
   pointer-events: none;
-}
-
-.v-drawer.is-active {
-  visibility: visible;
-  pointer-events: auto;
+  z-index: 9999;
 }
 
 .v-drawer__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.45);
   opacity: 0;
-  transition: opacity 0.35s ease;
-}
-.v-drawer__body {
-    background: white;
-    height: 100%;
-}
-.v-drawer.is-active .v-drawer__overlay {
-  opacity: 1;
+  transition: all 0.3s ease;
+  cursor: none;
 }
 
+.v-drawer.is-active {
+  pointer-events: auto;
+}
+
+.v-drawer.is-active .v-drawer__overlay {
+  opacity: 1;
+  transition: opacity 0.35s ease;
+}
+
+/* Drawer panel: full height, slides in from the right */
 .v-drawer__panel {
-  position: absolute;
-  top: 0;
-  right: 0;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 500px;
   height: 100%;
-  width: 420px;
-  max-width: 90vw;
-  background: var(--color-background, #fff);
-  color: var(--color-foreground, #111);
-  transform: translateX(100%);
-  transition: transform 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+  background: var(--color-background);
+  color: var(--color-foreground);
+  box-shadow: -2px 0 24px rgba(0, 0, 0, 0.16);
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.7, 0, 0.84, 0);
 }
+
 .v-drawer.is-active .v-drawer__panel {
   transform: translateX(0);
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
 }
 
 .v-drawer__header {
@@ -68,6 +73,12 @@
   justify-content: center;
   cursor: pointer;
   padding: 8px;
+}
+
+.v-drawer__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .v-drawer__media {
