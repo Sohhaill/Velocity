@@ -57,6 +57,7 @@
     "card_aspect_ratio": "portrait",
     "card_media_radius": 0,
     "badge_style": "glass",
+    "enable_glass_effect": true,
     "quick_add_button_style": "filled",
     "quick_add_button_label": "Quick View",
     "badge_wishlist_style": "glass",
