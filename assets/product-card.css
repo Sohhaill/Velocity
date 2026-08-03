@@ -161,7 +161,7 @@
   position: absolute;
   right: 15px;
   top: 15px;
-  transform: translate(54px);
+  transform: translate(70px);
   padding: 10px;
   z-index: 3;
   border-radius: var(--v-card-control-radius, 50px);
