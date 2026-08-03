@@ -53,15 +53,36 @@ endcase
 assign card_media_list = card_product.media | slice: 0, 5
 assign card_media_count = card_media_list.size
 
+assign has_variants = false
+if card_product.has_only_default_variant == false
+  assign has_variants = true
+endif
+
+assign main_option_values = blank
+assign remaining_variant_count = 0
+if has_variants
+  assign main_option_values = card_product.options_with_values.first.values
+  assign visible_variant_values = main_option_values | slice: 0, 4
+  assign remaining_variant_count = main_option_values.size | minus: 4
+endif
+
 -%}
 
 <div class="v-card" data-v-product-card>
     <a href="{{ card_product.url }}" class="v-card__link">
         <div class="v-card__media {{ aspect_class }}" style="border-radius: {{ settings.card_media_radius }}px; --v-card-control-radius: {{ settings.quick_add_pagination_radius }}px;">
-            <button type="button" class="v-card__quick-view{% if settings.enable_glass_effect %} v-card__quick-view--glass{% endif %} accent-button" data-quick-view-open
-                data-product-id="{{ card_product.id }}" aria-label="{{ 'products.card.quick_view' | t }}"
+            <button type="button" class="v-card__quick-view{% if settings.enable_glass_effect %} v-card__quick-view--glass{% endif %} accent-button"
+                {% if has_variants %}data-quick-view-open{% else %}data-quick-add-open{% endif %}
+                data-product-id="{{ card_product.id }}" data-variant-id="{{ target_variant.id }}"
+                aria-label="{% if has_variants %}{{ 'products.card.quick_view' | t }}{% else %}{{ 'products.card.quick_add' | t }}{% endif %}"
                 onclick="event.preventDefault();">
-                <span class="v-card__quick-view-icon">{{ 'icon-quick-view.svg' | inline_asset_content }}</span>
+                <span class="v-card__quick-view-icon">
+                  {%- if has_variants -%}
+                  {{ 'icon-quick-view.svg' | inline_asset_content }}
+                  {%- else -%}
+                  {{ 'icon-plus.svg' | inline_asset_content }}
+                  {%- endif -%}
+                </span>
             </button>
             {%- if settings.show_sale_badge and is_sale or settings.show_custom_badge and badge_label != '' -%}
             <div class="v-card__badges">
@@ -112,6 +133,18 @@ assign card_media_count = card_media_list.size
             {%- endif -%}
             <h5 class="v-card__title">{{ card_product.title }}</h5>
             {% render 'price', product: card_product %}
+            {%- if has_variants and main_option_values.size > 1 -%}
+            <div class="v-card__variants">
+                {%- for value in visible_variant_values -%}
+                <span class="v-card__variant-swatch" data-variant-value="{{ value | escape }}" title="{{ value | escape }}"></span>
+                {%- endfor -%}
+                {%- if remaining_variant_count > 0 -%}
+                <span class="v-card__variant-more" aria-label="{{ 'products.card.more_variants' | t }}">
+                    {{ 'icon-plus.svg' | inline_asset_content }}
+                </span>
+                {%- endif -%}
+            </div>
+            {%- endif -%}
         </div>
     </a>
 </div>
