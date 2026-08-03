@@ -73,7 +73,7 @@ endif
         <div class="v-card__media {{ aspect_class }}" style="border-radius: {{ settings.card_media_radius }}px; --v-card-control-radius: {{ settings.quick_add_pagination_radius }}px;">
             <button type="button" class="v-card__quick-view{% if settings.enable_glass_effect %} v-card__quick-view--glass{% endif %} accent-button"
                 {% if has_variants %}data-quick-view-open{% else %}data-quick-add-open{% endif %}
-                data-product-id="{{ card_product.id }}" data-variant-id="{{ target_variant.id }}"
+                data-product-id="{{ card_product.handle }}" data-variant-id="{{ target_variant.id }}"
                 aria-label="{% if has_variants %}{{ 'products.card.quick_view' | t }}{% else %}{{ 'products.card.quick_add' | t }}{% endif %}"
                 onclick="event.preventDefault();">
                 <span class="v-card__quick-view-icon">
