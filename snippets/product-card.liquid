@@ -58,7 +58,7 @@ assign card_media_count = card_media_list.size
 <div class="v-card" data-v-product-card>
     <a href="{{ card_product.url }}" class="v-card__link">
         <div class="v-card__media {{ aspect_class }}" style="border-radius: {{ settings.card_media_radius }}px;">
-            <button type="button" class="v-card__quick-view accent-button" data-quick-view-open
+            <button type="button" class="v-card__quick-view{% if settings.enable_glass_effect %} v-card__quick-view--glass{% endif %} accent-button" data-quick-view-open
                 data-product-id="{{ card_product.id }}" aria-label="{{ 'products.card.quick_view' | t }}"
                 onclick="event.preventDefault();">
                 <span class="v-card__quick-view-icon">{{ 'icon-quick-view.svg' | inline_asset_content }}</span>
@@ -96,7 +96,7 @@ assign card_media_count = card_media_list.size
                     {%- endfor -%}
                 </div>
                 {%- if card_media_count > 1 -%}
-                <div class="v-card__pagination"></div>
+                <div class="v-card__pagination{% if settings.enable_glass_effect %} v-card__pagination--glass{% endif %}"></div>
                 {%- endif -%}
             </div>
             {%- else -%}

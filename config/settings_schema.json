@@ -717,6 +717,17 @@
         "id": "show_quick_add_button",
         "label": "t:product_card.show_quick_add_button",
         "default": true
+      },
+      {
+        "type": "header",
+        "content": "t:product_card.effects"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_glass_effect",
+        "label": "t:product_card.enable_glass_effect",
+        "info": "t:product_card.enable_glass_effect_info",
+        "default": false
       }
     ]
   }

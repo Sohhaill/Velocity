@@ -46,17 +46,18 @@
   justify-content: center;
   gap: 6px;
   pointer-events: none;
-  background: #00000087;
   width: fit-content !important;
   margin: auto;
   padding: 5px 16px;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
   border-radius: 4px;
   transform: translateY(40px);
   transition: transform 0.35s ease;
 }
-
+.v-card__pagination-glass {
+  background: #00000087;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
 .v-card__pagination .swiper-pagination-bullet {
   width: 6px;
   height: 6px;
