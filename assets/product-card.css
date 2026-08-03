@@ -29,7 +29,7 @@ a.v-card__link {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #e5e5e5;
+  background-color: var(--accent-background);
 }
 
 .v-card__variant-swatch-img {
@@ -40,16 +40,17 @@ a.v-card__link {
 }
 
 .v-card__variant-swatch--text {
-  background: #f3f4f6;
+  background-color: var(--accent-background);
   padding: 0 10px;
   width: auto;
 }
 
 .v-card__variant-swatch-text {
-  font-size: 1em;
+  font-size: 0.8em;
   line-height: 1;
   white-space: nowrap;
-  color: #111111;
+  color: var(--accent-foreground);
+  font-weight: 500;
 }
 
 .v-card__variant-more {
