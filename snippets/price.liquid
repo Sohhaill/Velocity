@@ -16,7 +16,7 @@
   endif
 -%}
 
-<div class="v-price{% if is_sale %} v-price--sale{% endif %}">
+<div class="v-price{% if is_sale %} v-price--sale{% endif %}" style="--v-sale-price-color: {{ settings.sale_price_color }};">
   {%- if is_sale -%}
     <span class="v-price__compare">{{ compare_price | money }}</span>
     <span class="v-price__sale">{{ price | money }}</span>

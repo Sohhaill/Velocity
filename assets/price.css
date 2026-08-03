@@ -18,5 +18,5 @@
 }
 
 .v-price--sale .v-price__sale {
-  color: var(--color-sale, #d0201f);
+  color: var(--v-sale-price-color);
 }
