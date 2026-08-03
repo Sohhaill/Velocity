@@ -18,7 +18,10 @@
   opacity: 0;
   transition: opacity 0.35s ease;
 }
-
+.v-drawer__body {
+    background: white;
+    height: 100%;
+}
 .v-drawer.is-active .v-drawer__overlay {
   opacity: 1;
 }
