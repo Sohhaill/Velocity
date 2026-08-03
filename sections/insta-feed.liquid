@@ -29,6 +29,7 @@
 --v-insta-slides-desktop: {{ section.settings.slides_per_view_desktop | default: 4 }};
 --v-insta-slides-tablet: {{ section.settings.slides_per_view_tablet | default: 2.2 }};
 --v-insta-slides-mobile: {{ section.settings.slides_per_view_mobile | default: 1.2 }};
+--v-insta-image-radius: {{ section.settings.image_border_radius | default: 8 }}px;
 }
 {%- endstyle -%}
 <div class="section-color-scheme--{{ section.settings.section_color_scheme.id }}">
@@ -292,6 +293,16 @@ false
 "step": 1,
 "default": 2,
 "visible_if": "{{ section.settings.enable_grid }}"
+},
+{
+"type": "range",
+"id": "image_border_radius",
+"label": "t:labels.image_border_radius",
+"min": 0,
+"max": 40,
+"step": 1,
+"unit": "px",
+"default": 8
 },
 { "type": "header", "content": "t:sections.insta-feed.headers.slider" },
 {

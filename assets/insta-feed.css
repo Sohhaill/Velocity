@@ -89,9 +89,8 @@ data-grid[true] .v-insta__swiper-wrap {
   width: 100%;
   aspect-ratio: var(--v-insta-aspect, 3/4);
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: var(--v-insta-image-radius, 8px);
 }
-
 .v-insta__media {
   position: absolute;
   inset: 0;
