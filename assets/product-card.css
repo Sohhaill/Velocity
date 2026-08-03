@@ -18,14 +18,7 @@
   height: 100%;
   overflow: hidden;
 }
-.v-card__pagination {
-  background: #00000087;
-  width: fit-content !important;
-  margin: auto;
-  padding: 5px 16px;
-  backdrop-filter: blur(10px);
-  border-radius: 4px;
-}
+
 .v-card__style--glass {
   background: #0000007a;
   width: fit-content;
@@ -55,6 +48,12 @@
   justify-content: center;
   gap: 6px;
   pointer-events: none;
+  background: #00000087;
+  width: fit-content !important;
+  margin: auto;
+  padding: 5px 16px;
+  backdrop-filter: blur(10px);
+  border-radius: 4px;
 }
 
 .v-card__pagination .swiper-pagination-bullet {
@@ -146,7 +145,6 @@
   opacity: 1;
 }
 
-
 .v-card__quick-view {
   position: absolute;
   right: 15px;
@@ -164,6 +162,9 @@
 .v-card__media:hover {
   .v-card__quick-view {
     transform: translateX(0);
+  }
+  .v-card__pagination{
+    transform: translateY(0);
   }
 }
 .v-card__quick-view-icon svg {
