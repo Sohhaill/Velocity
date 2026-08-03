@@ -49,7 +49,8 @@
   {{ 'scroll-animate.css' | asset_url | stylesheet_tag }}
   <script src="{{ 'global.js' | asset_url }}" defer></script>
   <script src="{{ 'scroll-animate.js' | asset_url }}" defer></script>
-  
+  {% render 'quick-view-drawer' %}
+<script src="{{ 'quick-view-drawer.js' | asset_url }}" defer></script>
 </body>
 
 </html>
