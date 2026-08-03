@@ -8,8 +8,6 @@
   {{ 'mega-menu.css' | asset_url | stylesheet_tag }}
   {{ 'quick-view-drawer.css' | asset_url | stylesheet_tag }}
   {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
-  {{ 'product-card.css' | asset_url | stylesheet_tag }}
-  {{ 'price.css' | asset_url | stylesheet_tag }}
   {% comment %}
   Font preloading:
   1. Preconnect to font CDN for faster connection
@@ -51,9 +49,7 @@
   {{ 'scroll-animate.css' | asset_url | stylesheet_tag }}
   <script src="{{ 'global.js' | asset_url }}" defer></script>
   <script src="{{ 'scroll-animate.js' | asset_url }}" defer></script>
-  {% render 'quick-view-drawer' %}
-  <script src="{{ 'quick-view-drawer.js' | asset_url }}" defer></script>
-  <script src="{{ 'product-card.js' | asset_url }}" defer></script>
+  
 </body>
 
 </html>

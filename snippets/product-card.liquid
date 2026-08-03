@@ -4,6 +4,8 @@ Accepts:
 - card_product: {Object} product object (required)
 {%- endcomment -%}
 
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
+<script src="{{ 'product-card.js' | asset_url }}" defer></script>
 
 {%- liquid
 assign target_variant = card_product.selected_or_first_available_variant
@@ -158,3 +160,6 @@ endif
         </div>
     </a>
 </div>
+
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
+<script src="{{ 'product-card.js' | asset_url }}" defer></script>
