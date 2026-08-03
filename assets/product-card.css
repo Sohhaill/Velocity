@@ -4,7 +4,7 @@
   color: inherit;
 }
 a.v-card__link {
-    text-decoration: unset !important;
+  text-decoration: unset !important;
 }
 .v-card__media {
   position: relative;
@@ -12,7 +12,39 @@ a.v-card__link {
   overflow: hidden;
   display: block;
 }
+.v-card__variants {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+}
 
+.v-card__variant-swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: #e5e5e5;
+  display: block;
+  cursor: pointer;
+}
+
+.v-card__variant-more {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+}
+
+.v-card__variant-more svg {
+  width: 10px;
+  height: 10px;
+  display: block;
+}
 .v-card__swiper {
   position: absolute;
   inset: 0;
