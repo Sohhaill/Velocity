@@ -310,6 +310,7 @@
         "enable_grid": false,
         "grid_columns_desktop": 4,
         "grid_columns_mobile": 2,
+        "image_border_radius": 0,
         "slides_per_view_desktop": 4,
         "slides_per_view_mobile": 2,
         "slides_per_view_tablet": 2.2,
