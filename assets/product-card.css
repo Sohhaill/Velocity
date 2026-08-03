@@ -117,7 +117,7 @@ a.v-card__link {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  color: var(--accent-foreground);
+  background-color: var(--accent-foreground, #ffffff);
   opacity: 0.5;
   margin: 0 !important;
   transition:
