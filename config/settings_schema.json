@@ -57,7 +57,7 @@
         "default": "inter_n4",
         "label": "t:labels.button_font"
       },
-      
+
       {
         "type": "header",
         "content": "Desktop Font Sizes"
@@ -652,7 +652,7 @@
         "label": "t:product_card.show_wishlist_icon",
         "default": true
       },
-       {
+      {
         "type": "header",
         "content": "t:product_card.image"
       },
@@ -663,9 +663,15 @@
         "default": "square",
         "options": [
           { "value": "square", "label": "t:product_card.aspect_ratio_square" },
-          { "value": "portrait", "label": "t:product_card.aspect_ratio_portrait" },
+          {
+            "value": "portrait",
+            "label": "t:product_card.aspect_ratio_portrait"
+          },
           { "value": "tall", "label": "t:product_card.aspect_ratio_tall" },
-          { "value": "landscape", "label": "t:product_card.aspect_ratio_landscape" },
+          {
+            "value": "landscape",
+            "label": "t:product_card.aspect_ratio_landscape"
+          },
           { "value": "adapt", "label": "t:product_card.aspect_ratio_adapt" }
         ]
       },
@@ -682,11 +688,6 @@
       {
         "type": "header",
         "content": "t:product_card.price"
-      },
-      {
-        "type": "color",
-        "id": "price_color",
-        "label": "t:product_card.price_color"
       },
       {
         "type": "color",
@@ -711,7 +712,7 @@
         "info": "t:product_card.show_custom_badge_info",
         "default": true
       },
-      
+
       {
         "type": "select",
         "id": "badge_style",
