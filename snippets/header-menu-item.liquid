@@ -26,8 +26,8 @@ it replaces the normal dropdown submenu for this item.
     {% if has_children %}
     <button class="header__drawer-submenu-toggle" type="button" aria-expanded="false" aria-controls="{{ submenu_id }}">
       {% if depth == 0 %}
-      
-       {{ 'icon-plus.svg' | inline_asset_content }}
+
+      {{ 'icon-plus.svg' | inline_asset_content }}
       {% else %}
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
         focusable="false">
@@ -61,17 +61,9 @@ it replaces the normal dropdown submenu for this item.
     {% if has_children and mega_menu_block == blank %}
     <button class="header__submenu-toggle" type="button" aria-expanded="false" aria-controls="{{ submenu_id }}">
       {% if depth == 0 %}
-      <svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
-        <path fill-rule="evenodd" clip-rule="evenodd"
-          d="M12 4C12.5523 4 13 4.44772 13 5V11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H13V19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19V13H5C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11H11V5C11 4.44772 11.4477 4 12 4Z"
-          fill="currentColor" />
-      </svg>
+      {{ 'icon-plus.svg' | inline_asset_content }}
       {% else %}
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-        focusable="false">
-        <path d="M4 2L8 6L4 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-          stroke-linejoin="round" />
-      </svg>
+      {{ 'icon-plus.svg' | inline_asset_content }}
       {% endif %}
       <span class="visually-hidden">{{ 'header.open_submenu' | t }}</span>
     </button>
