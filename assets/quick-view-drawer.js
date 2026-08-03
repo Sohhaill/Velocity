@@ -32,10 +32,29 @@
     document.body.classList.add('v-drawer-open');
     if (window.lenis) window.lenis.stop();
 
+    showLoader();
+
     fetchProductById(productId).then(function (product) {
       currentProduct = product;
       renderProduct(product, variantId);
+      hideLoader();
+    }).catch(function () {
+      hideLoader();
     });
+  }
+
+  function showLoader() {
+    var loader = drawer.querySelector('[data-drawer-loader]');
+    var body = drawer.querySelector('[data-drawer-body]');
+    if (loader) loader.classList.add('is-visible');
+    if (body) body.classList.add('is-loading');
+  }
+
+  function hideLoader() {
+    var loader = drawer.querySelector('[data-drawer-loader]');
+    var body = drawer.querySelector('[data-drawer-body]');
+    if (loader) loader.classList.remove('is-visible');
+    if (body) body.classList.remove('is-loading');
   }
 
   function closeDrawer() {
