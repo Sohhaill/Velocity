@@ -1,33 +1,32 @@
 {%- comment -%}
-Renders product price with sale/compare-at handling.
-Accepts:
-- product: {Object} product object (required)
-- variant: {Object} specific variant to price against (optional)
+  Renders product price with sale/compare-at handling.
+  Accepts:
+  - product: {Object} product object (required)
+  - variant: {Object} specific variant to price against (optional)
 {%- endcomment -%}
 
 {%- liquid
-assign target = variant | default: product.selected_or_first_available_variant
-assign compare_price = target.compare_at_price
-assign price = target.price
+  assign target = variant | default: product.selected_or_first_available_variant
+  assign compare_price = target.compare_at_price
+  assign price = target.price
 
-assign is_sale = false
-if compare_price > price
-assign is_sale = true
-endif
+  assign is_sale = false
+  if compare_price > price
+    assign is_sale = true
+  endif
 -%}
 
 <div class="v-price{% if is_sale %} v-price--sale{% endif %}">
   {%- if is_sale -%}
-  <span class="v-price__regular">{{ price | money }}</span>
+    <span class="v-price__compare">{{ compare_price | money }}</span>
+    <span class="v-price__sale">{{ price | money }}</span>
   {%- else -%}
-  <span class="v-price__compare">{{ compare_price | money }}</span>
-  <span class="v-price__sale">{{ price | money }}</span>
+    <span class="v-price__regular">{{ price | money }}</span>
   {%- endif -%}
 
   {%- if target.unit_price_measurement -%}
-  <span class="v-price__unit">
-    ({{ target.unit_price | money }}/{% if target.unit_price_measurement.reference_value != 1 %}{{
-    target.unit_price_measurement.reference_value }}{% endif %}{{ target.unit_price_measurement.reference_unit }})
-  </span>
+    <span class="v-price__unit">
+      ({{ target.unit_price | money }}/{% if target.unit_price_measurement.reference_value != 1 %}{{ target.unit_price_measurement.reference_value }}{% endif %}{{ target.unit_price_measurement.reference_unit }})
+    </span>
   {%- endif -%}
 </div>
