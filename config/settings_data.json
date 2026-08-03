@@ -59,6 +59,7 @@
     "card_media_radius": 0,
     "sale_price_color": "#FFFFFF",
     "badge_style": "glass",
+    "variant_swatch_radius": 0,
     "enable_glass_effect": true,
     "quick_add_button_style": "filled",
     "quick_add_button_label": "Quick View",
