@@ -333,7 +333,7 @@
         "products_to_show": 8,
         "columns_desktop": 4,
         "columns_mobile": 2,
-        "gap_desktop": 24,
+        "gap_desktop": 2,
         "gap_mobile": 12
       }
     }
