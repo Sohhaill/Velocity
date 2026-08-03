@@ -50,7 +50,7 @@
   width: fit-content !important;
   margin: auto;
   padding: 5px 16px;
-  border-radius: 4px;
+  border-radius: var(--v-card-control-radius, 50px);
   transform: translateY(40px);
   transition: transform 0.35s ease;
 }
@@ -164,7 +164,7 @@
   transform: translate(54px);
   padding: 5px;
   z-index: 3;
-  border-radius: 3px;
+  border-radius: var(--v-card-control-radius, 50px);
 }
 .v-card__quick-view-icon {
   display: flex;

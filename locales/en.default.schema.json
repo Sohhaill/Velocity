@@ -467,6 +467,8 @@
     "show_quick_add_button": "Show quick add button",
     "effects": "Effects",
     "enable_glass_effect": "Enable glass effect",
+    "quick_add_pagination_radius": "Border radius",
+    "quick_add_pagination_radius_info": "Affects the quick view button and pagination controls.",
     "enable_glass_effect_info": "Applies a frosted glass look. This affects the quick view button and pagination controls. By default, accent colors are applied."
   }
 }

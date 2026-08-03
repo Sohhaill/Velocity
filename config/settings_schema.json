@@ -724,6 +724,17 @@
         "label": "t:product_card.enable_glass_effect",
         "info": "t:product_card.enable_glass_effect_info",
         "default": false
+      },
+      {
+        "type": "range",
+        "id": "quick_add_pagination_radius",
+        "label": "t:product_card.quick_add_pagination_radius",
+        "info": "t:product_card.quick_add_pagination_radius_info",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "px",
+        "default": 50
       }
     ]
   }
