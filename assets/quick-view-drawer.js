@@ -120,49 +120,122 @@
       return v.available;
     }) || product.variants[0];
 
-    drawer.querySelector('[data-drawer-price]').textContent = formatMoney(selectedVariant.price);
+    var selectedOptions = [selectedVariant.option1, selectedVariant.option2, selectedVariant.option3];
 
-    var variantsWrap = drawer.querySelector('[data-drawer-variants]');
-    variantsWrap.innerHTML = '';
+    function getOptionValue(variant, index) {
+      return index === 0 ? variant.option1 : index === 1 ? variant.option2 : index === 2 ? variant.option3 : '';
+    }
 
-    product.variants.forEach(function (v) {
-      var swatch = document.createElement('span');
-      swatch.className = 'v-drawer__variant-swatch';
-      swatch.dataset.variantId = v.id;
-
-      if (v.id == selectedVariant.id) {
-        swatch.classList.add('is-selected');
-      }
-      if (!v.available) {
-        swatch.classList.add('is-out-of-stock');
-      }
-
-      var labelParts = [];
-      if (v.option1) labelParts.push(v.option1);
-      if (v.option2) labelParts.push(v.option2);
-      if (v.option3) labelParts.push(v.option3);
-      var label = labelParts.join(' / ') || v.title;
-
-      if (v.featured_image) {
-        var img = document.createElement('img');
-        img.src = v.featured_image.src;
-        img.alt = label;
-        swatch.appendChild(img);
-      } else {
-        swatch.textContent = label;
-      }
-
-      swatch.addEventListener('click', function () {
-        if (!v.available) return;
-        variantsWrap.querySelectorAll('.v-drawer__variant-swatch').forEach(function (s) {
-          s.classList.remove('is-selected');
+    function buildSelection(selection) {
+      return product.variants.find(function (v) {
+        return product.options.every(function (_, index) {
+          var value = selection[index];
+          return value === undefined || getOptionValue(v, index) === value;
         });
-        swatch.classList.add('is-selected');
-        drawer.querySelector('[data-drawer-price]').textContent = formatMoney(v.price);
       });
+    }
 
-      variantsWrap.appendChild(swatch);
-    });
+    function getOptionValues(optionIndex, selection) {
+      var values = {};
+      product.variants.forEach(function (v) {
+        var matches = product.options.every(function (_, idx) {
+          if (idx >= optionIndex) return true;
+          var selectedValue = selection[idx];
+          return selectedValue === undefined || getOptionValue(v, idx) === selectedValue;
+        });
+        if (!matches) return;
+        var optionValue = getOptionValue(v, optionIndex);
+        if (!optionValue) return;
+        if (!values[optionValue]) {
+          values[optionValue] = { available: false, hasVariant: false };
+        }
+        values[optionValue].hasVariant = true;
+        if (v.available) {
+          values[optionValue].available = true;
+        }
+      });
+      return Object.keys(values).sort().map(function (value) {
+        return { value: value, available: values[value].available };
+      });
+    }
+
+    function getMatchingVariant(selection) {
+      return product.variants.find(function (v) {
+        return product.options.every(function (_, idx) {
+          var value = selection[idx];
+          return value === undefined || getOptionValue(v, idx) === value;
+        }) && v.available;
+      });
+    }
+
+    function normalizeSelectionAt(index) {
+      for (var i = index + 1; i < product.options.length; i += 1) {
+        var values = getOptionValues(i, selectedOptions);
+        var selectedValue = values.find(function (item) {
+          return item.available;
+        });
+        selectedOptions[i] = selectedValue ? selectedValue.value : (values[0] ? values[0].value : undefined);
+      }
+    }
+
+    function updateSelectedVariant() {
+      var variant = getMatchingVariant(selectedOptions) || buildSelection(selectedOptions) || selectedVariant;
+      selectedVariant = variant;
+      drawer.querySelector('[data-drawer-price]').textContent = formatMoney(selectedVariant.price);
+    }
+
+    function renderVariantGroups() {
+      var variantsWrap = drawer.querySelector('[data-drawer-variants]');
+      variantsWrap.innerHTML = '';
+
+      selectedOptions = selectedOptions.slice(0, product.options.length);
+      normalizeSelectionAt(-1);
+      updateSelectedVariant();
+
+      product.options.forEach(function (optionName, optionIndex) {
+        if (!optionName) return;
+        var group = document.createElement('div');
+        group.className = 'v-drawer__variant-group';
+
+        var label = document.createElement('p');
+        label.className = 'v-drawer__variant-label';
+        label.textContent = optionName;
+        group.appendChild(label);
+
+        var valuesWrap = document.createElement('div');
+        valuesWrap.className = 'v-drawer__variant-values';
+
+        var values = getOptionValues(optionIndex, selectedOptions);
+        values.forEach(function (item) {
+          var valueButton = document.createElement('button');
+          valueButton.type = 'button';
+          valueButton.className = 'v-drawer__variant-swatch';
+          valueButton.textContent = item.value;
+
+          if (selectedOptions[optionIndex] === item.value) {
+            valueButton.classList.add('is-selected');
+          }
+          if (!item.available) {
+            valueButton.classList.add('is-out-of-stock');
+            valueButton.disabled = true;
+          }
+
+          valueButton.addEventListener('click', function () {
+            selectedOptions[optionIndex] = item.value;
+            normalizeSelectionAt(optionIndex);
+            updateSelectedVariant();
+            renderVariantGroups();
+          });
+
+          valuesWrap.appendChild(valueButton);
+        });
+
+        group.appendChild(valuesWrap);
+        variantsWrap.appendChild(group);
+      });
+    }
+
+    renderVariantGroups();
   }
 
   document.addEventListener('DOMContentLoaded', initDrawer);

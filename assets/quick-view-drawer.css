@@ -172,25 +172,43 @@
 }
 
 .v-drawer__variants {
+  display: grid;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.v-drawer__variant-group {
+  display: grid;
+  gap: 8px;
+}
+
+.v-drawer__variant-label {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.75;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.v-drawer__variant-values {
   display: flex;
-  align-items: center;
-  gap: 6px;
   flex-wrap: wrap;
-  margin-top: 4px;
+  gap: 8px;
 }
 
 .v-drawer__variant-swatch {
-  min-width: 34px;
-  height: 34px;
+  min-width: auto;
+  height: auto;
   border-radius: var(--v-card-swatch-radius, 50px);
   border: 1px solid rgba(0, 0, 0, 0.15);
-  overflow: hidden;
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   background: #e5e5e5;
-  padding: 0 10px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  line-height: 1;
 }
 
 .v-drawer__variant-swatch img {
