@@ -28,7 +28,7 @@ a.v-card__link {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-heading);
+  background-color: var(--color-foreground);
 }
 
 .v-card__variant-swatch-img {
