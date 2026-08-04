@@ -17,6 +17,10 @@ a.v-card__link {
   inset: 0;
   z-index: 1;
 }
+.v-card__quick-view {
+  position: relative;
+  z-index: 2;
+}
 .v-card__variants {
   display: flex;
   align-items: center;

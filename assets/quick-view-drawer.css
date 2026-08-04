@@ -198,6 +198,14 @@
   height: 100%;
   object-fit: cover;
 }
+.v-drawer__variant-swatch.is-out-of-stock {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.v-drawer__variant-swatch.is-selected {
+  border-color: var(--accent-background, #111);
+  border-width: 2px;
+}
 /* LOADER */
 .v-drawer__loader {
   position: absolute;
