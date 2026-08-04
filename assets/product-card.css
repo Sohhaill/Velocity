@@ -39,7 +39,7 @@ a.v-card__link {
 }
 
 .v-card__variant-swatch--text {
-  background-color: var(--accent-background);
+  background-color: var(--color-foreground);
   padding: 0 10px;
   width: auto;
 }
@@ -48,7 +48,7 @@ a.v-card__link {
   font-size: 0.8em;
   line-height: 1;
   white-space: nowrap;
-  color: var(--accent-foreground);
+  color: var(--accent-background);
   font-weight: 500;
 }
 
