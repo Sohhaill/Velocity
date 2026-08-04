@@ -114,16 +114,32 @@
 
     drawer.querySelector('[data-drawer-title]').textContent = product.title;
 
-    var selectedVariant = product.variants.find(function (v) {
-      return v.id == variantId && v.available;
-    }) || product.variants.find(function (v) {
-      return v.available;
-    }) || product.variants[0];
+    function normalizeOptionValue(value) {
+      if (value === null || value === undefined) return '';
+      if (typeof value === 'object') {
+        return value.name || value.value || JSON.stringify(value);
+      }
+      return String(value);
+    }
 
-    var selectedOptions = [selectedVariant.option1, selectedVariant.option2, selectedVariant.option3];
+    function isVariantAvailable(v) {
+      return v.available || (typeof v.inventory_quantity === 'number' && v.inventory_quantity > 0);
+    }
+
+    var selectedVariant = product.variants.find(function (v) {
+      return v.id == variantId && isVariantAvailable(v);
+    }) || product.variants.find(isVariantAvailable) || product.variants[0];
+
+    var selectedOptions = [
+      normalizeOptionValue(selectedVariant.option1),
+      normalizeOptionValue(selectedVariant.option2),
+      normalizeOptionValue(selectedVariant.option3)
+    ];
 
     function getOptionValue(variant, index) {
-      return index === 0 ? variant.option1 : index === 1 ? variant.option2 : index === 2 ? variant.option3 : '';
+      return normalizeOptionValue(
+        index === 0 ? variant.option1 : index === 1 ? variant.option2 : index === 2 ? variant.option3 : ''
+      );
     }
 
     function buildSelection(selection) {
@@ -150,7 +166,7 @@
           values[optionValue] = { available: false, hasVariant: false };
         }
         values[optionValue].hasVariant = true;
-        if (v.available) {
+        if (isVariantAvailable(v)) {
           values[optionValue].available = true;
         }
       });
@@ -164,7 +180,7 @@
         return product.options.every(function (_, idx) {
           var value = selection[idx];
           return value === undefined || getOptionValue(v, idx) === value;
-        }) && v.available;
+        }) && isVariantAvailable(v);
       });
     }
 
