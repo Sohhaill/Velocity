@@ -78,7 +78,7 @@
       minimumFractionDigits: 2,
       maximumFractionDigits: 2
     }).format(amount);
-    return '[Rs.' + formatted + ']';
+    return 'Rs.' + formatted;
   }
 
   function renderProduct(product, variantId) {
