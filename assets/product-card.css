@@ -128,9 +128,9 @@ a.v-card__link {
   background: #00000087;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  .swiper-pagination-bullet {
-    background: white;
-  }
+}
+.v-card__pagination--glass .swiper-pagination-bullet {
+  background: white;
 }
 .v-card__quick-view--glass {
   background: #00000087;
