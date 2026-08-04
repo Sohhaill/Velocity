@@ -242,13 +242,14 @@
       normalizeSelectionAt(-1);
       updateSelectedVariant();
 
-      product.options.forEach(function (optionName, optionIndex) {
+      product.options.forEach(function (optionObj, optionIndex) {
+        var optionName = typeof optionObj === 'object' ? optionObj.name : optionObj;
         if (!optionName) return;
-        var group = document.createElement("div");
-        group.className = "v-drawer__variant-group";
+        var group = document.createElement('div');
+        group.className = 'v-drawer__variant-group';
 
-        var label = document.createElement("p");
-        label.className = "v-drawer__variant-label";
+        var label = document.createElement('p');
+        label.className = 'v-drawer__variant-label';
         label.textContent = optionName;
         group.appendChild(label);
 
