@@ -73,8 +73,12 @@
   }
 
   function formatMoney(cents) {
-    var amount = (cents / 100).toFixed(2);
-    return (window.Shopify && window.Shopify.currency && window.Shopify.currency.active || '') + amount;
+    var amount = cents / 100;
+    var formatted = new Intl.NumberFormat('en-US', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }).format(amount);
+    return '[Rs.' + formatted + ']';
   }
 
   function renderProduct(product, variantId) {
@@ -111,35 +115,45 @@
     drawer.querySelector('[data-drawer-title]').textContent = product.title;
 
     var selectedVariant = product.variants.find(function (v) {
-      return v.id == variantId;
+      return v.id == variantId && v.available;
+    }) || product.variants.find(function (v) {
+      return v.available;
     }) || product.variants[0];
 
     drawer.querySelector('[data-drawer-price]').textContent = formatMoney(selectedVariant.price);
 
     var variantsWrap = drawer.querySelector('[data-drawer-variants]');
     variantsWrap.innerHTML = '';
-    var optionValues = {};
-    product.variants.forEach(function (v) {
-      var val = v.option1;
-      if (val && !optionValues[val]) optionValues[val] = v;
-    });
 
-    Object.keys(optionValues).forEach(function (val) {
-      var v = optionValues[val];
+    product.variants.forEach(function (v) {
       var swatch = document.createElement('span');
       swatch.className = 'v-drawer__variant-swatch';
       swatch.dataset.variantId = v.id;
-      if (v.id == selectedVariant.id) swatch.classList.add('is-selected');
+
+      if (v.id == selectedVariant.id) {
+        swatch.classList.add('is-selected');
+      }
+      if (!v.available) {
+        swatch.classList.add('is-out-of-stock');
+      }
+
+      var labelParts = [];
+      if (v.option1) labelParts.push(v.option1);
+      if (v.option2) labelParts.push(v.option2);
+      if (v.option3) labelParts.push(v.option3);
+      var label = labelParts.join(' / ') || v.title;
 
       if (v.featured_image) {
         var img = document.createElement('img');
         img.src = v.featured_image.src;
+        img.alt = label;
         swatch.appendChild(img);
       } else {
-        swatch.textContent = val;
+        swatch.textContent = label;
       }
 
       swatch.addEventListener('click', function () {
+        if (!v.available) return;
         variantsWrap.querySelectorAll('.v-drawer__variant-swatch').forEach(function (s) {
           s.classList.remove('is-selected');
         });
