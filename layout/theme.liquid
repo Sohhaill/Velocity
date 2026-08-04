@@ -7,6 +7,8 @@
   {{ 'header.css' | asset_url | stylesheet_tag }}
   {{ 'mega-menu.css' | asset_url | stylesheet_tag }}
   {{ 'quick-view-drawer.css' | asset_url | stylesheet_tag }}
+  {{ 'product-card.css' | asset_url | stylesheet_tag }}
+  {{ 'price.css' | asset_url | stylesheet_tag }}
   {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
   {% comment %}
   Font preloading:
@@ -43,6 +45,7 @@
   {% sections 'footer-group' %}
   {{ 'megemenu-script.js' | asset_url | script_tag }}
   <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
+  <script src="{{ 'product-card.js' | asset_url }}" defer></script>
   {{ 'header-script.js' | asset_url | script_tag }}
   <script src="{{ 'lenis.min.js' | asset_url }}" defer></script>
   <script src="{{ 'lenis.js' | asset_url }}" defer></script>
