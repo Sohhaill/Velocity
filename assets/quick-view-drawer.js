@@ -37,12 +37,28 @@
     fetchProductById(productId)
       .then(function (product) {
         currentProduct = product;
-        renderProduct(product, variantId);
-        hideLoader();
+        return preloadImages(product.images).then(function () {
+          renderProduct(product, variantId);
+          hideLoader();
+        });
       })
       .catch(function () {
         hideLoader();
       });
+  }
+
+  function preloadImages(urls) {
+    if (!urls || !urls.length) return Promise.resolve();
+    return Promise.all(
+      urls.map(function (src) {
+        return new Promise(function (resolve) {
+          var img = new Image();
+          img.onload = resolve;
+          img.onerror = resolve;
+          img.src = src;
+        });
+      })
+    );
   }
 
   function showLoader() {
@@ -70,7 +86,8 @@
   // Fetch product JSON. Assumes trigger passes a product handle in data-product-id,
   // OR you can switch data-product-id to store the handle directly.
   function fetchProductById(productHandleOrId) {
-    return fetch("/products/" + productHandleOrId + ".js").then(function (res) {
+    var url = "/products/" + productHandleOrId + ".js?_=" + Date.now();
+    return fetch(url, { cache: "no-store" }).then(function (res) {
       return res.json();
     });
   }
