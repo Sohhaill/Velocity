@@ -213,6 +213,8 @@
       for (var i = index + 1; i < product.options.length; i += 1) {
         var values = getOptionValues(i, selectedOptions);
         var selectedValue = values.find(function (item) {
+          return item.value === selectedOptions[i] && item.available;
+        }) || values.find(function (item) {
           return item.available;
         });
         selectedOptions[i] = selectedValue
