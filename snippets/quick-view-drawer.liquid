@@ -1,0 +1,55 @@
+{{ 'quick-view-drawer.css' | asset_url | stylesheet_tag }}
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+
+<div class="v-drawer" id="quick-view-drawer" data-quick-view-drawer data-cursor-root aria-hidden="true">
+  <div class="v-drawer__overlay" data-drawer-close data-cursor-overlay></div>
+  {% render 'cursor-close' %}
+
+  <div class="v-drawer__panel" role="dialog" aria-modal="true">
+    <div class="v-drawer__header">
+      <button type="button" class="v-drawer__wishlist" data-drawer-wishlist aria-label="{{ 'products.card.wishlist' | t }}">
+        {{ 'icon-wishlist.svg' | inline_asset_content }}
+      </button>
+      <button type="button" class="v-drawer__close" data-drawer-close aria-label="{{ 'general.close' | t }}">
+        {{ 'icon-close.svg' | inline_asset_content }}
+      </button>
+    </div>
+
+    <div class="v-drawer__loader" data-drawer-loader>
+      <div class="v-drawer__loader-spinner">
+        <svg viewBox="0 0 50 50">
+          <circle class="v-drawer__loader-circle" cx="25" cy="25" r="20" fill="none" stroke-width="4"></circle>
+        </svg>
+      </div>
+    </div>
+
+    <div class="v-drawer__body" data-drawer-body>
+      <div class="v-drawer__media">
+        <div class="v-drawer__swiper swiper" data-drawer-swiper>
+          <div class="swiper-wrapper" data-drawer-media-wrapper></div>
+          <div class="v-drawer__pagination" data-drawer-pagination></div>
+        </div>
+        <div class="v-drawer__nav-container">
+          <button type="button" class="v-drawer__nav v-drawer__nav--prev" data-drawer-prev aria-label="{{ 'general.previous' | t }}">
+            {{ 'icon-chevron-left.svg' | inline_asset_content }}
+          </button>
+          <button type="button" class="v-drawer__nav v-drawer__nav--next" data-drawer-next aria-label="{{ 'general.next' | t }}">
+            {{ 'icon-chevron-right.svg' | inline_asset_content }}
+          </button>
+        </div>
+      </div>
+
+      <div class="v-drawer__info">
+        <p class="v-drawer__vendor" data-drawer-vendor hidden></p>
+        <h3 class="v-drawer__title" data-drawer-title></h3>
+        <div class="v-drawer__price" data-drawer-price></div>
+
+        <div class="v-drawer__variants" data-drawer-variants style="--v-card-swatch-radius: {{ settings.variant_swatch_radius }}px;"></div>
+
+        <div class="v-drawer__actions" data-drawer-actions>
+          <!-- add to cart button — next step -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
